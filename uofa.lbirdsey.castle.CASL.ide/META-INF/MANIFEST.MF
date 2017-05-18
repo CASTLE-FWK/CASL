@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: uofa.lbirdsey.castle.CASL.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uofa.lbirdsey.castle.CASL.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uofa.lbirdsey.castle.CASL,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uofa.lbirdsey.castle.ide.contentassist.antlr,
+ uofa.lbirdsey.castle.ide.contentassist.antlr.internal
+

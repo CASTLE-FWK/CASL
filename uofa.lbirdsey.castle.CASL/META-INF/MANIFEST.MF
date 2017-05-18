@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: uofa.lbirdsey.castle.CASL
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uofa.lbirdsey.castle.CASL; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uofa.lbirdsey.castle.casl.impl,
+ uofa.lbirdsey.castle.serializer,
+ uofa.lbirdsey.castle,
+ uofa.lbirdsey.castle.generator,
+ uofa.lbirdsey.castle.parser.antlr,
+ uofa.lbirdsey.castle.scoping,
+ uofa.lbirdsey.castle.services,
+ uofa.lbirdsey.castle.casl.util,
+ uofa.lbirdsey.castle.validation,
+ uofa.lbirdsey.castle.casl,
+ uofa.lbirdsey.castle.parser.antlr.internal
+Import-Package: org.apache.log4j

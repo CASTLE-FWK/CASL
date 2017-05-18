@@ -1,0 +1,872 @@
+grammar uofa.lbirdsey.castle.CASL hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate casl "http://www.lbirdsey.uofa/cas/Casl"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+//The upper most level of CASL
+//A CASL description will contain: 1 system description, 1+ agents, 1+ environments
+//A CASL may also be a package descriptor, as models usually have lots of common elements (but how do we do this?)
+Casl:
+	//For packages and commons
+	(packageElements += AbstractElement)*
+	
+	//These are for proper CAS descriptors
+	//Describe at MOST one system (wildcard is there for stupid reasons)
+	(system = System)?
+	//Describe at least one Agent
+	(agents += Agent | environments += Environment | groups += Group)*
+	//Describe at least one Environment	
+; 
+
+/*
+ * The SYSTEM declaration
+ */
+System :
+	'SYSTEM:' '{'
+		'name:' name = STRING';'
+		'description:' desc = STRING';'
+		'ruleset:' '{'	
+		 	cas_rules = CAS_Rules
+		'};'
+		system_parameters = Parameters
+		system_functions = Functions
+		agent_types = Agent_Types
+		group_types = Group_Types
+		environment_types = Environment_Types
+		end_conditions = End_Conditions
+	'};'
+;
+
+/**
+ * We need a way to statically check that each agent and env
+ * type listed here has a definition
+ * Is this actually useful? Diversity checks!
+ */
+
+Agent_Types:
+	'agent_types:' '{'
+		(agent_types += Agent_Type_Name)(',' agent_types += Agent_Type_Name)*';'
+	'};'
+;
+
+Agent_Type_Name:
+	{Agent_Type_Name}
+	agent_type_name = QualifiedName
+;
+
+Environment_Types: 
+	{Environment_Types}
+	'environment_types:' '{'
+		(environment_types += Environment_Type_Name)(','environment_types += Environment_Type_Name)*';'
+	'};'
+;
+
+Environment_Type_Name:
+	{Environment_Type_Name}
+	environment_type_name = QualifiedName
+;
+
+Environment_Rules:
+	'environment_rules:' '{'
+		'type:' env_def = Environment_Type 
+		'attributes:' env_attributes = Environment_Attribute
+		'layout_type:'(layout_type = LayoutType)';'
+	'};'
+;
+
+Group_Types:
+	'group_types:' '{'
+		(group_types += Group_Type_Name)(',' group_types += Group_Type_Name)*';'
+	'};'
+;
+
+Group_Type_Name:
+	{Group_Type_Name}
+	group_type_name = QualifiedName
+;
+
+enum Environment_Attribute:
+	VIRTUAL = 'virtual' | PHYSICAL = 'physical'
+;
+enum Environment_Type:
+	IMPLICIT = 'implicit' | EXPLICIT = 'explicit'
+;
+
+/**
+ * End Conditions:
+ * Each condition listed is in priority order
+ * Need a way to note (wtf is note?)
+ */
+End_Conditions:
+	'end_conditions:' '{'
+		(end_conditions += End_Condition)+
+	'};'
+; 
+
+/**
+ * End conditions should be altered at runtime
+ */
+End_Condition:
+	'condition' endType = EndConditionTypes name = ID';'//':'(val = AbstractElement)';'
+;
+
+enum EndConditionTypes :
+	STEPS | PARAMETER | STATE
+;
+
+/**
+ * CAS Rules
+ */
+CAS_Rules:
+ 	{CAS_Rules}
+ 	'type:'(cas_rule = CAS_Rule_Types)';'
+ 	'inspection_level:'(cas_check = CAS_Inspection_Level) ';'
+ 	'lenient_exceptions:' (exceptions += CAS_Rule_Exception)*';' //((flags += CAS_Rule_Exception)(flags += CAS_Rule_Exception)?)?
+ 	'semantic_groups:'(semanticgroups = CAS_Semantic_Group_Switch)';'
+;
+ 
+enum CAS_Rule_Types:
+ 	STRICT = 'strict' | LENIENT = 'lenient'
+;
+ 
+ /**
+  * CAS_Rule_Exception
+  */
+enum CAS_Rule_Exception:
+ 	MODULARITY = 'modularity' | DIVERSITY = 'diversity' | NONE = 'none' | ADAPTATION = "adaptation"
+;
+
+enum CAS_Inspection_Level:
+	STRONG = 'strong' | WEAK = 'weak' | NONE = 'none'
+;
+
+//TODO: Make this work in validation stage
+enum CAS_Semantic_Group_Switch:
+	ENABLE = 'enable' | DISABLE = "disable"
+;
+
+Entity:
+	Agent | Group | Environment
+;
+
+Entity_Feature:
+	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | Group_Transmission | GroupInternal 
+;
+
+/**
+ * The AGENT declaration
+ */
+Agent:
+	'AGENT' name = ID ':' '{'
+		'description:' desc = STRING';'
+		//Agent Parameters
+		agent_parameters = Parameters
+		
+		//Agent Functions
+		agent_functions = Functions
+		
+		//Agent Behaviors
+		agent_behaviors = Behaviors
+		
+		//Agent Interactions
+		agent_interactions = AgentInteractions
+
+		//Agent Adaptive Processes
+		agent_adaptation = AdaptiveProcesses
+
+		//Agent SubSystems
+		agent_subSystems = SubSystems
+	'};'
+;	
+
+/**
+ * The ENVIRONMENT declaration
+ */
+Environment:
+	'ENVIRONMENT' name = ID ':' '{'		
+		'description:' desc = STRING';'
+
+		env_attributes = Environment_Rules
+		//Environment Parameters
+		env_parameters = Parameters
+		
+		//Environment Functions
+		env_functions = Functions
+		
+		//Environment Behaviors
+		env_behaviors = Behaviors
+
+		//Environment Interactions
+		env_interactions = EnvironmentInteractions
+
+		//Environment Adaptive Processes
+		env_adaptation = AdaptiveProcesses
+		
+		//Environment SubSystems
+		env_subSystems = SubSystems
+		
+		//This needs to be enabled only if ULCASL is enabled
+		env_groupinteractions = EGInteractions
+	'};'	
+;
+
+Group:
+	'GROUP' name = ID ':' '{'
+		'description:' desc = STRING';'
+		group_rules = Group_Rules
+		group_parameters = Parameters
+		group_functions = Functions
+		group_behaviors = Behaviors		
+		group_transmissions = Group_Transmissions
+		group_internals = GroupInternals
+	'};'
+;
+
+Group_Rules:
+	{Group_Rules}
+	'group_rules:' '{'
+		'layout_type:'(layout_type = LayoutType)';'
+	'};'
+;
+
+//TODO: Generate This
+Group_Transmissions:
+	{Group_Transmissions}
+	//These are essentially interactions that rely on slightly more complicated functions
+		//and must be wrapped as a message to the environment
+	'transmissions:' '{'
+		(transmissions += Group_Transmission)*
+	'};'
+;
+
+Group_Transmission:
+	{Group_Transmission}
+	//Change interaction type, interaction triggger type, and params
+	name = ID '['(transmissionPhase = Transmission_Phase)']['(transmissionContents = Transmission_Contents) ']['(transmissionRepeat = Transmission_Repeat) ('('reaction_time_parm = Expression')')?']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+enum Transmission_Phase:
+	SETUP | ACTION | CLEANUP
+;
+
+enum Transmission_Contents:
+	STATE | AGENT 
+;
+
+enum Transmission_Repeat:
+	REPEAT | SINGLE
+;
+
+//TODO: Generate This
+GroupInternals:
+	{GroupInternals}
+	//These are also essentially interactions that rely on slightly more complicated functions
+		//but do not need to be messages as the contained agents make the request directly from the
+		//group layer
+	'internals:' '{'
+		(internals += GroupInternal)*
+	'};'
+;
+
+GroupInternal:
+	{GroupInternal}
+	name = ID '['(interaction_type = InteractionType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+Parameters:
+ 	{Parameters}
+// 	name = 'fields' //How can we force a name so that eclipse is happy?
+//	name = "parameters" ': {' //Gah How
+ 	'parameters:' '{'
+ 		((fields += Field | fields += State_Block)';')*
+ 	'};'
+ ;
+/**
+ * Field:
+ * Can be an ass
+ */
+Field:
+	(declaration = DataTypeDeclaration 	| 
+	agentFieldRef = AgentFieldReference | 
+	envFieldRef = EnvironmentFieldReference|
+	grpFieldRef = GroupFieldReference)	
+;
+
+AgentFieldReference returns Symbol:
+	{AgentFieldReference}
+	'agt' agent = [Agent] ':' name=ID ('=' assignment = Expression)?
+;
+EnvironmentFieldReference returns Symbol:
+	{EnvironmentFieldReference}
+	'env' env = [Environment] ':' name=ID('=' assignment = Expression)?
+;
+GroupFieldReference returns Symbol:
+	{GroupFieldReference}
+	'grp' grp = [Group] ':' name=ID('=' assignment = Expression)?
+;
+
+/**
+ * Function:
+ * name:(inputs){};
+ */
+Function:
+	{Function}
+	'def' name = ID'('(functionParameters +=  FunctionParameter)? (','(functionParameters += FunctionParameter))* ')('(returnType = FunctionParameter)?'):' '{' 	
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+	'};'
+;
+
+Functions:
+	{Functions}
+	'functions:' '{'
+		(functions += Function)*
+	'};'
+;
+
+FunctionParameter returns Symbol:
+	{FunctionParameter} ('var' type = PrimitiveType |'agt' agent = [Agent]| 'env' env = [Environment] | 'var' obj = [NonPrimitiveType](':'useObj=[NonPrimitiveType] |  ':' useType = PrimitiveType | '<' ('grp.'useGroup = [Group] | 'agt.'useAgent = [Agent] | 'env.'useEnv = [Environment])'>')? | 'grp' grp = [Group])':' name = ID
+;
+
+/*These StateBlocks inform things
+ * 
+ * */
+State_Block:
+	"behavior_state" name = ID':' '{'
+		"description:"desc  = STRING';'
+		(stateFields += State_Block_Refs)(',' stateFields += State_Block_Refs)*';'
+	"};"
+;
+
+State_Block_Refs:
+	ref = [Symbol]
+;
+
+/**
+ * Behavior:
+ * name:[BehaviorType](Inputs){};
+ */
+Behavior:
+	name = ID '['(behavior_type = BehaviorType)']['(behavior_reaction_time = BehaviorReactionTime)('('reaction_time_parm = Expression')')?']('(functionParameters +=  FunctionParameter)? (','(functionParameters += FunctionParameter))*'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+Behaviors:
+	{Behaviors}
+	'behaviors:' '{'
+		(behaviors += Behavior)*
+	'};'
+;
+
+enum BehaviorType:
+	SELF | ENVIRONMENT | AGENT
+;
+
+enum BehaviorReactionTime:
+	INSTANT | DELAYED | STEP | REPEAT
+;
+
+/**
+ * Interaction:
+ * name:[Affectee][Type][Trigger]{};
+ */
+ 
+ //We need to do something about this being accessible across agent and environment types
+AgentInteraction returns Interaction:
+	{AgentInteraction}
+	name = ID '['(interaction_type = InteractionType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};' 
+;
+
+AgentInteractions:
+	{AgentInteractions}
+	'interactions:' '{'
+		(interactions += AgentInteraction)*
+	'};'
+;
+//we may change back to these one day (although it should be okay now)
+Interaction:
+	{Interaction}
+	name = ID '['(interaction_type = InteractionType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};' 
+;
+
+Interactions:
+	{Interactions}
+	'interactions:' '{'
+		(interactions += Interaction)*
+	'};'
+;
+
+EnvironmentInteraction returns Interaction:
+	{EnvironmentInteraction}
+	name = ID '['(interaction_type = InteractionType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};' 
+;
+
+EnvironmentInteractions:
+	{EnvironmentInteractions}
+	'interactions:' '{'
+		(interactions += EnvironmentInteraction)*
+	'};'
+;
+
+EGInteraction returns Interaction:
+	{EGInteraction}
+	name = ID '['(layoutType = LayoutType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+EGInteractions:
+	{EGInteractions}
+	'group_interactions:' '{'
+		(interactions += EGInteraction)*
+	'};'
+;
+
+//TODO: Define these properly etc..
+enum LayoutType:
+	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS
+;
+
+enum InteractionType:
+	QUERY | INDIRECT | COMMUNICATION
+;
+
+enum InteractionTriggerTypes:
+	STEP | STATE | PARAMETER | INPUT
+;
+
+InteractionTriggerParameter:
+	{InteractionTriggerParameter} expr = Expression	
+;
+
+/**
+ * Adaptive Process:
+ * name:[AdaptationType](inputs){};
+ */
+AdaptiveProcess:
+	{AdaptiveProcess}
+	name = ID '['(adaptation_type = AdaptationType)']['(adaptationDelay = AdaptationDelay)']('(functionParameters += FunctionParameter)*'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+enum AdaptationType:
+	IMPLICIT | EVOLUTIONARY | COGNITIVE 
+;
+
+enum AdaptationDelay:
+	NONE | POST
+;
+
+AdaptiveProcesses:
+	{AdaptiveProcesses}
+	'adaptation:' '{'
+		(adaptation += AdaptiveProcess)*
+	'};'	
+;
+
+FeatureCall:
+	fc = (AdaptiveProcessFeatureCall | 
+		AgentInteractionFeatureCall | 
+		EnvironmentInteractionFeatureCall |
+		InteractionFeatureCall |
+		FunctionFeatureCall | 
+		BehaviorFeatureCall |
+		GroupTransmissionFeatureCall |
+		GroupSelfInternalsFeatureCall |
+		GroupInternalsFeatureCall |
+		TransmissionFeatureCall)
+;
+
+AdaptiveProcessFeatureCall:
+	{AdaptiveProcessFeatureCall}'ADAPTATION.' process = [AdaptiveProcess]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+InteractionFeatureCall:
+	{InteractionFeatureCall}'INTERACTION.'process=[Interaction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+AgentInteractionFeatureCall:
+	{AgentInteractionFeatureCall}agt=[Symbol]'.AGT_INTERACTION.'process=[AgentInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+GroupTransmissionFeatureCall:
+	{GroupTransmissionFeatureCall}grp=[Symbol]'.GRP_TRANSMISSION.'process=[Group_Transmission]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+TransmissionFeatureCall:
+	{TransmissionFeatureCall}'TRANSMISSION.'process=[Group_Transmission]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+GroupInternalsFeatureCall:
+	{GroupInternalsFeatureCall}grp=[Symbol]'.GRP_INTERNAL.'process=[GroupInternal]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+EnvironmentInteractionFeatureCall:
+	{EnvironmentInteractionFeatureCall}env=[Symbol]'.ENV_INTERACTION.'process=[EnvironmentInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+GroupSelfInternalsFeatureCall:
+	{GroupSelfInternalsFeatureCall}'INTERNAL.'process=[GroupInternal]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+FunctionFeatureCall:
+	{FunctionFeatureCall}'FUNCTION.' process = [Function]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+BehaviorFeatureCall:
+	{BehaviorFeatureCall}'BEHAVIOR.' process = [Behavior]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+;
+
+/**
+ * SubSystem:
+ * name:[SystemType](inputs){};
+ */
+SubSystem:
+	name = ID '['(subsystem_type = SubSystemType)']''('(functionParameters += FunctionParameter)*'):' '{'
+		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
+	'};'
+;
+
+//What do these mean?
+enum SubSystemType:
+	SELF | SYSTEM
+;
+
+SubSystems:
+	{SubSystems}
+	'subsystems:' '{'
+		(subSystems += SubSystem)*
+		(subAgents += Agent | subEnvs += Environment)* //Should we check to ensure that an agent can't be made up of environments??
+	'};'
+;
+
+Type:	
+	PrimitiveType | NonPrimitiveType
+;
+
+NonPrimitiveType:
+	Object | Enum
+;
+
+PrimitiveType:
+	IntType | BooleanType | FloatType | NullType | StringType
+;
+
+IntType:
+	{IntType} name='int' 
+;
+ 
+BooleanType:
+	{BooleanType} name='bool'
+;
+
+FloatType:
+	{FloatType} name='float'
+;
+
+StringType:
+	{StringType} name='string'
+;
+
+NullType:
+ 	{NullType} name='null'
+;	
+
+BooleanValue returns ecore::EBoolean: 
+	'true' | 'false'
+;
+
+DataTypeDeclaration returns Symbol:
+	{DataTypeDeclaration} 'var' (initInclude = "*")? (type = PrimitiveType | obj = [NonPrimitiveType](':'useObj=[NonPrimitiveType] |  ':' useType = PrimitiveType | '<' ('grp.'useGroup = [Group] | 'agt.'useAgent = [Agent] | 'env.'useEnv = [Environment])'>')? ) ':' name=ID ('=' expr = Expression)?
+;
+
+/**
+ * Expressions
+ */
+Formula:
+	sym=[Symbol]('.'objField=[Symbol])? '=' expr=Expression 
+;
+
+SelfAssignedFormula:
+ 	'self.' ref=[Symbol]('.'objField=[Symbol])? '=' expr=Expression
+;
+
+Expression:
+	BooleanExpression | IfStatement | ForLoop | ForEachLoop
+;
+
+ForLoop:	
+	'for' '('
+		( init = (Expression | Formula | Field | SelfAssignedFormula) ';' condition = Expression ';' shifter = (Expression | Formula)  )
+	')' 'do'
+		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field)';')+
+	'endfor'
+;
+
+ForEachLoop:
+	'foreach' '(' (item = ForEachAccess ':' list = Expression) ')' 'do'
+		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field)';')+
+	'endfor'
+;
+
+//TODO: Need scoping for this
+ForEachAccess returns Symbol:
+	name = ID
+;
+
+//TODO: compounded elseifs
+IfStatement:
+    'if' '(' condition = Expression ')' 'then' ((then += Expression | then += SelfAssignedFormula | then += Formula | then += Field)';')+
+	(=> 'elseif' elseifexpr += ElseIfExpr)*
+    (=> 'else' ((elseexp += Expression | elseexp += Formula | elseexp += SelfAssignedFormula | elseexp += Field)';')+)?
+    'endif'
+;
+
+ElseIfExpr:
+	{ElseIfExpr}
+	'('elseifCond = Expression')' 'then' (elseifthen += (Expression | Formula | SelfAssignedFormula | Field)';')*
+;
+ 
+BooleanExpression returns Expression:
+	Equals 
+	(({BooleanExpression.left=current} op=("||"|"&&")) right=Equals)*;
+
+Equals returns Expression:
+	Comparison 
+	( ({Equals.left=current} op=("==" | "!=") ) right=Comparison)*;
+	
+Comparison returns Expression:
+	Subtraction
+	( ({Comparison.left=current} op=('<'|'>'|"<="|">=") ) right=Subtraction)*;
+
+Subtraction returns Expression:
+	Addition ({Subtraction.left=current} op=('-') right=Addition)*
+;
+       
+Addition returns Expression:
+	Multiplication ({Addition.left=current} op=('+') right=Multiplication)*
+;
+
+Multiplication returns Expression:
+	Prefixed ( ({Multiplication.left=current} op=('*') | {Div.left=current} op=('/')) right=Prefixed)*
+;
+       
+Prefixed returns Expression:
+	{BooleanNegation} => '!' expression=Prefixed | /* right associativity */
+	{ArithmeticSigned} => '-' expression=Prefixed | /* right associativity */
+	'(' Expression ')' |
+	Atomic
+;
+
+//TODO: Most of these aren't atomics
+Atomic returns Expression:	
+	{NumberLiteral} value = NUMBER    							|
+  	{StringLiteral} value = STRING								|
+  	{NullTypeLiteral} nulltype = NullType						|
+	{BooleanType} bool = BooleanValue							|	
+	{TypeRef} type = [Symbol]/*('.'call = [Symbol])?*/ 			|	//TODO: This needs to be improved massively
+  	{SystemCallObj} sysCall = SystemCall 						|
+  	{FeatureCallExp} func = FeatureCall  							|
+  	{SelfCallExpr} selfCall = SelfCall							|
+  	{MacroCall} macroCall = CASL_Macro_Call						|
+  	{FunctionCallExpr} funcCall = FunctionCall 					|
+  	{EnumCallExpr}enumCall = EnumCall							|
+  	{Group_Call}groupCall = Group_Call							|
+  	{Agent_Call}agentCall = Agent_Call
+;
+
+//We have to add Agent
+
+//TODO: Validation/Scoping, Should this first term be valid? (who just calls this)
+SelfCall:
+	{SelfCall}
+	'self' | 'self.'ref=[Symbol] | 'self.' fc = FunctionCall | 'self.' fec = FeatureCall //Fix 2
+; 
+
+//TODO: Validation/Scoping, rename this, 
+FunctionCall:
+	{FunctionCall} 
+	obj = [Symbol] ('.'func = [Function] '('(inputs +=  Expression)? (',' inputs +=  Expression)*')' | '.' fields += [Symbol] ('.' fields += [Symbol])*)
+;
+
+EnumCall:
+	'ENUM.'en=[Enum]'.'entype=[Symbol]
+;
+
+//TODO: Expand this to access SYSTEM parameters (or not)
+SystemCall:
+	{SystemCall} 'SYSTEM.' call = QualifiedNameCall
+; 
+
+//TODO: THese should change and become referneces to the whole type
+//This is something that calls each agent of that type
+Agent_Call:
+	{Agent_Call} 'AGENT.'agent=[Agent] ('.'qnc=QualifiedNameCall)?
+;
+
+Environment_Call:
+	{Environment_Call} 'ENVIRONMENT.'env=[Environment] ('.'qnc=QualifiedNameCall)?
+;
+
+Group_Call:
+	{Group_Call} 'GROUP.' grp = [Group] ('.'qnc=QualifiedNameCall)?
+;
+
+Object:
+	{Object}
+	(custom = 'custom')?'obj' name = ID ('<'useType = [Object]'>')?':' '{'
+		(fields += Field ';'| fields += Function)*
+	'};'
+;
+//TODO: AOISUDHAIUSHDIUASHD FUCKING ENUMS
+Enum: 
+	{Enum}
+	(custom = 'custom')?'enum' name = ID':' '{'
+		(enum_fields += Enum_Field)(',' enum_fields += Enum_Field)*
+	'};'
+; 
+
+Enum_Field returns Symbol:
+	name = ID
+;
+
+//Special calls a.k.a macros
+CASL_Macro_Call:
+	'CASL.'macro = CASL_Macro
+;
+
+//CASL_MACRO should become it's own DSL (or own library function)
+//Because it will probably be massive (and it also has to line up with stdlib)
+CASL_Macro:
+	CASL_Macro_Neighbours 			| 
+	CASL_Macro_FilterAndFunction 	|
+	CASL_Macro_CountConditions		| 
+	CASL_Macro_Random				|
+	CASL_Macro_ForEach				|
+	CASL_Macro_Print				|
+	CASL_Macro_MetricSwitch			|
+	CASL_Macro_EntitySetup			|
+	CASL_Macro_TODO
+;
+
+CASL_Macro_Neighbours:
+	worldType = WorldType'.GetNeighbours['searchType = [Agent]']('dist = NUMBER')'
+;
+
+CASL_Macro_FilterAndFunction:
+	"FILTER["sym = [Symbol]"]("cond = Expression")"misc = ID
+;
+
+CASL_Macro_CountConditions:
+	"COUNT["sym=[Symbol]"]("cond = Expression")"
+;
+
+CASL_Macro_Random:
+	"RANDOM"'['type=numType']('low=Expression (',' high=Expression)?')'
+;
+
+CASL_Macro_ForEach:
+	"FOREACH["sym=[Symbol]"]("expr = Expression")"
+;
+
+CASL_Macro_Print:
+	"PRINT("str = STRING")"
+;
+
+CASL_Macro_MetricSwitch:
+	"METRIC["sw = BooleanValue"]"
+;
+
+CASL_Macro_EntitySetup:
+	"ENTITY_INIT"  '('(initNum = Expression)')' '['( (ent = [Entity]) )']' '('(params += Expression)')'
+;
+
+CASL_Macro_TODO:
+	"TODO:"str = STRING
+;
+
+enum WorldType:
+	GRID | SPACE
+;
+
+enum numType:
+	INT | FLOAT
+;
+
+/*****Java 8-isms *****/
+/*I'm not sure if burning these into
+ * Casl is a good idea... but it makes sense but
+ * it also means that we may end up writing java-lite
+ * A possible better approach would be to create Macros
+ * that casl uses but instantly knows how to translate
+ * We could also have a class that parses raw Java functions with
+ * wildcards etc
+ */ 
+
+Raw_Java_Block:
+	{Raw_Java_Block}
+	"raw-java"name=ID':' '{'
+		(rawStatements += Raw_Java)*
+	"};"
+;
+
+Raw_Java:
+	QualifiedNameCall
+;
+
+/**
+ * What exactly does this do?
+ */
+Feature:
+	type = [Type | QualifiedName] (':' name = ID)? ('=' val = AbstractElement)? (';'|',') //need to check for non-ints, etc
+;
+
+/**
+ * Imports, reusables, commons, etc...
+ */
+AbstractElement:
+	PackageDeclaration | NonPrimitiveType | Import //| GenericFunction
+;
+
+PackageDeclaration:
+	'package' name = QualifiedName ':' '{'
+		(elements += AbstractElement)*
+	'};'
+; 
+
+QualifiedName:
+	ID ('.' ID)*
+;
+
+QualifiedNameCall:
+	ID ('.' ID | '('QualifiedNameCall (',' QualifiedNameCall)*')' | '.()' | '->')*
+;
+
+Import:
+	'import' importedNamespace = QualifiedNameWithWildcard ';'
+;
+
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
+
+//Terminals & Core 
+terminal NUMBER returns ecore::EBigDecimal:
+  ('0'..'9')* ('.' ('0'..'9')+)?;
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal STRING	: 
+			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'" ; 
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+terminal ANY_OTHER: .;

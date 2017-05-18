@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="uofa.lbirdsey.castle.CASL.feature"
+	label="CASL Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="uofa.lbirdsey.castle.CASL"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="uofa.lbirdsey.castle.CASL.ide"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="uofa.lbirdsey.castle.CASL.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+			
+</feature>
