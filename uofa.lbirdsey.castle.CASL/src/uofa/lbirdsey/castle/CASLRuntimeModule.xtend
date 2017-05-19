@@ -3,9 +3,20 @@
  */
 package uofa.lbirdsey.castle
 
+import uofa.lbirdsey.castle.generator.semanticGroups.RepastGenerator
+import uofa.lbirdsey.castle.scoping.CASLScopeProvider
+import org.eclipse.xtext.generator.IGenerator2
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class CASLRuntimeModule extends AbstractCASLRuntimeModule {
+	
+	override Class<? extends IGenerator2>  bindIGenerator2() {
+		return RepastGenerator;
+	}
+	
+	override Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
+		return CASLScopeProvider;
+	}
 }

@@ -5,8 +5,6 @@ package uofa.lbirdsey.castle.generator.semanticGroups
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IFileSystemAccess
-import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import uofa.lbirdsey.castle.casl.AbstractElement
 import uofa.lbirdsey.castle.casl.Agent
@@ -17,6 +15,10 @@ import uofa.lbirdsey.castle.casl.Group
 import uofa.lbirdsey.castle.casl.Object
 import uofa.lbirdsey.castle.casl.System
 import uofa.lbirdsey.castle.casl.Type
+//import uofa.lbirdsey.castle.generator.HelperFunctions
+import org.eclipse.xtext.generator.IGenerator2
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import org.eclipse.xtext.generator.IGeneratorContext
 
 //import uofa.lbirdsey.castle.generator.repastGroups.HelperFunctions
 
@@ -25,7 +27,7 @@ import uofa.lbirdsey.castle.casl.Type
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
-class RepastGenerator implements IGenerator {	
+class RepastGenerator implements IGenerator2 {	
 	
 	@Inject extension IQualifiedNameProvider
 	var dirName = "";
@@ -37,9 +39,17 @@ class RepastGenerator implements IGenerator {
 	val lib = "repastGroups"
 	val lib_obj ="repastGroups.objects"
 	
+	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
 	
 	
-	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+	
+	override doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		//Create sub-directories for each CAS Type
 		HelperFunctions.initTypesList();	
 		
