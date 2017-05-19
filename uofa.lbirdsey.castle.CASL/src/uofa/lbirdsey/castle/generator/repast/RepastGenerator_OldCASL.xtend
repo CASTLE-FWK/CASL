@@ -1853,15 +1853,15 @@ import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
 import repast.simphony.parameter.Parameters;
-import repastGroups.Capsule;
-import repastGroups.Entity;
-import repastGroups.EntityID;
-import repastGroups.Environment;
-import repastGroups.Logger;
-import repastGroups.Message;
-import repastGroups.MessageQueue;
-import repastGroups.MessageType;
-import repastGroups.Phase;"
+import castleComponents.Capsule;
+import castleComponents.Entity;
+import castleComponents.EntityID;
+import castleComponents.Environment;
+import castleComponents.Logger;
+import castleComponents.Message;
+import castleComponents.MessageQueue;
+import castleComponents.MessageType;
+import castleComponents.Phase;"
 					return imports;				
 	}
 	
@@ -1895,7 +1895,7 @@ import interLib.Utilities;
 import java.awt.Color;
 import java.util.ArrayList;
 
-import repastGroups.Agent;"			
+import castleComponents.Agent;"			
 		return imports
 	}
 	
@@ -1928,9 +1928,9 @@ import casFeatures.CASRuleSet;
 import casFeatures.CASLib.*;
 import repast.simphony.context.Context;
 import repast.simphony.context.DefaultContext;
-import repastGroups.Environment;
-import repastGroups.Capsule;
-import repastGroups.representations.GridRep;"			
+import castleComponents.Environment;
+import castleComponents.Capsule;
+import castleComponents.representations.GridRep;"			
 		return imports
 	}
 	

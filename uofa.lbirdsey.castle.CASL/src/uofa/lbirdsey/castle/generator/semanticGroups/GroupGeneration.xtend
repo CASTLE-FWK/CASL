@@ -41,9 +41,9 @@ class GroupGeneration {
 	def setup(){
 		fileContents = printLocal() as String;
 		//Add in the imports
-		var imports = "//Automated Group Import Generation\nimport repastGroups.SemanticGroup;\n";
-		imports += "import repastGroups.Environment;\nimport repastGroups.Agent;\n"
-		imports += "import repastGroups.representations.LayoutParameters;\n"
+		var imports = "//Automated Group Import Generation\nimport castleComponents.SemanticGroup;\n";
+		imports += "import castleComponents.Environment;\nimport castleComponents.Agent;\n"
+		imports += "import castleComponents.representations.LayoutParameters;\n"
 
 		//iC = importCandidate
 		for (String iC : libImports){
@@ -66,10 +66,10 @@ class GroupGeneration {
 		//What other dynamic stuff is needed...
 		
 		//Parse Group rules
-//		imports += "import repastGroups.Enums.RepresentationTypes;\n"
-		imports += "import repastGroups.Enums.*;\n" //TODO: This is very lazy
-		imports += "import repastGroups.representations.*;\n" //TODO: This is lazy
-//		imports += "import repastGroups.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
+//		imports += "import castleComponents.Enums.RepresentationTypes;\n"
+		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
+		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
+//		imports += "import castleComponents.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
 		
 		//Prepend import statements
 		fileContents = imports +"\n" + fileContents;

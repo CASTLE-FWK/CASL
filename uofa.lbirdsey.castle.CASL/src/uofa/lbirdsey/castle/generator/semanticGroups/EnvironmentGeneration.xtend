@@ -46,9 +46,9 @@ class EnvironmentGeneration {
 	def setup(){
 		fileContents = printLocal() as String;
 		//Add in the imports
-		var imports = "//Automated Environment Import Generation\nimport repastGroups.Environment;\n";
-		imports += "import repastGroups.SemanticGroup;\n"
-		imports += "import repastGroups.representations.LayoutParameters;\n"
+		var imports = "//Automated Environment Import Generation\nimport castleComponents.Environment;\n";
+		imports += "import castleComponents.SemanticGroup;\n"
+		imports += "import castleComponents.representations.LayoutParameters;\n"
 		//iC = importCandidate
 		
 		
@@ -70,10 +70,10 @@ class EnvironmentGeneration {
 		}
 		//What other dynamic stuff is needed...
 		//Parse Env rules
-//		imports += "import repastGroups.Enums.RepresentationTypes;\n"
-		imports += "import repastGroups.Enums.*;\n" //TODO: This is very lazy
-		imports += "import repastGroups.representations.*;\n" //TODO: This is lazy
-//		imports += "import repastGroups.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
+//		imports += "import castleComponents.Enums.RepresentationTypes;\n"
+		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
+		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
+//		imports += "import castleComponents.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
 
 		//Prepend import statements
 		fileContents = imports +"\n" + fileContents;

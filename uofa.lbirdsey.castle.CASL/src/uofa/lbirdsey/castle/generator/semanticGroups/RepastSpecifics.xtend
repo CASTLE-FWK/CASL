@@ -30,15 +30,15 @@ import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
 import repast.simphony.parameter.Parameters;
 
-import repastGroups.Entity;
-import repastGroups.EntityID;
-import repastGroups.Logger;
-import repastGroups.Message;
-import repastGroups.MessageQueue;
-import repastGroups.MessageType;
-import repastGroups.Phase;
-import repastGroups.objects.List;
-import repastGroups.Trigger;"
+import castleComponents.Entity;
+import castleComponents.EntityID;
+import castleComponents.Logger;
+import castleComponents.Message;
+import castleComponents.MessageQueue;
+import castleComponents.MessageType;
+import castleComponents.Phase;
+import castleComponents.objects.List;
+import castleComponents.Trigger;"
 					return imports;				
 	}
 	
@@ -52,10 +52,10 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.function.Function;
 
-import repastGroups.MessageType;
-import repastGroups.Phase;
-import repastGroups.Trigger;
-import repastGroups.EntityID;"			
+import castleComponents.MessageType;
+import castleComponents.Phase;
+import castleComponents.Trigger;
+import castleComponents.EntityID;"			
 		return imports
 	}
 	
@@ -70,11 +70,11 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.function.Function;
 
-import repastGroups.Agent;
-import repastGroups.MessageType;
-import repastGroups.Phase;
-import repastGroups.Trigger;
-import repastGroups.EntityID;"	
+import castleComponents.Agent;
+import castleComponents.MessageType;
+import castleComponents.Phase;
+import castleComponents.Trigger;
+import castleComponents.EntityID;"	
 		return imports
 	}
 	

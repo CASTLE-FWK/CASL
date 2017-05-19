@@ -28,8 +28,8 @@ class SystemGeneration {
 	def setup(){
 		fileContents = printLocal() as String;
 		//Add in the imports
-		var imports = "//Automated System Import Generation\nimport repastGroups.Environment;\n";
-		imports += "import repastGroups.SemanticGroup;\n"
+		var imports = "//Automated System Import Generation\nimport castleComponents.Environment;\n";
+		imports += "import castleComponents.SemanticGroup;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC != null){

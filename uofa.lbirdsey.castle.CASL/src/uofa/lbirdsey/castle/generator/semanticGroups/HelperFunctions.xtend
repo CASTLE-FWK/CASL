@@ -876,15 +876,15 @@ class HelperFunctions {
 			}				
 		} else if (iC.contains("<")) {
 			var typeBegin = iC.indexOf('<');
-			output += "import repastGroups.objects."+iC.substring(0,typeBegin) + ";"				
+			output += "import castleComponents.objects."+iC.substring(0,typeBegin) + ";"				
 			var typeEnd = iC.indexOf('>');
 			output += HelperFunctions.parseTypesAsString( locateType(iC.substring(typeBegin+1, typeEnd)), systemRoot);
 		} else if (iC.startsWith("Enums.")) { 
-			output += "import repastGroups."+iC+";"
+			output += "import castleComponents."+iC+";"
 		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))){
 			output = "";
 		}  else if (iC.length() > 0) {
-			output += "import repastGroups.objects."+iC+";";
+			output += "import castleComponents.objects."+iC+";";
 		}
 		return output;
 	}

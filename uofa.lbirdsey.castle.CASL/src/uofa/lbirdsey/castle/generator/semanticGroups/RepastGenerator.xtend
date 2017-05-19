@@ -20,7 +20,7 @@ import org.eclipse.xtext.generator.IGenerator2
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
-//import uofa.lbirdsey.castle.generator.repastGroups.HelperFunctions
+//import uofa.lbirdsey.castle.generator.castleComponents.HelperFunctions
 
 /**
  * Generates code from your model files on save. 
@@ -36,8 +36,8 @@ class RepastGenerator implements IGenerator2 {
 	var envsPkg = ".environments";
 	var grpsPkg = ".groups";
 	var objsPkg = "";
-	val lib = "repastGroups"
-	val lib_obj ="repastGroups.objects"
+	val lib = "castleComponents"
+	val lib_obj ="castleComponents.objects"
 	
 	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		throw new UnsupportedOperationException("TODO: auto-generated method stub")

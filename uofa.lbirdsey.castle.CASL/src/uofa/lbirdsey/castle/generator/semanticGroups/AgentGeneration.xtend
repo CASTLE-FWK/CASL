@@ -33,8 +33,8 @@ class AgentGeneration {
 	def setup(){
 		fileContents = printLocal() as String;
 		//Add in the imports
-		var imports = "//Automated Agent Import Generation\nimport repastGroups.Agent;\n";
-		imports += "import repastGroups.SemanticGroup;\n"
+		var imports = "//Automated Agent Import Generation\nimport castleComponents.Agent;\n";
+		imports += "import castleComponents.SemanticGroup;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC !== null){
