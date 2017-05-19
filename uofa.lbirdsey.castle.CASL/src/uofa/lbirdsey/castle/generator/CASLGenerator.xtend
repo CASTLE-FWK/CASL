@@ -4,7 +4,6 @@
 package uofa.lbirdsey.castle.generator
 
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator2
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
@@ -22,15 +21,15 @@ class CASLGenerator implements IGenerator2 {
 //	
 	
 	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		throw new UnsupportedOperationException("TODOccc: auto-generated method stub")
 	}
 	
 	override beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		throw new UnsupportedOperationException("TODOaaa: auto-generated method stub")
 	}
 	
 	override doGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		throw new UnsupportedOperationException("TODObbb: auto-generated method stub")
 	}
 	
 //		print("DOING NORMAL CASL GENERATION, NO REPAST")

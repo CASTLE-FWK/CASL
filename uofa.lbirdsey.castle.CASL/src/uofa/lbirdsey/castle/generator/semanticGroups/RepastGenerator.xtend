@@ -40,11 +40,13 @@ class RepastGenerator implements IGenerator2 {
 	val lib_obj ="repastGroups.objects"
 	
 	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+//		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		print("post generation")
 	}
 	
 	override beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+//		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		print("pre generation")
 	}
 	
 	
