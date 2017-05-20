@@ -3,7 +3,7 @@ package uofa.lbirdsey.castle.generator.semanticGroups
 import uofa.lbirdsey.castle.casl.Environment
 import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
-import uofa.lbirdsey.castle.casl.State_Block
+import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.LayoutType
 import java.util.ArrayList
 import org.eclipse.xtext.naming.IQualifiedNameProvider
@@ -143,7 +143,7 @@ class EnvironmentGeneration {
 				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
 				newImports.add(field as Field);
-			} else if (field instanceof State_Block){}			
+			} else if (field instanceof Concern){}			
 		}
 		
 		//Layout Parameter stuff
@@ -178,7 +178,7 @@ class EnvironmentGeneration {
 			}
 			if (function.name.compareTo("initialise") == 0){
 				for (sb : env.env_parameters.fields){
-					if (sb instanceof State_Block){
+					if (sb instanceof Concern){
 						for (sbf : sb.stateFields){
 							output += "\tregisterState(\""+sbf.ref.name+"\","+sbf.ref.name+");\n"
 						}
@@ -526,7 +526,7 @@ class EnvironmentGeneration {
 		public void phase_Cleanup(){
 			cleanupQueue.forEach(f -> f.apply(this));
 				«FOR sb : env.env_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					updateState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»

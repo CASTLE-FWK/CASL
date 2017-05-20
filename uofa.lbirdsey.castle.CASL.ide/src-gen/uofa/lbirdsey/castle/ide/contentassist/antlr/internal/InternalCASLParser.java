@@ -2613,23 +2613,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleFunctionParameter"
 
 
-    // $ANTLR start "entryRuleState_Block"
-    // InternalCASL.g:754:1: entryRuleState_Block : ruleState_Block EOF ;
-    public final void entryRuleState_Block() throws RecognitionException {
+    // $ANTLR start "entryRuleConcern"
+    // InternalCASL.g:754:1: entryRuleConcern : ruleConcern EOF ;
+    public final void entryRuleConcern() throws RecognitionException {
         try {
-            // InternalCASL.g:755:1: ( ruleState_Block EOF )
-            // InternalCASL.g:756:1: ruleState_Block EOF
+            // InternalCASL.g:755:1: ( ruleConcern EOF )
+            // InternalCASL.g:756:1: ruleConcern EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockRule()); 
+               before(grammarAccess.getConcernRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleState_Block();
+            ruleConcern();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockRule()); 
+               after(grammarAccess.getConcernRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -2644,30 +2644,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleState_Block"
+    // $ANTLR end "entryRuleConcern"
 
 
-    // $ANTLR start "ruleState_Block"
-    // InternalCASL.g:763:1: ruleState_Block : ( ( rule__State_Block__Group__0 ) ) ;
-    public final void ruleState_Block() throws RecognitionException {
+    // $ANTLR start "ruleConcern"
+    // InternalCASL.g:763:1: ruleConcern : ( ( rule__Concern__Group__0 ) ) ;
+    public final void ruleConcern() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:767:2: ( ( ( rule__State_Block__Group__0 ) ) )
-            // InternalCASL.g:768:2: ( ( rule__State_Block__Group__0 ) )
+            // InternalCASL.g:767:2: ( ( ( rule__Concern__Group__0 ) ) )
+            // InternalCASL.g:768:2: ( ( rule__Concern__Group__0 ) )
             {
-            // InternalCASL.g:768:2: ( ( rule__State_Block__Group__0 ) )
-            // InternalCASL.g:769:3: ( rule__State_Block__Group__0 )
+            // InternalCASL.g:768:2: ( ( rule__Concern__Group__0 ) )
+            // InternalCASL.g:769:3: ( rule__Concern__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getGroup()); 
+               before(grammarAccess.getConcernAccess().getGroup()); 
             }
-            // InternalCASL.g:770:3: ( rule__State_Block__Group__0 )
-            // InternalCASL.g:770:4: rule__State_Block__Group__0
+            // InternalCASL.g:770:3: ( rule__Concern__Group__0 )
+            // InternalCASL.g:770:4: rule__Concern__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__0();
+            rule__Concern__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2675,7 +2675,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getGroup()); 
+               after(grammarAccess.getConcernAccess().getGroup()); 
             }
 
             }
@@ -2695,7 +2695,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleState_Block"
+    // $ANTLR end "ruleConcern"
 
 
     // $ANTLR start "entryRuleState_Block_Refs"
@@ -42189,23 +42189,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FunctionParameter__Group_1_4__1__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__0"
-    // InternalCASL.g:12320:1: rule__State_Block__Group__0 : rule__State_Block__Group__0__Impl rule__State_Block__Group__1 ;
-    public final void rule__State_Block__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__0"
+    // InternalCASL.g:12320:1: rule__Concern__Group__0 : rule__Concern__Group__0__Impl rule__Concern__Group__1 ;
+    public final void rule__Concern__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12324:1: ( rule__State_Block__Group__0__Impl rule__State_Block__Group__1 )
-            // InternalCASL.g:12325:2: rule__State_Block__Group__0__Impl rule__State_Block__Group__1
+            // InternalCASL.g:12324:1: ( rule__Concern__Group__0__Impl rule__Concern__Group__1 )
+            // InternalCASL.g:12325:2: rule__Concern__Group__0__Impl rule__Concern__Group__1
             {
             pushFollow(FOLLOW_20);
-            rule__State_Block__Group__0__Impl();
+            rule__Concern__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__1();
+            rule__Concern__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42224,12 +42224,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__0"
+    // $ANTLR end "rule__Concern__Group__0"
 
 
-    // $ANTLR start "rule__State_Block__Group__0__Impl"
-    // InternalCASL.g:12332:1: rule__State_Block__Group__0__Impl : ( 'behavior_state' ) ;
-    public final void rule__State_Block__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__0__Impl"
+    // InternalCASL.g:12332:1: rule__Concern__Group__0__Impl : ( 'behavior_state' ) ;
+    public final void rule__Concern__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -42241,11 +42241,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12338:2: 'behavior_state'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getBehavior_stateKeyword_0()); 
+               before(grammarAccess.getConcernAccess().getBehavior_stateKeyword_0()); 
             }
             match(input,115,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getBehavior_stateKeyword_0()); 
+               after(grammarAccess.getConcernAccess().getBehavior_stateKeyword_0()); 
             }
 
             }
@@ -42265,26 +42265,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__0__Impl"
+    // $ANTLR end "rule__Concern__Group__0__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__1"
-    // InternalCASL.g:12347:1: rule__State_Block__Group__1 : rule__State_Block__Group__1__Impl rule__State_Block__Group__2 ;
-    public final void rule__State_Block__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__1"
+    // InternalCASL.g:12347:1: rule__Concern__Group__1 : rule__Concern__Group__1__Impl rule__Concern__Group__2 ;
+    public final void rule__Concern__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12351:1: ( rule__State_Block__Group__1__Impl rule__State_Block__Group__2 )
-            // InternalCASL.g:12352:2: rule__State_Block__Group__1__Impl rule__State_Block__Group__2
+            // InternalCASL.g:12351:1: ( rule__Concern__Group__1__Impl rule__Concern__Group__2 )
+            // InternalCASL.g:12352:2: rule__Concern__Group__1__Impl rule__Concern__Group__2
             {
             pushFollow(FOLLOW_39);
-            rule__State_Block__Group__1__Impl();
+            rule__Concern__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__2();
+            rule__Concern__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42303,30 +42303,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__1"
+    // $ANTLR end "rule__Concern__Group__1"
 
 
-    // $ANTLR start "rule__State_Block__Group__1__Impl"
-    // InternalCASL.g:12359:1: rule__State_Block__Group__1__Impl : ( ( rule__State_Block__NameAssignment_1 ) ) ;
-    public final void rule__State_Block__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__1__Impl"
+    // InternalCASL.g:12359:1: rule__Concern__Group__1__Impl : ( ( rule__Concern__NameAssignment_1 ) ) ;
+    public final void rule__Concern__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12363:1: ( ( ( rule__State_Block__NameAssignment_1 ) ) )
-            // InternalCASL.g:12364:1: ( ( rule__State_Block__NameAssignment_1 ) )
+            // InternalCASL.g:12363:1: ( ( ( rule__Concern__NameAssignment_1 ) ) )
+            // InternalCASL.g:12364:1: ( ( rule__Concern__NameAssignment_1 ) )
             {
-            // InternalCASL.g:12364:1: ( ( rule__State_Block__NameAssignment_1 ) )
-            // InternalCASL.g:12365:2: ( rule__State_Block__NameAssignment_1 )
+            // InternalCASL.g:12364:1: ( ( rule__Concern__NameAssignment_1 ) )
+            // InternalCASL.g:12365:2: ( rule__Concern__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getNameAssignment_1()); 
+               before(grammarAccess.getConcernAccess().getNameAssignment_1()); 
             }
-            // InternalCASL.g:12366:2: ( rule__State_Block__NameAssignment_1 )
-            // InternalCASL.g:12366:3: rule__State_Block__NameAssignment_1
+            // InternalCASL.g:12366:2: ( rule__Concern__NameAssignment_1 )
+            // InternalCASL.g:12366:3: rule__Concern__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__NameAssignment_1();
+            rule__Concern__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42334,7 +42334,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getNameAssignment_1()); 
+               after(grammarAccess.getConcernAccess().getNameAssignment_1()); 
             }
 
             }
@@ -42354,26 +42354,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__1__Impl"
+    // $ANTLR end "rule__Concern__Group__1__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__2"
-    // InternalCASL.g:12374:1: rule__State_Block__Group__2 : rule__State_Block__Group__2__Impl rule__State_Block__Group__3 ;
-    public final void rule__State_Block__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__2"
+    // InternalCASL.g:12374:1: rule__Concern__Group__2 : rule__Concern__Group__2__Impl rule__Concern__Group__3 ;
+    public final void rule__Concern__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12378:1: ( rule__State_Block__Group__2__Impl rule__State_Block__Group__3 )
-            // InternalCASL.g:12379:2: rule__State_Block__Group__2__Impl rule__State_Block__Group__3
+            // InternalCASL.g:12378:1: ( rule__Concern__Group__2__Impl rule__Concern__Group__3 )
+            // InternalCASL.g:12379:2: rule__Concern__Group__2__Impl rule__Concern__Group__3
             {
             pushFollow(FOLLOW_6);
-            rule__State_Block__Group__2__Impl();
+            rule__Concern__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__3();
+            rule__Concern__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42392,12 +42392,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__2"
+    // $ANTLR end "rule__Concern__Group__2"
 
 
-    // $ANTLR start "rule__State_Block__Group__2__Impl"
-    // InternalCASL.g:12386:1: rule__State_Block__Group__2__Impl : ( ':' ) ;
-    public final void rule__State_Block__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__2__Impl"
+    // InternalCASL.g:12386:1: rule__Concern__Group__2__Impl : ( ':' ) ;
+    public final void rule__Concern__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -42409,11 +42409,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12392:2: ':'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getColonKeyword_2()); 
+               before(grammarAccess.getConcernAccess().getColonKeyword_2()); 
             }
             match(input,92,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getColonKeyword_2()); 
+               after(grammarAccess.getConcernAccess().getColonKeyword_2()); 
             }
 
             }
@@ -42433,26 +42433,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__2__Impl"
+    // $ANTLR end "rule__Concern__Group__2__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__3"
-    // InternalCASL.g:12401:1: rule__State_Block__Group__3 : rule__State_Block__Group__3__Impl rule__State_Block__Group__4 ;
-    public final void rule__State_Block__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__3"
+    // InternalCASL.g:12401:1: rule__Concern__Group__3 : rule__Concern__Group__3__Impl rule__Concern__Group__4 ;
+    public final void rule__Concern__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12405:1: ( rule__State_Block__Group__3__Impl rule__State_Block__Group__4 )
-            // InternalCASL.g:12406:2: rule__State_Block__Group__3__Impl rule__State_Block__Group__4
+            // InternalCASL.g:12405:1: ( rule__Concern__Group__3__Impl rule__Concern__Group__4 )
+            // InternalCASL.g:12406:2: rule__Concern__Group__3__Impl rule__Concern__Group__4
             {
             pushFollow(FOLLOW_10);
-            rule__State_Block__Group__3__Impl();
+            rule__Concern__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__4();
+            rule__Concern__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42471,12 +42471,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__3"
+    // $ANTLR end "rule__Concern__Group__3"
 
 
-    // $ANTLR start "rule__State_Block__Group__3__Impl"
-    // InternalCASL.g:12413:1: rule__State_Block__Group__3__Impl : ( '{' ) ;
-    public final void rule__State_Block__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__3__Impl"
+    // InternalCASL.g:12413:1: rule__Concern__Group__3__Impl : ( '{' ) ;
+    public final void rule__Concern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -42488,11 +42488,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12419:2: '{'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getLeftCurlyBracketKeyword_3()); 
+               before(grammarAccess.getConcernAccess().getLeftCurlyBracketKeyword_3()); 
             }
             match(input,73,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getLeftCurlyBracketKeyword_3()); 
+               after(grammarAccess.getConcernAccess().getLeftCurlyBracketKeyword_3()); 
             }
 
             }
@@ -42512,26 +42512,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__3__Impl"
+    // $ANTLR end "rule__Concern__Group__3__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__4"
-    // InternalCASL.g:12428:1: rule__State_Block__Group__4 : rule__State_Block__Group__4__Impl rule__State_Block__Group__5 ;
-    public final void rule__State_Block__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__4"
+    // InternalCASL.g:12428:1: rule__Concern__Group__4 : rule__Concern__Group__4__Impl rule__Concern__Group__5 ;
+    public final void rule__Concern__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12432:1: ( rule__State_Block__Group__4__Impl rule__State_Block__Group__5 )
-            // InternalCASL.g:12433:2: rule__State_Block__Group__4__Impl rule__State_Block__Group__5
+            // InternalCASL.g:12432:1: ( rule__Concern__Group__4__Impl rule__Concern__Group__5 )
+            // InternalCASL.g:12433:2: rule__Concern__Group__4__Impl rule__Concern__Group__5
             {
             pushFollow(FOLLOW_8);
-            rule__State_Block__Group__4__Impl();
+            rule__Concern__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__5();
+            rule__Concern__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42550,12 +42550,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__4"
+    // $ANTLR end "rule__Concern__Group__4"
 
 
-    // $ANTLR start "rule__State_Block__Group__4__Impl"
-    // InternalCASL.g:12440:1: rule__State_Block__Group__4__Impl : ( 'description:' ) ;
-    public final void rule__State_Block__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__4__Impl"
+    // InternalCASL.g:12440:1: rule__Concern__Group__4__Impl : ( 'description:' ) ;
+    public final void rule__Concern__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -42567,11 +42567,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12446:2: 'description:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getDescriptionKeyword_4()); 
+               before(grammarAccess.getConcernAccess().getDescriptionKeyword_4()); 
             }
             match(input,76,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getDescriptionKeyword_4()); 
+               after(grammarAccess.getConcernAccess().getDescriptionKeyword_4()); 
             }
 
             }
@@ -42591,26 +42591,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__4__Impl"
+    // $ANTLR end "rule__Concern__Group__4__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__5"
-    // InternalCASL.g:12455:1: rule__State_Block__Group__5 : rule__State_Block__Group__5__Impl rule__State_Block__Group__6 ;
-    public final void rule__State_Block__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__5"
+    // InternalCASL.g:12455:1: rule__Concern__Group__5 : rule__Concern__Group__5__Impl rule__Concern__Group__6 ;
+    public final void rule__Concern__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12459:1: ( rule__State_Block__Group__5__Impl rule__State_Block__Group__6 )
-            // InternalCASL.g:12460:2: rule__State_Block__Group__5__Impl rule__State_Block__Group__6
+            // InternalCASL.g:12459:1: ( rule__Concern__Group__5__Impl rule__Concern__Group__6 )
+            // InternalCASL.g:12460:2: rule__Concern__Group__5__Impl rule__Concern__Group__6
             {
             pushFollow(FOLLOW_9);
-            rule__State_Block__Group__5__Impl();
+            rule__Concern__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__6();
+            rule__Concern__Group__6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42629,30 +42629,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__5"
+    // $ANTLR end "rule__Concern__Group__5"
 
 
-    // $ANTLR start "rule__State_Block__Group__5__Impl"
-    // InternalCASL.g:12467:1: rule__State_Block__Group__5__Impl : ( ( rule__State_Block__DescAssignment_5 ) ) ;
-    public final void rule__State_Block__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__5__Impl"
+    // InternalCASL.g:12467:1: rule__Concern__Group__5__Impl : ( ( rule__Concern__DescAssignment_5 ) ) ;
+    public final void rule__Concern__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12471:1: ( ( ( rule__State_Block__DescAssignment_5 ) ) )
-            // InternalCASL.g:12472:1: ( ( rule__State_Block__DescAssignment_5 ) )
+            // InternalCASL.g:12471:1: ( ( ( rule__Concern__DescAssignment_5 ) ) )
+            // InternalCASL.g:12472:1: ( ( rule__Concern__DescAssignment_5 ) )
             {
-            // InternalCASL.g:12472:1: ( ( rule__State_Block__DescAssignment_5 ) )
-            // InternalCASL.g:12473:2: ( rule__State_Block__DescAssignment_5 )
+            // InternalCASL.g:12472:1: ( ( rule__Concern__DescAssignment_5 ) )
+            // InternalCASL.g:12473:2: ( rule__Concern__DescAssignment_5 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getDescAssignment_5()); 
+               before(grammarAccess.getConcernAccess().getDescAssignment_5()); 
             }
-            // InternalCASL.g:12474:2: ( rule__State_Block__DescAssignment_5 )
-            // InternalCASL.g:12474:3: rule__State_Block__DescAssignment_5
+            // InternalCASL.g:12474:2: ( rule__Concern__DescAssignment_5 )
+            // InternalCASL.g:12474:3: rule__Concern__DescAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__DescAssignment_5();
+            rule__Concern__DescAssignment_5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42660,7 +42660,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getDescAssignment_5()); 
+               after(grammarAccess.getConcernAccess().getDescAssignment_5()); 
             }
 
             }
@@ -42680,26 +42680,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__5__Impl"
+    // $ANTLR end "rule__Concern__Group__5__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__6"
-    // InternalCASL.g:12482:1: rule__State_Block__Group__6 : rule__State_Block__Group__6__Impl rule__State_Block__Group__7 ;
-    public final void rule__State_Block__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__6"
+    // InternalCASL.g:12482:1: rule__Concern__Group__6 : rule__Concern__Group__6__Impl rule__Concern__Group__7 ;
+    public final void rule__Concern__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12486:1: ( rule__State_Block__Group__6__Impl rule__State_Block__Group__7 )
-            // InternalCASL.g:12487:2: rule__State_Block__Group__6__Impl rule__State_Block__Group__7
+            // InternalCASL.g:12486:1: ( rule__Concern__Group__6__Impl rule__Concern__Group__7 )
+            // InternalCASL.g:12487:2: rule__Concern__Group__6__Impl rule__Concern__Group__7
             {
             pushFollow(FOLLOW_20);
-            rule__State_Block__Group__6__Impl();
+            rule__Concern__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__7();
+            rule__Concern__Group__7();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42718,12 +42718,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__6"
+    // $ANTLR end "rule__Concern__Group__6"
 
 
-    // $ANTLR start "rule__State_Block__Group__6__Impl"
-    // InternalCASL.g:12494:1: rule__State_Block__Group__6__Impl : ( ';' ) ;
-    public final void rule__State_Block__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__6__Impl"
+    // InternalCASL.g:12494:1: rule__Concern__Group__6__Impl : ( ';' ) ;
+    public final void rule__Concern__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -42735,11 +42735,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12500:2: ';'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getSemicolonKeyword_6()); 
+               before(grammarAccess.getConcernAccess().getSemicolonKeyword_6()); 
             }
             match(input,75,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getSemicolonKeyword_6()); 
+               after(grammarAccess.getConcernAccess().getSemicolonKeyword_6()); 
             }
 
             }
@@ -42759,26 +42759,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__6__Impl"
+    // $ANTLR end "rule__Concern__Group__6__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__7"
-    // InternalCASL.g:12509:1: rule__State_Block__Group__7 : rule__State_Block__Group__7__Impl rule__State_Block__Group__8 ;
-    public final void rule__State_Block__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__7"
+    // InternalCASL.g:12509:1: rule__Concern__Group__7 : rule__Concern__Group__7__Impl rule__Concern__Group__8 ;
+    public final void rule__Concern__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12513:1: ( rule__State_Block__Group__7__Impl rule__State_Block__Group__8 )
-            // InternalCASL.g:12514:2: rule__State_Block__Group__7__Impl rule__State_Block__Group__8
+            // InternalCASL.g:12513:1: ( rule__Concern__Group__7__Impl rule__Concern__Group__8 )
+            // InternalCASL.g:12514:2: rule__Concern__Group__7__Impl rule__Concern__Group__8
             {
             pushFollow(FOLLOW_21);
-            rule__State_Block__Group__7__Impl();
+            rule__Concern__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__8();
+            rule__Concern__Group__8();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42797,30 +42797,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__7"
+    // $ANTLR end "rule__Concern__Group__7"
 
 
-    // $ANTLR start "rule__State_Block__Group__7__Impl"
-    // InternalCASL.g:12521:1: rule__State_Block__Group__7__Impl : ( ( rule__State_Block__StateFieldsAssignment_7 ) ) ;
-    public final void rule__State_Block__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__7__Impl"
+    // InternalCASL.g:12521:1: rule__Concern__Group__7__Impl : ( ( rule__Concern__StateFieldsAssignment_7 ) ) ;
+    public final void rule__Concern__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12525:1: ( ( ( rule__State_Block__StateFieldsAssignment_7 ) ) )
-            // InternalCASL.g:12526:1: ( ( rule__State_Block__StateFieldsAssignment_7 ) )
+            // InternalCASL.g:12525:1: ( ( ( rule__Concern__StateFieldsAssignment_7 ) ) )
+            // InternalCASL.g:12526:1: ( ( rule__Concern__StateFieldsAssignment_7 ) )
             {
-            // InternalCASL.g:12526:1: ( ( rule__State_Block__StateFieldsAssignment_7 ) )
-            // InternalCASL.g:12527:2: ( rule__State_Block__StateFieldsAssignment_7 )
+            // InternalCASL.g:12526:1: ( ( rule__Concern__StateFieldsAssignment_7 ) )
+            // InternalCASL.g:12527:2: ( rule__Concern__StateFieldsAssignment_7 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_7()); 
+               before(grammarAccess.getConcernAccess().getStateFieldsAssignment_7()); 
             }
-            // InternalCASL.g:12528:2: ( rule__State_Block__StateFieldsAssignment_7 )
-            // InternalCASL.g:12528:3: rule__State_Block__StateFieldsAssignment_7
+            // InternalCASL.g:12528:2: ( rule__Concern__StateFieldsAssignment_7 )
+            // InternalCASL.g:12528:3: rule__Concern__StateFieldsAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__StateFieldsAssignment_7();
+            rule__Concern__StateFieldsAssignment_7();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42828,7 +42828,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_7()); 
+               after(grammarAccess.getConcernAccess().getStateFieldsAssignment_7()); 
             }
 
             }
@@ -42848,26 +42848,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__7__Impl"
+    // $ANTLR end "rule__Concern__Group__7__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__8"
-    // InternalCASL.g:12536:1: rule__State_Block__Group__8 : rule__State_Block__Group__8__Impl rule__State_Block__Group__9 ;
-    public final void rule__State_Block__Group__8() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__8"
+    // InternalCASL.g:12536:1: rule__Concern__Group__8 : rule__Concern__Group__8__Impl rule__Concern__Group__9 ;
+    public final void rule__Concern__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12540:1: ( rule__State_Block__Group__8__Impl rule__State_Block__Group__9 )
-            // InternalCASL.g:12541:2: rule__State_Block__Group__8__Impl rule__State_Block__Group__9
+            // InternalCASL.g:12540:1: ( rule__Concern__Group__8__Impl rule__Concern__Group__9 )
+            // InternalCASL.g:12541:2: rule__Concern__Group__8__Impl rule__Concern__Group__9
             {
             pushFollow(FOLLOW_21);
-            rule__State_Block__Group__8__Impl();
+            rule__Concern__Group__8__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__9();
+            rule__Concern__Group__9();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42886,26 +42886,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__8"
+    // $ANTLR end "rule__Concern__Group__8"
 
 
-    // $ANTLR start "rule__State_Block__Group__8__Impl"
-    // InternalCASL.g:12548:1: rule__State_Block__Group__8__Impl : ( ( rule__State_Block__Group_8__0 )* ) ;
-    public final void rule__State_Block__Group__8__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__8__Impl"
+    // InternalCASL.g:12548:1: rule__Concern__Group__8__Impl : ( ( rule__Concern__Group_8__0 )* ) ;
+    public final void rule__Concern__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12552:1: ( ( ( rule__State_Block__Group_8__0 )* ) )
-            // InternalCASL.g:12553:1: ( ( rule__State_Block__Group_8__0 )* )
+            // InternalCASL.g:12552:1: ( ( ( rule__Concern__Group_8__0 )* ) )
+            // InternalCASL.g:12553:1: ( ( rule__Concern__Group_8__0 )* )
             {
-            // InternalCASL.g:12553:1: ( ( rule__State_Block__Group_8__0 )* )
-            // InternalCASL.g:12554:2: ( rule__State_Block__Group_8__0 )*
+            // InternalCASL.g:12553:1: ( ( rule__Concern__Group_8__0 )* )
+            // InternalCASL.g:12554:2: ( rule__Concern__Group_8__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getGroup_8()); 
+               before(grammarAccess.getConcernAccess().getGroup_8()); 
             }
-            // InternalCASL.g:12555:2: ( rule__State_Block__Group_8__0 )*
+            // InternalCASL.g:12555:2: ( rule__Concern__Group_8__0 )*
             loop93:
             do {
                 int alt93=2;
@@ -42918,10 +42918,10 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
                 switch (alt93) {
             	case 1 :
-            	    // InternalCASL.g:12555:3: rule__State_Block__Group_8__0
+            	    // InternalCASL.g:12555:3: rule__Concern__Group_8__0
             	    {
             	    pushFollow(FOLLOW_22);
-            	    rule__State_Block__Group_8__0();
+            	    rule__Concern__Group_8__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -42935,7 +42935,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getGroup_8()); 
+               after(grammarAccess.getConcernAccess().getGroup_8()); 
             }
 
             }
@@ -42955,26 +42955,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__8__Impl"
+    // $ANTLR end "rule__Concern__Group__8__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__9"
-    // InternalCASL.g:12563:1: rule__State_Block__Group__9 : rule__State_Block__Group__9__Impl rule__State_Block__Group__10 ;
-    public final void rule__State_Block__Group__9() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__9"
+    // InternalCASL.g:12563:1: rule__Concern__Group__9 : rule__Concern__Group__9__Impl rule__Concern__Group__10 ;
+    public final void rule__Concern__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12567:1: ( rule__State_Block__Group__9__Impl rule__State_Block__Group__10 )
-            // InternalCASL.g:12568:2: rule__State_Block__Group__9__Impl rule__State_Block__Group__10
+            // InternalCASL.g:12567:1: ( rule__Concern__Group__9__Impl rule__Concern__Group__10 )
+            // InternalCASL.g:12568:2: rule__Concern__Group__9__Impl rule__Concern__Group__10
             {
             pushFollow(FOLLOW_13);
-            rule__State_Block__Group__9__Impl();
+            rule__Concern__Group__9__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__10();
+            rule__Concern__Group__10();
 
             state._fsp--;
             if (state.failed) return ;
@@ -42993,12 +42993,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__9"
+    // $ANTLR end "rule__Concern__Group__9"
 
 
-    // $ANTLR start "rule__State_Block__Group__9__Impl"
-    // InternalCASL.g:12575:1: rule__State_Block__Group__9__Impl : ( ';' ) ;
-    public final void rule__State_Block__Group__9__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__9__Impl"
+    // InternalCASL.g:12575:1: rule__Concern__Group__9__Impl : ( ';' ) ;
+    public final void rule__Concern__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -43010,11 +43010,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12581:2: ';'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getSemicolonKeyword_9()); 
+               before(grammarAccess.getConcernAccess().getSemicolonKeyword_9()); 
             }
             match(input,75,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getSemicolonKeyword_9()); 
+               after(grammarAccess.getConcernAccess().getSemicolonKeyword_9()); 
             }
 
             }
@@ -43034,21 +43034,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__9__Impl"
+    // $ANTLR end "rule__Concern__Group__9__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group__10"
-    // InternalCASL.g:12590:1: rule__State_Block__Group__10 : rule__State_Block__Group__10__Impl ;
-    public final void rule__State_Block__Group__10() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__10"
+    // InternalCASL.g:12590:1: rule__Concern__Group__10 : rule__Concern__Group__10__Impl ;
+    public final void rule__Concern__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12594:1: ( rule__State_Block__Group__10__Impl )
-            // InternalCASL.g:12595:2: rule__State_Block__Group__10__Impl
+            // InternalCASL.g:12594:1: ( rule__Concern__Group__10__Impl )
+            // InternalCASL.g:12595:2: rule__Concern__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group__10__Impl();
+            rule__Concern__Group__10__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -43067,12 +43067,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__10"
+    // $ANTLR end "rule__Concern__Group__10"
 
 
-    // $ANTLR start "rule__State_Block__Group__10__Impl"
-    // InternalCASL.g:12601:1: rule__State_Block__Group__10__Impl : ( '};' ) ;
-    public final void rule__State_Block__Group__10__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group__10__Impl"
+    // InternalCASL.g:12601:1: rule__Concern__Group__10__Impl : ( '};' ) ;
+    public final void rule__Concern__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -43084,11 +43084,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12607:2: '};'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getRightCurlyBracketSemicolonKeyword_10()); 
+               before(grammarAccess.getConcernAccess().getRightCurlyBracketSemicolonKeyword_10()); 
             }
             match(input,78,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getRightCurlyBracketSemicolonKeyword_10()); 
+               after(grammarAccess.getConcernAccess().getRightCurlyBracketSemicolonKeyword_10()); 
             }
 
             }
@@ -43108,26 +43108,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group__10__Impl"
+    // $ANTLR end "rule__Concern__Group__10__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group_8__0"
-    // InternalCASL.g:12617:1: rule__State_Block__Group_8__0 : rule__State_Block__Group_8__0__Impl rule__State_Block__Group_8__1 ;
-    public final void rule__State_Block__Group_8__0() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group_8__0"
+    // InternalCASL.g:12617:1: rule__Concern__Group_8__0 : rule__Concern__Group_8__0__Impl rule__Concern__Group_8__1 ;
+    public final void rule__Concern__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12621:1: ( rule__State_Block__Group_8__0__Impl rule__State_Block__Group_8__1 )
-            // InternalCASL.g:12622:2: rule__State_Block__Group_8__0__Impl rule__State_Block__Group_8__1
+            // InternalCASL.g:12621:1: ( rule__Concern__Group_8__0__Impl rule__Concern__Group_8__1 )
+            // InternalCASL.g:12622:2: rule__Concern__Group_8__0__Impl rule__Concern__Group_8__1
             {
             pushFollow(FOLLOW_20);
-            rule__State_Block__Group_8__0__Impl();
+            rule__Concern__Group_8__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group_8__1();
+            rule__Concern__Group_8__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -43146,12 +43146,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group_8__0"
+    // $ANTLR end "rule__Concern__Group_8__0"
 
 
-    // $ANTLR start "rule__State_Block__Group_8__0__Impl"
-    // InternalCASL.g:12629:1: rule__State_Block__Group_8__0__Impl : ( ',' ) ;
-    public final void rule__State_Block__Group_8__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group_8__0__Impl"
+    // InternalCASL.g:12629:1: rule__Concern__Group_8__0__Impl : ( ',' ) ;
+    public final void rule__Concern__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -43163,11 +43163,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:12635:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getCommaKeyword_8_0()); 
+               before(grammarAccess.getConcernAccess().getCommaKeyword_8_0()); 
             }
             match(input,80,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getCommaKeyword_8_0()); 
+               after(grammarAccess.getConcernAccess().getCommaKeyword_8_0()); 
             }
 
             }
@@ -43187,21 +43187,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group_8__0__Impl"
+    // $ANTLR end "rule__Concern__Group_8__0__Impl"
 
 
-    // $ANTLR start "rule__State_Block__Group_8__1"
-    // InternalCASL.g:12644:1: rule__State_Block__Group_8__1 : rule__State_Block__Group_8__1__Impl ;
-    public final void rule__State_Block__Group_8__1() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group_8__1"
+    // InternalCASL.g:12644:1: rule__Concern__Group_8__1 : rule__Concern__Group_8__1__Impl ;
+    public final void rule__Concern__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12648:1: ( rule__State_Block__Group_8__1__Impl )
-            // InternalCASL.g:12649:2: rule__State_Block__Group_8__1__Impl
+            // InternalCASL.g:12648:1: ( rule__Concern__Group_8__1__Impl )
+            // InternalCASL.g:12649:2: rule__Concern__Group_8__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__Group_8__1__Impl();
+            rule__Concern__Group_8__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -43220,30 +43220,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group_8__1"
+    // $ANTLR end "rule__Concern__Group_8__1"
 
 
-    // $ANTLR start "rule__State_Block__Group_8__1__Impl"
-    // InternalCASL.g:12655:1: rule__State_Block__Group_8__1__Impl : ( ( rule__State_Block__StateFieldsAssignment_8_1 ) ) ;
-    public final void rule__State_Block__Group_8__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Concern__Group_8__1__Impl"
+    // InternalCASL.g:12655:1: rule__Concern__Group_8__1__Impl : ( ( rule__Concern__StateFieldsAssignment_8_1 ) ) ;
+    public final void rule__Concern__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:12659:1: ( ( ( rule__State_Block__StateFieldsAssignment_8_1 ) ) )
-            // InternalCASL.g:12660:1: ( ( rule__State_Block__StateFieldsAssignment_8_1 ) )
+            // InternalCASL.g:12659:1: ( ( ( rule__Concern__StateFieldsAssignment_8_1 ) ) )
+            // InternalCASL.g:12660:1: ( ( rule__Concern__StateFieldsAssignment_8_1 ) )
             {
-            // InternalCASL.g:12660:1: ( ( rule__State_Block__StateFieldsAssignment_8_1 ) )
-            // InternalCASL.g:12661:2: ( rule__State_Block__StateFieldsAssignment_8_1 )
+            // InternalCASL.g:12660:1: ( ( rule__Concern__StateFieldsAssignment_8_1 ) )
+            // InternalCASL.g:12661:2: ( rule__Concern__StateFieldsAssignment_8_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_8_1()); 
+               before(grammarAccess.getConcernAccess().getStateFieldsAssignment_8_1()); 
             }
-            // InternalCASL.g:12662:2: ( rule__State_Block__StateFieldsAssignment_8_1 )
-            // InternalCASL.g:12662:3: rule__State_Block__StateFieldsAssignment_8_1
+            // InternalCASL.g:12662:2: ( rule__Concern__StateFieldsAssignment_8_1 )
+            // InternalCASL.g:12662:3: rule__Concern__StateFieldsAssignment_8_1
             {
             pushFollow(FOLLOW_2);
-            rule__State_Block__StateFieldsAssignment_8_1();
+            rule__Concern__StateFieldsAssignment_8_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -43251,7 +43251,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_8_1()); 
+               after(grammarAccess.getConcernAccess().getStateFieldsAssignment_8_1()); 
             }
 
             }
@@ -43271,7 +43271,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__Group_8__1__Impl"
+    // $ANTLR end "rule__Concern__Group_8__1__Impl"
 
 
     // $ANTLR start "rule__Behavior__Group__0"
@@ -95924,28 +95924,28 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameters__FieldsAssignment_3_0_1"
-    // InternalCASL.g:29538:1: rule__Parameters__FieldsAssignment_3_0_1 : ( ruleState_Block ) ;
+    // InternalCASL.g:29538:1: rule__Parameters__FieldsAssignment_3_0_1 : ( ruleConcern ) ;
     public final void rule__Parameters__FieldsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:29542:1: ( ( ruleState_Block ) )
-            // InternalCASL.g:29543:2: ( ruleState_Block )
+            // InternalCASL.g:29542:1: ( ( ruleConcern ) )
+            // InternalCASL.g:29543:2: ( ruleConcern )
             {
-            // InternalCASL.g:29543:2: ( ruleState_Block )
-            // InternalCASL.g:29544:3: ruleState_Block
+            // InternalCASL.g:29543:2: ( ruleConcern )
+            // InternalCASL.g:29544:3: ruleConcern
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getParametersAccess().getFieldsState_BlockParserRuleCall_3_0_1_0()); 
+               before(grammarAccess.getParametersAccess().getFieldsConcernParserRuleCall_3_0_1_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleState_Block();
+            ruleConcern();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getParametersAccess().getFieldsState_BlockParserRuleCall_3_0_1_0()); 
+               after(grammarAccess.getParametersAccess().getFieldsConcernParserRuleCall_3_0_1_0()); 
             }
 
             }
@@ -97566,9 +97566,9 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FunctionParameter__NameAssignment_3"
 
 
-    // $ANTLR start "rule__State_Block__NameAssignment_1"
-    // InternalCASL.g:30107:1: rule__State_Block__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__State_Block__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Concern__NameAssignment_1"
+    // InternalCASL.g:30107:1: rule__Concern__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Concern__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -97580,11 +97580,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:30113:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getNameIDTerminalRuleCall_1_0()); 
+               before(grammarAccess.getConcernAccess().getNameIDTerminalRuleCall_1_0()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getNameIDTerminalRuleCall_1_0()); 
+               after(grammarAccess.getConcernAccess().getNameIDTerminalRuleCall_1_0()); 
             }
 
             }
@@ -97604,12 +97604,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__NameAssignment_1"
+    // $ANTLR end "rule__Concern__NameAssignment_1"
 
 
-    // $ANTLR start "rule__State_Block__DescAssignment_5"
-    // InternalCASL.g:30122:1: rule__State_Block__DescAssignment_5 : ( RULE_STRING ) ;
-    public final void rule__State_Block__DescAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Concern__DescAssignment_5"
+    // InternalCASL.g:30122:1: rule__Concern__DescAssignment_5 : ( RULE_STRING ) ;
+    public final void rule__Concern__DescAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -97621,11 +97621,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:30128:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getDescSTRINGTerminalRuleCall_5_0()); 
+               before(grammarAccess.getConcernAccess().getDescSTRINGTerminalRuleCall_5_0()); 
             }
             match(input,RULE_STRING,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getDescSTRINGTerminalRuleCall_5_0()); 
+               after(grammarAccess.getConcernAccess().getDescSTRINGTerminalRuleCall_5_0()); 
             }
 
             }
@@ -97645,12 +97645,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__DescAssignment_5"
+    // $ANTLR end "rule__Concern__DescAssignment_5"
 
 
-    // $ANTLR start "rule__State_Block__StateFieldsAssignment_7"
-    // InternalCASL.g:30137:1: rule__State_Block__StateFieldsAssignment_7 : ( ruleState_Block_Refs ) ;
-    public final void rule__State_Block__StateFieldsAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__Concern__StateFieldsAssignment_7"
+    // InternalCASL.g:30137:1: rule__Concern__StateFieldsAssignment_7 : ( ruleState_Block_Refs ) ;
+    public final void rule__Concern__StateFieldsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -97662,7 +97662,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:30143:3: ruleState_Block_Refs
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0()); 
+               before(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleState_Block_Refs();
@@ -97670,7 +97670,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0()); 
+               after(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0()); 
             }
 
             }
@@ -97690,12 +97690,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__StateFieldsAssignment_7"
+    // $ANTLR end "rule__Concern__StateFieldsAssignment_7"
 
 
-    // $ANTLR start "rule__State_Block__StateFieldsAssignment_8_1"
-    // InternalCASL.g:30152:1: rule__State_Block__StateFieldsAssignment_8_1 : ( ruleState_Block_Refs ) ;
-    public final void rule__State_Block__StateFieldsAssignment_8_1() throws RecognitionException {
+    // $ANTLR start "rule__Concern__StateFieldsAssignment_8_1"
+    // InternalCASL.g:30152:1: rule__Concern__StateFieldsAssignment_8_1 : ( ruleState_Block_Refs ) ;
+    public final void rule__Concern__StateFieldsAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -97707,7 +97707,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:30158:3: ruleState_Block_Refs
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0()); 
+               before(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleState_Block_Refs();
@@ -97715,7 +97715,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0()); 
+               after(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0()); 
             }
 
             }
@@ -97735,7 +97735,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__State_Block__StateFieldsAssignment_8_1"
+    // $ANTLR end "rule__Concern__StateFieldsAssignment_8_1"
 
 
     // $ANTLR start "rule__State_Block_Refs__RefAssignment"

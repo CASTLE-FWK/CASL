@@ -235,7 +235,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass state_BlockEClass = null;
+  private EClass concernEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2248,13 +2248,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getState_Block()
+  public EClass getConcern()
   {
-    if (state_BlockEClass == null)
+    if (concernEClass == null)
     {
-      state_BlockEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(37);
+      concernEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(37);
     }
-    return state_BlockEClass;
+    return concernEClass;
   }
 
   /**
@@ -2262,9 +2262,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getState_Block_Name()
+  public EAttribute getConcern_Name()
   {
-        return (EAttribute)getState_Block().getEStructuralFeatures().get(0);
+        return (EAttribute)getConcern().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2272,9 +2272,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getState_Block_Desc()
+  public EAttribute getConcern_Desc()
   {
-        return (EAttribute)getState_Block().getEStructuralFeatures().get(1);
+        return (EAttribute)getConcern().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2282,9 +2282,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getState_Block_StateFields()
+  public EReference getConcern_StateFields()
   {
-        return (EReference)getState_Block().getEStructuralFeatures().get(2);
+        return (EReference)getConcern().getEStructuralFeatures().get(2);
   }
 
   /**

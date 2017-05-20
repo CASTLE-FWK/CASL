@@ -1636,7 +1636,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFieldsAssignment_3_0_0 = (Assignment)cAlternatives_3_0.eContents().get(0);
 		private final RuleCall cFieldsFieldParserRuleCall_3_0_0_0 = (RuleCall)cFieldsAssignment_3_0_0.eContents().get(0);
 		private final Assignment cFieldsAssignment_3_0_1 = (Assignment)cAlternatives_3_0.eContents().get(1);
-		private final RuleCall cFieldsState_BlockParserRuleCall_3_0_1_0 = (RuleCall)cFieldsAssignment_3_0_1.eContents().get(0);
+		private final RuleCall cFieldsConcernParserRuleCall_3_0_1_0 = (RuleCall)cFieldsAssignment_3_0_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
@@ -1644,13 +1644,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	{Parameters}
 		//	// 	name = 'fields' //How can we force a name so that eclipse is happy?
 		//	//	name = "parameters" ': {' //Gah How
-		//	'parameters:' '{' ((fields+=Field | fields+=State_Block) ';')*
+		//	'parameters:' '{' ((fields+=Field | fields+=Concern) ';')*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Parameters} // 	name = 'fields' //How can we force a name so that eclipse is happy?
 		////	name = "parameters" ': {' //Gah How
-		//'parameters:' '{' ((fields+=Field | fields+=State_Block) ';')* '};'
+		//'parameters:' '{' ((fields+=Field | fields+=Concern) ';')* '};'
 		public Group getGroup() { return cGroup; }
 		
 		//{Parameters}
@@ -1664,10 +1664,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//((fields+=Field | fields+=State_Block) ';')*
+		//((fields+=Field | fields+=Concern) ';')*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//fields+=Field | fields+=State_Block
+		//fields+=Field | fields+=Concern
 		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
 		
 		//fields+=Field
@@ -1676,11 +1676,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//Field
 		public RuleCall getFieldsFieldParserRuleCall_3_0_0_0() { return cFieldsFieldParserRuleCall_3_0_0_0; }
 		
-		//fields+=State_Block
+		//fields+=Concern
 		public Assignment getFieldsAssignment_3_0_1() { return cFieldsAssignment_3_0_1; }
 		
-		//State_Block
-		public RuleCall getFieldsState_BlockParserRuleCall_3_0_1_0() { return cFieldsState_BlockParserRuleCall_3_0_1_0; }
+		//Concern
+		public RuleCall getFieldsConcernParserRuleCall_3_0_1_0() { return cFieldsConcernParserRuleCall_3_0_1_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
@@ -2345,8 +2345,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 	}
-	public class State_BlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.State_Block");
+	public class ConcernElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Concern");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBehavior_stateKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -2368,7 +2368,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		///*These StateBlocks inform things
 		// * 
-		// * */ State_Block:
+		// * */ Concern:
 		//	"behavior_state" name=ID ':' '{'
 		//	"description:" desc=STRING ';'
 		//	stateFields+=State_Block_Refs (',' stateFields+=State_Block_Refs)* ';'
@@ -8328,7 +8328,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final FunctionElements pFunction;
 	private final FunctionsElements pFunctions;
 	private final FunctionParameterElements pFunctionParameter;
-	private final State_BlockElements pState_Block;
+	private final ConcernElements pConcern;
 	private final State_Block_RefsElements pState_Block_Refs;
 	private final BehaviorElements pBehavior;
 	private final BehaviorsElements pBehaviors;
@@ -8475,7 +8475,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFunction = new FunctionElements();
 		this.pFunctions = new FunctionsElements();
 		this.pFunctionParameter = new FunctionParameterElements();
-		this.pState_Block = new State_BlockElements();
+		this.pConcern = new ConcernElements();
 		this.pState_Block_Refs = new State_Block_RefsElements();
 		this.pBehavior = new BehaviorElements();
 		this.pBehaviors = new BehaviorsElements();
@@ -9044,7 +9044,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Parameters}
 	//	// 	name = 'fields' //How can we force a name so that eclipse is happy?
 	//	//	name = "parameters" ': {' //Gah How
-	//	'parameters:' '{' ((fields+=Field | fields+=State_Block) ';')*
+	//	'parameters:' '{' ((fields+=Field | fields+=Concern) ';')*
 	//	'};';
 	public ParametersElements getParametersAccess() {
 		return pParameters;
@@ -9145,17 +9145,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	///*These StateBlocks inform things
 	// * 
-	// * */ State_Block:
+	// * */ Concern:
 	//	"behavior_state" name=ID ':' '{'
 	//	"description:" desc=STRING ';'
 	//	stateFields+=State_Block_Refs (',' stateFields+=State_Block_Refs)* ';'
 	//	"};";
-	public State_BlockElements getState_BlockAccess() {
-		return pState_Block;
+	public ConcernElements getConcernAccess() {
+		return pConcern;
 	}
 	
-	public ParserRule getState_BlockRule() {
-		return getState_BlockAccess().getRule();
+	public ParserRule getConcernRule() {
+		return getConcernAccess().getRule();
 	}
 	
 	//State_Block_Refs:

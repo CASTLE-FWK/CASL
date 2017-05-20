@@ -43,7 +43,7 @@ import uofa.lbirdsey.castle.casl.MacroCall
 import uofa.lbirdsey.castle.casl.NumberLiteral
 import uofa.lbirdsey.castle.casl.Raw_Java_Block
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula
-import uofa.lbirdsey.castle.casl.State_Block
+import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.StringLiteral
 import uofa.lbirdsey.castle.casl.Symbol
 import uofa.lbirdsey.castle.casl.System
@@ -424,7 +424,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 			«IF function.returnType != null»«inferSymbolType((function.returnType as FunctionParameter))» «function.returnType.name»;«ENDIF»
 			«IF function.name == "init"»
 				«FOR sb : a.agent_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					registerState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -443,7 +443,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		«FOR field : a.agent_parameters.fields»
 		«IF (field instanceof Field)»
 			private «printFieldDeclarations(field as Field)»;
-		«ELSEIF (field instanceof State_Block)»
+		«ELSEIF (field instanceof Concern)»
 		«ENDIF»
 		«ENDFOR»
 		//Repast specific fields
@@ -898,7 +898,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		public void post(){
 			postQueue.forEach(f -> f.apply(this));
 				«FOR sb : a.agent_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					updateState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -917,7 +917,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		public void post(){
 			postQueue.forEach(f -> f.apply(this));
 				«FOR sb : env.env_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					updateState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -930,7 +930,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		public void post(){
 			postQueue.forEach(f -> f.apply(this));
 				«FOR sb : grp.group_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					updateState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -986,7 +986,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		«FOR field : env.env_parameters.fields»
 		«IF (field instanceof Field)»
 			private «printFieldDeclarations(field as Field)»;
-		«ELSEIF (field instanceof State_Block)»
+		«ELSEIF (field instanceof Concern)»
 		«ENDIF»
 		«ENDFOR»
 		//Repast specific fields
@@ -1022,7 +1022,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 			«IF function.returnType != null»«(function.returnType as FunctionParameter).type.name» «function.returnType.name»;«ENDIF»
 			«IF function.name == "init"»
 				«FOR sb : env.env_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					registerState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -1083,7 +1083,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		«FOR field : grp.group_parameters.fields»
 		«IF (field instanceof Field)»
 			private «printFieldDeclarations(field as Field)»;
-		«ELSEIF (field instanceof State_Block)»
+		«ELSEIF (field instanceof Concern)»
 		«ENDIF»
 		«ENDFOR»
 		//Repast specific fields
@@ -1118,7 +1118,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 			«IF function.returnType != null»«inferSymbolType((function.returnType as FunctionParameter))» «function.returnType.name»;«ENDIF»
 			«IF function.name == "init"»
 				«FOR sb : grp.group_parameters.fields»
-				«IF sb instanceof State_Block»
+				«IF sb instanceof Concern»
 					«FOR sbf : sb.stateFields»
 					registerState("«sbf.ref.name»",«sbf.ref.name»);
 					«ENDFOR»
@@ -1173,7 +1173,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 		«FOR field : sys.system_parameters.fields»
 		«IF (field instanceof Field)»
 			private «printFieldDeclarations(field as Field)»;
-		«ELSEIF (field instanceof State_Block)»
+		«ELSEIF (field instanceof Concern)»
 		«ENDIF»
 		«ENDFOR»
 		

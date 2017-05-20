@@ -20,25 +20,25 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.State_Block;
+import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.State_Block_Refs;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>State Block</b></em>'.
+ * An implementation of the model object '<em><b>Concern</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.State_BlockImpl#getName <em>Name</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.State_BlockImpl#getDesc <em>Desc</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.State_BlockImpl#getStateFields <em>State Fields</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.ConcernImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.ConcernImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.ConcernImpl#getStateFields <em>State Fields</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class State_BlockImpl extends MinimalEObjectImpl.Container implements State_Block
+public class ConcernImpl extends MinimalEObjectImpl.Container implements Concern
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -95,7 +95,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  protected State_BlockImpl()
+  protected ConcernImpl()
   {
     super();
   }
@@ -108,7 +108,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getState_Block();
+    return CaslPackage.eINSTANCE.getConcern();
   }
 
   /**
@@ -131,7 +131,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.STATE_BLOCK__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CONCERN__NAME, oldName, name));
   }
 
   /**
@@ -154,7 +154,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
     String oldDesc = desc;
     desc = newDesc;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.STATE_BLOCK__DESC, oldDesc, desc));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CONCERN__DESC, oldDesc, desc));
   }
 
   /**
@@ -166,7 +166,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     if (stateFields == null)
     {
-      stateFields = new EObjectContainmentEList<State_Block_Refs>(State_Block_Refs.class, this, CaslPackage.STATE_BLOCK__STATE_FIELDS);
+      stateFields = new EObjectContainmentEList<State_Block_Refs>(State_Block_Refs.class, this, CaslPackage.CONCERN__STATE_FIELDS);
     }
     return stateFields;
   }
@@ -181,7 +181,7 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case CaslPackage.STATE_BLOCK__STATE_FIELDS:
+      case CaslPackage.CONCERN__STATE_FIELDS:
         return ((InternalEList<?>)getStateFields()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -197,11 +197,11 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case CaslPackage.STATE_BLOCK__NAME:
+      case CaslPackage.CONCERN__NAME:
         return getName();
-      case CaslPackage.STATE_BLOCK__DESC:
+      case CaslPackage.CONCERN__DESC:
         return getDesc();
-      case CaslPackage.STATE_BLOCK__STATE_FIELDS:
+      case CaslPackage.CONCERN__STATE_FIELDS:
         return getStateFields();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -218,13 +218,13 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case CaslPackage.STATE_BLOCK__NAME:
+      case CaslPackage.CONCERN__NAME:
         setName((String)newValue);
         return;
-      case CaslPackage.STATE_BLOCK__DESC:
+      case CaslPackage.CONCERN__DESC:
         setDesc((String)newValue);
         return;
-      case CaslPackage.STATE_BLOCK__STATE_FIELDS:
+      case CaslPackage.CONCERN__STATE_FIELDS:
         getStateFields().clear();
         getStateFields().addAll((Collection<? extends State_Block_Refs>)newValue);
         return;
@@ -242,13 +242,13 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case CaslPackage.STATE_BLOCK__NAME:
+      case CaslPackage.CONCERN__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CaslPackage.STATE_BLOCK__DESC:
+      case CaslPackage.CONCERN__DESC:
         setDesc(DESC_EDEFAULT);
         return;
-      case CaslPackage.STATE_BLOCK__STATE_FIELDS:
+      case CaslPackage.CONCERN__STATE_FIELDS:
         getStateFields().clear();
         return;
     }
@@ -265,11 +265,11 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case CaslPackage.STATE_BLOCK__NAME:
+      case CaslPackage.CONCERN__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CaslPackage.STATE_BLOCK__DESC:
+      case CaslPackage.CONCERN__DESC:
         return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
-      case CaslPackage.STATE_BLOCK__STATE_FIELDS:
+      case CaslPackage.CONCERN__STATE_FIELDS:
         return stateFields != null && !stateFields.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -294,4 +294,4 @@ public class State_BlockImpl extends MinimalEObjectImpl.Container implements Sta
     return result.toString();
   }
 
-} //State_BlockImpl
+} //ConcernImpl

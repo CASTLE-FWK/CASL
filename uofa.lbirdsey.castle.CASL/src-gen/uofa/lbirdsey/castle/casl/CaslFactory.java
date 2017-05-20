@@ -267,13 +267,13 @@ public interface CaslFactory extends EFactory
   Functions createFunctions();
 
   /**
-   * Returns a new object of class '<em>State Block</em>'.
+   * Returns a new object of class '<em>Concern</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>State Block</em>'.
+   * @return a new object of class '<em>Concern</em>'.
    * @generated
    */
-  State_Block createState_Block();
+  Concern createConcern();
 
   /**
    * Returns a new object of class '<em>State Block Refs</em>'.

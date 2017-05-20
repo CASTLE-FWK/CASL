@@ -282,7 +282,7 @@ Parameters:
 // 	name = 'fields' //How can we force a name so that eclipse is happy?
 //	name = "parameters" ': {' //Gah How
  	'parameters:' '{'
- 		((fields += Field | fields += State_Block)';')*
+ 		((fields += Field | fields += Concern)';')*
  	'};'
  ;
 /**
@@ -334,7 +334,7 @@ FunctionParameter returns Symbol:
 /*These StateBlocks inform things
  * 
  * */
-State_Block:
+Concern:
 	"behavior_state" name = ID':' '{'
 		"description:"desc  = STRING';'
 		(stateFields += State_Block_Refs)(',' stateFields += State_Block_Refs)*';'

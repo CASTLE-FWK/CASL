@@ -153,8 +153,8 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_3_2_2_1_1(), "rule__FunctionParameter__Group_1_3_2_2_1_1__0");
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_3_2_2_1_2(), "rule__FunctionParameter__Group_1_3_2_2_1_2__0");
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4(), "rule__FunctionParameter__Group_1_4__0");
-					put(grammarAccess.getState_BlockAccess().getGroup(), "rule__State_Block__Group__0");
-					put(grammarAccess.getState_BlockAccess().getGroup_8(), "rule__State_Block__Group_8__0");
+					put(grammarAccess.getConcernAccess().getGroup(), "rule__Concern__Group__0");
+					put(grammarAccess.getConcernAccess().getGroup_8(), "rule__Concern__Group_8__0");
 					put(grammarAccess.getBehaviorAccess().getGroup(), "rule__Behavior__Group__0");
 					put(grammarAccess.getBehaviorAccess().getGroup_5(), "rule__Behavior__Group_5__0");
 					put(grammarAccess.getBehaviorAccess().getGroup_8(), "rule__Behavior__Group_8__0");
@@ -436,10 +436,10 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionParameterAccess().getUseEnvAssignment_1_3_2_2_1_2_1(), "rule__FunctionParameter__UseEnvAssignment_1_3_2_2_1_2_1");
 					put(grammarAccess.getFunctionParameterAccess().getGrpAssignment_1_4_1(), "rule__FunctionParameter__GrpAssignment_1_4_1");
 					put(grammarAccess.getFunctionParameterAccess().getNameAssignment_3(), "rule__FunctionParameter__NameAssignment_3");
-					put(grammarAccess.getState_BlockAccess().getNameAssignment_1(), "rule__State_Block__NameAssignment_1");
-					put(grammarAccess.getState_BlockAccess().getDescAssignment_5(), "rule__State_Block__DescAssignment_5");
-					put(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_7(), "rule__State_Block__StateFieldsAssignment_7");
-					put(grammarAccess.getState_BlockAccess().getStateFieldsAssignment_8_1(), "rule__State_Block__StateFieldsAssignment_8_1");
+					put(grammarAccess.getConcernAccess().getNameAssignment_1(), "rule__Concern__NameAssignment_1");
+					put(grammarAccess.getConcernAccess().getDescAssignment_5(), "rule__Concern__DescAssignment_5");
+					put(grammarAccess.getConcernAccess().getStateFieldsAssignment_7(), "rule__Concern__StateFieldsAssignment_7");
+					put(grammarAccess.getConcernAccess().getStateFieldsAssignment_8_1(), "rule__Concern__StateFieldsAssignment_8_1");
 					put(grammarAccess.getState_Block_RefsAccess().getRefAssignment(), "rule__State_Block_Refs__RefAssignment");
 					put(grammarAccess.getBehaviorAccess().getNameAssignment_0(), "rule__Behavior__NameAssignment_0");
 					put(grammarAccess.getBehaviorAccess().getBehavior_typeAssignment_2(), "rule__Behavior__Behavior_typeAssignment_2");

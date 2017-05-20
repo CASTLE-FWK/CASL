@@ -43,6 +43,7 @@ import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Comparison;
+import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
 import uofa.lbirdsey.castle.casl.EGInteraction;
@@ -112,7 +113,6 @@ import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
-import uofa.lbirdsey.castle.casl.State_Block;
 import uofa.lbirdsey.castle.casl.State_Block_Refs;
 import uofa.lbirdsey.castle.casl.StringLiteral;
 import uofa.lbirdsey.castle.casl.StringType;
@@ -385,10 +385,10 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.STATE_BLOCK:
+      case CaslPackage.CONCERN:
       {
-        State_Block state_Block = (State_Block)theEObject;
-        T result = caseState_Block(state_Block);
+        Concern concern = (Concern)theEObject;
+        T result = caseConcern(concern);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1536,17 +1536,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>State Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Concern</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>State Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Concern</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseState_Block(State_Block object)
+  public T caseConcern(Concern object)
   {
     return null;
   }

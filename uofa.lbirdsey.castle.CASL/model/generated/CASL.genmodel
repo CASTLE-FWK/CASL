@@ -236,10 +236,10 @@
     <genClasses ecoreClass="CASL.ecore#//Functions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Functions/functions"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//State_Block">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//State_Block/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//State_Block/desc"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//State_Block/stateFields"/>
+    <genClasses ecoreClass="CASL.ecore#//Concern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Concern/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Concern/desc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Concern/stateFields"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//State_Block_Refs">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//State_Block_Refs/ref"/>

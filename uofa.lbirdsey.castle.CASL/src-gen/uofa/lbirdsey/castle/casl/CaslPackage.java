@@ -1337,14 +1337,14 @@ public interface CaslPackage extends EPackage
   int FUNCTIONS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.State_BlockImpl <em>State Block</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.ConcernImpl <em>Concern</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.State_BlockImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getState_Block()
+   * @see uofa.lbirdsey.castle.casl.impl.ConcernImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getConcern()
    * @generated
    */
-  int STATE_BLOCK = 27;
+  int CONCERN = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1353,7 +1353,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_BLOCK__NAME = 0;
+  int CONCERN__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1362,7 +1362,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_BLOCK__DESC = 1;
+  int CONCERN__DESC = 1;
 
   /**
    * The feature id for the '<em><b>State Fields</b></em>' containment reference list.
@@ -1371,16 +1371,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_BLOCK__STATE_FIELDS = 2;
+  int CONCERN__STATE_FIELDS = 2;
 
   /**
-   * The number of structural features of the '<em>State Block</em>' class.
+   * The number of structural features of the '<em>Concern</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_BLOCK_FEATURE_COUNT = 3;
+  int CONCERN_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.State_Block_RefsImpl <em>State Block Refs</em>}' class.
@@ -6441,47 +6441,47 @@ public interface CaslPackage extends EPackage
   EReference getFunctions_Functions();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.State_Block <em>State Block</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Concern <em>Concern</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>State Block</em>'.
-   * @see uofa.lbirdsey.castle.casl.State_Block
+   * @return the meta object for class '<em>Concern</em>'.
+   * @see uofa.lbirdsey.castle.casl.Concern
    * @generated
    */
-  EClass getState_Block();
+  EClass getConcern();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.State_Block#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Concern#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uofa.lbirdsey.castle.casl.State_Block#getName()
-   * @see #getState_Block()
+   * @see uofa.lbirdsey.castle.casl.Concern#getName()
+   * @see #getConcern()
    * @generated
    */
-  EAttribute getState_Block_Name();
+  EAttribute getConcern_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.State_Block#getDesc <em>Desc</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Concern#getDesc <em>Desc</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Desc</em>'.
-   * @see uofa.lbirdsey.castle.casl.State_Block#getDesc()
-   * @see #getState_Block()
+   * @see uofa.lbirdsey.castle.casl.Concern#getDesc()
+   * @see #getConcern()
    * @generated
    */
-  EAttribute getState_Block_Desc();
+  EAttribute getConcern_Desc();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.State_Block#getStateFields <em>State Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.Concern#getStateFields <em>State Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>State Fields</em>'.
-   * @see uofa.lbirdsey.castle.casl.State_Block#getStateFields()
-   * @see #getState_Block()
+   * @see uofa.lbirdsey.castle.casl.Concern#getStateFields()
+   * @see #getConcern()
    * @generated
    */
-  EReference getState_Block_StateFields();
+  EReference getConcern_StateFields();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.State_Block_Refs <em>State Block Refs</em>}'.

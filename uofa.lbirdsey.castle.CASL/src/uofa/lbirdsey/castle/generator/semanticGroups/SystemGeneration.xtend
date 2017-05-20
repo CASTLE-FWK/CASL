@@ -6,7 +6,7 @@ import uofa.lbirdsey.castle.casl.DataTypeDeclaration
 import uofa.lbirdsey.castle.casl.EndConditionTypes
 import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
-import uofa.lbirdsey.castle.casl.State_Block
+import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.System
 
 class SystemGeneration {
@@ -127,7 +127,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			if (field instanceof Field){
 				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
-			} else if (field instanceof State_Block){}			
+			} else if (field instanceof Concern){}			
 		}
 		
 		output += "//For all Systems\nint clock = 0;\nint numberOfSteps;\nEntityID sysID;\n";
@@ -199,7 +199,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			}
 			if (function.name.compareTo("initialise") == 0){
 				for (sb : sys.system_parameters.fields){
-					if (sb instanceof State_Block){
+					if (sb instanceof Concern){
 						for (sbf : sb.stateFields){
 							output += "\tregisterState(\""+sbf.ref.name+"\","+sbf.ref.name+");\n"
 						}

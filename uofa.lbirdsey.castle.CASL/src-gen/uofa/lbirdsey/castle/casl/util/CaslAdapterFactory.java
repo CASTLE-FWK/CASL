@@ -45,6 +45,7 @@ import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Comparison;
+import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
 import uofa.lbirdsey.castle.casl.EGInteraction;
@@ -114,7 +115,6 @@ import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
-import uofa.lbirdsey.castle.casl.State_Block;
 import uofa.lbirdsey.castle.casl.State_Block_Refs;
 import uofa.lbirdsey.castle.casl.StringLiteral;
 import uofa.lbirdsey.castle.casl.StringType;
@@ -327,9 +327,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createFunctionsAdapter();
       }
       @Override
-      public Adapter caseState_Block(State_Block object)
+      public Adapter caseConcern(Concern object)
       {
-        return createState_BlockAdapter();
+        return createConcernAdapter();
       }
       @Override
       public Adapter caseState_Block_Refs(State_Block_Refs object)
@@ -1214,16 +1214,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.State_Block <em>State Block</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.Concern <em>Concern</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.State_Block
+   * @see uofa.lbirdsey.castle.casl.Concern
    * @generated
    */
-  public Adapter createState_BlockAdapter()
+  public Adapter createConcernAdapter()
   {
     return null;
   }

@@ -12,7 +12,7 @@ import uofa.lbirdsey.castle.casl.FunctionParameter
 import uofa.lbirdsey.castle.casl.Group
 import uofa.lbirdsey.castle.casl.Group_Rules
 import uofa.lbirdsey.castle.casl.LayoutType
-import uofa.lbirdsey.castle.casl.State_Block
+import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.Transmission_Phase
 import uofa.lbirdsey.castle.casl.Transmission_Repeat
 
@@ -141,7 +141,7 @@ class GroupGeneration {
 			if (field instanceof Field){
 				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
-			} else if (field instanceof State_Block){}			
+			} else if (field instanceof Concern){}			
 		}
 		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes."+grp.layoutType+");\n"
 		
@@ -173,7 +173,7 @@ class GroupGeneration {
 			}
 			if (function.name.compareTo("initialise") == 0){
 				for (sb : grp.group_parameters.fields){
-					if (sb instanceof State_Block){
+					if (sb instanceof Concern){
 						for (sbf : sb.stateFields){
 							output += "\tregisterState(\""+sbf.ref.name+"\","+sbf.ref.name+");\n"
 						}

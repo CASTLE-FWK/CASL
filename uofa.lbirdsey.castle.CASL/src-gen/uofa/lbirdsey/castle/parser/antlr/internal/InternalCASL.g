@@ -2547,9 +2547,9 @@ ruleParameters returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getParametersAccess().getFieldsState_BlockParserRuleCall_3_0_1_0());
+							newCompositeNode(grammarAccess.getParametersAccess().getFieldsConcernParserRuleCall_3_0_1_0());
 						}
-						lv_fields_4_0=ruleState_Block
+						lv_fields_4_0=ruleConcern
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getParametersRule());
@@ -2558,7 +2558,7 @@ ruleParameters returns [EObject current=null]
 								$current,
 								"fields",
 								lv_fields_4_0,
-								"uofa.lbirdsey.castle.CASL.State_Block");
+								"uofa.lbirdsey.castle.CASL.Concern");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -3513,15 +3513,15 @@ ruleFunctionParameter returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleState_Block
-entryRuleState_Block returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getState_BlockRule()); }
-	iv_ruleState_Block=ruleState_Block
-	{ $current=$iv_ruleState_Block.current; }
+// Entry rule entryRuleConcern
+entryRuleConcern returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConcernRule()); }
+	iv_ruleConcern=ruleConcern
+	{ $current=$iv_ruleConcern.current; }
 	EOF;
 
-// Rule State_Block
-ruleState_Block returns [EObject current=null]
+// Rule Concern
+ruleConcern returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -3531,17 +3531,17 @@ ruleState_Block returns [EObject current=null]
 	(
 		otherlv_0='behavior_state'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getState_BlockAccess().getBehavior_stateKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getConcernAccess().getBehavior_stateKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getState_BlockAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getConcernAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getState_BlockRule());
+						$current = createModelElement(grammarAccess.getConcernRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -3553,25 +3553,25 @@ ruleState_Block returns [EObject current=null]
 		)
 		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getState_BlockAccess().getColonKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getConcernAccess().getColonKeyword_2());
 		}
 		otherlv_3='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getState_BlockAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getConcernAccess().getLeftCurlyBracketKeyword_3());
 		}
 		otherlv_4='description:'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getState_BlockAccess().getDescriptionKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getConcernAccess().getDescriptionKeyword_4());
 		}
 		(
 			(
 				lv_desc_5_0=RULE_STRING
 				{
-					newLeafNode(lv_desc_5_0, grammarAccess.getState_BlockAccess().getDescSTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_desc_5_0, grammarAccess.getConcernAccess().getDescSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getState_BlockRule());
+						$current = createModelElement(grammarAccess.getConcernRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -3583,17 +3583,17 @@ ruleState_Block returns [EObject current=null]
 		)
 		otherlv_6=';'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getState_BlockAccess().getSemicolonKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getConcernAccess().getSemicolonKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_7_0());
 				}
 				lv_stateFields_7_0=ruleState_Block_Refs
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getState_BlockRule());
+						$current = createModelElementForParent(grammarAccess.getConcernRule());
 					}
 					add(
 						$current,
@@ -3607,17 +3607,17 @@ ruleState_Block returns [EObject current=null]
 		(
 			otherlv_8=','
 			{
-				newLeafNode(otherlv_8, grammarAccess.getState_BlockAccess().getCommaKeyword_8_0());
+				newLeafNode(otherlv_8, grammarAccess.getConcernAccess().getCommaKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getState_BlockAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getConcernAccess().getStateFieldsState_Block_RefsParserRuleCall_8_1_0());
 					}
 					lv_stateFields_9_0=ruleState_Block_Refs
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getState_BlockRule());
+							$current = createModelElementForParent(grammarAccess.getConcernRule());
 						}
 						add(
 							$current,
@@ -3631,11 +3631,11 @@ ruleState_Block returns [EObject current=null]
 		)*
 		otherlv_10=';'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getState_BlockAccess().getSemicolonKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getConcernAccess().getSemicolonKeyword_9());
 		}
 		otherlv_11='};'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getState_BlockAccess().getRightCurlyBracketSemicolonKeyword_10());
+			newLeafNode(otherlv_11, grammarAccess.getConcernAccess().getRightCurlyBracketSemicolonKeyword_10());
 		}
 	)
 ;

@@ -202,7 +202,7 @@ class CASLGenerator implements IGenerator2 {
 //		«FOR field : a.agent_parameters.fields»
 //		«IF (field instanceof Field)»
 //			private «printOutFieldDeclarations(field as Field)»;
-//		«ELSEIF (field instanceof State_Block)»
+//		«ELSEIF (field instanceof Concern)»
 //		«ENDIF»
 //		«ENDFOR»
 //		
@@ -306,7 +306,7 @@ class CASLGenerator implements IGenerator2 {
 //		«FOR field : env.env_parameters.fields»
 //		«IF (field instanceof Field)»
 //			private «printOutFieldDeclarations(field as Field)»;
-//		«ELSEIF (field instanceof State_Block)»
+//		«ELSEIF (field instanceof Concern)»
 //		«ENDIF»
 //		«ENDFOR»
 //		
@@ -434,7 +434,7 @@ class CASLGenerator implements IGenerator2 {
 //		«FOR field : sys.system_parameters.fields»
 //		«IF (field instanceof Field)»
 //			private «printOutFieldDeclarations(field as Field)»;
-//		«ELSEIF (field instanceof State_Block)»
+//		«ELSEIF (field instanceof Concern)»
 //		«ENDIF»
 //		«ENDFOR»
 //		

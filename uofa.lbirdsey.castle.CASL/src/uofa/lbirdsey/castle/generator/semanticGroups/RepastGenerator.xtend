@@ -81,7 +81,7 @@ class RepastGenerator implements IGenerator2 {
 		//Process the SYSTEM
 		for(sys : resource.allContents.toIterable.filter(System)) {
 			dirName = sys.name.replaceAll(" ","");
-			mainPkg = sys.name.replaceAll(" ","");
+			mainPkg = sys.name.replaceAll(" ","").toFirstLower;
 			agentsPkg = mainPkg + ".agents";
 			envsPkg = mainPkg + ".environments";
 			grpsPkg = mainPkg + ".groups";
@@ -91,7 +91,7 @@ class RepastGenerator implements IGenerator2 {
 				
 				
 			fsa.generateFile(
-				dirName+"/"+sys.fullyQualifiedName.toString("/").replaceAll(" ","") + ".rs/parameters.xml",sys.generateInitFile.toString.replaceAll("string","String").replaceAll("bool","boolean").replaceAll("(;)+",";"))			
+				dirName.toFirstUpper+"/"+sys.fullyQualifiedName.toString("/").replaceAll(" ","") + ".rs/parameters.xml",sys.generateInitFile.toString.replaceAll("string","String").replaceAll("bool","boolean").replaceAll("(;)+",";"))			
 								
 		}
 		

@@ -56,6 +56,7 @@ import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslFactory;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Comparison;
+import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
 import uofa.lbirdsey.castle.casl.EGInteraction;
@@ -131,7 +132,6 @@ import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
-import uofa.lbirdsey.castle.casl.State_Block;
 import uofa.lbirdsey.castle.casl.State_Block_Refs;
 import uofa.lbirdsey.castle.casl.StringLiteral;
 import uofa.lbirdsey.castle.casl.StringType;
@@ -230,7 +230,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.SYMBOL: return createSymbol();
       case CaslPackage.FUNCTION: return createFunction();
       case CaslPackage.FUNCTIONS: return createFunctions();
-      case CaslPackage.STATE_BLOCK: return createState_Block();
+      case CaslPackage.CONCERN: return createConcern();
       case CaslPackage.STATE_BLOCK_REFS: return createState_Block_Refs();
       case CaslPackage.BEHAVIOR: return createBehavior();
       case CaslPackage.BEHAVIORS: return createBehaviors();
@@ -739,10 +739,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public State_Block createState_Block()
+  public Concern createConcern()
   {
-    State_BlockImpl state_Block = new State_BlockImpl();
-    return state_Block;
+    ConcernImpl concern = new ConcernImpl();
+    return concern;
   }
 
   /**

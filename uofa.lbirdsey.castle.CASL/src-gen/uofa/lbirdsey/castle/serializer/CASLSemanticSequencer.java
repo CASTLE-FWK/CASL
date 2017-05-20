@@ -47,6 +47,7 @@ import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Comparison;
+import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
 import uofa.lbirdsey.castle.casl.EGInteraction;
@@ -111,7 +112,6 @@ import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
-import uofa.lbirdsey.castle.casl.State_Block;
 import uofa.lbirdsey.castle.casl.State_Block_Refs;
 import uofa.lbirdsey.castle.casl.StringLiteral;
 import uofa.lbirdsey.castle.casl.StringType;
@@ -280,6 +280,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.COMPARISON:
 				sequence_Comparison(context, (Comparison) semanticObject); 
+				return; 
+			case CaslPackage.CONCERN:
+				sequence_Concern(context, (Concern) semanticObject); 
 				return; 
 			case CaslPackage.DATA_TYPE_DECLARATION:
 				sequence_DataTypeDeclaration(context, (DataTypeDeclaration) semanticObject); 
@@ -500,9 +503,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.SELF_CALL_EXPR:
 				sequence_Atomic(context, (SelfCallExpr) semanticObject); 
-				return; 
-			case CaslPackage.STATE_BLOCK:
-				sequence_State_Block(context, (State_Block) semanticObject); 
 				return; 
 			case CaslPackage.STATE_BLOCK_REFS:
 				sequence_State_Block_Refs(context, (State_Block_Refs) semanticObject); 
@@ -1543,6 +1543,18 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (left=Comparison_Comparison_1_0_0 (op='<' | op='>' | op='<=' | op='>=') right=Subtraction)
 	 */
 	protected void sequence_Comparison(ISerializationContext context, Comparison semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Concern returns Concern
+	 *
+	 * Constraint:
+	 *     (name=ID desc=STRING stateFields+=State_Block_Refs stateFields+=State_Block_Refs*)
+	 */
+	protected void sequence_Concern(ISerializationContext context, Concern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -2625,7 +2637,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Parameters returns Parameters
 	 *
 	 * Constraint:
-	 *     (fields+=Field | fields+=State_Block)*
+	 *     (fields+=Field | fields+=Concern)*
 	 */
 	protected void sequence_Parameters(ISerializationContext context, Parameters semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2747,18 +2759,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getState_Block_RefsAccess().getRefSymbolIDTerminalRuleCall_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getState_Block_Refs_Ref(), false));
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     State_Block returns State_Block
-	 *
-	 * Constraint:
-	 *     (name=ID desc=STRING stateFields+=State_Block_Refs stateFields+=State_Block_Refs*)
-	 */
-	protected void sequence_State_Block(ISerializationContext context, State_Block semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

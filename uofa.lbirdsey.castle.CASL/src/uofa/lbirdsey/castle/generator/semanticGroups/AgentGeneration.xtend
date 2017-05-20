@@ -3,7 +3,7 @@ package uofa.lbirdsey.castle.generator.semanticGroups
 import uofa.lbirdsey.castle.casl.Agent
 import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
-import uofa.lbirdsey.castle.casl.State_Block
+import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.NumberLiteral
 import uofa.lbirdsey.castle.casl.InteractionTriggerTypes
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
@@ -138,7 +138,7 @@ class AgentGeneration {
 			}
 			if (function.name.compareTo("initialize") == 0){
 				for (sb : a.agent_parameters.fields){
-					if (sb instanceof State_Block){
+					if (sb instanceof Concern){
 						for (sbf : sb.stateFields){
 							output += "\tregisterState(\""+sbf.ref.name+"\","+sbf.ref.name+");\n"
 						}
@@ -165,7 +165,7 @@ class AgentGeneration {
 			if (field instanceof Field){
 				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
-			} else if (field instanceof State_Block){}			
+			} else if (field instanceof Concern){}			
 		}
 		
 		output += "\n//Getters & Setters\n"
@@ -443,7 +443,7 @@ class AgentGeneration {
 																						public void phase_Cleanup(){
 																							cleanupQueue.forEach(f -> f.apply(this));
 																								«FOR sb : a.agent_parameters.fields»
-																									«IF sb instanceof State_Block»
+																									«IF sb instanceof Concern»
 																										«FOR sbf : sb.stateFields»
 																											updateState("«sbf.ref.name»",«sbf.ref.name»);
 																										«ENDFOR»
