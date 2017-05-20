@@ -125,7 +125,18 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var output = "//Fields\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){
-				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
+//				if ((field as Field).declaration !== null) {
+//					val fdt = (field as Field).declaration as DataTypeDeclaration
+//					if (fdt.initInclude != null){
+//						output += "private static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
+//					} else {
+//						output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
+//					}	
+//				} else {
+//					output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
+//				}		
+				
+				output += "private static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";			
 				libImports.add(HelperFunctions.getFieldType(field as Field));
 			} else if (field instanceof Concern){}			
 		}
@@ -139,7 +150,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "\n//Getters & Setters\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){
-				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
+				output += HelperFunctions.generateGettersSetters(field as Field)+"\n"
 			}
 		}
 		return output;

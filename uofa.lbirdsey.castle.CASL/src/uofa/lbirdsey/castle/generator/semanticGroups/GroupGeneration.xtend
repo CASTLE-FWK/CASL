@@ -494,7 +494,7 @@ class GroupGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : triggers) {\n"
+		str += "\tfor (Trigger t : actionTriggers) {\n"
 		str += "\t\tt.trigger();\n"
 		str += "\t}\n"
 		str +="}\n\n"
