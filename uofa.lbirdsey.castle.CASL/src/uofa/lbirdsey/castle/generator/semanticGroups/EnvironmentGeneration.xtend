@@ -49,6 +49,7 @@ class EnvironmentGeneration {
 		var imports = "//Automated Environment Import Generation\nimport castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import castleComponents.Entity;\n"
 		//iC = importCandidate
 		
 		

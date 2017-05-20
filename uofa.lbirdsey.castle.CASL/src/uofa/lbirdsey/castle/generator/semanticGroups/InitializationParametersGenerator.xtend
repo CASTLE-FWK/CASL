@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject
 class InitializationParametersGenerator {
 	
 	//<parameter name="randomSeed" displayName="Default Random Seed" type="int" defaultValue="__NULL__" />
-	static val basicParam = "<parameter name=\"X\" displayName=\"X\" type=\"Y\" defaultValue=Z/>"
+	static val basicParam = "<parameter name=\"XXX\" displayName=\"XXX\" type=\"YYY\" defaultValue=ZZZ/>"
 	static def String generateFile(List<EObject> params){
 		var output = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<parameters>\n";		
 		for (paramOld : params){
@@ -23,11 +23,11 @@ class InitializationParametersGenerator {
 						if (dtd.expr !== null){
 							initVal = HelperFunctions.printExpression(dtd.expr).toString();
 						}
-						copy = copy.replaceAll("X",name.toString()).replaceAll("Y",type.toString())
+						copy = copy.replaceAll("XXX",name.toString()).replaceAll("YYY",type.toString())
 						if (type == "string" || initVal == "__NULL__"){
-							copy = copy.replaceAll("Z","\""+initVal+"\"");
+							copy = copy.replaceAll("ZZZ","\""+initVal+"\"");
 						} else {
-							copy = copy.replaceAll("Z",initVal);
+							copy = copy.replaceAll("ZZZ",initVal);
 						}
 						output += "\t" + copy + "\n";
 					}

@@ -19,6 +19,8 @@ class AgentGeneration {
 	var ArrayList<String> libImports = null;
 	var HashSet<String> importsToPrint = null;
 	var ArrayList<String> initialList = null;
+	var ArrayList<String> triggersToPrintInit = null;
+	var ArrayList<String> triggersStringsToPrint = null;
 	
 	
 	new(Agent a, String systemRoot, String agentsPkg) {
@@ -28,6 +30,8 @@ class AgentGeneration {
 		libImports = new ArrayList<String>();
 		importsToPrint = new HashSet<String>();
 		initialList = new ArrayList<String>();
+		triggersToPrintInit = new ArrayList<String>();
+		triggersStringsToPrint = new ArrayList<String>();
 	}
 	
 	def setup(){
@@ -35,6 +39,7 @@ class AgentGeneration {
 		//Add in the imports
 		var imports = "//Automated Agent Import Generation\nimport castleComponents.Agent;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
+		imports += "import castleComponents.Entity;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC !== null){
@@ -93,7 +98,7 @@ class AgentGeneration {
 			/*****Pre-defined Schedules - setup(), action(), and cleanup()*****/
 			«createInitalisePhase(theAgent)»
 			«assignActionsToPhases(theAgent)»
-		«««			«createSetupPhase(theAgent)»
+«««			«createSetupPhase(theAgent)»
 «««			«createActionPhase(theAgent)»
 «««			«createCleanupPhase(theAgent)»
 			«createFinalPhase(theAgent)»
@@ -189,28 +194,30 @@ class AgentGeneration {
 			
 			//Create the trigger object here
 			var triggerString = "";
-//			var phase = behavior.behavior_reaction_time.toString().toLowerCase();
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
 				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>()\n"
-				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
-				triggerString += "\\ttreturn null;\n}}, false, this);\n\n"
-				output += triggerString;
-			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
-				output += triggerString;
+				triggersStringsToPrint.add(triggerString);
+			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				triggerString += "\tpublic Void apply(Entity o) {\n"
+				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
+				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
 				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
 				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
 				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
-				output += triggerString;
+				triggersStringsToPrint.add(triggerString);
 			}
 		}
 		return output;
@@ -231,13 +238,6 @@ class AgentGeneration {
 			output += " {\n"
 			output += HelperFunctions.printMethodBody(interaction.body, interaction)
 			libImports.addAll(HelperFunctions.populateImports(interaction.body))
-//			for (statement : interaction.body){
-//				if (statement instanceof Field){
-//					libImports.add(HelperFunctions.getFieldType(statement as Field))
-//				}				
-//				output += "\t" + HelperFunctions.parseBodyElement(statement, interaction) +"\n"
-//			}
-//			output += "\treturn "+HelperFunctions.printMethodReturnStatement(interaction.body)+";"
 			output += "\n}\n"	
 		}
 		return output	
@@ -256,13 +256,6 @@ class AgentGeneration {
 			output += "public ";
 			output += HelperFunctions.inferMethodType(adaptation.body)+" " +adaptation.name+ "(" + HelperFunctions.printFunctionParameters(adaptation.functionParameters) +")"
 			output += " {\n"
-//			for (statement : adaptation.body){
-//				if (statement instanceof Field){
-//					libImports.add(HelperFunctions.getFieldType(statement as Field))
-//				}
-//				output += "\t" + HelperFunctions.parseBodyElement(statement, adaptation) +"\n"
-//			}
-//			output += "\treturn "+HelperFunctions.printMethodReturnStatement(adaptation.body)+";"
 			output += HelperFunctions.printMethodBody(adaptation.body, adaptation)
 			libImports.addAll(HelperFunctions.populateImports(adaptation.body))
 			output += "\n}\n"			
@@ -276,12 +269,6 @@ class AgentGeneration {
 			output += "private void "+subsystem.name+"("
 			output += HelperFunctions.printFunctionParameters(subsystem.functionParameters)
 			output += ") {\n"			
-//			for (statement : subsystem.body) {
-//				if (statement instanceof Field){
-//					libImports.add(HelperFunctions.getFieldType(statement as Field))
-//				}
-//				output += "\t"+HelperFunctions.parseBodyElement(statement, subsystem);
-//			}
 			output += HelperFunctions.printMethodBody(subsystem.body, subsystem)
 			libImports.addAll(HelperFunctions.populateImports(subsystem.body))
 			output += "\n}\n"			
@@ -315,7 +302,9 @@ class AgentGeneration {
 		var output = "";
 		output += "@Override\n";
 		output += "public void initialise() {\n\tsuper.initialise();\n\t";
-		
+		for (item : triggersStringsToPrint){
+			output += "\t"+item+"\n";
+		}
 		for (item : initialList){
 			output += "\t"+item+";\n"; 
 		}
@@ -338,7 +327,13 @@ class AgentGeneration {
 		var setupPhase = newArrayList
 		var actionPhase = newArrayList
 		var cleanupPhase = newArrayList
+		
 		var str = "//Schedules\n"
+		str += "//The NULL Triggers\n"
+		for (s : triggersToPrintInit){
+			str += "Trigger "+s+";\n"
+		}
+		str += "\n";
 		
 		//Behavior scheduling
 		for (behavior : a.agent_behaviors.behaviors) {

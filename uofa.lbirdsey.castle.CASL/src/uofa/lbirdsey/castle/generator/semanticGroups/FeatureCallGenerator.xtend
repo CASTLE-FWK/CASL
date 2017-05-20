@@ -28,9 +28,10 @@ class FeatureCallGenerator {
 		else if (fc instanceof InteractionFeatureCall){
 			var ifc = (fc as InteractionFeatureCall).process;
 			return HelperFunctions.inferMethodType(ifc.body);  							
-		} else if (fc instanceof FunctionFeatureCall)
-			return "todo"
-		else if (fc instanceof BehaviorFeatureCall) {
+		} else if (fc instanceof FunctionFeatureCall){
+			var ifc = (fc as FunctionFeatureCall).process;
+			return HelperFunctions.inferMethodType(ifc.body);
+		}else if (fc instanceof BehaviorFeatureCall) {
 			var bfc = (fc as BehaviorFeatureCall).process;
 			if (bfc.behavior_reaction_time == BehaviorReactionTime.INSTANT){
 				return HelperFunctions.inferMethodType(bfc.body);

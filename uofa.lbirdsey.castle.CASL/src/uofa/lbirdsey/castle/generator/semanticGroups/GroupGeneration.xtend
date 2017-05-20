@@ -44,6 +44,7 @@ class GroupGeneration {
 		var imports = "//Automated Group Import Generation\nimport castleComponents.SemanticGroup;\n";
 		imports += "import castleComponents.Environment;\nimport castleComponents.Agent;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import castleComponents.Entity;\n"
 
 		//iC = importCandidate
 		for (String iC : libImports){
