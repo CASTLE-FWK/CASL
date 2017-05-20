@@ -78,7 +78,7 @@ Environment_Rules:
 Group_Types:
 	{Group_Types}
 	'group_types:' '{'
-		(group_types += Group_Type_Name)*';'
+		(group_types += Group_Type_Name)?(','group_types += Group_Type_Name)*';'
 	'};'	
 ;
 

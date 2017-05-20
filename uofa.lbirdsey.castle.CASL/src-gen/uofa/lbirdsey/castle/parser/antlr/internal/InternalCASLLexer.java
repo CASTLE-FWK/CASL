@@ -3630,10 +3630,10 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12340:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
-            // InternalCASL.g:12340:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
+            // InternalCASL.g:12347:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+            // InternalCASL.g:12347:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
             {
-            // InternalCASL.g:12340:15: ( '0' .. '9' )*
+            // InternalCASL.g:12347:15: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -3646,7 +3646,7 @@ public class InternalCASLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalCASL.g:12340:16: '0' .. '9'
+            	    // InternalCASL.g:12347:16: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3658,7 +3658,7 @@ public class InternalCASLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCASL.g:12340:27: ( '.' ( '0' .. '9' )+ )?
+            // InternalCASL.g:12347:27: ( '.' ( '0' .. '9' )+ )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -3667,10 +3667,10 @@ public class InternalCASLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalCASL.g:12340:28: '.' ( '0' .. '9' )+
+                    // InternalCASL.g:12347:28: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // InternalCASL.g:12340:32: ( '0' .. '9' )+
+                    // InternalCASL.g:12347:32: ( '0' .. '9' )+
                     int cnt2=0;
                     loop2:
                     do {
@@ -3684,7 +3684,7 @@ public class InternalCASLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // InternalCASL.g:12340:33: '0' .. '9'
+                    	    // InternalCASL.g:12347:33: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -3722,10 +3722,10 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12342:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalCASL.g:12342:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCASL.g:12349:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalCASL.g:12349:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalCASL.g:12342:11: ( '^' )?
+            // InternalCASL.g:12349:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3734,7 +3734,7 @@ public class InternalCASLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalCASL.g:12342:11: '^'
+                    // InternalCASL.g:12349:11: '^'
                     {
                     match('^'); 
 
@@ -3752,7 +3752,7 @@ public class InternalCASLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalCASL.g:12342:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCASL.g:12349:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -3801,10 +3801,10 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12344:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalCASL.g:12344:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCASL.g:12351:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCASL.g:12351:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalCASL.g:12344:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCASL.g:12351:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -3822,10 +3822,10 @@ public class InternalCASLLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalCASL.g:12344:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCASL.g:12351:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalCASL.g:12344:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCASL.g:12351:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -3841,7 +3841,7 @@ public class InternalCASLLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalCASL.g:12344:21: '\\\\' .
+                    	    // InternalCASL.g:12351:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3849,7 +3849,7 @@ public class InternalCASLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCASL.g:12344:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCASL.g:12351:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3874,10 +3874,10 @@ public class InternalCASLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12344:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCASL.g:12351:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalCASL.g:12344:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCASL.g:12351:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -3893,7 +3893,7 @@ public class InternalCASLLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalCASL.g:12344:54: '\\\\' .
+                    	    // InternalCASL.g:12351:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -3901,7 +3901,7 @@ public class InternalCASLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCASL.g:12344:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCASL.g:12351:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3944,12 +3944,12 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12346:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalCASL.g:12346:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalCASL.g:12353:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalCASL.g:12353:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalCASL.g:12346:24: ( options {greedy=false; } : . )*
+            // InternalCASL.g:12353:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -3974,7 +3974,7 @@ public class InternalCASLLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCASL.g:12346:52: .
+            	    // InternalCASL.g:12353:52: .
             	    {
             	    matchAny(); 
 
@@ -4004,12 +4004,12 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12348:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalCASL.g:12348:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCASL.g:12355:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCASL.g:12355:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalCASL.g:12348:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCASL.g:12355:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -4022,7 +4022,7 @@ public class InternalCASLLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalCASL.g:12348:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCASL.g:12355:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -4042,7 +4042,7 @@ public class InternalCASLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCASL.g:12348:40: ( ( '\\r' )? '\\n' )?
+            // InternalCASL.g:12355:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4051,9 +4051,9 @@ public class InternalCASLLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalCASL.g:12348:41: ( '\\r' )? '\\n'
+                    // InternalCASL.g:12355:41: ( '\\r' )? '\\n'
                     {
-                    // InternalCASL.g:12348:41: ( '\\r' )?
+                    // InternalCASL.g:12355:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -4062,7 +4062,7 @@ public class InternalCASLLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalCASL.g:12348:41: '\\r'
+                            // InternalCASL.g:12355:41: '\\r'
                             {
                             match('\r'); 
 
@@ -4094,10 +4094,10 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12350:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalCASL.g:12350:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCASL.g:12357:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCASL.g:12357:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCASL.g:12350:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCASL.g:12357:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -4151,8 +4151,8 @@ public class InternalCASLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCASL.g:12352:16: ( . )
-            // InternalCASL.g:12352:18: .
+            // InternalCASL.g:12359:16: ( . )
+            // InternalCASL.g:12359:18: .
             {
             matchAny(); 
 

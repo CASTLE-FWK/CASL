@@ -467,55 +467,61 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	public class Group_TypesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Group_Types");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGroup_typesKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cGroup_typesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cGroup_typesGroup_Type_NameParserRuleCall_2_0 = (RuleCall)cGroup_typesAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cGroup_typesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cGroup_typesGroup_Type_NameParserRuleCall_3_1_0 = (RuleCall)cGroup_typesAssignment_3_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cRightCurlyBracketSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Action cGroup_TypesAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cGroup_typesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cGroup_typesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGroup_typesGroup_Type_NameParserRuleCall_3_0 = (RuleCall)cGroup_typesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cGroup_typesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cGroup_typesGroup_Type_NameParserRuleCall_4_1_0 = (RuleCall)cGroup_typesAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRightCurlyBracketSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
+		////TODO: Handle the enumeration in validation
 		//Group_Types:
+		//	{Group_Types}
 		//	'group_types:' '{'
-		//	group_types+=Group_Type_Name (',' group_types+=Group_Type_Name)* ';'
+		//	group_types+=Group_Type_Name? (',' group_types+=Group_Type_Name)* ';'
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'group_types:' '{' group_types+=Group_Type_Name (',' group_types+=Group_Type_Name)* ';' '};'
+		//{Group_Types} 'group_types:' '{' group_types+=Group_Type_Name? (',' group_types+=Group_Type_Name)* ';' '};'
 		public Group getGroup() { return cGroup; }
 		
+		//{Group_Types}
+		public Action getGroup_TypesAction_0() { return cGroup_TypesAction_0; }
+		
 		//'group_types:'
-		public Keyword getGroup_typesKeyword_0() { return cGroup_typesKeyword_0; }
+		public Keyword getGroup_typesKeyword_1() { return cGroup_typesKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//group_types+=Group_Type_Name
-		public Assignment getGroup_typesAssignment_2() { return cGroup_typesAssignment_2; }
+		//group_types+=Group_Type_Name?
+		public Assignment getGroup_typesAssignment_3() { return cGroup_typesAssignment_3; }
 		
 		//Group_Type_Name
-		public RuleCall getGroup_typesGroup_Type_NameParserRuleCall_2_0() { return cGroup_typesGroup_Type_NameParserRuleCall_2_0; }
+		public RuleCall getGroup_typesGroup_Type_NameParserRuleCall_3_0() { return cGroup_typesGroup_Type_NameParserRuleCall_3_0; }
 		
 		//(',' group_types+=Group_Type_Name)*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//group_types+=Group_Type_Name
-		public Assignment getGroup_typesAssignment_3_1() { return cGroup_typesAssignment_3_1; }
+		public Assignment getGroup_typesAssignment_4_1() { return cGroup_typesAssignment_4_1; }
 		
 		//Group_Type_Name
-		public RuleCall getGroup_typesGroup_Type_NameParserRuleCall_3_1_0() { return cGroup_typesGroup_Type_NameParserRuleCall_3_1_0; }
+		public RuleCall getGroup_typesGroup_Type_NameParserRuleCall_4_1_0() { return cGroup_typesGroup_Type_NameParserRuleCall_4_1_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 		
 		//'};'
-		public Keyword getRightCurlyBracketSemicolonKeyword_5() { return cRightCurlyBracketSemicolonKeyword_5; }
+		public Keyword getRightCurlyBracketSemicolonKeyword_6() { return cRightCurlyBracketSemicolonKeyword_6; }
 	}
 	public class Group_Type_NameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Group_Type_Name");
@@ -8706,9 +8712,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnvironment_RulesAccess().getRule();
 	}
 	
+	////TODO: Handle the enumeration in validation
 	//Group_Types:
+	//	{Group_Types}
 	//	'group_types:' '{'
-	//	group_types+=Group_Type_Name (',' group_types+=Group_Type_Name)* ';'
+	//	group_types+=Group_Type_Name? (',' group_types+=Group_Type_Name)* ';'
 	//	'};';
 	public Group_TypesElements getGroup_TypesAccess() {
 		return pGroup_Types;

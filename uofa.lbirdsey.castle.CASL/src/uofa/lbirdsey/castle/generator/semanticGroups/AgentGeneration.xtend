@@ -403,7 +403,7 @@ class AgentGeneration {
 //		str += "\tsetupQueue.clear();\n"
 		for (item : actionPhase){
 			str += "\t"+item+"\n"
-		}
+		} 
 		str += "\t//Activate triggers\n"
 		str += "\tfor (Trigger t : actionTriggers) {\n"
 		str += "\t\tt.trigger();\n"

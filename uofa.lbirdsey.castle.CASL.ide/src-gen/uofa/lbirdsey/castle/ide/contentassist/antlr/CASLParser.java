@@ -109,7 +109,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnvironment_Type_NameAccess().getGroup(), "rule__Environment_Type_Name__Group__0");
 					put(grammarAccess.getEnvironment_RulesAccess().getGroup(), "rule__Environment_Rules__Group__0");
 					put(grammarAccess.getGroup_TypesAccess().getGroup(), "rule__Group_Types__Group__0");
-					put(grammarAccess.getGroup_TypesAccess().getGroup_3(), "rule__Group_Types__Group_3__0");
+					put(grammarAccess.getGroup_TypesAccess().getGroup_4(), "rule__Group_Types__Group_4__0");
 					put(grammarAccess.getGroup_Type_NameAccess().getGroup(), "rule__Group_Type_Name__Group__0");
 					put(grammarAccess.getEnd_ConditionsAccess().getGroup(), "rule__End_Conditions__Group__0");
 					put(grammarAccess.getEnd_ConditionAccess().getGroup(), "rule__End_Condition__Group__0");
@@ -340,8 +340,8 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnvironment_RulesAccess().getEnv_defAssignment_3(), "rule__Environment_Rules__Env_defAssignment_3");
 					put(grammarAccess.getEnvironment_RulesAccess().getEnv_attributesAssignment_5(), "rule__Environment_Rules__Env_attributesAssignment_5");
 					put(grammarAccess.getEnvironment_RulesAccess().getLayout_typeAssignment_7(), "rule__Environment_Rules__Layout_typeAssignment_7");
-					put(grammarAccess.getGroup_TypesAccess().getGroup_typesAssignment_2(), "rule__Group_Types__Group_typesAssignment_2");
-					put(grammarAccess.getGroup_TypesAccess().getGroup_typesAssignment_3_1(), "rule__Group_Types__Group_typesAssignment_3_1");
+					put(grammarAccess.getGroup_TypesAccess().getGroup_typesAssignment_3(), "rule__Group_Types__Group_typesAssignment_3");
+					put(grammarAccess.getGroup_TypesAccess().getGroup_typesAssignment_4_1(), "rule__Group_Types__Group_typesAssignment_4_1");
 					put(grammarAccess.getGroup_Type_NameAccess().getGroup_type_nameAssignment_1(), "rule__Group_Type_Name__Group_type_nameAssignment_1");
 					put(grammarAccess.getEnd_ConditionsAccess().getEnd_conditionsAssignment_2(), "rule__End_Conditions__End_conditionsAssignment_2");
 					put(grammarAccess.getEnd_ConditionAccess().getEndTypeAssignment_1(), "rule__End_Condition__EndTypeAssignment_1");

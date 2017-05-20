@@ -782,20 +782,27 @@ ruleGroup_Types returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='group_types:'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGroup_TypesAccess().getGroup_TypesAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='group_types:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGroup_TypesAccess().getGroup_typesKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getGroup_TypesAccess().getGroup_typesKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGroup_TypesAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getGroup_TypesAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGroup_TypesAccess().getGroup_typesGroup_Type_NameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getGroup_TypesAccess().getGroup_typesGroup_Type_NameParserRuleCall_3_0());
 				}
-				lv_group_types_2_0=ruleGroup_Type_Name
+				lv_group_types_3_0=ruleGroup_Type_Name
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGroup_TypesRule());
@@ -803,23 +810,23 @@ ruleGroup_Types returns [EObject current=null]
 					add(
 						$current,
 						"group_types",
-						lv_group_types_2_0,
+						lv_group_types_3_0,
 						"uofa.lbirdsey.castle.CASL.Group_Type_Name");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
-			otherlv_3=','
+			otherlv_4=','
 			{
-				newLeafNode(otherlv_3, grammarAccess.getGroup_TypesAccess().getCommaKeyword_3_0());
+				newLeafNode(otherlv_4, grammarAccess.getGroup_TypesAccess().getCommaKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGroup_TypesAccess().getGroup_typesGroup_Type_NameParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getGroup_TypesAccess().getGroup_typesGroup_Type_NameParserRuleCall_4_1_0());
 					}
-					lv_group_types_4_0=ruleGroup_Type_Name
+					lv_group_types_5_0=ruleGroup_Type_Name
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getGroup_TypesRule());
@@ -827,20 +834,20 @@ ruleGroup_Types returns [EObject current=null]
 						add(
 							$current,
 							"group_types",
-							lv_group_types_4_0,
+							lv_group_types_5_0,
 							"uofa.lbirdsey.castle.CASL.Group_Type_Name");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_5=';'
+		otherlv_6=';'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getGroup_TypesAccess().getSemicolonKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getGroup_TypesAccess().getSemicolonKeyword_5());
 		}
-		otherlv_6='};'
+		otherlv_7='};'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGroup_TypesAccess().getRightCurlyBracketSemicolonKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getGroup_TypesAccess().getRightCurlyBracketSemicolonKeyword_6());
 		}
 	)
 ;
