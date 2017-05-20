@@ -56,6 +56,9 @@ class EnvironmentGeneration {
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		imports += "import castleComponents.Entity;\n"
+		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
+		imports += "import java.util.concurrent.Executors;\n"
+		
 		//iC = importCandidate
 		
 		
@@ -303,7 +306,6 @@ class EnvironmentGeneration {
 			for (subsFP : subsystem.functionParameters){
 				if (subsFP !== null){
 					if (!(subsFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
 						libImports.add(HelperFunctions.getFieldType(subsFP as Field))
 					}
 				}
@@ -324,7 +326,6 @@ class EnvironmentGeneration {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
 					if (!(interFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
 						libImports.add(HelperFunctions.getFieldType(interFP as Field))
 					}
 				}
@@ -361,7 +362,7 @@ class EnvironmentGeneration {
 	}
 	//In this we create and initialise the groups into the environment
 	def createInitialiseFunction(Environment env){
-		var str = "void initialise() {\n\tsuper.initialise();\n\t";
+		var str = "public void initialise() {\n\tsuper.initialise();\n\t";
 		//Get layout type
 		val layoutType = getLayoutType(env);
 		
@@ -398,23 +399,23 @@ class EnvironmentGeneration {
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Setup();\n"
 			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
-			str += "\t\tcapExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (SemanticGroup e : containedEntities){\n\t\t\ttcapExecutor.execute(e);\n\t\t}\n"
-			str += "\t\tcapExecutor.shutdown();\n\t\twhile (!capExecutor.isTerminated()){};\n"
+			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
 			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
 			str += "\t\t broadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Action();\n"
 			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
-			str += "\t\tcapExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (SemanticGroup e : containedEntities){\n\t\t\ttcapExecutor.execute(e);\n\t\t}\n"
-			str += "\t\tcapExecutor.shutdown();\n\t\twhile (!capExecutor.isTerminated()){};\n"
+			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Cleanup();\n"
 			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
-			str += "\t\tcapExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (SemanticGroup e : containedEntities){\n\t\t\ttcapExecutor.execute(e);\n\t\t}\n"
-			str += "\t\tcapExecutor.shutdown();\n\t\twhile (!capExecutor.isTerminated()){};\n"
+			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
 			str += "\t}\n"			 
 			str += "}\n"
 		return str;
@@ -515,7 +516,7 @@ class EnvironmentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : triggers) {\n"
+		str += "\tfor (Trigger t : actionTriggers) {\n"
 		str += "\t\tt.trigger();\n"
 		str += "\t}\n"
 		str +="}\n\n"

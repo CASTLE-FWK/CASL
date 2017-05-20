@@ -250,7 +250,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			str += "\t\tenvExecutor.execute(env);\n\t}\n"
 			str += "\tenvExecutor.shutdown();\n"
 			str += "\twhile(!envExecutor.isTerminated()){\n" //EWWWW
-			str += "\t\t//HAHAHAHAH EWWWWWWW WHAT IS THIS? THIS CANT BE ACTUAL JAVA \n\t}\n"
+			str += "\t\t \n\t}\n"
 			str +="\t/**********ACTION PHASE**********/ \n\n"
 			str +="\tcurrentPhase = Phase.ACTION; \n"
 			str += "\t//Broadcast Phase.SETUP to tier1 entities\n\tbroadcast(MessageType.PHASE, currentPhase);\n\n"
@@ -260,7 +260,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			str += "\t\tenvExecutor.execute(env);\n\t}\n"
 			str += "\tenvExecutor.shutdown();\n"
 			str += "\twhile(!envExecutor.isTerminated()){\n" //EWWWW
-			str += "\t\t//HAHAHAHAH EWWWWWWW WHAT IS THIS? THIS CANT BE ACTUAL JAVA \n}\n"
+			str += "\t\t \n\t}\n"
 			str +="\t/**********CLEANUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
 			str +="\tcurrentPhase = Phase.SETUP; \n"
@@ -272,7 +272,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			str += "\t\tenvExecutor.execute(env);\n\t}\n"
 			str += "\tenvExecutor.shutdown();\n"
 			str += "\twhile(!envExecutor.isTerminated()){\n" //EWWWW
-			str += "\t\t//HAHAHAHAH EWWWWWWW WHAT IS THIS? THIS CANT BE ACTUAL JAVA \n\t}\n"
+			str += "\t\t \n\t}\n"
 			str += "}\n"
 		return str;
 	}
