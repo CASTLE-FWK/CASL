@@ -27,8 +27,8 @@ class SystemValidator extends AbstractCASLValidator {
 		ruletype = system.cas_rules.cas_rule
 		inspection_level = system.cas_rules.cas_check
 		exceptions = system.cas_rules.exceptions
-		if (exceptions.length > 2){
-			error('Too many exceptions included. Maximum amount of 2',CaslPackage::eINSTANCE.system_Cas_rules);
+		if (exceptions.length > 3){
+			error('Too many exceptions included. Maximum amount of 3 (for now)',CaslPackage::eINSTANCE.system_Cas_rules);
 		}	
 		//If type is STRICT and exceptions are added that aren't NONE, ERROR 
 		if (ruletype == CAS_Rule_Types.STRICT){
