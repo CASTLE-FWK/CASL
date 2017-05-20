@@ -366,12 +366,12 @@ class EnvironmentGeneration {
 		//Get layout type
 		val layoutType = getLayoutType(env);
 		
-		switch(layoutType){
-			case LayoutType.GRID:
-				str += initGridLayout()
-			default:
-				str += "ERROR WITH LAYOUT INIT"
-		}
+//		switch(layoutType){
+//			case LayoutType.GRID:
+//				str += initGridLayout()
+//			default:
+//				str += "ERROR WITH LAYOUT INIT"
+//		}
 		return str;
 	}
 	

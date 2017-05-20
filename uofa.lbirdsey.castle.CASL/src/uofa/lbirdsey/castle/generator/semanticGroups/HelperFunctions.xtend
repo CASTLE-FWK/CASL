@@ -717,7 +717,8 @@ class HelperFunctions {
 		for (expr : loop.body) {
 			output += "\t\t"+autoPrinter(expr)+";\n"
 		} 
-		output += "\t\t"+autoPrinter(loop.shifter)+";\n}\n"
+//		output += "\t\t"+autoPrinter(loop.shifter)+";\n}\n" //20/05/17: why are you printing the shifter again here?
+		output += "\t\t\n}\n"
 		return output;
 	}
 	

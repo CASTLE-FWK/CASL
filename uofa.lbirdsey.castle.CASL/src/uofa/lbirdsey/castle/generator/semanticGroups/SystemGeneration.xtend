@@ -461,7 +461,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += envSetUp;
 		
 		//Set up the main System init stuff
-		str +="\n\tinitialise();\n\ttheContext = context;\n";
+		str +="\n\tinitialize();\n\ttheContext = context;\n";
 		
 				
 		str += "\n\treturn context;"
