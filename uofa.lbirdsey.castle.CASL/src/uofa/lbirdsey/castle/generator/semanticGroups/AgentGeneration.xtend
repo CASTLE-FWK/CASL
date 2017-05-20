@@ -186,11 +186,18 @@ class AgentGeneration {
 		var output = "";
 		for (behavior : a.agent_behaviors.behaviors){			
 			output += "public ";
-			output += HelperFunctions.inferMethodType(behavior.body)+" " +behavior.name+ "(" + HelperFunctions.printFunctionParameters(behavior.functionParameters) +")"
+			if (behavior.functionParameters.size > 0){
+				output += HelperFunctions.inferMethodType(behavior.body)+" " +behavior.name+ "(" +a.name.toFirstUpper+ " "+a.name.toLowerCase+", " + HelperFunctions.printFunctionParameters(behavior.functionParameters) +")"
+			} else {
+				output += HelperFunctions.inferMethodType(behavior.body)+" " +behavior.name+ "(" +a.name.toFirstUpper+ " "+a.name.toLowerCase+")"
+			}
 			output += " {\n"
 			output += HelperFunctions.printMethodBody(behavior.body, behavior)
 			libImports.addAll(HelperFunctions.populateImports(behavior.body))
 			output += "\n}\n"
+			
+			
+			
 			
 			//Create the trigger object here
 			var triggerString = "";
@@ -199,14 +206,14 @@ class AgentGeneration {
 				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
 				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
+				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"((("+a.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
 				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
 				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
 				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
+				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"((("+a.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
 				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
@@ -214,7 +221,7 @@ class AgentGeneration {
 				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
 				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"();\n"
+				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"((("+a.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
 				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
 				triggersStringsToPrint.add(triggerString);

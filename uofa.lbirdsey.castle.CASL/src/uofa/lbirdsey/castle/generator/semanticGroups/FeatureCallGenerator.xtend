@@ -13,6 +13,7 @@ import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall
 import uofa.lbirdsey.castle.casl.TransmissionFeatureCall
 import uofa.lbirdsey.castle.casl.BehaviorFeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCallExp
+import uofa.lbirdsey.castle.casl.Function
 
 class FeatureCallGenerator {
 	
@@ -30,7 +31,12 @@ class FeatureCallGenerator {
 			return HelperFunctions.inferMethodType(ifc.body);  							
 		} else if (fc instanceof FunctionFeatureCall){
 			var ifc = (fc as FunctionFeatureCall).process;
-			return HelperFunctions.inferMethodType(ifc.body);
+			if ((ifc as Function).returnType !== null){
+				return HelperFunctions.inferSymbolType((ifc as Function).returnType)
+			} else {
+				return "void"
+			} 
+			
 		}else if (fc instanceof BehaviorFeatureCall) {
 			var bfc = (fc as BehaviorFeatureCall).process;
 			if (bfc.behavior_reaction_time == BehaviorReactionTime.INSTANT){
