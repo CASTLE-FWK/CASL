@@ -74,10 +74,12 @@ Environment_Rules:
 	'};'
 ;
 
+//TODO: Handle the enumeration in validation
 Group_Types:
+	{Group_Types}
 	'group_types:' '{'
-		(group_types += Group_Type_Name)(',' group_types += Group_Type_Name)*';'
-	'};'
+		(group_types += Group_Type_Name)*';'
+	'};'	
 ;
 
 Group_Type_Name:
@@ -132,6 +134,7 @@ enum CAS_Rule_Types:
  /**
   * CAS_Rule_Exception
   */
+  //TODO:
 enum CAS_Rule_Exception:
  	MODULARITY = 'modularity' | DIVERSITY = 'diversity' | NONE = 'none' | ADAPTATION = "adaptation"
 ;
@@ -140,7 +143,6 @@ enum CAS_Inspection_Level:
 	STRONG = 'strong' | WEAK = 'weak' | NONE = 'none'
 ;
 
-//TODO: Make this work in validation stage
 enum CAS_Semantic_Group_Switch:
 	ENABLE = 'enable' | DISABLE = "disable"
 ;

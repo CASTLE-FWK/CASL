@@ -12,6 +12,7 @@ import org.eclipse.xtext.validation.ComposedChecks;
 import uofa.lbirdsey.castle.casl.Agent;
 import uofa.lbirdsey.castle.casl.Behavior;
 import uofa.lbirdsey.castle.casl.BehaviorType;
+import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Entity;
 import uofa.lbirdsey.castle.casl.Environment;
@@ -47,6 +48,21 @@ public class CASLValidator extends AbstractCASLValidator {
       String _plus = (_name + " name should begin with a capital letter");
       this.warning(_plus, CaslPackage.eINSTANCE.getEntity_Name());
     }
+  }
+  
+  @Check
+  public Object checkGroupIsDefined(final Entity ent, final uofa.lbirdsey.castle.casl.System sys) {
+    Object _xblockexpression = null;
+    {
+      CAS_Semantic_Group_Switch _semanticgroups = sys.getCas_rules().getSemanticgroups();
+      boolean sgActive = Objects.equal(_semanticgroups, CAS_Semantic_Group_Switch.ENABLE);
+      Object _xifexpression = null;
+      if (sgActive) {
+        _xifexpression = null;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   /**

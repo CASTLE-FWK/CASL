@@ -80,6 +80,7 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_Print) {
 			var mac = (macro as CASL_Macro_Print)
 			output += "System.out.println(\""+mac.str+"\");\n"
+			
 		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)

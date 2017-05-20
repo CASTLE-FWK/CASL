@@ -26,6 +26,8 @@ class GroupGeneration {
 	var HashSet<String> importsToPrint = null;
 	var groupLayout = "";
 	var ArrayList<String> initialList = null;
+	var ArrayList<String> triggersToPrintInit = null;
+	var ArrayList<String> triggersStringsToPrint = null;
 	
 	new(Group g, String systemRoot, String grpsPkg){
 		theGroup = g;
@@ -36,6 +38,8 @@ class GroupGeneration {
 		initialList = new ArrayList<String>();
 		importsToPrint = new HashSet<String>();
 		groupLayout = "";
+		triggersToPrintInit = new ArrayList<String>();
+		triggersStringsToPrint = new ArrayList<String>();
 	}
 	
 	def setup(){
@@ -215,30 +219,31 @@ class GroupGeneration {
 			
 			//Create the trigger object here
 			var triggerString = "";
-//			var phase = behavior.behavior_reaction_time.toString().toLowerCase();
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
 				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"();\n"
-				triggerString += "\\ttreturn null;\n\t\t}}, false, this);\n\n"
-				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
-				output += triggerString;
+				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"((("+grp.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"();\n"
-				triggerString += "\t\treturn null;\n\t\t}}, false, this);\n\n"
-				initialList.add("cleanupTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
-				output += triggerString;
+				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"((("+grp.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
 				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
-				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"();\n"
-				triggerString += "\t\treturn null;\n\t\t}}, true, this);\n\n"
-				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
-				output += triggerString;
+				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"((("+grp.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
+//				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
+				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+")");
+				triggersStringsToPrint.add(triggerString);
 			}
 		}		
 		return output;
@@ -391,6 +396,13 @@ class GroupGeneration {
 		
 		//Get all the triggered features
 		var str = "//Schedules\n"
+		str += "//The NULL Triggers\n"
+		for (s : triggersToPrintInit){
+			str += "Trigger "+s+";\n"
+		}
+		str += "\n";
+		
+		
 		for (behavior : g.group_behaviors.behaviors) {
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
 				//This should be called x steps late. Is already handled

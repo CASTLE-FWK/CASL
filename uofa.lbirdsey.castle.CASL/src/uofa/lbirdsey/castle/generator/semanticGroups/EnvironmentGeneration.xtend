@@ -23,6 +23,9 @@ class EnvironmentGeneration {
 	var ArrayList<String> libImports = null;
 	var ArrayList<EObject> newImports = null;
 	var HashSet<String> importsToPrint = null;
+	var ArrayList<String> triggersToPrintInit = null;
+	var ArrayList<String> triggersStringsToPrint = null;
+	var ArrayList<String> initialList = null;
 	
 	def EnvironmentInitialisation(Environment env)'''
 	ArrayList<Function<«env.name»,Void>> setupQueue;
@@ -41,6 +44,9 @@ class EnvironmentGeneration {
 		libImports = new ArrayList<String>();
 		newImports = new ArrayList<EObject>();
 		importsToPrint = new HashSet<String>();
+		triggersToPrintInit = new ArrayList<String>();
+		initialList = new ArrayList<String>();
+		triggersStringsToPrint = new ArrayList<String>();
 	}
 	
 	def setup(){
@@ -217,6 +223,34 @@ class EnvironmentGeneration {
 			output += HelperFunctions.printMethodBody(behavior.body, behavior)
 			libImports.addAll(HelperFunctions.populateImports(behavior.body))
 			output += "\n}\n"
+						//Create the trigger object here
+			var triggerString = "";
+			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
+				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				triggerString += "\tpublic Void apply(Entity o) {\n"
+				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
+			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				triggerString += "\tpublic Void apply(Entity o) {\n"
+				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
+			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
+				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
+				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				triggerString += "\tpublic Void apply(Entity o) {\n"
+				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
+				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
+//				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
+				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+")");
+				triggersStringsToPrint.add(triggerString);
+			}
 		}
 		return output;
 	}
@@ -395,6 +429,12 @@ class EnvironmentGeneration {
 		
 		//Get all the triggered features
 		var str = "//Schedules\n"
+		str += "//The NULL Triggers\n"
+		for (s : triggersToPrintInit){
+			str += "Trigger "+s+";\n"
+		}
+		str += "\n";
+		
 		for (behavior : env.env_behaviors.behaviors) {
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
 				//This should be called x steps late. Is already handled

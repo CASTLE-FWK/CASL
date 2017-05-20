@@ -36,6 +36,7 @@ class SystemValidator extends AbstractCASLValidator {
 				error('CAS Ruletype is STRICT but exceptions are provided. Either change to LENIENT or change exceptions to NONE',CaslPackage::eINSTANCE.system_Cas_rules);
 			}			
 		}
+		//This is a lazy hack
 		numberOfAgents = system.agent_types.agent_types.length;
 		
 	}
@@ -45,10 +46,12 @@ class SystemValidator extends AbstractCASLValidator {
 		var sgActive = sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE;
 		var numGroups = sys.group_types.group_types.size
 		if (sgActive){
-			
+			if (numGroups < 1){
+				warning("Semantic Groups is on. Please define a group in the list and a full definition below.",CaslPackage::eINSTANCE.system_Group_types)	
+			}
 		} else {
 			if (numGroups > 0){
-				warning("Semantic Groups is disabled. Implemented groups won't be used",CaslPackage::eINSTANCE.system_Cas_rules)
+				warning("Semantic Groups is disabled. Implemented groups won't be generated",CaslPackage::eINSTANCE.system_Cas_rules)
 			}
 		}
 		

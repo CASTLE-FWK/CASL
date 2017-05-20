@@ -17,6 +17,8 @@ import uofa.lbirdsey.castle.casl.Interaction
 import uofa.lbirdsey.castle.casl.BehaviorType
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCall
+import uofa.lbirdsey.castle.casl.System
+import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
 
 /**
  * This class contains custom validation rules. 
@@ -29,8 +31,18 @@ public class CASLValidator extends AbstractCASLValidator {
 	/****Global Checks ****/
 	@Check
 	def checkEntityNameStartsWithCapital(Entity ent) {
-		if (!Character.isUpperCase(ent.getName().charAt(0))){CaslPackage::eINSTANCE.system_Cas_rules
+		if (!Character.isUpperCase(ent.getName().charAt(0))){
+			CaslPackage::eINSTANCE.system_Cas_rules
 			warning(ent.name+" name should begin with a capital letter",CaslPackage::eINSTANCE.entity_Name);
+		}
+	}
+	
+	@Check
+	def checkGroupIsDefined(Entity ent, System sys){
+		var sgActive = sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE;
+		if (sgActive){
+			//Count number of Groups defined
+			
 		}
 	}
 	

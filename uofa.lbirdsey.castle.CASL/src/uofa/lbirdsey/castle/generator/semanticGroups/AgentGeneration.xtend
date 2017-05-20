@@ -223,7 +223,8 @@ class AgentGeneration {
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+a.name.toFirstUpper+") o)."+behavior.name+"((("+a.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
-				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
+//				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
+				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+")");
 				triggersStringsToPrint.add(triggerString);
 			}
 		}
