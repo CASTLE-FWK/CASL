@@ -84,6 +84,7 @@ public class CASLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) agentCall=Agent_Call
 	 *     (rule start) (ambiguity) bool=BooleanValue
 	 *     (rule start) (ambiguity) enumCall=EnumCall
+	 *     (rule start) (ambiguity) environmentCall=Environment_Call
 	 *     (rule start) (ambiguity) func=FeatureCall
 	 *     (rule start) (ambiguity) funcCall=FunctionCall
 	 *     (rule start) (ambiguity) groupCall=Group_Call

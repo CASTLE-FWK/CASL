@@ -418,6 +418,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Agent_Call/qnc"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Environment_Call">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Environment_Call/environmentCall"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//Environment_Call/env"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Environment_Call/qnc"/>
     </genClasses>

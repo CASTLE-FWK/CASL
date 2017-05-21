@@ -4,12 +4,12 @@
 package uofa.lbirdsey.castle.casl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Environment;
@@ -23,14 +23,25 @@ import uofa.lbirdsey.castle.casl.Environment_Call;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.Environment_CallImpl#getEnvironmentCall <em>Environment Call</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.Environment_CallImpl#getEnv <em>Env</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.Environment_CallImpl#getQnc <em>Qnc</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Environment_CallImpl extends MinimalEObjectImpl.Container implements Environment_Call
+public class Environment_CallImpl extends ExpressionImpl implements Environment_Call
 {
+  /**
+   * The cached value of the '{@link #getEnvironmentCall() <em>Environment Call</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnvironmentCall()
+   * @generated
+   * @ordered
+   */
+  protected Environment_Call environmentCall;
+
   /**
    * The cached value of the '{@link #getEnv() <em>Env</em>}' reference.
    * <!-- begin-user-doc -->
@@ -80,6 +91,54 @@ public class Environment_CallImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return CaslPackage.eINSTANCE.getEnvironment_Call();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Environment_Call getEnvironmentCall()
+  {
+    return environmentCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEnvironmentCall(Environment_Call newEnvironmentCall, NotificationChain msgs)
+  {
+    Environment_Call oldEnvironmentCall = environmentCall;
+    environmentCall = newEnvironmentCall;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL, oldEnvironmentCall, newEnvironmentCall);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEnvironmentCall(Environment_Call newEnvironmentCall)
+  {
+    if (newEnvironmentCall != environmentCall)
+    {
+      NotificationChain msgs = null;
+      if (environmentCall != null)
+        msgs = ((InternalEObject)environmentCall).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL, null, msgs);
+      if (newEnvironmentCall != null)
+        msgs = ((InternalEObject)newEnvironmentCall).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL, null, msgs);
+      msgs = basicSetEnvironmentCall(newEnvironmentCall, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL, newEnvironmentCall, newEnvironmentCall));
   }
 
   /**
@@ -154,10 +213,28 @@ public class Environment_CallImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL:
+        return basicSetEnvironmentCall(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL:
+        return getEnvironmentCall();
       case CaslPackage.ENVIRONMENT_CALL__ENV:
         if (resolve) return getEnv();
         return basicGetEnv();
@@ -177,6 +254,9 @@ public class Environment_CallImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL:
+        setEnvironmentCall((Environment_Call)newValue);
+        return;
       case CaslPackage.ENVIRONMENT_CALL__ENV:
         setEnv((Environment)newValue);
         return;
@@ -197,6 +277,9 @@ public class Environment_CallImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL:
+        setEnvironmentCall((Environment_Call)null);
+        return;
       case CaslPackage.ENVIRONMENT_CALL__ENV:
         setEnv((Environment)null);
         return;
@@ -217,6 +300,8 @@ public class Environment_CallImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case CaslPackage.ENVIRONMENT_CALL__ENVIRONMENT_CALL:
+        return environmentCall != null;
       case CaslPackage.ENVIRONMENT_CALL__ENV:
         return env != null;
       case CaslPackage.ENVIRONMENT_CALL__QNC:

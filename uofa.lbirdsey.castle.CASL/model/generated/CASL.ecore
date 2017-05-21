@@ -512,7 +512,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qnc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Environment_Call">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment_Call" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentCall" eType="#//Environment_Call"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="env" eType="#//Environment"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qnc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

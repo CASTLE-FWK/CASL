@@ -3,7 +3,6 @@
  */
 package uofa.lbirdsey.castle.casl;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uofa.lbirdsey.castle.casl.Environment_Call#getEnvironmentCall <em>Environment Call</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.Environment_Call#getEnv <em>Env</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.Environment_Call#getQnc <em>Qnc</em>}</li>
  * </ul>
@@ -22,8 +22,34 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Environment_Call extends EObject
+public interface Environment_Call extends Expression
 {
+  /**
+   * Returns the value of the '<em><b>Environment Call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Environment Call</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Environment Call</em>' containment reference.
+   * @see #setEnvironmentCall(Environment_Call)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getEnvironment_Call_EnvironmentCall()
+   * @model containment="true"
+   * @generated
+   */
+  Environment_Call getEnvironmentCall();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Environment_Call#getEnvironmentCall <em>Environment Call</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Environment Call</em>' containment reference.
+   * @see #getEnvironmentCall()
+   * @generated
+   */
+  void setEnvironmentCall(Environment_Call value);
+
   /**
    * Returns the value of the '<em><b>Env</b></em>' reference.
    * <!-- begin-user-doc -->

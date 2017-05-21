@@ -3129,13 +3129,22 @@ public interface CaslPackage extends EPackage
   int ENVIRONMENT_CALL = 72;
 
   /**
+   * The feature id for the '<em><b>Environment Call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENVIRONMENT_CALL__ENVIRONMENT_CALL = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Env</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENVIRONMENT_CALL__ENV = 0;
+  int ENVIRONMENT_CALL__ENV = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Qnc</b></em>' attribute.
@@ -3144,7 +3153,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENVIRONMENT_CALL__QNC = 1;
+  int ENVIRONMENT_CALL__QNC = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Environment Call</em>' class.
@@ -3153,7 +3162,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENVIRONMENT_CALL_FEATURE_COUNT = 2;
+  int ENVIRONMENT_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Group_CallImpl <em>Group Call</em>}' class.
@@ -7964,6 +7973,17 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EClass getEnvironment_Call();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Environment_Call#getEnvironmentCall <em>Environment Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Environment Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.Environment_Call#getEnvironmentCall()
+   * @see #getEnvironment_Call()
+   * @generated
+   */
+  EReference getEnvironment_Call_EnvironmentCall();
 
   /**
    * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.Environment_Call#getEnv <em>Env</em>}'.

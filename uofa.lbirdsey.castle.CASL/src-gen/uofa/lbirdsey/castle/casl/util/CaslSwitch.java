@@ -726,6 +726,7 @@ public class CaslSwitch<T> extends Switch<T>
       {
         Environment_Call environment_Call = (Environment_Call)theEObject;
         T result = caseEnvironment_Call(environment_Call);
+        if (result == null) result = caseExpression(environment_Call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

@@ -271,6 +271,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroup_10(), "rule__Atomic__Group_10__0");
 					put(grammarAccess.getAtomicAccess().getGroup_11(), "rule__Atomic__Group_11__0");
 					put(grammarAccess.getAtomicAccess().getGroup_12(), "rule__Atomic__Group_12__0");
+					put(grammarAccess.getAtomicAccess().getGroup_13(), "rule__Atomic__Group_13__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_0(), "rule__SelfCall__Group_0__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_1(), "rule__SelfCall__Group_1__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_2(), "rule__SelfCall__Group_2__0");
@@ -629,6 +630,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getEnumCallAssignment_10_1(), "rule__Atomic__EnumCallAssignment_10_1");
 					put(grammarAccess.getAtomicAccess().getGroupCallAssignment_11_1(), "rule__Atomic__GroupCallAssignment_11_1");
 					put(grammarAccess.getAtomicAccess().getAgentCallAssignment_12_1(), "rule__Atomic__AgentCallAssignment_12_1");
+					put(grammarAccess.getAtomicAccess().getEnvironmentCallAssignment_13_1(), "rule__Atomic__EnvironmentCallAssignment_13_1");
 					put(grammarAccess.getSelfCallAccess().getRefAssignment_1_1(), "rule__SelfCall__RefAssignment_1_1");
 					put(grammarAccess.getSelfCallAccess().getFcAssignment_2_1(), "rule__SelfCall__FcAssignment_2_1");
 					put(grammarAccess.getSelfCallAccess().getFecAssignment_3_1(), "rule__SelfCall__FecAssignment_3_1");

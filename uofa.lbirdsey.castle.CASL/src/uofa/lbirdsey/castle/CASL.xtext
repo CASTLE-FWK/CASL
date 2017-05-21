@@ -675,13 +675,14 @@ Atomic returns Expression:
 	{BooleanType} bool = BooleanValue							|	
 	{TypeRef} type = [Symbol]/*('.'call = [Symbol])?*/ 			|	//TODO: This needs to be improved massively
   	{SystemCallObj} sysCall = SystemCall 						|
-  	{FeatureCallExp} func = FeatureCall  							|
+  	{FeatureCallExp} func = FeatureCall  						|
   	{SelfCallExpr} selfCall = SelfCall							|
   	{MacroCall} macroCall = CASL_Macro_Call						|
   	{FunctionCallExpr} funcCall = FunctionCall 					|
   	{EnumCallExpr}enumCall = EnumCall							|
   	{Group_Call}groupCall = Group_Call							|
-  	{Agent_Call}agentCall = Agent_Call
+  	{Agent_Call}agentCall = Agent_Call							|
+  	{Environment_Call}environmentCall = Environment_Call
 ;
 
 //We have to add Agent

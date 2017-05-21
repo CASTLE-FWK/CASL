@@ -421,7 +421,7 @@ class HelperFunctions {
 			else if (expr instanceof Agent_Call)
 				return (expr as Agent_Call).agentCall.agent.name+".class"
 			else if (expr instanceof Environment_Call)
-				return (expr as Environment_Call).env.name+".class"
+				return (expr as Environment_Call).environmentCall.env.name+".class"
 			else if (expr instanceof Group_Call)
 				return (expr as Group_Call).groupCall.grp.name+".class"
 			else if (expr instanceof ForLoop)

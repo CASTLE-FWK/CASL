@@ -330,8 +330,30 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_EnvironmentInteractions(context, (EnvironmentInteractions) semanticObject); 
 				return; 
 			case CaslPackage.ENVIRONMENT_CALL:
-				sequence_Environment_Call(context, (Environment_Call) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getExpressionRule()
+						|| rule == grammarAccess.getBooleanExpressionRule()
+						|| action == grammarAccess.getBooleanExpressionAccess().getBooleanExpressionLeftAction_1_0_0()
+						|| rule == grammarAccess.getEqualsRule()
+						|| action == grammarAccess.getEqualsAccess().getEqualsLeftAction_1_0_0()
+						|| rule == grammarAccess.getComparisonRule()
+						|| action == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0_0()
+						|| rule == grammarAccess.getSubtractionRule()
+						|| action == grammarAccess.getSubtractionAccess().getSubtractionLeftAction_1_0()
+						|| rule == grammarAccess.getAdditionRule()
+						|| action == grammarAccess.getAdditionAccess().getAdditionLeftAction_1_0()
+						|| rule == grammarAccess.getMultiplicationRule()
+						|| action == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0_0_0()
+						|| action == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0()
+						|| rule == grammarAccess.getPrefixedRule()
+						|| rule == grammarAccess.getAtomicRule()) {
+					sequence_Atomic(context, (Environment_Call) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getEnvironment_CallRule()) {
+					sequence_Environment_Call(context, (Environment_Call) semanticObject); 
+					return; 
+				}
+				else break;
 			case CaslPackage.ENVIRONMENT_RULES:
 				sequence_Environment_Rules(context, (Environment_Rules) semanticObject); 
 				return; 
@@ -874,6 +896,39 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtomicAccess().getEnumCallEnumCallParserRuleCall_10_1_0(), semanticObject.getEnumCall());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns Environment_Call
+	 *     BooleanExpression returns Environment_Call
+	 *     BooleanExpression.BooleanExpression_1_0_0 returns Environment_Call
+	 *     Equals returns Environment_Call
+	 *     Equals.Equals_1_0_0 returns Environment_Call
+	 *     Comparison returns Environment_Call
+	 *     Comparison.Comparison_1_0_0 returns Environment_Call
+	 *     Subtraction returns Environment_Call
+	 *     Subtraction.Subtraction_1_0 returns Environment_Call
+	 *     Addition returns Environment_Call
+	 *     Addition.Addition_1_0 returns Environment_Call
+	 *     Multiplication returns Environment_Call
+	 *     Multiplication.Multiplication_1_0_0_0 returns Environment_Call
+	 *     Multiplication.Div_1_0_1_0 returns Environment_Call
+	 *     Prefixed returns Environment_Call
+	 *     Atomic returns Environment_Call
+	 *
+	 * Constraint:
+	 *     environmentCall=Environment_Call
+	 */
+	protected void sequence_Atomic(ISerializationContext context, Environment_Call semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getEnvironment_Call_EnvironmentCall()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getEnvironment_Call_EnvironmentCall()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getEnvironmentCallEnvironment_CallParserRuleCall_13_1_0(), semanticObject.getEnvironmentCall());
 		feeder.finish();
 	}
 	
@@ -2415,8 +2470,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=SelfAssignedFormula? 
-	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=Field)? elseexp+=SelfAssignedFormula?)*
+	 *         elseexp+=Expression? 
+	 *         ((elseexp+=Formula | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Expression?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

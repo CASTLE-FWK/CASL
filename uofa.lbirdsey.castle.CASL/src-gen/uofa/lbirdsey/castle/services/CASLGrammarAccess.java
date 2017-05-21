@@ -6039,19 +6039,25 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cAgent_CallAction_12_0 = (Action)cGroup_12.eContents().get(0);
 		private final Assignment cAgentCallAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
 		private final RuleCall cAgentCallAgent_CallParserRuleCall_12_1_0 = (RuleCall)cAgentCallAssignment_12_1.eContents().get(0);
+		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
+		private final Action cEnvironment_CallAction_13_0 = (Action)cGroup_13.eContents().get(0);
+		private final Assignment cEnvironmentCallAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cEnvironmentCallEnvironment_CallParserRuleCall_13_1_0 = (RuleCall)cEnvironmentCallAssignment_13_1.eContents().get(0);
 		
 		////TODO: Most of these aren't atomics
 		//Atomic Expression:
 		//	{NumberLiteral} value=NUMBER | {StringLiteral} value=STRING | {NullTypeLiteral} nulltype=NullType | {BooleanType}
 		//	bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 		//	{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
-		//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call;
+		//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
+		//	{Environment_Call} environmentCall=Environment_Call;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NumberLiteral} value=NUMBER | {StringLiteral} value=STRING | {NullTypeLiteral} nulltype=NullType | {BooleanType}
 		//bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 		//{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
-		//{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call
+		//{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
+		//{Environment_Call} environmentCall=Environment_Call
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{NumberLiteral} value=NUMBER
@@ -6212,6 +6218,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Agent_Call
 		public RuleCall getAgentCallAgent_CallParserRuleCall_12_1_0() { return cAgentCallAgent_CallParserRuleCall_12_1_0; }
+		
+		//{Environment_Call} environmentCall=Environment_Call
+		public Group getGroup_13() { return cGroup_13; }
+		
+		//{Environment_Call}
+		public Action getEnvironment_CallAction_13_0() { return cEnvironment_CallAction_13_0; }
+		
+		//environmentCall=Environment_Call
+		public Assignment getEnvironmentCallAssignment_13_1() { return cEnvironmentCallAssignment_13_1; }
+		
+		//Environment_Call
+		public RuleCall getEnvironmentCallEnvironment_CallParserRuleCall_13_1_0() { return cEnvironmentCallEnvironment_CallParserRuleCall_13_1_0; }
 	}
 	public class SelfCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.SelfCall");
@@ -9896,7 +9914,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{NumberLiteral} value=NUMBER | {StringLiteral} value=STRING | {NullTypeLiteral} nulltype=NullType | {BooleanType}
 	//	bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 	//	{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
-	//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call;
+	//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
+	//	{Environment_Call} environmentCall=Environment_Call;
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;
 	}

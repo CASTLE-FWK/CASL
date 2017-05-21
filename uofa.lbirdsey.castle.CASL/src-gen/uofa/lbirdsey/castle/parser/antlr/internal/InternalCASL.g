@@ -9729,6 +9729,35 @@ ruleAtomic returns [EObject current=null]
 				)
 			)
 		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicAccess().getEnvironment_CallAction_13_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAtomicAccess().getEnvironmentCallEnvironment_CallParserRuleCall_13_1_0());
+					}
+					lv_environmentCall_27_0=ruleEnvironment_Call
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+						}
+						set(
+							$current,
+							"environmentCall",
+							lv_environmentCall_27_0,
+							"uofa.lbirdsey.castle.CASL.Environment_Call");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -10143,6 +10172,74 @@ ruleAgent_Call returns [EObject current=null]
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAgent_CallRule());
+						}
+						set(
+							$current,
+							"qnc",
+							lv_qnc_4_0,
+							"uofa.lbirdsey.castle.CASL.QualifiedNameCall");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleEnvironment_Call
+entryRuleEnvironment_Call returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnvironment_CallRule()); }
+	iv_ruleEnvironment_Call=ruleEnvironment_Call
+	{ $current=$iv_ruleEnvironment_Call.current; }
+	EOF;
+
+// Rule Environment_Call
+ruleEnvironment_Call returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnvironment_CallAccess().getEnvironment_CallAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='ENVIRONMENT.'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEnvironment_CallAccess().getENVIRONMENTKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEnvironment_CallRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getEnvironment_CallAccess().getEnvEnvironmentCrossReference_2_0());
+				}
+			)
+		)
+		(
+			otherlv_3='.'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getEnvironment_CallAccess().getFullStopKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEnvironment_CallAccess().getQncQualifiedNameCallParserRuleCall_3_1_0());
+					}
+					lv_qnc_4_0=ruleQualifiedNameCall
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEnvironment_CallRule());
 						}
 						set(
 							$current,

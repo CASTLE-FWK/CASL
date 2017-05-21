@@ -352,7 +352,10 @@ class EnvironmentGeneration {
 		//Get layout type
 //		val layoutType = getLayoutType(env);
 
-		str += "\tcontainedEntities.addAll(layoutParameters.getContainedGroups());\n"	
+//		str += "\tcontainedEntities.addAll(layoutParameters.getContainedGroups());\n"	
+
+
+
 //		switch(layoutType){
 //			case LayoutType.GRID:
 //				str += initGridLayout()

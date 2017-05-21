@@ -472,7 +472,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
 		
-		str += "\ttier1Entities = storedEnvironments.size()";
+		str += "\ttier1Entities = storedEnvironments.size();";
 		str += "\n\treturn context;"
 		str += "\n}\n"
 		

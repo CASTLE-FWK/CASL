@@ -3852,7 +3852,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEnvironment_Call_Env()
+  public EReference getEnvironment_Call_EnvironmentCall()
   {
         return (EReference)getEnvironment_Call().getEStructuralFeatures().get(0);
   }
@@ -3862,9 +3862,19 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEnvironment_Call_Env()
+  {
+        return (EReference)getEnvironment_Call().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getEnvironment_Call_Qnc()
   {
-        return (EAttribute)getEnvironment_Call().getEStructuralFeatures().get(1);
+        return (EAttribute)getEnvironment_Call().getEStructuralFeatures().get(2);
   }
 
   /**
