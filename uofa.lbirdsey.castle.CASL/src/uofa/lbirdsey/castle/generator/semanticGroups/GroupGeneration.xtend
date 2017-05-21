@@ -455,7 +455,7 @@ class GroupGeneration {
 		*/
 		//How do we add things to the different queues again?
 		//TODO: Generate trigger objects
-		for (transmission : g.group_external_interactions.externalInteractions) {			
+		for (transmission : g.group_external_interactions.external_interactions) {			
 			if (transmission.transmissionRepeat == Transmission_Repeat.REPEAT){
 				//Determine phase
 				val phase = transmission.transmissionPhase;
