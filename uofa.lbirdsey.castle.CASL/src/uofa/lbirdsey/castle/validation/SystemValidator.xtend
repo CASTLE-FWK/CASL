@@ -43,7 +43,7 @@ class SystemValidator extends AbstractCASLValidator {
 	
 	@Check
 	def semanticGroupActive(System sys){
-		var sgActive = sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE;
+		var sgActive = (sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE);
 		var numGroups = sys.group_types.group_types.size
 		if (sgActive){
 			if (numGroups < 1){

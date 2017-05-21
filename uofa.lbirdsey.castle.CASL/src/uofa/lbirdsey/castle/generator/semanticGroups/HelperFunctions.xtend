@@ -384,7 +384,7 @@ class HelperFunctions {
 			else if (expr instanceof BooleanType)
 				return (expr as BooleanType).bool
 			else if (expr instanceof SystemCallObj)
-				return systemName+".get"+((expr as SystemCallObj).sysCall.call.toFirstUpper)+"()"
+				return systemName.replaceAll(" ","")+".get"+((expr as SystemCallObj).sysCall.call.toFirstUpper)+"()"
 			else if (expr instanceof StringLiteral)
 				return "\""+(expr as StringLiteral).value+"\""
 			else if (expr instanceof TypeRef)

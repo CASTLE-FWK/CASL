@@ -19,6 +19,7 @@ import uofa.lbirdsey.castle.casl.Type
 import org.eclipse.xtext.generator.IGenerator2
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
 
 //import uofa.lbirdsey.castle.generator.castleComponents.HelperFunctions
 
@@ -38,6 +39,7 @@ class RepastGenerator implements IGenerator2 {
 	var objsPkg = "";
 	val lib = "castleComponents"
 	val lib_obj ="castleComponents.objects"
+	var groupsActive = false;
 	
 	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		throw new UnsupportedOperationException("TODO: auto-generated method stub")
@@ -54,6 +56,9 @@ class RepastGenerator implements IGenerator2 {
 	override doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		//Create sub-directories for each CAS Type
 		HelperFunctions.initTypesList();	
+		
+		//Check to see if groups are off
+		
 		
 		
 		//Populate the types list (this really should be a table for V. large models but later...)
@@ -86,6 +91,7 @@ class RepastGenerator implements IGenerator2 {
 			envsPkg = mainPkg + ".environments";
 			grpsPkg = mainPkg + ".groups";
 			objsPkg = mainPkg + ".objects"
+			groupsActive = (sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE);
 			fsa.generateFile(
 				dirName+"/"+sys.fullyQualifiedName.toString("/").replaceAll(" ","") + ".java", sys.compileSystem.toString.replaceAll("string","String").replaceAll("bool","boolean").replaceAll("(;)+",";"))
 				
@@ -118,10 +124,12 @@ class RepastGenerator implements IGenerator2 {
 		}
 		
 		//Process the GROUPS
-		for(e : resource.allContents.toIterable.filter(Group)) {
-//			HelperFunctions.addToTypesArray(e as Group);
-			fsa.generateFile(
-				dirName+"/groups/"+e.fullyQualifiedName.toString("/") + ".java", e.compileGroup.toString.replaceAll("string","String").replaceAll("bool","boolean").replaceAll("(;)+",";"))
+		if (groupsActive){
+			for(e : resource.allContents.toIterable.filter(Group)) {
+	//			HelperFunctions.addToTypesArray(e as Group);
+				fsa.generateFile(
+					dirName+"/groups/"+e.fullyQualifiedName.toString("/") + ".java", e.compileGroup.toString.replaceAll("string","String").replaceAll("bool","boolean").replaceAll("(;)+",";"))
+			}
 		}
 		
 		//Process the ENVIRONMENTS
@@ -168,7 +176,7 @@ class RepastGenerator implements IGenerator2 {
 	
 	//Parse an ENVIRONMENTs stuff and break it down	
 	def compileEnvironment(Environment e) {
-		var env = new EnvironmentGeneration(e, mainPkg, envsPkg);
+		var env = new EnvironmentGeneration(e, mainPkg, envsPkg, groupsActive);
 		env.setup();
 		return HelperFunctions.copyrightPrint(e.name) + env.print();
 	}

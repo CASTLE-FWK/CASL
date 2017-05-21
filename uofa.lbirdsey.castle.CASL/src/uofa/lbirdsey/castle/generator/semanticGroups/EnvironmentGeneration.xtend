@@ -26,6 +26,7 @@ class EnvironmentGeneration {
 	var ArrayList<String> triggersToPrintInit = null;
 	var ArrayList<String> triggersStringsToPrint = null;
 	var ArrayList<String> initialList = null;
+	var groupsActive = false;
 	
 	def EnvironmentInitialisation(Environment env)'''
 	ArrayList<Function<«env.name»,Void>> setupQueue;
@@ -37,7 +38,7 @@ class EnvironmentGeneration {
 		super("«env.name»", id);
 	}'''
 	
-	new(Environment e, String systemRoot, String envPkg){
+	new(Environment e, String systemRoot, String envPkg, boolean groupsActive){
 		this.theEnvironment = e;
 		this.systemRoot = systemRoot;
 		this.envPkg = envPkg;
@@ -47,17 +48,18 @@ class EnvironmentGeneration {
 		triggersToPrintInit = new ArrayList<String>();
 		initialList = new ArrayList<String>();
 		triggersStringsToPrint = new ArrayList<String>();
+		this.groupsActive = groupsActive;
 	}
 	
 	def setup(){
 		fileContents = printLocal() as String;
 		//Add in the imports
-		var imports = "//Automated Environment Import Generation\nimport castleComponents.Environment;\n";
+		var imports = "//Automated Environment Import Generation\n import castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
-		imports += "import castleComponents.Entity;\n"
+		imports += "import castleComponents.Entity;\n import castleComponents.objects.Vector2;\n"
 		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
-		imports += "import java.util.concurrent.Executors;\n"
+		imports += "import java.util.concurrent.Executors;\n import java.util.Collections;\n"
 		
 		//iC = importCandidate
 		
@@ -176,7 +178,6 @@ class EnvironmentGeneration {
 				if (!(function.returnType instanceof FunctionParameter)){
 						libImports.add(HelperFunctions.getFieldType(function.returnType as Field))
 				}
-//				libImports.add(HelperFunctions.inferSymbolType((function.returnType as Symbol)));
 				output += HelperFunctions.inferSymbolType(function.returnType)+" ";
 			} else {
 				output += "void ";
@@ -215,7 +216,6 @@ class EnvironmentGeneration {
 			for (behaviorFP : behavior.functionParameters){
 				if (behaviorFP !== null){
 					if (!(behaviorFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
 						libImports.add(HelperFunctions.getFieldType(behaviorFP as Field))
 					}
 				}
@@ -264,7 +264,6 @@ class EnvironmentGeneration {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
 					if (!(interFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
 						libImports.add(HelperFunctions.getFieldType(interFP as Field))
 					}
 				}
@@ -285,7 +284,6 @@ class EnvironmentGeneration {
 			for (adaptFP : adaptation.functionParameters){
 				if (adaptFP !== null){
 					if (!(adaptFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
 						libImports.add(HelperFunctions.getFieldType(adaptFP as Field))
 					}
 				}
@@ -340,22 +338,7 @@ class EnvironmentGeneration {
 		return output	
 	}
 	
-		def miscRepast(Environment env)'''
-		public void assignSpace(Grid<Agent> grid, ContinuousSpace<Agent> space) {
-			setGrid(grid);
-			setSpace(space);
-		}
-		@Override
-		public void setPosition(Vector2 vector){
-			super.setPosition(vector);
-					
-			space.moveTo(this, position.getX(), position.getY());
-			grid.moveTo(this, (int)position.getX(), (int)position.getY());
-		}
-		public double getCurrentTickCount() {
-				return RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
-		}
-	'''
+
 	
 	def getLayoutType(Environment env){
 		return env.env_attributes.layout_type;
@@ -391,7 +374,15 @@ class EnvironmentGeneration {
 		return str;
 	}
 	
-	def String generateSimulateFunction(Environment environment){
+	def String generateSimulateFunction(Environment env){
+		if (groupsActive){
+			return generateSimulateFunction_SG(env);
+		} else {
+			return generateSimulateFunction_Normal(env);
+		}
+	}
+	
+	def String generateSimulateFunction_SG(Environment environment){
 		var str = "";
 			str += "@Override\npublic void run(){\n\tsimulate();\n}\n"
 			str += "public void simulate() {\n";
@@ -417,6 +408,40 @@ class EnvironmentGeneration {
 			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
 			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
 			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t}\n"			 
+			str += "}\n"
+		return str;
+	}
+	
+	def String generateSimulateFunction_Normal(Environment environment){
+			var str = "";
+			str += "@Override\npublic void run(){\n\tsimulate();\n}\n"
+			str += "public void simulate() {\n";
+			str += "\tif (getCurrentPhase() == Phase.SETUP) {\n"
+			str += "\t\tbroadcast(MessageType.CLOCK, getCurrentStep());\n"
+			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
+			str += "\t\tphase_Setup();\n"
+//			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			
+//			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+			
+			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
+			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
+			
+			str += "\t\tphase_Action();\n"
+			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			//Shuffle
+			str += "\t\tCollections.shuffle(containedEntities);\n"
+			
+			str += "\t\tfor (Entity e : containedEntities){e.simulate()}\n"
+			
+			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
+			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
+			str += "\t\tphase_Cleanup();\n"
+//			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			
+//			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+			
 			str += "\t}\n"			 
 			str += "}\n"
 		return str;
@@ -575,6 +600,25 @@ class EnvironmentGeneration {
 					«ENDFOR»
 				«ENDIF»
 			«ENDFOR»
+		}
+	'''
+	
+	
+	
+			def miscRepast(Environment env)'''
+		public void assignSpace(Grid<Agent> grid, ContinuousSpace<Agent> space) {
+			setGrid(grid);
+			setSpace(space);
+		}
+		@Override
+		public void setPosition(Vector2 vector){
+			super.setPosition(vector);
+					
+			space.moveTo(this, position.getX(), position.getY());
+			grid.moveTo(this, (int)position.getX(), (int)position.getY());
+		}
+		public double getCurrentTickCount() {
+				return RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		}
 	'''
 }
