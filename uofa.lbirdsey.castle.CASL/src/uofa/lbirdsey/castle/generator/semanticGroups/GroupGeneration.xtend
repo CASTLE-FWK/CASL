@@ -366,6 +366,9 @@ class GroupGeneration {
 			var output = "";
 			output += "@Override\n";
 			output += "public void initialise() {\n\tsuper.initialise();\n\t";
+			for (item : triggersStringsToPrint){
+				output += "\t"+item+"\n";
+			}
 			for (item : initialList){
 				output += "\t"+item+";\n"; 
 			}
