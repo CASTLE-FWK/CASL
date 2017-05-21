@@ -152,7 +152,7 @@ Entity:
 ;
 
 Entity_Feature:
-	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | Group_Transmission | GroupInternal 
+	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | GroupExternalInteraction | GroupInternalInteraction 
 ;
 
 /**
@@ -219,8 +219,8 @@ Group:
 		group_parameters = Parameters
 		group_functions = Functions
 		group_behaviors = Behaviors		
-		group_transmissions = Group_Transmissions
-		group_internals = GroupInternals
+		group_external_interactions = GroupExternalInteractions
+		group_internal_interactions = GroupInternalInteractions
 	'};'
 ;
 
@@ -231,18 +231,17 @@ Group_Rules:
 	'};'
 ;
 
-//TODO: Generate This
-Group_Transmissions:
-	{Group_Transmissions}
+GroupExternalInteractions:
+	{GroupExternalInteractions}
 	//These are essentially interactions that rely on slightly more complicated functions
 		//and must be wrapped as a message to the environment
-	'transmissions:' '{'
-		(transmissions += Group_Transmission)*
+	'external_interactions:' '{'
+		(external_interactions += GroupExternalInteraction)*
 	'};'
-;
+;    
 
-Group_Transmission:
-	{Group_Transmission}
+GroupExternalInteraction:
+	{GroupExternalInteraction}
 	//Change interaction type, interaction triggger type, and params
 	name = ID '['(transmissionPhase = Transmission_Phase)']['(transmissionContents = Transmission_Contents) ']['(transmissionRepeat = Transmission_Repeat) ('('reaction_time_parm = Expression')')?']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
 		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
@@ -261,19 +260,18 @@ enum Transmission_Repeat:
 	REPEAT | SINGLE | CALLED
 ;
 
-//TODO: Generate This
-GroupInternals:
-	{GroupInternals}
+GroupInternalInteractions:
+	{GroupInternalInteractions}
 	//These are also essentially interactions that rely on slightly more complicated functions
 		//but do not need to be messages as the contained agents make the request directly from the
 		//group layer
-	'internals:' '{'
-		(internals += GroupInternal)*
+	'internal_interactions:' '{'
+		(internal_interactions += GroupInternalInteraction)*
 	'};'
 ;
 
-GroupInternal:
-	{GroupInternal}
+GroupInternalInteraction:
+	{GroupInternalInteraction}
 	name = ID '['(interaction_type = InteractionType)']['(trigger_type = InteractionTriggerTypes) '('(triggerParam = InteractionTriggerParameter)?')'']('(functionParameters += FunctionParameter(','(functionParameters += FunctionParameter))*)?'):' '{'
 		((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula)';')*
 	'};'
@@ -484,9 +482,9 @@ FeatureCall:
 		InteractionFeatureCall |
 		FunctionFeatureCall | 
 		BehaviorFeatureCall |
-		GroupTransmissionFeatureCall |
-		GroupSelfInternalsFeatureCall |
-		GroupInternalsFeatureCall |
+		GroupExternalInteractionFeatureCall |
+		GroupSelfInternalInteractionsFeatureCall |
+		GroupInternalInteractionsFeatureCall |
 		TransmissionFeatureCall)
 ;
 
@@ -502,22 +500,22 @@ AgentInteractionFeatureCall:
 	{AgentInteractionFeatureCall}agt=[Symbol]'.AGT_INTERACTION.'process=[AgentInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 
-GroupTransmissionFeatureCall:
-	{GroupTransmissionFeatureCall}grp=[Symbol]'.GRP_TRANSMISSION.'process=[Group_Transmission]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+GroupExternalInteractionFeatureCall:
+	{GroupExternalInteractionFeatureCall}grp=[Symbol]'.GRP_EXT_INTERACTION.'process=[GroupExternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 TransmissionFeatureCall:
-	{TransmissionFeatureCall}'TRANSMISSION.'process=[Group_Transmission]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+	{TransmissionFeatureCall}'EXT_INTERACTION.'process=[GroupExternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
-GroupInternalsFeatureCall:
-	{GroupInternalsFeatureCall}grp=[Symbol]'.GRP_INTERNAL.'process=[GroupInternal]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+GroupInternalInteractionsFeatureCall:
+	{GroupInternalInteractionsFeatureCall}grp=[Symbol]'.GRP_INT_INTERACTION.'process=[GroupInternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 
 EnvironmentInteractionFeatureCall:
 	{EnvironmentInteractionFeatureCall}env=[Symbol]'.ENV_INTERACTION.'process=[EnvironmentInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 
-GroupSelfInternalsFeatureCall:
-	{GroupSelfInternalsFeatureCall}'INTERNAL.'process=[GroupInternal]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+GroupSelfInternalInteractionsFeatureCall:
+	{GroupSelfInternalInteractionsFeatureCall}'INT_INTERACTION.'process=[GroupInternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 
 FunctionFeatureCall:
@@ -610,13 +608,13 @@ ForLoop:
 	'for' '('
 		( init = (Expression | Formula | Field | SelfAssignedFormula) ';' condition = Expression ';' shifter = (Expression | Formula)  )
 	')' 'do'
-		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field)';')+
+		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field | body += Raw_Java_Block)';')+
 	'endfor'
 ;
 
 ForEachLoop:
 	'foreach' '(' (ty = QualifiedName item = ForEachAccess ':' list = Expression) ')' 'do'
-		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field)';')+
+		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field | body += Raw_Java_Block)';')+
 	'endfor'
 ;
 
@@ -789,7 +787,7 @@ CASL_Macro_MetricSwitch:
 ;
 
 CASL_Macro_EntitySetup:
-	"ENTITY_INIT"  '('(initNum = Expression)')' '['( (ent = [Entity]) )']' '('(params += Expression)')'
+	"POPULATE"  '('(initNum = Expression)')' '['( (ent = [Entity]) )']' '('(params += Expression)')'
 ;
 
 CASL_Macro_TODO:
@@ -824,12 +822,15 @@ Raw_Java_Block:
 	{Raw_Java_Block}
 	"raw-java"name=ID':' '{'
 		(rawStatements += Raw_Java)*
-	"};"
+//		rj = Raw_Java
+	"}"
 ;
 
+//Raw_Java: => text += (ID|ANY_OTHER)+;
 Raw_Java:
-	QualifiedNameCall
+	STRING
 ;
+
 
 /**
  * What exactly does this do?

@@ -97,16 +97,16 @@ import uofa.lbirdsey.castle.casl.FunctionFeatureCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Functions;
 import uofa.lbirdsey.castle.casl.Group;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternals;
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.Group_Rules;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
 import uofa.lbirdsey.castle.casl.Group_Type_Name;
 import uofa.lbirdsey.castle.casl.Group_Types;
 import uofa.lbirdsey.castle.casl.IfStatement;
@@ -221,10 +221,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.ENVIRONMENT: return createEnvironment();
       case CaslPackage.GROUP: return createGroup();
       case CaslPackage.GROUP_RULES: return createGroup_Rules();
-      case CaslPackage.GROUP_TRANSMISSIONS: return createGroup_Transmissions();
-      case CaslPackage.GROUP_TRANSMISSION: return createGroup_Transmission();
-      case CaslPackage.GROUP_INTERNALS: return createGroupInternals();
-      case CaslPackage.GROUP_INTERNAL: return createGroupInternal();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS: return createGroupExternalInteractions();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION: return createGroupExternalInteraction();
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS: return createGroupInternalInteractions();
+      case CaslPackage.GROUP_INTERNAL_INTERACTION: return createGroupInternalInteraction();
       case CaslPackage.PARAMETERS: return createParameters();
       case CaslPackage.FIELD: return createField();
       case CaslPackage.SYMBOL: return createSymbol();
@@ -246,11 +246,11 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.ADAPTIVE_PROCESS_FEATURE_CALL: return createAdaptiveProcessFeatureCall();
       case CaslPackage.INTERACTION_FEATURE_CALL: return createInteractionFeatureCall();
       case CaslPackage.AGENT_INTERACTION_FEATURE_CALL: return createAgentInteractionFeatureCall();
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL: return createGroupTransmissionFeatureCall();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL: return createGroupExternalInteractionFeatureCall();
       case CaslPackage.TRANSMISSION_FEATURE_CALL: return createTransmissionFeatureCall();
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL: return createGroupInternalsFeatureCall();
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL: return createGroupInternalInteractionsFeatureCall();
       case CaslPackage.ENVIRONMENT_INTERACTION_FEATURE_CALL: return createEnvironmentInteractionFeatureCall();
-      case CaslPackage.GROUP_SELF_INTERNALS_FEATURE_CALL: return createGroupSelfInternalsFeatureCall();
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL: return createGroupSelfInternalInteractionsFeatureCall();
       case CaslPackage.FUNCTION_FEATURE_CALL: return createFunctionFeatureCall();
       case CaslPackage.BEHAVIOR_FEATURE_CALL: return createBehaviorFeatureCall();
       case CaslPackage.SUB_SYSTEM: return createSubSystem();
@@ -640,10 +640,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmissions createGroup_Transmissions()
+  public GroupExternalInteractions createGroupExternalInteractions()
   {
-    Group_TransmissionsImpl group_Transmissions = new Group_TransmissionsImpl();
-    return group_Transmissions;
+    GroupExternalInteractionsImpl groupExternalInteractions = new GroupExternalInteractionsImpl();
+    return groupExternalInteractions;
   }
 
   /**
@@ -651,10 +651,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmission createGroup_Transmission()
+  public GroupExternalInteraction createGroupExternalInteraction()
   {
-    Group_TransmissionImpl group_Transmission = new Group_TransmissionImpl();
-    return group_Transmission;
+    GroupExternalInteractionImpl groupExternalInteraction = new GroupExternalInteractionImpl();
+    return groupExternalInteraction;
   }
 
   /**
@@ -662,10 +662,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupInternals createGroupInternals()
+  public GroupInternalInteractions createGroupInternalInteractions()
   {
-    GroupInternalsImpl groupInternals = new GroupInternalsImpl();
-    return groupInternals;
+    GroupInternalInteractionsImpl groupInternalInteractions = new GroupInternalInteractionsImpl();
+    return groupInternalInteractions;
   }
 
   /**
@@ -673,10 +673,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupInternal createGroupInternal()
+  public GroupInternalInteraction createGroupInternalInteraction()
   {
-    GroupInternalImpl groupInternal = new GroupInternalImpl();
-    return groupInternal;
+    GroupInternalInteractionImpl groupInternalInteraction = new GroupInternalInteractionImpl();
+    return groupInternalInteraction;
   }
 
   /**
@@ -915,10 +915,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupTransmissionFeatureCall createGroupTransmissionFeatureCall()
+  public GroupExternalInteractionFeatureCall createGroupExternalInteractionFeatureCall()
   {
-    GroupTransmissionFeatureCallImpl groupTransmissionFeatureCall = new GroupTransmissionFeatureCallImpl();
-    return groupTransmissionFeatureCall;
+    GroupExternalInteractionFeatureCallImpl groupExternalInteractionFeatureCall = new GroupExternalInteractionFeatureCallImpl();
+    return groupExternalInteractionFeatureCall;
   }
 
   /**
@@ -937,10 +937,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupInternalsFeatureCall createGroupInternalsFeatureCall()
+  public GroupInternalInteractionsFeatureCall createGroupInternalInteractionsFeatureCall()
   {
-    GroupInternalsFeatureCallImpl groupInternalsFeatureCall = new GroupInternalsFeatureCallImpl();
-    return groupInternalsFeatureCall;
+    GroupInternalInteractionsFeatureCallImpl groupInternalInteractionsFeatureCall = new GroupInternalInteractionsFeatureCallImpl();
+    return groupInternalInteractionsFeatureCall;
   }
 
   /**
@@ -959,10 +959,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupSelfInternalsFeatureCall createGroupSelfInternalsFeatureCall()
+  public GroupSelfInternalInteractionsFeatureCall createGroupSelfInternalInteractionsFeatureCall()
   {
-    GroupSelfInternalsFeatureCallImpl groupSelfInternalsFeatureCall = new GroupSelfInternalsFeatureCallImpl();
-    return groupSelfInternalsFeatureCall;
+    GroupSelfInternalInteractionsFeatureCallImpl groupSelfInternalInteractionsFeatureCall = new GroupSelfInternalInteractionsFeatureCallImpl();
+    return groupSelfInternalInteractionsFeatureCall;
   }
 
   /**

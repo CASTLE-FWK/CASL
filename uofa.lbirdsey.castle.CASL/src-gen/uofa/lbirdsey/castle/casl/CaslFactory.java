@@ -186,40 +186,40 @@ public interface CaslFactory extends EFactory
   Group_Rules createGroup_Rules();
 
   /**
-   * Returns a new object of class '<em>Group Transmissions</em>'.
+   * Returns a new object of class '<em>Group External Interactions</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Transmissions</em>'.
+   * @return a new object of class '<em>Group External Interactions</em>'.
    * @generated
    */
-  Group_Transmissions createGroup_Transmissions();
+  GroupExternalInteractions createGroupExternalInteractions();
 
   /**
-   * Returns a new object of class '<em>Group Transmission</em>'.
+   * Returns a new object of class '<em>Group External Interaction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Transmission</em>'.
+   * @return a new object of class '<em>Group External Interaction</em>'.
    * @generated
    */
-  Group_Transmission createGroup_Transmission();
+  GroupExternalInteraction createGroupExternalInteraction();
 
   /**
-   * Returns a new object of class '<em>Group Internals</em>'.
+   * Returns a new object of class '<em>Group Internal Interactions</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Internals</em>'.
+   * @return a new object of class '<em>Group Internal Interactions</em>'.
    * @generated
    */
-  GroupInternals createGroupInternals();
+  GroupInternalInteractions createGroupInternalInteractions();
 
   /**
-   * Returns a new object of class '<em>Group Internal</em>'.
+   * Returns a new object of class '<em>Group Internal Interaction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Internal</em>'.
+   * @return a new object of class '<em>Group Internal Interaction</em>'.
    * @generated
    */
-  GroupInternal createGroupInternal();
+  GroupInternalInteraction createGroupInternalInteraction();
 
   /**
    * Returns a new object of class '<em>Parameters</em>'.
@@ -411,13 +411,13 @@ public interface CaslFactory extends EFactory
   AgentInteractionFeatureCall createAgentInteractionFeatureCall();
 
   /**
-   * Returns a new object of class '<em>Group Transmission Feature Call</em>'.
+   * Returns a new object of class '<em>Group External Interaction Feature Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Transmission Feature Call</em>'.
+   * @return a new object of class '<em>Group External Interaction Feature Call</em>'.
    * @generated
    */
-  GroupTransmissionFeatureCall createGroupTransmissionFeatureCall();
+  GroupExternalInteractionFeatureCall createGroupExternalInteractionFeatureCall();
 
   /**
    * Returns a new object of class '<em>Transmission Feature Call</em>'.
@@ -429,13 +429,13 @@ public interface CaslFactory extends EFactory
   TransmissionFeatureCall createTransmissionFeatureCall();
 
   /**
-   * Returns a new object of class '<em>Group Internals Feature Call</em>'.
+   * Returns a new object of class '<em>Group Internal Interactions Feature Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Internals Feature Call</em>'.
+   * @return a new object of class '<em>Group Internal Interactions Feature Call</em>'.
    * @generated
    */
-  GroupInternalsFeatureCall createGroupInternalsFeatureCall();
+  GroupInternalInteractionsFeatureCall createGroupInternalInteractionsFeatureCall();
 
   /**
    * Returns a new object of class '<em>Environment Interaction Feature Call</em>'.
@@ -447,13 +447,13 @@ public interface CaslFactory extends EFactory
   EnvironmentInteractionFeatureCall createEnvironmentInteractionFeatureCall();
 
   /**
-   * Returns a new object of class '<em>Group Self Internals Feature Call</em>'.
+   * Returns a new object of class '<em>Group Self Internal Interactions Feature Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Self Internals Feature Call</em>'.
+   * @return a new object of class '<em>Group Self Internal Interactions Feature Call</em>'.
    * @generated
    */
-  GroupSelfInternalsFeatureCall createGroupSelfInternalsFeatureCall();
+  GroupSelfInternalInteractionsFeatureCall createGroupSelfInternalInteractionsFeatureCall();
 
   /**
    * Returns a new object of class '<em>Function Feature Call</em>'.

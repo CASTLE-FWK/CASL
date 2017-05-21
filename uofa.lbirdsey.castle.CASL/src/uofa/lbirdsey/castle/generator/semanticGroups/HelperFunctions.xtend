@@ -38,10 +38,7 @@ import uofa.lbirdsey.castle.casl.FunctionCallExpr
 import uofa.lbirdsey.castle.casl.FunctionParameter
 import uofa.lbirdsey.castle.casl.Group
 import uofa.lbirdsey.castle.casl.GroupFieldReference
-import uofa.lbirdsey.castle.casl.GroupInternal
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall
 import uofa.lbirdsey.castle.casl.Group_Call
-import uofa.lbirdsey.castle.casl.Group_Transmission
 import uofa.lbirdsey.castle.casl.IfStatement
 import uofa.lbirdsey.castle.casl.IntType
 import uofa.lbirdsey.castle.casl.Interaction
@@ -67,6 +64,9 @@ import uofa.lbirdsey.castle.casl.impl.EnvironmentImpl
 import uofa.lbirdsey.castle.casl.impl.GroupImpl
 import uofa.lbirdsey.castle.casl.impl.ObjectImpl
 import uofa.lbirdsey.castle.casl.impl.SystemImpl
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
 
 class HelperFunctions {
 	static var ArrayList<EObject> types = new ArrayList<EObject>();
@@ -297,7 +297,7 @@ class HelperFunctions {
 	static def parseBodyElement(EObject statement, Entity_Feature caller) {
 		var strOut = "";
 		if (statement instanceof Field) {
-			strOut += printFieldDeclarations(statement as Field)+";"
+			strOut += printFieldDeclarations(statement as Field)+";" 
 		} else if (statement instanceof FunctionCall) {
 			var st = statement as FunctionCall;
 			if (st.func !== null) {
@@ -316,7 +316,8 @@ class HelperFunctions {
 		} else if (statement instanceof SelfAssignedFormula) {
 			strOut += HelperFunctions.printSelfAssignedFormula((statement as SelfAssignedFormula))
 		} else if (statement instanceof Raw_Java_Block) {
-			strOut += "//Raw Java Block: "+(statement as Raw_Java_Block).name+"\n {"
+			strOut += "//Raw Java Block: "+(statement as Raw_Java_Block).name+" {\n"
+//			strOut += (statement as Raw_Java_Block).rj
 			for (rawJava : (statement as Raw_Java_Block).rawStatements) {
 				strOut += rawJava.toString +"\n"
 			}
@@ -1023,7 +1024,7 @@ class HelperFunctions {
 						val fc = (b as FeatureCall).fc
 						if (fc instanceof AgentInteractionFeatureCall){
 							println("AIFC")
-						} else if (fc instanceof GroupInternalsFeatureCall){
+						} else if (fc instanceof GroupInternalInteractionsFeatureCall){
 							println("GIFC")
 						}
 					}				
@@ -1038,9 +1039,9 @@ class HelperFunctions {
 			}
 		} else if (ef instanceof AdaptiveProcess) {
 			
-		} else if (ef instanceof Group_Transmission) {
+		} else if (ef instanceof GroupExternalInteractionFeatureCall) {
 			
-		} else if (ef instanceof GroupInternal) {
+		} else if (ef instanceof GroupSelfInternalInteractionsFeatureCall) {
 			
 		}
 		

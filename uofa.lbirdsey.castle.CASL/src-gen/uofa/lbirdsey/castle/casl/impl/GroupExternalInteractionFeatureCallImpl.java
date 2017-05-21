@@ -21,26 +21,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Symbol;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Transmission Feature Call</b></em>'.
+ * An implementation of the model object '<em><b>Group External Interaction Feature Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupTransmissionFeatureCallImpl#getGrp <em>Grp</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupTransmissionFeatureCallImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupTransmissionFeatureCallImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionFeatureCallImpl#getGrp <em>Grp</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionFeatureCallImpl#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionFeatureCallImpl#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Container implements GroupTransmissionFeatureCall
+public class GroupExternalInteractionFeatureCallImpl extends MinimalEObjectImpl.Container implements GroupExternalInteractionFeatureCall
 {
   /**
    * The cached value of the '{@link #getGrp() <em>Grp</em>}' reference.
@@ -60,7 +60,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
    * @generated
    * @ordered
    */
-  protected Group_Transmission process;
+  protected GroupExternalInteraction process;
 
   /**
    * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
@@ -77,7 +77,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupTransmissionFeatureCallImpl()
+  protected GroupExternalInteractionFeatureCallImpl()
   {
     super();
   }
@@ -90,7 +90,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroupTransmissionFeatureCall();
+    return CaslPackage.eINSTANCE.getGroupExternalInteractionFeatureCall();
   }
 
   /**
@@ -107,7 +107,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
       if (grp != oldGrp)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP, oldGrp, grp));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP, oldGrp, grp));
       }
     }
     return grp;
@@ -133,7 +133,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
     Symbol oldGrp = grp;
     grp = newGrp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP, oldGrp, grp));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP, oldGrp, grp));
   }
 
   /**
@@ -141,16 +141,16 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmission getProcess()
+  public GroupExternalInteraction getProcess()
   {
     if (process != null && process.eIsProxy())
     {
       InternalEObject oldProcess = (InternalEObject)process;
-      process = (Group_Transmission)eResolveProxy(oldProcess);
+      process = (GroupExternalInteraction)eResolveProxy(oldProcess);
       if (process != oldProcess)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS, oldProcess, process));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS, oldProcess, process));
       }
     }
     return process;
@@ -161,7 +161,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmission basicGetProcess()
+  public GroupExternalInteraction basicGetProcess()
   {
     return process;
   }
@@ -171,12 +171,12 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProcess(Group_Transmission newProcess)
+  public void setProcess(GroupExternalInteraction newProcess)
   {
-    Group_Transmission oldProcess = process;
+    GroupExternalInteraction oldProcess = process;
     process = newProcess;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS, oldProcess, process));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS, oldProcess, process));
   }
 
   /**
@@ -188,7 +188,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     if (inputs == null)
     {
-      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS);
+      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS);
     }
     return inputs;
   }
@@ -203,7 +203,7 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -219,13 +219,13 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP:
         if (resolve) return getGrp();
         return basicGetGrp();
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         if (resolve) return getProcess();
         return basicGetProcess();
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return getInputs();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -242,13 +242,13 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP:
         setGrp((Symbol)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS:
-        setProcess((Group_Transmission)newValue);
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
+        setProcess((GroupExternalInteraction)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         getInputs().clear();
         getInputs().addAll((Collection<? extends Expression>)newValue);
         return;
@@ -266,13 +266,13 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP:
         setGrp((Symbol)null);
         return;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS:
-        setProcess((Group_Transmission)null);
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
+        setProcess((GroupExternalInteraction)null);
         return;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         getInputs().clear();
         return;
     }
@@ -289,14 +289,14 @@ public class GroupTransmissionFeatureCallImpl extends MinimalEObjectImpl.Contain
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__GRP:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP:
         return grp != null;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         return process != null;
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return inputs != null && !inputs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //GroupTransmissionFeatureCallImpl
+} //GroupExternalInteractionFeatureCallImpl

@@ -9,23 +9,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Transmission Feature Call</b></em>'.
+ * A representation of the model object '<em><b>Group External Interaction Feature Call</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getGrp <em>Grp</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getGrp <em>Grp</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupTransmissionFeatureCall()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteractionFeatureCall()
  * @model
  * @generated
  */
-public interface GroupTransmissionFeatureCall extends EObject
+public interface GroupExternalInteractionFeatureCall extends EObject
 {
   /**
    * Returns the value of the '<em><b>Grp</b></em>' reference.
@@ -37,14 +37,14 @@ public interface GroupTransmissionFeatureCall extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Grp</em>' reference.
    * @see #setGrp(Symbol)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupTransmissionFeatureCall_Grp()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteractionFeatureCall_Grp()
    * @model
    * @generated
    */
   Symbol getGrp();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getGrp <em>Grp</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getGrp <em>Grp</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Grp</em>' reference.
@@ -62,22 +62,22 @@ public interface GroupTransmissionFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Process</em>' reference.
-   * @see #setProcess(Group_Transmission)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupTransmissionFeatureCall_Process()
+   * @see #setProcess(GroupExternalInteraction)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteractionFeatureCall_Process()
    * @model
    * @generated
    */
-  Group_Transmission getProcess();
+  GroupExternalInteraction getProcess();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getProcess <em>Process</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getProcess <em>Process</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Process</em>' reference.
    * @see #getProcess()
    * @generated
    */
-  void setProcess(Group_Transmission value);
+  void setProcess(GroupExternalInteraction value);
 
   /**
    * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
@@ -89,10 +89,10 @@ public interface GroupTransmissionFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inputs</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupTransmissionFeatureCall_Inputs()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteractionFeatureCall_Inputs()
    * @model containment="true"
    * @generated
    */
   EList<Expression> getInputs();
 
-} // GroupTransmissionFeatureCall
+} // GroupExternalInteractionFeatureCall

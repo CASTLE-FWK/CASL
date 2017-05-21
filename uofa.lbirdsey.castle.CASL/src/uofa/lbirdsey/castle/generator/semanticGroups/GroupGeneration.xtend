@@ -102,10 +102,10 @@ class GroupGeneration {
 			«generateBehaviors(theGroup)»
 			
 			/*****«theGroup.name.toFirstUpper» Transmissions*****/
-			«generateTransmissions(theGroup)»
+			«generateExternalInteractions(theGroup)»
 			
 			/*****«theGroup.name.toFirstUpper» Internals*****/
-			«generateInternals(theGroup)»
+			«generateInternalInteractions(theGroup)»
 			
 			/*****«theGroup.name.toFirstUpper» Simulate Calls*****/
 			«generateSimulateFunction(theGroup)»
@@ -250,9 +250,9 @@ class GroupGeneration {
 		return output;
 	}
 	
-	def generateTransmissions(Group grp){
+	def generateExternalInteractions(Group grp){
 		var output = "";
-		for (transmission : grp.group_transmissions.transmissions){
+		for (transmission : grp.group_external_interactions.external_interactions){
 			for (transFP : transmission.functionParameters){
 				if (transFP !== null){
 					if (!(transFP instanceof FunctionParameter)){
@@ -299,9 +299,9 @@ class GroupGeneration {
 		return output;
 	}
 	
-	def generateInternals(Group grp){
+	def generateInternalInteractions(Group grp){
 		var output = "";
-		for (internal : grp.group_internals.internals){
+		for (internal : grp.group_internal_interactions.internal_interactions){
 			for (internalFP : internal.functionParameters){
 				if (internalFP !== null){
 					if (!(internalFP instanceof FunctionParameter)){
@@ -455,7 +455,7 @@ class GroupGeneration {
 		*/
 		//How do we add things to the different queues again?
 		//TODO: Generate trigger objects
-		for (transmission : g.group_transmissions.transmissions) {			
+		for (transmission : g.group_external_interactions.externalInteractions) {			
 			if (transmission.transmissionRepeat == Transmission_Repeat.REPEAT){
 				//Determine phase
 				val phase = transmission.transmissionPhase;

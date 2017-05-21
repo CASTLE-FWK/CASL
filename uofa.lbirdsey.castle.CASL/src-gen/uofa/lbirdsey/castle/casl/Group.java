@@ -17,8 +17,8 @@ package uofa.lbirdsey.castle.casl;
  *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_parameters <em>Group parameters</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_functions <em>Group functions</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_behaviors <em>Group behaviors</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_transmissions <em>Group transmissions</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_internals <em>Group internals</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_external_interactions <em>Group external interactions</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.Group#getGroup_internal_interactions <em>Group internal interactions</em>}</li>
  * </ul>
  *
  * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup()
@@ -132,55 +132,55 @@ public interface Group extends Entity
   void setGroup_behaviors(Behaviors value);
 
   /**
-   * Returns the value of the '<em><b>Group transmissions</b></em>' containment reference.
+   * Returns the value of the '<em><b>Group external interactions</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Group transmissions</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Group external interactions</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Group transmissions</em>' containment reference.
-   * @see #setGroup_transmissions(Group_Transmissions)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Group_transmissions()
+   * @return the value of the '<em>Group external interactions</em>' containment reference.
+   * @see #setGroup_external_interactions(GroupExternalInteractions)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Group_external_interactions()
    * @model containment="true"
    * @generated
    */
-  Group_Transmissions getGroup_transmissions();
+  GroupExternalInteractions getGroup_external_interactions();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group#getGroup_transmissions <em>Group transmissions</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group#getGroup_external_interactions <em>Group external interactions</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Group transmissions</em>' containment reference.
-   * @see #getGroup_transmissions()
+   * @param value the new value of the '<em>Group external interactions</em>' containment reference.
+   * @see #getGroup_external_interactions()
    * @generated
    */
-  void setGroup_transmissions(Group_Transmissions value);
+  void setGroup_external_interactions(GroupExternalInteractions value);
 
   /**
-   * Returns the value of the '<em><b>Group internals</b></em>' containment reference.
+   * Returns the value of the '<em><b>Group internal interactions</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Group internals</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Group internal interactions</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Group internals</em>' containment reference.
-   * @see #setGroup_internals(GroupInternals)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Group_internals()
+   * @return the value of the '<em>Group internal interactions</em>' containment reference.
+   * @see #setGroup_internal_interactions(GroupInternalInteractions)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Group_internal_interactions()
    * @model containment="true"
    * @generated
    */
-  GroupInternals getGroup_internals();
+  GroupInternalInteractions getGroup_internal_interactions();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group#getGroup_internals <em>Group internals</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group#getGroup_internal_interactions <em>Group internal interactions</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Group internals</em>' containment reference.
-   * @see #getGroup_internals()
+   * @param value the new value of the '<em>Group internal interactions</em>' containment reference.
+   * @see #getGroup_internal_interactions()
    * @generated
    */
-  void setGroup_internals(GroupInternals value);
+  void setGroup_internal_interactions(GroupInternalInteractions value);
 
 } // Group

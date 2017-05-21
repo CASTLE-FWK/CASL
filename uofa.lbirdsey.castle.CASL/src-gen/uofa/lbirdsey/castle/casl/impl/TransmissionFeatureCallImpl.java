@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
 import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 
 /**
@@ -48,7 +48,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
    * @generated
    * @ordered
    */
-  protected Group_Transmission process;
+  protected GroupExternalInteraction process;
 
   /**
    * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
@@ -86,12 +86,12 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmission getProcess()
+  public GroupExternalInteraction getProcess()
   {
     if (process != null && process.eIsProxy())
     {
       InternalEObject oldProcess = (InternalEObject)process;
-      process = (Group_Transmission)eResolveProxy(oldProcess);
+      process = (GroupExternalInteraction)eResolveProxy(oldProcess);
       if (process != oldProcess)
       {
         if (eNotificationRequired())
@@ -106,7 +106,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmission basicGetProcess()
+  public GroupExternalInteraction basicGetProcess()
   {
     return process;
   }
@@ -116,9 +116,9 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProcess(Group_Transmission newProcess)
+  public void setProcess(GroupExternalInteraction newProcess)
   {
-    Group_Transmission oldProcess = process;
+    GroupExternalInteraction oldProcess = process;
     process = newProcess;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS, oldProcess, process));
@@ -185,7 +185,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
     switch (featureID)
     {
       case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
-        setProcess((Group_Transmission)newValue);
+        setProcess((GroupExternalInteraction)newValue);
         return;
       case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
         getInputs().clear();
@@ -206,7 +206,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
     switch (featureID)
     {
       case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
-        setProcess((Group_Transmission)null);
+        setProcess((GroupExternalInteraction)null);
         return;
       case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
         getInputs().clear();

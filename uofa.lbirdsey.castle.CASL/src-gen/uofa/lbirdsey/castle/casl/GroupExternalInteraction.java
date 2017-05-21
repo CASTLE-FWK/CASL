@@ -9,27 +9,27 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Transmission</b></em>'.
+ * A representation of the model object '<em><b>Group External Interaction</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getName <em>Name</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionPhase <em>Transmission Phase</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionContents <em>Transmission Contents</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionRepeat <em>Transmission Repeat</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getReaction_time_parm <em>Reaction time parm</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getFunctionParameters <em>Function Parameters</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.Group_Transmission#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getName <em>Name</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionPhase <em>Transmission Phase</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionContents <em>Transmission Contents</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionRepeat <em>Transmission Repeat</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getReaction_time_parm <em>Reaction time parm</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getFunctionParameters <em>Function Parameters</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getBody <em>Body</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction()
  * @model
  * @generated
  */
-public interface Group_Transmission extends Entity_Feature
+public interface GroupExternalInteraction extends Entity_Feature
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -41,14 +41,14 @@ public interface Group_Transmission extends Entity_Feature
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_Name()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -69,14 +69,14 @@ public interface Group_Transmission extends Entity_Feature
    * @return the value of the '<em>Transmission Phase</em>' attribute.
    * @see uofa.lbirdsey.castle.casl.Transmission_Phase
    * @see #setTransmissionPhase(Transmission_Phase)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_TransmissionPhase()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_TransmissionPhase()
    * @model
    * @generated
    */
   Transmission_Phase getTransmissionPhase();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionPhase <em>Transmission Phase</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionPhase <em>Transmission Phase</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Transmission Phase</em>' attribute.
@@ -98,14 +98,14 @@ public interface Group_Transmission extends Entity_Feature
    * @return the value of the '<em>Transmission Contents</em>' attribute.
    * @see uofa.lbirdsey.castle.casl.Transmission_Contents
    * @see #setTransmissionContents(Transmission_Contents)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_TransmissionContents()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_TransmissionContents()
    * @model
    * @generated
    */
   Transmission_Contents getTransmissionContents();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionContents <em>Transmission Contents</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionContents <em>Transmission Contents</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Transmission Contents</em>' attribute.
@@ -127,14 +127,14 @@ public interface Group_Transmission extends Entity_Feature
    * @return the value of the '<em>Transmission Repeat</em>' attribute.
    * @see uofa.lbirdsey.castle.casl.Transmission_Repeat
    * @see #setTransmissionRepeat(Transmission_Repeat)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_TransmissionRepeat()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_TransmissionRepeat()
    * @model
    * @generated
    */
   Transmission_Repeat getTransmissionRepeat();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionRepeat <em>Transmission Repeat</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionRepeat <em>Transmission Repeat</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Transmission Repeat</em>' attribute.
@@ -154,14 +154,14 @@ public interface Group_Transmission extends Entity_Feature
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reaction time parm</em>' containment reference.
    * @see #setReaction_time_parm(Expression)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_Reaction_time_parm()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_Reaction_time_parm()
    * @model containment="true"
    * @generated
    */
   Expression getReaction_time_parm();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getReaction_time_parm <em>Reaction time parm</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getReaction_time_parm <em>Reaction time parm</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Reaction time parm</em>' containment reference.
@@ -180,7 +180,7 @@ public interface Group_Transmission extends Entity_Feature
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Function Parameters</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_FunctionParameters()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_FunctionParameters()
    * @model containment="true"
    * @generated
    */
@@ -196,10 +196,10 @@ public interface Group_Transmission extends Entity_Feature
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroup_Transmission_Body()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupExternalInteraction_Body()
    * @model containment="true"
    * @generated
    */
   EList<EObject> getBody();
 
-} // Group_Transmission
+} // GroupExternalInteraction

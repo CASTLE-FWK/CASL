@@ -35,12 +35,12 @@ public interface TransmissionFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Process</em>' reference.
-   * @see #setProcess(Group_Transmission)
+   * @see #setProcess(GroupExternalInteraction)
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getTransmissionFeatureCall_Process()
    * @model
    * @generated
    */
-  Group_Transmission getProcess();
+  GroupExternalInteraction getProcess();
 
   /**
    * Sets the value of the '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getProcess <em>Process</em>}' reference.
@@ -50,7 +50,7 @@ public interface TransmissionFeatureCall extends EObject
    * @see #getProcess()
    * @generated
    */
-  void setProcess(Group_Transmission value);
+  void setProcess(GroupExternalInteraction value);
 
   /**
    * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.

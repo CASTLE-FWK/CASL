@@ -82,16 +82,16 @@ import uofa.lbirdsey.castle.casl.FunctionFeatureCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Functions;
 import uofa.lbirdsey.castle.casl.Group;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternals;
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.Group_Rules;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
 import uofa.lbirdsey.castle.casl.Group_Type_Name;
 import uofa.lbirdsey.castle.casl.Group_Types;
 import uofa.lbirdsey.castle.casl.IfStatement;
@@ -389,23 +389,29 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.GROUP:
 				sequence_Group(context, (Group) semanticObject); 
 				return; 
+			case CaslPackage.GROUP_EXTERNAL_INTERACTION:
+				sequence_GroupExternalInteraction(context, (GroupExternalInteraction) semanticObject); 
+				return; 
+			case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL:
+				sequence_GroupExternalInteractionFeatureCall(context, (GroupExternalInteractionFeatureCall) semanticObject); 
+				return; 
+			case CaslPackage.GROUP_EXTERNAL_INTERACTIONS:
+				sequence_GroupExternalInteractions(context, (GroupExternalInteractions) semanticObject); 
+				return; 
 			case CaslPackage.GROUP_FIELD_REFERENCE:
 				sequence_GroupFieldReference(context, (GroupFieldReference) semanticObject); 
 				return; 
-			case CaslPackage.GROUP_INTERNAL:
-				sequence_GroupInternal(context, (GroupInternal) semanticObject); 
+			case CaslPackage.GROUP_INTERNAL_INTERACTION:
+				sequence_GroupInternalInteraction(context, (GroupInternalInteraction) semanticObject); 
 				return; 
-			case CaslPackage.GROUP_INTERNALS:
-				sequence_GroupInternals(context, (GroupInternals) semanticObject); 
+			case CaslPackage.GROUP_INTERNAL_INTERACTIONS:
+				sequence_GroupInternalInteractions(context, (GroupInternalInteractions) semanticObject); 
 				return; 
-			case CaslPackage.GROUP_INTERNALS_FEATURE_CALL:
-				sequence_GroupInternalsFeatureCall(context, (GroupInternalsFeatureCall) semanticObject); 
+			case CaslPackage.GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL:
+				sequence_GroupInternalInteractionsFeatureCall(context, (GroupInternalInteractionsFeatureCall) semanticObject); 
 				return; 
-			case CaslPackage.GROUP_SELF_INTERNALS_FEATURE_CALL:
-				sequence_GroupSelfInternalsFeatureCall(context, (GroupSelfInternalsFeatureCall) semanticObject); 
-				return; 
-			case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL:
-				sequence_GroupTransmissionFeatureCall(context, (GroupTransmissionFeatureCall) semanticObject); 
+			case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL:
+				sequence_GroupSelfInternalInteractionsFeatureCall(context, (GroupSelfInternalInteractionsFeatureCall) semanticObject); 
 				return; 
 			case CaslPackage.GROUP_CALL:
 				if (rule == grammarAccess.getExpressionRule()
@@ -434,12 +440,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				else break;
 			case CaslPackage.GROUP_RULES:
 				sequence_Group_Rules(context, (Group_Rules) semanticObject); 
-				return; 
-			case CaslPackage.GROUP_TRANSMISSION:
-				sequence_Group_Transmission(context, (Group_Transmission) semanticObject); 
-				return; 
-			case CaslPackage.GROUP_TRANSMISSIONS:
-				sequence_Group_Transmissions(context, (Group_Transmissions) semanticObject); 
 				return; 
 			case CaslPackage.GROUP_TYPE_NAME:
 				sequence_Group_Type_Name(context, (Group_Type_Name) semanticObject); 
@@ -1928,9 +1928,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         fc=InteractionFeatureCall | 
 	 *         fc=FunctionFeatureCall | 
 	 *         fc=BehaviorFeatureCall | 
-	 *         fc=GroupTransmissionFeatureCall | 
-	 *         fc=GroupSelfInternalsFeatureCall | 
-	 *         fc=GroupInternalsFeatureCall | 
+	 *         fc=GroupExternalInteractionFeatureCall | 
+	 *         fc=GroupSelfInternalInteractionsFeatureCall | 
+	 *         fc=GroupInternalInteractionsFeatureCall | 
 	 *         fc=TransmissionFeatureCall
 	 *     )
 	 */
@@ -2022,7 +2022,12 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Prefixed returns ForEachLoop
 	 *
 	 * Constraint:
-	 *     (ty=QualifiedName item=ForEachAccess list=Expression (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field)+)
+	 *     (
+	 *         ty=QualifiedName 
+	 *         item=ForEachAccess 
+	 *         list=Expression 
+	 *         (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block)+
+	 *     )
 	 */
 	protected void sequence_ForEachLoop(ISerializationContext context, ForEachLoop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2053,7 +2058,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (init=Expression | init=Formula | init=Field | init=SelfAssignedFormula) 
 	 *         condition=Expression 
 	 *         (shifter=Expression | shifter=Formula) 
-	 *         (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field)+
+	 *         (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block)+
 	 *     )
 	 */
 	protected void sequence_ForLoop(ISerializationContext context, ForLoop semanticObject) {
@@ -2154,6 +2159,51 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     GroupExternalInteractionFeatureCall returns GroupExternalInteractionFeatureCall
+	 *
+	 * Constraint:
+	 *     (grp=[Symbol|ID] process=[GroupExternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
+	 */
+	protected void sequence_GroupExternalInteractionFeatureCall(ISerializationContext context, GroupExternalInteractionFeatureCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Entity_Feature returns GroupExternalInteraction
+	 *     GroupExternalInteraction returns GroupExternalInteraction
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         transmissionPhase=Transmission_Phase 
+	 *         transmissionContents=Transmission_Contents 
+	 *         transmissionRepeat=Transmission_Repeat 
+	 *         reaction_time_parm=Expression? 
+	 *         (functionParameters+=FunctionParameter functionParameters+=FunctionParameter*)? 
+	 *         (body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula)*
+	 *     )
+	 */
+	protected void sequence_GroupExternalInteraction(ISerializationContext context, GroupExternalInteraction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     GroupExternalInteractions returns GroupExternalInteractions
+	 *
+	 * Constraint:
+	 *     external_interactions+=GroupExternalInteraction*
+	 */
+	protected void sequence_GroupExternalInteractions(ISerializationContext context, GroupExternalInteractions semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     GroupFieldReference returns GroupFieldReference
 	 *
 	 * Constraint:
@@ -2166,8 +2216,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Entity_Feature returns GroupInternal
-	 *     GroupInternal returns GroupInternal
+	 *     Entity_Feature returns GroupInternalInteraction
+	 *     GroupInternalInteraction returns GroupInternalInteraction
 	 *
 	 * Constraint:
 	 *     (
@@ -2179,55 +2229,43 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula)*
 	 *     )
 	 */
-	protected void sequence_GroupInternal(ISerializationContext context, GroupInternal semanticObject) {
+	protected void sequence_GroupInternalInteraction(ISerializationContext context, GroupInternalInteraction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     GroupInternalsFeatureCall returns GroupInternalsFeatureCall
+	 *     GroupInternalInteractionsFeatureCall returns GroupInternalInteractionsFeatureCall
 	 *
 	 * Constraint:
-	 *     (grp=[Symbol|ID] process=[GroupInternal|ID] inputs+=Expression? inputs+=Expression*)
+	 *     (grp=[Symbol|ID] process=[GroupInternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
 	 */
-	protected void sequence_GroupInternalsFeatureCall(ISerializationContext context, GroupInternalsFeatureCall semanticObject) {
+	protected void sequence_GroupInternalInteractionsFeatureCall(ISerializationContext context, GroupInternalInteractionsFeatureCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     GroupInternals returns GroupInternals
+	 *     GroupInternalInteractions returns GroupInternalInteractions
 	 *
 	 * Constraint:
-	 *     internals+=GroupInternal*
+	 *     internal_interactions+=GroupInternalInteraction*
 	 */
-	protected void sequence_GroupInternals(ISerializationContext context, GroupInternals semanticObject) {
+	protected void sequence_GroupInternalInteractions(ISerializationContext context, GroupInternalInteractions semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     GroupSelfInternalsFeatureCall returns GroupSelfInternalsFeatureCall
+	 *     GroupSelfInternalInteractionsFeatureCall returns GroupSelfInternalInteractionsFeatureCall
 	 *
 	 * Constraint:
-	 *     (process=[GroupInternal|ID] inputs+=Expression? inputs+=Expression*)
+	 *     (process=[GroupInternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
 	 */
-	protected void sequence_GroupSelfInternalsFeatureCall(ISerializationContext context, GroupSelfInternalsFeatureCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     GroupTransmissionFeatureCall returns GroupTransmissionFeatureCall
-	 *
-	 * Constraint:
-	 *     (grp=[Symbol|ID] process=[Group_Transmission|ID] inputs+=Expression? inputs+=Expression*)
-	 */
-	protected void sequence_GroupTransmissionFeatureCall(ISerializationContext context, GroupTransmissionFeatureCall semanticObject) {
+	protected void sequence_GroupSelfInternalInteractionsFeatureCall(ISerializationContext context, GroupSelfInternalInteractionsFeatureCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -2257,8 +2295,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         group_parameters=Parameters 
 	 *         group_functions=Functions 
 	 *         group_behaviors=Behaviors 
-	 *         group_transmissions=Group_Transmissions 
-	 *         group_internals=GroupInternals
+	 *         group_external_interactions=GroupExternalInteractions 
+	 *         group_internal_interactions=GroupInternalInteractions
 	 *     )
 	 */
 	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
@@ -2275,10 +2313,10 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_functions()));
 			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_behaviors()) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_behaviors()));
-			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_transmissions()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_transmissions()));
-			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_internals()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_internals()));
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_external_interactions()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_external_interactions()));
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_internal_interactions()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getGroup_Group_internal_interactions()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGroupAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
@@ -2287,8 +2325,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getGroupAccess().getGroup_parametersParametersParserRuleCall_8_0(), semanticObject.getGroup_parameters());
 		feeder.accept(grammarAccess.getGroupAccess().getGroup_functionsFunctionsParserRuleCall_9_0(), semanticObject.getGroup_functions());
 		feeder.accept(grammarAccess.getGroupAccess().getGroup_behaviorsBehaviorsParserRuleCall_10_0(), semanticObject.getGroup_behaviors());
-		feeder.accept(grammarAccess.getGroupAccess().getGroup_transmissionsGroup_TransmissionsParserRuleCall_11_0(), semanticObject.getGroup_transmissions());
-		feeder.accept(grammarAccess.getGroupAccess().getGroup_internalsGroupInternalsParserRuleCall_12_0(), semanticObject.getGroup_internals());
+		feeder.accept(grammarAccess.getGroupAccess().getGroup_external_interactionsGroupExternalInteractionsParserRuleCall_11_0(), semanticObject.getGroup_external_interactions());
+		feeder.accept(grammarAccess.getGroupAccess().getGroup_internal_interactionsGroupInternalInteractionsParserRuleCall_12_0(), semanticObject.getGroup_internal_interactions());
 		feeder.finish();
 	}
 	
@@ -2308,39 +2346,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGroup_RulesAccess().getLayout_typeLayoutTypeEnumRuleCall_4_0(), semanticObject.getLayout_type());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Entity_Feature returns Group_Transmission
-	 *     Group_Transmission returns Group_Transmission
-	 *
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         transmissionPhase=Transmission_Phase 
-	 *         transmissionContents=Transmission_Contents 
-	 *         transmissionRepeat=Transmission_Repeat 
-	 *         reaction_time_parm=Expression? 
-	 *         (functionParameters+=FunctionParameter functionParameters+=FunctionParameter*)? 
-	 *         (body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula)*
-	 *     )
-	 */
-	protected void sequence_Group_Transmission(ISerializationContext context, Group_Transmission semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Group_Transmissions returns Group_Transmissions
-	 *
-	 * Constraint:
-	 *     transmissions+=Group_Transmission*
-	 */
-	protected void sequence_Group_Transmissions(ISerializationContext context, Group_Transmissions semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2925,7 +2930,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TransmissionFeatureCall returns TransmissionFeatureCall
 	 *
 	 * Constraint:
-	 *     (process=[Group_Transmission|ID] inputs+=Expression? inputs+=Expression*)
+	 *     (process=[GroupExternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
 	 */
 	protected void sequence_TransmissionFeatureCall(ISerializationContext context, TransmissionFeatureCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

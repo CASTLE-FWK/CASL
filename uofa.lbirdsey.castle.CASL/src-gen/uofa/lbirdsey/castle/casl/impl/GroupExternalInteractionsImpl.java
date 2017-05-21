@@ -18,40 +18,40 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternals;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Internals</b></em>'.
+ * An implementation of the model object '<em><b>Group External Interactions</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsImpl#getInternals <em>Internals</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionsImpl#getExternal_interactions <em>External interactions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements GroupInternals
+public class GroupExternalInteractionsImpl extends MinimalEObjectImpl.Container implements GroupExternalInteractions
 {
   /**
-   * The cached value of the '{@link #getInternals() <em>Internals</em>}' containment reference list.
+   * The cached value of the '{@link #getExternal_interactions() <em>External interactions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInternals()
+   * @see #getExternal_interactions()
    * @generated
    * @ordered
    */
-  protected EList<GroupInternal> internals;
+  protected EList<GroupExternalInteraction> external_interactions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupInternalsImpl()
+  protected GroupExternalInteractionsImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroupInternals();
+    return CaslPackage.eINSTANCE.getGroupExternalInteractions();
   }
 
   /**
@@ -72,13 +72,13 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<GroupInternal> getInternals()
+  public EList<GroupExternalInteraction> getExternal_interactions()
   {
-    if (internals == null)
+    if (external_interactions == null)
     {
-      internals = new EObjectContainmentEList<GroupInternal>(GroupInternal.class, this, CaslPackage.GROUP_INTERNALS__INTERNALS);
+      external_interactions = new EObjectContainmentEList<GroupExternalInteraction>(GroupExternalInteraction.class, this, CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS);
     }
-    return internals;
+    return external_interactions;
   }
 
   /**
@@ -91,8 +91,8 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS__INTERNALS:
-        return ((InternalEList<?>)getInternals()).basicRemove(otherEnd, msgs);
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS:
+        return ((InternalEList<?>)getExternal_interactions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS__INTERNALS:
-        return getInternals();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS:
+        return getExternal_interactions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS__INTERNALS:
-        getInternals().clear();
-        getInternals().addAll((Collection<? extends GroupInternal>)newValue);
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS:
+        getExternal_interactions().clear();
+        getExternal_interactions().addAll((Collection<? extends GroupExternalInteraction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS__INTERNALS:
-        getInternals().clear();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS:
+        getExternal_interactions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +159,10 @@ public class GroupInternalsImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS__INTERNALS:
-        return internals != null && !internals.isEmpty();
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS:
+        return external_interactions != null && !external_interactions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //GroupInternalsImpl
+} //GroupExternalInteractionsImpl

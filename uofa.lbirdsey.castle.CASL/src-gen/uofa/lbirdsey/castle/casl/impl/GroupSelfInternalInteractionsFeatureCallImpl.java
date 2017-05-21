@@ -21,37 +21,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.Symbol;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Internals Feature Call</b></em>'.
+ * An implementation of the model object '<em><b>Group Self Internal Interactions Feature Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsFeatureCallImpl#getGrp <em>Grp</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsFeatureCallImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsFeatureCallImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupSelfInternalInteractionsFeatureCallImpl#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupSelfInternalInteractionsFeatureCallImpl#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container implements GroupInternalsFeatureCall
+public class GroupSelfInternalInteractionsFeatureCallImpl extends MinimalEObjectImpl.Container implements GroupSelfInternalInteractionsFeatureCall
 {
-  /**
-   * The cached value of the '{@link #getGrp() <em>Grp</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGrp()
-   * @generated
-   * @ordered
-   */
-  protected Symbol grp;
-
   /**
    * The cached value of the '{@link #getProcess() <em>Process</em>}' reference.
    * <!-- begin-user-doc -->
@@ -60,7 +48,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
    * @generated
    * @ordered
    */
-  protected GroupInternal process;
+  protected GroupInternalInteraction process;
 
   /**
    * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
@@ -77,7 +65,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupInternalsFeatureCallImpl()
+  protected GroupSelfInternalInteractionsFeatureCallImpl()
   {
     super();
   }
@@ -90,7 +78,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroupInternalsFeatureCall();
+    return CaslPackage.eINSTANCE.getGroupSelfInternalInteractionsFeatureCall();
   }
 
   /**
@@ -98,59 +86,16 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Symbol getGrp()
-  {
-    if (grp != null && grp.eIsProxy())
-    {
-      InternalEObject oldGrp = (InternalEObject)grp;
-      grp = (Symbol)eResolveProxy(oldGrp);
-      if (grp != oldGrp)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP, oldGrp, grp));
-      }
-    }
-    return grp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Symbol basicGetGrp()
-  {
-    return grp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGrp(Symbol newGrp)
-  {
-    Symbol oldGrp = grp;
-    grp = newGrp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP, oldGrp, grp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public GroupInternal getProcess()
+  public GroupInternalInteraction getProcess()
   {
     if (process != null && process.eIsProxy())
     {
       InternalEObject oldProcess = (InternalEObject)process;
-      process = (GroupInternal)eResolveProxy(oldProcess);
+      process = (GroupInternalInteraction)eResolveProxy(oldProcess);
       if (process != oldProcess)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS, oldProcess, process));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS, oldProcess, process));
       }
     }
     return process;
@@ -161,7 +106,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupInternal basicGetProcess()
+  public GroupInternalInteraction basicGetProcess()
   {
     return process;
   }
@@ -171,12 +116,12 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProcess(GroupInternal newProcess)
+  public void setProcess(GroupInternalInteraction newProcess)
   {
-    GroupInternal oldProcess = process;
+    GroupInternalInteraction oldProcess = process;
     process = newProcess;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS, oldProcess, process));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS, oldProcess, process));
   }
 
   /**
@@ -188,7 +133,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     if (inputs == null)
     {
-      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS);
+      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS);
     }
     return inputs;
   }
@@ -203,7 +148,7 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS:
         return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -219,13 +164,10 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP:
-        if (resolve) return getGrp();
-        return basicGetGrp();
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS:
         if (resolve) return getProcess();
         return basicGetProcess();
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS:
         return getInputs();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -242,13 +184,10 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP:
-        setGrp((Symbol)newValue);
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS:
+        setProcess((GroupInternalInteraction)newValue);
         return;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS:
-        setProcess((GroupInternal)newValue);
-        return;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS:
         getInputs().clear();
         getInputs().addAll((Collection<? extends Expression>)newValue);
         return;
@@ -266,13 +205,10 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP:
-        setGrp((Symbol)null);
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS:
+        setProcess((GroupInternalInteraction)null);
         return;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS:
-        setProcess((GroupInternal)null);
-        return;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS:
         getInputs().clear();
         return;
     }
@@ -289,14 +225,12 @@ public class GroupInternalsFeatureCallImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__GRP:
-        return grp != null;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__PROCESS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS:
         return process != null;
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL__INPUTS:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS:
         return inputs != null && !inputs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //GroupInternalsFeatureCallImpl
+} //GroupSelfInternalInteractionsFeatureCallImpl

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.Transmission_Contents;
 import uofa.lbirdsey.castle.casl.Transmission_Phase;
@@ -29,24 +29,24 @@ import uofa.lbirdsey.castle.casl.Transmission_Repeat;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Transmission</b></em>'.
+ * An implementation of the model object '<em><b>Group External Interaction</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getName <em>Name</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getTransmissionPhase <em>Transmission Phase</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getTransmissionContents <em>Transmission Contents</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getTransmissionRepeat <em>Transmission Repeat</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getReaction_time_parm <em>Reaction time parm</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getFunctionParameters <em>Function Parameters</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getTransmissionPhase <em>Transmission Phase</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getTransmissionContents <em>Transmission Contents</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getTransmissionRepeat <em>Transmission Repeat</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getReaction_time_parm <em>Reaction time parm</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getFunctionParameters <em>Function Parameters</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_Transmission
+public class GroupExternalInteractionImpl extends Entity_FeatureImpl implements GroupExternalInteraction
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -163,7 +163,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Group_TransmissionImpl()
+  protected GroupExternalInteractionImpl()
   {
     super();
   }
@@ -176,7 +176,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroup_Transmission();
+    return CaslPackage.eINSTANCE.getGroupExternalInteraction();
   }
 
   /**
@@ -199,7 +199,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__NAME, oldName, name));
   }
 
   /**
@@ -222,7 +222,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     Transmission_Phase oldTransmissionPhase = transmissionPhase;
     transmissionPhase = newTransmissionPhase == null ? TRANSMISSION_PHASE_EDEFAULT : newTransmissionPhase;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_PHASE, oldTransmissionPhase, transmissionPhase));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE, oldTransmissionPhase, transmissionPhase));
   }
 
   /**
@@ -245,7 +245,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     Transmission_Contents oldTransmissionContents = transmissionContents;
     transmissionContents = newTransmissionContents == null ? TRANSMISSION_CONTENTS_EDEFAULT : newTransmissionContents;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_CONTENTS, oldTransmissionContents, transmissionContents));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS, oldTransmissionContents, transmissionContents));
   }
 
   /**
@@ -268,7 +268,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     Transmission_Repeat oldTransmissionRepeat = transmissionRepeat;
     transmissionRepeat = newTransmissionRepeat == null ? TRANSMISSION_REPEAT_EDEFAULT : newTransmissionRepeat;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_REPEAT, oldTransmissionRepeat, transmissionRepeat));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT, oldTransmissionRepeat, transmissionRepeat));
   }
 
   /**
@@ -292,7 +292,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     reaction_time_parm = newReaction_time_parm;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM, oldReaction_time_parm, newReaction_time_parm);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM, oldReaction_time_parm, newReaction_time_parm);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -309,14 +309,14 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     {
       NotificationChain msgs = null;
       if (reaction_time_parm != null)
-        msgs = ((InternalEObject)reaction_time_parm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM, null, msgs);
+        msgs = ((InternalEObject)reaction_time_parm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM, null, msgs);
       if (newReaction_time_parm != null)
-        msgs = ((InternalEObject)newReaction_time_parm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM, null, msgs);
+        msgs = ((InternalEObject)newReaction_time_parm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM, null, msgs);
       msgs = basicSetReaction_time_parm(newReaction_time_parm, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM, newReaction_time_parm, newReaction_time_parm));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM, newReaction_time_parm, newReaction_time_parm));
   }
 
   /**
@@ -328,7 +328,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     if (functionParameters == null)
     {
-      functionParameters = new EObjectContainmentEList<Symbol>(Symbol.class, this, CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS);
+      functionParameters = new EObjectContainmentEList<Symbol>(Symbol.class, this, CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS);
     }
     return functionParameters;
   }
@@ -342,7 +342,7 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     if (body == null)
     {
-      body = new EObjectContainmentEList<EObject>(EObject.class, this, CaslPackage.GROUP_TRANSMISSION__BODY);
+      body = new EObjectContainmentEList<EObject>(EObject.class, this, CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY);
     }
     return body;
   }
@@ -357,11 +357,11 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM:
         return basicSetReaction_time_parm(null, msgs);
-      case CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return ((InternalEList<?>)getFunctionParameters()).basicRemove(otherEnd, msgs);
-      case CaslPackage.GROUP_TRANSMISSION__BODY:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY:
         return ((InternalEList<?>)getBody()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -377,19 +377,19 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION__NAME:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__NAME:
         return getName();
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_PHASE:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE:
         return getTransmissionPhase();
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_CONTENTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS:
         return getTransmissionContents();
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_REPEAT:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT:
         return getTransmissionRepeat();
-      case CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM:
         return getReaction_time_parm();
-      case CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return getFunctionParameters();
-      case CaslPackage.GROUP_TRANSMISSION__BODY:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY:
         return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -406,26 +406,26 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION__NAME:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__NAME:
         setName((String)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_PHASE:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE:
         setTransmissionPhase((Transmission_Phase)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_CONTENTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS:
         setTransmissionContents((Transmission_Contents)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_REPEAT:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT:
         setTransmissionRepeat((Transmission_Repeat)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM:
         setReaction_time_parm((Expression)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         getFunctionParameters().clear();
         getFunctionParameters().addAll((Collection<? extends Symbol>)newValue);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__BODY:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY:
         getBody().clear();
         getBody().addAll((Collection<? extends EObject>)newValue);
         return;
@@ -443,25 +443,25 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION__NAME:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_PHASE:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE:
         setTransmissionPhase(TRANSMISSION_PHASE_EDEFAULT);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_CONTENTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS:
         setTransmissionContents(TRANSMISSION_CONTENTS_EDEFAULT);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_REPEAT:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT:
         setTransmissionRepeat(TRANSMISSION_REPEAT_EDEFAULT);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM:
         setReaction_time_parm((Expression)null);
         return;
-      case CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         getFunctionParameters().clear();
         return;
-      case CaslPackage.GROUP_TRANSMISSION__BODY:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY:
         getBody().clear();
         return;
     }
@@ -478,19 +478,19 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSION__NAME:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_PHASE:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE:
         return transmissionPhase != TRANSMISSION_PHASE_EDEFAULT;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_CONTENTS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS:
         return transmissionContents != TRANSMISSION_CONTENTS_EDEFAULT;
-      case CaslPackage.GROUP_TRANSMISSION__TRANSMISSION_REPEAT:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT:
         return transmissionRepeat != TRANSMISSION_REPEAT_EDEFAULT;
-      case CaslPackage.GROUP_TRANSMISSION__REACTION_TIME_PARM:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM:
         return reaction_time_parm != null;
-      case CaslPackage.GROUP_TRANSMISSION__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return functionParameters != null && !functionParameters.isEmpty();
-      case CaslPackage.GROUP_TRANSMISSION__BODY:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION__BODY:
         return body != null && !body.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -519,4 +519,4 @@ public class Group_TransmissionImpl extends Entity_FeatureImpl implements Group_
     return result.toString();
   }
 
-} //Group_TransmissionImpl
+} //GroupExternalInteractionImpl

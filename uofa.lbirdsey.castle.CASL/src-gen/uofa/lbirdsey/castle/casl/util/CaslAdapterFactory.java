@@ -83,16 +83,16 @@ import uofa.lbirdsey.castle.casl.FunctionFeatureCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Functions;
 import uofa.lbirdsey.castle.casl.Group;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternals;
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.Group_Rules;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
 import uofa.lbirdsey.castle.casl.Group_Type_Name;
 import uofa.lbirdsey.castle.casl.Group_Types;
 import uofa.lbirdsey.castle.casl.IfStatement;
@@ -282,24 +282,24 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createGroup_RulesAdapter();
       }
       @Override
-      public Adapter caseGroup_Transmissions(Group_Transmissions object)
+      public Adapter caseGroupExternalInteractions(GroupExternalInteractions object)
       {
-        return createGroup_TransmissionsAdapter();
+        return createGroupExternalInteractionsAdapter();
       }
       @Override
-      public Adapter caseGroup_Transmission(Group_Transmission object)
+      public Adapter caseGroupExternalInteraction(GroupExternalInteraction object)
       {
-        return createGroup_TransmissionAdapter();
+        return createGroupExternalInteractionAdapter();
       }
       @Override
-      public Adapter caseGroupInternals(GroupInternals object)
+      public Adapter caseGroupInternalInteractions(GroupInternalInteractions object)
       {
-        return createGroupInternalsAdapter();
+        return createGroupInternalInteractionsAdapter();
       }
       @Override
-      public Adapter caseGroupInternal(GroupInternal object)
+      public Adapter caseGroupInternalInteraction(GroupInternalInteraction object)
       {
-        return createGroupInternalAdapter();
+        return createGroupInternalInteractionAdapter();
       }
       @Override
       public Adapter caseParameters(Parameters object)
@@ -407,9 +407,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createAgentInteractionFeatureCallAdapter();
       }
       @Override
-      public Adapter caseGroupTransmissionFeatureCall(GroupTransmissionFeatureCall object)
+      public Adapter caseGroupExternalInteractionFeatureCall(GroupExternalInteractionFeatureCall object)
       {
-        return createGroupTransmissionFeatureCallAdapter();
+        return createGroupExternalInteractionFeatureCallAdapter();
       }
       @Override
       public Adapter caseTransmissionFeatureCall(TransmissionFeatureCall object)
@@ -417,9 +417,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createTransmissionFeatureCallAdapter();
       }
       @Override
-      public Adapter caseGroupInternalsFeatureCall(GroupInternalsFeatureCall object)
+      public Adapter caseGroupInternalInteractionsFeatureCall(GroupInternalInteractionsFeatureCall object)
       {
-        return createGroupInternalsFeatureCallAdapter();
+        return createGroupInternalInteractionsFeatureCallAdapter();
       }
       @Override
       public Adapter caseEnvironmentInteractionFeatureCall(EnvironmentInteractionFeatureCall object)
@@ -427,9 +427,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createEnvironmentInteractionFeatureCallAdapter();
       }
       @Override
-      public Adapter caseGroupSelfInternalsFeatureCall(GroupSelfInternalsFeatureCall object)
+      public Adapter caseGroupSelfInternalInteractionsFeatureCall(GroupSelfInternalInteractionsFeatureCall object)
       {
-        return createGroupSelfInternalsFeatureCallAdapter();
+        return createGroupSelfInternalInteractionsFeatureCallAdapter();
       }
       @Override
       public Adapter caseFunctionFeatureCall(FunctionFeatureCall object)
@@ -1079,61 +1079,61 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.Group_Transmissions <em>Group Transmissions</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractions <em>Group External Interactions</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmissions
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractions
    * @generated
    */
-  public Adapter createGroup_TransmissionsAdapter()
+  public Adapter createGroupExternalInteractionsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.Group_Transmission <em>Group Transmission</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction <em>Group External Interaction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction
    * @generated
    */
-  public Adapter createGroup_TransmissionAdapter()
+  public Adapter createGroupExternalInteractionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternals <em>Group Internals</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractions <em>Group Internal Interactions</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.GroupInternals
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractions
    * @generated
    */
-  public Adapter createGroupInternalsAdapter()
+  public Adapter createGroupInternalInteractionsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternal <em>Group Internal</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction <em>Group Internal Interaction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction
    * @generated
    */
-  public Adapter createGroupInternalAdapter()
+  public Adapter createGroupInternalInteractionAdapter()
   {
     return null;
   }
@@ -1454,16 +1454,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall <em>Group Transmission Feature Call</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall <em>Group External Interaction Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
    * @generated
    */
-  public Adapter createGroupTransmissionFeatureCallAdapter()
+  public Adapter createGroupExternalInteractionFeatureCallAdapter()
   {
     return null;
   }
@@ -1484,16 +1484,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall <em>Group Internals Feature Call</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall <em>Group Internal Interactions Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
    * @generated
    */
-  public Adapter createGroupInternalsFeatureCallAdapter()
+  public Adapter createGroupInternalInteractionsFeatureCallAdapter()
   {
     return null;
   }
@@ -1514,16 +1514,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall <em>Group Self Internals Feature Call</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall <em>Group Self Internal Interactions Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall
+   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
    * @generated
    */
-  public Adapter createGroupSelfInternalsFeatureCallAdapter()
+  public Adapter createGroupSelfInternalInteractionsFeatureCallAdapter()
   {
     return null;
   }

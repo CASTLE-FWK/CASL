@@ -151,19 +151,19 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="group_behaviors" eType="#//Behaviors"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="group_transmissions" eType="#//Group_Transmissions"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="group_internals" eType="#//GroupInternals"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group_external_interactions"
+        eType="#//GroupExternalInteractions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group_internal_interactions"
+        eType="#//GroupInternalInteractions" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group_Rules">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout_type" eType="#//LayoutType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Group_Transmissions">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="transmissions" upperBound="-1"
-        eType="#//Group_Transmission" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupExternalInteractions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="external_interactions"
+        upperBound="-1" eType="#//GroupExternalInteraction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Group_Transmission" eSuperTypes="#//Entity_Feature">
+  <eClassifiers xsi:type="ecore:EClass" name="GroupExternalInteraction" eSuperTypes="#//Entity_Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionPhase" eType="#//Transmission_Phase"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionContents" eType="#//Transmission_Contents"/>
@@ -189,11 +189,11 @@
     <eLiterals name="SINGLE" value="1" literal="SINGLE"/>
     <eLiterals name="CALLED" value="2" literal="CALLED"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupInternals">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"
-        eType="#//GroupInternal" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupInternalInteractions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internal_interactions"
+        upperBound="-1" eType="#//GroupInternalInteraction" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupInternal" eSuperTypes="#//Entity_Feature">
+  <eClassifiers xsi:type="ecore:EClass" name="GroupInternalInteraction" eSuperTypes="#//Entity_Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interaction_type" eType="#//InteractionType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger_type" eType="#//InteractionTriggerTypes"/>
@@ -364,20 +364,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupTransmissionFeatureCall">
+  <eClassifiers xsi:type="ecore:EClass" name="GroupExternalInteractionFeatureCall">
     <eStructuralFeatures xsi:type="ecore:EReference" name="grp" eType="#//Symbol"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Group_Transmission"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupExternalInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransmissionFeatureCall">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Group_Transmission"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupExternalInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupInternalsFeatureCall">
+  <eClassifiers xsi:type="ecore:EClass" name="GroupInternalInteractionsFeatureCall">
     <eStructuralFeatures xsi:type="ecore:EReference" name="grp" eType="#//Symbol"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupInternal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupInternalInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
@@ -387,8 +387,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupSelfInternalsFeatureCall">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupInternal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupSelfInternalInteractionsFeatureCall">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//GroupInternalInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>

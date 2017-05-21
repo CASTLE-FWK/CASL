@@ -187,34 +187,34 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_functions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_behaviors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_transmissions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_internals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_external_interactions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group/group_internal_interactions"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Group_Rules">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Rules/layout_type"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//Group_Transmissions">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group_Transmissions/transmissions"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupExternalInteractions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractions/external_interactions"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//Group_Transmission">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Transmission/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Transmission/transmissionPhase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Transmission/transmissionContents"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Transmission/transmissionRepeat"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group_Transmission/reaction_time_parm"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group_Transmission/functionParameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Group_Transmission/body"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupExternalInteraction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupExternalInteraction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupExternalInteraction/transmissionPhase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupExternalInteraction/transmissionContents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupExternalInteraction/transmissionRepeat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteraction/reaction_time_parm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteraction/functionParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteraction/body"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//GroupInternals">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternals/internals"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupInternalInteractions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteractions/internal_interactions"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//GroupInternal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternal/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternal/interaction_type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternal/trigger_type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternal/triggerParam"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternal/functionParameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternal/body"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupInternalInteraction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternalInteraction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternalInteraction/interaction_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//GroupInternalInteraction/trigger_type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteraction/triggerParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteraction/functionParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteraction/body"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Parameters">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Parameters/fields"/>
@@ -305,28 +305,28 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//AgentInteractionFeatureCall/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//AgentInteractionFeatureCall/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//GroupTransmissionFeatureCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupTransmissionFeatureCall/grp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupTransmissionFeatureCall/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupTransmissionFeatureCall/inputs"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupExternalInteractionFeatureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractionFeatureCall/grp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractionFeatureCall/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractionFeatureCall/inputs"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//TransmissionFeatureCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//TransmissionFeatureCall/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//TransmissionFeatureCall/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//GroupInternalsFeatureCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalsFeatureCall/grp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalsFeatureCall/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalsFeatureCall/inputs"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupInternalInteractionsFeatureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteractionsFeatureCall/grp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteractionsFeatureCall/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteractionsFeatureCall/inputs"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//EnvironmentInteractionFeatureCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//EnvironmentInteractionFeatureCall/env"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//EnvironmentInteractionFeatureCall/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//EnvironmentInteractionFeatureCall/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//GroupSelfInternalsFeatureCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupSelfInternalsFeatureCall/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupSelfInternalsFeatureCall/inputs"/>
+    <genClasses ecoreClass="CASL.ecore#//GroupSelfInternalInteractionsFeatureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupSelfInternalInteractionsFeatureCall/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupSelfInternalInteractionsFeatureCall/inputs"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//FunctionFeatureCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionFeatureCall/process"/>

@@ -15,9 +15,9 @@ import uofa.lbirdsey.castle.casl.Behaviors;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Functions;
 import uofa.lbirdsey.castle.casl.Group;
-import uofa.lbirdsey.castle.casl.GroupInternals;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
 import uofa.lbirdsey.castle.casl.Group_Rules;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
 import uofa.lbirdsey.castle.casl.Parameters;
 
 /**
@@ -32,8 +32,8 @@ import uofa.lbirdsey.castle.casl.Parameters;
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_parameters <em>Group parameters</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_functions <em>Group functions</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_behaviors <em>Group behaviors</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_transmissions <em>Group transmissions</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_internals <em>Group internals</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_external_interactions <em>Group external interactions</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupImpl#getGroup_internal_interactions <em>Group internal interactions</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,24 +81,24 @@ public class GroupImpl extends EntityImpl implements Group
   protected Behaviors group_behaviors;
 
   /**
-   * The cached value of the '{@link #getGroup_transmissions() <em>Group transmissions</em>}' containment reference.
+   * The cached value of the '{@link #getGroup_external_interactions() <em>Group external interactions</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroup_transmissions()
+   * @see #getGroup_external_interactions()
    * @generated
    * @ordered
    */
-  protected Group_Transmissions group_transmissions;
+  protected GroupExternalInteractions group_external_interactions;
 
   /**
-   * The cached value of the '{@link #getGroup_internals() <em>Group internals</em>}' containment reference.
+   * The cached value of the '{@link #getGroup_internal_interactions() <em>Group internal interactions</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroup_internals()
+   * @see #getGroup_internal_interactions()
    * @generated
    * @ordered
    */
-  protected GroupInternals group_internals;
+  protected GroupInternalInteractions group_internal_interactions;
 
   /**
    * <!-- begin-user-doc -->
@@ -318,9 +318,9 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group_Transmissions getGroup_transmissions()
+  public GroupExternalInteractions getGroup_external_interactions()
   {
-    return group_transmissions;
+    return group_external_interactions;
   }
 
   /**
@@ -328,13 +328,13 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGroup_transmissions(Group_Transmissions newGroup_transmissions, NotificationChain msgs)
+  public NotificationChain basicSetGroup_external_interactions(GroupExternalInteractions newGroup_external_interactions, NotificationChain msgs)
   {
-    Group_Transmissions oldGroup_transmissions = group_transmissions;
-    group_transmissions = newGroup_transmissions;
+    GroupExternalInteractions oldGroup_external_interactions = group_external_interactions;
+    group_external_interactions = newGroup_external_interactions;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_TRANSMISSIONS, oldGroup_transmissions, newGroup_transmissions);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS, oldGroup_external_interactions, newGroup_external_interactions);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -345,20 +345,20 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGroup_transmissions(Group_Transmissions newGroup_transmissions)
+  public void setGroup_external_interactions(GroupExternalInteractions newGroup_external_interactions)
   {
-    if (newGroup_transmissions != group_transmissions)
+    if (newGroup_external_interactions != group_external_interactions)
     {
       NotificationChain msgs = null;
-      if (group_transmissions != null)
-        msgs = ((InternalEObject)group_transmissions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_TRANSMISSIONS, null, msgs);
-      if (newGroup_transmissions != null)
-        msgs = ((InternalEObject)newGroup_transmissions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_TRANSMISSIONS, null, msgs);
-      msgs = basicSetGroup_transmissions(newGroup_transmissions, msgs);
+      if (group_external_interactions != null)
+        msgs = ((InternalEObject)group_external_interactions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS, null, msgs);
+      if (newGroup_external_interactions != null)
+        msgs = ((InternalEObject)newGroup_external_interactions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS, null, msgs);
+      msgs = basicSetGroup_external_interactions(newGroup_external_interactions, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_TRANSMISSIONS, newGroup_transmissions, newGroup_transmissions));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS, newGroup_external_interactions, newGroup_external_interactions));
   }
 
   /**
@@ -366,9 +366,9 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupInternals getGroup_internals()
+  public GroupInternalInteractions getGroup_internal_interactions()
   {
-    return group_internals;
+    return group_internal_interactions;
   }
 
   /**
@@ -376,13 +376,13 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGroup_internals(GroupInternals newGroup_internals, NotificationChain msgs)
+  public NotificationChain basicSetGroup_internal_interactions(GroupInternalInteractions newGroup_internal_interactions, NotificationChain msgs)
   {
-    GroupInternals oldGroup_internals = group_internals;
-    group_internals = newGroup_internals;
+    GroupInternalInteractions oldGroup_internal_interactions = group_internal_interactions;
+    group_internal_interactions = newGroup_internal_interactions;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_INTERNALS, oldGroup_internals, newGroup_internals);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS, oldGroup_internal_interactions, newGroup_internal_interactions);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -393,20 +393,20 @@ public class GroupImpl extends EntityImpl implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGroup_internals(GroupInternals newGroup_internals)
+  public void setGroup_internal_interactions(GroupInternalInteractions newGroup_internal_interactions)
   {
-    if (newGroup_internals != group_internals)
+    if (newGroup_internal_interactions != group_internal_interactions)
     {
       NotificationChain msgs = null;
-      if (group_internals != null)
-        msgs = ((InternalEObject)group_internals).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_INTERNALS, null, msgs);
-      if (newGroup_internals != null)
-        msgs = ((InternalEObject)newGroup_internals).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_INTERNALS, null, msgs);
-      msgs = basicSetGroup_internals(newGroup_internals, msgs);
+      if (group_internal_interactions != null)
+        msgs = ((InternalEObject)group_internal_interactions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS, null, msgs);
+      if (newGroup_internal_interactions != null)
+        msgs = ((InternalEObject)newGroup_internal_interactions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS, null, msgs);
+      msgs = basicSetGroup_internal_interactions(newGroup_internal_interactions, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_INTERNALS, newGroup_internals, newGroup_internals));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS, newGroup_internal_interactions, newGroup_internal_interactions));
   }
 
   /**
@@ -427,10 +427,10 @@ public class GroupImpl extends EntityImpl implements Group
         return basicSetGroup_functions(null, msgs);
       case CaslPackage.GROUP__GROUP_BEHAVIORS:
         return basicSetGroup_behaviors(null, msgs);
-      case CaslPackage.GROUP__GROUP_TRANSMISSIONS:
-        return basicSetGroup_transmissions(null, msgs);
-      case CaslPackage.GROUP__GROUP_INTERNALS:
-        return basicSetGroup_internals(null, msgs);
+      case CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS:
+        return basicSetGroup_external_interactions(null, msgs);
+      case CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS:
+        return basicSetGroup_internal_interactions(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -453,10 +453,10 @@ public class GroupImpl extends EntityImpl implements Group
         return getGroup_functions();
       case CaslPackage.GROUP__GROUP_BEHAVIORS:
         return getGroup_behaviors();
-      case CaslPackage.GROUP__GROUP_TRANSMISSIONS:
-        return getGroup_transmissions();
-      case CaslPackage.GROUP__GROUP_INTERNALS:
-        return getGroup_internals();
+      case CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS:
+        return getGroup_external_interactions();
+      case CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS:
+        return getGroup_internal_interactions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -483,11 +483,11 @@ public class GroupImpl extends EntityImpl implements Group
       case CaslPackage.GROUP__GROUP_BEHAVIORS:
         setGroup_behaviors((Behaviors)newValue);
         return;
-      case CaslPackage.GROUP__GROUP_TRANSMISSIONS:
-        setGroup_transmissions((Group_Transmissions)newValue);
+      case CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS:
+        setGroup_external_interactions((GroupExternalInteractions)newValue);
         return;
-      case CaslPackage.GROUP__GROUP_INTERNALS:
-        setGroup_internals((GroupInternals)newValue);
+      case CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS:
+        setGroup_internal_interactions((GroupInternalInteractions)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -515,11 +515,11 @@ public class GroupImpl extends EntityImpl implements Group
       case CaslPackage.GROUP__GROUP_BEHAVIORS:
         setGroup_behaviors((Behaviors)null);
         return;
-      case CaslPackage.GROUP__GROUP_TRANSMISSIONS:
-        setGroup_transmissions((Group_Transmissions)null);
+      case CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS:
+        setGroup_external_interactions((GroupExternalInteractions)null);
         return;
-      case CaslPackage.GROUP__GROUP_INTERNALS:
-        setGroup_internals((GroupInternals)null);
+      case CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS:
+        setGroup_internal_interactions((GroupInternalInteractions)null);
         return;
     }
     super.eUnset(featureID);
@@ -543,10 +543,10 @@ public class GroupImpl extends EntityImpl implements Group
         return group_functions != null;
       case CaslPackage.GROUP__GROUP_BEHAVIORS:
         return group_behaviors != null;
-      case CaslPackage.GROUP__GROUP_TRANSMISSIONS:
-        return group_transmissions != null;
-      case CaslPackage.GROUP__GROUP_INTERNALS:
-        return group_internals != null;
+      case CaslPackage.GROUP__GROUP_EXTERNAL_INTERACTIONS:
+        return group_external_interactions != null;
+      case CaslPackage.GROUP__GROUP_INTERNAL_INTERACTIONS:
+        return group_internal_interactions != null;
     }
     return super.eIsSet(featureID);
   }

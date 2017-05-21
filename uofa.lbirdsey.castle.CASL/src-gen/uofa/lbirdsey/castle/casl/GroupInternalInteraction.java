@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Internal</b></em>'.
+ * A representation of the model object '<em><b>Group Internal Interaction</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getName <em>Name</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getInteraction_type <em>Interaction type</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getTrigger_type <em>Trigger type</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getTriggerParam <em>Trigger Param</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getFunctionParameters <em>Function Parameters</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternal#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getName <em>Name</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getInteraction_type <em>Interaction type</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTrigger_type <em>Trigger type</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTriggerParam <em>Trigger Param</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getFunctionParameters <em>Function Parameters</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getBody <em>Body</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction()
  * @model
  * @generated
  */
-public interface GroupInternal extends Entity_Feature
+public interface GroupInternalInteraction extends Entity_Feature
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -40,14 +40,14 @@ public interface GroupInternal extends Entity_Feature
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_Name()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternal#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -68,14 +68,14 @@ public interface GroupInternal extends Entity_Feature
    * @return the value of the '<em>Interaction type</em>' attribute.
    * @see uofa.lbirdsey.castle.casl.InteractionType
    * @see #setInteraction_type(InteractionType)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_Interaction_type()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_Interaction_type()
    * @model
    * @generated
    */
   InteractionType getInteraction_type();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternal#getInteraction_type <em>Interaction type</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getInteraction_type <em>Interaction type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Interaction type</em>' attribute.
@@ -97,14 +97,14 @@ public interface GroupInternal extends Entity_Feature
    * @return the value of the '<em>Trigger type</em>' attribute.
    * @see uofa.lbirdsey.castle.casl.InteractionTriggerTypes
    * @see #setTrigger_type(InteractionTriggerTypes)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_Trigger_type()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_Trigger_type()
    * @model
    * @generated
    */
   InteractionTriggerTypes getTrigger_type();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternal#getTrigger_type <em>Trigger type</em>}' attribute.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTrigger_type <em>Trigger type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Trigger type</em>' attribute.
@@ -124,14 +124,14 @@ public interface GroupInternal extends Entity_Feature
    * <!-- end-user-doc -->
    * @return the value of the '<em>Trigger Param</em>' containment reference.
    * @see #setTriggerParam(InteractionTriggerParameter)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_TriggerParam()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_TriggerParam()
    * @model containment="true"
    * @generated
    */
   InteractionTriggerParameter getTriggerParam();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternal#getTriggerParam <em>Trigger Param</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTriggerParam <em>Trigger Param</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Trigger Param</em>' containment reference.
@@ -150,7 +150,7 @@ public interface GroupInternal extends Entity_Feature
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Function Parameters</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_FunctionParameters()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_FunctionParameters()
    * @model containment="true"
    * @generated
    */
@@ -166,10 +166,10 @@ public interface GroupInternal extends Entity_Feature
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternal_Body()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteraction_Body()
    * @model containment="true"
    * @generated
    */
   EList<EObject> getBody();
 
-} // GroupInternal
+} // GroupInternalInteraction

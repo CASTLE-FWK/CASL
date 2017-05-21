@@ -877,22 +877,22 @@ public interface CaslPackage extends EPackage
   int GROUP__GROUP_BEHAVIORS = ENTITY_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Group transmissions</b></em>' containment reference.
+   * The feature id for the '<em><b>Group external interactions</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP__GROUP_TRANSMISSIONS = ENTITY_FEATURE_COUNT + 4;
+  int GROUP__GROUP_EXTERNAL_INTERACTIONS = ENTITY_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Group internals</b></em>' containment reference.
+   * The feature id for the '<em><b>Group internal interactions</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP__GROUP_INTERNALS = ENTITY_FEATURE_COUNT + 5;
+  int GROUP__GROUP_INTERNAL_INTERACTIONS = ENTITY_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Group</em>' class.
@@ -932,42 +932,42 @@ public interface CaslPackage extends EPackage
   int GROUP_RULES_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionsImpl <em>Group Transmissions</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionsImpl <em>Group External Interactions</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.Group_TransmissionsImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroup_Transmissions()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionsImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupExternalInteractions()
    * @generated
    */
-  int GROUP_TRANSMISSIONS = 18;
+  int GROUP_EXTERNAL_INTERACTIONS = 18;
 
   /**
-   * The feature id for the '<em><b>Transmissions</b></em>' containment reference list.
+   * The feature id for the '<em><b>External interactions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSIONS__TRANSMISSIONS = 0;
+  int GROUP_EXTERNAL_INTERACTIONS__EXTERNAL_INTERACTIONS = 0;
 
   /**
-   * The number of structural features of the '<em>Group Transmissions</em>' class.
+   * The number of structural features of the '<em>Group External Interactions</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSIONS_FEATURE_COUNT = 1;
+  int GROUP_EXTERNAL_INTERACTIONS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl <em>Group Transmission</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl <em>Group External Interaction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.Group_TransmissionImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupExternalInteraction()
    * @generated
    */
-  int GROUP_TRANSMISSION = 19;
+  int GROUP_EXTERNAL_INTERACTION = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -976,7 +976,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__NAME = ENTITY_FEATURE_FEATURE_COUNT + 0;
+  int GROUP_EXTERNAL_INTERACTION__NAME = ENTITY_FEATURE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Transmission Phase</b></em>' attribute.
@@ -985,7 +985,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__TRANSMISSION_PHASE = ENTITY_FEATURE_FEATURE_COUNT + 1;
+  int GROUP_EXTERNAL_INTERACTION__TRANSMISSION_PHASE = ENTITY_FEATURE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Transmission Contents</b></em>' attribute.
@@ -994,7 +994,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__TRANSMISSION_CONTENTS = ENTITY_FEATURE_FEATURE_COUNT + 2;
+  int GROUP_EXTERNAL_INTERACTION__TRANSMISSION_CONTENTS = ENTITY_FEATURE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Transmission Repeat</b></em>' attribute.
@@ -1003,7 +1003,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__TRANSMISSION_REPEAT = ENTITY_FEATURE_FEATURE_COUNT + 3;
+  int GROUP_EXTERNAL_INTERACTION__TRANSMISSION_REPEAT = ENTITY_FEATURE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Reaction time parm</b></em>' containment reference.
@@ -1012,7 +1012,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__REACTION_TIME_PARM = ENTITY_FEATURE_FEATURE_COUNT + 4;
+  int GROUP_EXTERNAL_INTERACTION__REACTION_TIME_PARM = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Function Parameters</b></em>' containment reference list.
@@ -1021,7 +1021,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__FUNCTION_PARAMETERS = ENTITY_FEATURE_FEATURE_COUNT + 5;
+  int GROUP_EXTERNAL_INTERACTION__FUNCTION_PARAMETERS = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference list.
@@ -1030,54 +1030,54 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION__BODY = ENTITY_FEATURE_FEATURE_COUNT + 6;
+  int GROUP_EXTERNAL_INTERACTION__BODY = ENTITY_FEATURE_FEATURE_COUNT + 6;
 
   /**
-   * The number of structural features of the '<em>Group Transmission</em>' class.
+   * The number of structural features of the '<em>Group External Interaction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 7;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsImpl <em>Group Internals</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsImpl <em>Group Internal Interactions</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalsImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternals()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternalInteractions()
    * @generated
    */
-  int GROUP_INTERNALS = 20;
+  int GROUP_INTERNAL_INTERACTIONS = 20;
 
   /**
-   * The feature id for the '<em><b>Internals</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GROUP_INTERNALS__INTERNALS = 0;
-
-  /**
-   * The number of structural features of the '<em>Group Internals</em>' class.
+   * The feature id for the '<em><b>Internal interactions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_INTERNALS_FEATURE_COUNT = 1;
+  int GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS = 0;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl <em>Group Internal</em>}' class.
+   * The number of structural features of the '<em>Group Internal Interactions</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternal()
+   * @generated
+   * @ordered
+   */
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl <em>Group Internal Interaction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternalInteraction()
    * @generated
    */
-  int GROUP_INTERNAL = 21;
+  int GROUP_INTERNAL_INTERACTION = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1086,7 +1086,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__NAME = ENTITY_FEATURE_FEATURE_COUNT + 0;
+  int GROUP_INTERNAL_INTERACTION__NAME = ENTITY_FEATURE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Interaction type</b></em>' attribute.
@@ -1095,7 +1095,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__INTERACTION_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 1;
+  int GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Trigger type</b></em>' attribute.
@@ -1104,7 +1104,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__TRIGGER_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 2;
+  int GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Trigger Param</b></em>' containment reference.
@@ -1113,7 +1113,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__TRIGGER_PARAM = ENTITY_FEATURE_FEATURE_COUNT + 3;
+  int GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM = ENTITY_FEATURE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Function Parameters</b></em>' containment reference list.
@@ -1122,7 +1122,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__FUNCTION_PARAMETERS = ENTITY_FEATURE_FEATURE_COUNT + 4;
+  int GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference list.
@@ -1131,16 +1131,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL__BODY = ENTITY_FEATURE_FEATURE_COUNT + 5;
+  int GROUP_INTERNAL_INTERACTION__BODY = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
   /**
-   * The number of structural features of the '<em>Group Internal</em>' class.
+   * The number of structural features of the '<em>Group Internal Interaction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_INTERNAL_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 6;
+  int GROUP_INTERNAL_INTERACTION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.ParametersImpl <em>Parameters</em>}' class.
@@ -1965,14 +1965,14 @@ public interface CaslPackage extends EPackage
   int AGENT_INTERACTION_FEATURE_CALL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupTransmissionFeatureCallImpl <em>Group Transmission Feature Call</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionFeatureCallImpl <em>Group External Interaction Feature Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.GroupTransmissionFeatureCallImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupExternalInteractionFeatureCallImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupExternalInteractionFeatureCall()
    * @generated
    */
-  int GROUP_TRANSMISSION_FEATURE_CALL = 43;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL = 43;
 
   /**
    * The feature id for the '<em><b>Grp</b></em>' reference.
@@ -1981,7 +1981,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION_FEATURE_CALL__GRP = 0;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__GRP = 0;
 
   /**
    * The feature id for the '<em><b>Process</b></em>' reference.
@@ -1990,7 +1990,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION_FEATURE_CALL__PROCESS = 1;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS = 1;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -1999,16 +1999,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION_FEATURE_CALL__INPUTS = 2;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS = 2;
 
   /**
-   * The number of structural features of the '<em>Group Transmission Feature Call</em>' class.
+   * The number of structural features of the '<em>Group External Interaction Feature Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_TRANSMISSION_FEATURE_CALL_FEATURE_COUNT = 3;
+  int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.TransmissionFeatureCallImpl <em>Transmission Feature Call</em>}' class.
@@ -2048,14 +2048,14 @@ public interface CaslPackage extends EPackage
   int TRANSMISSION_FEATURE_CALL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalsFeatureCallImpl <em>Group Internals Feature Call</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsFeatureCallImpl <em>Group Internal Interactions Feature Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalsFeatureCallImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsFeatureCallImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupInternalInteractionsFeatureCall()
    * @generated
    */
-  int GROUP_INTERNALS_FEATURE_CALL = 45;
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL = 45;
 
   /**
    * The feature id for the '<em><b>Grp</b></em>' reference.
@@ -2064,7 +2064,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNALS_FEATURE_CALL__GRP = 0;
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL__GRP = 0;
 
   /**
    * The feature id for the '<em><b>Process</b></em>' reference.
@@ -2073,7 +2073,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNALS_FEATURE_CALL__PROCESS = 1;
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS = 1;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -2082,16 +2082,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_INTERNALS_FEATURE_CALL__INPUTS = 2;
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS = 2;
 
   /**
-   * The number of structural features of the '<em>Group Internals Feature Call</em>' class.
+   * The number of structural features of the '<em>Group Internal Interactions Feature Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_INTERNALS_FEATURE_CALL_FEATURE_COUNT = 3;
+  int GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.EnvironmentInteractionFeatureCallImpl <em>Environment Interaction Feature Call</em>}' class.
@@ -2140,14 +2140,14 @@ public interface CaslPackage extends EPackage
   int ENVIRONMENT_INTERACTION_FEATURE_CALL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupSelfInternalsFeatureCallImpl <em>Group Self Internals Feature Call</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupSelfInternalInteractionsFeatureCallImpl <em>Group Self Internal Interactions Feature Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.GroupSelfInternalsFeatureCallImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupSelfInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.impl.GroupSelfInternalInteractionsFeatureCallImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupSelfInternalInteractionsFeatureCall()
    * @generated
    */
-  int GROUP_SELF_INTERNALS_FEATURE_CALL = 47;
+  int GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL = 47;
 
   /**
    * The feature id for the '<em><b>Process</b></em>' reference.
@@ -2156,7 +2156,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_SELF_INTERNALS_FEATURE_CALL__PROCESS = 0;
+  int GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__PROCESS = 0;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -2165,16 +2165,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_SELF_INTERNALS_FEATURE_CALL__INPUTS = 1;
+  int GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL__INPUTS = 1;
 
   /**
-   * The number of structural features of the '<em>Group Self Internals Feature Call</em>' class.
+   * The number of structural features of the '<em>Group Self Internal Interactions Feature Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_SELF_INTERNALS_FEATURE_CALL_FEATURE_COUNT = 2;
+  int GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.FunctionFeatureCallImpl <em>Function Feature Call</em>}' class.
@@ -6031,26 +6031,26 @@ public interface CaslPackage extends EPackage
   EReference getGroup_Group_behaviors();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Group#getGroup_transmissions <em>Group transmissions</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Group#getGroup_external_interactions <em>Group external interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Group transmissions</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group#getGroup_transmissions()
+   * @return the meta object for the containment reference '<em>Group external interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.Group#getGroup_external_interactions()
    * @see #getGroup()
    * @generated
    */
-  EReference getGroup_Group_transmissions();
+  EReference getGroup_Group_external_interactions();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Group#getGroup_internals <em>Group internals</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Group#getGroup_internal_interactions <em>Group internal interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Group internals</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group#getGroup_internals()
+   * @return the meta object for the containment reference '<em>Group internal interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.Group#getGroup_internal_interactions()
    * @see #getGroup()
    * @generated
    */
-  EReference getGroup_Group_internals();
+  EReference getGroup_Group_internal_interactions();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Group_Rules <em>Group Rules</em>}'.
@@ -6074,209 +6074,209 @@ public interface CaslPackage extends EPackage
   EAttribute getGroup_Rules_Layout_type();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Group_Transmissions <em>Group Transmissions</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractions <em>Group External Interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Transmissions</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmissions
+   * @return the meta object for class '<em>Group External Interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractions
    * @generated
    */
-  EClass getGroup_Transmissions();
+  EClass getGroupExternalInteractions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.Group_Transmissions#getTransmissions <em>Transmissions</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractions#getExternal_interactions <em>External interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Transmissions</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmissions#getTransmissions()
-   * @see #getGroup_Transmissions()
+   * @return the meta object for the containment reference list '<em>External interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractions#getExternal_interactions()
+   * @see #getGroupExternalInteractions()
    * @generated
    */
-  EReference getGroup_Transmissions_Transmissions();
+  EReference getGroupExternalInteractions_External_interactions();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Group_Transmission <em>Group Transmission</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction <em>Group External Interaction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Transmission</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission
+   * @return the meta object for class '<em>Group External Interaction</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction
    * @generated
    */
-  EClass getGroup_Transmission();
+  EClass getGroupExternalInteraction();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getName()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getName()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EAttribute getGroup_Transmission_Name();
+  EAttribute getGroupExternalInteraction_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionPhase <em>Transmission Phase</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionPhase <em>Transmission Phase</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Transmission Phase</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionPhase()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionPhase()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EAttribute getGroup_Transmission_TransmissionPhase();
+  EAttribute getGroupExternalInteraction_TransmissionPhase();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionContents <em>Transmission Contents</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionContents <em>Transmission Contents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Transmission Contents</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionContents()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionContents()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EAttribute getGroup_Transmission_TransmissionContents();
+  EAttribute getGroupExternalInteraction_TransmissionContents();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionRepeat <em>Transmission Repeat</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionRepeat <em>Transmission Repeat</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Transmission Repeat</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getTransmissionRepeat()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getTransmissionRepeat()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EAttribute getGroup_Transmission_TransmissionRepeat();
+  EAttribute getGroupExternalInteraction_TransmissionRepeat();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getReaction_time_parm <em>Reaction time parm</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getReaction_time_parm <em>Reaction time parm</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Reaction time parm</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getReaction_time_parm()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getReaction_time_parm()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EReference getGroup_Transmission_Reaction_time_parm();
+  EReference getGroupExternalInteraction_Reaction_time_parm();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getFunctionParameters <em>Function Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getFunctionParameters <em>Function Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Function Parameters</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getFunctionParameters()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getFunctionParameters()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EReference getGroup_Transmission_FunctionParameters();
+  EReference getGroupExternalInteraction_FunctionParameters();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.Group_Transmission#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupExternalInteraction#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Body</em>'.
-   * @see uofa.lbirdsey.castle.casl.Group_Transmission#getBody()
-   * @see #getGroup_Transmission()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteraction#getBody()
+   * @see #getGroupExternalInteraction()
    * @generated
    */
-  EReference getGroup_Transmission_Body();
+  EReference getGroupExternalInteraction_Body();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternals <em>Group Internals</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractions <em>Group Internal Interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Internals</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternals
+   * @return the meta object for class '<em>Group Internal Interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractions
    * @generated
    */
-  EClass getGroupInternals();
+  EClass getGroupInternalInteractions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternals#getInternals <em>Internals</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractions#getInternal_interactions <em>Internal interactions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Internals</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternals#getInternals()
-   * @see #getGroupInternals()
+   * @return the meta object for the containment reference list '<em>Internal interactions</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractions#getInternal_interactions()
+   * @see #getGroupInternalInteractions()
    * @generated
    */
-  EReference getGroupInternals_Internals();
+  EReference getGroupInternalInteractions_Internal_interactions();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternal <em>Group Internal</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction <em>Group Internal Interaction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Internal</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal
+   * @return the meta object for class '<em>Group Internal Interaction</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction
    * @generated
    */
-  EClass getGroupInternal();
+  EClass getGroupInternalInteraction();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternal#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getName()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getName()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EAttribute getGroupInternal_Name();
+  EAttribute getGroupInternalInteraction_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternal#getInteraction_type <em>Interaction type</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getInteraction_type <em>Interaction type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Interaction type</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getInteraction_type()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getInteraction_type()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EAttribute getGroupInternal_Interaction_type();
+  EAttribute getGroupInternalInteraction_Interaction_type();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternal#getTrigger_type <em>Trigger type</em>}'.
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTrigger_type <em>Trigger type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Trigger type</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getTrigger_type()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTrigger_type()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EAttribute getGroupInternal_Trigger_type();
+  EAttribute getGroupInternalInteraction_Trigger_type();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.GroupInternal#getTriggerParam <em>Trigger Param</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTriggerParam <em>Trigger Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Trigger Param</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getTriggerParam()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getTriggerParam()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EReference getGroupInternal_TriggerParam();
+  EReference getGroupInternalInteraction_TriggerParam();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternal#getFunctionParameters <em>Function Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getFunctionParameters <em>Function Parameters</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Function Parameters</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getFunctionParameters()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getFunctionParameters()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EReference getGroupInternal_FunctionParameters();
+  EReference getGroupInternalInteraction_FunctionParameters();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternal#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternalInteraction#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Body</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternal#getBody()
-   * @see #getGroupInternal()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteraction#getBody()
+   * @see #getGroupInternalInteraction()
    * @generated
    */
-  EReference getGroupInternal_Body();
+  EReference getGroupInternalInteraction_Body();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Parameters <em>Parameters</em>}'.
@@ -7006,47 +7006,47 @@ public interface CaslPackage extends EPackage
   EReference getAgentInteractionFeatureCall_Inputs();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall <em>Group Transmission Feature Call</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall <em>Group External Interaction Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Transmission Feature Call</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall
+   * @return the meta object for class '<em>Group External Interaction Feature Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
    * @generated
    */
-  EClass getGroupTransmissionFeatureCall();
+  EClass getGroupExternalInteractionFeatureCall();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getGrp <em>Grp</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getGrp <em>Grp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Grp</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getGrp()
-   * @see #getGroupTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getGrp()
+   * @see #getGroupExternalInteractionFeatureCall()
    * @generated
    */
-  EReference getGroupTransmissionFeatureCall_Grp();
+  EReference getGroupExternalInteractionFeatureCall_Grp();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getProcess <em>Process</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getProcess <em>Process</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Process</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getProcess()
-   * @see #getGroupTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getProcess()
+   * @see #getGroupExternalInteractionFeatureCall()
    * @generated
    */
-  EReference getGroupTransmissionFeatureCall_Process();
+  EReference getGroupExternalInteractionFeatureCall_Process();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getInputs <em>Inputs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getInputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Inputs</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall#getInputs()
-   * @see #getGroupTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall#getInputs()
+   * @see #getGroupExternalInteractionFeatureCall()
    * @generated
    */
-  EReference getGroupTransmissionFeatureCall_Inputs();
+  EReference getGroupExternalInteractionFeatureCall_Inputs();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall <em>Transmission Feature Call</em>}'.
@@ -7081,47 +7081,47 @@ public interface CaslPackage extends EPackage
   EReference getTransmissionFeatureCall_Inputs();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall <em>Group Internals Feature Call</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall <em>Group Internal Interactions Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Internals Feature Call</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall
+   * @return the meta object for class '<em>Group Internal Interactions Feature Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
    * @generated
    */
-  EClass getGroupInternalsFeatureCall();
+  EClass getGroupInternalInteractionsFeatureCall();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getGrp <em>Grp</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getGrp <em>Grp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Grp</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getGrp()
-   * @see #getGroupInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getGrp()
+   * @see #getGroupInternalInteractionsFeatureCall()
    * @generated
    */
-  EReference getGroupInternalsFeatureCall_Grp();
+  EReference getGroupInternalInteractionsFeatureCall_Grp();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getProcess <em>Process</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getProcess <em>Process</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Process</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getProcess()
-   * @see #getGroupInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getProcess()
+   * @see #getGroupInternalInteractionsFeatureCall()
    * @generated
    */
-  EReference getGroupInternalsFeatureCall_Process();
+  EReference getGroupInternalInteractionsFeatureCall_Process();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getInputs <em>Inputs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getInputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Inputs</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getInputs()
-   * @see #getGroupInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getInputs()
+   * @see #getGroupInternalInteractionsFeatureCall()
    * @generated
    */
-  EReference getGroupInternalsFeatureCall_Inputs();
+  EReference getGroupInternalInteractionsFeatureCall_Inputs();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall <em>Environment Interaction Feature Call</em>}'.
@@ -7167,36 +7167,36 @@ public interface CaslPackage extends EPackage
   EReference getEnvironmentInteractionFeatureCall_Inputs();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall <em>Group Self Internals Feature Call</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall <em>Group Self Internal Interactions Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Self Internals Feature Call</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall
+   * @return the meta object for class '<em>Group Self Internal Interactions Feature Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
    * @generated
    */
-  EClass getGroupSelfInternalsFeatureCall();
+  EClass getGroupSelfInternalInteractionsFeatureCall();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getProcess <em>Process</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getProcess <em>Process</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Process</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getProcess()
-   * @see #getGroupSelfInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getProcess()
+   * @see #getGroupSelfInternalInteractionsFeatureCall()
    * @generated
    */
-  EReference getGroupSelfInternalsFeatureCall_Process();
+  EReference getGroupSelfInternalInteractionsFeatureCall_Process();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getInputs <em>Inputs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getInputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Inputs</em>'.
-   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getInputs()
-   * @see #getGroupSelfInternalsFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getInputs()
+   * @see #getGroupSelfInternalInteractionsFeatureCall()
    * @generated
    */
-  EReference getGroupSelfInternalsFeatureCall_Inputs();
+  EReference getGroupSelfInternalInteractionsFeatureCall_Inputs();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.FunctionFeatureCall <em>Function Feature Call</em>}'.

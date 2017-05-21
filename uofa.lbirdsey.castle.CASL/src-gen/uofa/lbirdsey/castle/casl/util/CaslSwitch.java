@@ -81,16 +81,16 @@ import uofa.lbirdsey.castle.casl.FunctionFeatureCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Functions;
 import uofa.lbirdsey.castle.casl.Group;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractions;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
-import uofa.lbirdsey.castle.casl.GroupInternal;
-import uofa.lbirdsey.castle.casl.GroupInternals;
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.Group_Rules;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
 import uofa.lbirdsey.castle.casl.Group_Type_Name;
 import uofa.lbirdsey.castle.casl.Group_Types;
 import uofa.lbirdsey.castle.casl.IfStatement;
@@ -318,33 +318,33 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_TRANSMISSIONS:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTIONS:
       {
-        Group_Transmissions group_Transmissions = (Group_Transmissions)theEObject;
-        T result = caseGroup_Transmissions(group_Transmissions);
+        GroupExternalInteractions groupExternalInteractions = (GroupExternalInteractions)theEObject;
+        T result = caseGroupExternalInteractions(groupExternalInteractions);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_TRANSMISSION:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION:
       {
-        Group_Transmission group_Transmission = (Group_Transmission)theEObject;
-        T result = caseGroup_Transmission(group_Transmission);
-        if (result == null) result = caseEntity_Feature(group_Transmission);
+        GroupExternalInteraction groupExternalInteraction = (GroupExternalInteraction)theEObject;
+        T result = caseGroupExternalInteraction(groupExternalInteraction);
+        if (result == null) result = caseEntity_Feature(groupExternalInteraction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_INTERNALS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS:
       {
-        GroupInternals groupInternals = (GroupInternals)theEObject;
-        T result = caseGroupInternals(groupInternals);
+        GroupInternalInteractions groupInternalInteractions = (GroupInternalInteractions)theEObject;
+        T result = caseGroupInternalInteractions(groupInternalInteractions);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_INTERNAL:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION:
       {
-        GroupInternal groupInternal = (GroupInternal)theEObject;
-        T result = caseGroupInternal(groupInternal);
-        if (result == null) result = caseEntity_Feature(groupInternal);
+        GroupInternalInteraction groupInternalInteraction = (GroupInternalInteraction)theEObject;
+        T result = caseGroupInternalInteraction(groupInternalInteraction);
+        if (result == null) result = caseEntity_Feature(groupInternalInteraction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -500,10 +500,10 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_TRANSMISSION_FEATURE_CALL:
+      case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL:
       {
-        GroupTransmissionFeatureCall groupTransmissionFeatureCall = (GroupTransmissionFeatureCall)theEObject;
-        T result = caseGroupTransmissionFeatureCall(groupTransmissionFeatureCall);
+        GroupExternalInteractionFeatureCall groupExternalInteractionFeatureCall = (GroupExternalInteractionFeatureCall)theEObject;
+        T result = caseGroupExternalInteractionFeatureCall(groupExternalInteractionFeatureCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -514,10 +514,10 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_INTERNALS_FEATURE_CALL:
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL:
       {
-        GroupInternalsFeatureCall groupInternalsFeatureCall = (GroupInternalsFeatureCall)theEObject;
-        T result = caseGroupInternalsFeatureCall(groupInternalsFeatureCall);
+        GroupInternalInteractionsFeatureCall groupInternalInteractionsFeatureCall = (GroupInternalInteractionsFeatureCall)theEObject;
+        T result = caseGroupInternalInteractionsFeatureCall(groupInternalInteractionsFeatureCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -528,10 +528,10 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.GROUP_SELF_INTERNALS_FEATURE_CALL:
+      case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL:
       {
-        GroupSelfInternalsFeatureCall groupSelfInternalsFeatureCall = (GroupSelfInternalsFeatureCall)theEObject;
-        T result = caseGroupSelfInternalsFeatureCall(groupSelfInternalsFeatureCall);
+        GroupSelfInternalInteractionsFeatureCall groupSelfInternalInteractionsFeatureCall = (GroupSelfInternalInteractionsFeatureCall)theEObject;
+        T result = caseGroupSelfInternalInteractionsFeatureCall(groupSelfInternalInteractionsFeatureCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1392,65 +1392,65 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Transmissions</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group External Interactions</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Transmissions</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group External Interactions</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroup_Transmissions(Group_Transmissions object)
+  public T caseGroupExternalInteractions(GroupExternalInteractions object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Transmission</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group External Interaction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Transmission</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group External Interaction</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroup_Transmission(Group_Transmission object)
+  public T caseGroupExternalInteraction(GroupExternalInteraction object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Internals</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group Internal Interactions</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Internals</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group Internal Interactions</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupInternals(GroupInternals object)
+  public T caseGroupInternalInteractions(GroupInternalInteractions object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Internal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group Internal Interaction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Internal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group Internal Interaction</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupInternal(GroupInternal object)
+  public T caseGroupInternalInteraction(GroupInternalInteraction object)
   {
     return null;
   }
@@ -1792,17 +1792,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Transmission Feature Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group External Interaction Feature Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Transmission Feature Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group External Interaction Feature Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupTransmissionFeatureCall(GroupTransmissionFeatureCall object)
+  public T caseGroupExternalInteractionFeatureCall(GroupExternalInteractionFeatureCall object)
   {
     return null;
   }
@@ -1824,17 +1824,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Internals Feature Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group Internal Interactions Feature Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Internals Feature Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group Internal Interactions Feature Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupInternalsFeatureCall(GroupInternalsFeatureCall object)
+  public T caseGroupInternalInteractionsFeatureCall(GroupInternalInteractionsFeatureCall object)
   {
     return null;
   }
@@ -1856,17 +1856,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Self Internals Feature Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group Self Internal Interactions Feature Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Self Internals Feature Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group Self Internal Interactions Feature Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupSelfInternalsFeatureCall(GroupSelfInternalsFeatureCall object)
+  public T caseGroupSelfInternalInteractionsFeatureCall(GroupSelfInternalInteractionsFeatureCall object)
   {
     return null;
   }

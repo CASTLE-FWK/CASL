@@ -7,13 +7,13 @@ import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall
 import uofa.lbirdsey.castle.casl.FunctionFeatureCall
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
-import uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall
-import uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall
-import uofa.lbirdsey.castle.casl.GroupTransmissionFeatureCall
 import uofa.lbirdsey.castle.casl.TransmissionFeatureCall
 import uofa.lbirdsey.castle.casl.BehaviorFeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCallExp
 import uofa.lbirdsey.castle.casl.Function
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
 
 class FeatureCallGenerator {
 	
@@ -44,12 +44,12 @@ class FeatureCallGenerator {
 			} else {
 				return "void";
 			}
-		} else if (fc instanceof GroupInternalsFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupInternalsFeatureCall).process.body)
-		} else if (fc instanceof GroupSelfInternalsFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupSelfInternalsFeatureCall).process.body)
-		} else if (fc instanceof GroupTransmissionFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupTransmissionFeatureCall).process.body)
+		} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
+			return HelperFunctions.inferMethodType((fc as GroupInternalInteractionsFeatureCall).process.body)
+		} else if (fc instanceof GroupSelfInternalInteractionsFeatureCall) {
+			return HelperFunctions.inferMethodType((fc as GroupSelfInternalInteractionsFeatureCall).process.body)
+		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
+			return HelperFunctions.inferMethodType((fc as GroupExternalInteractionFeatureCall).process.body)
 		} else if (fc instanceof TransmissionFeatureCall) {
 			return HelperFunctions.inferMethodType((fc as TransmissionFeatureCall).process.body)
 		}
@@ -85,12 +85,12 @@ class FeatureCallGenerator {
 					return str;
 				}				
 			}							
-		} else if (fc instanceof GroupInternalsFeatureCall) {
-			'''«(fc as GroupInternalsFeatureCall).grp.name».«(fc as GroupInternalsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else if (fc instanceof GroupSelfInternalsFeatureCall) {
-			'''«(fc as GroupSelfInternalsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else if (fc instanceof GroupTransmissionFeatureCall) {
-			'''«(fc as GroupTransmissionFeatureCall).grp.name».«(fc as GroupTransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
+		} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
+			'''«(fc as GroupInternalInteractionsFeatureCall).grp.name».«(fc as GroupInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
+		} else if (fc instanceof GroupSelfInternalInteractionsFeatureCall) {
+			'''«(fc as GroupSelfInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
+		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
+			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		} else if (fc instanceof TransmissionFeatureCall) {
 			'''«(fc as TransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		}
@@ -133,12 +133,12 @@ class FeatureCallGenerator {
 					return str;
 				}				
 			}							
-		} else if (fc instanceof GroupInternalsFeatureCall) {
-			'''«(fc as GroupInternalsFeatureCall).grp.name».«(fc as GroupInternalsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else if (fc instanceof GroupSelfInternalsFeatureCall) {
-			'''«(fc as GroupSelfInternalsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else if (fc instanceof GroupTransmissionFeatureCall) {
-			'''«(fc as GroupTransmissionFeatureCall).grp.name».«(fc as GroupTransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
+		} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
+			'''«(fc as GroupInternalInteractionsFeatureCall).grp.name».«(fc as GroupInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
+		} else if (fc instanceof GroupSelfInternalInteractionsFeatureCall) {
+			'''«(fc as GroupSelfInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
+		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
+			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		} else if (fc instanceof TransmissionFeatureCall) {
 			'''«(fc as TransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		}

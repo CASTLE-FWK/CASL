@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Self Internals Feature Call</b></em>'.
+ * A representation of the model object '<em><b>Group Self Internal Interactions Feature Call</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalsFeatureCall()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalInteractionsFeatureCall()
  * @model
  * @generated
  */
-public interface GroupSelfInternalsFeatureCall extends EObject
+public interface GroupSelfInternalInteractionsFeatureCall extends EObject
 {
   /**
    * Returns the value of the '<em><b>Process</b></em>' reference.
@@ -35,22 +35,22 @@ public interface GroupSelfInternalsFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Process</em>' reference.
-   * @see #setProcess(GroupInternal)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalsFeatureCall_Process()
+   * @see #setProcess(GroupInternalInteraction)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalInteractionsFeatureCall_Process()
    * @model
    * @generated
    */
-  GroupInternal getProcess();
+  GroupInternalInteraction getProcess();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalsFeatureCall#getProcess <em>Process</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall#getProcess <em>Process</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Process</em>' reference.
    * @see #getProcess()
    * @generated
    */
-  void setProcess(GroupInternal value);
+  void setProcess(GroupInternalInteraction value);
 
   /**
    * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
@@ -62,10 +62,10 @@ public interface GroupSelfInternalsFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inputs</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalsFeatureCall_Inputs()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupSelfInternalInteractionsFeatureCall_Inputs()
    * @model containment="true"
    * @generated
    */
   EList<Expression> getInputs();
 
-} // GroupSelfInternalsFeatureCall
+} // GroupSelfInternalInteractionsFeatureCall

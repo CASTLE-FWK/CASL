@@ -18,40 +18,40 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.Group_Transmission;
-import uofa.lbirdsey.castle.casl.Group_Transmissions;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractions;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Transmissions</b></em>'.
+ * An implementation of the model object '<em><b>Group Internal Interactions</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.Group_TransmissionsImpl#getTransmissions <em>Transmissions</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsImpl#getInternal_interactions <em>Internal interactions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implements Group_Transmissions
+public class GroupInternalInteractionsImpl extends MinimalEObjectImpl.Container implements GroupInternalInteractions
 {
   /**
-   * The cached value of the '{@link #getTransmissions() <em>Transmissions</em>}' containment reference list.
+   * The cached value of the '{@link #getInternal_interactions() <em>Internal interactions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTransmissions()
+   * @see #getInternal_interactions()
    * @generated
    * @ordered
    */
-  protected EList<Group_Transmission> transmissions;
+  protected EList<GroupInternalInteraction> internal_interactions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected Group_TransmissionsImpl()
+  protected GroupInternalInteractionsImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroup_Transmissions();
+    return CaslPackage.eINSTANCE.getGroupInternalInteractions();
   }
 
   /**
@@ -72,13 +72,13 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Group_Transmission> getTransmissions()
+  public EList<GroupInternalInteraction> getInternal_interactions()
   {
-    if (transmissions == null)
+    if (internal_interactions == null)
     {
-      transmissions = new EObjectContainmentEList<Group_Transmission>(Group_Transmission.class, this, CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS);
+      internal_interactions = new EObjectContainmentEList<GroupInternalInteraction>(GroupInternalInteraction.class, this, CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS);
     }
-    return transmissions;
+    return internal_interactions;
   }
 
   /**
@@ -91,8 +91,8 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS:
-        return ((InternalEList<?>)getTransmissions()).basicRemove(otherEnd, msgs);
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS:
+        return ((InternalEList<?>)getInternal_interactions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS:
-        return getTransmissions();
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS:
+        return getInternal_interactions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS:
-        getTransmissions().clear();
-        getTransmissions().addAll((Collection<? extends Group_Transmission>)newValue);
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS:
+        getInternal_interactions().clear();
+        getInternal_interactions().addAll((Collection<? extends GroupInternalInteraction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS:
-        getTransmissions().clear();
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS:
+        getInternal_interactions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +159,10 @@ public class Group_TransmissionsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_TRANSMISSIONS__TRANSMISSIONS:
-        return transmissions != null && !transmissions.isEmpty();
+      case CaslPackage.GROUP_INTERNAL_INTERACTIONS__INTERNAL_INTERACTIONS:
+        return internal_interactions != null && !internal_interactions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //Group_TransmissionsImpl
+} //GroupInternalInteractionsImpl

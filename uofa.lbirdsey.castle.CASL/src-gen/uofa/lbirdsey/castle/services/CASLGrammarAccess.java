@@ -741,14 +741,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInteractionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cAdaptiveProcessParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSubSystemParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cGroup_TransmissionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cGroupInternalParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cGroupExternalInteractionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cGroupInternalInteractionParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Entity_Feature:
-		//	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | Group_Transmission | GroupInternal;
+		//	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | GroupExternalInteraction |
+		//	GroupInternalInteraction;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | Group_Transmission | GroupInternal
+		//Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | GroupExternalInteraction |
+		//GroupInternalInteraction
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Field
@@ -769,11 +771,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//SubSystem
 		public RuleCall getSubSystemParserRuleCall_5() { return cSubSystemParserRuleCall_5; }
 		
-		//Group_Transmission
-		public RuleCall getGroup_TransmissionParserRuleCall_6() { return cGroup_TransmissionParserRuleCall_6; }
+		//GroupExternalInteraction
+		public RuleCall getGroupExternalInteractionParserRuleCall_6() { return cGroupExternalInteractionParserRuleCall_6; }
 		
-		//GroupInternal
-		public RuleCall getGroupInternalParserRuleCall_7() { return cGroupInternalParserRuleCall_7; }
+		//GroupInternalInteraction
+		public RuleCall getGroupInternalInteractionParserRuleCall_7() { return cGroupInternalInteractionParserRuleCall_7; }
 	}
 	public class AgentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Agent");
@@ -1070,10 +1072,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGroup_functionsFunctionsParserRuleCall_9_0 = (RuleCall)cGroup_functionsAssignment_9.eContents().get(0);
 		private final Assignment cGroup_behaviorsAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cGroup_behaviorsBehaviorsParserRuleCall_10_0 = (RuleCall)cGroup_behaviorsAssignment_10.eContents().get(0);
-		private final Assignment cGroup_transmissionsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cGroup_transmissionsGroup_TransmissionsParserRuleCall_11_0 = (RuleCall)cGroup_transmissionsAssignment_11.eContents().get(0);
-		private final Assignment cGroup_internalsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cGroup_internalsGroupInternalsParserRuleCall_12_0 = (RuleCall)cGroup_internalsAssignment_12.eContents().get(0);
+		private final Assignment cGroup_external_interactionsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cGroup_external_interactionsGroupExternalInteractionsParserRuleCall_11_0 = (RuleCall)cGroup_external_interactionsAssignment_11.eContents().get(0);
+		private final Assignment cGroup_internal_interactionsAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cGroup_internal_interactionsGroupInternalInteractionsParserRuleCall_12_0 = (RuleCall)cGroup_internal_interactionsAssignment_12.eContents().get(0);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Group:
@@ -1083,14 +1085,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	group_parameters=Parameters
 		//	group_functions=Functions
 		//	group_behaviors=Behaviors
-		//	group_transmissions=Group_Transmissions
-		//	group_internals=GroupInternals
+		//	group_external_interactions=GroupExternalInteractions
+		//	group_internal_interactions=GroupInternalInteractions
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'GROUP' name=ID ':' '{' 'description:' desc=STRING ';' group_rules=Group_Rules group_parameters=Parameters
-		//group_functions=Functions group_behaviors=Behaviors group_transmissions=Group_Transmissions
-		//group_internals=GroupInternals '};'
+		//group_functions=Functions group_behaviors=Behaviors group_external_interactions=GroupExternalInteractions
+		//group_internal_interactions=GroupInternalInteractions '};'
 		public Group getGroup() { return cGroup; }
 		
 		//'GROUP'
@@ -1144,17 +1146,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//Behaviors
 		public RuleCall getGroup_behaviorsBehaviorsParserRuleCall_10_0() { return cGroup_behaviorsBehaviorsParserRuleCall_10_0; }
 		
-		//group_transmissions=Group_Transmissions
-		public Assignment getGroup_transmissionsAssignment_11() { return cGroup_transmissionsAssignment_11; }
+		//group_external_interactions=GroupExternalInteractions
+		public Assignment getGroup_external_interactionsAssignment_11() { return cGroup_external_interactionsAssignment_11; }
 		
-		//Group_Transmissions
-		public RuleCall getGroup_transmissionsGroup_TransmissionsParserRuleCall_11_0() { return cGroup_transmissionsGroup_TransmissionsParserRuleCall_11_0; }
+		//GroupExternalInteractions
+		public RuleCall getGroup_external_interactionsGroupExternalInteractionsParserRuleCall_11_0() { return cGroup_external_interactionsGroupExternalInteractionsParserRuleCall_11_0; }
 		
-		//group_internals=GroupInternals
-		public Assignment getGroup_internalsAssignment_12() { return cGroup_internalsAssignment_12; }
+		//group_internal_interactions=GroupInternalInteractions
+		public Assignment getGroup_internal_interactionsAssignment_12() { return cGroup_internal_interactionsAssignment_12; }
 		
-		//GroupInternals
-		public RuleCall getGroup_internalsGroupInternalsParserRuleCall_12_0() { return cGroup_internalsGroupInternalsParserRuleCall_12_0; }
+		//GroupInternalInteractions
+		public RuleCall getGroup_internal_interactionsGroupInternalInteractionsParserRuleCall_12_0() { return cGroup_internal_interactionsGroupInternalInteractionsParserRuleCall_12_0; }
 		
 		//'};'
 		public Keyword getRightCurlyBracketSemicolonKeyword_13() { return cRightCurlyBracketSemicolonKeyword_13; }
@@ -1205,55 +1207,54 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'};'
 		public Keyword getRightCurlyBracketSemicolonKeyword_6() { return cRightCurlyBracketSemicolonKeyword_6; }
 	}
-	public class Group_TransmissionsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Group_Transmissions");
+	public class GroupExternalInteractionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupExternalInteractions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroup_TransmissionsAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cTransmissionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cGroupExternalInteractionsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cExternal_interactionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTransmissionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTransmissionsGroup_TransmissionParserRuleCall_3_0 = (RuleCall)cTransmissionsAssignment_3.eContents().get(0);
+		private final Assignment cExternal_interactionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cExternal_interactionsGroupExternalInteractionParserRuleCall_3_0 = (RuleCall)cExternal_interactionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////TODO: Generate This
-		//Group_Transmissions:
-		//	{Group_Transmissions}
+		//GroupExternalInteractions:
+		//	{GroupExternalInteractions}
 		//	//These are essentially interactions that rely on slightly more complicated functions
 		//	//and must be wrapped as a message to the environment
-		//	'transmissions:' '{'
-		//	transmissions+=Group_Transmission*
+		//	'external_interactions:' '{'
+		//	external_interactions+=GroupExternalInteraction*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Group_Transmissions} //These are essentially interactions that rely on slightly more complicated functions
+		//{GroupExternalInteractions} //These are essentially interactions that rely on slightly more complicated functions
 		////and must be wrapped as a message to the environment
-		//'transmissions:' '{' transmissions+=Group_Transmission* '};'
+		//'external_interactions:' '{' external_interactions+=GroupExternalInteraction* '};'
 		public Group getGroup() { return cGroup; }
 		
-		//{Group_Transmissions}
-		public Action getGroup_TransmissionsAction_0() { return cGroup_TransmissionsAction_0; }
+		//{GroupExternalInteractions}
+		public Action getGroupExternalInteractionsAction_0() { return cGroupExternalInteractionsAction_0; }
 		
 		////These are essentially interactions that rely on slightly more complicated functions
 		////and must be wrapped as a message to the environment
-		//'transmissions:'
-		public Keyword getTransmissionsKeyword_1() { return cTransmissionsKeyword_1; }
+		//'external_interactions:'
+		public Keyword getExternal_interactionsKeyword_1() { return cExternal_interactionsKeyword_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//transmissions+=Group_Transmission*
-		public Assignment getTransmissionsAssignment_3() { return cTransmissionsAssignment_3; }
+		//external_interactions+=GroupExternalInteraction*
+		public Assignment getExternal_interactionsAssignment_3() { return cExternal_interactionsAssignment_3; }
 		
-		//Group_Transmission
-		public RuleCall getTransmissionsGroup_TransmissionParserRuleCall_3_0() { return cTransmissionsGroup_TransmissionParserRuleCall_3_0; }
+		//GroupExternalInteraction
+		public RuleCall getExternal_interactionsGroupExternalInteractionParserRuleCall_3_0() { return cExternal_interactionsGroupExternalInteractionParserRuleCall_3_0; }
 		
 		//'};'
 		public Keyword getRightCurlyBracketSemicolonKeyword_4() { return cRightCurlyBracketSemicolonKeyword_4; }
 	}
-	public class Group_TransmissionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Group_Transmission");
+	public class GroupExternalInteractionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupExternalInteraction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroup_TransmissionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cGroupExternalInteractionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -1293,22 +1294,24 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
-		//Group_Transmission:
-		//	{Group_Transmission} name=ID '[' transmissionPhase=Transmission_Phase '][' transmissionContents=Transmission_Contents
-		//	'][' transmissionRepeat=Transmission_Repeat ('(' reaction_time_parm=Expression ')')? ']('
-		//	(functionParameters+=FunctionParameter (',' functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field |
-		//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
+		//GroupExternalInteraction:
+		//	{GroupExternalInteraction} name=ID '[' transmissionPhase=Transmission_Phase ']['
+		//	transmissionContents=Transmission_Contents '][' transmissionRepeat=Transmission_Repeat ('('
+		//	reaction_time_parm=Expression ')')? '](' (functionParameters+=FunctionParameter (','
+		//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
+		//	body+=SelfAssignedFormula) ';')*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Group_Transmission} name=ID '[' transmissionPhase=Transmission_Phase '][' transmissionContents=Transmission_Contents
-		//'][' transmissionRepeat=Transmission_Repeat ('(' reaction_time_parm=Expression ')')? ']('
-		//(functionParameters+=FunctionParameter (',' functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field |
-		//body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')* '};'
+		//{GroupExternalInteraction} name=ID '[' transmissionPhase=Transmission_Phase ']['
+		//transmissionContents=Transmission_Contents '][' transmissionRepeat=Transmission_Repeat ('('
+		//reaction_time_parm=Expression ')')? '](' (functionParameters+=FunctionParameter (','
+		//functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
+		//body+=SelfAssignedFormula) ';')* '};'
 		public Group getGroup() { return cGroup; }
 		
-		//{Group_Transmission}
-		public Action getGroup_TransmissionAction_0() { return cGroup_TransmissionAction_0; }
+		//{GroupExternalInteraction}
+		public Action getGroupExternalInteractionAction_0() { return cGroupExternalInteractionAction_0; }
 		
 		////Change interaction type, interaction triggger type, and params
 		//name=ID
@@ -1425,58 +1428,57 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'};'
 		public Keyword getRightCurlyBracketSemicolonKeyword_14() { return cRightCurlyBracketSemicolonKeyword_14; }
 	}
-	public class GroupInternalsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternals");
+	public class GroupInternalInteractionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternalInteractions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroupInternalsAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cInternalsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cGroupInternalInteractionsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cInternal_interactionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInternalsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInternalsGroupInternalParserRuleCall_3_0 = (RuleCall)cInternalsAssignment_3.eContents().get(0);
+		private final Assignment cInternal_interactionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInternal_interactionsGroupInternalInteractionParserRuleCall_3_0 = (RuleCall)cInternal_interactionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		////TODO: Generate This
-		//GroupInternals:
-		//	{GroupInternals}
+		//GroupInternalInteractions:
+		//	{GroupInternalInteractions}
 		//	//These are also essentially interactions that rely on slightly more complicated functions
 		//	//but do not need to be messages as the contained agents make the request directly from the
 		//	//group layer
-		//	'internals:' '{'
-		//	internals+=GroupInternal*
+		//	'internal_interactions:' '{'
+		//	internal_interactions+=GroupInternalInteraction*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GroupInternals} //These are also essentially interactions that rely on slightly more complicated functions
+		//{GroupInternalInteractions} //These are also essentially interactions that rely on slightly more complicated functions
 		////but do not need to be messages as the contained agents make the request directly from the
 		////group layer
-		//'internals:' '{' internals+=GroupInternal* '};'
+		//'internal_interactions:' '{' internal_interactions+=GroupInternalInteraction* '};'
 		public Group getGroup() { return cGroup; }
 		
-		//{GroupInternals}
-		public Action getGroupInternalsAction_0() { return cGroupInternalsAction_0; }
+		//{GroupInternalInteractions}
+		public Action getGroupInternalInteractionsAction_0() { return cGroupInternalInteractionsAction_0; }
 		
 		////These are also essentially interactions that rely on slightly more complicated functions
 		////but do not need to be messages as the contained agents make the request directly from the
 		////group layer
-		//'internals:'
-		public Keyword getInternalsKeyword_1() { return cInternalsKeyword_1; }
+		//'internal_interactions:'
+		public Keyword getInternal_interactionsKeyword_1() { return cInternal_interactionsKeyword_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//internals+=GroupInternal*
-		public Assignment getInternalsAssignment_3() { return cInternalsAssignment_3; }
+		//internal_interactions+=GroupInternalInteraction*
+		public Assignment getInternal_interactionsAssignment_3() { return cInternal_interactionsAssignment_3; }
 		
-		//GroupInternal
-		public RuleCall getInternalsGroupInternalParserRuleCall_3_0() { return cInternalsGroupInternalParserRuleCall_3_0; }
+		//GroupInternalInteraction
+		public RuleCall getInternal_interactionsGroupInternalInteractionParserRuleCall_3_0() { return cInternal_interactionsGroupInternalInteractionParserRuleCall_3_0; }
 		
 		//'};'
 		public Keyword getRightCurlyBracketSemicolonKeyword_4() { return cRightCurlyBracketSemicolonKeyword_4; }
 	}
-	public class GroupInternalElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternal");
+	public class GroupInternalInteractionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternalInteraction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroupInternalAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cGroupInternalInteractionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -1512,22 +1514,22 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
 		private final Keyword cRightCurlyBracketSemicolonKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
-		//GroupInternal:
-		//	{GroupInternal} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
+		//GroupInternalInteraction:
+		//	{GroupInternalInteraction} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
 		//	triggerParam=InteractionTriggerParameter? ')' '](' (functionParameters+=FunctionParameter (','
 		//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
 		//	body+=SelfAssignedFormula) ';')*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GroupInternal} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
+		//{GroupInternalInteraction} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
 		//triggerParam=InteractionTriggerParameter? ')' '](' (functionParameters+=FunctionParameter (','
 		//functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
 		//body+=SelfAssignedFormula) ';')* '};'
 		public Group getGroup() { return cGroup; }
 		
-		//{GroupInternal}
-		public Action getGroupInternalAction_0() { return cGroupInternalAction_0; }
+		//{GroupInternalInteraction}
+		public Action getGroupInternalInteractionAction_0() { return cGroupInternalInteractionAction_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -3633,25 +3635,25 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFcInteractionFeatureCallParserRuleCall_0_3 = (RuleCall)cFcAlternatives_0.eContents().get(3);
 		private final RuleCall cFcFunctionFeatureCallParserRuleCall_0_4 = (RuleCall)cFcAlternatives_0.eContents().get(4);
 		private final RuleCall cFcBehaviorFeatureCallParserRuleCall_0_5 = (RuleCall)cFcAlternatives_0.eContents().get(5);
-		private final RuleCall cFcGroupTransmissionFeatureCallParserRuleCall_0_6 = (RuleCall)cFcAlternatives_0.eContents().get(6);
-		private final RuleCall cFcGroupSelfInternalsFeatureCallParserRuleCall_0_7 = (RuleCall)cFcAlternatives_0.eContents().get(7);
-		private final RuleCall cFcGroupInternalsFeatureCallParserRuleCall_0_8 = (RuleCall)cFcAlternatives_0.eContents().get(8);
+		private final RuleCall cFcGroupExternalInteractionFeatureCallParserRuleCall_0_6 = (RuleCall)cFcAlternatives_0.eContents().get(6);
+		private final RuleCall cFcGroupSelfInternalInteractionsFeatureCallParserRuleCall_0_7 = (RuleCall)cFcAlternatives_0.eContents().get(7);
+		private final RuleCall cFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8 = (RuleCall)cFcAlternatives_0.eContents().get(8);
 		private final RuleCall cFcTransmissionFeatureCallParserRuleCall_0_9 = (RuleCall)cFcAlternatives_0.eContents().get(9);
 		
 		//FeatureCall:
 		//	fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
-		//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupTransmissionFeatureCall |
-		//	GroupSelfInternalsFeatureCall | GroupInternalsFeatureCall | TransmissionFeatureCall);
+		//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
+		//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
-		//InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupTransmissionFeatureCall |
-		//GroupSelfInternalsFeatureCall | GroupInternalsFeatureCall | TransmissionFeatureCall)
+		//InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
+		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall)
 		public Assignment getFcAssignment() { return cFcAssignment; }
 		
 		//(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall | InteractionFeatureCall |
-		//FunctionFeatureCall | BehaviorFeatureCall | GroupTransmissionFeatureCall | GroupSelfInternalsFeatureCall |
-		//GroupInternalsFeatureCall | TransmissionFeatureCall)
+		//FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
+		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall)
 		public Alternatives getFcAlternatives_0() { return cFcAlternatives_0; }
 		
 		//AdaptiveProcessFeatureCall
@@ -3672,14 +3674,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//BehaviorFeatureCall
 		public RuleCall getFcBehaviorFeatureCallParserRuleCall_0_5() { return cFcBehaviorFeatureCallParserRuleCall_0_5; }
 		
-		//GroupTransmissionFeatureCall
-		public RuleCall getFcGroupTransmissionFeatureCallParserRuleCall_0_6() { return cFcGroupTransmissionFeatureCallParserRuleCall_0_6; }
+		//GroupExternalInteractionFeatureCall
+		public RuleCall getFcGroupExternalInteractionFeatureCallParserRuleCall_0_6() { return cFcGroupExternalInteractionFeatureCallParserRuleCall_0_6; }
 		
-		//GroupSelfInternalsFeatureCall
-		public RuleCall getFcGroupSelfInternalsFeatureCallParserRuleCall_0_7() { return cFcGroupSelfInternalsFeatureCallParserRuleCall_0_7; }
+		//GroupSelfInternalInteractionsFeatureCall
+		public RuleCall getFcGroupSelfInternalInteractionsFeatureCallParserRuleCall_0_7() { return cFcGroupSelfInternalInteractionsFeatureCallParserRuleCall_0_7; }
 		
-		//GroupInternalsFeatureCall
-		public RuleCall getFcGroupInternalsFeatureCallParserRuleCall_0_8() { return cFcGroupInternalsFeatureCallParserRuleCall_0_8; }
+		//GroupInternalInteractionsFeatureCall
+		public RuleCall getFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8() { return cFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8; }
 		
 		//TransmissionFeatureCall
 		public RuleCall getFcTransmissionFeatureCallParserRuleCall_0_9() { return cFcTransmissionFeatureCallParserRuleCall_0_9; }
@@ -3889,17 +3891,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
-	public class GroupTransmissionFeatureCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupTransmissionFeatureCall");
+	public class GroupExternalInteractionFeatureCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupExternalInteractionFeatureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroupTransmissionFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cGroupExternalInteractionFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cGrpAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cGrpSymbolCrossReference_1_0 = (CrossReference)cGrpAssignment_1.eContents().get(0);
 		private final RuleCall cGrpSymbolIDTerminalRuleCall_1_0_1 = (RuleCall)cGrpSymbolCrossReference_1_0.eContents().get(1);
-		private final Keyword cGRP_TRANSMISSIONKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cGRP_EXT_INTERACTIONKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cProcessAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cProcessGroup_TransmissionCrossReference_3_0 = (CrossReference)cProcessAssignment_3.eContents().get(0);
-		private final RuleCall cProcessGroup_TransmissionIDTerminalRuleCall_3_0_1 = (RuleCall)cProcessGroup_TransmissionCrossReference_3_0.eContents().get(1);
+		private final CrossReference cProcessGroupExternalInteractionCrossReference_3_0 = (CrossReference)cProcessAssignment_3.eContents().get(0);
+		private final RuleCall cProcessGroupExternalInteractionIDTerminalRuleCall_3_0_1 = (RuleCall)cProcessGroupExternalInteractionCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cInputsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cInputsExpressionParserRuleCall_5_0 = (RuleCall)cInputsAssignment_5.eContents().get(0);
@@ -3909,17 +3911,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInputsExpressionParserRuleCall_6_1_0 = (RuleCall)cInputsAssignment_6_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//GroupTransmissionFeatureCall:
-		//	{GroupTransmissionFeatureCall} grp=[Symbol] '.GRP_TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression?
-		//	(',' inputs+=Expression)* ')';
+		//GroupExternalInteractionFeatureCall:
+		//	{GroupExternalInteractionFeatureCall} grp=[Symbol] '.GRP_EXT_INTERACTION.' process=[GroupExternalInteraction] '('
+		//	inputs+=Expression? (',' inputs+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GroupTransmissionFeatureCall} grp=[Symbol] '.GRP_TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression?
-		//(',' inputs+=Expression)* ')'
+		//{GroupExternalInteractionFeatureCall} grp=[Symbol] '.GRP_EXT_INTERACTION.' process=[GroupExternalInteraction] '('
+		//inputs+=Expression? (',' inputs+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
-		//{GroupTransmissionFeatureCall}
-		public Action getGroupTransmissionFeatureCallAction_0() { return cGroupTransmissionFeatureCallAction_0; }
+		//{GroupExternalInteractionFeatureCall}
+		public Action getGroupExternalInteractionFeatureCallAction_0() { return cGroupExternalInteractionFeatureCallAction_0; }
 		
 		//grp=[Symbol]
 		public Assignment getGrpAssignment_1() { return cGrpAssignment_1; }
@@ -3930,17 +3932,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getGrpSymbolIDTerminalRuleCall_1_0_1() { return cGrpSymbolIDTerminalRuleCall_1_0_1; }
 		
-		//'.GRP_TRANSMISSION.'
-		public Keyword getGRP_TRANSMISSIONKeyword_2() { return cGRP_TRANSMISSIONKeyword_2; }
+		//'.GRP_EXT_INTERACTION.'
+		public Keyword getGRP_EXT_INTERACTIONKeyword_2() { return cGRP_EXT_INTERACTIONKeyword_2; }
 		
-		//process=[Group_Transmission]
+		//process=[GroupExternalInteraction]
 		public Assignment getProcessAssignment_3() { return cProcessAssignment_3; }
 		
-		//[Group_Transmission]
-		public CrossReference getProcessGroup_TransmissionCrossReference_3_0() { return cProcessGroup_TransmissionCrossReference_3_0; }
+		//[GroupExternalInteraction]
+		public CrossReference getProcessGroupExternalInteractionCrossReference_3_0() { return cProcessGroupExternalInteractionCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getProcessGroup_TransmissionIDTerminalRuleCall_3_0_1() { return cProcessGroup_TransmissionIDTerminalRuleCall_3_0_1; }
+		public RuleCall getProcessGroupExternalInteractionIDTerminalRuleCall_3_0_1() { return cProcessGroupExternalInteractionIDTerminalRuleCall_3_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
@@ -3970,10 +3972,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.TransmissionFeatureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTransmissionFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cTRANSMISSIONKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEXT_INTERACTIONKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cProcessAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cProcessGroup_TransmissionCrossReference_2_0 = (CrossReference)cProcessAssignment_2.eContents().get(0);
-		private final RuleCall cProcessGroup_TransmissionIDTerminalRuleCall_2_0_1 = (RuleCall)cProcessGroup_TransmissionCrossReference_2_0.eContents().get(1);
+		private final CrossReference cProcessGroupExternalInteractionCrossReference_2_0 = (CrossReference)cProcessAssignment_2.eContents().get(0);
+		private final RuleCall cProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1 = (RuleCall)cProcessGroupExternalInteractionCrossReference_2_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cInputsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cInputsExpressionParserRuleCall_4_0 = (RuleCall)cInputsAssignment_4.eContents().get(0);
@@ -3984,28 +3986,28 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//TransmissionFeatureCall:
-		//	{TransmissionFeatureCall} 'TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression? (','
+		//	{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
 		//	inputs+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TransmissionFeatureCall} 'TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression? (',' inputs+=Expression)*
-		//')'
+		//{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
+		//inputs+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{TransmissionFeatureCall}
 		public Action getTransmissionFeatureCallAction_0() { return cTransmissionFeatureCallAction_0; }
 		
-		//'TRANSMISSION.'
-		public Keyword getTRANSMISSIONKeyword_1() { return cTRANSMISSIONKeyword_1; }
+		//'EXT_INTERACTION.'
+		public Keyword getEXT_INTERACTIONKeyword_1() { return cEXT_INTERACTIONKeyword_1; }
 		
-		//process=[Group_Transmission]
+		//process=[GroupExternalInteraction]
 		public Assignment getProcessAssignment_2() { return cProcessAssignment_2; }
 		
-		//[Group_Transmission]
-		public CrossReference getProcessGroup_TransmissionCrossReference_2_0() { return cProcessGroup_TransmissionCrossReference_2_0; }
+		//[GroupExternalInteraction]
+		public CrossReference getProcessGroupExternalInteractionCrossReference_2_0() { return cProcessGroupExternalInteractionCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getProcessGroup_TransmissionIDTerminalRuleCall_2_0_1() { return cProcessGroup_TransmissionIDTerminalRuleCall_2_0_1; }
+		public RuleCall getProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1() { return cProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
@@ -4031,17 +4033,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
-	public class GroupInternalsFeatureCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternalsFeatureCall");
+	public class GroupInternalInteractionsFeatureCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupInternalInteractionsFeatureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroupInternalsFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cGroupInternalInteractionsFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cGrpAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cGrpSymbolCrossReference_1_0 = (CrossReference)cGrpAssignment_1.eContents().get(0);
 		private final RuleCall cGrpSymbolIDTerminalRuleCall_1_0_1 = (RuleCall)cGrpSymbolCrossReference_1_0.eContents().get(1);
-		private final Keyword cGRP_INTERNALKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cGRP_INT_INTERACTIONKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cProcessAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cProcessGroupInternalCrossReference_3_0 = (CrossReference)cProcessAssignment_3.eContents().get(0);
-		private final RuleCall cProcessGroupInternalIDTerminalRuleCall_3_0_1 = (RuleCall)cProcessGroupInternalCrossReference_3_0.eContents().get(1);
+		private final CrossReference cProcessGroupInternalInteractionCrossReference_3_0 = (CrossReference)cProcessAssignment_3.eContents().get(0);
+		private final RuleCall cProcessGroupInternalInteractionIDTerminalRuleCall_3_0_1 = (RuleCall)cProcessGroupInternalInteractionCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cInputsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cInputsExpressionParserRuleCall_5_0 = (RuleCall)cInputsAssignment_5.eContents().get(0);
@@ -4051,17 +4053,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInputsExpressionParserRuleCall_6_1_0 = (RuleCall)cInputsAssignment_6_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//GroupInternalsFeatureCall:
-		//	{GroupInternalsFeatureCall} grp=[Symbol] '.GRP_INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (','
-		//	inputs+=Expression)* ')';
+		//GroupInternalInteractionsFeatureCall:
+		//	{GroupInternalInteractionsFeatureCall} grp=[Symbol] '.GRP_INT_INTERACTION.' process=[GroupInternalInteraction] '('
+		//	inputs+=Expression? (',' inputs+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GroupInternalsFeatureCall} grp=[Symbol] '.GRP_INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (','
-		//inputs+=Expression)* ')'
+		//{GroupInternalInteractionsFeatureCall} grp=[Symbol] '.GRP_INT_INTERACTION.' process=[GroupInternalInteraction] '('
+		//inputs+=Expression? (',' inputs+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
-		//{GroupInternalsFeatureCall}
-		public Action getGroupInternalsFeatureCallAction_0() { return cGroupInternalsFeatureCallAction_0; }
+		//{GroupInternalInteractionsFeatureCall}
+		public Action getGroupInternalInteractionsFeatureCallAction_0() { return cGroupInternalInteractionsFeatureCallAction_0; }
 		
 		//grp=[Symbol]
 		public Assignment getGrpAssignment_1() { return cGrpAssignment_1; }
@@ -4072,17 +4074,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getGrpSymbolIDTerminalRuleCall_1_0_1() { return cGrpSymbolIDTerminalRuleCall_1_0_1; }
 		
-		//'.GRP_INTERNAL.'
-		public Keyword getGRP_INTERNALKeyword_2() { return cGRP_INTERNALKeyword_2; }
+		//'.GRP_INT_INTERACTION.'
+		public Keyword getGRP_INT_INTERACTIONKeyword_2() { return cGRP_INT_INTERACTIONKeyword_2; }
 		
-		//process=[GroupInternal]
+		//process=[GroupInternalInteraction]
 		public Assignment getProcessAssignment_3() { return cProcessAssignment_3; }
 		
-		//[GroupInternal]
-		public CrossReference getProcessGroupInternalCrossReference_3_0() { return cProcessGroupInternalCrossReference_3_0; }
+		//[GroupInternalInteraction]
+		public CrossReference getProcessGroupInternalInteractionCrossReference_3_0() { return cProcessGroupInternalInteractionCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getProcessGroupInternalIDTerminalRuleCall_3_0_1() { return cProcessGroupInternalIDTerminalRuleCall_3_0_1; }
+		public RuleCall getProcessGroupInternalInteractionIDTerminalRuleCall_3_0_1() { return cProcessGroupInternalInteractionIDTerminalRuleCall_3_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
@@ -4185,14 +4187,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
-	public class GroupSelfInternalsFeatureCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupSelfInternalsFeatureCall");
+	public class GroupSelfInternalInteractionsFeatureCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.GroupSelfInternalInteractionsFeatureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cGroupSelfInternalsFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cINTERNALKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cGroupSelfInternalInteractionsFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cINT_INTERACTIONKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cProcessAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cProcessGroupInternalCrossReference_2_0 = (CrossReference)cProcessAssignment_2.eContents().get(0);
-		private final RuleCall cProcessGroupInternalIDTerminalRuleCall_2_0_1 = (RuleCall)cProcessGroupInternalCrossReference_2_0.eContents().get(1);
+		private final CrossReference cProcessGroupInternalInteractionCrossReference_2_0 = (CrossReference)cProcessAssignment_2.eContents().get(0);
+		private final RuleCall cProcessGroupInternalInteractionIDTerminalRuleCall_2_0_1 = (RuleCall)cProcessGroupInternalInteractionCrossReference_2_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cInputsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cInputsExpressionParserRuleCall_4_0 = (RuleCall)cInputsAssignment_4.eContents().get(0);
@@ -4202,29 +4204,29 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInputsExpressionParserRuleCall_5_1_0 = (RuleCall)cInputsAssignment_5_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//GroupSelfInternalsFeatureCall:
-		//	{GroupSelfInternalsFeatureCall} 'INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (',' inputs+=Expression)*
-		//	')';
+		//GroupSelfInternalInteractionsFeatureCall:
+		//	{GroupSelfInternalInteractionsFeatureCall} 'INT_INTERACTION.' process=[GroupInternalInteraction] '('
+		//	inputs+=Expression? (',' inputs+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GroupSelfInternalsFeatureCall} 'INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (',' inputs+=Expression)*
-		//')'
+		//{GroupSelfInternalInteractionsFeatureCall} 'INT_INTERACTION.' process=[GroupInternalInteraction] '(' inputs+=Expression?
+		//(',' inputs+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
-		//{GroupSelfInternalsFeatureCall}
-		public Action getGroupSelfInternalsFeatureCallAction_0() { return cGroupSelfInternalsFeatureCallAction_0; }
+		//{GroupSelfInternalInteractionsFeatureCall}
+		public Action getGroupSelfInternalInteractionsFeatureCallAction_0() { return cGroupSelfInternalInteractionsFeatureCallAction_0; }
 		
-		//'INTERNAL.'
-		public Keyword getINTERNALKeyword_1() { return cINTERNALKeyword_1; }
+		//'INT_INTERACTION.'
+		public Keyword getINT_INTERACTIONKeyword_1() { return cINT_INTERACTIONKeyword_1; }
 		
-		//process=[GroupInternal]
+		//process=[GroupInternalInteraction]
 		public Assignment getProcessAssignment_2() { return cProcessAssignment_2; }
 		
-		//[GroupInternal]
-		public CrossReference getProcessGroupInternalCrossReference_2_0() { return cProcessGroupInternalCrossReference_2_0; }
+		//[GroupInternalInteraction]
+		public CrossReference getProcessGroupInternalInteractionCrossReference_2_0() { return cProcessGroupInternalInteractionCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getProcessGroupInternalIDTerminalRuleCall_2_0_1() { return cProcessGroupInternalIDTerminalRuleCall_2_0_1; }
+		public RuleCall getProcessGroupInternalInteractionIDTerminalRuleCall_2_0_1() { return cProcessGroupInternalInteractionIDTerminalRuleCall_2_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
@@ -5129,18 +5131,21 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBodyFormulaParserRuleCall_5_0_2_0 = (RuleCall)cBodyAssignment_5_0_2.eContents().get(0);
 		private final Assignment cBodyAssignment_5_0_3 = (Assignment)cAlternatives_5_0.eContents().get(3);
 		private final RuleCall cBodyFieldParserRuleCall_5_0_3_0 = (RuleCall)cBodyAssignment_5_0_3.eContents().get(0);
+		private final Assignment cBodyAssignment_5_0_4 = (Assignment)cAlternatives_5_0.eContents().get(4);
+		private final RuleCall cBodyRaw_Java_BlockParserRuleCall_5_0_4_0 = (RuleCall)cBodyAssignment_5_0_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Keyword cEndforKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ForLoop:
 		//	'for' '(' (init=(Expression | Formula | Field | SelfAssignedFormula) ';' condition=Expression ';' shifter=(Expression
 		//	| Formula))
-		//	')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+		//	')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 		//	'endfor';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'for' '(' (init=(Expression | Formula | Field | SelfAssignedFormula) ';' condition=Expression ';' shifter=(Expression |
-		//Formula)) ')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+ 'endfor'
+		//Formula)) ')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block)
+		//';')+ 'endfor'
 		public Group getGroup() { return cGroup; }
 		
 		//'for'
@@ -5200,10 +5205,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'do'
 		public Keyword getDoKeyword_4() { return cDoKeyword_4; }
 		
-		//((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+		//((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field
+		//body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block
 		public Alternatives getAlternatives_5_0() { return cAlternatives_5_0; }
 		
 		//body+=Expression
@@ -5229,6 +5234,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Field
 		public RuleCall getBodyFieldParserRuleCall_5_0_3_0() { return cBodyFieldParserRuleCall_5_0_3_0; }
+		
+		//body+=Raw_Java_Block
+		public Assignment getBodyAssignment_5_0_4() { return cBodyAssignment_5_0_4; }
+		
+		//Raw_Java_Block
+		public RuleCall getBodyRaw_Java_BlockParserRuleCall_5_0_4_0() { return cBodyRaw_Java_BlockParserRuleCall_5_0_4_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5_1() { return cSemicolonKeyword_5_1; }
@@ -5261,17 +5272,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBodyFormulaParserRuleCall_5_0_2_0 = (RuleCall)cBodyAssignment_5_0_2.eContents().get(0);
 		private final Assignment cBodyAssignment_5_0_3 = (Assignment)cAlternatives_5_0.eContents().get(3);
 		private final RuleCall cBodyFieldParserRuleCall_5_0_3_0 = (RuleCall)cBodyAssignment_5_0_3.eContents().get(0);
+		private final Assignment cBodyAssignment_5_0_4 = (Assignment)cAlternatives_5_0.eContents().get(4);
+		private final RuleCall cBodyRaw_Java_BlockParserRuleCall_5_0_4_0 = (RuleCall)cBodyAssignment_5_0_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Keyword cEndforKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ForEachLoop:
 		//	'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
-		//	body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+		//	body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 		//	'endfor';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
-		//body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+ 'endfor'
+		//body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+ 'endfor'
 		public Group getGroup() { return cGroup; }
 		
 		//'foreach'
@@ -5310,10 +5323,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'do'
 		public Keyword getDoKeyword_4() { return cDoKeyword_4; }
 		
-		//((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+		//((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field
+		//body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block
 		public Alternatives getAlternatives_5_0() { return cAlternatives_5_0; }
 		
 		//body+=Expression
@@ -5339,6 +5352,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Field
 		public RuleCall getBodyFieldParserRuleCall_5_0_3_0() { return cBodyFieldParserRuleCall_5_0_3_0; }
+		
+		//body+=Raw_Java_Block
+		public Assignment getBodyAssignment_5_0_4() { return cBodyAssignment_5_0_4; }
+		
+		//Raw_Java_Block
+		public RuleCall getBodyRaw_Java_BlockParserRuleCall_5_0_4_0() { return cBodyRaw_Java_BlockParserRuleCall_5_0_4_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5_1() { return cSemicolonKeyword_5_1; }
@@ -7181,7 +7200,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	public class CASL_Macro_EntitySetupElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_EntitySetup");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cENTITY_INITKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPOPULATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cInitNumAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cInitNumExpressionParserRuleCall_2_0 = (RuleCall)cInitNumAssignment_2.eContents().get(0);
@@ -7197,14 +7216,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//CASL_Macro_EntitySetup:
-		//	"ENTITY_INIT" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
+		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"ENTITY_INIT" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')'
+		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')'
 		public Group getGroup() { return cGroup; }
 		
-		//"ENTITY_INIT"
-		public Keyword getENTITY_INITKeyword_0() { return cENTITY_INITKeyword_0; }
+		//"POPULATE"
+		public Keyword getPOPULATEKeyword_0() { return cPOPULATEKeyword_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -7279,7 +7298,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cRawStatementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cRawStatementsRaw_JavaParserRuleCall_5_0 = (RuleCall)cRawStatementsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		///*****Java 8-isms *****/ /*I'm not sure if burning these into
 		// * Casl is a good idea... but it makes sense but
@@ -7292,10 +7311,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	{Raw_Java_Block}
 		//	"raw-java" name=ID ':' '{'
 		//	rawStatements+=Raw_Java*
-		//	"};";
+		//	//		rj = Raw_Java
+		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Raw_Java_Block} "raw-java" name=ID ':' '{' rawStatements+=Raw_Java* "};"
+		//{Raw_Java_Block} "raw-java" name=ID ':' '{' rawStatements+=Raw_Java* //		rj = Raw_Java
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
 		//{Raw_Java_Block}
@@ -7322,19 +7343,21 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//Raw_Java
 		public RuleCall getRawStatementsRaw_JavaParserRuleCall_5_0() { return cRawStatementsRaw_JavaParserRuleCall_5_0; }
 		
-		//"};"
-		public Keyword getRightCurlyBracketSemicolonKeyword_6() { return cRightCurlyBracketSemicolonKeyword_6; }
+		////		rj = Raw_Java
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class Raw_JavaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Raw_Java");
-		private final RuleCall cQualifiedNameCallParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
+		////Raw_Java: => text += (ID|ANY_OTHER)+;
 		//Raw_Java:
-		//	QualifiedNameCall;
+		//	STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//QualifiedNameCall
-		public RuleCall getQualifiedNameCallParserRuleCall() { return cQualifiedNameCallParserRuleCall; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Feature");
@@ -8335,13 +8358,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final EnvironmentElements pEnvironment;
 	private final GroupElements pGroup;
 	private final Group_RulesElements pGroup_Rules;
-	private final Group_TransmissionsElements pGroup_Transmissions;
-	private final Group_TransmissionElements pGroup_Transmission;
+	private final GroupExternalInteractionsElements pGroupExternalInteractions;
+	private final GroupExternalInteractionElements pGroupExternalInteraction;
 	private final Transmission_PhaseElements eTransmission_Phase;
 	private final Transmission_ContentsElements eTransmission_Contents;
 	private final Transmission_RepeatElements eTransmission_Repeat;
-	private final GroupInternalsElements pGroupInternals;
-	private final GroupInternalElements pGroupInternal;
+	private final GroupInternalInteractionsElements pGroupInternalInteractions;
+	private final GroupInternalInteractionElements pGroupInternalInteraction;
 	private final ParametersElements pParameters;
 	private final FieldElements pField;
 	private final AgentFieldReferenceElements pAgentFieldReference;
@@ -8376,11 +8399,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final AdaptiveProcessFeatureCallElements pAdaptiveProcessFeatureCall;
 	private final InteractionFeatureCallElements pInteractionFeatureCall;
 	private final AgentInteractionFeatureCallElements pAgentInteractionFeatureCall;
-	private final GroupTransmissionFeatureCallElements pGroupTransmissionFeatureCall;
+	private final GroupExternalInteractionFeatureCallElements pGroupExternalInteractionFeatureCall;
 	private final TransmissionFeatureCallElements pTransmissionFeatureCall;
-	private final GroupInternalsFeatureCallElements pGroupInternalsFeatureCall;
+	private final GroupInternalInteractionsFeatureCallElements pGroupInternalInteractionsFeatureCall;
 	private final EnvironmentInteractionFeatureCallElements pEnvironmentInteractionFeatureCall;
-	private final GroupSelfInternalsFeatureCallElements pGroupSelfInternalsFeatureCall;
+	private final GroupSelfInternalInteractionsFeatureCallElements pGroupSelfInternalInteractionsFeatureCall;
 	private final FunctionFeatureCallElements pFunctionFeatureCall;
 	private final BehaviorFeatureCallElements pBehaviorFeatureCall;
 	private final SubSystemElements pSubSystem;
@@ -8482,13 +8505,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEnvironment = new EnvironmentElements();
 		this.pGroup = new GroupElements();
 		this.pGroup_Rules = new Group_RulesElements();
-		this.pGroup_Transmissions = new Group_TransmissionsElements();
-		this.pGroup_Transmission = new Group_TransmissionElements();
+		this.pGroupExternalInteractions = new GroupExternalInteractionsElements();
+		this.pGroupExternalInteraction = new GroupExternalInteractionElements();
 		this.eTransmission_Phase = new Transmission_PhaseElements();
 		this.eTransmission_Contents = new Transmission_ContentsElements();
 		this.eTransmission_Repeat = new Transmission_RepeatElements();
-		this.pGroupInternals = new GroupInternalsElements();
-		this.pGroupInternal = new GroupInternalElements();
+		this.pGroupInternalInteractions = new GroupInternalInteractionsElements();
+		this.pGroupInternalInteraction = new GroupInternalInteractionElements();
 		this.pParameters = new ParametersElements();
 		this.pField = new FieldElements();
 		this.pAgentFieldReference = new AgentFieldReferenceElements();
@@ -8523,11 +8546,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAdaptiveProcessFeatureCall = new AdaptiveProcessFeatureCallElements();
 		this.pInteractionFeatureCall = new InteractionFeatureCallElements();
 		this.pAgentInteractionFeatureCall = new AgentInteractionFeatureCallElements();
-		this.pGroupTransmissionFeatureCall = new GroupTransmissionFeatureCallElements();
+		this.pGroupExternalInteractionFeatureCall = new GroupExternalInteractionFeatureCallElements();
 		this.pTransmissionFeatureCall = new TransmissionFeatureCallElements();
-		this.pGroupInternalsFeatureCall = new GroupInternalsFeatureCallElements();
+		this.pGroupInternalInteractionsFeatureCall = new GroupInternalInteractionsFeatureCallElements();
 		this.pEnvironmentInteractionFeatureCall = new EnvironmentInteractionFeatureCallElements();
-		this.pGroupSelfInternalsFeatureCall = new GroupSelfInternalsFeatureCallElements();
+		this.pGroupSelfInternalInteractionsFeatureCall = new GroupSelfInternalInteractionsFeatureCallElements();
 		this.pFunctionFeatureCall = new FunctionFeatureCallElements();
 		this.pBehaviorFeatureCall = new BehaviorFeatureCallElements();
 		this.pSubSystem = new SubSystemElements();
@@ -8878,7 +8901,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Entity_Feature:
-	//	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | Group_Transmission | GroupInternal;
+	//	Field | Function | Behavior | Interaction | AdaptiveProcess | SubSystem | GroupExternalInteraction |
+	//	GroupInternalInteraction;
 	public Entity_FeatureElements getEntity_FeatureAccess() {
 		return pEntity_Feature;
 	}
@@ -8949,8 +8973,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	group_parameters=Parameters
 	//	group_functions=Functions
 	//	group_behaviors=Behaviors
-	//	group_transmissions=Group_Transmissions
-	//	group_internals=GroupInternals
+	//	group_external_interactions=GroupExternalInteractions
+	//	group_internal_interactions=GroupInternalInteractions
 	//	'};';
 	public GroupElements getGroupAccess() {
 		return pGroup;
@@ -8973,34 +8997,34 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getGroup_RulesAccess().getRule();
 	}
 	
-	////TODO: Generate This
-	//Group_Transmissions:
-	//	{Group_Transmissions}
+	//GroupExternalInteractions:
+	//	{GroupExternalInteractions}
 	//	//These are essentially interactions that rely on slightly more complicated functions
 	//	//and must be wrapped as a message to the environment
-	//	'transmissions:' '{'
-	//	transmissions+=Group_Transmission*
+	//	'external_interactions:' '{'
+	//	external_interactions+=GroupExternalInteraction*
 	//	'};';
-	public Group_TransmissionsElements getGroup_TransmissionsAccess() {
-		return pGroup_Transmissions;
+	public GroupExternalInteractionsElements getGroupExternalInteractionsAccess() {
+		return pGroupExternalInteractions;
 	}
 	
-	public ParserRule getGroup_TransmissionsRule() {
-		return getGroup_TransmissionsAccess().getRule();
+	public ParserRule getGroupExternalInteractionsRule() {
+		return getGroupExternalInteractionsAccess().getRule();
 	}
 	
-	//Group_Transmission:
-	//	{Group_Transmission} name=ID '[' transmissionPhase=Transmission_Phase '][' transmissionContents=Transmission_Contents
-	//	'][' transmissionRepeat=Transmission_Repeat ('(' reaction_time_parm=Expression ')')? ']('
-	//	(functionParameters+=FunctionParameter (',' functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field |
-	//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
+	//GroupExternalInteraction:
+	//	{GroupExternalInteraction} name=ID '[' transmissionPhase=Transmission_Phase ']['
+	//	transmissionContents=Transmission_Contents '][' transmissionRepeat=Transmission_Repeat ('('
+	//	reaction_time_parm=Expression ')')? '](' (functionParameters+=FunctionParameter (','
+	//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
+	//	body+=SelfAssignedFormula) ';')*
 	//	'};';
-	public Group_TransmissionElements getGroup_TransmissionAccess() {
-		return pGroup_Transmission;
+	public GroupExternalInteractionElements getGroupExternalInteractionAccess() {
+		return pGroupExternalInteraction;
 	}
 	
-	public ParserRule getGroup_TransmissionRule() {
-		return getGroup_TransmissionAccess().getRule();
+	public ParserRule getGroupExternalInteractionRule() {
+		return getGroupExternalInteractionAccess().getRule();
 	}
 	
 	//enum Transmission_Phase:
@@ -9033,35 +9057,34 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransmission_RepeatAccess().getRule();
 	}
 	
-	////TODO: Generate This
-	//GroupInternals:
-	//	{GroupInternals}
+	//GroupInternalInteractions:
+	//	{GroupInternalInteractions}
 	//	//These are also essentially interactions that rely on slightly more complicated functions
 	//	//but do not need to be messages as the contained agents make the request directly from the
 	//	//group layer
-	//	'internals:' '{'
-	//	internals+=GroupInternal*
+	//	'internal_interactions:' '{'
+	//	internal_interactions+=GroupInternalInteraction*
 	//	'};';
-	public GroupInternalsElements getGroupInternalsAccess() {
-		return pGroupInternals;
+	public GroupInternalInteractionsElements getGroupInternalInteractionsAccess() {
+		return pGroupInternalInteractions;
 	}
 	
-	public ParserRule getGroupInternalsRule() {
-		return getGroupInternalsAccess().getRule();
+	public ParserRule getGroupInternalInteractionsRule() {
+		return getGroupInternalInteractionsAccess().getRule();
 	}
 	
-	//GroupInternal:
-	//	{GroupInternal} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
+	//GroupInternalInteraction:
+	//	{GroupInternalInteraction} name=ID '[' interaction_type=InteractionType '][' trigger_type=InteractionTriggerTypes '('
 	//	triggerParam=InteractionTriggerParameter? ')' '](' (functionParameters+=FunctionParameter (','
 	//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
 	//	body+=SelfAssignedFormula) ';')*
 	//	'};';
-	public GroupInternalElements getGroupInternalAccess() {
-		return pGroupInternal;
+	public GroupInternalInteractionElements getGroupInternalInteractionAccess() {
+		return pGroupInternalInteraction;
 	}
 	
-	public ParserRule getGroupInternalRule() {
-		return getGroupInternalAccess().getRule();
+	public ParserRule getGroupInternalInteractionRule() {
+		return getGroupInternalInteractionAccess().getRule();
 	}
 	
 	//Parameters:
@@ -9446,8 +9469,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//FeatureCall:
 	//	fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
-	//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupTransmissionFeatureCall |
-	//	GroupSelfInternalsFeatureCall | GroupInternalsFeatureCall | TransmissionFeatureCall);
+	//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
+	//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall);
 	public FeatureCallElements getFeatureCallAccess() {
 		return pFeatureCall;
 	}
@@ -9488,19 +9511,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAgentInteractionFeatureCallAccess().getRule();
 	}
 	
-	//GroupTransmissionFeatureCall:
-	//	{GroupTransmissionFeatureCall} grp=[Symbol] '.GRP_TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression?
-	//	(',' inputs+=Expression)* ')';
-	public GroupTransmissionFeatureCallElements getGroupTransmissionFeatureCallAccess() {
-		return pGroupTransmissionFeatureCall;
+	//GroupExternalInteractionFeatureCall:
+	//	{GroupExternalInteractionFeatureCall} grp=[Symbol] '.GRP_EXT_INTERACTION.' process=[GroupExternalInteraction] '('
+	//	inputs+=Expression? (',' inputs+=Expression)* ')';
+	public GroupExternalInteractionFeatureCallElements getGroupExternalInteractionFeatureCallAccess() {
+		return pGroupExternalInteractionFeatureCall;
 	}
 	
-	public ParserRule getGroupTransmissionFeatureCallRule() {
-		return getGroupTransmissionFeatureCallAccess().getRule();
+	public ParserRule getGroupExternalInteractionFeatureCallRule() {
+		return getGroupExternalInteractionFeatureCallAccess().getRule();
 	}
 	
 	//TransmissionFeatureCall:
-	//	{TransmissionFeatureCall} 'TRANSMISSION.' process=[Group_Transmission] '(' inputs+=Expression? (','
+	//	{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
 	//	inputs+=Expression)* ')';
 	public TransmissionFeatureCallElements getTransmissionFeatureCallAccess() {
 		return pTransmissionFeatureCall;
@@ -9510,15 +9533,15 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransmissionFeatureCallAccess().getRule();
 	}
 	
-	//GroupInternalsFeatureCall:
-	//	{GroupInternalsFeatureCall} grp=[Symbol] '.GRP_INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (','
-	//	inputs+=Expression)* ')';
-	public GroupInternalsFeatureCallElements getGroupInternalsFeatureCallAccess() {
-		return pGroupInternalsFeatureCall;
+	//GroupInternalInteractionsFeatureCall:
+	//	{GroupInternalInteractionsFeatureCall} grp=[Symbol] '.GRP_INT_INTERACTION.' process=[GroupInternalInteraction] '('
+	//	inputs+=Expression? (',' inputs+=Expression)* ')';
+	public GroupInternalInteractionsFeatureCallElements getGroupInternalInteractionsFeatureCallAccess() {
+		return pGroupInternalInteractionsFeatureCall;
 	}
 	
-	public ParserRule getGroupInternalsFeatureCallRule() {
-		return getGroupInternalsFeatureCallAccess().getRule();
+	public ParserRule getGroupInternalInteractionsFeatureCallRule() {
+		return getGroupInternalInteractionsFeatureCallAccess().getRule();
 	}
 	
 	//EnvironmentInteractionFeatureCall:
@@ -9532,15 +9555,15 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnvironmentInteractionFeatureCallAccess().getRule();
 	}
 	
-	//GroupSelfInternalsFeatureCall:
-	//	{GroupSelfInternalsFeatureCall} 'INTERNAL.' process=[GroupInternal] '(' inputs+=Expression? (',' inputs+=Expression)*
-	//	')';
-	public GroupSelfInternalsFeatureCallElements getGroupSelfInternalsFeatureCallAccess() {
-		return pGroupSelfInternalsFeatureCall;
+	//GroupSelfInternalInteractionsFeatureCall:
+	//	{GroupSelfInternalInteractionsFeatureCall} 'INT_INTERACTION.' process=[GroupInternalInteraction] '('
+	//	inputs+=Expression? (',' inputs+=Expression)* ')';
+	public GroupSelfInternalInteractionsFeatureCallElements getGroupSelfInternalInteractionsFeatureCallAccess() {
+		return pGroupSelfInternalInteractionsFeatureCall;
 	}
 	
-	public ParserRule getGroupSelfInternalsFeatureCallRule() {
-		return getGroupSelfInternalsFeatureCallAccess().getRule();
+	public ParserRule getGroupSelfInternalInteractionsFeatureCallRule() {
+		return getGroupSelfInternalInteractionsFeatureCallAccess().getRule();
 	}
 	
 	//FunctionFeatureCall:
@@ -9738,7 +9761,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//ForLoop:
 	//	'for' '(' (init=(Expression | Formula | Field | SelfAssignedFormula) ';' condition=Expression ';' shifter=(Expression
 	//	| Formula))
-	//	')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+	//	')' 'do' ((body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 	//	'endfor';
 	public ForLoopElements getForLoopAccess() {
 		return pForLoop;
@@ -9750,7 +9773,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ForEachLoop:
 	//	'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
-	//	body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
+	//	body+=SelfAssignedFormula | body+=Formula | body+=Field | body+=Raw_Java_Block) ';')+
 	//	'endfor';
 	public ForEachLoopElements getForEachLoopAccess() {
 		return pForEachLoop;
@@ -10090,7 +10113,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_EntitySetup:
-	//	"ENTITY_INIT" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
+	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
 	public CASL_Macro_EntitySetupElements getCASL_Macro_EntitySetupAccess() {
 		return pCASL_Macro_EntitySetup;
 	}
@@ -10140,7 +10163,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Raw_Java_Block}
 	//	"raw-java" name=ID ':' '{'
 	//	rawStatements+=Raw_Java*
-	//	"};";
+	//	//		rj = Raw_Java
+	//	"}";
 	public Raw_Java_BlockElements getRaw_Java_BlockAccess() {
 		return pRaw_Java_Block;
 	}
@@ -10149,8 +10173,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRaw_Java_BlockAccess().getRule();
 	}
 	
+	////Raw_Java: => text += (ID|ANY_OTHER)+;
 	//Raw_Java:
-	//	QualifiedNameCall;
+	//	STRING;
 	public Raw_JavaElements getRaw_JavaAccess() {
 		return pRaw_Java;
 	}

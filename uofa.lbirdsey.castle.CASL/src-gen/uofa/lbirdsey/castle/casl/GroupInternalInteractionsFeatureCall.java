@@ -9,23 +9,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Internals Feature Call</b></em>'.
+ * A representation of the model object '<em><b>Group Internal Interactions Feature Call</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getGrp <em>Grp</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getGrp <em>Grp</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalsFeatureCall()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteractionsFeatureCall()
  * @model
  * @generated
  */
-public interface GroupInternalsFeatureCall extends EObject
+public interface GroupInternalInteractionsFeatureCall extends EObject
 {
   /**
    * Returns the value of the '<em><b>Grp</b></em>' reference.
@@ -37,14 +37,14 @@ public interface GroupInternalsFeatureCall extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Grp</em>' reference.
    * @see #setGrp(Symbol)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalsFeatureCall_Grp()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteractionsFeatureCall_Grp()
    * @model
    * @generated
    */
   Symbol getGrp();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getGrp <em>Grp</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getGrp <em>Grp</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Grp</em>' reference.
@@ -62,22 +62,22 @@ public interface GroupInternalsFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Process</em>' reference.
-   * @see #setProcess(GroupInternal)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalsFeatureCall_Process()
+   * @see #setProcess(GroupInternalInteraction)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteractionsFeatureCall_Process()
    * @model
    * @generated
    */
-  GroupInternal getProcess();
+  GroupInternalInteraction getProcess();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalsFeatureCall#getProcess <em>Process</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall#getProcess <em>Process</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Process</em>' reference.
    * @see #getProcess()
    * @generated
    */
-  void setProcess(GroupInternal value);
+  void setProcess(GroupInternalInteraction value);
 
   /**
    * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
@@ -89,10 +89,10 @@ public interface GroupInternalsFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inputs</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalsFeatureCall_Inputs()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getGroupInternalInteractionsFeatureCall_Inputs()
    * @model containment="true"
    * @generated
    */
   EList<Expression> getInputs();
 
-} // GroupInternalsFeatureCall
+} // GroupInternalInteractionsFeatureCall

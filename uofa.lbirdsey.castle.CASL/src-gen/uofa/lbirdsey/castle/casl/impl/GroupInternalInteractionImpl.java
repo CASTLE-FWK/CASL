@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.GroupInternal;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
 import uofa.lbirdsey.castle.casl.InteractionTriggerParameter;
 import uofa.lbirdsey.castle.casl.InteractionTriggerTypes;
 import uofa.lbirdsey.castle.casl.InteractionType;
@@ -28,23 +28,23 @@ import uofa.lbirdsey.castle.casl.Symbol;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Internal</b></em>'.
+ * An implementation of the model object '<em><b>Group Internal Interaction</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getName <em>Name</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getInteraction_type <em>Interaction type</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getTrigger_type <em>Trigger type</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getTriggerParam <em>Trigger Param</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getFunctionParameters <em>Function Parameters</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getInteraction_type <em>Interaction type</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getTrigger_type <em>Trigger type</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getTriggerParam <em>Trigger Param</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getFunctionParameters <em>Function Parameters</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GroupInternalImpl extends Entity_FeatureImpl implements GroupInternal
+public class GroupInternalInteractionImpl extends Entity_FeatureImpl implements GroupInternalInteraction
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -141,7 +141,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupInternalImpl()
+  protected GroupInternalInteractionImpl()
   {
     super();
   }
@@ -154,7 +154,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getGroupInternal();
+    return CaslPackage.eINSTANCE.getGroupInternalInteraction();
   }
 
   /**
@@ -177,7 +177,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL_INTERACTION__NAME, oldName, name));
   }
 
   /**
@@ -200,7 +200,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     InteractionType oldInteraction_type = interaction_type;
     interaction_type = newInteraction_type == null ? INTERACTION_TYPE_EDEFAULT : newInteraction_type;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL__INTERACTION_TYPE, oldInteraction_type, interaction_type));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE, oldInteraction_type, interaction_type));
   }
 
   /**
@@ -223,7 +223,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     InteractionTriggerTypes oldTrigger_type = trigger_type;
     trigger_type = newTrigger_type == null ? TRIGGER_TYPE_EDEFAULT : newTrigger_type;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL__TRIGGER_TYPE, oldTrigger_type, trigger_type));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE, oldTrigger_type, trigger_type));
   }
 
   /**
@@ -247,7 +247,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     triggerParam = newTriggerParam;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM, oldTriggerParam, newTriggerParam);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM, oldTriggerParam, newTriggerParam);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -264,14 +264,14 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     {
       NotificationChain msgs = null;
       if (triggerParam != null)
-        msgs = ((InternalEObject)triggerParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM, null, msgs);
+        msgs = ((InternalEObject)triggerParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM, null, msgs);
       if (newTriggerParam != null)
-        msgs = ((InternalEObject)newTriggerParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM, null, msgs);
+        msgs = ((InternalEObject)newTriggerParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM, null, msgs);
       msgs = basicSetTriggerParam(newTriggerParam, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM, newTriggerParam, newTriggerParam));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM, newTriggerParam, newTriggerParam));
   }
 
   /**
@@ -283,7 +283,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     if (functionParameters == null)
     {
-      functionParameters = new EObjectContainmentEList<Symbol>(Symbol.class, this, CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS);
+      functionParameters = new EObjectContainmentEList<Symbol>(Symbol.class, this, CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS);
     }
     return functionParameters;
   }
@@ -297,7 +297,7 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     if (body == null)
     {
-      body = new EObjectContainmentEList<EObject>(EObject.class, this, CaslPackage.GROUP_INTERNAL__BODY);
+      body = new EObjectContainmentEList<EObject>(EObject.class, this, CaslPackage.GROUP_INTERNAL_INTERACTION__BODY);
     }
     return body;
   }
@@ -312,11 +312,11 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM:
         return basicSetTriggerParam(null, msgs);
-      case CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return ((InternalEList<?>)getFunctionParameters()).basicRemove(otherEnd, msgs);
-      case CaslPackage.GROUP_INTERNAL__BODY:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__BODY:
         return ((InternalEList<?>)getBody()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -332,17 +332,17 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNAL__NAME:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__NAME:
         return getName();
-      case CaslPackage.GROUP_INTERNAL__INTERACTION_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE:
         return getInteraction_type();
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE:
         return getTrigger_type();
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM:
         return getTriggerParam();
-      case CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return getFunctionParameters();
-      case CaslPackage.GROUP_INTERNAL__BODY:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__BODY:
         return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -359,23 +359,23 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNAL__NAME:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__NAME:
         setName((String)newValue);
         return;
-      case CaslPackage.GROUP_INTERNAL__INTERACTION_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE:
         setInteraction_type((InteractionType)newValue);
         return;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE:
         setTrigger_type((InteractionTriggerTypes)newValue);
         return;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM:
         setTriggerParam((InteractionTriggerParameter)newValue);
         return;
-      case CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         getFunctionParameters().clear();
         getFunctionParameters().addAll((Collection<? extends Symbol>)newValue);
         return;
-      case CaslPackage.GROUP_INTERNAL__BODY:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__BODY:
         getBody().clear();
         getBody().addAll((Collection<? extends EObject>)newValue);
         return;
@@ -393,22 +393,22 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNAL__NAME:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CaslPackage.GROUP_INTERNAL__INTERACTION_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE:
         setInteraction_type(INTERACTION_TYPE_EDEFAULT);
         return;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE:
         setTrigger_type(TRIGGER_TYPE_EDEFAULT);
         return;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM:
         setTriggerParam((InteractionTriggerParameter)null);
         return;
-      case CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         getFunctionParameters().clear();
         return;
-      case CaslPackage.GROUP_INTERNAL__BODY:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__BODY:
         getBody().clear();
         return;
     }
@@ -425,17 +425,17 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
   {
     switch (featureID)
     {
-      case CaslPackage.GROUP_INTERNAL__NAME:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CaslPackage.GROUP_INTERNAL__INTERACTION_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__INTERACTION_TYPE:
         return interaction_type != INTERACTION_TYPE_EDEFAULT;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_TYPE:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_TYPE:
         return trigger_type != TRIGGER_TYPE_EDEFAULT;
-      case CaslPackage.GROUP_INTERNAL__TRIGGER_PARAM:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__TRIGGER_PARAM:
         return triggerParam != null;
-      case CaslPackage.GROUP_INTERNAL__FUNCTION_PARAMETERS:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__FUNCTION_PARAMETERS:
         return functionParameters != null && !functionParameters.isEmpty();
-      case CaslPackage.GROUP_INTERNAL__BODY:
+      case CaslPackage.GROUP_INTERNAL_INTERACTION__BODY:
         return body != null && !body.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -462,4 +462,4 @@ public class GroupInternalImpl extends Entity_FeatureImpl implements GroupIntern
     return result.toString();
   }
 
-} //GroupInternalImpl
+} //GroupInternalInteractionImpl

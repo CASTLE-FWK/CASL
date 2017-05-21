@@ -172,28 +172,28 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass group_TransmissionsEClass = null;
+  private EClass groupExternalInteractionsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass group_TransmissionEClass = null;
+  private EClass groupExternalInteractionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupInternalsEClass = null;
+  private EClass groupInternalInteractionsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupInternalEClass = null;
+  private EClass groupInternalInteractionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -347,7 +347,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupTransmissionFeatureCallEClass = null;
+  private EClass groupExternalInteractionFeatureCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -361,7 +361,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupInternalsFeatureCallEClass = null;
+  private EClass groupInternalInteractionsFeatureCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -375,7 +375,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupSelfInternalsFeatureCallEClass = null;
+  private EClass groupSelfInternalInteractionsFeatureCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1818,7 +1818,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Group_transmissions()
+  public EReference getGroup_Group_external_interactions()
   {
         return (EReference)getGroup().getEStructuralFeatures().get(4);
   }
@@ -1828,7 +1828,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Group_internals()
+  public EReference getGroup_Group_internal_interactions()
   {
         return (EReference)getGroup().getEStructuralFeatures().get(5);
   }
@@ -1862,13 +1862,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroup_Transmissions()
+  public EClass getGroupExternalInteractions()
   {
-    if (group_TransmissionsEClass == null)
+    if (groupExternalInteractionsEClass == null)
     {
-      group_TransmissionsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(25);
+      groupExternalInteractionsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(25);
     }
-    return group_TransmissionsEClass;
+    return groupExternalInteractionsEClass;
   }
 
   /**
@@ -1876,9 +1876,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Transmissions_Transmissions()
+  public EReference getGroupExternalInteractions_External_interactions()
   {
-        return (EReference)getGroup_Transmissions().getEStructuralFeatures().get(0);
+        return (EReference)getGroupExternalInteractions().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1886,13 +1886,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroup_Transmission()
+  public EClass getGroupExternalInteraction()
   {
-    if (group_TransmissionEClass == null)
+    if (groupExternalInteractionEClass == null)
     {
-      group_TransmissionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(26);
+      groupExternalInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(26);
     }
-    return group_TransmissionEClass;
+    return groupExternalInteractionEClass;
   }
 
   /**
@@ -1900,9 +1900,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroup_Transmission_Name()
+  public EAttribute getGroupExternalInteraction_Name()
   {
-        return (EAttribute)getGroup_Transmission().getEStructuralFeatures().get(0);
+        return (EAttribute)getGroupExternalInteraction().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1910,9 +1910,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroup_Transmission_TransmissionPhase()
+  public EAttribute getGroupExternalInteraction_TransmissionPhase()
   {
-        return (EAttribute)getGroup_Transmission().getEStructuralFeatures().get(1);
+        return (EAttribute)getGroupExternalInteraction().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1920,9 +1920,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroup_Transmission_TransmissionContents()
+  public EAttribute getGroupExternalInteraction_TransmissionContents()
   {
-        return (EAttribute)getGroup_Transmission().getEStructuralFeatures().get(2);
+        return (EAttribute)getGroupExternalInteraction().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1930,9 +1930,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroup_Transmission_TransmissionRepeat()
+  public EAttribute getGroupExternalInteraction_TransmissionRepeat()
   {
-        return (EAttribute)getGroup_Transmission().getEStructuralFeatures().get(3);
+        return (EAttribute)getGroupExternalInteraction().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1940,9 +1940,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Transmission_Reaction_time_parm()
+  public EReference getGroupExternalInteraction_Reaction_time_parm()
   {
-        return (EReference)getGroup_Transmission().getEStructuralFeatures().get(4);
+        return (EReference)getGroupExternalInteraction().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1950,9 +1950,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Transmission_FunctionParameters()
+  public EReference getGroupExternalInteraction_FunctionParameters()
   {
-        return (EReference)getGroup_Transmission().getEStructuralFeatures().get(5);
+        return (EReference)getGroupExternalInteraction().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1960,9 +1960,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroup_Transmission_Body()
+  public EReference getGroupExternalInteraction_Body()
   {
-        return (EReference)getGroup_Transmission().getEStructuralFeatures().get(6);
+        return (EReference)getGroupExternalInteraction().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1970,13 +1970,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupInternals()
+  public EClass getGroupInternalInteractions()
   {
-    if (groupInternalsEClass == null)
+    if (groupInternalInteractionsEClass == null)
     {
-      groupInternalsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(30);
+      groupInternalInteractionsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(30);
     }
-    return groupInternalsEClass;
+    return groupInternalInteractionsEClass;
   }
 
   /**
@@ -1984,9 +1984,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternals_Internals()
+  public EReference getGroupInternalInteractions_Internal_interactions()
   {
-        return (EReference)getGroupInternals().getEStructuralFeatures().get(0);
+        return (EReference)getGroupInternalInteractions().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1994,13 +1994,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupInternal()
+  public EClass getGroupInternalInteraction()
   {
-    if (groupInternalEClass == null)
+    if (groupInternalInteractionEClass == null)
     {
-      groupInternalEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(31);
+      groupInternalInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(31);
     }
-    return groupInternalEClass;
+    return groupInternalInteractionEClass;
   }
 
   /**
@@ -2008,9 +2008,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroupInternal_Name()
+  public EAttribute getGroupInternalInteraction_Name()
   {
-        return (EAttribute)getGroupInternal().getEStructuralFeatures().get(0);
+        return (EAttribute)getGroupInternalInteraction().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2018,9 +2018,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroupInternal_Interaction_type()
+  public EAttribute getGroupInternalInteraction_Interaction_type()
   {
-        return (EAttribute)getGroupInternal().getEStructuralFeatures().get(1);
+        return (EAttribute)getGroupInternalInteraction().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2028,9 +2028,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroupInternal_Trigger_type()
+  public EAttribute getGroupInternalInteraction_Trigger_type()
   {
-        return (EAttribute)getGroupInternal().getEStructuralFeatures().get(2);
+        return (EAttribute)getGroupInternalInteraction().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2038,9 +2038,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternal_TriggerParam()
+  public EReference getGroupInternalInteraction_TriggerParam()
   {
-        return (EReference)getGroupInternal().getEStructuralFeatures().get(3);
+        return (EReference)getGroupInternalInteraction().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2048,9 +2048,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternal_FunctionParameters()
+  public EReference getGroupInternalInteraction_FunctionParameters()
   {
-        return (EReference)getGroupInternal().getEStructuralFeatures().get(4);
+        return (EReference)getGroupInternalInteraction().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2058,9 +2058,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternal_Body()
+  public EReference getGroupInternalInteraction_Body()
   {
-        return (EReference)getGroupInternal().getEStructuralFeatures().get(5);
+        return (EReference)getGroupInternalInteraction().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2832,13 +2832,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupTransmissionFeatureCall()
+  public EClass getGroupExternalInteractionFeatureCall()
   {
-    if (groupTransmissionFeatureCallEClass == null)
+    if (groupExternalInteractionFeatureCallEClass == null)
     {
-      groupTransmissionFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(60);
+      groupExternalInteractionFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(60);
     }
-    return groupTransmissionFeatureCallEClass;
+    return groupExternalInteractionFeatureCallEClass;
   }
 
   /**
@@ -2846,9 +2846,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupTransmissionFeatureCall_Grp()
+  public EReference getGroupExternalInteractionFeatureCall_Grp()
   {
-        return (EReference)getGroupTransmissionFeatureCall().getEStructuralFeatures().get(0);
+        return (EReference)getGroupExternalInteractionFeatureCall().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2856,9 +2856,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupTransmissionFeatureCall_Process()
+  public EReference getGroupExternalInteractionFeatureCall_Process()
   {
-        return (EReference)getGroupTransmissionFeatureCall().getEStructuralFeatures().get(1);
+        return (EReference)getGroupExternalInteractionFeatureCall().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2866,9 +2866,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupTransmissionFeatureCall_Inputs()
+  public EReference getGroupExternalInteractionFeatureCall_Inputs()
   {
-        return (EReference)getGroupTransmissionFeatureCall().getEStructuralFeatures().get(2);
+        return (EReference)getGroupExternalInteractionFeatureCall().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2910,13 +2910,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupInternalsFeatureCall()
+  public EClass getGroupInternalInteractionsFeatureCall()
   {
-    if (groupInternalsFeatureCallEClass == null)
+    if (groupInternalInteractionsFeatureCallEClass == null)
     {
-      groupInternalsFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(62);
+      groupInternalInteractionsFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(62);
     }
-    return groupInternalsFeatureCallEClass;
+    return groupInternalInteractionsFeatureCallEClass;
   }
 
   /**
@@ -2924,9 +2924,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternalsFeatureCall_Grp()
+  public EReference getGroupInternalInteractionsFeatureCall_Grp()
   {
-        return (EReference)getGroupInternalsFeatureCall().getEStructuralFeatures().get(0);
+        return (EReference)getGroupInternalInteractionsFeatureCall().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2934,9 +2934,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternalsFeatureCall_Process()
+  public EReference getGroupInternalInteractionsFeatureCall_Process()
   {
-        return (EReference)getGroupInternalsFeatureCall().getEStructuralFeatures().get(1);
+        return (EReference)getGroupInternalInteractionsFeatureCall().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2944,9 +2944,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupInternalsFeatureCall_Inputs()
+  public EReference getGroupInternalInteractionsFeatureCall_Inputs()
   {
-        return (EReference)getGroupInternalsFeatureCall().getEStructuralFeatures().get(2);
+        return (EReference)getGroupInternalInteractionsFeatureCall().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2998,13 +2998,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupSelfInternalsFeatureCall()
+  public EClass getGroupSelfInternalInteractionsFeatureCall()
   {
-    if (groupSelfInternalsFeatureCallEClass == null)
+    if (groupSelfInternalInteractionsFeatureCallEClass == null)
     {
-      groupSelfInternalsFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(64);
+      groupSelfInternalInteractionsFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(64);
     }
-    return groupSelfInternalsFeatureCallEClass;
+    return groupSelfInternalInteractionsFeatureCallEClass;
   }
 
   /**
@@ -3012,9 +3012,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupSelfInternalsFeatureCall_Process()
+  public EReference getGroupSelfInternalInteractionsFeatureCall_Process()
   {
-        return (EReference)getGroupSelfInternalsFeatureCall().getEStructuralFeatures().get(0);
+        return (EReference)getGroupSelfInternalInteractionsFeatureCall().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3022,9 +3022,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupSelfInternalsFeatureCall_Inputs()
+  public EReference getGroupSelfInternalInteractionsFeatureCall_Inputs()
   {
-        return (EReference)getGroupSelfInternalsFeatureCall().getEStructuralFeatures().get(1);
+        return (EReference)getGroupSelfInternalInteractionsFeatureCall().getEStructuralFeatures().get(1);
   }
 
   /**
