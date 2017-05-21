@@ -158,7 +158,7 @@ class RepastGenerator implements IGenerator2 {
 		«IF pkg instanceof Type»
 		«ENDIF»
 	«ENDFOR»
-	'''
+	''' 
 	
 	//Parse an AGENTs stuff and break it down
 	def String compileAgent(Agent a) {

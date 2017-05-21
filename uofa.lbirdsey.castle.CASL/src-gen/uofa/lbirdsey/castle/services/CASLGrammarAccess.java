@@ -3638,22 +3638,22 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFcGroupExternalInteractionFeatureCallParserRuleCall_0_6 = (RuleCall)cFcAlternatives_0.eContents().get(6);
 		private final RuleCall cFcGroupSelfInternalInteractionsFeatureCallParserRuleCall_0_7 = (RuleCall)cFcAlternatives_0.eContents().get(7);
 		private final RuleCall cFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8 = (RuleCall)cFcAlternatives_0.eContents().get(8);
-		private final RuleCall cFcTransmissionFeatureCallParserRuleCall_0_9 = (RuleCall)cFcAlternatives_0.eContents().get(9);
+		private final RuleCall cFcExternalInteractionFeatureCallParserRuleCall_0_9 = (RuleCall)cFcAlternatives_0.eContents().get(9);
 		
 		//FeatureCall:
 		//	fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
 		//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
-		//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall);
+		//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | ExternalInteractionFeatureCall);
 		@Override public ParserRule getRule() { return rule; }
 		
 		//fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
 		//InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
-		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall)
+		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | ExternalInteractionFeatureCall)
 		public Assignment getFcAssignment() { return cFcAssignment; }
 		
 		//(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall | InteractionFeatureCall |
 		//FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
-		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall)
+		//GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | ExternalInteractionFeatureCall)
 		public Alternatives getFcAlternatives_0() { return cFcAlternatives_0; }
 		
 		//AdaptiveProcessFeatureCall
@@ -3683,8 +3683,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//GroupInternalInteractionsFeatureCall
 		public RuleCall getFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8() { return cFcGroupInternalInteractionsFeatureCallParserRuleCall_0_8; }
 		
-		//TransmissionFeatureCall
-		public RuleCall getFcTransmissionFeatureCallParserRuleCall_0_9() { return cFcTransmissionFeatureCallParserRuleCall_0_9; }
+		//ExternalInteractionFeatureCall
+		public RuleCall getFcExternalInteractionFeatureCallParserRuleCall_0_9() { return cFcExternalInteractionFeatureCallParserRuleCall_0_9; }
 	}
 	public class AdaptiveProcessFeatureCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.AdaptiveProcessFeatureCall");
@@ -3968,10 +3968,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
-	public class TransmissionFeatureCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.TransmissionFeatureCall");
+	public class ExternalInteractionFeatureCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.ExternalInteractionFeatureCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cTransmissionFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cExternalInteractionFeatureCallAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEXT_INTERACTIONKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cProcessAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cProcessGroupExternalInteractionCrossReference_2_0 = (CrossReference)cProcessAssignment_2.eContents().get(0);
@@ -3985,17 +3985,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInputsExpressionParserRuleCall_5_1_0 = (RuleCall)cInputsAssignment_5_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//TransmissionFeatureCall:
-		//	{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
+		//ExternalInteractionFeatureCall:
+		//	{ExternalInteractionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
 		//	inputs+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
+		//{ExternalInteractionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
 		//inputs+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
-		//{TransmissionFeatureCall}
-		public Action getTransmissionFeatureCallAction_0() { return cTransmissionFeatureCallAction_0; }
+		//{ExternalInteractionFeatureCall}
+		public Action getExternalInteractionFeatureCallAction_0() { return cExternalInteractionFeatureCallAction_0; }
 		
 		//'EXT_INTERACTION.'
 		public Keyword getEXT_INTERACTIONKeyword_1() { return cEXT_INTERACTIONKeyword_1; }
@@ -8400,7 +8400,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final InteractionFeatureCallElements pInteractionFeatureCall;
 	private final AgentInteractionFeatureCallElements pAgentInteractionFeatureCall;
 	private final GroupExternalInteractionFeatureCallElements pGroupExternalInteractionFeatureCall;
-	private final TransmissionFeatureCallElements pTransmissionFeatureCall;
+	private final ExternalInteractionFeatureCallElements pExternalInteractionFeatureCall;
 	private final GroupInternalInteractionsFeatureCallElements pGroupInternalInteractionsFeatureCall;
 	private final EnvironmentInteractionFeatureCallElements pEnvironmentInteractionFeatureCall;
 	private final GroupSelfInternalInteractionsFeatureCallElements pGroupSelfInternalInteractionsFeatureCall;
@@ -8547,7 +8547,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInteractionFeatureCall = new InteractionFeatureCallElements();
 		this.pAgentInteractionFeatureCall = new AgentInteractionFeatureCallElements();
 		this.pGroupExternalInteractionFeatureCall = new GroupExternalInteractionFeatureCallElements();
-		this.pTransmissionFeatureCall = new TransmissionFeatureCallElements();
+		this.pExternalInteractionFeatureCall = new ExternalInteractionFeatureCallElements();
 		this.pGroupInternalInteractionsFeatureCall = new GroupInternalInteractionsFeatureCallElements();
 		this.pEnvironmentInteractionFeatureCall = new EnvironmentInteractionFeatureCallElements();
 		this.pGroupSelfInternalInteractionsFeatureCall = new GroupSelfInternalInteractionsFeatureCallElements();
@@ -9470,7 +9470,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//FeatureCall:
 	//	fc=(AdaptiveProcessFeatureCall | AgentInteractionFeatureCall | EnvironmentInteractionFeatureCall |
 	//	InteractionFeatureCall | FunctionFeatureCall | BehaviorFeatureCall | GroupExternalInteractionFeatureCall |
-	//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | TransmissionFeatureCall);
+	//	GroupSelfInternalInteractionsFeatureCall | GroupInternalInteractionsFeatureCall | ExternalInteractionFeatureCall);
 	public FeatureCallElements getFeatureCallAccess() {
 		return pFeatureCall;
 	}
@@ -9522,15 +9522,15 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getGroupExternalInteractionFeatureCallAccess().getRule();
 	}
 	
-	//TransmissionFeatureCall:
-	//	{TransmissionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
+	//ExternalInteractionFeatureCall:
+	//	{ExternalInteractionFeatureCall} 'EXT_INTERACTION.' process=[GroupExternalInteraction] '(' inputs+=Expression? (','
 	//	inputs+=Expression)* ')';
-	public TransmissionFeatureCallElements getTransmissionFeatureCallAccess() {
-		return pTransmissionFeatureCall;
+	public ExternalInteractionFeatureCallElements getExternalInteractionFeatureCallAccess() {
+		return pExternalInteractionFeatureCall;
 	}
 	
-	public ParserRule getTransmissionFeatureCallRule() {
-		return getTransmissionFeatureCallAccess().getRule();
+	public ParserRule getExternalInteractionFeatureCallRule() {
+		return getExternalInteractionFeatureCallAccess().getRule();
 	}
 	
 	//GroupInternalInteractionsFeatureCall:

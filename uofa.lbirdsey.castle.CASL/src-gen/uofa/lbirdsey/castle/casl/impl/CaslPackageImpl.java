@@ -354,7 +354,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass transmissionFeatureCallEClass = null;
+  private EClass externalInteractionFeatureCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2876,13 +2876,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTransmissionFeatureCall()
+  public EClass getExternalInteractionFeatureCall()
   {
-    if (transmissionFeatureCallEClass == null)
+    if (externalInteractionFeatureCallEClass == null)
     {
-      transmissionFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(61);
+      externalInteractionFeatureCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(61);
     }
-    return transmissionFeatureCallEClass;
+    return externalInteractionFeatureCallEClass;
   }
 
   /**
@@ -2890,9 +2890,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransmissionFeatureCall_Process()
+  public EReference getExternalInteractionFeatureCall_Process()
   {
-        return (EReference)getTransmissionFeatureCall().getEStructuralFeatures().get(0);
+        return (EReference)getExternalInteractionFeatureCall().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2900,9 +2900,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransmissionFeatureCall_Inputs()
+  public EReference getExternalInteractionFeatureCall_Inputs()
   {
-        return (EReference)getTransmissionFeatureCall().getEStructuralFeatures().get(1);
+        return (EReference)getExternalInteractionFeatureCall().getEStructuralFeatures().get(1);
   }
 
   /**

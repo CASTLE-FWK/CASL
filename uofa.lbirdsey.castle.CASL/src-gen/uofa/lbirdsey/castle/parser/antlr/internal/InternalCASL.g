@@ -5705,9 +5705,9 @@ ruleFeatureCall returns [EObject current=null]
 				}
 				    |
 				{
-					newCompositeNode(grammarAccess.getFeatureCallAccess().getFcTransmissionFeatureCallParserRuleCall_0_9());
+					newCompositeNode(grammarAccess.getFeatureCallAccess().getFcExternalInteractionFeatureCallParserRuleCall_0_9());
 				}
-				lv_fc_0_10=ruleTransmissionFeatureCall
+				lv_fc_0_10=ruleExternalInteractionFeatureCall
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFeatureCallRule());
@@ -5716,7 +5716,7 @@ ruleFeatureCall returns [EObject current=null]
 						$current,
 						"fc",
 						lv_fc_0_10,
-						"uofa.lbirdsey.castle.CASL.TransmissionFeatureCall");
+						"uofa.lbirdsey.castle.CASL.ExternalInteractionFeatureCall");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -6130,15 +6130,15 @@ ruleGroupExternalInteractionFeatureCall returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleTransmissionFeatureCall
-entryRuleTransmissionFeatureCall returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTransmissionFeatureCallRule()); }
-	iv_ruleTransmissionFeatureCall=ruleTransmissionFeatureCall
-	{ $current=$iv_ruleTransmissionFeatureCall.current; }
+// Entry rule entryRuleExternalInteractionFeatureCall
+entryRuleExternalInteractionFeatureCall returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getExternalInteractionFeatureCallRule()); }
+	iv_ruleExternalInteractionFeatureCall=ruleExternalInteractionFeatureCall
+	{ $current=$iv_ruleExternalInteractionFeatureCall.current; }
 	EOF;
 
-// Rule TransmissionFeatureCall
-ruleTransmissionFeatureCall returns [EObject current=null]
+// Rule ExternalInteractionFeatureCall
+ruleExternalInteractionFeatureCall returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -6149,40 +6149,40 @@ ruleTransmissionFeatureCall returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getTransmissionFeatureCallAccess().getTransmissionFeatureCallAction_0(),
+					grammarAccess.getExternalInteractionFeatureCallAccess().getExternalInteractionFeatureCallAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='EXT_INTERACTION.'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTransmissionFeatureCallAccess().getEXT_INTERACTIONKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getExternalInteractionFeatureCallAccess().getEXT_INTERACTIONKeyword_1());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTransmissionFeatureCallRule());
+						$current = createModelElement(grammarAccess.getExternalInteractionFeatureCallRule());
 					}
 				}
 				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0());
+					newLeafNode(otherlv_2, grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0());
 				}
 			)
 		)
 		otherlv_3='('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getTransmissionFeatureCallAccess().getLeftParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getExternalInteractionFeatureCallAccess().getLeftParenthesisKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0());
 				}
 				lv_inputs_4_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTransmissionFeatureCallRule());
+						$current = createModelElementForParent(grammarAccess.getExternalInteractionFeatureCallRule());
 					}
 					add(
 						$current,
@@ -6196,17 +6196,17 @@ ruleTransmissionFeatureCall returns [EObject current=null]
 		(
 			otherlv_5=','
 			{
-				newLeafNode(otherlv_5, grammarAccess.getTransmissionFeatureCallAccess().getCommaKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getExternalInteractionFeatureCallAccess().getCommaKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0());
 					}
 					lv_inputs_6_0=ruleExpression
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTransmissionFeatureCallRule());
+							$current = createModelElementForParent(grammarAccess.getExternalInteractionFeatureCallRule());
 						}
 						add(
 							$current,
@@ -6220,7 +6220,7 @@ ruleTransmissionFeatureCall returns [EObject current=null]
 		)*
 		otherlv_7=')'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getTransmissionFeatureCallAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getExternalInteractionFeatureCallAccess().getRightParenthesisKeyword_6());
 		}
 	)
 ;

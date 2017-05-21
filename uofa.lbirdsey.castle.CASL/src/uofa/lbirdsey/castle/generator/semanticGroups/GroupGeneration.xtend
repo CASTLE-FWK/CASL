@@ -400,7 +400,7 @@ class GroupGeneration {
 	def String parseGroupRules(Group_Rules gr){
 		return gr.layout_type.toString();
 	}
-	
+	 
 	def assignActionsAndPrintPhases(Group g){
 		var triggeredActions = newArrayList
 		var setupPhase = newArrayList

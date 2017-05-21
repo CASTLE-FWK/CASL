@@ -61,7 +61,7 @@ class CASLScopeProvider extends AbstractDeclarativeScopeProvider {
 		} 
 	}
 	
-	def scope_GroupInternalsFeatureCall_process(GroupInternalInteractionsFeatureCall context, EReference ref) {
+	def scope_GroupInternalInteractionsFeatureCall_process(GroupInternalInteractionsFeatureCall context, EReference ref) {
 		if (context.grp instanceof FunctionParameter){
 			return Scopes.scopeFor((context.grp as FunctionParameter).grp.group_internal_interactions.internal_interactions);
 		} else if (context.grp instanceof GroupFieldReference) {	

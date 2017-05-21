@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Transmission Feature Call</b></em>'.
+ * A representation of the model object '<em><b>External Interaction Feature Call</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getTransmissionFeatureCall()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getExternalInteractionFeatureCall()
  * @model
  * @generated
  */
-public interface TransmissionFeatureCall extends EObject
+public interface ExternalInteractionFeatureCall extends EObject
 {
   /**
    * Returns the value of the '<em><b>Process</b></em>' reference.
@@ -36,14 +36,14 @@ public interface TransmissionFeatureCall extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Process</em>' reference.
    * @see #setProcess(GroupExternalInteraction)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getTransmissionFeatureCall_Process()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getExternalInteractionFeatureCall_Process()
    * @model
    * @generated
    */
   GroupExternalInteraction getProcess();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getProcess <em>Process</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getProcess <em>Process</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Process</em>' reference.
@@ -62,10 +62,10 @@ public interface TransmissionFeatureCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inputs</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getTransmissionFeatureCall_Inputs()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getExternalInteractionFeatureCall_Inputs()
    * @model containment="true"
    * @generated
    */
   EList<Expression> getInputs();
 
-} // TransmissionFeatureCall
+} // ExternalInteractionFeatureCall

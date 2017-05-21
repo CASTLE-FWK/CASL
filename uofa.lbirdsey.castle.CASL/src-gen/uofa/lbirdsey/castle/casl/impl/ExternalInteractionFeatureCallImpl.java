@@ -21,24 +21,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transmission Feature Call</b></em>'.
+ * An implementation of the model object '<em><b>External Interaction Feature Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.TransmissionFeatureCallImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.TransmissionFeatureCallImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.ExternalInteractionFeatureCallImpl#getProcess <em>Process</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.ExternalInteractionFeatureCallImpl#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container implements TransmissionFeatureCall
+public class ExternalInteractionFeatureCallImpl extends MinimalEObjectImpl.Container implements ExternalInteractionFeatureCall
 {
   /**
    * The cached value of the '{@link #getProcess() <em>Process</em>}' reference.
@@ -65,7 +65,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TransmissionFeatureCallImpl()
+  protected ExternalInteractionFeatureCallImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   @Override
   protected EClass eStaticClass()
   {
-    return CaslPackage.eINSTANCE.getTransmissionFeatureCall();
+    return CaslPackage.eINSTANCE.getExternalInteractionFeatureCall();
   }
 
   /**
@@ -95,7 +95,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
       if (process != oldProcess)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS, oldProcess, process));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS, oldProcess, process));
       }
     }
     return process;
@@ -121,7 +121,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
     GroupExternalInteraction oldProcess = process;
     process = newProcess;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS, oldProcess, process));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS, oldProcess, process));
   }
 
   /**
@@ -133,7 +133,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     if (inputs == null)
     {
-      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS);
+      inputs = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS);
     }
     return inputs;
   }
@@ -148,7 +148,7 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     switch (featureID)
     {
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -164,10 +164,10 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     switch (featureID)
     {
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         if (resolve) return getProcess();
         return basicGetProcess();
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return getInputs();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -184,10 +184,10 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     switch (featureID)
     {
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         setProcess((GroupExternalInteraction)newValue);
         return;
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         getInputs().clear();
         getInputs().addAll((Collection<? extends Expression>)newValue);
         return;
@@ -205,10 +205,10 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     switch (featureID)
     {
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         setProcess((GroupExternalInteraction)null);
         return;
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         getInputs().clear();
         return;
     }
@@ -225,12 +225,12 @@ public class TransmissionFeatureCallImpl extends MinimalEObjectImpl.Container im
   {
     switch (featureID)
     {
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__PROCESS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS:
         return process != null;
-      case CaslPackage.TRANSMISSION_FEATURE_CALL__INPUTS:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS:
         return inputs != null && !inputs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //TransmissionFeatureCallImpl
+} //ExternalInteractionFeatureCallImpl

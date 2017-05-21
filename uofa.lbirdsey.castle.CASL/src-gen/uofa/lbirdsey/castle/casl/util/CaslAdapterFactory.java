@@ -68,6 +68,7 @@ import uofa.lbirdsey.castle.casl.Environment_Type_Name;
 import uofa.lbirdsey.castle.casl.Environment_Types;
 import uofa.lbirdsey.castle.casl.Equals;
 import uofa.lbirdsey.castle.casl.Expression;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
@@ -124,7 +125,6 @@ import uofa.lbirdsey.castle.casl.Subtraction;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.SystemCall;
 import uofa.lbirdsey.castle.casl.SystemCallObj;
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 import uofa.lbirdsey.castle.casl.Type;
 import uofa.lbirdsey.castle.casl.TypeRef;
 
@@ -412,9 +412,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createGroupExternalInteractionFeatureCallAdapter();
       }
       @Override
-      public Adapter caseTransmissionFeatureCall(TransmissionFeatureCall object)
+      public Adapter caseExternalInteractionFeatureCall(ExternalInteractionFeatureCall object)
       {
-        return createTransmissionFeatureCallAdapter();
+        return createExternalInteractionFeatureCallAdapter();
       }
       @Override
       public Adapter caseGroupInternalInteractionsFeatureCall(GroupInternalInteractionsFeatureCall object)
@@ -1469,16 +1469,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall <em>Transmission Feature Call</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall <em>External Interaction Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.TransmissionFeatureCall
+   * @see uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
    * @generated
    */
-  public Adapter createTransmissionFeatureCallAdapter()
+  public Adapter createExternalInteractionFeatureCallAdapter()
   {
     return null;
   }

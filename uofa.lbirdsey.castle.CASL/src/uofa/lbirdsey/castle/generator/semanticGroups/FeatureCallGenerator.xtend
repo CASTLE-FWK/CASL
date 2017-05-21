@@ -7,13 +7,13 @@ import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall
 import uofa.lbirdsey.castle.casl.FunctionFeatureCall
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall
 import uofa.lbirdsey.castle.casl.BehaviorFeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCallExp
 import uofa.lbirdsey.castle.casl.Function
 import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
 import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
 import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
 
 class FeatureCallGenerator {
 	
@@ -50,8 +50,8 @@ class FeatureCallGenerator {
 			return HelperFunctions.inferMethodType((fc as GroupSelfInternalInteractionsFeatureCall).process.body)
 		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
 			return HelperFunctions.inferMethodType((fc as GroupExternalInteractionFeatureCall).process.body)
-		} else if (fc instanceof TransmissionFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as TransmissionFeatureCall).process.body)
+		} else if (fc instanceof ExternalInteractionFeatureCall) {
+			return HelperFunctions.inferMethodType((fc as ExternalInteractionFeatureCall).process.body)
 		}
 		else "Error with inferring featurecall"
 		
@@ -91,8 +91,8 @@ class FeatureCallGenerator {
 			'''«(fc as GroupSelfInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
 		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
 			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
-		} else if (fc instanceof TransmissionFeatureCall) {
-			'''«(fc as TransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
+		} else if (fc instanceof ExternalInteractionFeatureCall) {
+			'''«(fc as ExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		}
 		else '''ERROR WITH FEATURE CALL:«fc.toString»'''	
 	}
@@ -139,8 +139,8 @@ class FeatureCallGenerator {
 			'''«(fc as GroupSelfInternalInteractionsFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
 		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
 			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
-		} else if (fc instanceof TransmissionFeatureCall) {
-			'''«(fc as TransmissionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
+		} else if (fc instanceof ExternalInteractionFeatureCall) {
+			'''«(fc as ExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''	
 		}
 		else '''ERROR WITH FEATURE CALL:«fc.toString»'''
 	}

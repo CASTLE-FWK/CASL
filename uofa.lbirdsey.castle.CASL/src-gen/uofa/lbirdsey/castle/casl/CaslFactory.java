@@ -420,13 +420,13 @@ public interface CaslFactory extends EFactory
   GroupExternalInteractionFeatureCall createGroupExternalInteractionFeatureCall();
 
   /**
-   * Returns a new object of class '<em>Transmission Feature Call</em>'.
+   * Returns a new object of class '<em>External Interaction Feature Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Transmission Feature Call</em>'.
+   * @return a new object of class '<em>External Interaction Feature Call</em>'.
    * @generated
    */
-  TransmissionFeatureCall createTransmissionFeatureCall();
+  ExternalInteractionFeatureCall createExternalInteractionFeatureCall();
 
   /**
    * Returns a new object of class '<em>Group Internal Interactions Feature Call</em>'.

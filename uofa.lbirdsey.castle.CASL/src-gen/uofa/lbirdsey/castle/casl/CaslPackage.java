@@ -2011,14 +2011,14 @@ public interface CaslPackage extends EPackage
   int GROUP_EXTERNAL_INTERACTION_FEATURE_CALL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.TransmissionFeatureCallImpl <em>Transmission Feature Call</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.ExternalInteractionFeatureCallImpl <em>External Interaction Feature Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.TransmissionFeatureCallImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.impl.ExternalInteractionFeatureCallImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getExternalInteractionFeatureCall()
    * @generated
    */
-  int TRANSMISSION_FEATURE_CALL = 44;
+  int EXTERNAL_INTERACTION_FEATURE_CALL = 44;
 
   /**
    * The feature id for the '<em><b>Process</b></em>' reference.
@@ -2027,7 +2027,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSMISSION_FEATURE_CALL__PROCESS = 0;
+  int EXTERNAL_INTERACTION_FEATURE_CALL__PROCESS = 0;
 
   /**
    * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -2036,16 +2036,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSMISSION_FEATURE_CALL__INPUTS = 1;
+  int EXTERNAL_INTERACTION_FEATURE_CALL__INPUTS = 1;
 
   /**
-   * The number of structural features of the '<em>Transmission Feature Call</em>' class.
+   * The number of structural features of the '<em>External Interaction Feature Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSMISSION_FEATURE_CALL_FEATURE_COUNT = 2;
+  int EXTERNAL_INTERACTION_FEATURE_CALL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.GroupInternalInteractionsFeatureCallImpl <em>Group Internal Interactions Feature Call</em>}' class.
@@ -7049,36 +7049,36 @@ public interface CaslPackage extends EPackage
   EReference getGroupExternalInteractionFeatureCall_Inputs();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall <em>Transmission Feature Call</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall <em>External Interaction Feature Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Transmission Feature Call</em>'.
-   * @see uofa.lbirdsey.castle.casl.TransmissionFeatureCall
+   * @return the meta object for class '<em>External Interaction Feature Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
    * @generated
    */
-  EClass getTransmissionFeatureCall();
+  EClass getExternalInteractionFeatureCall();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getProcess <em>Process</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getProcess <em>Process</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Process</em>'.
-   * @see uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getProcess()
-   * @see #getTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getProcess()
+   * @see #getExternalInteractionFeatureCall()
    * @generated
    */
-  EReference getTransmissionFeatureCall_Process();
+  EReference getExternalInteractionFeatureCall_Process();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getInputs <em>Inputs</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getInputs <em>Inputs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Inputs</em>'.
-   * @see uofa.lbirdsey.castle.casl.TransmissionFeatureCall#getInputs()
-   * @see #getTransmissionFeatureCall()
+   * @see uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall#getInputs()
+   * @see #getExternalInteractionFeatureCall()
    * @generated
    */
-  EReference getTransmissionFeatureCall_Inputs();
+  EReference getExternalInteractionFeatureCall_Inputs();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall <em>Group Internal Interactions Feature Call</em>}'.

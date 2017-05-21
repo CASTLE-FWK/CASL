@@ -310,9 +310,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractionFeatureCall/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupExternalInteractionFeatureCall/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//TransmissionFeatureCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//TransmissionFeatureCall/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//TransmissionFeatureCall/inputs"/>
+    <genClasses ecoreClass="CASL.ecore#//ExternalInteractionFeatureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//ExternalInteractionFeatureCall/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ExternalInteractionFeatureCall/inputs"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//GroupInternalInteractionsFeatureCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//GroupInternalInteractionsFeatureCall/grp"/>

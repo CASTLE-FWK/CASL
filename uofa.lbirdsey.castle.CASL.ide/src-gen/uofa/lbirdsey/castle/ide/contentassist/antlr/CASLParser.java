@@ -192,8 +192,8 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAgentInteractionFeatureCallAccess().getGroup_6(), "rule__AgentInteractionFeatureCall__Group_6__0");
 					put(grammarAccess.getGroupExternalInteractionFeatureCallAccess().getGroup(), "rule__GroupExternalInteractionFeatureCall__Group__0");
 					put(grammarAccess.getGroupExternalInteractionFeatureCallAccess().getGroup_6(), "rule__GroupExternalInteractionFeatureCall__Group_6__0");
-					put(grammarAccess.getTransmissionFeatureCallAccess().getGroup(), "rule__TransmissionFeatureCall__Group__0");
-					put(grammarAccess.getTransmissionFeatureCallAccess().getGroup_5(), "rule__TransmissionFeatureCall__Group_5__0");
+					put(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup(), "rule__ExternalInteractionFeatureCall__Group__0");
+					put(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup_5(), "rule__ExternalInteractionFeatureCall__Group_5__0");
 					put(grammarAccess.getGroupInternalInteractionsFeatureCallAccess().getGroup(), "rule__GroupInternalInteractionsFeatureCall__Group__0");
 					put(grammarAccess.getGroupInternalInteractionsFeatureCallAccess().getGroup_6(), "rule__GroupInternalInteractionsFeatureCall__Group_6__0");
 					put(grammarAccess.getEnvironmentInteractionFeatureCallAccess().getGroup(), "rule__EnvironmentInteractionFeatureCall__Group__0");
@@ -521,9 +521,9 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGroupExternalInteractionFeatureCallAccess().getProcessAssignment_3(), "rule__GroupExternalInteractionFeatureCall__ProcessAssignment_3");
 					put(grammarAccess.getGroupExternalInteractionFeatureCallAccess().getInputsAssignment_5(), "rule__GroupExternalInteractionFeatureCall__InputsAssignment_5");
 					put(grammarAccess.getGroupExternalInteractionFeatureCallAccess().getInputsAssignment_6_1(), "rule__GroupExternalInteractionFeatureCall__InputsAssignment_6_1");
-					put(grammarAccess.getTransmissionFeatureCallAccess().getProcessAssignment_2(), "rule__TransmissionFeatureCall__ProcessAssignment_2");
-					put(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_4(), "rule__TransmissionFeatureCall__InputsAssignment_4");
-					put(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_5_1(), "rule__TransmissionFeatureCall__InputsAssignment_5_1");
+					put(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessAssignment_2(), "rule__ExternalInteractionFeatureCall__ProcessAssignment_2");
+					put(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_4(), "rule__ExternalInteractionFeatureCall__InputsAssignment_4");
+					put(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_5_1(), "rule__ExternalInteractionFeatureCall__InputsAssignment_5_1");
 					put(grammarAccess.getGroupInternalInteractionsFeatureCallAccess().getGrpAssignment_1(), "rule__GroupInternalInteractionsFeatureCall__GrpAssignment_1");
 					put(grammarAccess.getGroupInternalInteractionsFeatureCallAccess().getProcessAssignment_3(), "rule__GroupInternalInteractionsFeatureCall__ProcessAssignment_3");
 					put(grammarAccess.getGroupInternalInteractionsFeatureCallAccess().getInputsAssignment_5(), "rule__GroupInternalInteractionsFeatureCall__InputsAssignment_5");

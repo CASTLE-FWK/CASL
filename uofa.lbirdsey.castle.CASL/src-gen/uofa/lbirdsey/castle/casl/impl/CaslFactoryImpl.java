@@ -82,6 +82,7 @@ import uofa.lbirdsey.castle.casl.Environment_Type_Name;
 import uofa.lbirdsey.castle.casl.Environment_Types;
 import uofa.lbirdsey.castle.casl.Equals;
 import uofa.lbirdsey.castle.casl.Expression;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
@@ -142,7 +143,6 @@ import uofa.lbirdsey.castle.casl.Subtraction;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.SystemCall;
 import uofa.lbirdsey.castle.casl.SystemCallObj;
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 import uofa.lbirdsey.castle.casl.Transmission_Contents;
 import uofa.lbirdsey.castle.casl.Transmission_Phase;
 import uofa.lbirdsey.castle.casl.Transmission_Repeat;
@@ -247,7 +247,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.INTERACTION_FEATURE_CALL: return createInteractionFeatureCall();
       case CaslPackage.AGENT_INTERACTION_FEATURE_CALL: return createAgentInteractionFeatureCall();
       case CaslPackage.GROUP_EXTERNAL_INTERACTION_FEATURE_CALL: return createGroupExternalInteractionFeatureCall();
-      case CaslPackage.TRANSMISSION_FEATURE_CALL: return createTransmissionFeatureCall();
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL: return createExternalInteractionFeatureCall();
       case CaslPackage.GROUP_INTERNAL_INTERACTIONS_FEATURE_CALL: return createGroupInternalInteractionsFeatureCall();
       case CaslPackage.ENVIRONMENT_INTERACTION_FEATURE_CALL: return createEnvironmentInteractionFeatureCall();
       case CaslPackage.GROUP_SELF_INTERNAL_INTERACTIONS_FEATURE_CALL: return createGroupSelfInternalInteractionsFeatureCall();
@@ -926,10 +926,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TransmissionFeatureCall createTransmissionFeatureCall()
+  public ExternalInteractionFeatureCall createExternalInteractionFeatureCall()
   {
-    TransmissionFeatureCallImpl transmissionFeatureCall = new TransmissionFeatureCallImpl();
-    return transmissionFeatureCall;
+    ExternalInteractionFeatureCallImpl externalInteractionFeatureCall = new ExternalInteractionFeatureCallImpl();
+    return externalInteractionFeatureCall;
   }
 
   /**

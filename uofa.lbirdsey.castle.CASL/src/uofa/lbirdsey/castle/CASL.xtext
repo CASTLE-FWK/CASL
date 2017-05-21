@@ -485,7 +485,7 @@ FeatureCall:
 		GroupExternalInteractionFeatureCall |
 		GroupSelfInternalInteractionsFeatureCall |
 		GroupInternalInteractionsFeatureCall |
-		TransmissionFeatureCall)
+		ExternalInteractionFeatureCall)
 ;
 
 AdaptiveProcessFeatureCall:
@@ -503,8 +503,8 @@ AgentInteractionFeatureCall:
 GroupExternalInteractionFeatureCall:
 	{GroupExternalInteractionFeatureCall}grp=[Symbol]'.GRP_EXT_INTERACTION.'process=[GroupExternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
-TransmissionFeatureCall:
-	{TransmissionFeatureCall}'EXT_INTERACTION.'process=[GroupExternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
+ExternalInteractionFeatureCall:
+	{ExternalInteractionFeatureCall}'EXT_INTERACTION.'process=[GroupExternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'
 ;
 GroupInternalInteractionsFeatureCall:
 	{GroupInternalInteractionsFeatureCall}grp=[Symbol]'.GRP_INT_INTERACTION.'process=[GroupInternalInteraction]'('(inputs +=  Expression)? (','(inputs +=  Expression))* ')'

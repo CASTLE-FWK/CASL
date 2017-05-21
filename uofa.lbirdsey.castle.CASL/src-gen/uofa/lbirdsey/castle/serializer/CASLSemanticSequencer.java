@@ -67,6 +67,7 @@ import uofa.lbirdsey.castle.casl.Environment_Rules;
 import uofa.lbirdsey.castle.casl.Environment_Type_Name;
 import uofa.lbirdsey.castle.casl.Environment_Types;
 import uofa.lbirdsey.castle.casl.Equals;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
@@ -121,7 +122,6 @@ import uofa.lbirdsey.castle.casl.Subtraction;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.SystemCall;
 import uofa.lbirdsey.castle.casl.SystemCallObj;
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.services.CASLGrammarAccess;
 
@@ -344,6 +344,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.EQUALS:
 				sequence_Equals(context, (Equals) semanticObject); 
 				return; 
+			case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL:
+				sequence_ExternalInteractionFeatureCall(context, (ExternalInteractionFeatureCall) semanticObject); 
+				return; 
 			case CaslPackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
 				return; 
@@ -540,9 +543,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.SYSTEM_CALL_OBJ:
 				sequence_Atomic(context, (SystemCallObj) semanticObject); 
-				return; 
-			case CaslPackage.TRANSMISSION_FEATURE_CALL:
-				sequence_TransmissionFeatureCall(context, (TransmissionFeatureCall) semanticObject); 
 				return; 
 			case CaslPackage.TYPE_REF:
 				sequence_Atomic(context, (TypeRef) semanticObject); 
@@ -1918,6 +1918,18 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     ExternalInteractionFeatureCall returns ExternalInteractionFeatureCall
+	 *
+	 * Constraint:
+	 *     (process=[GroupExternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
+	 */
+	protected void sequence_ExternalInteractionFeatureCall(ISerializationContext context, ExternalInteractionFeatureCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FeatureCall returns FeatureCall
 	 *
 	 * Constraint:
@@ -1931,7 +1943,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         fc=GroupExternalInteractionFeatureCall | 
 	 *         fc=GroupSelfInternalInteractionsFeatureCall | 
 	 *         fc=GroupInternalInteractionsFeatureCall | 
-	 *         fc=TransmissionFeatureCall
+	 *         fc=ExternalInteractionFeatureCall
 	 *     )
 	 */
 	protected void sequence_FeatureCall(ISerializationContext context, FeatureCall semanticObject) {
@@ -2922,18 +2934,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getSystemAccess().getEnvironment_typesEnvironment_TypesParserRuleCall_16_0(), semanticObject.getEnvironment_types());
 		feeder.accept(grammarAccess.getSystemAccess().getEnd_conditionsEnd_ConditionsParserRuleCall_17_0(), semanticObject.getEnd_conditions());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     TransmissionFeatureCall returns TransmissionFeatureCall
-	 *
-	 * Constraint:
-	 *     (process=[GroupExternalInteraction|ID] inputs+=Expression? inputs+=Expression*)
-	 */
-	protected void sequence_TransmissionFeatureCall(ISerializationContext context, TransmissionFeatureCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

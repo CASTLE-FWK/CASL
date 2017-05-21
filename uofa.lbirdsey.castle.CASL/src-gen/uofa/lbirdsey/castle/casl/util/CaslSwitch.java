@@ -66,6 +66,7 @@ import uofa.lbirdsey.castle.casl.Environment_Type_Name;
 import uofa.lbirdsey.castle.casl.Environment_Types;
 import uofa.lbirdsey.castle.casl.Equals;
 import uofa.lbirdsey.castle.casl.Expression;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
@@ -122,7 +123,6 @@ import uofa.lbirdsey.castle.casl.Subtraction;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.SystemCall;
 import uofa.lbirdsey.castle.casl.SystemCallObj;
-import uofa.lbirdsey.castle.casl.TransmissionFeatureCall;
 import uofa.lbirdsey.castle.casl.Type;
 import uofa.lbirdsey.castle.casl.TypeRef;
 
@@ -507,10 +507,10 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.TRANSMISSION_FEATURE_CALL:
+      case CaslPackage.EXTERNAL_INTERACTION_FEATURE_CALL:
       {
-        TransmissionFeatureCall transmissionFeatureCall = (TransmissionFeatureCall)theEObject;
-        T result = caseTransmissionFeatureCall(transmissionFeatureCall);
+        ExternalInteractionFeatureCall externalInteractionFeatureCall = (ExternalInteractionFeatureCall)theEObject;
+        T result = caseExternalInteractionFeatureCall(externalInteractionFeatureCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1808,17 +1808,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Transmission Feature Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>External Interaction Feature Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Transmission Feature Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>External Interaction Feature Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTransmissionFeatureCall(TransmissionFeatureCall object)
+  public T caseExternalInteractionFeatureCall(ExternalInteractionFeatureCall object)
   {
     return null;
   }

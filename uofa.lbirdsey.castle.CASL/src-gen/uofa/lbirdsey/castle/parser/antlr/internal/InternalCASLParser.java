@@ -13877,7 +13877,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeatureCall"
-    // InternalCASL.g:5553:1: ruleFeatureCall returns [EObject current=null] : ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) ) ) ;
+    // InternalCASL.g:5553:1: ruleFeatureCall returns [EObject current=null] : ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) ) ) ;
     public final EObject ruleFeatureCall() throws RecognitionException {
         EObject current = null;
 
@@ -13906,16 +13906,16 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:5559:2: ( ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) ) ) )
-            // InternalCASL.g:5560:2: ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) ) )
+            // InternalCASL.g:5559:2: ( ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) ) ) )
+            // InternalCASL.g:5560:2: ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) ) )
             {
-            // InternalCASL.g:5560:2: ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) ) )
-            // InternalCASL.g:5561:3: ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) )
+            // InternalCASL.g:5560:2: ( ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) ) )
+            // InternalCASL.g:5561:3: ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) )
             {
-            // InternalCASL.g:5561:3: ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall ) )
-            // InternalCASL.g:5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall )
+            // InternalCASL.g:5561:3: ( (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall ) )
+            // InternalCASL.g:5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall )
             {
-            // InternalCASL.g:5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall )
+            // InternalCASL.g:5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall )
             int alt71=10;
             alt71 = dfa71.predict(input);
             switch (alt71) {
@@ -14181,15 +14181,15 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalCASL.g:5707:5: lv_fc_0_10= ruleTransmissionFeatureCall
+                    // InternalCASL.g:5707:5: lv_fc_0_10= ruleExternalInteractionFeatureCall
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getFeatureCallAccess().getFcTransmissionFeatureCallParserRuleCall_0_9());
+                      					newCompositeNode(grammarAccess.getFeatureCallAccess().getFcExternalInteractionFeatureCallParserRuleCall_0_9());
                       				
                     }
                     pushFollow(FOLLOW_2);
-                    lv_fc_0_10=ruleTransmissionFeatureCall();
+                    lv_fc_0_10=ruleExternalInteractionFeatureCall();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -14202,7 +14202,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       						current,
                       						"fc",
                       						lv_fc_0_10,
-                      						"uofa.lbirdsey.castle.CASL.TransmissionFeatureCall");
+                      						"uofa.lbirdsey.castle.CASL.ExternalInteractionFeatureCall");
                       					afterParserOrEnumRuleCall();
                       				
                     }
@@ -15315,28 +15315,28 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleGroupExternalInteractionFeatureCall"
 
 
-    // $ANTLR start "entryRuleTransmissionFeatureCall"
-    // InternalCASL.g:6134:1: entryRuleTransmissionFeatureCall returns [EObject current=null] : iv_ruleTransmissionFeatureCall= ruleTransmissionFeatureCall EOF ;
-    public final EObject entryRuleTransmissionFeatureCall() throws RecognitionException {
+    // $ANTLR start "entryRuleExternalInteractionFeatureCall"
+    // InternalCASL.g:6134:1: entryRuleExternalInteractionFeatureCall returns [EObject current=null] : iv_ruleExternalInteractionFeatureCall= ruleExternalInteractionFeatureCall EOF ;
+    public final EObject entryRuleExternalInteractionFeatureCall() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleTransmissionFeatureCall = null;
+        EObject iv_ruleExternalInteractionFeatureCall = null;
 
 
         try {
-            // InternalCASL.g:6134:64: (iv_ruleTransmissionFeatureCall= ruleTransmissionFeatureCall EOF )
-            // InternalCASL.g:6135:2: iv_ruleTransmissionFeatureCall= ruleTransmissionFeatureCall EOF
+            // InternalCASL.g:6134:71: (iv_ruleExternalInteractionFeatureCall= ruleExternalInteractionFeatureCall EOF )
+            // InternalCASL.g:6135:2: iv_ruleExternalInteractionFeatureCall= ruleExternalInteractionFeatureCall EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getTransmissionFeatureCallRule()); 
+               newCompositeNode(grammarAccess.getExternalInteractionFeatureCallRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleTransmissionFeatureCall=ruleTransmissionFeatureCall();
+            iv_ruleExternalInteractionFeatureCall=ruleExternalInteractionFeatureCall();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleTransmissionFeatureCall; 
+               current =iv_ruleExternalInteractionFeatureCall; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -15352,12 +15352,12 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleTransmissionFeatureCall"
+    // $ANTLR end "entryRuleExternalInteractionFeatureCall"
 
 
-    // $ANTLR start "ruleTransmissionFeatureCall"
-    // InternalCASL.g:6141:1: ruleTransmissionFeatureCall returns [EObject current=null] : ( () otherlv_1= 'EXT_INTERACTION.' ( (otherlv_2= RULE_ID ) ) otherlv_3= '(' ( (lv_inputs_4_0= ruleExpression ) )? (otherlv_5= ',' ( (lv_inputs_6_0= ruleExpression ) ) )* otherlv_7= ')' ) ;
-    public final EObject ruleTransmissionFeatureCall() throws RecognitionException {
+    // $ANTLR start "ruleExternalInteractionFeatureCall"
+    // InternalCASL.g:6141:1: ruleExternalInteractionFeatureCall returns [EObject current=null] : ( () otherlv_1= 'EXT_INTERACTION.' ( (otherlv_2= RULE_ID ) ) otherlv_3= '(' ( (lv_inputs_4_0= ruleExpression ) )? (otherlv_5= ',' ( (lv_inputs_6_0= ruleExpression ) ) )* otherlv_7= ')' ) ;
+    public final EObject ruleExternalInteractionFeatureCall() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -15386,7 +15386,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               				current = forceCreateModelElement(
-              					grammarAccess.getTransmissionFeatureCallAccess().getTransmissionFeatureCallAction_0(),
+              					grammarAccess.getExternalInteractionFeatureCallAccess().getExternalInteractionFeatureCallAction_0(),
               					current);
               			
             }
@@ -15396,7 +15396,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             otherlv_1=(Token)match(input,67,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_1, grammarAccess.getTransmissionFeatureCallAccess().getEXT_INTERACTIONKeyword_1());
+              			newLeafNode(otherlv_1, grammarAccess.getExternalInteractionFeatureCallAccess().getEXT_INTERACTIONKeyword_1());
               		
             }
             // InternalCASL.g:6160:3: ( (otherlv_2= RULE_ID ) )
@@ -15408,14 +15408,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               					if (current==null) {
-              						current = createModelElement(grammarAccess.getTransmissionFeatureCallRule());
+              						current = createModelElement(grammarAccess.getExternalInteractionFeatureCallRule());
               					}
               				
             }
             otherlv_2=(Token)match(input,RULE_ID,FOLLOW_63); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_2, grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0());
+              					newLeafNode(otherlv_2, grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0());
               				
             }
 
@@ -15427,7 +15427,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             otherlv_3=(Token)match(input,39,FOLLOW_81); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_3, grammarAccess.getTransmissionFeatureCallAccess().getLeftParenthesisKeyword_3());
+              			newLeafNode(otherlv_3, grammarAccess.getExternalInteractionFeatureCallAccess().getLeftParenthesisKeyword_3());
               		
             }
             // InternalCASL.g:6177:3: ( (lv_inputs_4_0= ruleExpression ) )?
@@ -15446,7 +15446,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      					newCompositeNode(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0());
+                      					newCompositeNode(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0());
                       				
                     }
                     pushFollow(FOLLOW_82);
@@ -15457,7 +15457,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getTransmissionFeatureCallRule());
+                      						current = createModelElementForParent(grammarAccess.getExternalInteractionFeatureCallRule());
                       					}
                       					add(
                       						current,
@@ -15494,7 +15494,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    otherlv_5=(Token)match(input,19,FOLLOW_54); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      				newLeafNode(otherlv_5, grammarAccess.getTransmissionFeatureCallAccess().getCommaKeyword_5_0());
+            	      				newLeafNode(otherlv_5, grammarAccess.getExternalInteractionFeatureCallAccess().getCommaKeyword_5_0());
             	      			
             	    }
             	    // InternalCASL.g:6201:4: ( (lv_inputs_6_0= ruleExpression ) )
@@ -15505,7 +15505,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						newCompositeNode(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0());
+            	      						newCompositeNode(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0());
             	      					
             	    }
             	    pushFollow(FOLLOW_82);
@@ -15516,7 +15516,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getTransmissionFeatureCallRule());
+            	      							current = createModelElementForParent(grammarAccess.getExternalInteractionFeatureCallRule());
             	      						}
             	      						add(
             	      							current,
@@ -15544,7 +15544,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             otherlv_7=(Token)match(input,40,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_7, grammarAccess.getTransmissionFeatureCallAccess().getRightParenthesisKeyword_6());
+              			newLeafNode(otherlv_7, grammarAccess.getExternalInteractionFeatureCallAccess().getRightParenthesisKeyword_6());
               		
             }
 
@@ -15568,7 +15568,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleTransmissionFeatureCall"
+    // $ANTLR end "ruleExternalInteractionFeatureCall"
 
 
     // $ANTLR start "entryRuleGroupInternalInteractionsFeatureCall"
@@ -33433,7 +33433,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_16;
         }
         public String getDescription() {
-            return "5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleTransmissionFeatureCall )";
+            return "5562:4: (lv_fc_0_1= ruleAdaptiveProcessFeatureCall | lv_fc_0_2= ruleAgentInteractionFeatureCall | lv_fc_0_3= ruleEnvironmentInteractionFeatureCall | lv_fc_0_4= ruleInteractionFeatureCall | lv_fc_0_5= ruleFunctionFeatureCall | lv_fc_0_6= ruleBehaviorFeatureCall | lv_fc_0_7= ruleGroupExternalInteractionFeatureCall | lv_fc_0_8= ruleGroupSelfInternalInteractionsFeatureCall | lv_fc_0_9= ruleGroupInternalInteractionsFeatureCall | lv_fc_0_10= ruleExternalInteractionFeatureCall )";
         }
     }
 

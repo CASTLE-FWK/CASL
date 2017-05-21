@@ -4230,23 +4230,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleGroupExternalInteractionFeatureCall"
 
 
-    // $ANTLR start "entryRuleTransmissionFeatureCall"
-    // InternalCASL.g:1229:1: entryRuleTransmissionFeatureCall : ruleTransmissionFeatureCall EOF ;
-    public final void entryRuleTransmissionFeatureCall() throws RecognitionException {
+    // $ANTLR start "entryRuleExternalInteractionFeatureCall"
+    // InternalCASL.g:1229:1: entryRuleExternalInteractionFeatureCall : ruleExternalInteractionFeatureCall EOF ;
+    public final void entryRuleExternalInteractionFeatureCall() throws RecognitionException {
         try {
-            // InternalCASL.g:1230:1: ( ruleTransmissionFeatureCall EOF )
-            // InternalCASL.g:1231:1: ruleTransmissionFeatureCall EOF
+            // InternalCASL.g:1230:1: ( ruleExternalInteractionFeatureCall EOF )
+            // InternalCASL.g:1231:1: ruleExternalInteractionFeatureCall EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallRule()); 
+               before(grammarAccess.getExternalInteractionFeatureCallRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleTransmissionFeatureCall();
+            ruleExternalInteractionFeatureCall();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallRule()); 
+               after(grammarAccess.getExternalInteractionFeatureCallRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -4261,30 +4261,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleTransmissionFeatureCall"
+    // $ANTLR end "entryRuleExternalInteractionFeatureCall"
 
 
-    // $ANTLR start "ruleTransmissionFeatureCall"
-    // InternalCASL.g:1238:1: ruleTransmissionFeatureCall : ( ( rule__TransmissionFeatureCall__Group__0 ) ) ;
-    public final void ruleTransmissionFeatureCall() throws RecognitionException {
+    // $ANTLR start "ruleExternalInteractionFeatureCall"
+    // InternalCASL.g:1238:1: ruleExternalInteractionFeatureCall : ( ( rule__ExternalInteractionFeatureCall__Group__0 ) ) ;
+    public final void ruleExternalInteractionFeatureCall() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:1242:2: ( ( ( rule__TransmissionFeatureCall__Group__0 ) ) )
-            // InternalCASL.g:1243:2: ( ( rule__TransmissionFeatureCall__Group__0 ) )
+            // InternalCASL.g:1242:2: ( ( ( rule__ExternalInteractionFeatureCall__Group__0 ) ) )
+            // InternalCASL.g:1243:2: ( ( rule__ExternalInteractionFeatureCall__Group__0 ) )
             {
-            // InternalCASL.g:1243:2: ( ( rule__TransmissionFeatureCall__Group__0 ) )
-            // InternalCASL.g:1244:3: ( rule__TransmissionFeatureCall__Group__0 )
+            // InternalCASL.g:1243:2: ( ( rule__ExternalInteractionFeatureCall__Group__0 ) )
+            // InternalCASL.g:1244:3: ( rule__ExternalInteractionFeatureCall__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getGroup()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup()); 
             }
-            // InternalCASL.g:1245:3: ( rule__TransmissionFeatureCall__Group__0 )
-            // InternalCASL.g:1245:4: rule__TransmissionFeatureCall__Group__0
+            // InternalCASL.g:1245:3: ( rule__ExternalInteractionFeatureCall__Group__0 )
+            // InternalCASL.g:1245:4: rule__ExternalInteractionFeatureCall__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__0();
+            rule__ExternalInteractionFeatureCall__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -4292,7 +4292,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getGroup()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup()); 
             }
 
             }
@@ -4312,7 +4312,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleTransmissionFeatureCall"
+    // $ANTLR end "ruleExternalInteractionFeatureCall"
 
 
     // $ANTLR start "entryRuleGroupInternalInteractionsFeatureCall"
@@ -12657,13 +12657,13 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FeatureCall__FcAlternatives_0"
-    // InternalCASL.g:3550:1: rule__FeatureCall__FcAlternatives_0 : ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleTransmissionFeatureCall ) );
+    // InternalCASL.g:3550:1: rule__FeatureCall__FcAlternatives_0 : ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleExternalInteractionFeatureCall ) );
     public final void rule__FeatureCall__FcAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:3554:1: ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleTransmissionFeatureCall ) )
+            // InternalCASL.g:3554:1: ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleExternalInteractionFeatureCall ) )
             int alt16=10;
             alt16 = dfa16.predict(input);
             switch (alt16) {
@@ -12875,21 +12875,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // InternalCASL.g:3609:2: ( ruleTransmissionFeatureCall )
+                    // InternalCASL.g:3609:2: ( ruleExternalInteractionFeatureCall )
                     {
-                    // InternalCASL.g:3609:2: ( ruleTransmissionFeatureCall )
-                    // InternalCASL.g:3610:3: ruleTransmissionFeatureCall
+                    // InternalCASL.g:3609:2: ( ruleExternalInteractionFeatureCall )
+                    // InternalCASL.g:3610:3: ruleExternalInteractionFeatureCall
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getFeatureCallAccess().getFcTransmissionFeatureCallParserRuleCall_0_9()); 
+                       before(grammarAccess.getFeatureCallAccess().getFcExternalInteractionFeatureCallParserRuleCall_0_9()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleTransmissionFeatureCall();
+                    ruleExternalInteractionFeatureCall();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getFeatureCallAccess().getFcTransmissionFeatureCallParserRuleCall_0_9()); 
+                       after(grammarAccess.getFeatureCallAccess().getFcExternalInteractionFeatureCallParserRuleCall_0_9()); 
                     }
 
                     }
@@ -59063,23 +59063,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GroupExternalInteractionFeatureCall__Group_6__1__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__0"
-    // InternalCASL.g:17657:1: rule__TransmissionFeatureCall__Group__0 : rule__TransmissionFeatureCall__Group__0__Impl rule__TransmissionFeatureCall__Group__1 ;
-    public final void rule__TransmissionFeatureCall__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__0"
+    // InternalCASL.g:17657:1: rule__ExternalInteractionFeatureCall__Group__0 : rule__ExternalInteractionFeatureCall__Group__0__Impl rule__ExternalInteractionFeatureCall__Group__1 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17661:1: ( rule__TransmissionFeatureCall__Group__0__Impl rule__TransmissionFeatureCall__Group__1 )
-            // InternalCASL.g:17662:2: rule__TransmissionFeatureCall__Group__0__Impl rule__TransmissionFeatureCall__Group__1
+            // InternalCASL.g:17661:1: ( rule__ExternalInteractionFeatureCall__Group__0__Impl rule__ExternalInteractionFeatureCall__Group__1 )
+            // InternalCASL.g:17662:2: rule__ExternalInteractionFeatureCall__Group__0__Impl rule__ExternalInteractionFeatureCall__Group__1
             {
             pushFollow(FOLLOW_96);
-            rule__TransmissionFeatureCall__Group__0__Impl();
+            rule__ExternalInteractionFeatureCall__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__1();
+            rule__ExternalInteractionFeatureCall__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59098,12 +59098,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__0"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__0"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__0__Impl"
-    // InternalCASL.g:17669:1: rule__TransmissionFeatureCall__Group__0__Impl : ( () ) ;
-    public final void rule__TransmissionFeatureCall__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__0__Impl"
+    // InternalCASL.g:17669:1: rule__ExternalInteractionFeatureCall__Group__0__Impl : ( () ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59115,7 +59115,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:17675:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getTransmissionFeatureCallAction_0()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getExternalInteractionFeatureCallAction_0()); 
             }
             // InternalCASL.g:17676:2: ()
             // InternalCASL.g:17676:3: 
@@ -59123,7 +59123,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getTransmissionFeatureCallAction_0()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getExternalInteractionFeatureCallAction_0()); 
             }
 
             }
@@ -59139,26 +59139,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__0__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__0__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__1"
-    // InternalCASL.g:17684:1: rule__TransmissionFeatureCall__Group__1 : rule__TransmissionFeatureCall__Group__1__Impl rule__TransmissionFeatureCall__Group__2 ;
-    public final void rule__TransmissionFeatureCall__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__1"
+    // InternalCASL.g:17684:1: rule__ExternalInteractionFeatureCall__Group__1 : rule__ExternalInteractionFeatureCall__Group__1__Impl rule__ExternalInteractionFeatureCall__Group__2 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17688:1: ( rule__TransmissionFeatureCall__Group__1__Impl rule__TransmissionFeatureCall__Group__2 )
-            // InternalCASL.g:17689:2: rule__TransmissionFeatureCall__Group__1__Impl rule__TransmissionFeatureCall__Group__2
+            // InternalCASL.g:17688:1: ( rule__ExternalInteractionFeatureCall__Group__1__Impl rule__ExternalInteractionFeatureCall__Group__2 )
+            // InternalCASL.g:17689:2: rule__ExternalInteractionFeatureCall__Group__1__Impl rule__ExternalInteractionFeatureCall__Group__2
             {
             pushFollow(FOLLOW_20);
-            rule__TransmissionFeatureCall__Group__1__Impl();
+            rule__ExternalInteractionFeatureCall__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__2();
+            rule__ExternalInteractionFeatureCall__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59177,12 +59177,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__1"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__1"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__1__Impl"
-    // InternalCASL.g:17696:1: rule__TransmissionFeatureCall__Group__1__Impl : ( 'EXT_INTERACTION.' ) ;
-    public final void rule__TransmissionFeatureCall__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__1__Impl"
+    // InternalCASL.g:17696:1: rule__ExternalInteractionFeatureCall__Group__1__Impl : ( 'EXT_INTERACTION.' ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59194,11 +59194,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:17702:2: 'EXT_INTERACTION.'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getEXT_INTERACTIONKeyword_1()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getEXT_INTERACTIONKeyword_1()); 
             }
             match(input,125,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getEXT_INTERACTIONKeyword_1()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getEXT_INTERACTIONKeyword_1()); 
             }
 
             }
@@ -59218,26 +59218,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__1__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__1__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__2"
-    // InternalCASL.g:17711:1: rule__TransmissionFeatureCall__Group__2 : rule__TransmissionFeatureCall__Group__2__Impl rule__TransmissionFeatureCall__Group__3 ;
-    public final void rule__TransmissionFeatureCall__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__2"
+    // InternalCASL.g:17711:1: rule__ExternalInteractionFeatureCall__Group__2 : rule__ExternalInteractionFeatureCall__Group__2__Impl rule__ExternalInteractionFeatureCall__Group__3 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17715:1: ( rule__TransmissionFeatureCall__Group__2__Impl rule__TransmissionFeatureCall__Group__3 )
-            // InternalCASL.g:17716:2: rule__TransmissionFeatureCall__Group__2__Impl rule__TransmissionFeatureCall__Group__3
+            // InternalCASL.g:17715:1: ( rule__ExternalInteractionFeatureCall__Group__2__Impl rule__ExternalInteractionFeatureCall__Group__3 )
+            // InternalCASL.g:17716:2: rule__ExternalInteractionFeatureCall__Group__2__Impl rule__ExternalInteractionFeatureCall__Group__3
             {
             pushFollow(FOLLOW_67);
-            rule__TransmissionFeatureCall__Group__2__Impl();
+            rule__ExternalInteractionFeatureCall__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__3();
+            rule__ExternalInteractionFeatureCall__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59256,30 +59256,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__2"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__2"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__2__Impl"
-    // InternalCASL.g:17723:1: rule__TransmissionFeatureCall__Group__2__Impl : ( ( rule__TransmissionFeatureCall__ProcessAssignment_2 ) ) ;
-    public final void rule__TransmissionFeatureCall__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__2__Impl"
+    // InternalCASL.g:17723:1: rule__ExternalInteractionFeatureCall__Group__2__Impl : ( ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 ) ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17727:1: ( ( ( rule__TransmissionFeatureCall__ProcessAssignment_2 ) ) )
-            // InternalCASL.g:17728:1: ( ( rule__TransmissionFeatureCall__ProcessAssignment_2 ) )
+            // InternalCASL.g:17727:1: ( ( ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 ) ) )
+            // InternalCASL.g:17728:1: ( ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 ) )
             {
-            // InternalCASL.g:17728:1: ( ( rule__TransmissionFeatureCall__ProcessAssignment_2 ) )
-            // InternalCASL.g:17729:2: ( rule__TransmissionFeatureCall__ProcessAssignment_2 )
+            // InternalCASL.g:17728:1: ( ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 ) )
+            // InternalCASL.g:17729:2: ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getProcessAssignment_2()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessAssignment_2()); 
             }
-            // InternalCASL.g:17730:2: ( rule__TransmissionFeatureCall__ProcessAssignment_2 )
-            // InternalCASL.g:17730:3: rule__TransmissionFeatureCall__ProcessAssignment_2
+            // InternalCASL.g:17730:2: ( rule__ExternalInteractionFeatureCall__ProcessAssignment_2 )
+            // InternalCASL.g:17730:3: rule__ExternalInteractionFeatureCall__ProcessAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__ProcessAssignment_2();
+            rule__ExternalInteractionFeatureCall__ProcessAssignment_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59287,7 +59287,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getProcessAssignment_2()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessAssignment_2()); 
             }
 
             }
@@ -59307,26 +59307,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__2__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__2__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__3"
-    // InternalCASL.g:17738:1: rule__TransmissionFeatureCall__Group__3 : rule__TransmissionFeatureCall__Group__3__Impl rule__TransmissionFeatureCall__Group__4 ;
-    public final void rule__TransmissionFeatureCall__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__3"
+    // InternalCASL.g:17738:1: rule__ExternalInteractionFeatureCall__Group__3 : rule__ExternalInteractionFeatureCall__Group__3__Impl rule__ExternalInteractionFeatureCall__Group__4 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17742:1: ( rule__TransmissionFeatureCall__Group__3__Impl rule__TransmissionFeatureCall__Group__4 )
-            // InternalCASL.g:17743:2: rule__TransmissionFeatureCall__Group__3__Impl rule__TransmissionFeatureCall__Group__4
+            // InternalCASL.g:17742:1: ( rule__ExternalInteractionFeatureCall__Group__3__Impl rule__ExternalInteractionFeatureCall__Group__4 )
+            // InternalCASL.g:17743:2: rule__ExternalInteractionFeatureCall__Group__3__Impl rule__ExternalInteractionFeatureCall__Group__4
             {
             pushFollow(FOLLOW_92);
-            rule__TransmissionFeatureCall__Group__3__Impl();
+            rule__ExternalInteractionFeatureCall__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__4();
+            rule__ExternalInteractionFeatureCall__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59345,12 +59345,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__3"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__3"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__3__Impl"
-    // InternalCASL.g:17750:1: rule__TransmissionFeatureCall__Group__3__Impl : ( '(' ) ;
-    public final void rule__TransmissionFeatureCall__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__3__Impl"
+    // InternalCASL.g:17750:1: rule__ExternalInteractionFeatureCall__Group__3__Impl : ( '(' ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59362,11 +59362,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:17756:2: '('
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getLeftParenthesisKeyword_3()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getLeftParenthesisKeyword_3()); 
             }
             match(input,101,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getLeftParenthesisKeyword_3()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getLeftParenthesisKeyword_3()); 
             }
 
             }
@@ -59386,26 +59386,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__3__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__3__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__4"
-    // InternalCASL.g:17765:1: rule__TransmissionFeatureCall__Group__4 : rule__TransmissionFeatureCall__Group__4__Impl rule__TransmissionFeatureCall__Group__5 ;
-    public final void rule__TransmissionFeatureCall__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__4"
+    // InternalCASL.g:17765:1: rule__ExternalInteractionFeatureCall__Group__4 : rule__ExternalInteractionFeatureCall__Group__4__Impl rule__ExternalInteractionFeatureCall__Group__5 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17769:1: ( rule__TransmissionFeatureCall__Group__4__Impl rule__TransmissionFeatureCall__Group__5 )
-            // InternalCASL.g:17770:2: rule__TransmissionFeatureCall__Group__4__Impl rule__TransmissionFeatureCall__Group__5
+            // InternalCASL.g:17769:1: ( rule__ExternalInteractionFeatureCall__Group__4__Impl rule__ExternalInteractionFeatureCall__Group__5 )
+            // InternalCASL.g:17770:2: rule__ExternalInteractionFeatureCall__Group__4__Impl rule__ExternalInteractionFeatureCall__Group__5
             {
             pushFollow(FOLLOW_92);
-            rule__TransmissionFeatureCall__Group__4__Impl();
+            rule__ExternalInteractionFeatureCall__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__5();
+            rule__ExternalInteractionFeatureCall__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59424,26 +59424,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__4"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__4"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__4__Impl"
-    // InternalCASL.g:17777:1: rule__TransmissionFeatureCall__Group__4__Impl : ( ( rule__TransmissionFeatureCall__InputsAssignment_4 )? ) ;
-    public final void rule__TransmissionFeatureCall__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__4__Impl"
+    // InternalCASL.g:17777:1: rule__ExternalInteractionFeatureCall__Group__4__Impl : ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )? ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17781:1: ( ( ( rule__TransmissionFeatureCall__InputsAssignment_4 )? ) )
-            // InternalCASL.g:17782:1: ( ( rule__TransmissionFeatureCall__InputsAssignment_4 )? )
+            // InternalCASL.g:17781:1: ( ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )? ) )
+            // InternalCASL.g:17782:1: ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )? )
             {
-            // InternalCASL.g:17782:1: ( ( rule__TransmissionFeatureCall__InputsAssignment_4 )? )
-            // InternalCASL.g:17783:2: ( rule__TransmissionFeatureCall__InputsAssignment_4 )?
+            // InternalCASL.g:17782:1: ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )? )
+            // InternalCASL.g:17783:2: ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_4()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_4()); 
             }
-            // InternalCASL.g:17784:2: ( rule__TransmissionFeatureCall__InputsAssignment_4 )?
+            // InternalCASL.g:17784:2: ( rule__ExternalInteractionFeatureCall__InputsAssignment_4 )?
             int alt130=2;
             int LA130_0 = input.LA(1);
 
@@ -59452,10 +59452,10 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt130) {
                 case 1 :
-                    // InternalCASL.g:17784:3: rule__TransmissionFeatureCall__InputsAssignment_4
+                    // InternalCASL.g:17784:3: rule__ExternalInteractionFeatureCall__InputsAssignment_4
                     {
                     pushFollow(FOLLOW_2);
-                    rule__TransmissionFeatureCall__InputsAssignment_4();
+                    rule__ExternalInteractionFeatureCall__InputsAssignment_4();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -59466,7 +59466,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_4()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_4()); 
             }
 
             }
@@ -59486,26 +59486,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__4__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__4__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__5"
-    // InternalCASL.g:17792:1: rule__TransmissionFeatureCall__Group__5 : rule__TransmissionFeatureCall__Group__5__Impl rule__TransmissionFeatureCall__Group__6 ;
-    public final void rule__TransmissionFeatureCall__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__5"
+    // InternalCASL.g:17792:1: rule__ExternalInteractionFeatureCall__Group__5 : rule__ExternalInteractionFeatureCall__Group__5__Impl rule__ExternalInteractionFeatureCall__Group__6 ;
+    public final void rule__ExternalInteractionFeatureCall__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17796:1: ( rule__TransmissionFeatureCall__Group__5__Impl rule__TransmissionFeatureCall__Group__6 )
-            // InternalCASL.g:17797:2: rule__TransmissionFeatureCall__Group__5__Impl rule__TransmissionFeatureCall__Group__6
+            // InternalCASL.g:17796:1: ( rule__ExternalInteractionFeatureCall__Group__5__Impl rule__ExternalInteractionFeatureCall__Group__6 )
+            // InternalCASL.g:17797:2: rule__ExternalInteractionFeatureCall__Group__5__Impl rule__ExternalInteractionFeatureCall__Group__6
             {
             pushFollow(FOLLOW_92);
-            rule__TransmissionFeatureCall__Group__5__Impl();
+            rule__ExternalInteractionFeatureCall__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__6();
+            rule__ExternalInteractionFeatureCall__Group__6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59524,26 +59524,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__5"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__5"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__5__Impl"
-    // InternalCASL.g:17804:1: rule__TransmissionFeatureCall__Group__5__Impl : ( ( rule__TransmissionFeatureCall__Group_5__0 )* ) ;
-    public final void rule__TransmissionFeatureCall__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__5__Impl"
+    // InternalCASL.g:17804:1: rule__ExternalInteractionFeatureCall__Group__5__Impl : ( ( rule__ExternalInteractionFeatureCall__Group_5__0 )* ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17808:1: ( ( ( rule__TransmissionFeatureCall__Group_5__0 )* ) )
-            // InternalCASL.g:17809:1: ( ( rule__TransmissionFeatureCall__Group_5__0 )* )
+            // InternalCASL.g:17808:1: ( ( ( rule__ExternalInteractionFeatureCall__Group_5__0 )* ) )
+            // InternalCASL.g:17809:1: ( ( rule__ExternalInteractionFeatureCall__Group_5__0 )* )
             {
-            // InternalCASL.g:17809:1: ( ( rule__TransmissionFeatureCall__Group_5__0 )* )
-            // InternalCASL.g:17810:2: ( rule__TransmissionFeatureCall__Group_5__0 )*
+            // InternalCASL.g:17809:1: ( ( rule__ExternalInteractionFeatureCall__Group_5__0 )* )
+            // InternalCASL.g:17810:2: ( rule__ExternalInteractionFeatureCall__Group_5__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getGroup_5()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup_5()); 
             }
-            // InternalCASL.g:17811:2: ( rule__TransmissionFeatureCall__Group_5__0 )*
+            // InternalCASL.g:17811:2: ( rule__ExternalInteractionFeatureCall__Group_5__0 )*
             loop131:
             do {
                 int alt131=2;
@@ -59556,10 +59556,10 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
                 switch (alt131) {
             	case 1 :
-            	    // InternalCASL.g:17811:3: rule__TransmissionFeatureCall__Group_5__0
+            	    // InternalCASL.g:17811:3: rule__ExternalInteractionFeatureCall__Group_5__0
             	    {
             	    pushFollow(FOLLOW_22);
-            	    rule__TransmissionFeatureCall__Group_5__0();
+            	    rule__ExternalInteractionFeatureCall__Group_5__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -59573,7 +59573,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getGroup_5()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getGroup_5()); 
             }
 
             }
@@ -59593,21 +59593,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__5__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__5__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__6"
-    // InternalCASL.g:17819:1: rule__TransmissionFeatureCall__Group__6 : rule__TransmissionFeatureCall__Group__6__Impl ;
-    public final void rule__TransmissionFeatureCall__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__6"
+    // InternalCASL.g:17819:1: rule__ExternalInteractionFeatureCall__Group__6 : rule__ExternalInteractionFeatureCall__Group__6__Impl ;
+    public final void rule__ExternalInteractionFeatureCall__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17823:1: ( rule__TransmissionFeatureCall__Group__6__Impl )
-            // InternalCASL.g:17824:2: rule__TransmissionFeatureCall__Group__6__Impl
+            // InternalCASL.g:17823:1: ( rule__ExternalInteractionFeatureCall__Group__6__Impl )
+            // InternalCASL.g:17824:2: rule__ExternalInteractionFeatureCall__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group__6__Impl();
+            rule__ExternalInteractionFeatureCall__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59626,12 +59626,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__6"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__6"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group__6__Impl"
-    // InternalCASL.g:17830:1: rule__TransmissionFeatureCall__Group__6__Impl : ( ')' ) ;
-    public final void rule__TransmissionFeatureCall__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group__6__Impl"
+    // InternalCASL.g:17830:1: rule__ExternalInteractionFeatureCall__Group__6__Impl : ( ')' ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59643,11 +59643,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:17836:2: ')'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getRightParenthesisKeyword_6()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getRightParenthesisKeyword_6()); 
             }
             match(input,102,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getRightParenthesisKeyword_6()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getRightParenthesisKeyword_6()); 
             }
 
             }
@@ -59667,26 +59667,26 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group__6__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group__6__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group_5__0"
-    // InternalCASL.g:17846:1: rule__TransmissionFeatureCall__Group_5__0 : rule__TransmissionFeatureCall__Group_5__0__Impl rule__TransmissionFeatureCall__Group_5__1 ;
-    public final void rule__TransmissionFeatureCall__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group_5__0"
+    // InternalCASL.g:17846:1: rule__ExternalInteractionFeatureCall__Group_5__0 : rule__ExternalInteractionFeatureCall__Group_5__0__Impl rule__ExternalInteractionFeatureCall__Group_5__1 ;
+    public final void rule__ExternalInteractionFeatureCall__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17850:1: ( rule__TransmissionFeatureCall__Group_5__0__Impl rule__TransmissionFeatureCall__Group_5__1 )
-            // InternalCASL.g:17851:2: rule__TransmissionFeatureCall__Group_5__0__Impl rule__TransmissionFeatureCall__Group_5__1
+            // InternalCASL.g:17850:1: ( rule__ExternalInteractionFeatureCall__Group_5__0__Impl rule__ExternalInteractionFeatureCall__Group_5__1 )
+            // InternalCASL.g:17851:2: rule__ExternalInteractionFeatureCall__Group_5__0__Impl rule__ExternalInteractionFeatureCall__Group_5__1
             {
             pushFollow(FOLLOW_61);
-            rule__TransmissionFeatureCall__Group_5__0__Impl();
+            rule__ExternalInteractionFeatureCall__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group_5__1();
+            rule__ExternalInteractionFeatureCall__Group_5__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59705,12 +59705,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group_5__0"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group_5__0"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group_5__0__Impl"
-    // InternalCASL.g:17858:1: rule__TransmissionFeatureCall__Group_5__0__Impl : ( ',' ) ;
-    public final void rule__TransmissionFeatureCall__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group_5__0__Impl"
+    // InternalCASL.g:17858:1: rule__ExternalInteractionFeatureCall__Group_5__0__Impl : ( ',' ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -59722,11 +59722,11 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:17864:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getCommaKeyword_5_0()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getCommaKeyword_5_0()); 
             }
             match(input,81,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getCommaKeyword_5_0()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getCommaKeyword_5_0()); 
             }
 
             }
@@ -59746,21 +59746,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group_5__0__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group_5__0__Impl"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group_5__1"
-    // InternalCASL.g:17873:1: rule__TransmissionFeatureCall__Group_5__1 : rule__TransmissionFeatureCall__Group_5__1__Impl ;
-    public final void rule__TransmissionFeatureCall__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group_5__1"
+    // InternalCASL.g:17873:1: rule__ExternalInteractionFeatureCall__Group_5__1 : rule__ExternalInteractionFeatureCall__Group_5__1__Impl ;
+    public final void rule__ExternalInteractionFeatureCall__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17877:1: ( rule__TransmissionFeatureCall__Group_5__1__Impl )
-            // InternalCASL.g:17878:2: rule__TransmissionFeatureCall__Group_5__1__Impl
+            // InternalCASL.g:17877:1: ( rule__ExternalInteractionFeatureCall__Group_5__1__Impl )
+            // InternalCASL.g:17878:2: rule__ExternalInteractionFeatureCall__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__Group_5__1__Impl();
+            rule__ExternalInteractionFeatureCall__Group_5__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59779,30 +59779,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group_5__1"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group_5__1"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__Group_5__1__Impl"
-    // InternalCASL.g:17884:1: rule__TransmissionFeatureCall__Group_5__1__Impl : ( ( rule__TransmissionFeatureCall__InputsAssignment_5_1 ) ) ;
-    public final void rule__TransmissionFeatureCall__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__Group_5__1__Impl"
+    // InternalCASL.g:17884:1: rule__ExternalInteractionFeatureCall__Group_5__1__Impl : ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 ) ) ;
+    public final void rule__ExternalInteractionFeatureCall__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:17888:1: ( ( ( rule__TransmissionFeatureCall__InputsAssignment_5_1 ) ) )
-            // InternalCASL.g:17889:1: ( ( rule__TransmissionFeatureCall__InputsAssignment_5_1 ) )
+            // InternalCASL.g:17888:1: ( ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 ) ) )
+            // InternalCASL.g:17889:1: ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 ) )
             {
-            // InternalCASL.g:17889:1: ( ( rule__TransmissionFeatureCall__InputsAssignment_5_1 ) )
-            // InternalCASL.g:17890:2: ( rule__TransmissionFeatureCall__InputsAssignment_5_1 )
+            // InternalCASL.g:17889:1: ( ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 ) )
+            // InternalCASL.g:17890:2: ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_5_1()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_5_1()); 
             }
-            // InternalCASL.g:17891:2: ( rule__TransmissionFeatureCall__InputsAssignment_5_1 )
-            // InternalCASL.g:17891:3: rule__TransmissionFeatureCall__InputsAssignment_5_1
+            // InternalCASL.g:17891:2: ( rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 )
+            // InternalCASL.g:17891:3: rule__ExternalInteractionFeatureCall__InputsAssignment_5_1
             {
             pushFollow(FOLLOW_2);
-            rule__TransmissionFeatureCall__InputsAssignment_5_1();
+            rule__ExternalInteractionFeatureCall__InputsAssignment_5_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -59810,7 +59810,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getInputsAssignment_5_1()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsAssignment_5_1()); 
             }
 
             }
@@ -59830,7 +59830,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__Group_5__1__Impl"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__Group_5__1__Impl"
 
 
     // $ANTLR start "rule__GroupInternalInteractionsFeatureCall__Group__0"
@@ -101645,9 +101645,9 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GroupExternalInteractionFeatureCall__InputsAssignment_6_1"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__ProcessAssignment_2"
-    // InternalCASL.g:31467:1: rule__TransmissionFeatureCall__ProcessAssignment_2 : ( ( RULE_ID ) ) ;
-    public final void rule__TransmissionFeatureCall__ProcessAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__ProcessAssignment_2"
+    // InternalCASL.g:31467:1: rule__ExternalInteractionFeatureCall__ProcessAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ExternalInteractionFeatureCall__ProcessAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -101659,23 +101659,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:31473:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0()); 
             }
             // InternalCASL.g:31474:3: ( RULE_ID )
             // InternalCASL.g:31475:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionIDTerminalRuleCall_2_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getProcessGroupExternalInteractionCrossReference_2_0()); 
             }
 
             }
@@ -101695,12 +101695,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__ProcessAssignment_2"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__ProcessAssignment_2"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__InputsAssignment_4"
-    // InternalCASL.g:31486:1: rule__TransmissionFeatureCall__InputsAssignment_4 : ( ruleExpression ) ;
-    public final void rule__TransmissionFeatureCall__InputsAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__InputsAssignment_4"
+    // InternalCASL.g:31486:1: rule__ExternalInteractionFeatureCall__InputsAssignment_4 : ( ruleExpression ) ;
+    public final void rule__ExternalInteractionFeatureCall__InputsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -101712,7 +101712,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:31492:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleExpression();
@@ -101720,7 +101720,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_4_0()); 
             }
 
             }
@@ -101740,12 +101740,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__InputsAssignment_4"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__InputsAssignment_4"
 
 
-    // $ANTLR start "rule__TransmissionFeatureCall__InputsAssignment_5_1"
-    // InternalCASL.g:31501:1: rule__TransmissionFeatureCall__InputsAssignment_5_1 : ( ruleExpression ) ;
-    public final void rule__TransmissionFeatureCall__InputsAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__ExternalInteractionFeatureCall__InputsAssignment_5_1"
+    // InternalCASL.g:31501:1: rule__ExternalInteractionFeatureCall__InputsAssignment_5_1 : ( ruleExpression ) ;
+    public final void rule__ExternalInteractionFeatureCall__InputsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -101757,7 +101757,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:31507:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0()); 
+               before(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleExpression();
@@ -101765,7 +101765,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransmissionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0()); 
+               after(grammarAccess.getExternalInteractionFeatureCallAccess().getInputsExpressionParserRuleCall_5_1_0()); 
             }
 
             }
@@ -101785,7 +101785,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransmissionFeatureCall__InputsAssignment_5_1"
+    // $ANTLR end "rule__ExternalInteractionFeatureCall__InputsAssignment_5_1"
 
 
     // $ANTLR start "rule__GroupInternalInteractionsFeatureCall__GrpAssignment_1"
@@ -109415,7 +109415,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_16;
         }
         public String getDescription() {
-            return "3550:1: rule__FeatureCall__FcAlternatives_0 : ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleTransmissionFeatureCall ) );";
+            return "3550:1: rule__FeatureCall__FcAlternatives_0 : ( ( ruleAdaptiveProcessFeatureCall ) | ( ruleAgentInteractionFeatureCall ) | ( ruleEnvironmentInteractionFeatureCall ) | ( ruleInteractionFeatureCall ) | ( ruleFunctionFeatureCall ) | ( ruleBehaviorFeatureCall ) | ( ruleGroupExternalInteractionFeatureCall ) | ( ruleGroupSelfInternalInteractionsFeatureCall ) | ( ruleGroupInternalInteractionsFeatureCall ) | ( ruleExternalInteractionFeatureCall ) );";
         }
     }
 
