@@ -346,6 +346,9 @@ class EnvironmentGeneration {
 	//In this we create and initialise the groups into the environment
 	def createInitialiseFunction(Environment env){
 		var str = "public void initialise() {\n\tsuper.initialise();\n\t";
+		str += "\tsetupQueue = new ArrayList<Function<"+env.name+",Void>>();\n
+			\tactionQueue = new ArrayList<Function<"+env.name+",Void>>();\n
+			\tcleanupQueue = new ArrayList<Function<"+env.name+",Void>>();\n"
 		//Get layout type
 		val layoutType = getLayoutType(env);
 		
@@ -433,7 +436,7 @@ class EnvironmentGeneration {
 			//Shuffle
 			str += "\t\tCollections.shuffle(containedEntities);\n"
 			
-			str += "\t\tfor (Entity e : containedEntities){e.simulate()}\n"
+			str += "\t\tfor (Entity e : containedEntities){e.phase_Action();}\n"
 			
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"

@@ -99,8 +99,8 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	/*****System Functions*****/
 	«generateFunctions(theSystem)»
 	
-	/*****Termination Conditions*****/
-	«generateEndConditions(theSystem)»
+«««	/*****Termination Conditions*****/
+«««	«generateEndConditions(theSystem)»
 			
 «««			/*****CAS Checking*****/
 «««			«generateCASChecker(theSystem)»
@@ -166,6 +166,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		for (env : sys.environment_types.environment_types) {
 			str += "\t"+env.environment_type_name+"List = new ArrayList<"+env.environment_type_name+">();\n"
 		}
+		
+		str += "\tstoredEnvironments = new ArrayList<Environment>();\n"
+		str += "\tstoredGroups = new ArrayList<SemanticGroup>();\n"
+		
 		return str
 	}	
 	
@@ -362,8 +366,6 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += "\n\t//Get parameters from Repast\n\tParameters params = RunEnvironment.getInstance().getParameters();\n"
 
 		var paramGetters = "";
-		paramGetters += "\tint areaSizeX = (int)params.getValue(\"Size (X)\");\n"
-		paramGetters += "\tint areaSizeY = (int)params.getValue(\"Size (Y)\");\n"
 		for (field : sys.system_parameters.fields){
 			var ff = (field as Field)
 			var fdt = ff.declaration as DataTypeDeclaration
@@ -463,7 +465,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		//Set up the main System init stuff
 		str +="\n\tinitialize();\n\ttheContext = context;\n";
 		
-				
+		str += "\ttier1Entities = storedEnvironments.size()+storedGroups.size();";
 		str += "\n\treturn context;"
 		str += "\n}\n"
 		

@@ -369,6 +369,9 @@ class GroupGeneration {
 			var output = "";
 			output += "@Override\n";
 			output += "public void initialise() {\n\tsuper.initialise();\n\t";
+			output += "\tsetupQueue = new ArrayList<Function<"+g.name+",Void>>();\n
+			\tactionQueue = new ArrayList<Function<"+g.name+",Void>>();\n
+			\tcleanupQueue = new ArrayList<Function<"+g.name+",Void>>();\n"
 			for (item : triggersStringsToPrint){
 				output += "\t"+item+"\n";
 			}

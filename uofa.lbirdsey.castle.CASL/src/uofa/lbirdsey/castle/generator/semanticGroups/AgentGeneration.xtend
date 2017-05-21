@@ -311,6 +311,9 @@ class AgentGeneration {
 		var output = "";
 		output += "@Override\n";
 		output += "public void initialise() {\n\tsuper.initialise();\n\t";
+		output += "\tsetupQueue = new ArrayList<Function<"+a.name+",Void>>();\n
+			\tactionQueue = new ArrayList<Function<"+a.name+",Void>>();\n
+			\tcleanupQueue = new ArrayList<Function<"+a.name+",Void>>();\n"
 		for (item : triggersStringsToPrint){
 			output += "\t"+item+"\n";
 		}

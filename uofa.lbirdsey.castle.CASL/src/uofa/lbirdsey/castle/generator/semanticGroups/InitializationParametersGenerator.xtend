@@ -8,9 +8,10 @@ import org.eclipse.emf.ecore.EObject
 class InitializationParametersGenerator {
 	
 	//<parameter name="randomSeed" displayName="Default Random Seed" type="int" defaultValue="__NULL__" />
-	static val basicParam = "<parameter name=\"XXX\" displayName=\"XXX\" type=\"YYY\" defaultValue=ZZZ/>"
+	static val basicParam = "<parameter name=\"XXX\" displayName=\"XXX\" type=\"YYY\" defaultValue=\"ZZZ\"/>"	
 	static def String generateFile(List<EObject> params){
 		var output = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<parameters>\n";		
+		output += "<parameter name=\"randomSeed\" displayName=\"Default Random Seed\" type=\"int\" defaultValue=\"__NULL__\" />\n"
 		for (paramOld : params){
 			var param = paramOld as Field
 			if (param.declaration != null){
