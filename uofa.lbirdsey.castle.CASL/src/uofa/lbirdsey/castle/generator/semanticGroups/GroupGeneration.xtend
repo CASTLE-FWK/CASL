@@ -349,16 +349,16 @@ class GroupGeneration {
 	//How can we determine what agents a group wants in it initally?
 	def initGridLayout(){
 		var str = "";
-		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
-		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
+//		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
+//		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
 //		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
 //		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
 //		str += "\t\t\t//....\n" //TODO
 //		str += "\t\t}\n\t}\n"
 //		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
 //		str += "\t\tgrp.initialise();\n"
-		str += "\t}\n"
-		str += "}"
+//		str += "\t}\n"
+//		str += "}"
 		return str;
 	}
 	//In this we create and initialise the groups into the environment
@@ -466,7 +466,9 @@ class GroupGeneration {
 					//TODO: These should be handled elsewhere somehow
 					if (phase == Transmission_Phase.SETUP){						
 					} else if (phase == Transmission_Phase.ACTION){
+					
 					} else if (phase == Transmission_Phase.CLEANUP){
+						
 					}
 				}
 					
