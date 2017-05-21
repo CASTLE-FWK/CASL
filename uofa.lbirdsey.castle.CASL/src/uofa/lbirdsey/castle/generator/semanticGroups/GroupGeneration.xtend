@@ -379,8 +379,9 @@ class GroupGeneration {
 				output += "\t"+item+";\n"; 
 			}
 			
-			output += "\tstoredGroups.addAll(layoutParameters.getContainedGroups());\n"
-			output += "\tstoredAgents.addAll(layoutParameters.getContainedAgents());\n"
+//			output += "\tstoredGroups.addAll(layoutParameters.getContainedGroups());\n"
+			output += "\taddStoredAgents(layoutParameters.getContainedAgents());\n"
+//			output += "\tstoredAgents.addAll(layoutParameters.getContainedAgents());\n"
 			
 			//Get layout type
 			val layoutType = getLayoutType(g);
