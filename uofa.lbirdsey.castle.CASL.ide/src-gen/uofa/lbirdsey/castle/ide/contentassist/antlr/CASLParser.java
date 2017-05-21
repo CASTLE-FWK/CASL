@@ -579,8 +579,9 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForLoopAccess().getBodyAssignment_5_0_1(), "rule__ForLoop__BodyAssignment_5_0_1");
 					put(grammarAccess.getForLoopAccess().getBodyAssignment_5_0_2(), "rule__ForLoop__BodyAssignment_5_0_2");
 					put(grammarAccess.getForLoopAccess().getBodyAssignment_5_0_3(), "rule__ForLoop__BodyAssignment_5_0_3");
-					put(grammarAccess.getForEachLoopAccess().getItemAssignment_2_0(), "rule__ForEachLoop__ItemAssignment_2_0");
-					put(grammarAccess.getForEachLoopAccess().getListAssignment_2_2(), "rule__ForEachLoop__ListAssignment_2_2");
+					put(grammarAccess.getForEachLoopAccess().getTyAssignment_2_0(), "rule__ForEachLoop__TyAssignment_2_0");
+					put(grammarAccess.getForEachLoopAccess().getItemAssignment_2_1(), "rule__ForEachLoop__ItemAssignment_2_1");
+					put(grammarAccess.getForEachLoopAccess().getListAssignment_2_3(), "rule__ForEachLoop__ListAssignment_2_3");
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_0(), "rule__ForEachLoop__BodyAssignment_5_0_0");
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_1(), "rule__ForEachLoop__BodyAssignment_5_0_1");
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_2(), "rule__ForEachLoop__BodyAssignment_5_0_2");

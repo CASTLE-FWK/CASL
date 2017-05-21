@@ -17697,11 +17697,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                 {
                 int LA97_1 = input.LA(2);
 
-                if ( (LA97_1==111) ) {
-                    alt97=2;
-                }
-                else if ( (LA97_1==110) ) {
+                if ( (LA97_1==110) ) {
                     alt97=1;
+                }
+                else if ( (LA97_1==111) ) {
+                    alt97=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -20370,11 +20370,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     if ( (LA109_3==RULE_ID) ) {
                         int LA109_5 = input.LA(4);
 
-                        if ( (LA109_5==46) ) {
-                            alt109=2;
-                        }
-                        else if ( ((LA109_5>=39 && LA109_5<=40)||LA109_5==53||LA109_5==57||(LA109_5>=82 && LA109_5<=83)||(LA109_5>=94 && LA109_5<=102)) ) {
+                        if ( ((LA109_5>=39 && LA109_5<=40)||LA109_5==53||LA109_5==57||(LA109_5>=82 && LA109_5<=83)||(LA109_5>=94 && LA109_5<=102)) ) {
                             alt109=1;
+                        }
+                        else if ( (LA109_5==46) ) {
+                            alt109=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return current;}
@@ -20775,22 +20775,22 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForEachLoop"
-    // InternalCASL.g:8064:1: ruleForEachLoop returns [EObject current=null] : (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) ) otherlv_5= ')' otherlv_6= 'do' ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+ otherlv_12= 'endfor' ) ;
+    // InternalCASL.g:8064:1: ruleForEachLoop returns [EObject current=null] : (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) ) otherlv_6= ')' otherlv_7= 'do' ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+ otherlv_13= 'endfor' ) ;
     public final EObject ruleForEachLoop() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
+        Token otherlv_4=null;
         Token otherlv_6=null;
-        Token otherlv_11=null;
+        Token otherlv_7=null;
         Token otherlv_12=null;
-        EObject lv_item_2_0 = null;
+        Token otherlv_13=null;
+        AntlrDatatypeRuleToken lv_ty_2_0 = null;
 
-        EObject lv_list_4_0 = null;
+        EObject lv_item_3_0 = null;
 
-        EObject lv_body_7_0 = null;
+        EObject lv_list_5_0 = null;
 
         EObject lv_body_8_0 = null;
 
@@ -20798,16 +20798,18 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
         EObject lv_body_10_0 = null;
 
+        EObject lv_body_11_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalCASL.g:8070:2: ( (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) ) otherlv_5= ')' otherlv_6= 'do' ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+ otherlv_12= 'endfor' ) )
-            // InternalCASL.g:8071:2: (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) ) otherlv_5= ')' otherlv_6= 'do' ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+ otherlv_12= 'endfor' )
+            // InternalCASL.g:8070:2: ( (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) ) otherlv_6= ')' otherlv_7= 'do' ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+ otherlv_13= 'endfor' ) )
+            // InternalCASL.g:8071:2: (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) ) otherlv_6= ')' otherlv_7= 'do' ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+ otherlv_13= 'endfor' )
             {
-            // InternalCASL.g:8071:2: (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) ) otherlv_5= ')' otherlv_6= 'do' ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+ otherlv_12= 'endfor' )
-            // InternalCASL.g:8072:3: otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) ) otherlv_5= ')' otherlv_6= 'do' ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+ otherlv_12= 'endfor'
+            // InternalCASL.g:8071:2: (otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) ) otherlv_6= ')' otherlv_7= 'do' ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+ otherlv_13= 'endfor' )
+            // InternalCASL.g:8072:3: otherlv_0= 'foreach' otherlv_1= '(' ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) ) otherlv_6= ')' otherlv_7= 'do' ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+ otherlv_13= 'endfor'
             {
             otherlv_0=(Token)match(input,88,FOLLOW_63); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -20821,22 +20823,57 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getForEachLoopAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalCASL.g:8080:3: ( ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) ) )
-            // InternalCASL.g:8081:4: ( (lv_item_2_0= ruleForEachAccess ) ) otherlv_3= ':' ( (lv_list_4_0= ruleExpression ) )
+            // InternalCASL.g:8080:3: ( ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) ) )
+            // InternalCASL.g:8081:4: ( (lv_ty_2_0= ruleQualifiedName ) ) ( (lv_item_3_0= ruleForEachAccess ) ) otherlv_4= ':' ( (lv_list_5_0= ruleExpression ) )
             {
-            // InternalCASL.g:8081:4: ( (lv_item_2_0= ruleForEachAccess ) )
-            // InternalCASL.g:8082:5: (lv_item_2_0= ruleForEachAccess )
+            // InternalCASL.g:8081:4: ( (lv_ty_2_0= ruleQualifiedName ) )
+            // InternalCASL.g:8082:5: (lv_ty_2_0= ruleQualifiedName )
             {
-            // InternalCASL.g:8082:5: (lv_item_2_0= ruleForEachAccess )
-            // InternalCASL.g:8083:6: lv_item_2_0= ruleForEachAccess
+            // InternalCASL.g:8082:5: (lv_ty_2_0= ruleQualifiedName )
+            // InternalCASL.g:8083:6: lv_ty_2_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
-              						newCompositeNode(grammarAccess.getForEachLoopAccess().getItemForEachAccessParserRuleCall_2_0_0());
+              						newCompositeNode(grammarAccess.getForEachLoopAccess().getTyQualifiedNameParserRuleCall_2_0_0());
+              					
+            }
+            pushFollow(FOLLOW_19);
+            lv_ty_2_0=ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              						if (current==null) {
+              							current = createModelElementForParent(grammarAccess.getForEachLoopRule());
+              						}
+              						set(
+              							current,
+              							"ty",
+              							lv_ty_2_0,
+              							"uofa.lbirdsey.castle.CASL.QualifiedName");
+              						afterParserOrEnumRuleCall();
+              					
+            }
+
+            }
+
+
+            }
+
+            // InternalCASL.g:8100:4: ( (lv_item_3_0= ruleForEachAccess ) )
+            // InternalCASL.g:8101:5: (lv_item_3_0= ruleForEachAccess )
+            {
+            // InternalCASL.g:8101:5: (lv_item_3_0= ruleForEachAccess )
+            // InternalCASL.g:8102:6: lv_item_3_0= ruleForEachAccess
+            {
+            if ( state.backtracking==0 ) {
+
+              						newCompositeNode(grammarAccess.getForEachLoopAccess().getItemForEachAccessParserRuleCall_2_1_0());
               					
             }
             pushFollow(FOLLOW_37);
-            lv_item_2_0=ruleForEachAccess();
+            lv_item_3_0=ruleForEachAccess();
 
             state._fsp--;
             if (state.failed) return current;
@@ -20848,7 +20885,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               						set(
               							current,
               							"item",
-              							lv_item_2_0,
+              							lv_item_3_0,
               							"uofa.lbirdsey.castle.CASL.ForEachAccess");
               						afterParserOrEnumRuleCall();
               					
@@ -20859,25 +20896,25 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,32,FOLLOW_54); if (state.failed) return current;
+            otherlv_4=(Token)match(input,32,FOLLOW_54); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              				newLeafNode(otherlv_3, grammarAccess.getForEachLoopAccess().getColonKeyword_2_1());
+              				newLeafNode(otherlv_4, grammarAccess.getForEachLoopAccess().getColonKeyword_2_2());
               			
             }
-            // InternalCASL.g:8104:4: ( (lv_list_4_0= ruleExpression ) )
-            // InternalCASL.g:8105:5: (lv_list_4_0= ruleExpression )
+            // InternalCASL.g:8123:4: ( (lv_list_5_0= ruleExpression ) )
+            // InternalCASL.g:8124:5: (lv_list_5_0= ruleExpression )
             {
-            // InternalCASL.g:8105:5: (lv_list_4_0= ruleExpression )
-            // InternalCASL.g:8106:6: lv_list_4_0= ruleExpression
+            // InternalCASL.g:8124:5: (lv_list_5_0= ruleExpression )
+            // InternalCASL.g:8125:6: lv_list_5_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
-              						newCompositeNode(grammarAccess.getForEachLoopAccess().getListExpressionParserRuleCall_2_2_0());
+              						newCompositeNode(grammarAccess.getForEachLoopAccess().getListExpressionParserRuleCall_2_3_0());
               					
             }
             pushFollow(FOLLOW_55);
-            lv_list_4_0=ruleExpression();
+            lv_list_5_0=ruleExpression();
 
             state._fsp--;
             if (state.failed) return current;
@@ -20889,7 +20926,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               						set(
               							current,
               							"list",
-              							lv_list_4_0,
+              							lv_list_5_0,
               							"uofa.lbirdsey.castle.CASL.Expression");
               						afterParserOrEnumRuleCall();
               					
@@ -20903,19 +20940,19 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,40,FOLLOW_96); if (state.failed) return current;
+            otherlv_6=(Token)match(input,40,FOLLOW_96); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_5, grammarAccess.getForEachLoopAccess().getRightParenthesisKeyword_3());
+              			newLeafNode(otherlv_6, grammarAccess.getForEachLoopAccess().getRightParenthesisKeyword_3());
               		
             }
-            otherlv_6=(Token)match(input,86,FOLLOW_95); if (state.failed) return current;
+            otherlv_7=(Token)match(input,86,FOLLOW_95); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_6, grammarAccess.getForEachLoopAccess().getDoKeyword_4());
+              			newLeafNode(otherlv_7, grammarAccess.getForEachLoopAccess().getDoKeyword_4());
               		
             }
-            // InternalCASL.g:8132:3: ( ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';' )+
+            // InternalCASL.g:8151:3: ( ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';' )+
             int cnt113=0;
             loop113:
             do {
@@ -20929,20 +20966,20 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt113) {
             	case 1 :
-            	    // InternalCASL.g:8133:4: ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) ) otherlv_11= ';'
+            	    // InternalCASL.g:8152:4: ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) ) otherlv_12= ';'
             	    {
-            	    // InternalCASL.g:8133:4: ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) )
+            	    // InternalCASL.g:8152:4: ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) )
             	    int alt112=4;
             	    alt112 = dfa112.predict(input);
             	    switch (alt112) {
             	        case 1 :
-            	            // InternalCASL.g:8134:5: ( (lv_body_7_0= ruleExpression ) )
+            	            // InternalCASL.g:8153:5: ( (lv_body_8_0= ruleExpression ) )
             	            {
-            	            // InternalCASL.g:8134:5: ( (lv_body_7_0= ruleExpression ) )
-            	            // InternalCASL.g:8135:6: (lv_body_7_0= ruleExpression )
+            	            // InternalCASL.g:8153:5: ( (lv_body_8_0= ruleExpression ) )
+            	            // InternalCASL.g:8154:6: (lv_body_8_0= ruleExpression )
             	            {
-            	            // InternalCASL.g:8135:6: (lv_body_7_0= ruleExpression )
-            	            // InternalCASL.g:8136:7: lv_body_7_0= ruleExpression
+            	            // InternalCASL.g:8154:6: (lv_body_8_0= ruleExpression )
+            	            // InternalCASL.g:8155:7: lv_body_8_0= ruleExpression
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -20950,7 +20987,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              						
             	            }
             	            pushFollow(FOLLOW_8);
-            	            lv_body_7_0=ruleExpression();
+            	            lv_body_8_0=ruleExpression();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -20962,7 +20999,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              							add(
             	              								current,
             	              								"body",
-            	              								lv_body_7_0,
+            	              								lv_body_8_0,
             	              								"uofa.lbirdsey.castle.CASL.Expression");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -20977,13 +21014,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8154:5: ( (lv_body_8_0= ruleSelfAssignedFormula ) )
+            	            // InternalCASL.g:8173:5: ( (lv_body_9_0= ruleSelfAssignedFormula ) )
             	            {
-            	            // InternalCASL.g:8154:5: ( (lv_body_8_0= ruleSelfAssignedFormula ) )
-            	            // InternalCASL.g:8155:6: (lv_body_8_0= ruleSelfAssignedFormula )
+            	            // InternalCASL.g:8173:5: ( (lv_body_9_0= ruleSelfAssignedFormula ) )
+            	            // InternalCASL.g:8174:6: (lv_body_9_0= ruleSelfAssignedFormula )
             	            {
-            	            // InternalCASL.g:8155:6: (lv_body_8_0= ruleSelfAssignedFormula )
-            	            // InternalCASL.g:8156:7: lv_body_8_0= ruleSelfAssignedFormula
+            	            // InternalCASL.g:8174:6: (lv_body_9_0= ruleSelfAssignedFormula )
+            	            // InternalCASL.g:8175:7: lv_body_9_0= ruleSelfAssignedFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -20991,7 +21028,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              						
             	            }
             	            pushFollow(FOLLOW_8);
-            	            lv_body_8_0=ruleSelfAssignedFormula();
+            	            lv_body_9_0=ruleSelfAssignedFormula();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -21003,7 +21040,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              							add(
             	              								current,
             	              								"body",
-            	              								lv_body_8_0,
+            	              								lv_body_9_0,
             	              								"uofa.lbirdsey.castle.CASL.SelfAssignedFormula");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -21018,13 +21055,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalCASL.g:8174:5: ( (lv_body_9_0= ruleFormula ) )
+            	            // InternalCASL.g:8193:5: ( (lv_body_10_0= ruleFormula ) )
             	            {
-            	            // InternalCASL.g:8174:5: ( (lv_body_9_0= ruleFormula ) )
-            	            // InternalCASL.g:8175:6: (lv_body_9_0= ruleFormula )
+            	            // InternalCASL.g:8193:5: ( (lv_body_10_0= ruleFormula ) )
+            	            // InternalCASL.g:8194:6: (lv_body_10_0= ruleFormula )
             	            {
-            	            // InternalCASL.g:8175:6: (lv_body_9_0= ruleFormula )
-            	            // InternalCASL.g:8176:7: lv_body_9_0= ruleFormula
+            	            // InternalCASL.g:8194:6: (lv_body_10_0= ruleFormula )
+            	            // InternalCASL.g:8195:7: lv_body_10_0= ruleFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21032,7 +21069,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              						
             	            }
             	            pushFollow(FOLLOW_8);
-            	            lv_body_9_0=ruleFormula();
+            	            lv_body_10_0=ruleFormula();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -21044,7 +21081,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              							add(
             	              								current,
             	              								"body",
-            	              								lv_body_9_0,
+            	              								lv_body_10_0,
             	              								"uofa.lbirdsey.castle.CASL.Formula");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -21059,13 +21096,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // InternalCASL.g:8194:5: ( (lv_body_10_0= ruleField ) )
+            	            // InternalCASL.g:8213:5: ( (lv_body_11_0= ruleField ) )
             	            {
-            	            // InternalCASL.g:8194:5: ( (lv_body_10_0= ruleField ) )
-            	            // InternalCASL.g:8195:6: (lv_body_10_0= ruleField )
+            	            // InternalCASL.g:8213:5: ( (lv_body_11_0= ruleField ) )
+            	            // InternalCASL.g:8214:6: (lv_body_11_0= ruleField )
             	            {
-            	            // InternalCASL.g:8195:6: (lv_body_10_0= ruleField )
-            	            // InternalCASL.g:8196:7: lv_body_10_0= ruleField
+            	            // InternalCASL.g:8214:6: (lv_body_11_0= ruleField )
+            	            // InternalCASL.g:8215:7: lv_body_11_0= ruleField
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21073,7 +21110,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              						
             	            }
             	            pushFollow(FOLLOW_8);
-            	            lv_body_10_0=ruleField();
+            	            lv_body_11_0=ruleField();
 
             	            state._fsp--;
             	            if (state.failed) return current;
@@ -21085,7 +21122,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	              							add(
             	              								current,
             	              								"body",
-            	              								lv_body_10_0,
+            	              								lv_body_11_0,
             	              								"uofa.lbirdsey.castle.CASL.Field");
             	              							afterParserOrEnumRuleCall();
             	              						
@@ -21102,10 +21139,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_11=(Token)match(input,14,FOLLOW_97); if (state.failed) return current;
+            	    otherlv_12=(Token)match(input,14,FOLLOW_97); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      				newLeafNode(otherlv_11, grammarAccess.getForEachLoopAccess().getSemicolonKeyword_5_1());
+            	      				newLeafNode(otherlv_12, grammarAccess.getForEachLoopAccess().getSemicolonKeyword_5_1());
             	      			
             	    }
 
@@ -21122,10 +21159,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                 cnt113++;
             } while (true);
 
-            otherlv_12=(Token)match(input,87,FOLLOW_2); if (state.failed) return current;
+            otherlv_13=(Token)match(input,87,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_12, grammarAccess.getForEachLoopAccess().getEndforKeyword_6());
+              			newLeafNode(otherlv_13, grammarAccess.getForEachLoopAccess().getEndforKeyword_6());
               		
             }
 
@@ -21153,7 +21190,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForEachAccess"
-    // InternalCASL.g:8227:1: entryRuleForEachAccess returns [EObject current=null] : iv_ruleForEachAccess= ruleForEachAccess EOF ;
+    // InternalCASL.g:8246:1: entryRuleForEachAccess returns [EObject current=null] : iv_ruleForEachAccess= ruleForEachAccess EOF ;
     public final EObject entryRuleForEachAccess() throws RecognitionException {
         EObject current = null;
 
@@ -21161,8 +21198,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8227:54: (iv_ruleForEachAccess= ruleForEachAccess EOF )
-            // InternalCASL.g:8228:2: iv_ruleForEachAccess= ruleForEachAccess EOF
+            // InternalCASL.g:8246:54: (iv_ruleForEachAccess= ruleForEachAccess EOF )
+            // InternalCASL.g:8247:2: iv_ruleForEachAccess= ruleForEachAccess EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getForEachAccessRule()); 
@@ -21193,7 +21230,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForEachAccess"
-    // InternalCASL.g:8234:1: ruleForEachAccess returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalCASL.g:8253:1: ruleForEachAccess returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleForEachAccess() throws RecognitionException {
         EObject current = null;
 
@@ -21203,14 +21240,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8240:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalCASL.g:8241:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalCASL.g:8259:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalCASL.g:8260:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalCASL.g:8241:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalCASL.g:8242:3: (lv_name_0_0= RULE_ID )
+            // InternalCASL.g:8260:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalCASL.g:8261:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalCASL.g:8242:3: (lv_name_0_0= RULE_ID )
-            // InternalCASL.g:8243:4: lv_name_0_0= RULE_ID
+            // InternalCASL.g:8261:3: (lv_name_0_0= RULE_ID )
+            // InternalCASL.g:8262:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -21258,7 +21295,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIfStatement"
-    // InternalCASL.g:8262:1: entryRuleIfStatement returns [EObject current=null] : iv_ruleIfStatement= ruleIfStatement EOF ;
+    // InternalCASL.g:8281:1: entryRuleIfStatement returns [EObject current=null] : iv_ruleIfStatement= ruleIfStatement EOF ;
     public final EObject entryRuleIfStatement() throws RecognitionException {
         EObject current = null;
 
@@ -21266,8 +21303,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8262:52: (iv_ruleIfStatement= ruleIfStatement EOF )
-            // InternalCASL.g:8263:2: iv_ruleIfStatement= ruleIfStatement EOF
+            // InternalCASL.g:8281:52: (iv_ruleIfStatement= ruleIfStatement EOF )
+            // InternalCASL.g:8282:2: iv_ruleIfStatement= ruleIfStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIfStatementRule()); 
@@ -21298,7 +21335,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIfStatement"
-    // InternalCASL.g:8269:1: ruleIfStatement returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' ) ;
+    // InternalCASL.g:8288:1: ruleIfStatement returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' ) ;
     public final EObject ruleIfStatement() throws RecognitionException {
         EObject current = null;
 
@@ -21336,11 +21373,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8275:2: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' ) )
-            // InternalCASL.g:8276:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' )
+            // InternalCASL.g:8294:2: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' ) )
+            // InternalCASL.g:8295:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' )
             {
-            // InternalCASL.g:8276:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' )
-            // InternalCASL.g:8277:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif'
+            // InternalCASL.g:8295:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif' )
+            // InternalCASL.g:8296:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_condition_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+ ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )* ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )? otherlv_18= 'endif'
             {
             otherlv_0=(Token)match(input,89,FOLLOW_63); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -21354,11 +21391,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getIfStatementAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalCASL.g:8285:3: ( (lv_condition_2_0= ruleExpression ) )
-            // InternalCASL.g:8286:4: (lv_condition_2_0= ruleExpression )
+            // InternalCASL.g:8304:3: ( (lv_condition_2_0= ruleExpression ) )
+            // InternalCASL.g:8305:4: (lv_condition_2_0= ruleExpression )
             {
-            // InternalCASL.g:8286:4: (lv_condition_2_0= ruleExpression )
-            // InternalCASL.g:8287:5: lv_condition_2_0= ruleExpression
+            // InternalCASL.g:8305:4: (lv_condition_2_0= ruleExpression )
+            // InternalCASL.g:8306:5: lv_condition_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -21401,7 +21438,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_4, grammarAccess.getIfStatementAccess().getThenKeyword_4());
               		
             }
-            // InternalCASL.g:8312:3: ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+
+            // InternalCASL.g:8331:3: ( ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';' )+
             int cnt115=0;
             loop115:
             do {
@@ -21415,20 +21452,20 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt115) {
             	case 1 :
-            	    // InternalCASL.g:8313:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';'
+            	    // InternalCASL.g:8332:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) ) otherlv_9= ';'
             	    {
-            	    // InternalCASL.g:8313:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) )
+            	    // InternalCASL.g:8332:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) )
             	    int alt114=4;
             	    alt114 = dfa114.predict(input);
             	    switch (alt114) {
             	        case 1 :
-            	            // InternalCASL.g:8314:5: ( (lv_then_5_0= ruleExpression ) )
+            	            // InternalCASL.g:8333:5: ( (lv_then_5_0= ruleExpression ) )
             	            {
-            	            // InternalCASL.g:8314:5: ( (lv_then_5_0= ruleExpression ) )
-            	            // InternalCASL.g:8315:6: (lv_then_5_0= ruleExpression )
+            	            // InternalCASL.g:8333:5: ( (lv_then_5_0= ruleExpression ) )
+            	            // InternalCASL.g:8334:6: (lv_then_5_0= ruleExpression )
             	            {
-            	            // InternalCASL.g:8315:6: (lv_then_5_0= ruleExpression )
-            	            // InternalCASL.g:8316:7: lv_then_5_0= ruleExpression
+            	            // InternalCASL.g:8334:6: (lv_then_5_0= ruleExpression )
+            	            // InternalCASL.g:8335:7: lv_then_5_0= ruleExpression
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21463,13 +21500,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8334:5: ( (lv_then_6_0= ruleSelfAssignedFormula ) )
+            	            // InternalCASL.g:8353:5: ( (lv_then_6_0= ruleSelfAssignedFormula ) )
             	            {
-            	            // InternalCASL.g:8334:5: ( (lv_then_6_0= ruleSelfAssignedFormula ) )
-            	            // InternalCASL.g:8335:6: (lv_then_6_0= ruleSelfAssignedFormula )
+            	            // InternalCASL.g:8353:5: ( (lv_then_6_0= ruleSelfAssignedFormula ) )
+            	            // InternalCASL.g:8354:6: (lv_then_6_0= ruleSelfAssignedFormula )
             	            {
-            	            // InternalCASL.g:8335:6: (lv_then_6_0= ruleSelfAssignedFormula )
-            	            // InternalCASL.g:8336:7: lv_then_6_0= ruleSelfAssignedFormula
+            	            // InternalCASL.g:8354:6: (lv_then_6_0= ruleSelfAssignedFormula )
+            	            // InternalCASL.g:8355:7: lv_then_6_0= ruleSelfAssignedFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21504,13 +21541,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalCASL.g:8354:5: ( (lv_then_7_0= ruleFormula ) )
+            	            // InternalCASL.g:8373:5: ( (lv_then_7_0= ruleFormula ) )
             	            {
-            	            // InternalCASL.g:8354:5: ( (lv_then_7_0= ruleFormula ) )
-            	            // InternalCASL.g:8355:6: (lv_then_7_0= ruleFormula )
+            	            // InternalCASL.g:8373:5: ( (lv_then_7_0= ruleFormula ) )
+            	            // InternalCASL.g:8374:6: (lv_then_7_0= ruleFormula )
             	            {
-            	            // InternalCASL.g:8355:6: (lv_then_7_0= ruleFormula )
-            	            // InternalCASL.g:8356:7: lv_then_7_0= ruleFormula
+            	            // InternalCASL.g:8374:6: (lv_then_7_0= ruleFormula )
+            	            // InternalCASL.g:8375:7: lv_then_7_0= ruleFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21545,13 +21582,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // InternalCASL.g:8374:5: ( (lv_then_8_0= ruleField ) )
+            	            // InternalCASL.g:8393:5: ( (lv_then_8_0= ruleField ) )
             	            {
-            	            // InternalCASL.g:8374:5: ( (lv_then_8_0= ruleField ) )
-            	            // InternalCASL.g:8375:6: (lv_then_8_0= ruleField )
+            	            // InternalCASL.g:8393:5: ( (lv_then_8_0= ruleField ) )
+            	            // InternalCASL.g:8394:6: (lv_then_8_0= ruleField )
             	            {
-            	            // InternalCASL.g:8375:6: (lv_then_8_0= ruleField )
-            	            // InternalCASL.g:8376:7: lv_then_8_0= ruleField
+            	            // InternalCASL.g:8394:6: (lv_then_8_0= ruleField )
+            	            // InternalCASL.g:8395:7: lv_then_8_0= ruleField
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -21608,7 +21645,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                 cnt115++;
             } while (true);
 
-            // InternalCASL.g:8399:3: ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )*
+            // InternalCASL.g:8418:3: ( ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) ) )*
             loop116:
             do {
                 int alt116=2;
@@ -21621,10 +21658,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt116) {
             	case 1 :
-            	    // InternalCASL.g:8400:4: ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) )
+            	    // InternalCASL.g:8419:4: ( ( 'elseif' )=>otherlv_10= 'elseif' ) ( (lv_elseifexpr_11_0= ruleElseIfExpr ) )
             	    {
-            	    // InternalCASL.g:8400:4: ( ( 'elseif' )=>otherlv_10= 'elseif' )
-            	    // InternalCASL.g:8401:5: ( 'elseif' )=>otherlv_10= 'elseif'
+            	    // InternalCASL.g:8419:4: ( ( 'elseif' )=>otherlv_10= 'elseif' )
+            	    // InternalCASL.g:8420:5: ( 'elseif' )=>otherlv_10= 'elseif'
             	    {
             	    otherlv_10=(Token)match(input,91,FOLLOW_63); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -21635,11 +21672,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8407:4: ( (lv_elseifexpr_11_0= ruleElseIfExpr ) )
-            	    // InternalCASL.g:8408:5: (lv_elseifexpr_11_0= ruleElseIfExpr )
+            	    // InternalCASL.g:8426:4: ( (lv_elseifexpr_11_0= ruleElseIfExpr ) )
+            	    // InternalCASL.g:8427:5: (lv_elseifexpr_11_0= ruleElseIfExpr )
             	    {
-            	    // InternalCASL.g:8408:5: (lv_elseifexpr_11_0= ruleElseIfExpr )
-            	    // InternalCASL.g:8409:6: lv_elseifexpr_11_0= ruleElseIfExpr
+            	    // InternalCASL.g:8427:5: (lv_elseifexpr_11_0= ruleElseIfExpr )
+            	    // InternalCASL.g:8428:6: lv_elseifexpr_11_0= ruleElseIfExpr
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -21679,7 +21716,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalCASL.g:8427:3: ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )?
+            // InternalCASL.g:8446:3: ( ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+ )?
             int alt119=2;
             int LA119_0 = input.LA(1);
 
@@ -21688,10 +21725,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt119) {
                 case 1 :
-                    // InternalCASL.g:8428:4: ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+
+                    // InternalCASL.g:8447:4: ( ( 'else' )=>otherlv_12= 'else' ) ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+
                     {
-                    // InternalCASL.g:8428:4: ( ( 'else' )=>otherlv_12= 'else' )
-                    // InternalCASL.g:8429:5: ( 'else' )=>otherlv_12= 'else'
+                    // InternalCASL.g:8447:4: ( ( 'else' )=>otherlv_12= 'else' )
+                    // InternalCASL.g:8448:5: ( 'else' )=>otherlv_12= 'else'
                     {
                     otherlv_12=(Token)match(input,92,FOLLOW_95); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -21702,7 +21739,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:8435:4: ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+
+                    // InternalCASL.g:8454:4: ( ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';' )+
                     int cnt118=0;
                     loop118:
                     do {
@@ -21716,20 +21753,20 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                         switch (alt118) {
                     	case 1 :
-                    	    // InternalCASL.g:8436:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';'
+                    	    // InternalCASL.g:8455:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) ) otherlv_17= ';'
                     	    {
-                    	    // InternalCASL.g:8436:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) )
+                    	    // InternalCASL.g:8455:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) )
                     	    int alt117=4;
                     	    alt117 = dfa117.predict(input);
                     	    switch (alt117) {
                     	        case 1 :
-                    	            // InternalCASL.g:8437:6: ( (lv_elseexp_13_0= ruleExpression ) )
+                    	            // InternalCASL.g:8456:6: ( (lv_elseexp_13_0= ruleExpression ) )
                     	            {
-                    	            // InternalCASL.g:8437:6: ( (lv_elseexp_13_0= ruleExpression ) )
-                    	            // InternalCASL.g:8438:7: (lv_elseexp_13_0= ruleExpression )
+                    	            // InternalCASL.g:8456:6: ( (lv_elseexp_13_0= ruleExpression ) )
+                    	            // InternalCASL.g:8457:7: (lv_elseexp_13_0= ruleExpression )
                     	            {
-                    	            // InternalCASL.g:8438:7: (lv_elseexp_13_0= ruleExpression )
-                    	            // InternalCASL.g:8439:8: lv_elseexp_13_0= ruleExpression
+                    	            // InternalCASL.g:8457:7: (lv_elseexp_13_0= ruleExpression )
+                    	            // InternalCASL.g:8458:8: lv_elseexp_13_0= ruleExpression
                     	            {
                     	            if ( state.backtracking==0 ) {
 
@@ -21764,13 +21801,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // InternalCASL.g:8457:6: ( (lv_elseexp_14_0= ruleFormula ) )
+                    	            // InternalCASL.g:8476:6: ( (lv_elseexp_14_0= ruleFormula ) )
                     	            {
-                    	            // InternalCASL.g:8457:6: ( (lv_elseexp_14_0= ruleFormula ) )
-                    	            // InternalCASL.g:8458:7: (lv_elseexp_14_0= ruleFormula )
+                    	            // InternalCASL.g:8476:6: ( (lv_elseexp_14_0= ruleFormula ) )
+                    	            // InternalCASL.g:8477:7: (lv_elseexp_14_0= ruleFormula )
                     	            {
-                    	            // InternalCASL.g:8458:7: (lv_elseexp_14_0= ruleFormula )
-                    	            // InternalCASL.g:8459:8: lv_elseexp_14_0= ruleFormula
+                    	            // InternalCASL.g:8477:7: (lv_elseexp_14_0= ruleFormula )
+                    	            // InternalCASL.g:8478:8: lv_elseexp_14_0= ruleFormula
                     	            {
                     	            if ( state.backtracking==0 ) {
 
@@ -21805,13 +21842,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 3 :
-                    	            // InternalCASL.g:8477:6: ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) )
+                    	            // InternalCASL.g:8496:6: ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) )
                     	            {
-                    	            // InternalCASL.g:8477:6: ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) )
-                    	            // InternalCASL.g:8478:7: (lv_elseexp_15_0= ruleSelfAssignedFormula )
+                    	            // InternalCASL.g:8496:6: ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) )
+                    	            // InternalCASL.g:8497:7: (lv_elseexp_15_0= ruleSelfAssignedFormula )
                     	            {
-                    	            // InternalCASL.g:8478:7: (lv_elseexp_15_0= ruleSelfAssignedFormula )
-                    	            // InternalCASL.g:8479:8: lv_elseexp_15_0= ruleSelfAssignedFormula
+                    	            // InternalCASL.g:8497:7: (lv_elseexp_15_0= ruleSelfAssignedFormula )
+                    	            // InternalCASL.g:8498:8: lv_elseexp_15_0= ruleSelfAssignedFormula
                     	            {
                     	            if ( state.backtracking==0 ) {
 
@@ -21846,13 +21883,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 4 :
-                    	            // InternalCASL.g:8497:6: ( (lv_elseexp_16_0= ruleField ) )
+                    	            // InternalCASL.g:8516:6: ( (lv_elseexp_16_0= ruleField ) )
                     	            {
-                    	            // InternalCASL.g:8497:6: ( (lv_elseexp_16_0= ruleField ) )
-                    	            // InternalCASL.g:8498:7: (lv_elseexp_16_0= ruleField )
+                    	            // InternalCASL.g:8516:6: ( (lv_elseexp_16_0= ruleField ) )
+                    	            // InternalCASL.g:8517:7: (lv_elseexp_16_0= ruleField )
                     	            {
-                    	            // InternalCASL.g:8498:7: (lv_elseexp_16_0= ruleField )
-                    	            // InternalCASL.g:8499:8: lv_elseexp_16_0= ruleField
+                    	            // InternalCASL.g:8517:7: (lv_elseexp_16_0= ruleField )
+                    	            // InternalCASL.g:8518:8: lv_elseexp_16_0= ruleField
                     	            {
                     	            if ( state.backtracking==0 ) {
 
@@ -21946,7 +21983,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElseIfExpr"
-    // InternalCASL.g:8531:1: entryRuleElseIfExpr returns [EObject current=null] : iv_ruleElseIfExpr= ruleElseIfExpr EOF ;
+    // InternalCASL.g:8550:1: entryRuleElseIfExpr returns [EObject current=null] : iv_ruleElseIfExpr= ruleElseIfExpr EOF ;
     public final EObject entryRuleElseIfExpr() throws RecognitionException {
         EObject current = null;
 
@@ -21954,8 +21991,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8531:51: (iv_ruleElseIfExpr= ruleElseIfExpr EOF )
-            // InternalCASL.g:8532:2: iv_ruleElseIfExpr= ruleElseIfExpr EOF
+            // InternalCASL.g:8550:51: (iv_ruleElseIfExpr= ruleElseIfExpr EOF )
+            // InternalCASL.g:8551:2: iv_ruleElseIfExpr= ruleElseIfExpr EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getElseIfExprRule()); 
@@ -21986,7 +22023,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElseIfExpr"
-    // InternalCASL.g:8538:1: ruleElseIfExpr returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* ) ;
+    // InternalCASL.g:8557:1: ruleElseIfExpr returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* ) ;
     public final EObject ruleElseIfExpr() throws RecognitionException {
         EObject current = null;
 
@@ -22009,14 +22046,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8544:2: ( ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* ) )
-            // InternalCASL.g:8545:2: ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* )
+            // InternalCASL.g:8563:2: ( ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* ) )
+            // InternalCASL.g:8564:2: ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* )
             {
-            // InternalCASL.g:8545:2: ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* )
-            // InternalCASL.g:8546:3: () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )*
+            // InternalCASL.g:8564:2: ( () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )* )
+            // InternalCASL.g:8565:3: () otherlv_1= '(' ( (lv_elseifCond_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= 'then' ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )*
             {
-            // InternalCASL.g:8546:3: ()
-            // InternalCASL.g:8547:4: 
+            // InternalCASL.g:8565:3: ()
+            // InternalCASL.g:8566:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -22034,11 +22071,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getElseIfExprAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalCASL.g:8557:3: ( (lv_elseifCond_2_0= ruleExpression ) )
-            // InternalCASL.g:8558:4: (lv_elseifCond_2_0= ruleExpression )
+            // InternalCASL.g:8576:3: ( (lv_elseifCond_2_0= ruleExpression ) )
+            // InternalCASL.g:8577:4: (lv_elseifCond_2_0= ruleExpression )
             {
-            // InternalCASL.g:8558:4: (lv_elseifCond_2_0= ruleExpression )
-            // InternalCASL.g:8559:5: lv_elseifCond_2_0= ruleExpression
+            // InternalCASL.g:8577:4: (lv_elseifCond_2_0= ruleExpression )
+            // InternalCASL.g:8578:5: lv_elseifCond_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -22081,7 +22118,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_4, grammarAccess.getElseIfExprAccess().getThenKeyword_4());
               		
             }
-            // InternalCASL.g:8584:3: ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )*
+            // InternalCASL.g:8603:3: ( ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';' )*
             loop121:
             do {
                 int alt121=2;
@@ -22094,20 +22131,20 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt121) {
             	case 1 :
-            	    // InternalCASL.g:8585:4: ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';'
+            	    // InternalCASL.g:8604:4: ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) ) otherlv_6= ';'
             	    {
-            	    // InternalCASL.g:8585:4: ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) )
-            	    // InternalCASL.g:8586:5: ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) )
+            	    // InternalCASL.g:8604:4: ( ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) ) )
+            	    // InternalCASL.g:8605:5: ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) )
             	    {
-            	    // InternalCASL.g:8586:5: ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) )
-            	    // InternalCASL.g:8587:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )
+            	    // InternalCASL.g:8605:5: ( (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField ) )
+            	    // InternalCASL.g:8606:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )
             	    {
-            	    // InternalCASL.g:8587:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )
+            	    // InternalCASL.g:8606:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )
             	    int alt120=4;
             	    alt120 = dfa120.predict(input);
             	    switch (alt120) {
             	        case 1 :
-            	            // InternalCASL.g:8588:7: lv_elseifthen_5_1= ruleExpression
+            	            // InternalCASL.g:8607:7: lv_elseifthen_5_1= ruleExpression
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -22136,7 +22173,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8604:7: lv_elseifthen_5_2= ruleFormula
+            	            // InternalCASL.g:8623:7: lv_elseifthen_5_2= ruleFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -22165,7 +22202,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalCASL.g:8620:7: lv_elseifthen_5_3= ruleSelfAssignedFormula
+            	            // InternalCASL.g:8639:7: lv_elseifthen_5_3= ruleSelfAssignedFormula
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -22194,7 +22231,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // InternalCASL.g:8636:7: lv_elseifthen_5_4= ruleField
+            	            // InternalCASL.g:8655:7: lv_elseifthen_5_4= ruleField
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -22271,7 +22308,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanExpression"
-    // InternalCASL.g:8663:1: entryRuleBooleanExpression returns [EObject current=null] : iv_ruleBooleanExpression= ruleBooleanExpression EOF ;
+    // InternalCASL.g:8682:1: entryRuleBooleanExpression returns [EObject current=null] : iv_ruleBooleanExpression= ruleBooleanExpression EOF ;
     public final EObject entryRuleBooleanExpression() throws RecognitionException {
         EObject current = null;
 
@@ -22279,8 +22316,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8663:58: (iv_ruleBooleanExpression= ruleBooleanExpression EOF )
-            // InternalCASL.g:8664:2: iv_ruleBooleanExpression= ruleBooleanExpression EOF
+            // InternalCASL.g:8682:58: (iv_ruleBooleanExpression= ruleBooleanExpression EOF )
+            // InternalCASL.g:8683:2: iv_ruleBooleanExpression= ruleBooleanExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBooleanExpressionRule()); 
@@ -22311,7 +22348,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanExpression"
-    // InternalCASL.g:8670:1: ruleBooleanExpression returns [EObject current=null] : (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* ) ;
+    // InternalCASL.g:8689:1: ruleBooleanExpression returns [EObject current=null] : (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* ) ;
     public final EObject ruleBooleanExpression() throws RecognitionException {
         EObject current = null;
 
@@ -22326,11 +22363,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8676:2: ( (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* ) )
-            // InternalCASL.g:8677:2: (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* )
+            // InternalCASL.g:8695:2: ( (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* ) )
+            // InternalCASL.g:8696:2: (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* )
             {
-            // InternalCASL.g:8677:2: (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* )
-            // InternalCASL.g:8678:3: this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )*
+            // InternalCASL.g:8696:2: (this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )* )
+            // InternalCASL.g:8697:3: this_Equals_0= ruleEquals ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -22348,7 +22385,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:8686:3: ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )*
+            // InternalCASL.g:8705:3: ( ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) ) )*
             loop123:
             do {
                 int alt123=2;
@@ -22361,13 +22398,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt123) {
             	case 1 :
-            	    // InternalCASL.g:8687:4: ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) )
+            	    // InternalCASL.g:8706:4: ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) ) ( (lv_right_3_0= ruleEquals ) )
             	    {
-            	    // InternalCASL.g:8687:4: ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) )
-            	    // InternalCASL.g:8688:5: () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) )
+            	    // InternalCASL.g:8706:4: ( () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) ) )
+            	    // InternalCASL.g:8707:5: () ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) )
             	    {
-            	    // InternalCASL.g:8688:5: ()
-            	    // InternalCASL.g:8689:6: 
+            	    // InternalCASL.g:8707:5: ()
+            	    // InternalCASL.g:8708:6: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -22379,13 +22416,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8695:5: ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) )
-            	    // InternalCASL.g:8696:6: ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) )
+            	    // InternalCASL.g:8714:5: ( ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) ) )
+            	    // InternalCASL.g:8715:6: ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) )
             	    {
-            	    // InternalCASL.g:8696:6: ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) )
-            	    // InternalCASL.g:8697:7: (lv_op_2_1= '||' | lv_op_2_2= '&&' )
+            	    // InternalCASL.g:8715:6: ( (lv_op_2_1= '||' | lv_op_2_2= '&&' ) )
+            	    // InternalCASL.g:8716:7: (lv_op_2_1= '||' | lv_op_2_2= '&&' )
             	    {
-            	    // InternalCASL.g:8697:7: (lv_op_2_1= '||' | lv_op_2_2= '&&' )
+            	    // InternalCASL.g:8716:7: (lv_op_2_1= '||' | lv_op_2_2= '&&' )
             	    int alt122=2;
             	    int LA122_0 = input.LA(1);
 
@@ -22404,7 +22441,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt122) {
             	        case 1 :
-            	            // InternalCASL.g:8698:8: lv_op_2_1= '||'
+            	            // InternalCASL.g:8717:8: lv_op_2_1= '||'
             	            {
             	            lv_op_2_1=(Token)match(input,94,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22424,7 +22461,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8709:8: lv_op_2_2= '&&'
+            	            // InternalCASL.g:8728:8: lv_op_2_2= '&&'
             	            {
             	            lv_op_2_2=(Token)match(input,95,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22455,11 +22492,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8723:4: ( (lv_right_3_0= ruleEquals ) )
-            	    // InternalCASL.g:8724:5: (lv_right_3_0= ruleEquals )
+            	    // InternalCASL.g:8742:4: ( (lv_right_3_0= ruleEquals ) )
+            	    // InternalCASL.g:8743:5: (lv_right_3_0= ruleEquals )
             	    {
-            	    // InternalCASL.g:8724:5: (lv_right_3_0= ruleEquals )
-            	    // InternalCASL.g:8725:6: lv_right_3_0= ruleEquals
+            	    // InternalCASL.g:8743:5: (lv_right_3_0= ruleEquals )
+            	    // InternalCASL.g:8744:6: lv_right_3_0= ruleEquals
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -22524,7 +22561,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEquals"
-    // InternalCASL.g:8747:1: entryRuleEquals returns [EObject current=null] : iv_ruleEquals= ruleEquals EOF ;
+    // InternalCASL.g:8766:1: entryRuleEquals returns [EObject current=null] : iv_ruleEquals= ruleEquals EOF ;
     public final EObject entryRuleEquals() throws RecognitionException {
         EObject current = null;
 
@@ -22532,8 +22569,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8747:47: (iv_ruleEquals= ruleEquals EOF )
-            // InternalCASL.g:8748:2: iv_ruleEquals= ruleEquals EOF
+            // InternalCASL.g:8766:47: (iv_ruleEquals= ruleEquals EOF )
+            // InternalCASL.g:8767:2: iv_ruleEquals= ruleEquals EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEqualsRule()); 
@@ -22564,7 +22601,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquals"
-    // InternalCASL.g:8754:1: ruleEquals returns [EObject current=null] : (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
+    // InternalCASL.g:8773:1: ruleEquals returns [EObject current=null] : (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
     public final EObject ruleEquals() throws RecognitionException {
         EObject current = null;
 
@@ -22579,11 +22616,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8760:2: ( (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
-            // InternalCASL.g:8761:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // InternalCASL.g:8779:2: ( (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
+            // InternalCASL.g:8780:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
             {
-            // InternalCASL.g:8761:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
-            // InternalCASL.g:8762:3: this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            // InternalCASL.g:8780:2: (this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // InternalCASL.g:8781:3: this_Comparison_0= ruleComparison ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -22601,7 +22638,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:8770:3: ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            // InternalCASL.g:8789:3: ( ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
             loop125:
             do {
                 int alt125=2;
@@ -22614,13 +22651,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt125) {
             	case 1 :
-            	    // InternalCASL.g:8771:4: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) )
+            	    // InternalCASL.g:8790:4: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ) ( (lv_right_3_0= ruleComparison ) )
             	    {
-            	    // InternalCASL.g:8771:4: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) )
-            	    // InternalCASL.g:8772:5: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
+            	    // InternalCASL.g:8790:4: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) )
+            	    // InternalCASL.g:8791:5: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
             	    {
-            	    // InternalCASL.g:8772:5: ()
-            	    // InternalCASL.g:8773:6: 
+            	    // InternalCASL.g:8791:5: ()
+            	    // InternalCASL.g:8792:6: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -22632,13 +22669,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8779:5: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
-            	    // InternalCASL.g:8780:6: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // InternalCASL.g:8798:5: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
+            	    // InternalCASL.g:8799:6: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
             	    {
-            	    // InternalCASL.g:8780:6: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
-            	    // InternalCASL.g:8781:7: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    // InternalCASL.g:8799:6: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // InternalCASL.g:8800:7: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
             	    {
-            	    // InternalCASL.g:8781:7: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    // InternalCASL.g:8800:7: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
             	    int alt124=2;
             	    int LA124_0 = input.LA(1);
 
@@ -22657,7 +22694,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt124) {
             	        case 1 :
-            	            // InternalCASL.g:8782:8: lv_op_2_1= '=='
+            	            // InternalCASL.g:8801:8: lv_op_2_1= '=='
             	            {
             	            lv_op_2_1=(Token)match(input,96,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22677,7 +22714,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8793:8: lv_op_2_2= '!='
+            	            // InternalCASL.g:8812:8: lv_op_2_2= '!='
             	            {
             	            lv_op_2_2=(Token)match(input,97,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22708,11 +22745,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8807:4: ( (lv_right_3_0= ruleComparison ) )
-            	    // InternalCASL.g:8808:5: (lv_right_3_0= ruleComparison )
+            	    // InternalCASL.g:8826:4: ( (lv_right_3_0= ruleComparison ) )
+            	    // InternalCASL.g:8827:5: (lv_right_3_0= ruleComparison )
             	    {
-            	    // InternalCASL.g:8808:5: (lv_right_3_0= ruleComparison )
-            	    // InternalCASL.g:8809:6: lv_right_3_0= ruleComparison
+            	    // InternalCASL.g:8827:5: (lv_right_3_0= ruleComparison )
+            	    // InternalCASL.g:8828:6: lv_right_3_0= ruleComparison
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -22777,7 +22814,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparison"
-    // InternalCASL.g:8831:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // InternalCASL.g:8850:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final EObject entryRuleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -22785,8 +22822,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8831:51: (iv_ruleComparison= ruleComparison EOF )
-            // InternalCASL.g:8832:2: iv_ruleComparison= ruleComparison EOF
+            // InternalCASL.g:8850:51: (iv_ruleComparison= ruleComparison EOF )
+            // InternalCASL.g:8851:2: iv_ruleComparison= ruleComparison EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getComparisonRule()); 
@@ -22817,7 +22854,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparison"
-    // InternalCASL.g:8838:1: ruleComparison returns [EObject current=null] : (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) ;
+    // InternalCASL.g:8857:1: ruleComparison returns [EObject current=null] : (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) ;
     public final EObject ruleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -22834,11 +22871,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8844:2: ( (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) )
-            // InternalCASL.g:8845:2: (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
+            // InternalCASL.g:8863:2: ( (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) )
+            // InternalCASL.g:8864:2: (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
             {
-            // InternalCASL.g:8845:2: (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
-            // InternalCASL.g:8846:3: this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
+            // InternalCASL.g:8864:2: (this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
+            // InternalCASL.g:8865:3: this_Subtraction_0= ruleSubtraction ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -22856,7 +22893,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:8854:3: ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
+            // InternalCASL.g:8873:3: ( ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
             loop127:
             do {
                 int alt127=2;
@@ -22869,13 +22906,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt127) {
             	case 1 :
-            	    // InternalCASL.g:8855:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) )
+            	    // InternalCASL.g:8874:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) ) ( (lv_right_3_0= ruleSubtraction ) )
             	    {
-            	    // InternalCASL.g:8855:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) )
-            	    // InternalCASL.g:8856:5: () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
+            	    // InternalCASL.g:8874:4: ( () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) ) )
+            	    // InternalCASL.g:8875:5: () ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
             	    {
-            	    // InternalCASL.g:8856:5: ()
-            	    // InternalCASL.g:8857:6: 
+            	    // InternalCASL.g:8875:5: ()
+            	    // InternalCASL.g:8876:6: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -22887,13 +22924,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8863:5: ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
-            	    // InternalCASL.g:8864:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
+            	    // InternalCASL.g:8882:5: ( ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) ) )
+            	    // InternalCASL.g:8883:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
             	    {
-            	    // InternalCASL.g:8864:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
-            	    // InternalCASL.g:8865:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
+            	    // InternalCASL.g:8883:6: ( (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' ) )
+            	    // InternalCASL.g:8884:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
             	    {
-            	    // InternalCASL.g:8865:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
+            	    // InternalCASL.g:8884:7: (lv_op_2_1= '<' | lv_op_2_2= '>' | lv_op_2_3= '<=' | lv_op_2_4= '>=' )
             	    int alt126=4;
             	    switch ( input.LA(1) ) {
             	    case 53:
@@ -22926,7 +22963,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    switch (alt126) {
             	        case 1 :
-            	            // InternalCASL.g:8866:8: lv_op_2_1= '<'
+            	            // InternalCASL.g:8885:8: lv_op_2_1= '<'
             	            {
             	            lv_op_2_1=(Token)match(input,53,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22946,7 +22983,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:8877:8: lv_op_2_2= '>'
+            	            // InternalCASL.g:8896:8: lv_op_2_2= '>'
             	            {
             	            lv_op_2_2=(Token)match(input,57,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22966,7 +23003,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalCASL.g:8888:8: lv_op_2_3= '<='
+            	            // InternalCASL.g:8907:8: lv_op_2_3= '<='
             	            {
             	            lv_op_2_3=(Token)match(input,98,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -22986,7 +23023,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // InternalCASL.g:8899:8: lv_op_2_4= '>='
+            	            // InternalCASL.g:8918:8: lv_op_2_4= '>='
             	            {
             	            lv_op_2_4=(Token)match(input,99,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -23017,11 +23054,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8913:4: ( (lv_right_3_0= ruleSubtraction ) )
-            	    // InternalCASL.g:8914:5: (lv_right_3_0= ruleSubtraction )
+            	    // InternalCASL.g:8932:4: ( (lv_right_3_0= ruleSubtraction ) )
+            	    // InternalCASL.g:8933:5: (lv_right_3_0= ruleSubtraction )
             	    {
-            	    // InternalCASL.g:8914:5: (lv_right_3_0= ruleSubtraction )
-            	    // InternalCASL.g:8915:6: lv_right_3_0= ruleSubtraction
+            	    // InternalCASL.g:8933:5: (lv_right_3_0= ruleSubtraction )
+            	    // InternalCASL.g:8934:6: lv_right_3_0= ruleSubtraction
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23086,7 +23123,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubtraction"
-    // InternalCASL.g:8937:1: entryRuleSubtraction returns [EObject current=null] : iv_ruleSubtraction= ruleSubtraction EOF ;
+    // InternalCASL.g:8956:1: entryRuleSubtraction returns [EObject current=null] : iv_ruleSubtraction= ruleSubtraction EOF ;
     public final EObject entryRuleSubtraction() throws RecognitionException {
         EObject current = null;
 
@@ -23094,8 +23131,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:8937:52: (iv_ruleSubtraction= ruleSubtraction EOF )
-            // InternalCASL.g:8938:2: iv_ruleSubtraction= ruleSubtraction EOF
+            // InternalCASL.g:8956:52: (iv_ruleSubtraction= ruleSubtraction EOF )
+            // InternalCASL.g:8957:2: iv_ruleSubtraction= ruleSubtraction EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSubtractionRule()); 
@@ -23126,7 +23163,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubtraction"
-    // InternalCASL.g:8944:1: ruleSubtraction returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) ;
+    // InternalCASL.g:8963:1: ruleSubtraction returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) ;
     public final EObject ruleSubtraction() throws RecognitionException {
         EObject current = null;
 
@@ -23140,11 +23177,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:8950:2: ( (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) )
-            // InternalCASL.g:8951:2: (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
+            // InternalCASL.g:8969:2: ( (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) )
+            // InternalCASL.g:8970:2: (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
             {
-            // InternalCASL.g:8951:2: (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
-            // InternalCASL.g:8952:3: this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )*
+            // InternalCASL.g:8970:2: (this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
+            // InternalCASL.g:8971:3: this_Addition_0= ruleAddition ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -23162,7 +23199,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:8960:3: ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )*
+            // InternalCASL.g:8979:3: ( () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) ) )*
             loop128:
             do {
                 int alt128=2;
@@ -23175,10 +23212,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt128) {
             	case 1 :
-            	    // InternalCASL.g:8961:4: () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) )
+            	    // InternalCASL.g:8980:4: () ( (lv_op_2_0= '-' ) ) ( (lv_right_3_0= ruleAddition ) )
             	    {
-            	    // InternalCASL.g:8961:4: ()
-            	    // InternalCASL.g:8962:5: 
+            	    // InternalCASL.g:8980:4: ()
+            	    // InternalCASL.g:8981:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23190,11 +23227,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8968:4: ( (lv_op_2_0= '-' ) )
-            	    // InternalCASL.g:8969:5: (lv_op_2_0= '-' )
+            	    // InternalCASL.g:8987:4: ( (lv_op_2_0= '-' ) )
+            	    // InternalCASL.g:8988:5: (lv_op_2_0= '-' )
             	    {
-            	    // InternalCASL.g:8969:5: (lv_op_2_0= '-' )
-            	    // InternalCASL.g:8970:6: lv_op_2_0= '-'
+            	    // InternalCASL.g:8988:5: (lv_op_2_0= '-' )
+            	    // InternalCASL.g:8989:6: lv_op_2_0= '-'
             	    {
             	    lv_op_2_0=(Token)match(input,100,FOLLOW_104); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -23216,11 +23253,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:8982:4: ( (lv_right_3_0= ruleAddition ) )
-            	    // InternalCASL.g:8983:5: (lv_right_3_0= ruleAddition )
+            	    // InternalCASL.g:9001:4: ( (lv_right_3_0= ruleAddition ) )
+            	    // InternalCASL.g:9002:5: (lv_right_3_0= ruleAddition )
             	    {
-            	    // InternalCASL.g:8983:5: (lv_right_3_0= ruleAddition )
-            	    // InternalCASL.g:8984:6: lv_right_3_0= ruleAddition
+            	    // InternalCASL.g:9002:5: (lv_right_3_0= ruleAddition )
+            	    // InternalCASL.g:9003:6: lv_right_3_0= ruleAddition
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23285,7 +23322,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddition"
-    // InternalCASL.g:9006:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    // InternalCASL.g:9025:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
     public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -23293,8 +23330,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9006:49: (iv_ruleAddition= ruleAddition EOF )
-            // InternalCASL.g:9007:2: iv_ruleAddition= ruleAddition EOF
+            // InternalCASL.g:9025:49: (iv_ruleAddition= ruleAddition EOF )
+            // InternalCASL.g:9026:2: iv_ruleAddition= ruleAddition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAdditionRule()); 
@@ -23325,7 +23362,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddition"
-    // InternalCASL.g:9013:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
+    // InternalCASL.g:9032:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
     public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -23339,11 +23376,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9019:2: ( (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
-            // InternalCASL.g:9020:2: (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // InternalCASL.g:9038:2: ( (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
+            // InternalCASL.g:9039:2: (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
             {
-            // InternalCASL.g:9020:2: (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
-            // InternalCASL.g:9021:3: this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
+            // InternalCASL.g:9039:2: (this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // InternalCASL.g:9040:3: this_Multiplication_0= ruleMultiplication ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -23361,7 +23398,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:9029:3: ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
+            // InternalCASL.g:9048:3: ( () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
             loop129:
             do {
                 int alt129=2;
@@ -23374,10 +23411,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt129) {
             	case 1 :
-            	    // InternalCASL.g:9030:4: () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) )
+            	    // InternalCASL.g:9049:4: () ( (lv_op_2_0= '+' ) ) ( (lv_right_3_0= ruleMultiplication ) )
             	    {
-            	    // InternalCASL.g:9030:4: ()
-            	    // InternalCASL.g:9031:5: 
+            	    // InternalCASL.g:9049:4: ()
+            	    // InternalCASL.g:9050:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23389,11 +23426,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:9037:4: ( (lv_op_2_0= '+' ) )
-            	    // InternalCASL.g:9038:5: (lv_op_2_0= '+' )
+            	    // InternalCASL.g:9056:4: ( (lv_op_2_0= '+' ) )
+            	    // InternalCASL.g:9057:5: (lv_op_2_0= '+' )
             	    {
-            	    // InternalCASL.g:9038:5: (lv_op_2_0= '+' )
-            	    // InternalCASL.g:9039:6: lv_op_2_0= '+'
+            	    // InternalCASL.g:9057:5: (lv_op_2_0= '+' )
+            	    // InternalCASL.g:9058:6: lv_op_2_0= '+'
             	    {
             	    lv_op_2_0=(Token)match(input,101,FOLLOW_104); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -23415,11 +23452,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:9051:4: ( (lv_right_3_0= ruleMultiplication ) )
-            	    // InternalCASL.g:9052:5: (lv_right_3_0= ruleMultiplication )
+            	    // InternalCASL.g:9070:4: ( (lv_right_3_0= ruleMultiplication ) )
+            	    // InternalCASL.g:9071:5: (lv_right_3_0= ruleMultiplication )
             	    {
-            	    // InternalCASL.g:9052:5: (lv_right_3_0= ruleMultiplication )
-            	    // InternalCASL.g:9053:6: lv_right_3_0= ruleMultiplication
+            	    // InternalCASL.g:9071:5: (lv_right_3_0= ruleMultiplication )
+            	    // InternalCASL.g:9072:6: lv_right_3_0= ruleMultiplication
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23484,7 +23521,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiplication"
-    // InternalCASL.g:9075:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    // InternalCASL.g:9094:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
     public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -23492,8 +23529,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9075:55: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // InternalCASL.g:9076:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // InternalCASL.g:9094:55: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // InternalCASL.g:9095:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMultiplicationRule()); 
@@ -23524,7 +23561,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplication"
-    // InternalCASL.g:9082:1: ruleMultiplication returns [EObject current=null] : (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* ) ;
+    // InternalCASL.g:9101:1: ruleMultiplication returns [EObject current=null] : (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* ) ;
     public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -23539,11 +23576,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9088:2: ( (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* ) )
-            // InternalCASL.g:9089:2: (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* )
+            // InternalCASL.g:9107:2: ( (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* ) )
+            // InternalCASL.g:9108:2: (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* )
             {
-            // InternalCASL.g:9089:2: (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* )
-            // InternalCASL.g:9090:3: this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )*
+            // InternalCASL.g:9108:2: (this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )* )
+            // InternalCASL.g:9109:3: this_Prefixed_0= rulePrefixed ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )*
             {
             if ( state.backtracking==0 ) {
 
@@ -23561,7 +23598,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:9098:3: ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )*
+            // InternalCASL.g:9117:3: ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) ) )*
             loop131:
             do {
                 int alt131=2;
@@ -23574,9 +23611,9 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt131) {
             	case 1 :
-            	    // InternalCASL.g:9099:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) )
+            	    // InternalCASL.g:9118:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrefixed ) )
             	    {
-            	    // InternalCASL.g:9099:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) )
+            	    // InternalCASL.g:9118:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) )
             	    int alt130=2;
             	    int LA130_0 = input.LA(1);
 
@@ -23595,13 +23632,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt130) {
             	        case 1 :
-            	            // InternalCASL.g:9100:5: ( () ( (lv_op_2_0= '*' ) ) )
+            	            // InternalCASL.g:9119:5: ( () ( (lv_op_2_0= '*' ) ) )
             	            {
-            	            // InternalCASL.g:9100:5: ( () ( (lv_op_2_0= '*' ) ) )
-            	            // InternalCASL.g:9101:6: () ( (lv_op_2_0= '*' ) )
+            	            // InternalCASL.g:9119:5: ( () ( (lv_op_2_0= '*' ) ) )
+            	            // InternalCASL.g:9120:6: () ( (lv_op_2_0= '*' ) )
             	            {
-            	            // InternalCASL.g:9101:6: ()
-            	            // InternalCASL.g:9102:7: 
+            	            // InternalCASL.g:9120:6: ()
+            	            // InternalCASL.g:9121:7: 
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -23613,11 +23650,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalCASL.g:9108:6: ( (lv_op_2_0= '*' ) )
-            	            // InternalCASL.g:9109:7: (lv_op_2_0= '*' )
+            	            // InternalCASL.g:9127:6: ( (lv_op_2_0= '*' ) )
+            	            // InternalCASL.g:9128:7: (lv_op_2_0= '*' )
             	            {
-            	            // InternalCASL.g:9109:7: (lv_op_2_0= '*' )
-            	            // InternalCASL.g:9110:8: lv_op_2_0= '*'
+            	            // InternalCASL.g:9128:7: (lv_op_2_0= '*' )
+            	            // InternalCASL.g:9129:8: lv_op_2_0= '*'
             	            {
             	            lv_op_2_0=(Token)match(input,82,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -23646,13 +23683,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalCASL.g:9124:5: ( () ( (lv_op_4_0= '/' ) ) )
+            	            // InternalCASL.g:9143:5: ( () ( (lv_op_4_0= '/' ) ) )
             	            {
-            	            // InternalCASL.g:9124:5: ( () ( (lv_op_4_0= '/' ) ) )
-            	            // InternalCASL.g:9125:6: () ( (lv_op_4_0= '/' ) )
+            	            // InternalCASL.g:9143:5: ( () ( (lv_op_4_0= '/' ) ) )
+            	            // InternalCASL.g:9144:6: () ( (lv_op_4_0= '/' ) )
             	            {
-            	            // InternalCASL.g:9125:6: ()
-            	            // InternalCASL.g:9126:7: 
+            	            // InternalCASL.g:9144:6: ()
+            	            // InternalCASL.g:9145:7: 
             	            {
             	            if ( state.backtracking==0 ) {
 
@@ -23664,11 +23701,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalCASL.g:9132:6: ( (lv_op_4_0= '/' ) )
-            	            // InternalCASL.g:9133:7: (lv_op_4_0= '/' )
+            	            // InternalCASL.g:9151:6: ( (lv_op_4_0= '/' ) )
+            	            // InternalCASL.g:9152:7: (lv_op_4_0= '/' )
             	            {
-            	            // InternalCASL.g:9133:7: (lv_op_4_0= '/' )
-            	            // InternalCASL.g:9134:8: lv_op_4_0= '/'
+            	            // InternalCASL.g:9152:7: (lv_op_4_0= '/' )
+            	            // InternalCASL.g:9153:8: lv_op_4_0= '/'
             	            {
             	            lv_op_4_0=(Token)match(input,102,FOLLOW_104); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
@@ -23699,11 +23736,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalCASL.g:9148:4: ( (lv_right_5_0= rulePrefixed ) )
-            	    // InternalCASL.g:9149:5: (lv_right_5_0= rulePrefixed )
+            	    // InternalCASL.g:9167:4: ( (lv_right_5_0= rulePrefixed ) )
+            	    // InternalCASL.g:9168:5: (lv_right_5_0= rulePrefixed )
             	    {
-            	    // InternalCASL.g:9149:5: (lv_right_5_0= rulePrefixed )
-            	    // InternalCASL.g:9150:6: lv_right_5_0= rulePrefixed
+            	    // InternalCASL.g:9168:5: (lv_right_5_0= rulePrefixed )
+            	    // InternalCASL.g:9169:6: lv_right_5_0= rulePrefixed
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -23768,7 +23805,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrefixed"
-    // InternalCASL.g:9172:1: entryRulePrefixed returns [EObject current=null] : iv_rulePrefixed= rulePrefixed EOF ;
+    // InternalCASL.g:9191:1: entryRulePrefixed returns [EObject current=null] : iv_rulePrefixed= rulePrefixed EOF ;
     public final EObject entryRulePrefixed() throws RecognitionException {
         EObject current = null;
 
@@ -23776,8 +23813,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9172:49: (iv_rulePrefixed= rulePrefixed EOF )
-            // InternalCASL.g:9173:2: iv_rulePrefixed= rulePrefixed EOF
+            // InternalCASL.g:9191:49: (iv_rulePrefixed= rulePrefixed EOF )
+            // InternalCASL.g:9192:2: iv_rulePrefixed= rulePrefixed EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPrefixedRule()); 
@@ -23808,7 +23845,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrefixed"
-    // InternalCASL.g:9179:1: rulePrefixed returns [EObject current=null] : ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic ) ;
+    // InternalCASL.g:9198:1: rulePrefixed returns [EObject current=null] : ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic ) ;
     public final EObject rulePrefixed() throws RecognitionException {
         EObject current = null;
 
@@ -23829,10 +23866,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9185:2: ( ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic ) )
-            // InternalCASL.g:9186:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic )
+            // InternalCASL.g:9204:2: ( ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic ) )
+            // InternalCASL.g:9205:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic )
             {
-            // InternalCASL.g:9186:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic )
+            // InternalCASL.g:9205:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) ) | (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' ) | this_Atomic_9= ruleAtomic )
             int alt132=4;
             switch ( input.LA(1) ) {
             case 103:
@@ -23883,13 +23920,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt132) {
                 case 1 :
-                    // InternalCASL.g:9187:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) )
+                    // InternalCASL.g:9206:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) )
                     {
-                    // InternalCASL.g:9187:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) )
-                    // InternalCASL.g:9188:4: () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) )
+                    // InternalCASL.g:9206:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) ) )
+                    // InternalCASL.g:9207:4: () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= rulePrefixed ) )
                     {
-                    // InternalCASL.g:9188:4: ()
-                    // InternalCASL.g:9189:5: 
+                    // InternalCASL.g:9207:4: ()
+                    // InternalCASL.g:9208:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -23901,8 +23938,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9195:4: ( ( '!' )=>otherlv_1= '!' )
-                    // InternalCASL.g:9196:5: ( '!' )=>otherlv_1= '!'
+                    // InternalCASL.g:9214:4: ( ( '!' )=>otherlv_1= '!' )
+                    // InternalCASL.g:9215:5: ( '!' )=>otherlv_1= '!'
                     {
                     otherlv_1=(Token)match(input,103,FOLLOW_104); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -23913,11 +23950,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9202:4: ( (lv_expression_2_0= rulePrefixed ) )
-                    // InternalCASL.g:9203:5: (lv_expression_2_0= rulePrefixed )
+                    // InternalCASL.g:9221:4: ( (lv_expression_2_0= rulePrefixed ) )
+                    // InternalCASL.g:9222:5: (lv_expression_2_0= rulePrefixed )
                     {
-                    // InternalCASL.g:9203:5: (lv_expression_2_0= rulePrefixed )
-                    // InternalCASL.g:9204:6: lv_expression_2_0= rulePrefixed
+                    // InternalCASL.g:9222:5: (lv_expression_2_0= rulePrefixed )
+                    // InternalCASL.g:9223:6: lv_expression_2_0= rulePrefixed
                     {
                     if ( state.backtracking==0 ) {
 
@@ -23955,13 +23992,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:9223:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) )
+                    // InternalCASL.g:9242:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) )
                     {
-                    // InternalCASL.g:9223:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) )
-                    // InternalCASL.g:9224:4: () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) )
+                    // InternalCASL.g:9242:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) ) )
+                    // InternalCASL.g:9243:4: () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= rulePrefixed ) )
                     {
-                    // InternalCASL.g:9224:4: ()
-                    // InternalCASL.g:9225:5: 
+                    // InternalCASL.g:9243:4: ()
+                    // InternalCASL.g:9244:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -23973,8 +24010,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9231:4: ( ( '-' )=>otherlv_4= '-' )
-                    // InternalCASL.g:9232:5: ( '-' )=>otherlv_4= '-'
+                    // InternalCASL.g:9250:4: ( ( '-' )=>otherlv_4= '-' )
+                    // InternalCASL.g:9251:5: ( '-' )=>otherlv_4= '-'
                     {
                     otherlv_4=(Token)match(input,100,FOLLOW_104); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -23985,11 +24022,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9238:4: ( (lv_expression_5_0= rulePrefixed ) )
-                    // InternalCASL.g:9239:5: (lv_expression_5_0= rulePrefixed )
+                    // InternalCASL.g:9257:4: ( (lv_expression_5_0= rulePrefixed ) )
+                    // InternalCASL.g:9258:5: (lv_expression_5_0= rulePrefixed )
                     {
-                    // InternalCASL.g:9239:5: (lv_expression_5_0= rulePrefixed )
-                    // InternalCASL.g:9240:6: lv_expression_5_0= rulePrefixed
+                    // InternalCASL.g:9258:5: (lv_expression_5_0= rulePrefixed )
+                    // InternalCASL.g:9259:6: lv_expression_5_0= rulePrefixed
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24027,10 +24064,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:9259:3: (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' )
+                    // InternalCASL.g:9278:3: (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' )
                     {
-                    // InternalCASL.g:9259:3: (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' )
-                    // InternalCASL.g:9260:4: otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')'
+                    // InternalCASL.g:9278:3: (otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')' )
+                    // InternalCASL.g:9279:4: otherlv_6= '(' this_Expression_7= ruleExpression otherlv_8= ')'
                     {
                     otherlv_6=(Token)match(input,39,FOLLOW_54); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -24067,7 +24104,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:9278:3: this_Atomic_9= ruleAtomic
+                    // InternalCASL.g:9297:3: this_Atomic_9= ruleAtomic
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24113,7 +24150,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomic"
-    // InternalCASL.g:9290:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
+    // InternalCASL.g:9309:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
     public final EObject entryRuleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -24121,8 +24158,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9290:47: (iv_ruleAtomic= ruleAtomic EOF )
-            // InternalCASL.g:9291:2: iv_ruleAtomic= ruleAtomic EOF
+            // InternalCASL.g:9309:47: (iv_ruleAtomic= ruleAtomic EOF )
+            // InternalCASL.g:9310:2: iv_ruleAtomic= ruleAtomic EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAtomicRule()); 
@@ -24153,7 +24190,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // InternalCASL.g:9297:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) ) ;
+    // InternalCASL.g:9316:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -24185,21 +24222,21 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9303:2: ( ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) ) )
-            // InternalCASL.g:9304:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )
+            // InternalCASL.g:9322:2: ( ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) ) )
+            // InternalCASL.g:9323:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )
             {
-            // InternalCASL.g:9304:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )
+            // InternalCASL.g:9323:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )
             int alt133=13;
             alt133 = dfa133.predict(input);
             switch (alt133) {
                 case 1 :
-                    // InternalCASL.g:9305:3: ( () ( (lv_value_1_0= RULE_NUMBER ) ) )
+                    // InternalCASL.g:9324:3: ( () ( (lv_value_1_0= RULE_NUMBER ) ) )
                     {
-                    // InternalCASL.g:9305:3: ( () ( (lv_value_1_0= RULE_NUMBER ) ) )
-                    // InternalCASL.g:9306:4: () ( (lv_value_1_0= RULE_NUMBER ) )
+                    // InternalCASL.g:9324:3: ( () ( (lv_value_1_0= RULE_NUMBER ) ) )
+                    // InternalCASL.g:9325:4: () ( (lv_value_1_0= RULE_NUMBER ) )
                     {
-                    // InternalCASL.g:9306:4: ()
-                    // InternalCASL.g:9307:5: 
+                    // InternalCASL.g:9325:4: ()
+                    // InternalCASL.g:9326:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24211,11 +24248,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9313:4: ( (lv_value_1_0= RULE_NUMBER ) )
-                    // InternalCASL.g:9314:5: (lv_value_1_0= RULE_NUMBER )
+                    // InternalCASL.g:9332:4: ( (lv_value_1_0= RULE_NUMBER ) )
+                    // InternalCASL.g:9333:5: (lv_value_1_0= RULE_NUMBER )
                     {
-                    // InternalCASL.g:9314:5: (lv_value_1_0= RULE_NUMBER )
-                    // InternalCASL.g:9315:6: lv_value_1_0= RULE_NUMBER
+                    // InternalCASL.g:9333:5: (lv_value_1_0= RULE_NUMBER )
+                    // InternalCASL.g:9334:6: lv_value_1_0= RULE_NUMBER
                     {
                     lv_value_1_0=(Token)match(input,RULE_NUMBER,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -24248,13 +24285,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:9333:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // InternalCASL.g:9352:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
                     {
-                    // InternalCASL.g:9333:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
-                    // InternalCASL.g:9334:4: () ( (lv_value_3_0= RULE_STRING ) )
+                    // InternalCASL.g:9352:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // InternalCASL.g:9353:4: () ( (lv_value_3_0= RULE_STRING ) )
                     {
-                    // InternalCASL.g:9334:4: ()
-                    // InternalCASL.g:9335:5: 
+                    // InternalCASL.g:9353:4: ()
+                    // InternalCASL.g:9354:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24266,11 +24303,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9341:4: ( (lv_value_3_0= RULE_STRING ) )
-                    // InternalCASL.g:9342:5: (lv_value_3_0= RULE_STRING )
+                    // InternalCASL.g:9360:4: ( (lv_value_3_0= RULE_STRING ) )
+                    // InternalCASL.g:9361:5: (lv_value_3_0= RULE_STRING )
                     {
-                    // InternalCASL.g:9342:5: (lv_value_3_0= RULE_STRING )
-                    // InternalCASL.g:9343:6: lv_value_3_0= RULE_STRING
+                    // InternalCASL.g:9361:5: (lv_value_3_0= RULE_STRING )
+                    // InternalCASL.g:9362:6: lv_value_3_0= RULE_STRING
                     {
                     lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -24303,13 +24340,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:9361:3: ( () ( (lv_nulltype_5_0= ruleNullType ) ) )
+                    // InternalCASL.g:9380:3: ( () ( (lv_nulltype_5_0= ruleNullType ) ) )
                     {
-                    // InternalCASL.g:9361:3: ( () ( (lv_nulltype_5_0= ruleNullType ) ) )
-                    // InternalCASL.g:9362:4: () ( (lv_nulltype_5_0= ruleNullType ) )
+                    // InternalCASL.g:9380:3: ( () ( (lv_nulltype_5_0= ruleNullType ) ) )
+                    // InternalCASL.g:9381:4: () ( (lv_nulltype_5_0= ruleNullType ) )
                     {
-                    // InternalCASL.g:9362:4: ()
-                    // InternalCASL.g:9363:5: 
+                    // InternalCASL.g:9381:4: ()
+                    // InternalCASL.g:9382:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24321,11 +24358,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9369:4: ( (lv_nulltype_5_0= ruleNullType ) )
-                    // InternalCASL.g:9370:5: (lv_nulltype_5_0= ruleNullType )
+                    // InternalCASL.g:9388:4: ( (lv_nulltype_5_0= ruleNullType ) )
+                    // InternalCASL.g:9389:5: (lv_nulltype_5_0= ruleNullType )
                     {
-                    // InternalCASL.g:9370:5: (lv_nulltype_5_0= ruleNullType )
-                    // InternalCASL.g:9371:6: lv_nulltype_5_0= ruleNullType
+                    // InternalCASL.g:9389:5: (lv_nulltype_5_0= ruleNullType )
+                    // InternalCASL.g:9390:6: lv_nulltype_5_0= ruleNullType
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24363,13 +24400,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:9390:3: ( () ( (lv_bool_7_0= ruleBooleanValue ) ) )
+                    // InternalCASL.g:9409:3: ( () ( (lv_bool_7_0= ruleBooleanValue ) ) )
                     {
-                    // InternalCASL.g:9390:3: ( () ( (lv_bool_7_0= ruleBooleanValue ) ) )
-                    // InternalCASL.g:9391:4: () ( (lv_bool_7_0= ruleBooleanValue ) )
+                    // InternalCASL.g:9409:3: ( () ( (lv_bool_7_0= ruleBooleanValue ) ) )
+                    // InternalCASL.g:9410:4: () ( (lv_bool_7_0= ruleBooleanValue ) )
                     {
-                    // InternalCASL.g:9391:4: ()
-                    // InternalCASL.g:9392:5: 
+                    // InternalCASL.g:9410:4: ()
+                    // InternalCASL.g:9411:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24381,11 +24418,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9398:4: ( (lv_bool_7_0= ruleBooleanValue ) )
-                    // InternalCASL.g:9399:5: (lv_bool_7_0= ruleBooleanValue )
+                    // InternalCASL.g:9417:4: ( (lv_bool_7_0= ruleBooleanValue ) )
+                    // InternalCASL.g:9418:5: (lv_bool_7_0= ruleBooleanValue )
                     {
-                    // InternalCASL.g:9399:5: (lv_bool_7_0= ruleBooleanValue )
-                    // InternalCASL.g:9400:6: lv_bool_7_0= ruleBooleanValue
+                    // InternalCASL.g:9418:5: (lv_bool_7_0= ruleBooleanValue )
+                    // InternalCASL.g:9419:6: lv_bool_7_0= ruleBooleanValue
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24423,13 +24460,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalCASL.g:9419:3: ( () ( (otherlv_9= RULE_ID ) ) )
+                    // InternalCASL.g:9438:3: ( () ( (otherlv_9= RULE_ID ) ) )
                     {
-                    // InternalCASL.g:9419:3: ( () ( (otherlv_9= RULE_ID ) ) )
-                    // InternalCASL.g:9420:4: () ( (otherlv_9= RULE_ID ) )
+                    // InternalCASL.g:9438:3: ( () ( (otherlv_9= RULE_ID ) ) )
+                    // InternalCASL.g:9439:4: () ( (otherlv_9= RULE_ID ) )
                     {
-                    // InternalCASL.g:9420:4: ()
-                    // InternalCASL.g:9421:5: 
+                    // InternalCASL.g:9439:4: ()
+                    // InternalCASL.g:9440:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24441,11 +24478,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9427:4: ( (otherlv_9= RULE_ID ) )
-                    // InternalCASL.g:9428:5: (otherlv_9= RULE_ID )
+                    // InternalCASL.g:9446:4: ( (otherlv_9= RULE_ID ) )
+                    // InternalCASL.g:9447:5: (otherlv_9= RULE_ID )
                     {
-                    // InternalCASL.g:9428:5: (otherlv_9= RULE_ID )
-                    // InternalCASL.g:9429:6: otherlv_9= RULE_ID
+                    // InternalCASL.g:9447:5: (otherlv_9= RULE_ID )
+                    // InternalCASL.g:9448:6: otherlv_9= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24473,13 +24510,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalCASL.g:9442:3: ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) )
+                    // InternalCASL.g:9461:3: ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) )
                     {
-                    // InternalCASL.g:9442:3: ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) )
-                    // InternalCASL.g:9443:4: () ( (lv_sysCall_11_0= ruleSystemCall ) )
+                    // InternalCASL.g:9461:3: ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) )
+                    // InternalCASL.g:9462:4: () ( (lv_sysCall_11_0= ruleSystemCall ) )
                     {
-                    // InternalCASL.g:9443:4: ()
-                    // InternalCASL.g:9444:5: 
+                    // InternalCASL.g:9462:4: ()
+                    // InternalCASL.g:9463:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24491,11 +24528,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9450:4: ( (lv_sysCall_11_0= ruleSystemCall ) )
-                    // InternalCASL.g:9451:5: (lv_sysCall_11_0= ruleSystemCall )
+                    // InternalCASL.g:9469:4: ( (lv_sysCall_11_0= ruleSystemCall ) )
+                    // InternalCASL.g:9470:5: (lv_sysCall_11_0= ruleSystemCall )
                     {
-                    // InternalCASL.g:9451:5: (lv_sysCall_11_0= ruleSystemCall )
-                    // InternalCASL.g:9452:6: lv_sysCall_11_0= ruleSystemCall
+                    // InternalCASL.g:9470:5: (lv_sysCall_11_0= ruleSystemCall )
+                    // InternalCASL.g:9471:6: lv_sysCall_11_0= ruleSystemCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24533,13 +24570,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalCASL.g:9471:3: ( () ( (lv_func_13_0= ruleFeatureCall ) ) )
+                    // InternalCASL.g:9490:3: ( () ( (lv_func_13_0= ruleFeatureCall ) ) )
                     {
-                    // InternalCASL.g:9471:3: ( () ( (lv_func_13_0= ruleFeatureCall ) ) )
-                    // InternalCASL.g:9472:4: () ( (lv_func_13_0= ruleFeatureCall ) )
+                    // InternalCASL.g:9490:3: ( () ( (lv_func_13_0= ruleFeatureCall ) ) )
+                    // InternalCASL.g:9491:4: () ( (lv_func_13_0= ruleFeatureCall ) )
                     {
-                    // InternalCASL.g:9472:4: ()
-                    // InternalCASL.g:9473:5: 
+                    // InternalCASL.g:9491:4: ()
+                    // InternalCASL.g:9492:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24551,11 +24588,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9479:4: ( (lv_func_13_0= ruleFeatureCall ) )
-                    // InternalCASL.g:9480:5: (lv_func_13_0= ruleFeatureCall )
+                    // InternalCASL.g:9498:4: ( (lv_func_13_0= ruleFeatureCall ) )
+                    // InternalCASL.g:9499:5: (lv_func_13_0= ruleFeatureCall )
                     {
-                    // InternalCASL.g:9480:5: (lv_func_13_0= ruleFeatureCall )
-                    // InternalCASL.g:9481:6: lv_func_13_0= ruleFeatureCall
+                    // InternalCASL.g:9499:5: (lv_func_13_0= ruleFeatureCall )
+                    // InternalCASL.g:9500:6: lv_func_13_0= ruleFeatureCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24593,13 +24630,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalCASL.g:9500:3: ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) )
+                    // InternalCASL.g:9519:3: ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) )
                     {
-                    // InternalCASL.g:9500:3: ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) )
-                    // InternalCASL.g:9501:4: () ( (lv_selfCall_15_0= ruleSelfCall ) )
+                    // InternalCASL.g:9519:3: ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) )
+                    // InternalCASL.g:9520:4: () ( (lv_selfCall_15_0= ruleSelfCall ) )
                     {
-                    // InternalCASL.g:9501:4: ()
-                    // InternalCASL.g:9502:5: 
+                    // InternalCASL.g:9520:4: ()
+                    // InternalCASL.g:9521:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24611,11 +24648,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9508:4: ( (lv_selfCall_15_0= ruleSelfCall ) )
-                    // InternalCASL.g:9509:5: (lv_selfCall_15_0= ruleSelfCall )
+                    // InternalCASL.g:9527:4: ( (lv_selfCall_15_0= ruleSelfCall ) )
+                    // InternalCASL.g:9528:5: (lv_selfCall_15_0= ruleSelfCall )
                     {
-                    // InternalCASL.g:9509:5: (lv_selfCall_15_0= ruleSelfCall )
-                    // InternalCASL.g:9510:6: lv_selfCall_15_0= ruleSelfCall
+                    // InternalCASL.g:9528:5: (lv_selfCall_15_0= ruleSelfCall )
+                    // InternalCASL.g:9529:6: lv_selfCall_15_0= ruleSelfCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24653,13 +24690,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalCASL.g:9529:3: ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) )
+                    // InternalCASL.g:9548:3: ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) )
                     {
-                    // InternalCASL.g:9529:3: ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) )
-                    // InternalCASL.g:9530:4: () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) )
+                    // InternalCASL.g:9548:3: ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) )
+                    // InternalCASL.g:9549:4: () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) )
                     {
-                    // InternalCASL.g:9530:4: ()
-                    // InternalCASL.g:9531:5: 
+                    // InternalCASL.g:9549:4: ()
+                    // InternalCASL.g:9550:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24671,11 +24708,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9537:4: ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) )
-                    // InternalCASL.g:9538:5: (lv_macroCall_17_0= ruleCASL_Macro_Call )
+                    // InternalCASL.g:9556:4: ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) )
+                    // InternalCASL.g:9557:5: (lv_macroCall_17_0= ruleCASL_Macro_Call )
                     {
-                    // InternalCASL.g:9538:5: (lv_macroCall_17_0= ruleCASL_Macro_Call )
-                    // InternalCASL.g:9539:6: lv_macroCall_17_0= ruleCASL_Macro_Call
+                    // InternalCASL.g:9557:5: (lv_macroCall_17_0= ruleCASL_Macro_Call )
+                    // InternalCASL.g:9558:6: lv_macroCall_17_0= ruleCASL_Macro_Call
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24713,13 +24750,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalCASL.g:9558:3: ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) )
+                    // InternalCASL.g:9577:3: ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) )
                     {
-                    // InternalCASL.g:9558:3: ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) )
-                    // InternalCASL.g:9559:4: () ( (lv_funcCall_19_0= ruleFunctionCall ) )
+                    // InternalCASL.g:9577:3: ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) )
+                    // InternalCASL.g:9578:4: () ( (lv_funcCall_19_0= ruleFunctionCall ) )
                     {
-                    // InternalCASL.g:9559:4: ()
-                    // InternalCASL.g:9560:5: 
+                    // InternalCASL.g:9578:4: ()
+                    // InternalCASL.g:9579:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24731,11 +24768,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9566:4: ( (lv_funcCall_19_0= ruleFunctionCall ) )
-                    // InternalCASL.g:9567:5: (lv_funcCall_19_0= ruleFunctionCall )
+                    // InternalCASL.g:9585:4: ( (lv_funcCall_19_0= ruleFunctionCall ) )
+                    // InternalCASL.g:9586:5: (lv_funcCall_19_0= ruleFunctionCall )
                     {
-                    // InternalCASL.g:9567:5: (lv_funcCall_19_0= ruleFunctionCall )
-                    // InternalCASL.g:9568:6: lv_funcCall_19_0= ruleFunctionCall
+                    // InternalCASL.g:9586:5: (lv_funcCall_19_0= ruleFunctionCall )
+                    // InternalCASL.g:9587:6: lv_funcCall_19_0= ruleFunctionCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24773,13 +24810,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalCASL.g:9587:3: ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) )
+                    // InternalCASL.g:9606:3: ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) )
                     {
-                    // InternalCASL.g:9587:3: ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) )
-                    // InternalCASL.g:9588:4: () ( (lv_enumCall_21_0= ruleEnumCall ) )
+                    // InternalCASL.g:9606:3: ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) )
+                    // InternalCASL.g:9607:4: () ( (lv_enumCall_21_0= ruleEnumCall ) )
                     {
-                    // InternalCASL.g:9588:4: ()
-                    // InternalCASL.g:9589:5: 
+                    // InternalCASL.g:9607:4: ()
+                    // InternalCASL.g:9608:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24791,11 +24828,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9595:4: ( (lv_enumCall_21_0= ruleEnumCall ) )
-                    // InternalCASL.g:9596:5: (lv_enumCall_21_0= ruleEnumCall )
+                    // InternalCASL.g:9614:4: ( (lv_enumCall_21_0= ruleEnumCall ) )
+                    // InternalCASL.g:9615:5: (lv_enumCall_21_0= ruleEnumCall )
                     {
-                    // InternalCASL.g:9596:5: (lv_enumCall_21_0= ruleEnumCall )
-                    // InternalCASL.g:9597:6: lv_enumCall_21_0= ruleEnumCall
+                    // InternalCASL.g:9615:5: (lv_enumCall_21_0= ruleEnumCall )
+                    // InternalCASL.g:9616:6: lv_enumCall_21_0= ruleEnumCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24833,13 +24870,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalCASL.g:9616:3: ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) )
+                    // InternalCASL.g:9635:3: ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) )
                     {
-                    // InternalCASL.g:9616:3: ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) )
-                    // InternalCASL.g:9617:4: () ( (lv_groupCall_23_0= ruleGroup_Call ) )
+                    // InternalCASL.g:9635:3: ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) )
+                    // InternalCASL.g:9636:4: () ( (lv_groupCall_23_0= ruleGroup_Call ) )
                     {
-                    // InternalCASL.g:9617:4: ()
-                    // InternalCASL.g:9618:5: 
+                    // InternalCASL.g:9636:4: ()
+                    // InternalCASL.g:9637:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24851,11 +24888,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9624:4: ( (lv_groupCall_23_0= ruleGroup_Call ) )
-                    // InternalCASL.g:9625:5: (lv_groupCall_23_0= ruleGroup_Call )
+                    // InternalCASL.g:9643:4: ( (lv_groupCall_23_0= ruleGroup_Call ) )
+                    // InternalCASL.g:9644:5: (lv_groupCall_23_0= ruleGroup_Call )
                     {
-                    // InternalCASL.g:9625:5: (lv_groupCall_23_0= ruleGroup_Call )
-                    // InternalCASL.g:9626:6: lv_groupCall_23_0= ruleGroup_Call
+                    // InternalCASL.g:9644:5: (lv_groupCall_23_0= ruleGroup_Call )
+                    // InternalCASL.g:9645:6: lv_groupCall_23_0= ruleGroup_Call
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24893,13 +24930,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalCASL.g:9645:3: ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) )
+                    // InternalCASL.g:9664:3: ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) )
                     {
-                    // InternalCASL.g:9645:3: ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) )
-                    // InternalCASL.g:9646:4: () ( (lv_agentCall_25_0= ruleAgent_Call ) )
+                    // InternalCASL.g:9664:3: ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) )
+                    // InternalCASL.g:9665:4: () ( (lv_agentCall_25_0= ruleAgent_Call ) )
                     {
-                    // InternalCASL.g:9646:4: ()
-                    // InternalCASL.g:9647:5: 
+                    // InternalCASL.g:9665:4: ()
+                    // InternalCASL.g:9666:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24911,11 +24948,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9653:4: ( (lv_agentCall_25_0= ruleAgent_Call ) )
-                    // InternalCASL.g:9654:5: (lv_agentCall_25_0= ruleAgent_Call )
+                    // InternalCASL.g:9672:4: ( (lv_agentCall_25_0= ruleAgent_Call ) )
+                    // InternalCASL.g:9673:5: (lv_agentCall_25_0= ruleAgent_Call )
                     {
-                    // InternalCASL.g:9654:5: (lv_agentCall_25_0= ruleAgent_Call )
-                    // InternalCASL.g:9655:6: lv_agentCall_25_0= ruleAgent_Call
+                    // InternalCASL.g:9673:5: (lv_agentCall_25_0= ruleAgent_Call )
+                    // InternalCASL.g:9674:6: lv_agentCall_25_0= ruleAgent_Call
                     {
                     if ( state.backtracking==0 ) {
 
@@ -24977,7 +25014,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelfCall"
-    // InternalCASL.g:9677:1: entryRuleSelfCall returns [EObject current=null] : iv_ruleSelfCall= ruleSelfCall EOF ;
+    // InternalCASL.g:9696:1: entryRuleSelfCall returns [EObject current=null] : iv_ruleSelfCall= ruleSelfCall EOF ;
     public final EObject entryRuleSelfCall() throws RecognitionException {
         EObject current = null;
 
@@ -24985,8 +25022,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9677:49: (iv_ruleSelfCall= ruleSelfCall EOF )
-            // InternalCASL.g:9678:2: iv_ruleSelfCall= ruleSelfCall EOF
+            // InternalCASL.g:9696:49: (iv_ruleSelfCall= ruleSelfCall EOF )
+            // InternalCASL.g:9697:2: iv_ruleSelfCall= ruleSelfCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSelfCallRule()); 
@@ -25017,7 +25054,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelfCall"
-    // InternalCASL.g:9684:1: ruleSelfCall returns [EObject current=null] : ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) ) ;
+    // InternalCASL.g:9703:1: ruleSelfCall returns [EObject current=null] : ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) ) ;
     public final EObject ruleSelfCall() throws RecognitionException {
         EObject current = null;
 
@@ -25035,10 +25072,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9690:2: ( ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) ) )
-            // InternalCASL.g:9691:2: ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) )
+            // InternalCASL.g:9709:2: ( ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) ) )
+            // InternalCASL.g:9710:2: ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) )
             {
-            // InternalCASL.g:9691:2: ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) )
+            // InternalCASL.g:9710:2: ( ( () otherlv_1= 'self' ) | (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) ) | (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) ) )
             int alt134=4;
             int LA134_0 = input.LA(1);
 
@@ -25048,10 +25085,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             else if ( (LA134_0==84) ) {
                 int LA134_2 = input.LA(2);
 
-                if ( ((LA134_2>=63 && LA134_2<=64)||LA134_2==67||(LA134_2>=70 && LA134_2<=72)) ) {
-                    alt134=4;
-                }
-                else if ( (LA134_2==RULE_ID) ) {
+                if ( (LA134_2==RULE_ID) ) {
                     switch ( input.LA(3) ) {
                     case 65:
                     case 66:
@@ -25059,11 +25093,6 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     case 69:
                         {
                         alt134=4;
-                        }
-                        break;
-                    case 83:
-                        {
-                        alt134=3;
                         }
                         break;
                     case EOF:
@@ -25086,14 +25115,22 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                         alt134=2;
                         }
                         break;
+                    case 83:
+                        {
+                        alt134=3;
+                        }
+                        break;
                     default:
                         if (state.backtracking>0) {state.failed=true; return current;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 134, 4, input);
+                            new NoViableAltException("", 134, 3, input);
 
                         throw nvae;
                     }
 
+                }
+                else if ( ((LA134_2>=63 && LA134_2<=64)||LA134_2==67||(LA134_2>=70 && LA134_2<=72)) ) {
+                    alt134=4;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -25112,13 +25149,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt134) {
                 case 1 :
-                    // InternalCASL.g:9692:3: ( () otherlv_1= 'self' )
+                    // InternalCASL.g:9711:3: ( () otherlv_1= 'self' )
                     {
-                    // InternalCASL.g:9692:3: ( () otherlv_1= 'self' )
-                    // InternalCASL.g:9693:4: () otherlv_1= 'self'
+                    // InternalCASL.g:9711:3: ( () otherlv_1= 'self' )
+                    // InternalCASL.g:9712:4: () otherlv_1= 'self'
                     {
-                    // InternalCASL.g:9693:4: ()
-                    // InternalCASL.g:9694:5: 
+                    // InternalCASL.g:9712:4: ()
+                    // InternalCASL.g:9713:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25143,10 +25180,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:9706:3: (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) )
+                    // InternalCASL.g:9725:3: (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) )
                     {
-                    // InternalCASL.g:9706:3: (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) )
-                    // InternalCASL.g:9707:4: otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) )
+                    // InternalCASL.g:9725:3: (otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) ) )
+                    // InternalCASL.g:9726:4: otherlv_2= 'self.' ( (otherlv_3= RULE_ID ) )
                     {
                     otherlv_2=(Token)match(input,84,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25154,11 +25191,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_2, grammarAccess.getSelfCallAccess().getSelfKeyword_1_0());
                       			
                     }
-                    // InternalCASL.g:9711:4: ( (otherlv_3= RULE_ID ) )
-                    // InternalCASL.g:9712:5: (otherlv_3= RULE_ID )
+                    // InternalCASL.g:9730:4: ( (otherlv_3= RULE_ID ) )
+                    // InternalCASL.g:9731:5: (otherlv_3= RULE_ID )
                     {
-                    // InternalCASL.g:9712:5: (otherlv_3= RULE_ID )
-                    // InternalCASL.g:9713:6: otherlv_3= RULE_ID
+                    // InternalCASL.g:9731:5: (otherlv_3= RULE_ID )
+                    // InternalCASL.g:9732:6: otherlv_3= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25186,10 +25223,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:9726:3: (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) )
+                    // InternalCASL.g:9745:3: (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) )
                     {
-                    // InternalCASL.g:9726:3: (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) )
-                    // InternalCASL.g:9727:4: otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) )
+                    // InternalCASL.g:9745:3: (otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) ) )
+                    // InternalCASL.g:9746:4: otherlv_4= 'self.' ( (lv_fc_5_0= ruleFunctionCall ) )
                     {
                     otherlv_4=(Token)match(input,84,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25197,11 +25234,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_4, grammarAccess.getSelfCallAccess().getSelfKeyword_2_0());
                       			
                     }
-                    // InternalCASL.g:9731:4: ( (lv_fc_5_0= ruleFunctionCall ) )
-                    // InternalCASL.g:9732:5: (lv_fc_5_0= ruleFunctionCall )
+                    // InternalCASL.g:9750:4: ( (lv_fc_5_0= ruleFunctionCall ) )
+                    // InternalCASL.g:9751:5: (lv_fc_5_0= ruleFunctionCall )
                     {
-                    // InternalCASL.g:9732:5: (lv_fc_5_0= ruleFunctionCall )
-                    // InternalCASL.g:9733:6: lv_fc_5_0= ruleFunctionCall
+                    // InternalCASL.g:9751:5: (lv_fc_5_0= ruleFunctionCall )
+                    // InternalCASL.g:9752:6: lv_fc_5_0= ruleFunctionCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25239,10 +25276,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:9752:3: (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) )
+                    // InternalCASL.g:9771:3: (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) )
                     {
-                    // InternalCASL.g:9752:3: (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) )
-                    // InternalCASL.g:9753:4: otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) )
+                    // InternalCASL.g:9771:3: (otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) ) )
+                    // InternalCASL.g:9772:4: otherlv_6= 'self.' ( (lv_fec_7_0= ruleFeatureCall ) )
                     {
                     otherlv_6=(Token)match(input,84,FOLLOW_110); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25250,11 +25287,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_6, grammarAccess.getSelfCallAccess().getSelfKeyword_3_0());
                       			
                     }
-                    // InternalCASL.g:9757:4: ( (lv_fec_7_0= ruleFeatureCall ) )
-                    // InternalCASL.g:9758:5: (lv_fec_7_0= ruleFeatureCall )
+                    // InternalCASL.g:9776:4: ( (lv_fec_7_0= ruleFeatureCall ) )
+                    // InternalCASL.g:9777:5: (lv_fec_7_0= ruleFeatureCall )
                     {
-                    // InternalCASL.g:9758:5: (lv_fec_7_0= ruleFeatureCall )
-                    // InternalCASL.g:9759:6: lv_fec_7_0= ruleFeatureCall
+                    // InternalCASL.g:9777:5: (lv_fec_7_0= ruleFeatureCall )
+                    // InternalCASL.g:9778:6: lv_fec_7_0= ruleFeatureCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25316,7 +25353,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // InternalCASL.g:9781:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
+    // InternalCASL.g:9800:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
     public final EObject entryRuleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -25324,8 +25361,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9781:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
-            // InternalCASL.g:9782:2: iv_ruleFunctionCall= ruleFunctionCall EOF
+            // InternalCASL.g:9800:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
+            // InternalCASL.g:9801:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunctionCallRule()); 
@@ -25356,7 +25393,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // InternalCASL.g:9788:1: ruleFunctionCall returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) ) ;
+    // InternalCASL.g:9807:1: ruleFunctionCall returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -25379,14 +25416,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9794:2: ( ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) ) )
-            // InternalCASL.g:9795:2: ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) )
+            // InternalCASL.g:9813:2: ( ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) ) )
+            // InternalCASL.g:9814:2: ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) )
             {
-            // InternalCASL.g:9795:2: ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) )
-            // InternalCASL.g:9796:3: () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) )
+            // InternalCASL.g:9814:2: ( () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) ) )
+            // InternalCASL.g:9815:3: () ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) )
             {
-            // InternalCASL.g:9796:3: ()
-            // InternalCASL.g:9797:4: 
+            // InternalCASL.g:9815:3: ()
+            // InternalCASL.g:9816:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25398,11 +25435,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:9803:3: ( (otherlv_1= RULE_ID ) )
-            // InternalCASL.g:9804:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:9822:3: ( (otherlv_1= RULE_ID ) )
+            // InternalCASL.g:9823:4: (otherlv_1= RULE_ID )
             {
-            // InternalCASL.g:9804:4: (otherlv_1= RULE_ID )
-            // InternalCASL.g:9805:5: otherlv_1= RULE_ID
+            // InternalCASL.g:9823:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:9824:5: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -25423,7 +25460,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:9816:3: ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) )
+            // InternalCASL.g:9835:3: ( (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' ) | (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* ) )
             int alt138=2;
             int LA138_0 = input.LA(1);
 
@@ -25464,10 +25501,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt138) {
                 case 1 :
-                    // InternalCASL.g:9817:4: (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' )
+                    // InternalCASL.g:9836:4: (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' )
                     {
-                    // InternalCASL.g:9817:4: (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' )
-                    // InternalCASL.g:9818:5: otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')'
+                    // InternalCASL.g:9836:4: (otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')' )
+                    // InternalCASL.g:9837:5: otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '(' ( (lv_inputs_5_0= ruleExpression ) )? (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )* otherlv_8= ')'
                     {
                     otherlv_2=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25475,11 +25512,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_2, grammarAccess.getFunctionCallAccess().getFullStopKeyword_2_0_0());
                       				
                     }
-                    // InternalCASL.g:9822:5: ( (otherlv_3= RULE_ID ) )
-                    // InternalCASL.g:9823:6: (otherlv_3= RULE_ID )
+                    // InternalCASL.g:9841:5: ( (otherlv_3= RULE_ID ) )
+                    // InternalCASL.g:9842:6: (otherlv_3= RULE_ID )
                     {
-                    // InternalCASL.g:9823:6: (otherlv_3= RULE_ID )
-                    // InternalCASL.g:9824:7: otherlv_3= RULE_ID
+                    // InternalCASL.g:9842:6: (otherlv_3= RULE_ID )
+                    // InternalCASL.g:9843:7: otherlv_3= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25506,7 +25543,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_4, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_2_0_2());
                       				
                     }
-                    // InternalCASL.g:9839:5: ( (lv_inputs_5_0= ruleExpression ) )?
+                    // InternalCASL.g:9858:5: ( (lv_inputs_5_0= ruleExpression ) )?
                     int alt135=2;
                     int LA135_0 = input.LA(1);
 
@@ -25515,10 +25552,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt135) {
                         case 1 :
-                            // InternalCASL.g:9840:6: (lv_inputs_5_0= ruleExpression )
+                            // InternalCASL.g:9859:6: (lv_inputs_5_0= ruleExpression )
                             {
-                            // InternalCASL.g:9840:6: (lv_inputs_5_0= ruleExpression )
-                            // InternalCASL.g:9841:7: lv_inputs_5_0= ruleExpression
+                            // InternalCASL.g:9859:6: (lv_inputs_5_0= ruleExpression )
+                            // InternalCASL.g:9860:7: lv_inputs_5_0= ruleExpression
                             {
                             if ( state.backtracking==0 ) {
 
@@ -25552,7 +25589,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9858:5: (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )*
+                    // InternalCASL.g:9877:5: (otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) ) )*
                     loop136:
                     do {
                         int alt136=2;
@@ -25565,7 +25602,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                         switch (alt136) {
                     	case 1 :
-                    	    // InternalCASL.g:9859:6: otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) )
+                    	    // InternalCASL.g:9878:6: otherlv_6= ',' ( (lv_inputs_7_0= ruleExpression ) )
                     	    {
                     	    otherlv_6=(Token)match(input,19,FOLLOW_54); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -25573,11 +25610,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     	      						newLeafNode(otherlv_6, grammarAccess.getFunctionCallAccess().getCommaKeyword_2_0_4_0());
                     	      					
                     	    }
-                    	    // InternalCASL.g:9863:6: ( (lv_inputs_7_0= ruleExpression ) )
-                    	    // InternalCASL.g:9864:7: (lv_inputs_7_0= ruleExpression )
+                    	    // InternalCASL.g:9882:6: ( (lv_inputs_7_0= ruleExpression ) )
+                    	    // InternalCASL.g:9883:7: (lv_inputs_7_0= ruleExpression )
                     	    {
-                    	    // InternalCASL.g:9864:7: (lv_inputs_7_0= ruleExpression )
-                    	    // InternalCASL.g:9865:8: lv_inputs_7_0= ruleExpression
+                    	    // InternalCASL.g:9883:7: (lv_inputs_7_0= ruleExpression )
+                    	    // InternalCASL.g:9884:8: lv_inputs_7_0= ruleExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -25630,10 +25667,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:9889:4: (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* )
+                    // InternalCASL.g:9908:4: (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* )
                     {
-                    // InternalCASL.g:9889:4: (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* )
-                    // InternalCASL.g:9890:5: otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )*
+                    // InternalCASL.g:9908:4: (otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )* )
+                    // InternalCASL.g:9909:5: otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )*
                     {
                     otherlv_9=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25641,11 +25678,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_9, grammarAccess.getFunctionCallAccess().getFullStopKeyword_2_1_0());
                       				
                     }
-                    // InternalCASL.g:9894:5: ( (otherlv_10= RULE_ID ) )
-                    // InternalCASL.g:9895:6: (otherlv_10= RULE_ID )
+                    // InternalCASL.g:9913:5: ( (otherlv_10= RULE_ID ) )
+                    // InternalCASL.g:9914:6: (otherlv_10= RULE_ID )
                     {
-                    // InternalCASL.g:9895:6: (otherlv_10= RULE_ID )
-                    // InternalCASL.g:9896:7: otherlv_10= RULE_ID
+                    // InternalCASL.g:9914:6: (otherlv_10= RULE_ID )
+                    // InternalCASL.g:9915:7: otherlv_10= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -25666,7 +25703,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCASL.g:9907:5: (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )*
+                    // InternalCASL.g:9926:5: (otherlv_11= '.' ( (otherlv_12= RULE_ID ) ) )*
                     loop137:
                     do {
                         int alt137=2;
@@ -25679,7 +25716,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                         switch (alt137) {
                     	case 1 :
-                    	    // InternalCASL.g:9908:6: otherlv_11= '.' ( (otherlv_12= RULE_ID ) )
+                    	    // InternalCASL.g:9927:6: otherlv_11= '.' ( (otherlv_12= RULE_ID ) )
                     	    {
                     	    otherlv_11=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -25687,11 +25724,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     	      						newLeafNode(otherlv_11, grammarAccess.getFunctionCallAccess().getFullStopKeyword_2_1_2_0());
                     	      					
                     	    }
-                    	    // InternalCASL.g:9912:6: ( (otherlv_12= RULE_ID ) )
-                    	    // InternalCASL.g:9913:7: (otherlv_12= RULE_ID )
+                    	    // InternalCASL.g:9931:6: ( (otherlv_12= RULE_ID ) )
+                    	    // InternalCASL.g:9932:7: (otherlv_12= RULE_ID )
                     	    {
-                    	    // InternalCASL.g:9913:7: (otherlv_12= RULE_ID )
-                    	    // InternalCASL.g:9914:8: otherlv_12= RULE_ID
+                    	    // InternalCASL.g:9932:7: (otherlv_12= RULE_ID )
+                    	    // InternalCASL.g:9933:8: otherlv_12= RULE_ID
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -25755,7 +25792,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumCall"
-    // InternalCASL.g:9932:1: entryRuleEnumCall returns [EObject current=null] : iv_ruleEnumCall= ruleEnumCall EOF ;
+    // InternalCASL.g:9951:1: entryRuleEnumCall returns [EObject current=null] : iv_ruleEnumCall= ruleEnumCall EOF ;
     public final EObject entryRuleEnumCall() throws RecognitionException {
         EObject current = null;
 
@@ -25763,8 +25800,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9932:49: (iv_ruleEnumCall= ruleEnumCall EOF )
-            // InternalCASL.g:9933:2: iv_ruleEnumCall= ruleEnumCall EOF
+            // InternalCASL.g:9951:49: (iv_ruleEnumCall= ruleEnumCall EOF )
+            // InternalCASL.g:9952:2: iv_ruleEnumCall= ruleEnumCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnumCallRule()); 
@@ -25795,7 +25832,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumCall"
-    // InternalCASL.g:9939:1: ruleEnumCall returns [EObject current=null] : (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalCASL.g:9958:1: ruleEnumCall returns [EObject current=null] : (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleEnumCall() throws RecognitionException {
         EObject current = null;
 
@@ -25808,11 +25845,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9945:2: ( (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalCASL.g:9946:2: (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) )
+            // InternalCASL.g:9964:2: ( (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalCASL.g:9965:2: (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalCASL.g:9946:2: (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) )
-            // InternalCASL.g:9947:3: otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) )
+            // InternalCASL.g:9965:2: (otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) )
+            // InternalCASL.g:9966:3: otherlv_0= 'ENUM.' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,105,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -25820,11 +25857,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getEnumCallAccess().getENUMKeyword_0());
               		
             }
-            // InternalCASL.g:9951:3: ( (otherlv_1= RULE_ID ) )
-            // InternalCASL.g:9952:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:9970:3: ( (otherlv_1= RULE_ID ) )
+            // InternalCASL.g:9971:4: (otherlv_1= RULE_ID )
             {
-            // InternalCASL.g:9952:4: (otherlv_1= RULE_ID )
-            // InternalCASL.g:9953:5: otherlv_1= RULE_ID
+            // InternalCASL.g:9971:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:9972:5: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -25851,11 +25888,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getEnumCallAccess().getFullStopKeyword_2());
               		
             }
-            // InternalCASL.g:9968:3: ( (otherlv_3= RULE_ID ) )
-            // InternalCASL.g:9969:4: (otherlv_3= RULE_ID )
+            // InternalCASL.g:9987:3: ( (otherlv_3= RULE_ID ) )
+            // InternalCASL.g:9988:4: (otherlv_3= RULE_ID )
             {
-            // InternalCASL.g:9969:4: (otherlv_3= RULE_ID )
-            // InternalCASL.g:9970:5: otherlv_3= RULE_ID
+            // InternalCASL.g:9988:4: (otherlv_3= RULE_ID )
+            // InternalCASL.g:9989:5: otherlv_3= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -25901,7 +25938,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSystemCall"
-    // InternalCASL.g:9985:1: entryRuleSystemCall returns [EObject current=null] : iv_ruleSystemCall= ruleSystemCall EOF ;
+    // InternalCASL.g:10004:1: entryRuleSystemCall returns [EObject current=null] : iv_ruleSystemCall= ruleSystemCall EOF ;
     public final EObject entryRuleSystemCall() throws RecognitionException {
         EObject current = null;
 
@@ -25909,8 +25946,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:9985:51: (iv_ruleSystemCall= ruleSystemCall EOF )
-            // InternalCASL.g:9986:2: iv_ruleSystemCall= ruleSystemCall EOF
+            // InternalCASL.g:10004:51: (iv_ruleSystemCall= ruleSystemCall EOF )
+            // InternalCASL.g:10005:2: iv_ruleSystemCall= ruleSystemCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSystemCallRule()); 
@@ -25941,7 +25978,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSystemCall"
-    // InternalCASL.g:9992:1: ruleSystemCall returns [EObject current=null] : ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) ) ;
+    // InternalCASL.g:10011:1: ruleSystemCall returns [EObject current=null] : ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) ) ;
     public final EObject ruleSystemCall() throws RecognitionException {
         EObject current = null;
 
@@ -25953,14 +25990,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:9998:2: ( ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) ) )
-            // InternalCASL.g:9999:2: ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) )
+            // InternalCASL.g:10017:2: ( ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) ) )
+            // InternalCASL.g:10018:2: ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) )
             {
-            // InternalCASL.g:9999:2: ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) )
-            // InternalCASL.g:10000:3: () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) )
+            // InternalCASL.g:10018:2: ( () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) ) )
+            // InternalCASL.g:10019:3: () otherlv_1= 'SYSTEM.' ( (lv_call_2_0= ruleQualifiedNameCall ) )
             {
-            // InternalCASL.g:10000:3: ()
-            // InternalCASL.g:10001:4: 
+            // InternalCASL.g:10019:3: ()
+            // InternalCASL.g:10020:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25978,11 +26015,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getSystemCallAccess().getSYSTEMKeyword_1());
               		
             }
-            // InternalCASL.g:10011:3: ( (lv_call_2_0= ruleQualifiedNameCall ) )
-            // InternalCASL.g:10012:4: (lv_call_2_0= ruleQualifiedNameCall )
+            // InternalCASL.g:10030:3: ( (lv_call_2_0= ruleQualifiedNameCall ) )
+            // InternalCASL.g:10031:4: (lv_call_2_0= ruleQualifiedNameCall )
             {
-            // InternalCASL.g:10012:4: (lv_call_2_0= ruleQualifiedNameCall )
-            // InternalCASL.g:10013:5: lv_call_2_0= ruleQualifiedNameCall
+            // InternalCASL.g:10031:4: (lv_call_2_0= ruleQualifiedNameCall )
+            // InternalCASL.g:10032:5: lv_call_2_0= ruleQualifiedNameCall
             {
             if ( state.backtracking==0 ) {
 
@@ -26038,7 +26075,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAgent_Call"
-    // InternalCASL.g:10034:1: entryRuleAgent_Call returns [EObject current=null] : iv_ruleAgent_Call= ruleAgent_Call EOF ;
+    // InternalCASL.g:10053:1: entryRuleAgent_Call returns [EObject current=null] : iv_ruleAgent_Call= ruleAgent_Call EOF ;
     public final EObject entryRuleAgent_Call() throws RecognitionException {
         EObject current = null;
 
@@ -26046,8 +26083,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10034:51: (iv_ruleAgent_Call= ruleAgent_Call EOF )
-            // InternalCASL.g:10035:2: iv_ruleAgent_Call= ruleAgent_Call EOF
+            // InternalCASL.g:10053:51: (iv_ruleAgent_Call= ruleAgent_Call EOF )
+            // InternalCASL.g:10054:2: iv_ruleAgent_Call= ruleAgent_Call EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAgent_CallRule()); 
@@ -26078,7 +26115,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAgent_Call"
-    // InternalCASL.g:10041:1: ruleAgent_Call returns [EObject current=null] : ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) ;
+    // InternalCASL.g:10060:1: ruleAgent_Call returns [EObject current=null] : ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) ;
     public final EObject ruleAgent_Call() throws RecognitionException {
         EObject current = null;
 
@@ -26092,14 +26129,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10047:2: ( ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) )
-            // InternalCASL.g:10048:2: ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
+            // InternalCASL.g:10066:2: ( ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) )
+            // InternalCASL.g:10067:2: ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
             {
-            // InternalCASL.g:10048:2: ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
-            // InternalCASL.g:10049:3: () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
+            // InternalCASL.g:10067:2: ( () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
+            // InternalCASL.g:10068:3: () otherlv_1= 'AGENT.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
             {
-            // InternalCASL.g:10049:3: ()
-            // InternalCASL.g:10050:4: 
+            // InternalCASL.g:10068:3: ()
+            // InternalCASL.g:10069:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -26117,11 +26154,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getAgent_CallAccess().getAGENTKeyword_1());
               		
             }
-            // InternalCASL.g:10060:3: ( (otherlv_2= RULE_ID ) )
-            // InternalCASL.g:10061:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10079:3: ( (otherlv_2= RULE_ID ) )
+            // InternalCASL.g:10080:4: (otherlv_2= RULE_ID )
             {
-            // InternalCASL.g:10061:4: (otherlv_2= RULE_ID )
-            // InternalCASL.g:10062:5: otherlv_2= RULE_ID
+            // InternalCASL.g:10080:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10081:5: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -26142,7 +26179,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10073:3: (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
+            // InternalCASL.g:10092:3: (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
             int alt139=2;
             int LA139_0 = input.LA(1);
 
@@ -26151,7 +26188,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt139) {
                 case 1 :
-                    // InternalCASL.g:10074:4: otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
+                    // InternalCASL.g:10093:4: otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
                     {
                     otherlv_3=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -26159,11 +26196,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_3, grammarAccess.getAgent_CallAccess().getFullStopKeyword_3_0());
                       			
                     }
-                    // InternalCASL.g:10078:4: ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
-                    // InternalCASL.g:10079:5: (lv_qnc_4_0= ruleQualifiedNameCall )
+                    // InternalCASL.g:10097:4: ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
+                    // InternalCASL.g:10098:5: (lv_qnc_4_0= ruleQualifiedNameCall )
                     {
-                    // InternalCASL.g:10079:5: (lv_qnc_4_0= ruleQualifiedNameCall )
-                    // InternalCASL.g:10080:6: lv_qnc_4_0= ruleQualifiedNameCall
+                    // InternalCASL.g:10098:5: (lv_qnc_4_0= ruleQualifiedNameCall )
+                    // InternalCASL.g:10099:6: lv_qnc_4_0= ruleQualifiedNameCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -26225,7 +26262,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGroup_Call"
-    // InternalCASL.g:10102:1: entryRuleGroup_Call returns [EObject current=null] : iv_ruleGroup_Call= ruleGroup_Call EOF ;
+    // InternalCASL.g:10121:1: entryRuleGroup_Call returns [EObject current=null] : iv_ruleGroup_Call= ruleGroup_Call EOF ;
     public final EObject entryRuleGroup_Call() throws RecognitionException {
         EObject current = null;
 
@@ -26233,8 +26270,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10102:51: (iv_ruleGroup_Call= ruleGroup_Call EOF )
-            // InternalCASL.g:10103:2: iv_ruleGroup_Call= ruleGroup_Call EOF
+            // InternalCASL.g:10121:51: (iv_ruleGroup_Call= ruleGroup_Call EOF )
+            // InternalCASL.g:10122:2: iv_ruleGroup_Call= ruleGroup_Call EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGroup_CallRule()); 
@@ -26265,7 +26302,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGroup_Call"
-    // InternalCASL.g:10109:1: ruleGroup_Call returns [EObject current=null] : ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) ;
+    // InternalCASL.g:10128:1: ruleGroup_Call returns [EObject current=null] : ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) ;
     public final EObject ruleGroup_Call() throws RecognitionException {
         EObject current = null;
 
@@ -26279,14 +26316,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10115:2: ( ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) )
-            // InternalCASL.g:10116:2: ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
+            // InternalCASL.g:10134:2: ( ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? ) )
+            // InternalCASL.g:10135:2: ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
             {
-            // InternalCASL.g:10116:2: ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
-            // InternalCASL.g:10117:3: () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
+            // InternalCASL.g:10135:2: ( () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )? )
+            // InternalCASL.g:10136:3: () otherlv_1= 'GROUP.' ( (otherlv_2= RULE_ID ) ) (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
             {
-            // InternalCASL.g:10117:3: ()
-            // InternalCASL.g:10118:4: 
+            // InternalCASL.g:10136:3: ()
+            // InternalCASL.g:10137:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -26304,11 +26341,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getGroup_CallAccess().getGROUPKeyword_1());
               		
             }
-            // InternalCASL.g:10128:3: ( (otherlv_2= RULE_ID ) )
-            // InternalCASL.g:10129:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10147:3: ( (otherlv_2= RULE_ID ) )
+            // InternalCASL.g:10148:4: (otherlv_2= RULE_ID )
             {
-            // InternalCASL.g:10129:4: (otherlv_2= RULE_ID )
-            // InternalCASL.g:10130:5: otherlv_2= RULE_ID
+            // InternalCASL.g:10148:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10149:5: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -26329,7 +26366,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10141:3: (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
+            // InternalCASL.g:10160:3: (otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) ) )?
             int alt140=2;
             int LA140_0 = input.LA(1);
 
@@ -26338,7 +26375,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt140) {
                 case 1 :
-                    // InternalCASL.g:10142:4: otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
+                    // InternalCASL.g:10161:4: otherlv_3= '.' ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
                     {
                     otherlv_3=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -26346,11 +26383,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_3, grammarAccess.getGroup_CallAccess().getFullStopKeyword_3_0());
                       			
                     }
-                    // InternalCASL.g:10146:4: ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
-                    // InternalCASL.g:10147:5: (lv_qnc_4_0= ruleQualifiedNameCall )
+                    // InternalCASL.g:10165:4: ( (lv_qnc_4_0= ruleQualifiedNameCall ) )
+                    // InternalCASL.g:10166:5: (lv_qnc_4_0= ruleQualifiedNameCall )
                     {
-                    // InternalCASL.g:10147:5: (lv_qnc_4_0= ruleQualifiedNameCall )
-                    // InternalCASL.g:10148:6: lv_qnc_4_0= ruleQualifiedNameCall
+                    // InternalCASL.g:10166:5: (lv_qnc_4_0= ruleQualifiedNameCall )
+                    // InternalCASL.g:10167:6: lv_qnc_4_0= ruleQualifiedNameCall
                     {
                     if ( state.backtracking==0 ) {
 
@@ -26412,7 +26449,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleObject"
-    // InternalCASL.g:10170:1: entryRuleObject returns [EObject current=null] : iv_ruleObject= ruleObject EOF ;
+    // InternalCASL.g:10189:1: entryRuleObject returns [EObject current=null] : iv_ruleObject= ruleObject EOF ;
     public final EObject entryRuleObject() throws RecognitionException {
         EObject current = null;
 
@@ -26420,8 +26457,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10170:47: (iv_ruleObject= ruleObject EOF )
-            // InternalCASL.g:10171:2: iv_ruleObject= ruleObject EOF
+            // InternalCASL.g:10189:47: (iv_ruleObject= ruleObject EOF )
+            // InternalCASL.g:10190:2: iv_ruleObject= ruleObject EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getObjectRule()); 
@@ -26452,7 +26489,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObject"
-    // InternalCASL.g:10177:1: ruleObject returns [EObject current=null] : ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' ) ;
+    // InternalCASL.g:10196:1: ruleObject returns [EObject current=null] : ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' ) ;
     public final EObject ruleObject() throws RecognitionException {
         EObject current = null;
 
@@ -26475,14 +26512,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10183:2: ( ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' ) )
-            // InternalCASL.g:10184:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' )
+            // InternalCASL.g:10202:2: ( ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' ) )
+            // InternalCASL.g:10203:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' )
             {
-            // InternalCASL.g:10184:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' )
-            // InternalCASL.g:10185:3: () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};'
+            // InternalCASL.g:10203:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};' )
+            // InternalCASL.g:10204:3: () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'obj' ( (lv_name_3_0= RULE_ID ) ) (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )? otherlv_7= ':' otherlv_8= '{' ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )* otherlv_12= '};'
             {
-            // InternalCASL.g:10185:3: ()
-            // InternalCASL.g:10186:4: 
+            // InternalCASL.g:10204:3: ()
+            // InternalCASL.g:10205:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -26494,7 +26531,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10192:3: ( (lv_custom_1_0= 'custom' ) )?
+            // InternalCASL.g:10211:3: ( (lv_custom_1_0= 'custom' ) )?
             int alt141=2;
             int LA141_0 = input.LA(1);
 
@@ -26503,10 +26540,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt141) {
                 case 1 :
-                    // InternalCASL.g:10193:4: (lv_custom_1_0= 'custom' )
+                    // InternalCASL.g:10212:4: (lv_custom_1_0= 'custom' )
                     {
-                    // InternalCASL.g:10193:4: (lv_custom_1_0= 'custom' )
-                    // InternalCASL.g:10194:5: lv_custom_1_0= 'custom'
+                    // InternalCASL.g:10212:4: (lv_custom_1_0= 'custom' )
+                    // InternalCASL.g:10213:5: lv_custom_1_0= 'custom'
                     {
                     lv_custom_1_0=(Token)match(input,109,FOLLOW_113); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -26537,11 +26574,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getObjectAccess().getObjKeyword_2());
               		
             }
-            // InternalCASL.g:10210:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalCASL.g:10211:4: (lv_name_3_0= RULE_ID )
+            // InternalCASL.g:10229:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalCASL.g:10230:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalCASL.g:10211:4: (lv_name_3_0= RULE_ID )
-            // InternalCASL.g:10212:5: lv_name_3_0= RULE_ID
+            // InternalCASL.g:10230:4: (lv_name_3_0= RULE_ID )
+            // InternalCASL.g:10231:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_73); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -26567,7 +26604,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10228:3: (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )?
+            // InternalCASL.g:10247:3: (otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>' )?
             int alt142=2;
             int LA142_0 = input.LA(1);
 
@@ -26576,7 +26613,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt142) {
                 case 1 :
-                    // InternalCASL.g:10229:4: otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>'
+                    // InternalCASL.g:10248:4: otherlv_4= '<' ( (otherlv_5= RULE_ID ) ) otherlv_6= '>'
                     {
                     otherlv_4=(Token)match(input,53,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -26584,11 +26621,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_4, grammarAccess.getObjectAccess().getLessThanSignKeyword_4_0());
                       			
                     }
-                    // InternalCASL.g:10233:4: ( (otherlv_5= RULE_ID ) )
-                    // InternalCASL.g:10234:5: (otherlv_5= RULE_ID )
+                    // InternalCASL.g:10252:4: ( (otherlv_5= RULE_ID ) )
+                    // InternalCASL.g:10253:5: (otherlv_5= RULE_ID )
                     {
-                    // InternalCASL.g:10234:5: (otherlv_5= RULE_ID )
-                    // InternalCASL.g:10235:6: otherlv_5= RULE_ID
+                    // InternalCASL.g:10253:5: (otherlv_5= RULE_ID )
+                    // InternalCASL.g:10254:6: otherlv_5= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -26633,7 +26670,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_8, grammarAccess.getObjectAccess().getLeftCurlyBracketKeyword_6());
               		
             }
-            // InternalCASL.g:10259:3: ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )*
+            // InternalCASL.g:10278:3: ( ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' ) | ( (lv_fields_11_0= ruleFunction ) ) )*
             loop143:
             do {
                 int alt143=3;
@@ -26649,16 +26686,16 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt143) {
             	case 1 :
-            	    // InternalCASL.g:10260:4: ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' )
+            	    // InternalCASL.g:10279:4: ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' )
             	    {
-            	    // InternalCASL.g:10260:4: ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' )
-            	    // InternalCASL.g:10261:5: ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';'
+            	    // InternalCASL.g:10279:4: ( ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';' )
+            	    // InternalCASL.g:10280:5: ( (lv_fields_9_0= ruleField ) ) otherlv_10= ';'
             	    {
-            	    // InternalCASL.g:10261:5: ( (lv_fields_9_0= ruleField ) )
-            	    // InternalCASL.g:10262:6: (lv_fields_9_0= ruleField )
+            	    // InternalCASL.g:10280:5: ( (lv_fields_9_0= ruleField ) )
+            	    // InternalCASL.g:10281:6: (lv_fields_9_0= ruleField )
             	    {
-            	    // InternalCASL.g:10262:6: (lv_fields_9_0= ruleField )
-            	    // InternalCASL.g:10263:7: lv_fields_9_0= ruleField
+            	    // InternalCASL.g:10281:6: (lv_fields_9_0= ruleField )
+            	    // InternalCASL.g:10282:7: lv_fields_9_0= ruleField
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -26702,13 +26739,13 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalCASL.g:10286:4: ( (lv_fields_11_0= ruleFunction ) )
+            	    // InternalCASL.g:10305:4: ( (lv_fields_11_0= ruleFunction ) )
             	    {
-            	    // InternalCASL.g:10286:4: ( (lv_fields_11_0= ruleFunction ) )
-            	    // InternalCASL.g:10287:5: (lv_fields_11_0= ruleFunction )
+            	    // InternalCASL.g:10305:4: ( (lv_fields_11_0= ruleFunction ) )
+            	    // InternalCASL.g:10306:5: (lv_fields_11_0= ruleFunction )
             	    {
-            	    // InternalCASL.g:10287:5: (lv_fields_11_0= ruleFunction )
-            	    // InternalCASL.g:10288:6: lv_fields_11_0= ruleFunction
+            	    // InternalCASL.g:10306:5: (lv_fields_11_0= ruleFunction )
+            	    // InternalCASL.g:10307:6: lv_fields_11_0= ruleFunction
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -26779,7 +26816,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnum"
-    // InternalCASL.g:10314:1: entryRuleEnum returns [EObject current=null] : iv_ruleEnum= ruleEnum EOF ;
+    // InternalCASL.g:10333:1: entryRuleEnum returns [EObject current=null] : iv_ruleEnum= ruleEnum EOF ;
     public final EObject entryRuleEnum() throws RecognitionException {
         EObject current = null;
 
@@ -26787,8 +26824,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10314:45: (iv_ruleEnum= ruleEnum EOF )
-            // InternalCASL.g:10315:2: iv_ruleEnum= ruleEnum EOF
+            // InternalCASL.g:10333:45: (iv_ruleEnum= ruleEnum EOF )
+            // InternalCASL.g:10334:2: iv_ruleEnum= ruleEnum EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnumRule()); 
@@ -26819,7 +26856,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnum"
-    // InternalCASL.g:10321:1: ruleEnum returns [EObject current=null] : ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' ) ;
+    // InternalCASL.g:10340:1: ruleEnum returns [EObject current=null] : ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' ) ;
     public final EObject ruleEnum() throws RecognitionException {
         EObject current = null;
 
@@ -26839,14 +26876,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10327:2: ( ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' ) )
-            // InternalCASL.g:10328:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' )
+            // InternalCASL.g:10346:2: ( ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' ) )
+            // InternalCASL.g:10347:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' )
             {
-            // InternalCASL.g:10328:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' )
-            // InternalCASL.g:10329:3: () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};'
+            // InternalCASL.g:10347:2: ( () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};' )
+            // InternalCASL.g:10348:3: () ( (lv_custom_1_0= 'custom' ) )? otherlv_2= 'enum' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' otherlv_5= '{' ( (lv_enum_fields_6_0= ruleEnum_Field ) ) (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )* otherlv_9= '};'
             {
-            // InternalCASL.g:10329:3: ()
-            // InternalCASL.g:10330:4: 
+            // InternalCASL.g:10348:3: ()
+            // InternalCASL.g:10349:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -26858,7 +26895,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10336:3: ( (lv_custom_1_0= 'custom' ) )?
+            // InternalCASL.g:10355:3: ( (lv_custom_1_0= 'custom' ) )?
             int alt144=2;
             int LA144_0 = input.LA(1);
 
@@ -26867,10 +26904,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt144) {
                 case 1 :
-                    // InternalCASL.g:10337:4: (lv_custom_1_0= 'custom' )
+                    // InternalCASL.g:10356:4: (lv_custom_1_0= 'custom' )
                     {
-                    // InternalCASL.g:10337:4: (lv_custom_1_0= 'custom' )
-                    // InternalCASL.g:10338:5: lv_custom_1_0= 'custom'
+                    // InternalCASL.g:10356:4: (lv_custom_1_0= 'custom' )
+                    // InternalCASL.g:10357:5: lv_custom_1_0= 'custom'
                     {
                     lv_custom_1_0=(Token)match(input,109,FOLLOW_115); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -26901,11 +26938,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getEnumAccess().getEnumKeyword_2());
               		
             }
-            // InternalCASL.g:10354:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalCASL.g:10355:4: (lv_name_3_0= RULE_ID )
+            // InternalCASL.g:10373:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalCASL.g:10374:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalCASL.g:10355:4: (lv_name_3_0= RULE_ID )
-            // InternalCASL.g:10356:5: lv_name_3_0= RULE_ID
+            // InternalCASL.g:10374:4: (lv_name_3_0= RULE_ID )
+            // InternalCASL.g:10375:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_37); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -26943,11 +26980,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_5, grammarAccess.getEnumAccess().getLeftCurlyBracketKeyword_5());
               		
             }
-            // InternalCASL.g:10380:3: ( (lv_enum_fields_6_0= ruleEnum_Field ) )
-            // InternalCASL.g:10381:4: (lv_enum_fields_6_0= ruleEnum_Field )
+            // InternalCASL.g:10399:3: ( (lv_enum_fields_6_0= ruleEnum_Field ) )
+            // InternalCASL.g:10400:4: (lv_enum_fields_6_0= ruleEnum_Field )
             {
-            // InternalCASL.g:10381:4: (lv_enum_fields_6_0= ruleEnum_Field )
-            // InternalCASL.g:10382:5: lv_enum_fields_6_0= ruleEnum_Field
+            // InternalCASL.g:10400:4: (lv_enum_fields_6_0= ruleEnum_Field )
+            // InternalCASL.g:10401:5: lv_enum_fields_6_0= ruleEnum_Field
             {
             if ( state.backtracking==0 ) {
 
@@ -26978,7 +27015,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10399:3: (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )*
+            // InternalCASL.g:10418:3: (otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) ) )*
             loop145:
             do {
                 int alt145=2;
@@ -26991,7 +27028,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt145) {
             	case 1 :
-            	    // InternalCASL.g:10400:4: otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) )
+            	    // InternalCASL.g:10419:4: otherlv_7= ',' ( (lv_enum_fields_8_0= ruleEnum_Field ) )
             	    {
             	    otherlv_7=(Token)match(input,19,FOLLOW_19); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -26999,11 +27036,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	      				newLeafNode(otherlv_7, grammarAccess.getEnumAccess().getCommaKeyword_7_0());
             	      			
             	    }
-            	    // InternalCASL.g:10404:4: ( (lv_enum_fields_8_0= ruleEnum_Field ) )
-            	    // InternalCASL.g:10405:5: (lv_enum_fields_8_0= ruleEnum_Field )
+            	    // InternalCASL.g:10423:4: ( (lv_enum_fields_8_0= ruleEnum_Field ) )
+            	    // InternalCASL.g:10424:5: (lv_enum_fields_8_0= ruleEnum_Field )
             	    {
-            	    // InternalCASL.g:10405:5: (lv_enum_fields_8_0= ruleEnum_Field )
-            	    // InternalCASL.g:10406:6: lv_enum_fields_8_0= ruleEnum_Field
+            	    // InternalCASL.g:10424:5: (lv_enum_fields_8_0= ruleEnum_Field )
+            	    // InternalCASL.g:10425:6: lv_enum_fields_8_0= ruleEnum_Field
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -27074,7 +27111,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnum_Field"
-    // InternalCASL.g:10432:1: entryRuleEnum_Field returns [EObject current=null] : iv_ruleEnum_Field= ruleEnum_Field EOF ;
+    // InternalCASL.g:10451:1: entryRuleEnum_Field returns [EObject current=null] : iv_ruleEnum_Field= ruleEnum_Field EOF ;
     public final EObject entryRuleEnum_Field() throws RecognitionException {
         EObject current = null;
 
@@ -27082,8 +27119,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10432:51: (iv_ruleEnum_Field= ruleEnum_Field EOF )
-            // InternalCASL.g:10433:2: iv_ruleEnum_Field= ruleEnum_Field EOF
+            // InternalCASL.g:10451:51: (iv_ruleEnum_Field= ruleEnum_Field EOF )
+            // InternalCASL.g:10452:2: iv_ruleEnum_Field= ruleEnum_Field EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnum_FieldRule()); 
@@ -27114,7 +27151,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnum_Field"
-    // InternalCASL.g:10439:1: ruleEnum_Field returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalCASL.g:10458:1: ruleEnum_Field returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleEnum_Field() throws RecognitionException {
         EObject current = null;
 
@@ -27124,14 +27161,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10445:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalCASL.g:10446:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalCASL.g:10464:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalCASL.g:10465:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalCASL.g:10446:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalCASL.g:10447:3: (lv_name_0_0= RULE_ID )
+            // InternalCASL.g:10465:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalCASL.g:10466:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalCASL.g:10447:3: (lv_name_0_0= RULE_ID )
-            // InternalCASL.g:10448:4: lv_name_0_0= RULE_ID
+            // InternalCASL.g:10466:3: (lv_name_0_0= RULE_ID )
+            // InternalCASL.g:10467:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -27179,7 +27216,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_Call"
-    // InternalCASL.g:10467:1: entryRuleCASL_Macro_Call returns [EObject current=null] : iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF ;
+    // InternalCASL.g:10486:1: entryRuleCASL_Macro_Call returns [EObject current=null] : iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF ;
     public final EObject entryRuleCASL_Macro_Call() throws RecognitionException {
         EObject current = null;
 
@@ -27187,8 +27224,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10467:56: (iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF )
-            // InternalCASL.g:10468:2: iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF
+            // InternalCASL.g:10486:56: (iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF )
+            // InternalCASL.g:10487:2: iv_ruleCASL_Macro_Call= ruleCASL_Macro_Call EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_CallRule()); 
@@ -27219,7 +27256,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Call"
-    // InternalCASL.g:10474:1: ruleCASL_Macro_Call returns [EObject current=null] : (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) ) ;
+    // InternalCASL.g:10493:1: ruleCASL_Macro_Call returns [EObject current=null] : (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) ) ;
     public final EObject ruleCASL_Macro_Call() throws RecognitionException {
         EObject current = null;
 
@@ -27231,11 +27268,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10480:2: ( (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) ) )
-            // InternalCASL.g:10481:2: (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) )
+            // InternalCASL.g:10499:2: ( (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) ) )
+            // InternalCASL.g:10500:2: (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) )
             {
-            // InternalCASL.g:10481:2: (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) )
-            // InternalCASL.g:10482:3: otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) )
+            // InternalCASL.g:10500:2: (otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) ) )
+            // InternalCASL.g:10501:3: otherlv_0= 'CASL.' ( (lv_macro_1_0= ruleCASL_Macro ) )
             {
             otherlv_0=(Token)match(input,112,FOLLOW_117); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -27243,11 +27280,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_CallAccess().getCASLKeyword_0());
               		
             }
-            // InternalCASL.g:10486:3: ( (lv_macro_1_0= ruleCASL_Macro ) )
-            // InternalCASL.g:10487:4: (lv_macro_1_0= ruleCASL_Macro )
+            // InternalCASL.g:10505:3: ( (lv_macro_1_0= ruleCASL_Macro ) )
+            // InternalCASL.g:10506:4: (lv_macro_1_0= ruleCASL_Macro )
             {
-            // InternalCASL.g:10487:4: (lv_macro_1_0= ruleCASL_Macro )
-            // InternalCASL.g:10488:5: lv_macro_1_0= ruleCASL_Macro
+            // InternalCASL.g:10506:4: (lv_macro_1_0= ruleCASL_Macro )
+            // InternalCASL.g:10507:5: lv_macro_1_0= ruleCASL_Macro
             {
             if ( state.backtracking==0 ) {
 
@@ -27303,7 +27340,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro"
-    // InternalCASL.g:10509:1: entryRuleCASL_Macro returns [EObject current=null] : iv_ruleCASL_Macro= ruleCASL_Macro EOF ;
+    // InternalCASL.g:10528:1: entryRuleCASL_Macro returns [EObject current=null] : iv_ruleCASL_Macro= ruleCASL_Macro EOF ;
     public final EObject entryRuleCASL_Macro() throws RecognitionException {
         EObject current = null;
 
@@ -27311,8 +27348,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10509:51: (iv_ruleCASL_Macro= ruleCASL_Macro EOF )
-            // InternalCASL.g:10510:2: iv_ruleCASL_Macro= ruleCASL_Macro EOF
+            // InternalCASL.g:10528:51: (iv_ruleCASL_Macro= ruleCASL_Macro EOF )
+            // InternalCASL.g:10529:2: iv_ruleCASL_Macro= ruleCASL_Macro EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_MacroRule()); 
@@ -27343,7 +27380,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro"
-    // InternalCASL.g:10516:1: ruleCASL_Macro returns [EObject current=null] : (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO ) ;
+    // InternalCASL.g:10535:1: ruleCASL_Macro returns [EObject current=null] : (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO ) ;
     public final EObject ruleCASL_Macro() throws RecognitionException {
         EObject current = null;
 
@@ -27370,10 +27407,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10522:2: ( (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO ) )
-            // InternalCASL.g:10523:2: (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO )
+            // InternalCASL.g:10541:2: ( (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO ) )
+            // InternalCASL.g:10542:2: (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO )
             {
-            // InternalCASL.g:10523:2: (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO )
+            // InternalCASL.g:10542:2: (this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours | this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction | this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions | this_CASL_Macro_Random_3= ruleCASL_Macro_Random | this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach | this_CASL_Macro_Print_5= ruleCASL_Macro_Print | this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch | this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup | this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO )
             int alt146=9;
             switch ( input.LA(1) ) {
             case 155:
@@ -27432,7 +27469,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt146) {
                 case 1 :
-                    // InternalCASL.g:10524:3: this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours
+                    // InternalCASL.g:10543:3: this_CASL_Macro_Neighbours_0= ruleCASL_Macro_Neighbours
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27454,7 +27491,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:10533:3: this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction
+                    // InternalCASL.g:10552:3: this_CASL_Macro_FilterAndFunction_1= ruleCASL_Macro_FilterAndFunction
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27476,7 +27513,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:10542:3: this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions
+                    // InternalCASL.g:10561:3: this_CASL_Macro_CountConditions_2= ruleCASL_Macro_CountConditions
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27498,7 +27535,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:10551:3: this_CASL_Macro_Random_3= ruleCASL_Macro_Random
+                    // InternalCASL.g:10570:3: this_CASL_Macro_Random_3= ruleCASL_Macro_Random
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27520,7 +27557,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalCASL.g:10560:3: this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach
+                    // InternalCASL.g:10579:3: this_CASL_Macro_ForEach_4= ruleCASL_Macro_ForEach
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27542,7 +27579,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalCASL.g:10569:3: this_CASL_Macro_Print_5= ruleCASL_Macro_Print
+                    // InternalCASL.g:10588:3: this_CASL_Macro_Print_5= ruleCASL_Macro_Print
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27564,7 +27601,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalCASL.g:10578:3: this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch
+                    // InternalCASL.g:10597:3: this_CASL_Macro_MetricSwitch_6= ruleCASL_Macro_MetricSwitch
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27586,7 +27623,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalCASL.g:10587:3: this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup
+                    // InternalCASL.g:10606:3: this_CASL_Macro_EntitySetup_7= ruleCASL_Macro_EntitySetup
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27608,7 +27645,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalCASL.g:10596:3: this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO
+                    // InternalCASL.g:10615:3: this_CASL_Macro_TODO_8= ruleCASL_Macro_TODO
                     {
                     if ( state.backtracking==0 ) {
 
@@ -27654,7 +27691,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_Neighbours"
-    // InternalCASL.g:10608:1: entryRuleCASL_Macro_Neighbours returns [EObject current=null] : iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF ;
+    // InternalCASL.g:10627:1: entryRuleCASL_Macro_Neighbours returns [EObject current=null] : iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF ;
     public final EObject entryRuleCASL_Macro_Neighbours() throws RecognitionException {
         EObject current = null;
 
@@ -27662,8 +27699,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10608:62: (iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF )
-            // InternalCASL.g:10609:2: iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF
+            // InternalCASL.g:10627:62: (iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF )
+            // InternalCASL.g:10628:2: iv_ruleCASL_Macro_Neighbours= ruleCASL_Macro_Neighbours EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_NeighboursRule()); 
@@ -27694,7 +27731,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Neighbours"
-    // InternalCASL.g:10615:1: ruleCASL_Macro_Neighbours returns [EObject current=null] : ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) ;
+    // InternalCASL.g:10634:1: ruleCASL_Macro_Neighbours returns [EObject current=null] : ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) ;
     public final EObject ruleCASL_Macro_Neighbours() throws RecognitionException {
         EObject current = null;
 
@@ -27710,17 +27747,17 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10621:2: ( ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) )
-            // InternalCASL.g:10622:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
+            // InternalCASL.g:10640:2: ( ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) )
+            // InternalCASL.g:10641:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
             {
-            // InternalCASL.g:10622:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
-            // InternalCASL.g:10623:3: ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')'
+            // InternalCASL.g:10641:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
+            // InternalCASL.g:10642:3: ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')'
             {
-            // InternalCASL.g:10623:3: ( (lv_worldType_0_0= ruleWorldType ) )
-            // InternalCASL.g:10624:4: (lv_worldType_0_0= ruleWorldType )
+            // InternalCASL.g:10642:3: ( (lv_worldType_0_0= ruleWorldType ) )
+            // InternalCASL.g:10643:4: (lv_worldType_0_0= ruleWorldType )
             {
-            // InternalCASL.g:10624:4: (lv_worldType_0_0= ruleWorldType )
-            // InternalCASL.g:10625:5: lv_worldType_0_0= ruleWorldType
+            // InternalCASL.g:10643:4: (lv_worldType_0_0= ruleWorldType )
+            // InternalCASL.g:10644:5: lv_worldType_0_0= ruleWorldType
             {
             if ( state.backtracking==0 ) {
 
@@ -27757,11 +27794,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_NeighboursAccess().getGetNeighboursKeyword_1());
               		
             }
-            // InternalCASL.g:10646:3: ( (otherlv_2= RULE_ID ) )
-            // InternalCASL.g:10647:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10665:3: ( (otherlv_2= RULE_ID ) )
+            // InternalCASL.g:10666:4: (otherlv_2= RULE_ID )
             {
-            // InternalCASL.g:10647:4: (otherlv_2= RULE_ID )
-            // InternalCASL.g:10648:5: otherlv_2= RULE_ID
+            // InternalCASL.g:10666:4: (otherlv_2= RULE_ID )
+            // InternalCASL.g:10667:5: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -27788,11 +27825,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_NeighboursAccess().getRightSquareBracketLeftParenthesisKeyword_3());
               		
             }
-            // InternalCASL.g:10663:3: ( (lv_dist_4_0= RULE_NUMBER ) )
-            // InternalCASL.g:10664:4: (lv_dist_4_0= RULE_NUMBER )
+            // InternalCASL.g:10682:3: ( (lv_dist_4_0= RULE_NUMBER ) )
+            // InternalCASL.g:10683:4: (lv_dist_4_0= RULE_NUMBER )
             {
-            // InternalCASL.g:10664:4: (lv_dist_4_0= RULE_NUMBER )
-            // InternalCASL.g:10665:5: lv_dist_4_0= RULE_NUMBER
+            // InternalCASL.g:10683:4: (lv_dist_4_0= RULE_NUMBER )
+            // InternalCASL.g:10684:5: lv_dist_4_0= RULE_NUMBER
             {
             lv_dist_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_55); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -27849,7 +27886,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_FilterAndFunction"
-    // InternalCASL.g:10689:1: entryRuleCASL_Macro_FilterAndFunction returns [EObject current=null] : iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF ;
+    // InternalCASL.g:10708:1: entryRuleCASL_Macro_FilterAndFunction returns [EObject current=null] : iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF ;
     public final EObject entryRuleCASL_Macro_FilterAndFunction() throws RecognitionException {
         EObject current = null;
 
@@ -27857,8 +27894,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10689:69: (iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF )
-            // InternalCASL.g:10690:2: iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF
+            // InternalCASL.g:10708:69: (iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF )
+            // InternalCASL.g:10709:2: iv_ruleCASL_Macro_FilterAndFunction= ruleCASL_Macro_FilterAndFunction EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_FilterAndFunctionRule()); 
@@ -27889,7 +27926,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_FilterAndFunction"
-    // InternalCASL.g:10696:1: ruleCASL_Macro_FilterAndFunction returns [EObject current=null] : (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) ) ;
+    // InternalCASL.g:10715:1: ruleCASL_Macro_FilterAndFunction returns [EObject current=null] : (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) ) ;
     public final EObject ruleCASL_Macro_FilterAndFunction() throws RecognitionException {
         EObject current = null;
 
@@ -27905,11 +27942,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10702:2: ( (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) ) )
-            // InternalCASL.g:10703:2: (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) )
+            // InternalCASL.g:10721:2: ( (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) ) )
+            // InternalCASL.g:10722:2: (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) )
             {
-            // InternalCASL.g:10703:2: (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) )
-            // InternalCASL.g:10704:3: otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) )
+            // InternalCASL.g:10722:2: (otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) ) )
+            // InternalCASL.g:10723:3: otherlv_0= 'FILTER[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ( (lv_misc_5_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,114,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -27917,11 +27954,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_FilterAndFunctionAccess().getFILTERKeyword_0());
               		
             }
-            // InternalCASL.g:10708:3: ( (otherlv_1= RULE_ID ) )
-            // InternalCASL.g:10709:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10727:3: ( (otherlv_1= RULE_ID ) )
+            // InternalCASL.g:10728:4: (otherlv_1= RULE_ID )
             {
-            // InternalCASL.g:10709:4: (otherlv_1= RULE_ID )
-            // InternalCASL.g:10710:5: otherlv_1= RULE_ID
+            // InternalCASL.g:10728:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10729:5: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -27948,11 +27985,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_FilterAndFunctionAccess().getRightSquareBracketLeftParenthesisKeyword_2());
               		
             }
-            // InternalCASL.g:10725:3: ( (lv_cond_3_0= ruleExpression ) )
-            // InternalCASL.g:10726:4: (lv_cond_3_0= ruleExpression )
+            // InternalCASL.g:10744:3: ( (lv_cond_3_0= ruleExpression ) )
+            // InternalCASL.g:10745:4: (lv_cond_3_0= ruleExpression )
             {
-            // InternalCASL.g:10726:4: (lv_cond_3_0= ruleExpression )
-            // InternalCASL.g:10727:5: lv_cond_3_0= ruleExpression
+            // InternalCASL.g:10745:4: (lv_cond_3_0= ruleExpression )
+            // InternalCASL.g:10746:5: lv_cond_3_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -27989,11 +28026,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_FilterAndFunctionAccess().getRightParenthesisKeyword_4());
               		
             }
-            // InternalCASL.g:10748:3: ( (lv_misc_5_0= RULE_ID ) )
-            // InternalCASL.g:10749:4: (lv_misc_5_0= RULE_ID )
+            // InternalCASL.g:10767:3: ( (lv_misc_5_0= RULE_ID ) )
+            // InternalCASL.g:10768:4: (lv_misc_5_0= RULE_ID )
             {
-            // InternalCASL.g:10749:4: (lv_misc_5_0= RULE_ID )
-            // InternalCASL.g:10750:5: lv_misc_5_0= RULE_ID
+            // InternalCASL.g:10768:4: (lv_misc_5_0= RULE_ID )
+            // InternalCASL.g:10769:5: lv_misc_5_0= RULE_ID
             {
             lv_misc_5_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28044,7 +28081,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_CountConditions"
-    // InternalCASL.g:10770:1: entryRuleCASL_Macro_CountConditions returns [EObject current=null] : iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF ;
+    // InternalCASL.g:10789:1: entryRuleCASL_Macro_CountConditions returns [EObject current=null] : iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF ;
     public final EObject entryRuleCASL_Macro_CountConditions() throws RecognitionException {
         EObject current = null;
 
@@ -28052,8 +28089,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10770:67: (iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF )
-            // InternalCASL.g:10771:2: iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF
+            // InternalCASL.g:10789:67: (iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF )
+            // InternalCASL.g:10790:2: iv_ruleCASL_Macro_CountConditions= ruleCASL_Macro_CountConditions EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_CountConditionsRule()); 
@@ -28084,7 +28121,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_CountConditions"
-    // InternalCASL.g:10777:1: ruleCASL_Macro_CountConditions returns [EObject current=null] : (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalCASL.g:10796:1: ruleCASL_Macro_CountConditions returns [EObject current=null] : (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
     public final EObject ruleCASL_Macro_CountConditions() throws RecognitionException {
         EObject current = null;
 
@@ -28099,11 +28136,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10783:2: ( (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalCASL.g:10784:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalCASL.g:10802:2: ( (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) )
+            // InternalCASL.g:10803:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
             {
-            // InternalCASL.g:10784:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalCASL.g:10785:3: otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalCASL.g:10803:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalCASL.g:10804:3: otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')'
             {
             otherlv_0=(Token)match(input,115,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28111,11 +28148,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_CountConditionsAccess().getCOUNTKeyword_0());
               		
             }
-            // InternalCASL.g:10789:3: ( (otherlv_1= RULE_ID ) )
-            // InternalCASL.g:10790:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10808:3: ( (otherlv_1= RULE_ID ) )
+            // InternalCASL.g:10809:4: (otherlv_1= RULE_ID )
             {
-            // InternalCASL.g:10790:4: (otherlv_1= RULE_ID )
-            // InternalCASL.g:10791:5: otherlv_1= RULE_ID
+            // InternalCASL.g:10809:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10810:5: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -28142,11 +28179,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_CountConditionsAccess().getRightSquareBracketLeftParenthesisKeyword_2());
               		
             }
-            // InternalCASL.g:10806:3: ( (lv_cond_3_0= ruleExpression ) )
-            // InternalCASL.g:10807:4: (lv_cond_3_0= ruleExpression )
+            // InternalCASL.g:10825:3: ( (lv_cond_3_0= ruleExpression ) )
+            // InternalCASL.g:10826:4: (lv_cond_3_0= ruleExpression )
             {
-            // InternalCASL.g:10807:4: (lv_cond_3_0= ruleExpression )
-            // InternalCASL.g:10808:5: lv_cond_3_0= ruleExpression
+            // InternalCASL.g:10826:4: (lv_cond_3_0= ruleExpression )
+            // InternalCASL.g:10827:5: lv_cond_3_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -28208,7 +28245,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_Random"
-    // InternalCASL.g:10833:1: entryRuleCASL_Macro_Random returns [EObject current=null] : iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF ;
+    // InternalCASL.g:10852:1: entryRuleCASL_Macro_Random returns [EObject current=null] : iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF ;
     public final EObject entryRuleCASL_Macro_Random() throws RecognitionException {
         EObject current = null;
 
@@ -28216,8 +28253,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10833:58: (iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF )
-            // InternalCASL.g:10834:2: iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF
+            // InternalCASL.g:10852:58: (iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF )
+            // InternalCASL.g:10853:2: iv_ruleCASL_Macro_Random= ruleCASL_Macro_Random EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_RandomRule()); 
@@ -28248,7 +28285,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Random"
-    // InternalCASL.g:10840:1: ruleCASL_Macro_Random returns [EObject current=null] : (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' ) ;
+    // InternalCASL.g:10859:1: ruleCASL_Macro_Random returns [EObject current=null] : (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' ) ;
     public final EObject ruleCASL_Macro_Random() throws RecognitionException {
         EObject current = null;
 
@@ -28268,11 +28305,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10846:2: ( (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' ) )
-            // InternalCASL.g:10847:2: (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' )
+            // InternalCASL.g:10865:2: ( (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' ) )
+            // InternalCASL.g:10866:2: (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' )
             {
-            // InternalCASL.g:10847:2: (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' )
-            // InternalCASL.g:10848:3: otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')'
+            // InternalCASL.g:10866:2: (otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')' )
+            // InternalCASL.g:10867:3: otherlv_0= 'RANDOM' otherlv_1= '[' ( (lv_type_2_0= rulenumType ) ) otherlv_3= '](' ( (lv_low_4_0= ruleExpression ) ) (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )? otherlv_7= ')'
             {
             otherlv_0=(Token)match(input,116,FOLLOW_48); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28286,11 +28323,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_RandomAccess().getLeftSquareBracketKeyword_1());
               		
             }
-            // InternalCASL.g:10856:3: ( (lv_type_2_0= rulenumType ) )
-            // InternalCASL.g:10857:4: (lv_type_2_0= rulenumType )
+            // InternalCASL.g:10875:3: ( (lv_type_2_0= rulenumType ) )
+            // InternalCASL.g:10876:4: (lv_type_2_0= rulenumType )
             {
-            // InternalCASL.g:10857:4: (lv_type_2_0= rulenumType )
-            // InternalCASL.g:10858:5: lv_type_2_0= rulenumType
+            // InternalCASL.g:10876:4: (lv_type_2_0= rulenumType )
+            // InternalCASL.g:10877:5: lv_type_2_0= rulenumType
             {
             if ( state.backtracking==0 ) {
 
@@ -28327,11 +28364,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_RandomAccess().getRightSquareBracketLeftParenthesisKeyword_3());
               		
             }
-            // InternalCASL.g:10879:3: ( (lv_low_4_0= ruleExpression ) )
-            // InternalCASL.g:10880:4: (lv_low_4_0= ruleExpression )
+            // InternalCASL.g:10898:3: ( (lv_low_4_0= ruleExpression ) )
+            // InternalCASL.g:10899:4: (lv_low_4_0= ruleExpression )
             {
-            // InternalCASL.g:10880:4: (lv_low_4_0= ruleExpression )
-            // InternalCASL.g:10881:5: lv_low_4_0= ruleExpression
+            // InternalCASL.g:10899:4: (lv_low_4_0= ruleExpression )
+            // InternalCASL.g:10900:5: lv_low_4_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -28362,7 +28399,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCASL.g:10898:3: (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )?
+            // InternalCASL.g:10917:3: (otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) ) )?
             int alt147=2;
             int LA147_0 = input.LA(1);
 
@@ -28371,7 +28408,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt147) {
                 case 1 :
-                    // InternalCASL.g:10899:4: otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) )
+                    // InternalCASL.g:10918:4: otherlv_5= ',' ( (lv_high_6_0= ruleExpression ) )
                     {
                     otherlv_5=(Token)match(input,19,FOLLOW_54); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -28379,11 +28416,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_RandomAccess().getCommaKeyword_5_0());
                       			
                     }
-                    // InternalCASL.g:10903:4: ( (lv_high_6_0= ruleExpression ) )
-                    // InternalCASL.g:10904:5: (lv_high_6_0= ruleExpression )
+                    // InternalCASL.g:10922:4: ( (lv_high_6_0= ruleExpression ) )
+                    // InternalCASL.g:10923:5: (lv_high_6_0= ruleExpression )
                     {
-                    // InternalCASL.g:10904:5: (lv_high_6_0= ruleExpression )
-                    // InternalCASL.g:10905:6: lv_high_6_0= ruleExpression
+                    // InternalCASL.g:10923:5: (lv_high_6_0= ruleExpression )
+                    // InternalCASL.g:10924:6: lv_high_6_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
 
@@ -28451,7 +28488,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_ForEach"
-    // InternalCASL.g:10931:1: entryRuleCASL_Macro_ForEach returns [EObject current=null] : iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF ;
+    // InternalCASL.g:10950:1: entryRuleCASL_Macro_ForEach returns [EObject current=null] : iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF ;
     public final EObject entryRuleCASL_Macro_ForEach() throws RecognitionException {
         EObject current = null;
 
@@ -28459,8 +28496,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10931:59: (iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF )
-            // InternalCASL.g:10932:2: iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF
+            // InternalCASL.g:10950:59: (iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF )
+            // InternalCASL.g:10951:2: iv_ruleCASL_Macro_ForEach= ruleCASL_Macro_ForEach EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_ForEachRule()); 
@@ -28491,7 +28528,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_ForEach"
-    // InternalCASL.g:10938:1: ruleCASL_Macro_ForEach returns [EObject current=null] : (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalCASL.g:10957:1: ruleCASL_Macro_ForEach returns [EObject current=null] : (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
     public final EObject ruleCASL_Macro_ForEach() throws RecognitionException {
         EObject current = null;
 
@@ -28506,11 +28543,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10944:2: ( (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalCASL.g:10945:2: (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalCASL.g:10963:2: ( (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' ) )
+            // InternalCASL.g:10964:2: (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' )
             {
-            // InternalCASL.g:10945:2: (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalCASL.g:10946:3: otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalCASL.g:10964:2: (otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalCASL.g:10965:3: otherlv_0= 'FOREACH[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_expr_3_0= ruleExpression ) ) otherlv_4= ')'
             {
             otherlv_0=(Token)match(input,117,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28518,11 +28555,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_ForEachAccess().getFOREACHKeyword_0());
               		
             }
-            // InternalCASL.g:10950:3: ( (otherlv_1= RULE_ID ) )
-            // InternalCASL.g:10951:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10969:3: ( (otherlv_1= RULE_ID ) )
+            // InternalCASL.g:10970:4: (otherlv_1= RULE_ID )
             {
-            // InternalCASL.g:10951:4: (otherlv_1= RULE_ID )
-            // InternalCASL.g:10952:5: otherlv_1= RULE_ID
+            // InternalCASL.g:10970:4: (otherlv_1= RULE_ID )
+            // InternalCASL.g:10971:5: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -28549,11 +28586,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_ForEachAccess().getRightSquareBracketLeftParenthesisKeyword_2());
               		
             }
-            // InternalCASL.g:10967:3: ( (lv_expr_3_0= ruleExpression ) )
-            // InternalCASL.g:10968:4: (lv_expr_3_0= ruleExpression )
+            // InternalCASL.g:10986:3: ( (lv_expr_3_0= ruleExpression ) )
+            // InternalCASL.g:10987:4: (lv_expr_3_0= ruleExpression )
             {
-            // InternalCASL.g:10968:4: (lv_expr_3_0= ruleExpression )
-            // InternalCASL.g:10969:5: lv_expr_3_0= ruleExpression
+            // InternalCASL.g:10987:4: (lv_expr_3_0= ruleExpression )
+            // InternalCASL.g:10988:5: lv_expr_3_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -28615,7 +28652,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_Print"
-    // InternalCASL.g:10994:1: entryRuleCASL_Macro_Print returns [EObject current=null] : iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF ;
+    // InternalCASL.g:11013:1: entryRuleCASL_Macro_Print returns [EObject current=null] : iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF ;
     public final EObject entryRuleCASL_Macro_Print() throws RecognitionException {
         EObject current = null;
 
@@ -28623,8 +28660,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:10994:57: (iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF )
-            // InternalCASL.g:10995:2: iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF
+            // InternalCASL.g:11013:57: (iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF )
+            // InternalCASL.g:11014:2: iv_ruleCASL_Macro_Print= ruleCASL_Macro_Print EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_PrintRule()); 
@@ -28655,7 +28692,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Print"
-    // InternalCASL.g:11001:1: ruleCASL_Macro_Print returns [EObject current=null] : (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' ) ;
+    // InternalCASL.g:11020:1: ruleCASL_Macro_Print returns [EObject current=null] : (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' ) ;
     public final EObject ruleCASL_Macro_Print() throws RecognitionException {
         EObject current = null;
 
@@ -28667,11 +28704,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11007:2: ( (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' ) )
-            // InternalCASL.g:11008:2: (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' )
+            // InternalCASL.g:11026:2: ( (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' ) )
+            // InternalCASL.g:11027:2: (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' )
             {
-            // InternalCASL.g:11008:2: (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' )
-            // InternalCASL.g:11009:3: otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')'
+            // InternalCASL.g:11027:2: (otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')' )
+            // InternalCASL.g:11028:3: otherlv_0= 'PRINT(' ( (lv_str_1_0= RULE_STRING ) ) otherlv_2= ')'
             {
             otherlv_0=(Token)match(input,118,FOLLOW_7); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28679,11 +28716,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_PrintAccess().getPRINTKeyword_0());
               		
             }
-            // InternalCASL.g:11013:3: ( (lv_str_1_0= RULE_STRING ) )
-            // InternalCASL.g:11014:4: (lv_str_1_0= RULE_STRING )
+            // InternalCASL.g:11032:3: ( (lv_str_1_0= RULE_STRING ) )
+            // InternalCASL.g:11033:4: (lv_str_1_0= RULE_STRING )
             {
-            // InternalCASL.g:11014:4: (lv_str_1_0= RULE_STRING )
-            // InternalCASL.g:11015:5: lv_str_1_0= RULE_STRING
+            // InternalCASL.g:11033:4: (lv_str_1_0= RULE_STRING )
+            // InternalCASL.g:11034:5: lv_str_1_0= RULE_STRING
             {
             lv_str_1_0=(Token)match(input,RULE_STRING,FOLLOW_55); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28740,7 +28777,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_MetricSwitch"
-    // InternalCASL.g:11039:1: entryRuleCASL_Macro_MetricSwitch returns [EObject current=null] : iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF ;
+    // InternalCASL.g:11058:1: entryRuleCASL_Macro_MetricSwitch returns [EObject current=null] : iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF ;
     public final EObject entryRuleCASL_Macro_MetricSwitch() throws RecognitionException {
         EObject current = null;
 
@@ -28748,8 +28785,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11039:64: (iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF )
-            // InternalCASL.g:11040:2: iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF
+            // InternalCASL.g:11058:64: (iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF )
+            // InternalCASL.g:11059:2: iv_ruleCASL_Macro_MetricSwitch= ruleCASL_Macro_MetricSwitch EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_MetricSwitchRule()); 
@@ -28780,7 +28817,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_MetricSwitch"
-    // InternalCASL.g:11046:1: ruleCASL_Macro_MetricSwitch returns [EObject current=null] : (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' ) ;
+    // InternalCASL.g:11065:1: ruleCASL_Macro_MetricSwitch returns [EObject current=null] : (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' ) ;
     public final EObject ruleCASL_Macro_MetricSwitch() throws RecognitionException {
         EObject current = null;
 
@@ -28793,11 +28830,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11052:2: ( (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' ) )
-            // InternalCASL.g:11053:2: (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' )
+            // InternalCASL.g:11071:2: ( (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' ) )
+            // InternalCASL.g:11072:2: (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' )
             {
-            // InternalCASL.g:11053:2: (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' )
-            // InternalCASL.g:11054:3: otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']'
+            // InternalCASL.g:11072:2: (otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']' )
+            // InternalCASL.g:11073:3: otherlv_0= 'METRIC[' ( (lv_sw_1_0= ruleBooleanValue ) ) otherlv_2= ']'
             {
             otherlv_0=(Token)match(input,119,FOLLOW_121); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28805,11 +28842,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_MetricSwitchAccess().getMETRICKeyword_0());
               		
             }
-            // InternalCASL.g:11058:3: ( (lv_sw_1_0= ruleBooleanValue ) )
-            // InternalCASL.g:11059:4: (lv_sw_1_0= ruleBooleanValue )
+            // InternalCASL.g:11077:3: ( (lv_sw_1_0= ruleBooleanValue ) )
+            // InternalCASL.g:11078:4: (lv_sw_1_0= ruleBooleanValue )
             {
-            // InternalCASL.g:11059:4: (lv_sw_1_0= ruleBooleanValue )
-            // InternalCASL.g:11060:5: lv_sw_1_0= ruleBooleanValue
+            // InternalCASL.g:11078:4: (lv_sw_1_0= ruleBooleanValue )
+            // InternalCASL.g:11079:5: lv_sw_1_0= ruleBooleanValue
             {
             if ( state.backtracking==0 ) {
 
@@ -28871,7 +28908,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_EntitySetup"
-    // InternalCASL.g:11085:1: entryRuleCASL_Macro_EntitySetup returns [EObject current=null] : iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF ;
+    // InternalCASL.g:11104:1: entryRuleCASL_Macro_EntitySetup returns [EObject current=null] : iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF ;
     public final EObject entryRuleCASL_Macro_EntitySetup() throws RecognitionException {
         EObject current = null;
 
@@ -28879,8 +28916,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11085:63: (iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF )
-            // InternalCASL.g:11086:2: iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF
+            // InternalCASL.g:11104:63: (iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF )
+            // InternalCASL.g:11105:2: iv_ruleCASL_Macro_EntitySetup= ruleCASL_Macro_EntitySetup EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupRule()); 
@@ -28911,7 +28948,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_EntitySetup"
-    // InternalCASL.g:11092:1: ruleCASL_Macro_EntitySetup returns [EObject current=null] : (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' ) ;
+    // InternalCASL.g:11111:1: ruleCASL_Macro_EntitySetup returns [EObject current=null] : (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' ) ;
     public final EObject ruleCASL_Macro_EntitySetup() throws RecognitionException {
         EObject current = null;
 
@@ -28932,11 +28969,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11098:2: ( (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' ) )
-            // InternalCASL.g:11099:2: (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' )
+            // InternalCASL.g:11117:2: ( (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' ) )
+            // InternalCASL.g:11118:2: (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' )
             {
-            // InternalCASL.g:11099:2: (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' )
-            // InternalCASL.g:11100:3: otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')'
+            // InternalCASL.g:11118:2: (otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')' )
+            // InternalCASL.g:11119:3: otherlv_0= 'ENTITY_INIT' otherlv_1= '(' ( (lv_initNum_2_0= ruleExpression ) ) otherlv_3= ')' otherlv_4= '[' ( (otherlv_5= RULE_ID ) ) otherlv_6= ']' otherlv_7= '(' ( (lv_params_8_0= ruleExpression ) ) otherlv_9= ')'
             {
             otherlv_0=(Token)match(input,120,FOLLOW_63); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28950,11 +28987,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftParenthesisKeyword_1());
               		
             }
-            // InternalCASL.g:11108:3: ( (lv_initNum_2_0= ruleExpression ) )
-            // InternalCASL.g:11109:4: (lv_initNum_2_0= ruleExpression )
+            // InternalCASL.g:11127:3: ( (lv_initNum_2_0= ruleExpression ) )
+            // InternalCASL.g:11128:4: (lv_initNum_2_0= ruleExpression )
             {
-            // InternalCASL.g:11109:4: (lv_initNum_2_0= ruleExpression )
-            // InternalCASL.g:11110:5: lv_initNum_2_0= ruleExpression
+            // InternalCASL.g:11128:4: (lv_initNum_2_0= ruleExpression )
+            // InternalCASL.g:11129:5: lv_initNum_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -28997,11 +29034,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftSquareBracketKeyword_4());
               		
             }
-            // InternalCASL.g:11135:3: ( (otherlv_5= RULE_ID ) )
-            // InternalCASL.g:11136:4: (otherlv_5= RULE_ID )
+            // InternalCASL.g:11154:3: ( (otherlv_5= RULE_ID ) )
+            // InternalCASL.g:11155:4: (otherlv_5= RULE_ID )
             {
-            // InternalCASL.g:11136:4: (otherlv_5= RULE_ID )
-            // InternalCASL.g:11137:5: otherlv_5= RULE_ID
+            // InternalCASL.g:11155:4: (otherlv_5= RULE_ID )
+            // InternalCASL.g:11156:5: otherlv_5= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -29034,11 +29071,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftParenthesisKeyword_7());
               		
             }
-            // InternalCASL.g:11156:3: ( (lv_params_8_0= ruleExpression ) )
-            // InternalCASL.g:11157:4: (lv_params_8_0= ruleExpression )
+            // InternalCASL.g:11175:3: ( (lv_params_8_0= ruleExpression ) )
+            // InternalCASL.g:11176:4: (lv_params_8_0= ruleExpression )
             {
-            // InternalCASL.g:11157:4: (lv_params_8_0= ruleExpression )
-            // InternalCASL.g:11158:5: lv_params_8_0= ruleExpression
+            // InternalCASL.g:11176:4: (lv_params_8_0= ruleExpression )
+            // InternalCASL.g:11177:5: lv_params_8_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
 
@@ -29100,7 +29137,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCASL_Macro_TODO"
-    // InternalCASL.g:11183:1: entryRuleCASL_Macro_TODO returns [EObject current=null] : iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF ;
+    // InternalCASL.g:11202:1: entryRuleCASL_Macro_TODO returns [EObject current=null] : iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF ;
     public final EObject entryRuleCASL_Macro_TODO() throws RecognitionException {
         EObject current = null;
 
@@ -29108,8 +29145,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11183:56: (iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF )
-            // InternalCASL.g:11184:2: iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF
+            // InternalCASL.g:11202:56: (iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF )
+            // InternalCASL.g:11203:2: iv_ruleCASL_Macro_TODO= ruleCASL_Macro_TODO EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCASL_Macro_TODORule()); 
@@ -29140,7 +29177,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_TODO"
-    // InternalCASL.g:11190:1: ruleCASL_Macro_TODO returns [EObject current=null] : (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) ) ;
+    // InternalCASL.g:11209:1: ruleCASL_Macro_TODO returns [EObject current=null] : (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleCASL_Macro_TODO() throws RecognitionException {
         EObject current = null;
 
@@ -29151,11 +29188,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11196:2: ( (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) ) )
-            // InternalCASL.g:11197:2: (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) )
+            // InternalCASL.g:11215:2: ( (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) ) )
+            // InternalCASL.g:11216:2: (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) )
             {
-            // InternalCASL.g:11197:2: (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) )
-            // InternalCASL.g:11198:3: otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) )
+            // InternalCASL.g:11216:2: (otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) ) )
+            // InternalCASL.g:11217:3: otherlv_0= 'TODO:' ( (lv_str_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,121,FOLLOW_7); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -29163,11 +29200,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0());
               		
             }
-            // InternalCASL.g:11202:3: ( (lv_str_1_0= RULE_STRING ) )
-            // InternalCASL.g:11203:4: (lv_str_1_0= RULE_STRING )
+            // InternalCASL.g:11221:3: ( (lv_str_1_0= RULE_STRING ) )
+            // InternalCASL.g:11222:4: (lv_str_1_0= RULE_STRING )
             {
-            // InternalCASL.g:11203:4: (lv_str_1_0= RULE_STRING )
-            // InternalCASL.g:11204:5: lv_str_1_0= RULE_STRING
+            // InternalCASL.g:11222:4: (lv_str_1_0= RULE_STRING )
+            // InternalCASL.g:11223:5: lv_str_1_0= RULE_STRING
             {
             lv_str_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -29218,7 +29255,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRaw_Java_Block"
-    // InternalCASL.g:11224:1: entryRuleRaw_Java_Block returns [EObject current=null] : iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF ;
+    // InternalCASL.g:11243:1: entryRuleRaw_Java_Block returns [EObject current=null] : iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF ;
     public final EObject entryRuleRaw_Java_Block() throws RecognitionException {
         EObject current = null;
 
@@ -29226,8 +29263,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11224:55: (iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF )
-            // InternalCASL.g:11225:2: iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF
+            // InternalCASL.g:11243:55: (iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF )
+            // InternalCASL.g:11244:2: iv_ruleRaw_Java_Block= ruleRaw_Java_Block EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRaw_Java_BlockRule()); 
@@ -29258,7 +29295,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRaw_Java_Block"
-    // InternalCASL.g:11231:1: ruleRaw_Java_Block returns [EObject current=null] : ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' ) ;
+    // InternalCASL.g:11250:1: ruleRaw_Java_Block returns [EObject current=null] : ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' ) ;
     public final EObject ruleRaw_Java_Block() throws RecognitionException {
         EObject current = null;
 
@@ -29274,14 +29311,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11237:2: ( ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' ) )
-            // InternalCASL.g:11238:2: ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' )
+            // InternalCASL.g:11256:2: ( ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' ) )
+            // InternalCASL.g:11257:2: ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' )
             {
-            // InternalCASL.g:11238:2: ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' )
-            // InternalCASL.g:11239:3: () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};'
+            // InternalCASL.g:11257:2: ( () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};' )
+            // InternalCASL.g:11258:3: () otherlv_1= 'raw-java' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' otherlv_4= '{' ( (lv_rawStatements_5_0= ruleRaw_Java ) )* otherlv_6= '};'
             {
-            // InternalCASL.g:11239:3: ()
-            // InternalCASL.g:11240:4: 
+            // InternalCASL.g:11258:3: ()
+            // InternalCASL.g:11259:4: 
             {
             if ( state.backtracking==0 ) {
 
@@ -29299,11 +29336,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getRaw_Java_BlockAccess().getRawJavaKeyword_1());
               		
             }
-            // InternalCASL.g:11250:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalCASL.g:11251:4: (lv_name_2_0= RULE_ID )
+            // InternalCASL.g:11269:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalCASL.g:11270:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalCASL.g:11251:4: (lv_name_2_0= RULE_ID )
-            // InternalCASL.g:11252:5: lv_name_2_0= RULE_ID
+            // InternalCASL.g:11270:4: (lv_name_2_0= RULE_ID )
+            // InternalCASL.g:11271:5: lv_name_2_0= RULE_ID
             {
             lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_37); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -29341,7 +29378,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_4, grammarAccess.getRaw_Java_BlockAccess().getLeftCurlyBracketKeyword_4());
               		
             }
-            // InternalCASL.g:11276:3: ( (lv_rawStatements_5_0= ruleRaw_Java ) )*
+            // InternalCASL.g:11295:3: ( (lv_rawStatements_5_0= ruleRaw_Java ) )*
             loop148:
             do {
                 int alt148=2;
@@ -29354,10 +29391,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt148) {
             	case 1 :
-            	    // InternalCASL.g:11277:4: (lv_rawStatements_5_0= ruleRaw_Java )
+            	    // InternalCASL.g:11296:4: (lv_rawStatements_5_0= ruleRaw_Java )
             	    {
-            	    // InternalCASL.g:11277:4: (lv_rawStatements_5_0= ruleRaw_Java )
-            	    // InternalCASL.g:11278:5: lv_rawStatements_5_0= ruleRaw_Java
+            	    // InternalCASL.g:11296:4: (lv_rawStatements_5_0= ruleRaw_Java )
+            	    // InternalCASL.g:11297:5: lv_rawStatements_5_0= ruleRaw_Java
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -29425,7 +29462,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRaw_Java"
-    // InternalCASL.g:11303:1: entryRuleRaw_Java returns [String current=null] : iv_ruleRaw_Java= ruleRaw_Java EOF ;
+    // InternalCASL.g:11322:1: entryRuleRaw_Java returns [String current=null] : iv_ruleRaw_Java= ruleRaw_Java EOF ;
     public final String entryRuleRaw_Java() throws RecognitionException {
         String current = null;
 
@@ -29433,8 +29470,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11303:48: (iv_ruleRaw_Java= ruleRaw_Java EOF )
-            // InternalCASL.g:11304:2: iv_ruleRaw_Java= ruleRaw_Java EOF
+            // InternalCASL.g:11322:48: (iv_ruleRaw_Java= ruleRaw_Java EOF )
+            // InternalCASL.g:11323:2: iv_ruleRaw_Java= ruleRaw_Java EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRaw_JavaRule()); 
@@ -29465,7 +29502,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRaw_Java"
-    // InternalCASL.g:11310:1: ruleRaw_Java returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_QualifiedNameCall_0= ruleQualifiedNameCall ;
+    // InternalCASL.g:11329:1: ruleRaw_Java returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_QualifiedNameCall_0= ruleQualifiedNameCall ;
     public final AntlrDatatypeRuleToken ruleRaw_Java() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -29476,8 +29513,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11316:2: (this_QualifiedNameCall_0= ruleQualifiedNameCall )
-            // InternalCASL.g:11317:2: this_QualifiedNameCall_0= ruleQualifiedNameCall
+            // InternalCASL.g:11335:2: (this_QualifiedNameCall_0= ruleQualifiedNameCall )
+            // InternalCASL.g:11336:2: this_QualifiedNameCall_0= ruleQualifiedNameCall
             {
             if ( state.backtracking==0 ) {
 
@@ -29521,7 +29558,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAbstractElement"
-    // InternalCASL.g:11330:1: entryRuleAbstractElement returns [EObject current=null] : iv_ruleAbstractElement= ruleAbstractElement EOF ;
+    // InternalCASL.g:11349:1: entryRuleAbstractElement returns [EObject current=null] : iv_ruleAbstractElement= ruleAbstractElement EOF ;
     public final EObject entryRuleAbstractElement() throws RecognitionException {
         EObject current = null;
 
@@ -29529,8 +29566,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11330:56: (iv_ruleAbstractElement= ruleAbstractElement EOF )
-            // InternalCASL.g:11331:2: iv_ruleAbstractElement= ruleAbstractElement EOF
+            // InternalCASL.g:11349:56: (iv_ruleAbstractElement= ruleAbstractElement EOF )
+            // InternalCASL.g:11350:2: iv_ruleAbstractElement= ruleAbstractElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAbstractElementRule()); 
@@ -29561,7 +29598,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractElement"
-    // InternalCASL.g:11337:1: ruleAbstractElement returns [EObject current=null] : (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport ) ;
+    // InternalCASL.g:11356:1: ruleAbstractElement returns [EObject current=null] : (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport ) ;
     public final EObject ruleAbstractElement() throws RecognitionException {
         EObject current = null;
 
@@ -29576,10 +29613,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11343:2: ( (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport ) )
-            // InternalCASL.g:11344:2: (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport )
+            // InternalCASL.g:11362:2: ( (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport ) )
+            // InternalCASL.g:11363:2: (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport )
             {
-            // InternalCASL.g:11344:2: (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport )
+            // InternalCASL.g:11363:2: (this_PackageDeclaration_0= rulePackageDeclaration | this_NonPrimitiveType_1= ruleNonPrimitiveType | this_Import_2= ruleImport )
             int alt149=3;
             switch ( input.LA(1) ) {
             case 123:
@@ -29609,7 +29646,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt149) {
                 case 1 :
-                    // InternalCASL.g:11345:3: this_PackageDeclaration_0= rulePackageDeclaration
+                    // InternalCASL.g:11364:3: this_PackageDeclaration_0= rulePackageDeclaration
                     {
                     if ( state.backtracking==0 ) {
 
@@ -29631,7 +29668,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11354:3: this_NonPrimitiveType_1= ruleNonPrimitiveType
+                    // InternalCASL.g:11373:3: this_NonPrimitiveType_1= ruleNonPrimitiveType
                     {
                     if ( state.backtracking==0 ) {
 
@@ -29653,7 +29690,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11363:3: this_Import_2= ruleImport
+                    // InternalCASL.g:11382:3: this_Import_2= ruleImport
                     {
                     if ( state.backtracking==0 ) {
 
@@ -29699,7 +29736,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePackageDeclaration"
-    // InternalCASL.g:11375:1: entryRulePackageDeclaration returns [EObject current=null] : iv_rulePackageDeclaration= rulePackageDeclaration EOF ;
+    // InternalCASL.g:11394:1: entryRulePackageDeclaration returns [EObject current=null] : iv_rulePackageDeclaration= rulePackageDeclaration EOF ;
     public final EObject entryRulePackageDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -29707,8 +29744,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11375:59: (iv_rulePackageDeclaration= rulePackageDeclaration EOF )
-            // InternalCASL.g:11376:2: iv_rulePackageDeclaration= rulePackageDeclaration EOF
+            // InternalCASL.g:11394:59: (iv_rulePackageDeclaration= rulePackageDeclaration EOF )
+            // InternalCASL.g:11395:2: iv_rulePackageDeclaration= rulePackageDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPackageDeclarationRule()); 
@@ -29739,7 +29776,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePackageDeclaration"
-    // InternalCASL.g:11382:1: rulePackageDeclaration returns [EObject current=null] : (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' ) ;
+    // InternalCASL.g:11401:1: rulePackageDeclaration returns [EObject current=null] : (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' ) ;
     public final EObject rulePackageDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -29756,11 +29793,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11388:2: ( (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' ) )
-            // InternalCASL.g:11389:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' )
+            // InternalCASL.g:11407:2: ( (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' ) )
+            // InternalCASL.g:11408:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' )
             {
-            // InternalCASL.g:11389:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' )
-            // InternalCASL.g:11390:3: otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};'
+            // InternalCASL.g:11408:2: (otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};' )
+            // InternalCASL.g:11409:3: otherlv_0= 'package' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' otherlv_3= '{' ( (lv_elements_4_0= ruleAbstractElement ) )* otherlv_5= '};'
             {
             otherlv_0=(Token)match(input,123,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -29768,11 +29805,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0());
               		
             }
-            // InternalCASL.g:11394:3: ( (lv_name_1_0= ruleQualifiedName ) )
-            // InternalCASL.g:11395:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalCASL.g:11413:3: ( (lv_name_1_0= ruleQualifiedName ) )
+            // InternalCASL.g:11414:4: (lv_name_1_0= ruleQualifiedName )
             {
-            // InternalCASL.g:11395:4: (lv_name_1_0= ruleQualifiedName )
-            // InternalCASL.g:11396:5: lv_name_1_0= ruleQualifiedName
+            // InternalCASL.g:11414:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalCASL.g:11415:5: lv_name_1_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
@@ -29815,7 +29852,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_3, grammarAccess.getPackageDeclarationAccess().getLeftCurlyBracketKeyword_3());
               		
             }
-            // InternalCASL.g:11421:3: ( (lv_elements_4_0= ruleAbstractElement ) )*
+            // InternalCASL.g:11440:3: ( (lv_elements_4_0= ruleAbstractElement ) )*
             loop150:
             do {
                 int alt150=2;
@@ -29828,10 +29865,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt150) {
             	case 1 :
-            	    // InternalCASL.g:11422:4: (lv_elements_4_0= ruleAbstractElement )
+            	    // InternalCASL.g:11441:4: (lv_elements_4_0= ruleAbstractElement )
             	    {
-            	    // InternalCASL.g:11422:4: (lv_elements_4_0= ruleAbstractElement )
-            	    // InternalCASL.g:11423:5: lv_elements_4_0= ruleAbstractElement
+            	    // InternalCASL.g:11441:4: (lv_elements_4_0= ruleAbstractElement )
+            	    // InternalCASL.g:11442:5: lv_elements_4_0= ruleAbstractElement
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -29899,7 +29936,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalCASL.g:11448:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalCASL.g:11467:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -29907,8 +29944,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11448:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalCASL.g:11449:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalCASL.g:11467:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalCASL.g:11468:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
@@ -29939,7 +29976,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalCASL.g:11455:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalCASL.g:11474:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -29951,11 +29988,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11461:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalCASL.g:11462:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalCASL.g:11480:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalCASL.g:11481:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalCASL.g:11462:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalCASL.g:11463:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalCASL.g:11481:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalCASL.g:11482:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_112); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -29968,7 +30005,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
               		
             }
-            // InternalCASL.g:11470:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalCASL.g:11489:3: (kw= '.' this_ID_2= RULE_ID )*
             loop151:
             do {
                 int alt151=2;
@@ -29981,7 +30018,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt151) {
             	case 1 :
-            	    // InternalCASL.g:11471:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalCASL.g:11490:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -30035,7 +30072,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameCall"
-    // InternalCASL.g:11488:1: entryRuleQualifiedNameCall returns [String current=null] : iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF ;
+    // InternalCASL.g:11507:1: entryRuleQualifiedNameCall returns [String current=null] : iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF ;
     public final String entryRuleQualifiedNameCall() throws RecognitionException {
         String current = null;
 
@@ -30043,8 +30080,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11488:57: (iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF )
-            // InternalCASL.g:11489:2: iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF
+            // InternalCASL.g:11507:57: (iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF )
+            // InternalCASL.g:11508:2: iv_ruleQualifiedNameCall= ruleQualifiedNameCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameCallRule()); 
@@ -30075,7 +30112,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameCall"
-    // InternalCASL.g:11495:1: ruleQualifiedNameCall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* ) ;
+    // InternalCASL.g:11514:1: ruleQualifiedNameCall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameCall() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30091,11 +30128,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11501:2: ( (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* ) )
-            // InternalCASL.g:11502:2: (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* )
+            // InternalCASL.g:11520:2: ( (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* ) )
+            // InternalCASL.g:11521:2: (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* )
             {
-            // InternalCASL.g:11502:2: (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* )
-            // InternalCASL.g:11503:3: this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )*
+            // InternalCASL.g:11521:2: (this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )* )
+            // InternalCASL.g:11522:3: this_ID_0= RULE_ID ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_123); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -30108,7 +30145,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameCallAccess().getIDTerminalRuleCall_0());
               		
             }
-            // InternalCASL.g:11510:3: ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )*
+            // InternalCASL.g:11529:3: ( (kw= '.' this_ID_2= RULE_ID ) | (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' ) | kw= '.()' | kw= '->' )*
             loop153:
             do {
                 int alt153=5;
@@ -30138,10 +30175,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
                 switch (alt153) {
             	case 1 :
-            	    // InternalCASL.g:11511:4: (kw= '.' this_ID_2= RULE_ID )
+            	    // InternalCASL.g:11530:4: (kw= '.' this_ID_2= RULE_ID )
             	    {
-            	    // InternalCASL.g:11511:4: (kw= '.' this_ID_2= RULE_ID )
-            	    // InternalCASL.g:11512:5: kw= '.' this_ID_2= RULE_ID
+            	    // InternalCASL.g:11530:4: (kw= '.' this_ID_2= RULE_ID )
+            	    // InternalCASL.g:11531:5: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,83,FOLLOW_19); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -30168,10 +30205,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalCASL.g:11526:4: (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' )
+            	    // InternalCASL.g:11545:4: (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' )
             	    {
-            	    // InternalCASL.g:11526:4: (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' )
-            	    // InternalCASL.g:11527:5: kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')'
+            	    // InternalCASL.g:11545:4: (kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')' )
+            	    // InternalCASL.g:11546:5: kw= '(' this_QualifiedNameCall_4= ruleQualifiedNameCall (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )* kw= ')'
             	    {
             	    kw=(Token)match(input,39,FOLLOW_19); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -30200,7 +30237,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	      					afterParserOrEnumRuleCall();
             	      				
             	    }
-            	    // InternalCASL.g:11542:5: (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )*
+            	    // InternalCASL.g:11561:5: (kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall )*
             	    loop152:
             	    do {
             	        int alt152=2;
@@ -30213,7 +30250,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             	        switch (alt152) {
             	    	case 1 :
-            	    	    // InternalCASL.g:11543:6: kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall
+            	    	    // InternalCASL.g:11562:6: kw= ',' this_QualifiedNameCall_6= ruleQualifiedNameCall
             	    	    {
             	    	    kw=(Token)match(input,19,FOLLOW_19); if (state.failed) return current;
             	    	    if ( state.backtracking==0 ) {
@@ -30265,7 +30302,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalCASL.g:11566:4: kw= '.()'
+            	    // InternalCASL.g:11585:4: kw= '.()'
             	    {
             	    kw=(Token)match(input,124,FOLLOW_123); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -30278,7 +30315,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalCASL.g:11572:4: kw= '->'
+            	    // InternalCASL.g:11591:4: kw= '->'
             	    {
             	    kw=(Token)match(input,125,FOLLOW_123); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -30321,7 +30358,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImport"
-    // InternalCASL.g:11582:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
+    // InternalCASL.g:11601:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
     public final EObject entryRuleImport() throws RecognitionException {
         EObject current = null;
 
@@ -30329,8 +30366,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11582:47: (iv_ruleImport= ruleImport EOF )
-            // InternalCASL.g:11583:2: iv_ruleImport= ruleImport EOF
+            // InternalCASL.g:11601:47: (iv_ruleImport= ruleImport EOF )
+            // InternalCASL.g:11602:2: iv_ruleImport= ruleImport EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getImportRule()); 
@@ -30361,7 +30398,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImport"
-    // InternalCASL.g:11589:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' ) ;
+    // InternalCASL.g:11608:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' ) ;
     public final EObject ruleImport() throws RecognitionException {
         EObject current = null;
 
@@ -30374,11 +30411,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11595:2: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' ) )
-            // InternalCASL.g:11596:2: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' )
+            // InternalCASL.g:11614:2: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' ) )
+            // InternalCASL.g:11615:2: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' )
             {
-            // InternalCASL.g:11596:2: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' )
-            // InternalCASL.g:11597:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';'
+            // InternalCASL.g:11615:2: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';' )
+            // InternalCASL.g:11616:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) ) otherlv_2= ';'
             {
             otherlv_0=(Token)match(input,126,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -30386,11 +30423,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
               		
             }
-            // InternalCASL.g:11601:3: ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) )
-            // InternalCASL.g:11602:4: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard )
+            // InternalCASL.g:11620:3: ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard ) )
+            // InternalCASL.g:11621:4: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard )
             {
-            // InternalCASL.g:11602:4: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard )
-            // InternalCASL.g:11603:5: lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard
+            // InternalCASL.g:11621:4: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard )
+            // InternalCASL.g:11622:5: lv_importedNamespace_1_0= ruleQualifiedNameWithWildcard
             {
             if ( state.backtracking==0 ) {
 
@@ -30452,7 +30489,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // InternalCASL.g:11628:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // InternalCASL.g:11647:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -30460,8 +30497,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCASL.g:11628:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // InternalCASL.g:11629:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // InternalCASL.g:11647:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // InternalCASL.g:11648:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
@@ -30492,7 +30529,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // InternalCASL.g:11635:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? ) ;
+    // InternalCASL.g:11654:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30504,11 +30541,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11641:2: ( (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? ) )
-            // InternalCASL.g:11642:2: (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? )
+            // InternalCASL.g:11660:2: ( (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? ) )
+            // InternalCASL.g:11661:2: (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? )
             {
-            // InternalCASL.g:11642:2: (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? )
-            // InternalCASL.g:11643:3: this_QualifiedName_0= ruleQualifiedName (kw= '.*' )?
+            // InternalCASL.g:11661:2: (this_QualifiedName_0= ruleQualifiedName (kw= '.*' )? )
+            // InternalCASL.g:11662:3: this_QualifiedName_0= ruleQualifiedName (kw= '.*' )?
             {
             if ( state.backtracking==0 ) {
 
@@ -30530,7 +30567,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalCASL.g:11653:3: (kw= '.*' )?
+            // InternalCASL.g:11672:3: (kw= '.*' )?
             int alt154=2;
             int LA154_0 = input.LA(1);
 
@@ -30539,7 +30576,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt154) {
                 case 1 :
-                    // InternalCASL.g:11654:4: kw= '.*'
+                    // InternalCASL.g:11673:4: kw= '.*'
                     {
                     kw=(Token)match(input,127,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30579,7 +30616,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnvironment_Attribute"
-    // InternalCASL.g:11664:1: ruleEnvironment_Attribute returns [Enumerator current=null] : ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) ) ;
+    // InternalCASL.g:11683:1: ruleEnvironment_Attribute returns [Enumerator current=null] : ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) ) ;
     public final Enumerator ruleEnvironment_Attribute() throws RecognitionException {
         Enumerator current = null;
 
@@ -30590,10 +30627,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11670:2: ( ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) ) )
-            // InternalCASL.g:11671:2: ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) )
+            // InternalCASL.g:11689:2: ( ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) ) )
+            // InternalCASL.g:11690:2: ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) )
             {
-            // InternalCASL.g:11671:2: ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) )
+            // InternalCASL.g:11690:2: ( (enumLiteral_0= 'virtual' ) | (enumLiteral_1= 'physical' ) )
             int alt155=2;
             int LA155_0 = input.LA(1);
 
@@ -30612,10 +30649,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt155) {
                 case 1 :
-                    // InternalCASL.g:11672:3: (enumLiteral_0= 'virtual' )
+                    // InternalCASL.g:11691:3: (enumLiteral_0= 'virtual' )
                     {
-                    // InternalCASL.g:11672:3: (enumLiteral_0= 'virtual' )
-                    // InternalCASL.g:11673:4: enumLiteral_0= 'virtual'
+                    // InternalCASL.g:11691:3: (enumLiteral_0= 'virtual' )
+                    // InternalCASL.g:11692:4: enumLiteral_0= 'virtual'
                     {
                     enumLiteral_0=(Token)match(input,128,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30631,10 +30668,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11680:3: (enumLiteral_1= 'physical' )
+                    // InternalCASL.g:11699:3: (enumLiteral_1= 'physical' )
                     {
-                    // InternalCASL.g:11680:3: (enumLiteral_1= 'physical' )
-                    // InternalCASL.g:11681:4: enumLiteral_1= 'physical'
+                    // InternalCASL.g:11699:3: (enumLiteral_1= 'physical' )
+                    // InternalCASL.g:11700:4: enumLiteral_1= 'physical'
                     {
                     enumLiteral_1=(Token)match(input,129,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30674,7 +30711,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnvironment_Type"
-    // InternalCASL.g:11691:1: ruleEnvironment_Type returns [Enumerator current=null] : ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) ) ;
+    // InternalCASL.g:11710:1: ruleEnvironment_Type returns [Enumerator current=null] : ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) ) ;
     public final Enumerator ruleEnvironment_Type() throws RecognitionException {
         Enumerator current = null;
 
@@ -30685,10 +30722,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11697:2: ( ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) ) )
-            // InternalCASL.g:11698:2: ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) )
+            // InternalCASL.g:11716:2: ( ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) ) )
+            // InternalCASL.g:11717:2: ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) )
             {
-            // InternalCASL.g:11698:2: ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) )
+            // InternalCASL.g:11717:2: ( (enumLiteral_0= 'implicit' ) | (enumLiteral_1= 'explicit' ) )
             int alt156=2;
             int LA156_0 = input.LA(1);
 
@@ -30707,10 +30744,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt156) {
                 case 1 :
-                    // InternalCASL.g:11699:3: (enumLiteral_0= 'implicit' )
+                    // InternalCASL.g:11718:3: (enumLiteral_0= 'implicit' )
                     {
-                    // InternalCASL.g:11699:3: (enumLiteral_0= 'implicit' )
-                    // InternalCASL.g:11700:4: enumLiteral_0= 'implicit'
+                    // InternalCASL.g:11718:3: (enumLiteral_0= 'implicit' )
+                    // InternalCASL.g:11719:4: enumLiteral_0= 'implicit'
                     {
                     enumLiteral_0=(Token)match(input,130,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30726,10 +30763,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11707:3: (enumLiteral_1= 'explicit' )
+                    // InternalCASL.g:11726:3: (enumLiteral_1= 'explicit' )
                     {
-                    // InternalCASL.g:11707:3: (enumLiteral_1= 'explicit' )
-                    // InternalCASL.g:11708:4: enumLiteral_1= 'explicit'
+                    // InternalCASL.g:11726:3: (enumLiteral_1= 'explicit' )
+                    // InternalCASL.g:11727:4: enumLiteral_1= 'explicit'
                     {
                     enumLiteral_1=(Token)match(input,131,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30769,7 +30806,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEndConditionTypes"
-    // InternalCASL.g:11718:1: ruleEndConditionTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) ) ;
+    // InternalCASL.g:11737:1: ruleEndConditionTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) ) ;
     public final Enumerator ruleEndConditionTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -30781,10 +30818,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11724:2: ( ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) ) )
-            // InternalCASL.g:11725:2: ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) )
+            // InternalCASL.g:11743:2: ( ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) ) )
+            // InternalCASL.g:11744:2: ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) )
             {
-            // InternalCASL.g:11725:2: ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) )
+            // InternalCASL.g:11744:2: ( (enumLiteral_0= 'STEPS' ) | (enumLiteral_1= 'PARAMETER' ) | (enumLiteral_2= 'STATE' ) )
             int alt157=3;
             switch ( input.LA(1) ) {
             case 132:
@@ -30812,10 +30849,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt157) {
                 case 1 :
-                    // InternalCASL.g:11726:3: (enumLiteral_0= 'STEPS' )
+                    // InternalCASL.g:11745:3: (enumLiteral_0= 'STEPS' )
                     {
-                    // InternalCASL.g:11726:3: (enumLiteral_0= 'STEPS' )
-                    // InternalCASL.g:11727:4: enumLiteral_0= 'STEPS'
+                    // InternalCASL.g:11745:3: (enumLiteral_0= 'STEPS' )
+                    // InternalCASL.g:11746:4: enumLiteral_0= 'STEPS'
                     {
                     enumLiteral_0=(Token)match(input,132,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30831,10 +30868,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11734:3: (enumLiteral_1= 'PARAMETER' )
+                    // InternalCASL.g:11753:3: (enumLiteral_1= 'PARAMETER' )
                     {
-                    // InternalCASL.g:11734:3: (enumLiteral_1= 'PARAMETER' )
-                    // InternalCASL.g:11735:4: enumLiteral_1= 'PARAMETER'
+                    // InternalCASL.g:11753:3: (enumLiteral_1= 'PARAMETER' )
+                    // InternalCASL.g:11754:4: enumLiteral_1= 'PARAMETER'
                     {
                     enumLiteral_1=(Token)match(input,133,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30850,10 +30887,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11742:3: (enumLiteral_2= 'STATE' )
+                    // InternalCASL.g:11761:3: (enumLiteral_2= 'STATE' )
                     {
-                    // InternalCASL.g:11742:3: (enumLiteral_2= 'STATE' )
-                    // InternalCASL.g:11743:4: enumLiteral_2= 'STATE'
+                    // InternalCASL.g:11761:3: (enumLiteral_2= 'STATE' )
+                    // InternalCASL.g:11762:4: enumLiteral_2= 'STATE'
                     {
                     enumLiteral_2=(Token)match(input,134,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30893,7 +30930,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCAS_Rule_Types"
-    // InternalCASL.g:11753:1: ruleCAS_Rule_Types returns [Enumerator current=null] : ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) ) ;
+    // InternalCASL.g:11772:1: ruleCAS_Rule_Types returns [Enumerator current=null] : ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) ) ;
     public final Enumerator ruleCAS_Rule_Types() throws RecognitionException {
         Enumerator current = null;
 
@@ -30904,10 +30941,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11759:2: ( ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) ) )
-            // InternalCASL.g:11760:2: ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) )
+            // InternalCASL.g:11778:2: ( ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) ) )
+            // InternalCASL.g:11779:2: ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) )
             {
-            // InternalCASL.g:11760:2: ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) )
+            // InternalCASL.g:11779:2: ( (enumLiteral_0= 'strict' ) | (enumLiteral_1= 'lenient' ) )
             int alt158=2;
             int LA158_0 = input.LA(1);
 
@@ -30926,10 +30963,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt158) {
                 case 1 :
-                    // InternalCASL.g:11761:3: (enumLiteral_0= 'strict' )
+                    // InternalCASL.g:11780:3: (enumLiteral_0= 'strict' )
                     {
-                    // InternalCASL.g:11761:3: (enumLiteral_0= 'strict' )
-                    // InternalCASL.g:11762:4: enumLiteral_0= 'strict'
+                    // InternalCASL.g:11780:3: (enumLiteral_0= 'strict' )
+                    // InternalCASL.g:11781:4: enumLiteral_0= 'strict'
                     {
                     enumLiteral_0=(Token)match(input,135,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30945,10 +30982,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11769:3: (enumLiteral_1= 'lenient' )
+                    // InternalCASL.g:11788:3: (enumLiteral_1= 'lenient' )
                     {
-                    // InternalCASL.g:11769:3: (enumLiteral_1= 'lenient' )
-                    // InternalCASL.g:11770:4: enumLiteral_1= 'lenient'
+                    // InternalCASL.g:11788:3: (enumLiteral_1= 'lenient' )
+                    // InternalCASL.g:11789:4: enumLiteral_1= 'lenient'
                     {
                     enumLiteral_1=(Token)match(input,136,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -30988,7 +31025,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCAS_Rule_Exception"
-    // InternalCASL.g:11780:1: ruleCAS_Rule_Exception returns [Enumerator current=null] : ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) ) ;
+    // InternalCASL.g:11799:1: ruleCAS_Rule_Exception returns [Enumerator current=null] : ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) ) ;
     public final Enumerator ruleCAS_Rule_Exception() throws RecognitionException {
         Enumerator current = null;
 
@@ -31001,10 +31038,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11786:2: ( ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) ) )
-            // InternalCASL.g:11787:2: ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) )
+            // InternalCASL.g:11805:2: ( ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) ) )
+            // InternalCASL.g:11806:2: ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) )
             {
-            // InternalCASL.g:11787:2: ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) )
+            // InternalCASL.g:11806:2: ( (enumLiteral_0= 'modularity' ) | (enumLiteral_1= 'diversity' ) | (enumLiteral_2= 'none' ) | (enumLiteral_3= 'adaptation' ) )
             int alt159=4;
             switch ( input.LA(1) ) {
             case 137:
@@ -31037,10 +31074,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt159) {
                 case 1 :
-                    // InternalCASL.g:11788:3: (enumLiteral_0= 'modularity' )
+                    // InternalCASL.g:11807:3: (enumLiteral_0= 'modularity' )
                     {
-                    // InternalCASL.g:11788:3: (enumLiteral_0= 'modularity' )
-                    // InternalCASL.g:11789:4: enumLiteral_0= 'modularity'
+                    // InternalCASL.g:11807:3: (enumLiteral_0= 'modularity' )
+                    // InternalCASL.g:11808:4: enumLiteral_0= 'modularity'
                     {
                     enumLiteral_0=(Token)match(input,137,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31056,10 +31093,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11796:3: (enumLiteral_1= 'diversity' )
+                    // InternalCASL.g:11815:3: (enumLiteral_1= 'diversity' )
                     {
-                    // InternalCASL.g:11796:3: (enumLiteral_1= 'diversity' )
-                    // InternalCASL.g:11797:4: enumLiteral_1= 'diversity'
+                    // InternalCASL.g:11815:3: (enumLiteral_1= 'diversity' )
+                    // InternalCASL.g:11816:4: enumLiteral_1= 'diversity'
                     {
                     enumLiteral_1=(Token)match(input,138,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31075,10 +31112,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11804:3: (enumLiteral_2= 'none' )
+                    // InternalCASL.g:11823:3: (enumLiteral_2= 'none' )
                     {
-                    // InternalCASL.g:11804:3: (enumLiteral_2= 'none' )
-                    // InternalCASL.g:11805:4: enumLiteral_2= 'none'
+                    // InternalCASL.g:11823:3: (enumLiteral_2= 'none' )
+                    // InternalCASL.g:11824:4: enumLiteral_2= 'none'
                     {
                     enumLiteral_2=(Token)match(input,139,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31094,10 +31131,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:11812:3: (enumLiteral_3= 'adaptation' )
+                    // InternalCASL.g:11831:3: (enumLiteral_3= 'adaptation' )
                     {
-                    // InternalCASL.g:11812:3: (enumLiteral_3= 'adaptation' )
-                    // InternalCASL.g:11813:4: enumLiteral_3= 'adaptation'
+                    // InternalCASL.g:11831:3: (enumLiteral_3= 'adaptation' )
+                    // InternalCASL.g:11832:4: enumLiteral_3= 'adaptation'
                     {
                     enumLiteral_3=(Token)match(input,140,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31137,7 +31174,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCAS_Inspection_Level"
-    // InternalCASL.g:11823:1: ruleCAS_Inspection_Level returns [Enumerator current=null] : ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) ) ;
+    // InternalCASL.g:11842:1: ruleCAS_Inspection_Level returns [Enumerator current=null] : ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) ) ;
     public final Enumerator ruleCAS_Inspection_Level() throws RecognitionException {
         Enumerator current = null;
 
@@ -31149,10 +31186,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11829:2: ( ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) ) )
-            // InternalCASL.g:11830:2: ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) )
+            // InternalCASL.g:11848:2: ( ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) ) )
+            // InternalCASL.g:11849:2: ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) )
             {
-            // InternalCASL.g:11830:2: ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) )
+            // InternalCASL.g:11849:2: ( (enumLiteral_0= 'strong' ) | (enumLiteral_1= 'weak' ) | (enumLiteral_2= 'none' ) )
             int alt160=3;
             switch ( input.LA(1) ) {
             case 141:
@@ -31180,10 +31217,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt160) {
                 case 1 :
-                    // InternalCASL.g:11831:3: (enumLiteral_0= 'strong' )
+                    // InternalCASL.g:11850:3: (enumLiteral_0= 'strong' )
                     {
-                    // InternalCASL.g:11831:3: (enumLiteral_0= 'strong' )
-                    // InternalCASL.g:11832:4: enumLiteral_0= 'strong'
+                    // InternalCASL.g:11850:3: (enumLiteral_0= 'strong' )
+                    // InternalCASL.g:11851:4: enumLiteral_0= 'strong'
                     {
                     enumLiteral_0=(Token)match(input,141,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31199,10 +31236,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11839:3: (enumLiteral_1= 'weak' )
+                    // InternalCASL.g:11858:3: (enumLiteral_1= 'weak' )
                     {
-                    // InternalCASL.g:11839:3: (enumLiteral_1= 'weak' )
-                    // InternalCASL.g:11840:4: enumLiteral_1= 'weak'
+                    // InternalCASL.g:11858:3: (enumLiteral_1= 'weak' )
+                    // InternalCASL.g:11859:4: enumLiteral_1= 'weak'
                     {
                     enumLiteral_1=(Token)match(input,142,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31218,10 +31255,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11847:3: (enumLiteral_2= 'none' )
+                    // InternalCASL.g:11866:3: (enumLiteral_2= 'none' )
                     {
-                    // InternalCASL.g:11847:3: (enumLiteral_2= 'none' )
-                    // InternalCASL.g:11848:4: enumLiteral_2= 'none'
+                    // InternalCASL.g:11866:3: (enumLiteral_2= 'none' )
+                    // InternalCASL.g:11867:4: enumLiteral_2= 'none'
                     {
                     enumLiteral_2=(Token)match(input,139,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31261,7 +31298,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCAS_Semantic_Group_Switch"
-    // InternalCASL.g:11858:1: ruleCAS_Semantic_Group_Switch returns [Enumerator current=null] : ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) ) ;
+    // InternalCASL.g:11877:1: ruleCAS_Semantic_Group_Switch returns [Enumerator current=null] : ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) ) ;
     public final Enumerator ruleCAS_Semantic_Group_Switch() throws RecognitionException {
         Enumerator current = null;
 
@@ -31272,10 +31309,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11864:2: ( ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) ) )
-            // InternalCASL.g:11865:2: ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) )
+            // InternalCASL.g:11883:2: ( ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) ) )
+            // InternalCASL.g:11884:2: ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) )
             {
-            // InternalCASL.g:11865:2: ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) )
+            // InternalCASL.g:11884:2: ( (enumLiteral_0= 'enable' ) | (enumLiteral_1= 'disable' ) )
             int alt161=2;
             int LA161_0 = input.LA(1);
 
@@ -31294,10 +31331,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt161) {
                 case 1 :
-                    // InternalCASL.g:11866:3: (enumLiteral_0= 'enable' )
+                    // InternalCASL.g:11885:3: (enumLiteral_0= 'enable' )
                     {
-                    // InternalCASL.g:11866:3: (enumLiteral_0= 'enable' )
-                    // InternalCASL.g:11867:4: enumLiteral_0= 'enable'
+                    // InternalCASL.g:11885:3: (enumLiteral_0= 'enable' )
+                    // InternalCASL.g:11886:4: enumLiteral_0= 'enable'
                     {
                     enumLiteral_0=(Token)match(input,143,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31313,10 +31350,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11874:3: (enumLiteral_1= 'disable' )
+                    // InternalCASL.g:11893:3: (enumLiteral_1= 'disable' )
                     {
-                    // InternalCASL.g:11874:3: (enumLiteral_1= 'disable' )
-                    // InternalCASL.g:11875:4: enumLiteral_1= 'disable'
+                    // InternalCASL.g:11893:3: (enumLiteral_1= 'disable' )
+                    // InternalCASL.g:11894:4: enumLiteral_1= 'disable'
                     {
                     enumLiteral_1=(Token)match(input,144,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31356,7 +31393,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransmission_Phase"
-    // InternalCASL.g:11885:1: ruleTransmission_Phase returns [Enumerator current=null] : ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) ) ;
+    // InternalCASL.g:11904:1: ruleTransmission_Phase returns [Enumerator current=null] : ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) ) ;
     public final Enumerator ruleTransmission_Phase() throws RecognitionException {
         Enumerator current = null;
 
@@ -31368,10 +31405,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11891:2: ( ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) ) )
-            // InternalCASL.g:11892:2: ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) )
+            // InternalCASL.g:11910:2: ( ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) ) )
+            // InternalCASL.g:11911:2: ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) )
             {
-            // InternalCASL.g:11892:2: ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) )
+            // InternalCASL.g:11911:2: ( (enumLiteral_0= 'SETUP' ) | (enumLiteral_1= 'ACTION' ) | (enumLiteral_2= 'CLEANUP' ) )
             int alt162=3;
             switch ( input.LA(1) ) {
             case 145:
@@ -31399,10 +31436,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt162) {
                 case 1 :
-                    // InternalCASL.g:11893:3: (enumLiteral_0= 'SETUP' )
+                    // InternalCASL.g:11912:3: (enumLiteral_0= 'SETUP' )
                     {
-                    // InternalCASL.g:11893:3: (enumLiteral_0= 'SETUP' )
-                    // InternalCASL.g:11894:4: enumLiteral_0= 'SETUP'
+                    // InternalCASL.g:11912:3: (enumLiteral_0= 'SETUP' )
+                    // InternalCASL.g:11913:4: enumLiteral_0= 'SETUP'
                     {
                     enumLiteral_0=(Token)match(input,145,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31418,10 +31455,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11901:3: (enumLiteral_1= 'ACTION' )
+                    // InternalCASL.g:11920:3: (enumLiteral_1= 'ACTION' )
                     {
-                    // InternalCASL.g:11901:3: (enumLiteral_1= 'ACTION' )
-                    // InternalCASL.g:11902:4: enumLiteral_1= 'ACTION'
+                    // InternalCASL.g:11920:3: (enumLiteral_1= 'ACTION' )
+                    // InternalCASL.g:11921:4: enumLiteral_1= 'ACTION'
                     {
                     enumLiteral_1=(Token)match(input,146,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31437,10 +31474,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11909:3: (enumLiteral_2= 'CLEANUP' )
+                    // InternalCASL.g:11928:3: (enumLiteral_2= 'CLEANUP' )
                     {
-                    // InternalCASL.g:11909:3: (enumLiteral_2= 'CLEANUP' )
-                    // InternalCASL.g:11910:4: enumLiteral_2= 'CLEANUP'
+                    // InternalCASL.g:11928:3: (enumLiteral_2= 'CLEANUP' )
+                    // InternalCASL.g:11929:4: enumLiteral_2= 'CLEANUP'
                     {
                     enumLiteral_2=(Token)match(input,147,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31480,7 +31517,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransmission_Contents"
-    // InternalCASL.g:11920:1: ruleTransmission_Contents returns [Enumerator current=null] : ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) ) ;
+    // InternalCASL.g:11939:1: ruleTransmission_Contents returns [Enumerator current=null] : ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) ) ;
     public final Enumerator ruleTransmission_Contents() throws RecognitionException {
         Enumerator current = null;
 
@@ -31491,10 +31528,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11926:2: ( ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) ) )
-            // InternalCASL.g:11927:2: ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) )
+            // InternalCASL.g:11945:2: ( ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) ) )
+            // InternalCASL.g:11946:2: ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) )
             {
-            // InternalCASL.g:11927:2: ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) )
+            // InternalCASL.g:11946:2: ( (enumLiteral_0= 'STATE' ) | (enumLiteral_1= 'AGENT' ) )
             int alt163=2;
             int LA163_0 = input.LA(1);
 
@@ -31513,10 +31550,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt163) {
                 case 1 :
-                    // InternalCASL.g:11928:3: (enumLiteral_0= 'STATE' )
+                    // InternalCASL.g:11947:3: (enumLiteral_0= 'STATE' )
                     {
-                    // InternalCASL.g:11928:3: (enumLiteral_0= 'STATE' )
-                    // InternalCASL.g:11929:4: enumLiteral_0= 'STATE'
+                    // InternalCASL.g:11947:3: (enumLiteral_0= 'STATE' )
+                    // InternalCASL.g:11948:4: enumLiteral_0= 'STATE'
                     {
                     enumLiteral_0=(Token)match(input,134,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31532,10 +31569,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11936:3: (enumLiteral_1= 'AGENT' )
+                    // InternalCASL.g:11955:3: (enumLiteral_1= 'AGENT' )
                     {
-                    // InternalCASL.g:11936:3: (enumLiteral_1= 'AGENT' )
-                    // InternalCASL.g:11937:4: enumLiteral_1= 'AGENT'
+                    // InternalCASL.g:11955:3: (enumLiteral_1= 'AGENT' )
+                    // InternalCASL.g:11956:4: enumLiteral_1= 'AGENT'
                     {
                     enumLiteral_1=(Token)match(input,31,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31575,7 +31612,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransmission_Repeat"
-    // InternalCASL.g:11947:1: ruleTransmission_Repeat returns [Enumerator current=null] : ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) ) ;
+    // InternalCASL.g:11966:1: ruleTransmission_Repeat returns [Enumerator current=null] : ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) ) ;
     public final Enumerator ruleTransmission_Repeat() throws RecognitionException {
         Enumerator current = null;
 
@@ -31587,10 +31624,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11953:2: ( ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) ) )
-            // InternalCASL.g:11954:2: ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) )
+            // InternalCASL.g:11972:2: ( ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) ) )
+            // InternalCASL.g:11973:2: ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) )
             {
-            // InternalCASL.g:11954:2: ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) )
+            // InternalCASL.g:11973:2: ( (enumLiteral_0= 'REPEAT' ) | (enumLiteral_1= 'SINGLE' ) | (enumLiteral_2= 'CALLED' ) )
             int alt164=3;
             switch ( input.LA(1) ) {
             case 148:
@@ -31618,10 +31655,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt164) {
                 case 1 :
-                    // InternalCASL.g:11955:3: (enumLiteral_0= 'REPEAT' )
+                    // InternalCASL.g:11974:3: (enumLiteral_0= 'REPEAT' )
                     {
-                    // InternalCASL.g:11955:3: (enumLiteral_0= 'REPEAT' )
-                    // InternalCASL.g:11956:4: enumLiteral_0= 'REPEAT'
+                    // InternalCASL.g:11974:3: (enumLiteral_0= 'REPEAT' )
+                    // InternalCASL.g:11975:4: enumLiteral_0= 'REPEAT'
                     {
                     enumLiteral_0=(Token)match(input,148,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31637,10 +31674,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11963:3: (enumLiteral_1= 'SINGLE' )
+                    // InternalCASL.g:11982:3: (enumLiteral_1= 'SINGLE' )
                     {
-                    // InternalCASL.g:11963:3: (enumLiteral_1= 'SINGLE' )
-                    // InternalCASL.g:11964:4: enumLiteral_1= 'SINGLE'
+                    // InternalCASL.g:11982:3: (enumLiteral_1= 'SINGLE' )
+                    // InternalCASL.g:11983:4: enumLiteral_1= 'SINGLE'
                     {
                     enumLiteral_1=(Token)match(input,149,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31656,10 +31693,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:11971:3: (enumLiteral_2= 'CALLED' )
+                    // InternalCASL.g:11990:3: (enumLiteral_2= 'CALLED' )
                     {
-                    // InternalCASL.g:11971:3: (enumLiteral_2= 'CALLED' )
-                    // InternalCASL.g:11972:4: enumLiteral_2= 'CALLED'
+                    // InternalCASL.g:11990:3: (enumLiteral_2= 'CALLED' )
+                    // InternalCASL.g:11991:4: enumLiteral_2= 'CALLED'
                     {
                     enumLiteral_2=(Token)match(input,150,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31699,7 +31736,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorType"
-    // InternalCASL.g:11982:1: ruleBehaviorType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) ) ;
+    // InternalCASL.g:12001:1: ruleBehaviorType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) ) ;
     public final Enumerator ruleBehaviorType() throws RecognitionException {
         Enumerator current = null;
 
@@ -31711,10 +31748,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11988:2: ( ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) ) )
-            // InternalCASL.g:11989:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) )
+            // InternalCASL.g:12007:2: ( ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) ) )
+            // InternalCASL.g:12008:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) )
             {
-            // InternalCASL.g:11989:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) )
+            // InternalCASL.g:12008:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'ENVIRONMENT' ) | (enumLiteral_2= 'AGENT' ) )
             int alt165=3;
             switch ( input.LA(1) ) {
             case 151:
@@ -31742,10 +31779,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt165) {
                 case 1 :
-                    // InternalCASL.g:11990:3: (enumLiteral_0= 'SELF' )
+                    // InternalCASL.g:12009:3: (enumLiteral_0= 'SELF' )
                     {
-                    // InternalCASL.g:11990:3: (enumLiteral_0= 'SELF' )
-                    // InternalCASL.g:11991:4: enumLiteral_0= 'SELF'
+                    // InternalCASL.g:12009:3: (enumLiteral_0= 'SELF' )
+                    // InternalCASL.g:12010:4: enumLiteral_0= 'SELF'
                     {
                     enumLiteral_0=(Token)match(input,151,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31761,10 +31798,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:11998:3: (enumLiteral_1= 'ENVIRONMENT' )
+                    // InternalCASL.g:12017:3: (enumLiteral_1= 'ENVIRONMENT' )
                     {
-                    // InternalCASL.g:11998:3: (enumLiteral_1= 'ENVIRONMENT' )
-                    // InternalCASL.g:11999:4: enumLiteral_1= 'ENVIRONMENT'
+                    // InternalCASL.g:12017:3: (enumLiteral_1= 'ENVIRONMENT' )
+                    // InternalCASL.g:12018:4: enumLiteral_1= 'ENVIRONMENT'
                     {
                     enumLiteral_1=(Token)match(input,33,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31780,10 +31817,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12006:3: (enumLiteral_2= 'AGENT' )
+                    // InternalCASL.g:12025:3: (enumLiteral_2= 'AGENT' )
                     {
-                    // InternalCASL.g:12006:3: (enumLiteral_2= 'AGENT' )
-                    // InternalCASL.g:12007:4: enumLiteral_2= 'AGENT'
+                    // InternalCASL.g:12025:3: (enumLiteral_2= 'AGENT' )
+                    // InternalCASL.g:12026:4: enumLiteral_2= 'AGENT'
                     {
                     enumLiteral_2=(Token)match(input,31,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31823,7 +31860,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBehaviorReactionTime"
-    // InternalCASL.g:12017:1: ruleBehaviorReactionTime returns [Enumerator current=null] : ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) ) ;
+    // InternalCASL.g:12036:1: ruleBehaviorReactionTime returns [Enumerator current=null] : ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) ) ;
     public final Enumerator ruleBehaviorReactionTime() throws RecognitionException {
         Enumerator current = null;
 
@@ -31836,10 +31873,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12023:2: ( ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) ) )
-            // InternalCASL.g:12024:2: ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) )
+            // InternalCASL.g:12042:2: ( ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) ) )
+            // InternalCASL.g:12043:2: ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) )
             {
-            // InternalCASL.g:12024:2: ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) )
+            // InternalCASL.g:12043:2: ( (enumLiteral_0= 'INSTANT' ) | (enumLiteral_1= 'DELAYED' ) | (enumLiteral_2= 'STEP' ) | (enumLiteral_3= 'REPEAT' ) )
             int alt166=4;
             switch ( input.LA(1) ) {
             case 152:
@@ -31872,10 +31909,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt166) {
                 case 1 :
-                    // InternalCASL.g:12025:3: (enumLiteral_0= 'INSTANT' )
+                    // InternalCASL.g:12044:3: (enumLiteral_0= 'INSTANT' )
                     {
-                    // InternalCASL.g:12025:3: (enumLiteral_0= 'INSTANT' )
-                    // InternalCASL.g:12026:4: enumLiteral_0= 'INSTANT'
+                    // InternalCASL.g:12044:3: (enumLiteral_0= 'INSTANT' )
+                    // InternalCASL.g:12045:4: enumLiteral_0= 'INSTANT'
                     {
                     enumLiteral_0=(Token)match(input,152,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31891,10 +31928,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12033:3: (enumLiteral_1= 'DELAYED' )
+                    // InternalCASL.g:12052:3: (enumLiteral_1= 'DELAYED' )
                     {
-                    // InternalCASL.g:12033:3: (enumLiteral_1= 'DELAYED' )
-                    // InternalCASL.g:12034:4: enumLiteral_1= 'DELAYED'
+                    // InternalCASL.g:12052:3: (enumLiteral_1= 'DELAYED' )
+                    // InternalCASL.g:12053:4: enumLiteral_1= 'DELAYED'
                     {
                     enumLiteral_1=(Token)match(input,153,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31910,10 +31947,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12041:3: (enumLiteral_2= 'STEP' )
+                    // InternalCASL.g:12060:3: (enumLiteral_2= 'STEP' )
                     {
-                    // InternalCASL.g:12041:3: (enumLiteral_2= 'STEP' )
-                    // InternalCASL.g:12042:4: enumLiteral_2= 'STEP'
+                    // InternalCASL.g:12060:3: (enumLiteral_2= 'STEP' )
+                    // InternalCASL.g:12061:4: enumLiteral_2= 'STEP'
                     {
                     enumLiteral_2=(Token)match(input,154,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31929,10 +31966,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:12049:3: (enumLiteral_3= 'REPEAT' )
+                    // InternalCASL.g:12068:3: (enumLiteral_3= 'REPEAT' )
                     {
-                    // InternalCASL.g:12049:3: (enumLiteral_3= 'REPEAT' )
-                    // InternalCASL.g:12050:4: enumLiteral_3= 'REPEAT'
+                    // InternalCASL.g:12068:3: (enumLiteral_3= 'REPEAT' )
+                    // InternalCASL.g:12069:4: enumLiteral_3= 'REPEAT'
                     {
                     enumLiteral_3=(Token)match(input,148,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -31972,7 +32009,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLayoutType"
-    // InternalCASL.g:12060:1: ruleLayoutType returns [Enumerator current=null] : ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) ;
+    // InternalCASL.g:12079:1: ruleLayoutType returns [Enumerator current=null] : ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) ;
     public final Enumerator ruleLayoutType() throws RecognitionException {
         Enumerator current = null;
 
@@ -31989,10 +32026,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12066:2: ( ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) )
-            // InternalCASL.g:12067:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
+            // InternalCASL.g:12085:2: ( ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) )
+            // InternalCASL.g:12086:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
             {
-            // InternalCASL.g:12067:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
+            // InternalCASL.g:12086:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
             int alt167=8;
             switch ( input.LA(1) ) {
             case 155:
@@ -32045,10 +32082,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt167) {
                 case 1 :
-                    // InternalCASL.g:12068:3: (enumLiteral_0= 'GRID' )
+                    // InternalCASL.g:12087:3: (enumLiteral_0= 'GRID' )
                     {
-                    // InternalCASL.g:12068:3: (enumLiteral_0= 'GRID' )
-                    // InternalCASL.g:12069:4: enumLiteral_0= 'GRID'
+                    // InternalCASL.g:12087:3: (enumLiteral_0= 'GRID' )
+                    // InternalCASL.g:12088:4: enumLiteral_0= 'GRID'
                     {
                     enumLiteral_0=(Token)match(input,155,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32064,10 +32101,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12076:3: (enumLiteral_1= 'TORUS' )
+                    // InternalCASL.g:12095:3: (enumLiteral_1= 'TORUS' )
                     {
-                    // InternalCASL.g:12076:3: (enumLiteral_1= 'TORUS' )
-                    // InternalCASL.g:12077:4: enumLiteral_1= 'TORUS'
+                    // InternalCASL.g:12095:3: (enumLiteral_1= 'TORUS' )
+                    // InternalCASL.g:12096:4: enumLiteral_1= 'TORUS'
                     {
                     enumLiteral_1=(Token)match(input,156,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32083,10 +32120,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12084:3: (enumLiteral_2= 'BOUND' )
+                    // InternalCASL.g:12103:3: (enumLiteral_2= 'BOUND' )
                     {
-                    // InternalCASL.g:12084:3: (enumLiteral_2= 'BOUND' )
-                    // InternalCASL.g:12085:4: enumLiteral_2= 'BOUND'
+                    // InternalCASL.g:12103:3: (enumLiteral_2= 'BOUND' )
+                    // InternalCASL.g:12104:4: enumLiteral_2= 'BOUND'
                     {
                     enumLiteral_2=(Token)match(input,157,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32102,10 +32139,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:12092:3: (enumLiteral_3= 'GRAPH' )
+                    // InternalCASL.g:12111:3: (enumLiteral_3= 'GRAPH' )
                     {
-                    // InternalCASL.g:12092:3: (enumLiteral_3= 'GRAPH' )
-                    // InternalCASL.g:12093:4: enumLiteral_3= 'GRAPH'
+                    // InternalCASL.g:12111:3: (enumLiteral_3= 'GRAPH' )
+                    // InternalCASL.g:12112:4: enumLiteral_3= 'GRAPH'
                     {
                     enumLiteral_3=(Token)match(input,158,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32121,10 +32158,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalCASL.g:12100:3: (enumLiteral_4= 'NETWORK' )
+                    // InternalCASL.g:12119:3: (enumLiteral_4= 'NETWORK' )
                     {
-                    // InternalCASL.g:12100:3: (enumLiteral_4= 'NETWORK' )
-                    // InternalCASL.g:12101:4: enumLiteral_4= 'NETWORK'
+                    // InternalCASL.g:12119:3: (enumLiteral_4= 'NETWORK' )
+                    // InternalCASL.g:12120:4: enumLiteral_4= 'NETWORK'
                     {
                     enumLiteral_4=(Token)match(input,159,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32140,10 +32177,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalCASL.g:12108:3: (enumLiteral_5= 'GIS' )
+                    // InternalCASL.g:12127:3: (enumLiteral_5= 'GIS' )
                     {
-                    // InternalCASL.g:12108:3: (enumLiteral_5= 'GIS' )
-                    // InternalCASL.g:12109:4: enumLiteral_5= 'GIS'
+                    // InternalCASL.g:12127:3: (enumLiteral_5= 'GIS' )
+                    // InternalCASL.g:12128:4: enumLiteral_5= 'GIS'
                     {
                     enumLiteral_5=(Token)match(input,160,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32159,10 +32196,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalCASL.g:12116:3: (enumLiteral_6= 'MESH3D' )
+                    // InternalCASL.g:12135:3: (enumLiteral_6= 'MESH3D' )
                     {
-                    // InternalCASL.g:12116:3: (enumLiteral_6= 'MESH3D' )
-                    // InternalCASL.g:12117:4: enumLiteral_6= 'MESH3D'
+                    // InternalCASL.g:12135:3: (enumLiteral_6= 'MESH3D' )
+                    // InternalCASL.g:12136:4: enumLiteral_6= 'MESH3D'
                     {
                     enumLiteral_6=(Token)match(input,161,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32178,10 +32215,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalCASL.g:12124:3: (enumLiteral_7= 'CONTINUOUS' )
+                    // InternalCASL.g:12143:3: (enumLiteral_7= 'CONTINUOUS' )
                     {
-                    // InternalCASL.g:12124:3: (enumLiteral_7= 'CONTINUOUS' )
-                    // InternalCASL.g:12125:4: enumLiteral_7= 'CONTINUOUS'
+                    // InternalCASL.g:12143:3: (enumLiteral_7= 'CONTINUOUS' )
+                    // InternalCASL.g:12144:4: enumLiteral_7= 'CONTINUOUS'
                     {
                     enumLiteral_7=(Token)match(input,162,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32221,7 +32258,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteractionType"
-    // InternalCASL.g:12135:1: ruleInteractionType returns [Enumerator current=null] : ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) ) ;
+    // InternalCASL.g:12154:1: ruleInteractionType returns [Enumerator current=null] : ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) ) ;
     public final Enumerator ruleInteractionType() throws RecognitionException {
         Enumerator current = null;
 
@@ -32233,10 +32270,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12141:2: ( ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) ) )
-            // InternalCASL.g:12142:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) )
+            // InternalCASL.g:12160:2: ( ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) ) )
+            // InternalCASL.g:12161:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) )
             {
-            // InternalCASL.g:12142:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) )
+            // InternalCASL.g:12161:2: ( (enumLiteral_0= 'QUERY' ) | (enumLiteral_1= 'INDIRECT' ) | (enumLiteral_2= 'COMMUNICATION' ) )
             int alt168=3;
             switch ( input.LA(1) ) {
             case 163:
@@ -32264,10 +32301,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt168) {
                 case 1 :
-                    // InternalCASL.g:12143:3: (enumLiteral_0= 'QUERY' )
+                    // InternalCASL.g:12162:3: (enumLiteral_0= 'QUERY' )
                     {
-                    // InternalCASL.g:12143:3: (enumLiteral_0= 'QUERY' )
-                    // InternalCASL.g:12144:4: enumLiteral_0= 'QUERY'
+                    // InternalCASL.g:12162:3: (enumLiteral_0= 'QUERY' )
+                    // InternalCASL.g:12163:4: enumLiteral_0= 'QUERY'
                     {
                     enumLiteral_0=(Token)match(input,163,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32283,10 +32320,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12151:3: (enumLiteral_1= 'INDIRECT' )
+                    // InternalCASL.g:12170:3: (enumLiteral_1= 'INDIRECT' )
                     {
-                    // InternalCASL.g:12151:3: (enumLiteral_1= 'INDIRECT' )
-                    // InternalCASL.g:12152:4: enumLiteral_1= 'INDIRECT'
+                    // InternalCASL.g:12170:3: (enumLiteral_1= 'INDIRECT' )
+                    // InternalCASL.g:12171:4: enumLiteral_1= 'INDIRECT'
                     {
                     enumLiteral_1=(Token)match(input,164,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32302,10 +32339,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12159:3: (enumLiteral_2= 'COMMUNICATION' )
+                    // InternalCASL.g:12178:3: (enumLiteral_2= 'COMMUNICATION' )
                     {
-                    // InternalCASL.g:12159:3: (enumLiteral_2= 'COMMUNICATION' )
-                    // InternalCASL.g:12160:4: enumLiteral_2= 'COMMUNICATION'
+                    // InternalCASL.g:12178:3: (enumLiteral_2= 'COMMUNICATION' )
+                    // InternalCASL.g:12179:4: enumLiteral_2= 'COMMUNICATION'
                     {
                     enumLiteral_2=(Token)match(input,165,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32345,7 +32382,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteractionTriggerTypes"
-    // InternalCASL.g:12170:1: ruleInteractionTriggerTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) ) ;
+    // InternalCASL.g:12189:1: ruleInteractionTriggerTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) ) ;
     public final Enumerator ruleInteractionTriggerTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -32358,10 +32395,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12176:2: ( ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) ) )
-            // InternalCASL.g:12177:2: ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) )
+            // InternalCASL.g:12195:2: ( ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) ) )
+            // InternalCASL.g:12196:2: ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) )
             {
-            // InternalCASL.g:12177:2: ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) )
+            // InternalCASL.g:12196:2: ( (enumLiteral_0= 'STEP' ) | (enumLiteral_1= 'STATE' ) | (enumLiteral_2= 'PARAMETER' ) | (enumLiteral_3= 'INPUT' ) )
             int alt169=4;
             switch ( input.LA(1) ) {
             case 154:
@@ -32394,10 +32431,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt169) {
                 case 1 :
-                    // InternalCASL.g:12178:3: (enumLiteral_0= 'STEP' )
+                    // InternalCASL.g:12197:3: (enumLiteral_0= 'STEP' )
                     {
-                    // InternalCASL.g:12178:3: (enumLiteral_0= 'STEP' )
-                    // InternalCASL.g:12179:4: enumLiteral_0= 'STEP'
+                    // InternalCASL.g:12197:3: (enumLiteral_0= 'STEP' )
+                    // InternalCASL.g:12198:4: enumLiteral_0= 'STEP'
                     {
                     enumLiteral_0=(Token)match(input,154,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32413,10 +32450,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12186:3: (enumLiteral_1= 'STATE' )
+                    // InternalCASL.g:12205:3: (enumLiteral_1= 'STATE' )
                     {
-                    // InternalCASL.g:12186:3: (enumLiteral_1= 'STATE' )
-                    // InternalCASL.g:12187:4: enumLiteral_1= 'STATE'
+                    // InternalCASL.g:12205:3: (enumLiteral_1= 'STATE' )
+                    // InternalCASL.g:12206:4: enumLiteral_1= 'STATE'
                     {
                     enumLiteral_1=(Token)match(input,134,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32432,10 +32469,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12194:3: (enumLiteral_2= 'PARAMETER' )
+                    // InternalCASL.g:12213:3: (enumLiteral_2= 'PARAMETER' )
                     {
-                    // InternalCASL.g:12194:3: (enumLiteral_2= 'PARAMETER' )
-                    // InternalCASL.g:12195:4: enumLiteral_2= 'PARAMETER'
+                    // InternalCASL.g:12213:3: (enumLiteral_2= 'PARAMETER' )
+                    // InternalCASL.g:12214:4: enumLiteral_2= 'PARAMETER'
                     {
                     enumLiteral_2=(Token)match(input,133,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32451,10 +32488,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:12202:3: (enumLiteral_3= 'INPUT' )
+                    // InternalCASL.g:12221:3: (enumLiteral_3= 'INPUT' )
                     {
-                    // InternalCASL.g:12202:3: (enumLiteral_3= 'INPUT' )
-                    // InternalCASL.g:12203:4: enumLiteral_3= 'INPUT'
+                    // InternalCASL.g:12221:3: (enumLiteral_3= 'INPUT' )
+                    // InternalCASL.g:12222:4: enumLiteral_3= 'INPUT'
                     {
                     enumLiteral_3=(Token)match(input,166,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32494,7 +32531,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdaptationType"
-    // InternalCASL.g:12213:1: ruleAdaptationType returns [Enumerator current=null] : ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) ) ;
+    // InternalCASL.g:12232:1: ruleAdaptationType returns [Enumerator current=null] : ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) ) ;
     public final Enumerator ruleAdaptationType() throws RecognitionException {
         Enumerator current = null;
 
@@ -32506,10 +32543,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12219:2: ( ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) ) )
-            // InternalCASL.g:12220:2: ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) )
+            // InternalCASL.g:12238:2: ( ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) ) )
+            // InternalCASL.g:12239:2: ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) )
             {
-            // InternalCASL.g:12220:2: ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) )
+            // InternalCASL.g:12239:2: ( (enumLiteral_0= 'IMPLICIT' ) | (enumLiteral_1= 'EVOLUTIONARY' ) | (enumLiteral_2= 'COGNITIVE' ) )
             int alt170=3;
             switch ( input.LA(1) ) {
             case 167:
@@ -32537,10 +32574,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             switch (alt170) {
                 case 1 :
-                    // InternalCASL.g:12221:3: (enumLiteral_0= 'IMPLICIT' )
+                    // InternalCASL.g:12240:3: (enumLiteral_0= 'IMPLICIT' )
                     {
-                    // InternalCASL.g:12221:3: (enumLiteral_0= 'IMPLICIT' )
-                    // InternalCASL.g:12222:4: enumLiteral_0= 'IMPLICIT'
+                    // InternalCASL.g:12240:3: (enumLiteral_0= 'IMPLICIT' )
+                    // InternalCASL.g:12241:4: enumLiteral_0= 'IMPLICIT'
                     {
                     enumLiteral_0=(Token)match(input,167,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32556,10 +32593,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12229:3: (enumLiteral_1= 'EVOLUTIONARY' )
+                    // InternalCASL.g:12248:3: (enumLiteral_1= 'EVOLUTIONARY' )
                     {
-                    // InternalCASL.g:12229:3: (enumLiteral_1= 'EVOLUTIONARY' )
-                    // InternalCASL.g:12230:4: enumLiteral_1= 'EVOLUTIONARY'
+                    // InternalCASL.g:12248:3: (enumLiteral_1= 'EVOLUTIONARY' )
+                    // InternalCASL.g:12249:4: enumLiteral_1= 'EVOLUTIONARY'
                     {
                     enumLiteral_1=(Token)match(input,168,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32575,10 +32612,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:12237:3: (enumLiteral_2= 'COGNITIVE' )
+                    // InternalCASL.g:12256:3: (enumLiteral_2= 'COGNITIVE' )
                     {
-                    // InternalCASL.g:12237:3: (enumLiteral_2= 'COGNITIVE' )
-                    // InternalCASL.g:12238:4: enumLiteral_2= 'COGNITIVE'
+                    // InternalCASL.g:12256:3: (enumLiteral_2= 'COGNITIVE' )
+                    // InternalCASL.g:12257:4: enumLiteral_2= 'COGNITIVE'
                     {
                     enumLiteral_2=(Token)match(input,169,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32618,7 +32655,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdaptationDelay"
-    // InternalCASL.g:12248:1: ruleAdaptationDelay returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) ) ;
+    // InternalCASL.g:12267:1: ruleAdaptationDelay returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) ) ;
     public final Enumerator ruleAdaptationDelay() throws RecognitionException {
         Enumerator current = null;
 
@@ -32629,10 +32666,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12254:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) ) )
-            // InternalCASL.g:12255:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) )
+            // InternalCASL.g:12273:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) ) )
+            // InternalCASL.g:12274:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) )
             {
-            // InternalCASL.g:12255:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) )
+            // InternalCASL.g:12274:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'POST' ) )
             int alt171=2;
             int LA171_0 = input.LA(1);
 
@@ -32651,10 +32688,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt171) {
                 case 1 :
-                    // InternalCASL.g:12256:3: (enumLiteral_0= 'NONE' )
+                    // InternalCASL.g:12275:3: (enumLiteral_0= 'NONE' )
                     {
-                    // InternalCASL.g:12256:3: (enumLiteral_0= 'NONE' )
-                    // InternalCASL.g:12257:4: enumLiteral_0= 'NONE'
+                    // InternalCASL.g:12275:3: (enumLiteral_0= 'NONE' )
+                    // InternalCASL.g:12276:4: enumLiteral_0= 'NONE'
                     {
                     enumLiteral_0=(Token)match(input,170,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32670,10 +32707,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12264:3: (enumLiteral_1= 'POST' )
+                    // InternalCASL.g:12283:3: (enumLiteral_1= 'POST' )
                     {
-                    // InternalCASL.g:12264:3: (enumLiteral_1= 'POST' )
-                    // InternalCASL.g:12265:4: enumLiteral_1= 'POST'
+                    // InternalCASL.g:12283:3: (enumLiteral_1= 'POST' )
+                    // InternalCASL.g:12284:4: enumLiteral_1= 'POST'
                     {
                     enumLiteral_1=(Token)match(input,171,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32713,7 +32750,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubSystemType"
-    // InternalCASL.g:12275:1: ruleSubSystemType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) ) ;
+    // InternalCASL.g:12294:1: ruleSubSystemType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) ) ;
     public final Enumerator ruleSubSystemType() throws RecognitionException {
         Enumerator current = null;
 
@@ -32724,10 +32761,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12281:2: ( ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) ) )
-            // InternalCASL.g:12282:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) )
+            // InternalCASL.g:12300:2: ( ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) ) )
+            // InternalCASL.g:12301:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) )
             {
-            // InternalCASL.g:12282:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) )
+            // InternalCASL.g:12301:2: ( (enumLiteral_0= 'SELF' ) | (enumLiteral_1= 'SYSTEM' ) )
             int alt172=2;
             int LA172_0 = input.LA(1);
 
@@ -32746,10 +32783,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt172) {
                 case 1 :
-                    // InternalCASL.g:12283:3: (enumLiteral_0= 'SELF' )
+                    // InternalCASL.g:12302:3: (enumLiteral_0= 'SELF' )
                     {
-                    // InternalCASL.g:12283:3: (enumLiteral_0= 'SELF' )
-                    // InternalCASL.g:12284:4: enumLiteral_0= 'SELF'
+                    // InternalCASL.g:12302:3: (enumLiteral_0= 'SELF' )
+                    // InternalCASL.g:12303:4: enumLiteral_0= 'SELF'
                     {
                     enumLiteral_0=(Token)match(input,151,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32765,10 +32802,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12291:3: (enumLiteral_1= 'SYSTEM' )
+                    // InternalCASL.g:12310:3: (enumLiteral_1= 'SYSTEM' )
                     {
-                    // InternalCASL.g:12291:3: (enumLiteral_1= 'SYSTEM' )
-                    // InternalCASL.g:12292:4: enumLiteral_1= 'SYSTEM'
+                    // InternalCASL.g:12310:3: (enumLiteral_1= 'SYSTEM' )
+                    // InternalCASL.g:12311:4: enumLiteral_1= 'SYSTEM'
                     {
                     enumLiteral_1=(Token)match(input,172,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32808,7 +32845,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWorldType"
-    // InternalCASL.g:12302:1: ruleWorldType returns [Enumerator current=null] : ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) ) ;
+    // InternalCASL.g:12321:1: ruleWorldType returns [Enumerator current=null] : ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) ) ;
     public final Enumerator ruleWorldType() throws RecognitionException {
         Enumerator current = null;
 
@@ -32819,10 +32856,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12308:2: ( ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) ) )
-            // InternalCASL.g:12309:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) )
+            // InternalCASL.g:12327:2: ( ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) ) )
+            // InternalCASL.g:12328:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) )
             {
-            // InternalCASL.g:12309:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) )
+            // InternalCASL.g:12328:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'SPACE' ) )
             int alt173=2;
             int LA173_0 = input.LA(1);
 
@@ -32841,10 +32878,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt173) {
                 case 1 :
-                    // InternalCASL.g:12310:3: (enumLiteral_0= 'GRID' )
+                    // InternalCASL.g:12329:3: (enumLiteral_0= 'GRID' )
                     {
-                    // InternalCASL.g:12310:3: (enumLiteral_0= 'GRID' )
-                    // InternalCASL.g:12311:4: enumLiteral_0= 'GRID'
+                    // InternalCASL.g:12329:3: (enumLiteral_0= 'GRID' )
+                    // InternalCASL.g:12330:4: enumLiteral_0= 'GRID'
                     {
                     enumLiteral_0=(Token)match(input,155,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32860,10 +32897,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12318:3: (enumLiteral_1= 'SPACE' )
+                    // InternalCASL.g:12337:3: (enumLiteral_1= 'SPACE' )
                     {
-                    // InternalCASL.g:12318:3: (enumLiteral_1= 'SPACE' )
-                    // InternalCASL.g:12319:4: enumLiteral_1= 'SPACE'
+                    // InternalCASL.g:12337:3: (enumLiteral_1= 'SPACE' )
+                    // InternalCASL.g:12338:4: enumLiteral_1= 'SPACE'
                     {
                     enumLiteral_1=(Token)match(input,173,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32903,7 +32940,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulenumType"
-    // InternalCASL.g:12329:1: rulenumType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) ) ;
+    // InternalCASL.g:12348:1: rulenumType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) ) ;
     public final Enumerator rulenumType() throws RecognitionException {
         Enumerator current = null;
 
@@ -32914,10 +32951,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:12335:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) ) )
-            // InternalCASL.g:12336:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) )
+            // InternalCASL.g:12354:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) ) )
+            // InternalCASL.g:12355:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) )
             {
-            // InternalCASL.g:12336:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) )
+            // InternalCASL.g:12355:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) )
             int alt174=2;
             int LA174_0 = input.LA(1);
 
@@ -32936,10 +32973,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             }
             switch (alt174) {
                 case 1 :
-                    // InternalCASL.g:12337:3: (enumLiteral_0= 'INT' )
+                    // InternalCASL.g:12356:3: (enumLiteral_0= 'INT' )
                     {
-                    // InternalCASL.g:12337:3: (enumLiteral_0= 'INT' )
-                    // InternalCASL.g:12338:4: enumLiteral_0= 'INT'
+                    // InternalCASL.g:12356:3: (enumLiteral_0= 'INT' )
+                    // InternalCASL.g:12357:4: enumLiteral_0= 'INT'
                     {
                     enumLiteral_0=(Token)match(input,174,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32955,10 +32992,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:12345:3: (enumLiteral_1= 'FLOAT' )
+                    // InternalCASL.g:12364:3: (enumLiteral_1= 'FLOAT' )
                     {
-                    // InternalCASL.g:12345:3: (enumLiteral_1= 'FLOAT' )
-                    // InternalCASL.g:12346:4: enumLiteral_1= 'FLOAT'
+                    // InternalCASL.g:12364:3: (enumLiteral_1= 'FLOAT' )
+                    // InternalCASL.g:12365:4: enumLiteral_1= 'FLOAT'
                     {
                     enumLiteral_1=(Token)match(input,175,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -32998,8 +33035,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalCASL
     public final void synpred1_InternalCASL_fragment() throws RecognitionException {   
-        // InternalCASL.g:8401:5: ( 'elseif' )
-        // InternalCASL.g:8401:6: 'elseif'
+        // InternalCASL.g:8420:5: ( 'elseif' )
+        // InternalCASL.g:8420:6: 'elseif'
         {
         match(input,91,FOLLOW_2); if (state.failed) return ;
 
@@ -33009,8 +33046,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred2_InternalCASL
     public final void synpred2_InternalCASL_fragment() throws RecognitionException {   
-        // InternalCASL.g:8429:5: ( 'else' )
-        // InternalCASL.g:8429:6: 'else'
+        // InternalCASL.g:8448:5: ( 'else' )
+        // InternalCASL.g:8448:6: 'else'
         {
         match(input,92,FOLLOW_2); if (state.failed) return ;
 
@@ -33414,7 +33451,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "8133:4: ( ( (lv_body_7_0= ruleExpression ) ) | ( (lv_body_8_0= ruleSelfAssignedFormula ) ) | ( (lv_body_9_0= ruleFormula ) ) | ( (lv_body_10_0= ruleField ) ) )";
+            return "8152:4: ( ( (lv_body_8_0= ruleExpression ) ) | ( (lv_body_9_0= ruleSelfAssignedFormula ) ) | ( (lv_body_10_0= ruleFormula ) ) | ( (lv_body_11_0= ruleField ) ) )";
         }
     }
 
@@ -33432,7 +33469,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "8313:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) )";
+            return "8332:4: ( ( (lv_then_5_0= ruleExpression ) ) | ( (lv_then_6_0= ruleSelfAssignedFormula ) ) | ( (lv_then_7_0= ruleFormula ) ) | ( (lv_then_8_0= ruleField ) ) )";
         }
     }
     static final String dfa_22s = "\1\uffff\1\1\2\uffff\1\4\1\uffff\1\2\3\uffff\1\3\1\uffff";
@@ -33452,7 +33489,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "8436:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) )";
+            return "8455:5: ( ( (lv_elseexp_13_0= ruleExpression ) ) | ( (lv_elseexp_14_0= ruleFormula ) ) | ( (lv_elseexp_15_0= ruleSelfAssignedFormula ) ) | ( (lv_elseexp_16_0= ruleField ) ) )";
         }
     }
 
@@ -33470,14 +33507,14 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "8587:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )";
+            return "8606:6: (lv_elseifthen_5_1= ruleExpression | lv_elseifthen_5_2= ruleFormula | lv_elseifthen_5_3= ruleSelfAssignedFormula | lv_elseifthen_5_4= ruleField )";
         }
     }
     static final String dfa_23s = "\17\uffff";
-    static final String dfa_24s = "\5\uffff\1\15\11\uffff";
+    static final String dfa_24s = "\5\uffff\1\16\11\uffff";
     static final String dfa_25s = "\1\4\4\uffff\1\16\11\uffff";
     static final String dfa_26s = "\1\160\4\uffff\1\146\11\uffff";
-    static final String dfa_27s = "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\1\11\1\13\1\14\1\15\1\5\1\12";
+    static final String dfa_27s = "\1\uffff\1\1\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\1\11\1\13\1\14\1\15\1\12\1\5";
     static final String dfa_28s = "\17\uffff}>";
     static final String[] dfa_29s = {
             "\1\2\1\5\1\1\70\uffff\2\7\2\uffff\1\7\2\uffff\3\7\6\uffff\1\3\2\4\2\uffff\1\10\23\uffff\1\10\1\12\1\6\1\14\1\13\3\uffff\1\11",
@@ -33485,7 +33522,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\15\4\uffff\1\15\24\uffff\1\15\14\uffff\1\15\3\uffff\1\15\7\uffff\2\7\1\uffff\2\7\14\uffff\1\15\1\16\12\uffff\11\15",
+            "\1\16\4\uffff\1\16\24\uffff\1\16\14\uffff\1\16\3\uffff\1\16\7\uffff\2\7\1\uffff\2\7\14\uffff\1\16\1\15\12\uffff\11\16",
             "",
             "",
             "",
@@ -33519,7 +33556,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_29;
         }
         public String getDescription() {
-            return "9304:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )";
+            return "9323:2: ( ( () ( (lv_value_1_0= RULE_NUMBER ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_nulltype_5_0= ruleNullType ) ) ) | ( () ( (lv_bool_7_0= ruleBooleanValue ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) | ( () ( (lv_sysCall_11_0= ruleSystemCall ) ) ) | ( () ( (lv_func_13_0= ruleFeatureCall ) ) ) | ( () ( (lv_selfCall_15_0= ruleSelfCall ) ) ) | ( () ( (lv_macroCall_17_0= ruleCASL_Macro_Call ) ) ) | ( () ( (lv_funcCall_19_0= ruleFunctionCall ) ) ) | ( () ( (lv_enumCall_21_0= ruleEnumCall ) ) ) | ( () ( (lv_groupCall_23_0= ruleGroup_Call ) ) ) | ( () ( (lv_agentCall_25_0= ruleAgent_Call ) ) ) )";
         }
     }
  

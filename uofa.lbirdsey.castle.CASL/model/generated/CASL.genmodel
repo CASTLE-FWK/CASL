@@ -379,6 +379,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForLoop/body"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//ForEachLoop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//ForEachLoop/ty"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForEachLoop/item"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForEachLoop/list"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForEachLoop/body"/>

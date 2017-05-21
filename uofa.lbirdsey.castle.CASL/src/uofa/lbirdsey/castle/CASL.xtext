@@ -615,7 +615,7 @@ ForLoop:
 ;
 
 ForEachLoop:
-	'foreach' '(' (item = ForEachAccess ':' list = Expression) ')' 'do'
+	'foreach' '(' (ty = QualifiedName item = ForEachAccess ':' list = Expression) ')' 'do'
 		((body += Expression | body += SelfAssignedFormula | body += Formula | body += Field)';')+
 	'endfor'
 ;

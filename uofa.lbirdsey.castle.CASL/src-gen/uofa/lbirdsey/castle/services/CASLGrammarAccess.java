@@ -5242,11 +5242,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cForeachKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cItemAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cItemForEachAccessParserRuleCall_2_0_0 = (RuleCall)cItemAssignment_2_0.eContents().get(0);
-		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cListAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cListExpressionParserRuleCall_2_2_0 = (RuleCall)cListAssignment_2_2.eContents().get(0);
+		private final Assignment cTyAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cTyQualifiedNameParserRuleCall_2_0_0 = (RuleCall)cTyAssignment_2_0.eContents().get(0);
+		private final Assignment cItemAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cItemForEachAccessParserRuleCall_2_1_0 = (RuleCall)cItemAssignment_2_1.eContents().get(0);
+		private final Keyword cColonKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cListAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cListExpressionParserRuleCall_2_3_0 = (RuleCall)cListAssignment_2_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cDoKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
@@ -5263,13 +5265,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndforKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ForEachLoop:
-		//	'foreach' '(' (item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression | body+=SelfAssignedFormula |
-		//	body+=Formula | body+=Field) ';')+
+		//	'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
+		//	body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
 		//	'endfor';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'foreach' '(' (item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression | body+=SelfAssignedFormula |
-		//body+=Formula | body+=Field) ';')+ 'endfor'
+		//'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
+		//body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+ 'endfor'
 		public Group getGroup() { return cGroup; }
 		
 		//'foreach'
@@ -5278,23 +5280,29 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//item=ForEachAccess ':' list=Expression
+		//ty=QualifiedName item=ForEachAccess ':' list=Expression
 		public Group getGroup_2() { return cGroup_2; }
 		
+		//ty=QualifiedName
+		public Assignment getTyAssignment_2_0() { return cTyAssignment_2_0; }
+		
+		//QualifiedName
+		public RuleCall getTyQualifiedNameParserRuleCall_2_0_0() { return cTyQualifiedNameParserRuleCall_2_0_0; }
+		
 		//item=ForEachAccess
-		public Assignment getItemAssignment_2_0() { return cItemAssignment_2_0; }
+		public Assignment getItemAssignment_2_1() { return cItemAssignment_2_1; }
 		
 		//ForEachAccess
-		public RuleCall getItemForEachAccessParserRuleCall_2_0_0() { return cItemForEachAccessParserRuleCall_2_0_0; }
+		public RuleCall getItemForEachAccessParserRuleCall_2_1_0() { return cItemForEachAccessParserRuleCall_2_1_0; }
 		
 		//':'
-		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		public Keyword getColonKeyword_2_2() { return cColonKeyword_2_2; }
 		
 		//list=Expression
-		public Assignment getListAssignment_2_2() { return cListAssignment_2_2; }
+		public Assignment getListAssignment_2_3() { return cListAssignment_2_3; }
 		
 		//Expression
-		public RuleCall getListExpressionParserRuleCall_2_2_0() { return cListExpressionParserRuleCall_2_2_0; }
+		public RuleCall getListExpressionParserRuleCall_2_3_0() { return cListExpressionParserRuleCall_2_3_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -9741,8 +9749,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ForEachLoop:
-	//	'foreach' '(' (item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression | body+=SelfAssignedFormula |
-	//	body+=Formula | body+=Field) ';')+
+	//	'foreach' '(' (ty=QualifiedName item=ForEachAccess ':' list=Expression) ')' 'do' ((body+=Expression |
+	//	body+=SelfAssignedFormula | body+=Formula | body+=Field) ';')+
 	//	'endfor';
 	public ForEachLoopElements getForEachLoopAccess() {
 		return pForEachLoop;

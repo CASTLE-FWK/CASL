@@ -2022,7 +2022,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Prefixed returns ForEachLoop
 	 *
 	 * Constraint:
-	 *     (item=ForEachAccess list=Expression (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field)+)
+	 *     (ty=QualifiedName item=ForEachAccess list=Expression (body+=Expression | body+=SelfAssignedFormula | body+=Formula | body+=Field)+)
 	 */
 	protected void sequence_ForEachLoop(ISerializationContext context, ForEachLoop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2398,8 +2398,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=SelfAssignedFormula? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=Field)? elseexp+=SelfAssignedFormula?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

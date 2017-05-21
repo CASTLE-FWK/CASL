@@ -8081,9 +8081,28 @@ ruleForEachLoop returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getForEachLoopAccess().getItemForEachAccessParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getForEachLoopAccess().getTyQualifiedNameParserRuleCall_2_0_0());
 					}
-					lv_item_2_0=ruleForEachAccess
+					lv_ty_2_0=ruleQualifiedName
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
+						}
+						set(
+							$current,
+							"ty",
+							lv_ty_2_0,
+							"uofa.lbirdsey.castle.CASL.QualifiedName");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getForEachLoopAccess().getItemForEachAccessParserRuleCall_2_1_0());
+					}
+					lv_item_3_0=ruleForEachAccess
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8091,22 +8110,22 @@ ruleForEachLoop returns [EObject current=null]
 						set(
 							$current,
 							"item",
-							lv_item_2_0,
+							lv_item_3_0,
 							"uofa.lbirdsey.castle.CASL.ForEachAccess");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_3=':'
+			otherlv_4=':'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getForEachLoopAccess().getColonKeyword_2_1());
+				newLeafNode(otherlv_4, grammarAccess.getForEachLoopAccess().getColonKeyword_2_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getForEachLoopAccess().getListExpressionParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getForEachLoopAccess().getListExpressionParserRuleCall_2_3_0());
 					}
-					lv_list_4_0=ruleExpression
+					lv_list_5_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8114,20 +8133,20 @@ ruleForEachLoop returns [EObject current=null]
 						set(
 							$current,
 							"list",
-							lv_list_4_0,
+							lv_list_5_0,
 							"uofa.lbirdsey.castle.CASL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		otherlv_5=')'
+		otherlv_6=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getForEachLoopAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getForEachLoopAccess().getRightParenthesisKeyword_3());
 		}
-		otherlv_6='do'
+		otherlv_7='do'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getForEachLoopAccess().getDoKeyword_4());
+			newLeafNode(otherlv_7, grammarAccess.getForEachLoopAccess().getDoKeyword_4());
 		}
 		(
 			(
@@ -8136,7 +8155,7 @@ ruleForEachLoop returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getForEachLoopAccess().getBodyExpressionParserRuleCall_5_0_0_0());
 						}
-						lv_body_7_0=ruleExpression
+						lv_body_8_0=ruleExpression
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8144,7 +8163,7 @@ ruleForEachLoop returns [EObject current=null]
 							add(
 								$current,
 								"body",
-								lv_body_7_0,
+								lv_body_8_0,
 								"uofa.lbirdsey.castle.CASL.Expression");
 							afterParserOrEnumRuleCall();
 						}
@@ -8156,7 +8175,7 @@ ruleForEachLoop returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getForEachLoopAccess().getBodySelfAssignedFormulaParserRuleCall_5_0_1_0());
 						}
-						lv_body_8_0=ruleSelfAssignedFormula
+						lv_body_9_0=ruleSelfAssignedFormula
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8164,7 +8183,7 @@ ruleForEachLoop returns [EObject current=null]
 							add(
 								$current,
 								"body",
-								lv_body_8_0,
+								lv_body_9_0,
 								"uofa.lbirdsey.castle.CASL.SelfAssignedFormula");
 							afterParserOrEnumRuleCall();
 						}
@@ -8176,7 +8195,7 @@ ruleForEachLoop returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getForEachLoopAccess().getBodyFormulaParserRuleCall_5_0_2_0());
 						}
-						lv_body_9_0=ruleFormula
+						lv_body_10_0=ruleFormula
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8184,7 +8203,7 @@ ruleForEachLoop returns [EObject current=null]
 							add(
 								$current,
 								"body",
-								lv_body_9_0,
+								lv_body_10_0,
 								"uofa.lbirdsey.castle.CASL.Formula");
 							afterParserOrEnumRuleCall();
 						}
@@ -8196,7 +8215,7 @@ ruleForEachLoop returns [EObject current=null]
 						{
 							newCompositeNode(grammarAccess.getForEachLoopAccess().getBodyFieldParserRuleCall_5_0_3_0());
 						}
-						lv_body_10_0=ruleField
+						lv_body_11_0=ruleField
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getForEachLoopRule());
@@ -8204,21 +8223,21 @@ ruleForEachLoop returns [EObject current=null]
 							add(
 								$current,
 								"body",
-								lv_body_10_0,
+								lv_body_11_0,
 								"uofa.lbirdsey.castle.CASL.Field");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)
-			otherlv_11=';'
+			otherlv_12=';'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getForEachLoopAccess().getSemicolonKeyword_5_1());
+				newLeafNode(otherlv_12, grammarAccess.getForEachLoopAccess().getSemicolonKeyword_5_1());
 			}
 		)+
-		otherlv_12='endfor'
+		otherlv_13='endfor'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getForEachLoopAccess().getEndforKeyword_6());
+			newLeafNode(otherlv_13, grammarAccess.getForEachLoopAccess().getEndforKeyword_6());
 		}
 	)
 ;

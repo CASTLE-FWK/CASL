@@ -2770,13 +2770,22 @@ public interface CaslPackage extends EPackage
   int FOR_EACH_LOOP = 64;
 
   /**
+   * The feature id for the '<em><b>Ty</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EACH_LOOP__TY = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Item</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_EACH_LOOP__ITEM = EXPRESSION_FEATURE_COUNT + 0;
+  int FOR_EACH_LOOP__ITEM = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -2785,7 +2794,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_EACH_LOOP__LIST = EXPRESSION_FEATURE_COUNT + 1;
+  int FOR_EACH_LOOP__LIST = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference list.
@@ -2794,7 +2803,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_EACH_LOOP__BODY = EXPRESSION_FEATURE_COUNT + 2;
+  int FOR_EACH_LOOP__BODY = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>For Each Loop</em>' class.
@@ -2803,7 +2812,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_EACH_LOOP_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+  int FOR_EACH_LOOP_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -7622,6 +7631,17 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EClass getForEachLoop();
+
+  /**
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.ForEachLoop#getTy <em>Ty</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ty</em>'.
+   * @see uofa.lbirdsey.castle.casl.ForEachLoop#getTy()
+   * @see #getForEachLoop()
+   * @generated
+   */
+  EAttribute getForEachLoop_Ty();
 
   /**
    * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.ForEachLoop#getItem <em>Item</em>}'.

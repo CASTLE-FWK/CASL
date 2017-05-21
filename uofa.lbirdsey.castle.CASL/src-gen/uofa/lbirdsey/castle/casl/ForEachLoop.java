@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uofa.lbirdsey.castle.casl.ForEachLoop#getTy <em>Ty</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.ForEachLoop#getItem <em>Item</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.ForEachLoop#getList <em>List</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.ForEachLoop#getBody <em>Body</em>}</li>
@@ -27,6 +28,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ForEachLoop extends Expression
 {
+  /**
+   * Returns the value of the '<em><b>Ty</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ty</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ty</em>' attribute.
+   * @see #setTy(String)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getForEachLoop_Ty()
+   * @model
+   * @generated
+   */
+  String getTy();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.ForEachLoop#getTy <em>Ty</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ty</em>' attribute.
+   * @see #getTy()
+   * @generated
+   */
+  void setTy(String value);
+
   /**
    * Returns the value of the '<em><b>Item</b></em>' containment reference.
    * <!-- begin-user-doc -->

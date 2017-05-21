@@ -724,7 +724,7 @@ class HelperFunctions {
 	
 	static def String printForEachLoop(ForEachLoop loop) {
 		var output = "";
-		output += "for ("+inferExpressionType(loop.list)+' '+loop.item.name+" : "+printExpression(loop.list)+") {\n"
+		output += "for ("+loop.ty +' '+loop.item.name+" : "+printExpression(loop.list)+") {\n"
 		for (expr : loop.body) {
 			output += "\t\t"+autoPrinter(expr)+";\n"
 		} 

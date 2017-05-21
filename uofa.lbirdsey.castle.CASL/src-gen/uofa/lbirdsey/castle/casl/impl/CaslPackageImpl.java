@@ -3510,9 +3510,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForEachLoop_Item()
+  public EAttribute getForEachLoop_Ty()
   {
-        return (EReference)getForEachLoop().getEStructuralFeatures().get(0);
+        return (EAttribute)getForEachLoop().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3520,7 +3520,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForEachLoop_List()
+  public EReference getForEachLoop_Item()
   {
         return (EReference)getForEachLoop().getEStructuralFeatures().get(1);
   }
@@ -3530,9 +3530,19 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForEachLoop_Body()
+  public EReference getForEachLoop_List()
   {
         return (EReference)getForEachLoop().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForEachLoop_Body()
+  {
+        return (EReference)getForEachLoop().getEStructuralFeatures().get(3);
   }
 
   /**

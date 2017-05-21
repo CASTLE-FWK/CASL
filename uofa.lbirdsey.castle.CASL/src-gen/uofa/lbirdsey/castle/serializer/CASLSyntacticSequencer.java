@@ -79,7 +79,7 @@ public class CASLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'for' '(' init=Field
 	 *     (rule start) (ambiguity) 'for' '(' init=Formula
 	 *     (rule start) (ambiguity) 'for' '(' init=SelfAssignedFormula
-	 *     (rule start) (ambiguity) 'foreach' '(' item=ForEachAccess
+	 *     (rule start) (ambiguity) 'foreach' '(' ty=QualifiedName
 	 *     (rule start) (ambiguity) 'if' '(' condition=Expression
 	 *     (rule start) (ambiguity) agentCall=Agent_Call
 	 *     (rule start) (ambiguity) bool=BooleanValue
@@ -115,7 +115,7 @@ public class CASLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'for' '(' init=Field
 	 *     (rule start) (ambiguity) 'for' '(' init=Formula
 	 *     (rule start) (ambiguity) 'for' '(' init=SelfAssignedFormula
-	 *     (rule start) (ambiguity) 'foreach' '(' item=ForEachAccess
+	 *     (rule start) (ambiguity) 'foreach' '(' ty=QualifiedName
 	 *     (rule start) (ambiguity) 'if' '(' condition=Expression
 	 *     (rule start) (ambiguity) {Addition.left=}
 	 *     (rule start) (ambiguity) {BooleanExpression.left=}
