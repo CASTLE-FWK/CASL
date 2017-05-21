@@ -140,7 +140,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 //					output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
 //				}		
 				
-				output += "private static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";			
+				output += "public static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";			
 				libImports.add(HelperFunctions.getFieldType(field as Field));
 			} else if (field instanceof Concern){}			
 		}
