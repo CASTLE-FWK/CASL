@@ -350,8 +350,9 @@ class EnvironmentGeneration {
 			\tactionQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tcleanupQueue = new ArrayList<Function<"+env.name+",Void>>();\n"
 		//Get layout type
-		val layoutType = getLayoutType(env);
-		
+//		val layoutType = getLayoutType(env);
+
+		str += "\tcontainedEntities.addAll(layoutParameters.getContainedGroups());\n"	
 //		switch(layoutType){
 //			case LayoutType.GRID:
 //				str += initGridLayout()
