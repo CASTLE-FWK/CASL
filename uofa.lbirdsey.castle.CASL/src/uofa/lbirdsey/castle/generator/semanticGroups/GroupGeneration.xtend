@@ -49,6 +49,7 @@ class GroupGeneration {
 		imports += "import castleComponents.Environment;\nimport castleComponents.Agent;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		imports += "import castleComponents.Entity;\n"
+		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 
 		//iC = importCandidate
 		for (String iC : libImports){

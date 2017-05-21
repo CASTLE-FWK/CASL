@@ -883,6 +883,16 @@ class HelperFunctions {
 	//Order of precedence is super important here...
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
+		//We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
+		if (iC.contains("List") || iC.contains("LayoutParameters")){
+			//Ignore
+			output = "import java.util.List;"
+			return output;
+		}
+		if (iC.contains("LayoutParameters")){
+			return output
+		}
+		
 		if (iC.startsWith("agents.") || iC.startsWith("groups.") || iC.startsWith("environments.")) {
 				output += "import "+systemRoot+"."+iC+";";
 		} else if (iC.startsWith("CUSTOM:")){
