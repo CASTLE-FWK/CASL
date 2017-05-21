@@ -4727,6 +4727,12 @@ rule__Transmission_Repeat__Alternatives
 		('SINGLE')
 		{ after(grammarAccess.getTransmission_RepeatAccess().getSINGLEEnumLiteralDeclaration_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getTransmission_RepeatAccess().getCALLEDEnumLiteralDeclaration_2()); }
+		('CALLED')
+		{ after(grammarAccess.getTransmission_RepeatAccess().getCALLEDEnumLiteralDeclaration_2()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

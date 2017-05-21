@@ -50,6 +50,7 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//Transmission_Repeat">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//Transmission_Repeat/REPEAT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//Transmission_Repeat/SINGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//Transmission_Repeat/CALLED"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//BehaviorType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorType/SELF"/>

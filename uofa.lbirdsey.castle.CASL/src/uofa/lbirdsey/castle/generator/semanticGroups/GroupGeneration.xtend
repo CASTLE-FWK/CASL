@@ -279,7 +279,7 @@ class GroupGeneration {
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+transmission.name+"();\n"
 				triggerString += "\t\treturn null;\n\t\t}}, true, this);\n\n"
-				initialList.add(phase+"Triggers.add("+HelperFunctions.getNameForTrigger(transmission.name)+"(this))");
+				initialList.add(phase+"Triggers.add("+HelperFunctions.getNameForTrigger(transmission.name)+")");
 //				output += triggerString;
 				triggersStringsToPrint.add(triggerString);
 			} else if (transmission.transmissionRepeat == Transmission_Repeat.SINGLE){
@@ -291,6 +291,8 @@ class GroupGeneration {
 				triggersStringsToPrint.add(triggerString);
 //				initialList.add(phase+"Triggers.add("+HelperFunctions.getNameForTrigger(transmission.name)+"(this))");
 //				output += triggerString;
+			} else if (transmission.transmissionRepeat == Transmission_Repeat.CALLED){
+				//Do nothing yet
 			}
 			
 		}
@@ -350,16 +352,16 @@ class GroupGeneration {
 	//How can we determine what agents a group wants in it initally?
 	def initGridLayout(){
 		var str = "";
-//		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
-//		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
-//		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
-//		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
-//		str += "\t\t\t//....\n" //TODO
-//		str += "\t\t}\n\t}\n"
-//		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
-//		str += "\t\tgrp.initialise();\n"
-//		str += "\t}\n"
-//		str += "}"
+		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
+		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
+		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
+		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
+		str += "\t\t\t//....\n" //TODO
+		str += "\t\t}\n\t}\n"
+		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
+		str += "\t\tgrp.initialise();\n"
+		str += "\t}\n"
+		str += "}"
 		return str;
 	}
 	//In this we create and initialise the groups into the environment
@@ -376,12 +378,12 @@ class GroupGeneration {
 			//Get layout type
 			val layoutType = getLayoutType(g);
 			
-			switch(layoutType){
-				case LayoutType.GRID:
-					output += initGridLayout()
-				default:
-					output += "ERROR WITH LAYOUT INIT"
-			}
+//			switch(layoutType){
+//				case LayoutType.GRID:
+//					output += initGridLayout()
+//				default:
+//					output += "ERROR WITH LAYOUT INIT"
+//			}
 			output += "}\n";
 			return output;
 	}

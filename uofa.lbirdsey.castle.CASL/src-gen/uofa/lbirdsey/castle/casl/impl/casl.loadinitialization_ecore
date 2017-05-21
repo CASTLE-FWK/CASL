@@ -187,6 +187,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Transmission_Repeat">
     <eLiterals name="REPEAT" literal="REPEAT"/>
     <eLiterals name="SINGLE" value="1" literal="SINGLE"/>
+    <eLiterals name="CALLED" value="2" literal="CALLED"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GroupInternals">
     <eStructuralFeatures xsi:type="ecore:EReference" name="internals" upperBound="-1"

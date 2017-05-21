@@ -7899,12 +7899,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cREPEATREPEATKeyword_0_0 = (Keyword)cREPEATEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cSINGLEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cSINGLESINGLEKeyword_1_0 = (Keyword)cSINGLEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cCALLEDEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cCALLEDCALLEDKeyword_2_0 = (Keyword)cCALLEDEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum Transmission_Repeat:
-		//	REPEAT | SINGLE;
+		//	REPEAT | SINGLE | CALLED;
 		public EnumRule getRule() { return rule; }
 		
-		//REPEAT | SINGLE
+		//REPEAT | SINGLE | CALLED
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//REPEAT
@@ -7918,6 +7920,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"SINGLE"
 		public Keyword getSINGLESINGLEKeyword_1_0() { return cSINGLESINGLEKeyword_1_0; }
+		
+		//CALLED
+		public EnumLiteralDeclaration getCALLEDEnumLiteralDeclaration_2() { return cCALLEDEnumLiteralDeclaration_2; }
+		
+		//"CALLED"
+		public Keyword getCALLEDCALLEDKeyword_2_0() { return cCALLEDCALLEDKeyword_2_0; }
 	}
 	public class BehaviorTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.BehaviorType");
@@ -9008,7 +9016,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum Transmission_Repeat:
-	//	REPEAT | SINGLE;
+	//	REPEAT | SINGLE | CALLED;
 	public Transmission_RepeatElements getTransmission_RepeatAccess() {
 		return eTransmission_Repeat;
 	}

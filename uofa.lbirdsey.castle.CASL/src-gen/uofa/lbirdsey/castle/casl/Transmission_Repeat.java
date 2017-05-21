@@ -38,7 +38,17 @@ public enum Transmission_Repeat implements Enumerator
    * @generated
    * @ordered
    */
-  SINGLE(1, "SINGLE", "SINGLE");
+  SINGLE(1, "SINGLE", "SINGLE"),
+
+  /**
+   * The '<em><b>CALLED</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #CALLED_VALUE
+   * @generated
+   * @ordered
+   */
+  CALLED(2, "CALLED", "CALLED");
 
   /**
    * The '<em><b>REPEAT</b></em>' literal value.
@@ -71,6 +81,21 @@ public enum Transmission_Repeat implements Enumerator
   public static final int SINGLE_VALUE = 1;
 
   /**
+   * The '<em><b>CALLED</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>CALLED</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #CALLED
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int CALLED_VALUE = 2;
+
+  /**
    * An array of all the '<em><b>Transmission Repeat</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -81,6 +106,7 @@ public enum Transmission_Repeat implements Enumerator
     {
       REPEAT,
       SINGLE,
+      CALLED,
     };
 
   /**
@@ -147,6 +173,7 @@ public enum Transmission_Repeat implements Enumerator
     {
       case REPEAT_VALUE: return REPEAT;
       case SINGLE_VALUE: return SINGLE;
+      case CALLED_VALUE: return CALLED;
     }
     return null;
   }

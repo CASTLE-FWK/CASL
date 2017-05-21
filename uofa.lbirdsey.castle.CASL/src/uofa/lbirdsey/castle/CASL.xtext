@@ -258,7 +258,7 @@ enum Transmission_Contents:
 ;
 
 enum Transmission_Repeat:
-	REPEAT | SINGLE
+	REPEAT | SINGLE | CALLED
 ;
 
 //TODO: Generate This

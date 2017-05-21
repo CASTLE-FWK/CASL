@@ -11967,6 +11967,14 @@ ruleTransmission_Repeat returns [Enumerator current=null]
 				newLeafNode(enumLiteral_1, grammarAccess.getTransmission_RepeatAccess().getSINGLEEnumLiteralDeclaration_1());
 			}
 		)
+		    |
+		(
+			enumLiteral_2='CALLED'
+			{
+				$current = grammarAccess.getTransmission_RepeatAccess().getCALLEDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getTransmission_RepeatAccess().getCALLEDEnumLiteralDeclaration_2());
+			}
+		)
 	)
 ;
 

@@ -182,7 +182,7 @@ class HelperFunctions {
 			else if (expr instanceof StringLiteral)
 				output = "string"
 			else if (expr instanceof TypeRef)			
-				output = (expr as TypeRef).type.name
+				output = inferSymbolType((expr as TypeRef).type)
 			else if (expr instanceof FeatureCallExp)
 				output = FeatureCallGenerator.inferFeatureCallType(expr as FeatureCallExp)
 			else if (expr instanceof IfStatement)
@@ -636,21 +636,21 @@ class HelperFunctions {
 		}
 		output += "if (" + printExpression(iff.condition) +") {\n"
 		for (i : 0 ..< iff.then.size()){
-					var obj = iff.then.get(i);
-					if (returns && i == (iff.then.size() -1)){
-						//Condition that this can happen
-						//Check for IfStatement or ForLoop
-						if (obj instanceof IfStatement){
-							output += TABS+printIfStatement(obj as IfStatement, depth+1, true);
-						} else {
-							output += TABS+"return "+autoPrinter(obj)+SC+NL; 
-						}
-						
-					} else {
-						output +=  TABS+autoPrinter(obj)+SC+NL;	
-					}
-					
+			var obj = iff.then.get(i);
+			if (returns && i == (iff.then.size() -1)){
+				//Condition that this can happen
+				//Check for IfStatement or ForLoop
+				if (obj instanceof IfStatement){
+					output += TABS+printIfStatement(obj as IfStatement, depth+1, true);
+				} else {
+					output += TABS+"return "+autoPrinter(obj)+SC+NL; 
 				}
+				
+			} else {
+				output +=  TABS+autoPrinter(obj)+SC+NL;	
+			}
+			
+		}
 		output += "}"
 		if (iff.elseifexpr !== null) {
 			for (cond : iff.elseifexpr) {
@@ -728,7 +728,7 @@ class HelperFunctions {
 		for (expr : loop.body) {
 			output += "\t\t"+autoPrinter(expr)+";\n"
 		} 
-		output += "}\n"
+		output += "\t}\n"
 		return output;
 	}
 	
@@ -884,7 +884,7 @@ class HelperFunctions {
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
 		//We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
-		if (iC.contains("List") || iC.contains("LayoutParameters")){
+		if (iC.contains("List")){
 			//Ignore
 			output = "import java.util.List;"
 			return output;
