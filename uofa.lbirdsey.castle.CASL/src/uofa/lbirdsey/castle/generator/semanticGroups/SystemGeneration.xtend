@@ -30,6 +30,7 @@ class SystemGeneration {
 		//Add in the imports
 		var imports = "//Automated System Import Generation\nimport castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
+		imports += "import castleComponents.representations.LayoutParameters;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC != null){
@@ -46,6 +47,9 @@ class SystemGeneration {
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
 		}
+		
+		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
+		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
 		
 		//Prepend import statements
 		fileContents = imports +"\n" + fileContents;
