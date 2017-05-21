@@ -33580,13 +33580,13 @@ rule__CASL_Macro_Neighbours__SearchTypeAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0()); }
+		{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0()); }
 		(
-			{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentIDTerminalRuleCall_2_0_1()); }
+			{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentIDTerminalRuleCall_2_0_1()); }
+			{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1()); }
 		)
-		{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0()); }
+		{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0()); }
 	)
 ;
 finally {

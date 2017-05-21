@@ -1841,7 +1841,7 @@ class RepastGenerator_OLDCASL implements IGenerator {
 	def String generateSystemBuilder(){
 		var imports = "";
 		imports = 
-"import interLib.Utilities;
+"import stdSimLib.Utilities;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
@@ -1880,17 +1880,17 @@ import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
-//import interLib.Agent;
-import interLib.Interaction;
-import interLib.SystemDescription;
-import interLib.Utilities;
-import interLib.Vector2;
-import interLib.State;
-import interLib.Map2D;
+//import stdSimLib.Agent;
+import stdSimLib.Interaction;
+import stdSimLib.SystemDescription;
+import stdSimLib.Utilities;
+import stdSimLib.Vector2;
+import stdSimLib.State;
+import stdSimLib.Map2D;
 import casFeatures.CASFeatures;
 import casFeatures.CASRuleSet;
 import casFeatures.CASLib.*;
-import interLib.Utilities;
+import stdSimLib.Utilities;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -1916,13 +1916,13 @@ import repast.simphony.query.space.grid.GridCellNgh;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.space.grid.GridPoint;
-//import interLib.Agent;
-import interLib.Interaction;
-import interLib.SystemDescription;
-import interLib.Utilities;
-import interLib.Vector2;
-import interLib.State;
-import interLib.Map2D;
+//import stdSimLib.Agent;
+import stdSimLib.Interaction;
+import stdSimLib.SystemDescription;
+import stdSimLib.Utilities;
+import stdSimLib.Vector2;
+import stdSimLib.State;
+import stdSimLib.Map2D;
 import casFeatures.CASFeatures;
 import casFeatures.CASRuleSet;
 import casFeatures.CASLib.*;

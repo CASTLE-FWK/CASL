@@ -61,7 +61,7 @@ class CustomObjectGeneration {
 				
 			} else if (typ instanceof Object) {
 				var obj = typ as Object
-				output += "import interLib.CASObject;\n\npublic class "+obj.name +" extends CASObject {\n"
+				output += "import stdSimLib.CASObject;\n\npublic class "+obj.name +" extends CASObject {\n"
 				output += "\tpublic " + obj.name+"() {\n"
 				output +="\t\tsuper(\""+obj.name+"\");\n"
 				output += "\t}\n"

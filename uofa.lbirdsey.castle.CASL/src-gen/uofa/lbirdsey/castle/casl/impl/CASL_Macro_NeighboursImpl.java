@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uofa.lbirdsey.castle.casl.Agent;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CaslPackage;
+import uofa.lbirdsey.castle.casl.Entity;
 import uofa.lbirdsey.castle.casl.WorldType;
 
 /**
@@ -62,7 +62,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * @generated
    * @ordered
    */
-  protected Agent searchType;
+  protected Entity searchType;
 
   /**
    * The default value of the '{@link #getDist() <em>Dist</em>}' attribute.
@@ -133,12 +133,12 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
-  public Agent getSearchType()
+  public Entity getSearchType()
   {
     if (searchType != null && searchType.eIsProxy())
     {
       InternalEObject oldSearchType = (InternalEObject)searchType;
-      searchType = (Agent)eResolveProxy(oldSearchType);
+      searchType = (Entity)eResolveProxy(oldSearchType);
       if (searchType != oldSearchType)
       {
         if (eNotificationRequired())
@@ -153,7 +153,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
-  public Agent basicGetSearchType()
+  public Entity basicGetSearchType()
   {
     return searchType;
   }
@@ -163,9 +163,9 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSearchType(Agent newSearchType)
+  public void setSearchType(Entity newSearchType)
   {
-    Agent oldSearchType = searchType;
+    Entity oldSearchType = searchType;
     searchType = newSearchType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_NEIGHBOURS__SEARCH_TYPE, oldSearchType, searchType));
@@ -229,7 +229,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
         setWorldType((WorldType)newValue);
         return;
       case CaslPackage.CASL_MACRO_NEIGHBOURS__SEARCH_TYPE:
-        setSearchType((Agent)newValue);
+        setSearchType((Entity)newValue);
         return;
       case CaslPackage.CASL_MACRO_NEIGHBOURS__DIST:
         setDist((BigDecimal)newValue);
@@ -252,7 +252,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
         setWorldType(WORLD_TYPE_EDEFAULT);
         return;
       case CaslPackage.CASL_MACRO_NEIGHBOURS__SEARCH_TYPE:
-        setSearchType((Agent)null);
+        setSearchType((Entity)null);
         return;
       case CaslPackage.CASL_MACRO_NEIGHBOURS__DIST:
         setDist(DIST_EDEFAULT);

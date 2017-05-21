@@ -10652,7 +10652,7 @@ ruleCASL_Macro_Neighbours returns [EObject current=null]
 				}
 				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0());
+					newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0());
 				}
 			)
 		)

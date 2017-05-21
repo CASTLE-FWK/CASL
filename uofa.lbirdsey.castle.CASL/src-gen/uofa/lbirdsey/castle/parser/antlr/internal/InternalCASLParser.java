@@ -27772,7 +27772,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             otherlv_2=(Token)match(input,RULE_ID,FOLLOW_56); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0());
+              					newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0());
               				
             }
 

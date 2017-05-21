@@ -107789,23 +107789,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:33583:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0()); 
+               before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0()); 
             }
             // InternalCASL.g:33584:3: ( RULE_ID )
             // InternalCASL.g:33585:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentIDTerminalRuleCall_2_0_1()); 
+               before(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentIDTerminalRuleCall_2_0_1()); 
+               after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentCrossReference_2_0()); 
+               after(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityCrossReference_2_0()); 
             }
 
             }

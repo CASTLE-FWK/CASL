@@ -372,6 +372,7 @@ class EnvironmentGeneration {
 //			default:
 //				str += "ERROR WITH LAYOUT INIT"
 //		}
+		str += "\t\t\n}"
 		return str;
 	}
 	

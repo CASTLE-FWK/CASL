@@ -63,12 +63,12 @@ public interface CASL_Macro_Neighbours extends CASL_Macro
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Search Type</em>' reference.
-   * @see #setSearchType(Agent)
+   * @see #setSearchType(Entity)
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Neighbours_SearchType()
    * @model
    * @generated
    */
-  Agent getSearchType();
+  Entity getSearchType();
 
   /**
    * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours#getSearchType <em>Search Type</em>}' reference.
@@ -78,7 +78,7 @@ public interface CASL_Macro_Neighbours extends CASL_Macro
    * @see #getSearchType()
    * @generated
    */
-  void setSearchType(Agent value);
+  void setSearchType(Entity value);
 
   /**
    * Returns the value of the '<em><b>Dist</b></em>' attribute.

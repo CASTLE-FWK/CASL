@@ -272,19 +272,24 @@ class GroupGeneration {
 			var phase = transmission.transmissionPhase.toString().toLowerCase();
 			if (transmission.transmissionRepeat == Transmission_Repeat.REPEAT){
 				val steps = (HelperFunctions.printExpression(transmission.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggerString = HelperFunctions.getNameForTrigger(transmission.name) +" = new Trigger ("+steps+", \""+transmission.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(transmission.name));
+				
+				triggerString = HelperFunctions.getNameForTrigger(transmission.name) +" = new Trigger ("+steps+", \""+transmission.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+transmission.name+"();\n"
 				triggerString += "\t\treturn null;\n\t\t}}, true, this);\n\n"
 				initialList.add(phase+"Triggers.add("+HelperFunctions.getNameForTrigger(transmission.name)+"(this))");
-				output += triggerString;
+//				output += triggerString;
+				triggersStringsToPrint.add(triggerString);
 			} else if (transmission.transmissionRepeat == Transmission_Repeat.SINGLE){
-				triggerString = HelperFunctions.getNameForTrigger(transmission.name) +" = new Trigger (1, \""+transmission.name+"\", new Function<Entity,Void>()\n"
+				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(transmission.name));
+				triggerString = HelperFunctions.getNameForTrigger(transmission.name) +" = new Trigger (1, \""+transmission.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+transmission.name+"();\n"
 				triggerString += "\t\treturn null;\n\t\t}}, false, this);\n\n"
+				triggersStringsToPrint.add(triggerString);
 //				initialList.add(phase+"Triggers.add("+HelperFunctions.getNameForTrigger(transmission.name)+"(this))");
-				output += triggerString;
+//				output += triggerString;
 			}
 			
 		}

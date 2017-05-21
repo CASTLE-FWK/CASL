@@ -6876,18 +6876,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWorldTypeWorldTypeEnumRuleCall_0_0 = (RuleCall)cWorldTypeAssignment_0.eContents().get(0);
 		private final Keyword cGetNeighboursKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSearchTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cSearchTypeAgentCrossReference_2_0 = (CrossReference)cSearchTypeAssignment_2.eContents().get(0);
-		private final RuleCall cSearchTypeAgentIDTerminalRuleCall_2_0_1 = (RuleCall)cSearchTypeAgentCrossReference_2_0.eContents().get(1);
+		private final CrossReference cSearchTypeEntityCrossReference_2_0 = (CrossReference)cSearchTypeAssignment_2.eContents().get(0);
+		private final RuleCall cSearchTypeEntityIDTerminalRuleCall_2_0_1 = (RuleCall)cSearchTypeEntityCrossReference_2_0.eContents().get(1);
 		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cDistAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDistNUMBERTerminalRuleCall_4_0 = (RuleCall)cDistAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//CASL_Macro_Neighbours:
-		//	worldType=WorldType '.GetNeighbours[' searchType=[Agent] '](' dist=NUMBER ')';
+		//	worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//worldType=WorldType '.GetNeighbours[' searchType=[Agent] '](' dist=NUMBER ')'
+		//worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')'
 		public Group getGroup() { return cGroup; }
 		
 		//worldType=WorldType
@@ -6899,14 +6899,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'.GetNeighbours['
 		public Keyword getGetNeighboursKeyword_1() { return cGetNeighboursKeyword_1; }
 		
-		//searchType=[Agent]
+		//searchType=[Entity]
 		public Assignment getSearchTypeAssignment_2() { return cSearchTypeAssignment_2; }
 		
-		//[Agent]
-		public CrossReference getSearchTypeAgentCrossReference_2_0() { return cSearchTypeAgentCrossReference_2_0; }
+		//[Entity]
+		public CrossReference getSearchTypeEntityCrossReference_2_0() { return cSearchTypeEntityCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getSearchTypeAgentIDTerminalRuleCall_2_0_1() { return cSearchTypeAgentIDTerminalRuleCall_2_0_1; }
+		public RuleCall getSearchTypeEntityIDTerminalRuleCall_2_0_1() { return cSearchTypeEntityIDTerminalRuleCall_2_0_1; }
 		
 		//']('
 		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
@@ -10004,7 +10004,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_Neighbours:
-	//	worldType=WorldType '.GetNeighbours[' searchType=[Agent] '](' dist=NUMBER ')';
+	//	worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
 	public CASL_Macro_NeighboursElements getCASL_Macro_NeighboursAccess() {
 		return pCASL_Macro_Neighbours;
 	}

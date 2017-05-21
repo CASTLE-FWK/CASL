@@ -27,13 +27,14 @@ class MacroGenerator {
 			output += "null;\n"
 			var ngh = (macro as CASL_Macro_Neighbours)
 			if (ngh.worldType == WorldType.GRID) {
-				output += "GridPoint pt = grid.getLocation(this);\nGridCellNgh<"+ngh.searchType.name.toFirstUpper+"> nghCreator;\n"
-				output += "nghCreator = new GridCellNgh<"+ngh.searchType.name.toFirstUpper+">(grid, pt, "+ngh.searchType.name.toFirstUpper+".class, "+ngh.dist+", "+ngh.dist+");\n"
-				output += "List<GridCell<"+ngh.searchType.name.toFirstUpper+">> gridCells = nghCreator.getNeighborhood(false);\n"
-				output += "List<"+ngh.searchType.name.toFirstUpper+"> "+name+" = new ArrayList<"+ngh.searchType.name.toFirstUpper+">();\n"
-				output += "for (GridCell<"+ngh.searchType.name.toFirstUpper+"> "+ngh.searchType.name.toFirstLower+"s : grid"+ngh.searchType.name.toFirstUpper+"s) {\n"	
-				output += "\t"+ngh.searchType.name.toFirstUpper+" tmp"+ngh.searchType.name.toFirstUpper+" = "+ngh.searchType.name.toFirstLower+"s.items().iterator().next();\n"
-				output += "\t"+name+".add(tmpCell);\n}"
+//				output += "GridPoint pt = grid.getLocation(this);\nGridCellNgh<"+ngh.searchType.name.toFirstUpper+"> nghCreator;\n"
+//				output += "nghCreator = new GridCellNgh<"+ngh.searchType.name.toFirstUpper+">(grid, pt, "+ngh.searchType.name.toFirstUpper+".class, "+ngh.dist+", "+ngh.dist+");\n"
+//				output += "List<GridCell<"+ngh.searchType.name.toFirstUpper+">> gridCells = nghCreator.getNeighborhood(false);\n"
+//				output += "List<"+ngh.searchType.name.toFirstUpper+"> "+name+" = new ArrayList<"+ngh.searchType.name.toFirstUpper+">();\n"
+//				output += "for (GridCell<"+ngh.searchType.name.toFirstUpper+"> "+ngh.searchType.name.toFirstLower+"s : grid"+ngh.searchType.name.toFirstUpper+"s) {\n"	
+//				output += "\t"+ngh.searchType.name.toFirstUpper+" tmp"+ngh.searchType.name.toFirstUpper+" = "+ngh.searchType.name.toFirstLower+"s.items().iterator().next();\n"
+//				output += "\t"+name+".add(tmpCell);\n}"
+
 		
 			} else if (ngh.worldType == WorldType.SPACE) {
 				
@@ -41,26 +42,26 @@ class MacroGenerator {
 
 		} else if (macro instanceof CASL_Macro_FilterAndFunction) {
 			var mac = (macro as CASL_Macro_FilterAndFunction)
-			if (mac.sym != null) {
+			if (mac.sym !== null) {
 				var decl = mac.sym
 				output += decl.name+".stream().filter("+printExpression(mac.cond)+")."+mac.misc.toString
 			}
 		} else if (macro instanceof CASL_Macro_CountConditions) {
 			var mac = (macro as CASL_Macro_CountConditions)
-			if (mac.sym != null) {
+			if (mac.sym !== null) {
 				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity.get"+printExpression(mac.cond)+"()"+").count()"
 			}
 		} else if (macro instanceof CASL_Macro_Random) {
 			var mac = (macro as CASL_Macro_Random)
 			if (mac.type == numType.INT) {
-				if (mac.high == null) {
+				if (mac.high === null) {
 					output += "Utilities.generateRandomRangeInteger(0,"+printExpression(mac.low)+");"
 				} else {
 					output += "Utilities.generateRandomRangeInteger("+printExpression(mac.low)+","+printExpression(mac.high)+");"
 				}
 				
 			} else if (mac.type == numType.FLOAT) {
-				if (mac.high == null) {
+				if (mac.high === null) {
 					output += "Utilities.generateRandomRangeDouble(0,"+printExpression(mac.low)+");"
 				} else {
 					output += "Utilities.generateRandomRangeDouble("+printExpression(mac.low)+","+printExpression(mac.high)+");"
@@ -68,7 +69,7 @@ class MacroGenerator {
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
 			var mac = (macro as CASL_Macro_ForEach)
-			if (mac.sym != null) {
+			if (mac.sym !== null) {
 				var entityType = mac.sym.name //TODO: Make this better
 				output += mac.sym.name+".forEach("+"Function<"+entityType+",Void> fn = new Function<"+entityType+",Void>() {"
 				+"\n\tpublic Void apply("+entityType+" o) {"

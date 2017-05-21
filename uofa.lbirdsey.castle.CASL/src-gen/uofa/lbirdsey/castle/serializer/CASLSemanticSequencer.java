@@ -1424,7 +1424,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Neighbours returns CASL_Macro_Neighbours
 	 *
 	 * Constraint:
-	 *     (worldType=WorldType searchType=[Agent|ID] dist=NUMBER)
+	 *     (worldType=WorldType searchType=[Entity|ID] dist=NUMBER)
 	 */
 	protected void sequence_CASL_Macro_Neighbours(ISerializationContext context, CASL_Macro_Neighbours semanticObject) {
 		if (errorAcceptor != null) {
@@ -1437,7 +1437,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0(), semanticObject.getWorldType());
-		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeAgentIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_Neighbours_SearchType(), false));
+		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_Neighbours_SearchType(), false));
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getDistNUMBERTerminalRuleCall_4_0(), semanticObject.getDist());
 		feeder.finish();
 	}

@@ -536,7 +536,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro"/>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Neighbours" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldType" eType="#//WorldType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="searchType" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchType" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dist" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_FilterAndFunction" eSuperTypes="#//CASL_Macro">
