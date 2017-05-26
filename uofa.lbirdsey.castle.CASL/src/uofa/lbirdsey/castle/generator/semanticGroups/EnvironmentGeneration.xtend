@@ -349,6 +349,7 @@ class EnvironmentGeneration {
 		str += "\tsetupQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tactionQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tcleanupQueue = new ArrayList<Function<"+env.name+",Void>>();\n"
+			str+="//This is a pointless comment\n\n"
 		//Get layout type
 //		val layoutType = getLayoutType(env);
 
