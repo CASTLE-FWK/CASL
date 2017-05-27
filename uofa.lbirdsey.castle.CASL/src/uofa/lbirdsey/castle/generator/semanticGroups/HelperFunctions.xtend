@@ -503,6 +503,22 @@ class HelperFunctions {
 		return output;
 	}
 	
+	static def String getFieldName(Field f){
+		if (f.declaration != null){
+			return f.declaration.name;
+		} else if (f.agentFieldRef != null){
+			return f.agentFieldRef.name;
+		} else if (f.envFieldRef != null){
+			return f.envFieldRef.name;
+		} else if (f.grpFieldRef != null){
+			return f.grpFieldRef.name;
+		} else {
+			return "";
+		} 
+
+		
+	}
+	
 	static def String getFieldType(Field f) {
 		//Prints out the type, var name
 		var String output = "";		

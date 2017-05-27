@@ -10,6 +10,14 @@ import uofa.lbirdsey.castle.casl.CAS_Rule_Types
 import uofa.lbirdsey.castle.casl.CaslPackage
 import uofa.lbirdsey.castle.casl.System
 import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
+import uofa.lbirdsey.castle.casl.End_Condition
+import uofa.lbirdsey.castle.casl.Field
+import org.eclipse.emf.ecore.EObject
+import uofa.lbirdsey.castle.casl.Concern
+import uofa.lbirdsey.castle.generator.semanticGroups.HelperFunctions
+import java.util.ArrayList
+import uofa.lbirdsey.castle.casl.impl.FieldImpl
+import uofa.lbirdsey.castle.casl.impl.ConcernImpl
 
 class SystemValidator extends AbstractCASLValidator {
 	
@@ -38,6 +46,55 @@ class SystemValidator extends AbstractCASLValidator {
 		}
 		//This is a lazy hack
 		numberOfAgents = system.agent_types.agent_types.length;
+		
+	}
+	
+	/**
+	 * Checks to see if the end_conditions have been defined in the system parameters
+	 */
+	@Check
+	def checkEndConditionIsDefined(System system){
+		var EList<End_Condition> endConditions = system.end_conditions.end_conditions;
+		var EList<EObject> parameters = system.system_parameters.fields;
+		var ArrayList<String> paramNames = newArrayList();
+		var ArrayList<String> undefinedVars = newArrayList();
+		for (EObject p : parameters){
+			var paramName = "";
+//			print((p as Field).declaration.name)
+			paramName = HelperFunctions.getFieldName(p as Field)
+//			if (p instanceof Field){
+//				paramName = HelperFunctions.getFieldName(p as Field)
+//			} else if (p instanceof Concern){
+//				paramName = (p as Concern).name
+//			}			
+			paramNames.add(paramName);
+//			print(paramName)
+		}
+
+		var found = false;
+		for (End_Condition ec : endConditions){
+			for (String p : paramNames){
+				if (ec.name.equalsIgnoreCase(p)){
+					found = true;
+				}
+			}
+			if (!found){
+				undefinedVars.add(ec.name);
+			}
+			found = false;
+		}
+		
+		if (undefinedVars.size() > 0){
+			//Build the nice string
+			var missing = "";
+			for (String s : undefinedVars){
+				missing += s+" ";
+			}
+			//Throw an error
+			error("The following END_CONDITIONS have not been defined in the system PARAMETERS: "+missing,CaslPackage::eINSTANCE.system_End_conditions);
+		}
+		
+		
 		
 	}
 	
