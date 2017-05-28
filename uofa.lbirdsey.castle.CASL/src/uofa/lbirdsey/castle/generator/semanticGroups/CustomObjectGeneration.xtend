@@ -11,6 +11,8 @@ import uofa.lbirdsey.castle.casl.Function;
 import uofa.lbirdsey.castle.casl.Enum;
 import uofa.lbirdsey.castle.casl.Import
 import java.util.HashSet
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 
 class CustomObjectGeneration {
 	
@@ -67,7 +69,7 @@ class CustomObjectGeneration {
 				output += "\t}\n"
 				for (field : obj.fields){
 					if (field instanceof Field){
-						output += "\tpublic "+HelperFunctions.printFieldDeclarations(field)+";\n"
+						output += "\tpublic "+Printers.printFieldDeclarations(field)+";\n"
 						output += "\t"+HelperFunctions.generateGettersSetters(field) +"\n"
 					} else if (field instanceof Function){
 						val func = field as Function

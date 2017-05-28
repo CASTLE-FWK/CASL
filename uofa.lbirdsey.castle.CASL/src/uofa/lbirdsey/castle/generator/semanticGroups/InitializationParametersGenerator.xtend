@@ -4,6 +4,7 @@ import java.util.List
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration
 import uofa.lbirdsey.castle.casl.Field
 import org.eclipse.emf.ecore.EObject
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 
 class InitializationParametersGenerator {
 	
@@ -22,7 +23,7 @@ class InitializationParametersGenerator {
 						var name = dtd.name;
 						var initVal = "__NULL__";
 						if (dtd.expr !== null){
-							initVal = HelperFunctions.printExpression(dtd.expr).toString();
+							initVal = Printers.printExpression(dtd.expr).toString();
 						}
 						copy = copy.replaceAll("XXX",name.toString()).replaceAll("YYY",type.toString())
 						if (type == "string" || initVal == "__NULL__"){

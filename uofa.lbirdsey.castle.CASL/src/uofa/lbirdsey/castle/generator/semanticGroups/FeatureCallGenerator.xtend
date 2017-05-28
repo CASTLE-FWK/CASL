@@ -14,6 +14,9 @@ import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
 import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
 import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
 import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 
 class FeatureCallGenerator {
 	
@@ -76,12 +79,12 @@ class FeatureCallGenerator {
 				return bfc.process.name+"("+HelperFunctions.printFunctionArgs(fc.inputs)+")"
 			} else if (bfc.process.behavior_reaction_time == BehaviorReactionTime.DELAYED) {
 				//Get entity type
-				var entityType = HelperFunctions.determineOwner(bfc.process.eContainer.eContainer);
-				var str = "cleanupTriggers.add(new Trigger("+HelperFunctions.getNameForTrigger(bfc.process.name)+",true));"
+				var entityType = Helpers.determineOwner(bfc.process.eContainer.eContainer);
+				var str = "cleanupTriggers.add(new Trigger("+Printers.getNameForTrigger(bfc.process.name)+",true));"
 				return str;							
 			} else if (bfc.process.behavior_reaction_time == BehaviorReactionTime.STEP) {
 				if (bfc.process.reaction_time_parm !== null) {
-					var str = "addFutureTrigger(new Trigger("+HelperFunctions.getNameForTrigger(bfc.process.name)+",true));"
+					var str = "addFutureTrigger(new Trigger("+Printers.getNameForTrigger(bfc.process.name)+",true));"
 					return str;
 				}				
 			}							
@@ -117,8 +120,8 @@ class FeatureCallGenerator {
 				return bfc.process.name+"("+HelperFunctions.printFunctionArgs(fc.inputs)+")"
 			} else if (bfc.process.behavior_reaction_time == BehaviorReactionTime.DELAYED) {
 				//Get entity type
-				var entityType = HelperFunctions.determineOwner(bfc.process.eContainer.eContainer);
-				var str = "cleanupTriggers.add(new Trigger("+HelperFunctions.getNameForTrigger(bfc.process.name)+",true));"
+				var entityType = Helpers.determineOwner(bfc.process.eContainer.eContainer);
+				var str = "cleanupTriggers.add(new Trigger("+Printers.getNameForTrigger(bfc.process.name)+",true));"
 //				str += "Function<"+entityType+",Void> fn = new Function<"+entityType+",Void>() {"
 //				+"\n\t\tpublic Void apply("+entityType+" o) {"
 //				+"\n\t\t\to."+bfc.process.name+"("+printFunctionArgs(fc.inputs)+");"
@@ -129,7 +132,7 @@ class FeatureCallGenerator {
 				return str;							
 			} else if (bfc.process.behavior_reaction_time == BehaviorReactionTime.STEP) {
 				if (bfc.process.reaction_time_parm !== null) {
-					var str = "addFutureTrigger(new Trigger("+HelperFunctions.getNameForTrigger(bfc.process.name)+",true));"
+					var str = "addFutureTrigger(new Trigger("+Printers.getNameForTrigger(bfc.process.name)+",true));"
 					return str;
 				}				
 			}							

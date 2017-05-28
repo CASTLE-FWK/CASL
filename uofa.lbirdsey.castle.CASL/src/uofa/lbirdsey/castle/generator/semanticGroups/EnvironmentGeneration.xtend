@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EObject
 import java.util.HashSet
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
 import java.math.BigDecimal
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 
 class EnvironmentGeneration {
 	
@@ -152,7 +154,7 @@ class EnvironmentGeneration {
 		var output = "//Fields\n"
 		for (field : env.env_parameters.fields){
 			if (field instanceof Field){
-				output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
+				output += "private "+Printers.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
 				newImports.add(field as Field);
 			} else if (field instanceof Concern){}			
@@ -229,29 +231,29 @@ class EnvironmentGeneration {
 						//Create the trigger object here
 			var triggerString = "";
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
-				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				triggersToPrintInit.add(Printers.getNameForTrigger(behavior.name));
+				triggerString = Printers.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
 				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
-				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				triggersToPrintInit.add(Printers.getNameForTrigger(behavior.name));
+				triggerString = Printers.getNameForTrigger(behavior.name) +" = new Trigger (1, \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
 				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
-				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				triggersToPrintInit.add(HelperFunctions.getNameForTrigger(behavior.name));
-				triggerString = HelperFunctions.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
+				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				triggersToPrintInit.add(Printers.getNameForTrigger(behavior.name));
+				triggerString = Printers.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
-//				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+"(this))");
-				initialList.add("actionTriggers.add("+HelperFunctions.getNameForTrigger(behavior.name)+")");
+//				initialList.add("actionTriggers.add("+Printers.getNameForTrigger(behavior.name)+"(this))");
+				initialList.add("actionTriggers.add("+Printers.getNameForTrigger(behavior.name)+")");
 				triggersStringsToPrint.add(triggerString);
 			}
 		}
@@ -478,7 +480,7 @@ class EnvironmentGeneration {
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.DELAYED){
 				//This should be pushed to the cleanup phase in the same step. Is already handled
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
-				val steps = (HelperFunctions.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
 				if (steps == 1){
 					actionPhase.add(behavior.name+"(this);")
 				} else {

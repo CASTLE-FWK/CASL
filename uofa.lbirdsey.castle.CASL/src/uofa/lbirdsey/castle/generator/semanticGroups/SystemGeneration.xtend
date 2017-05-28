@@ -8,6 +8,8 @@ import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
 import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.System
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 
 class SystemGeneration {
 	System theSystem;
@@ -140,7 +142,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 //					output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
 //				}		
 				
-				output += "public static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";			
+				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";			
 				libImports.add(HelperFunctions.getFieldType(field as Field));
 			} else if (field instanceof Concern){}			
 		}

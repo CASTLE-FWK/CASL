@@ -9,7 +9,6 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Random
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch
-import static uofa.lbirdsey.castle.generator.semanticGroups.HelperFunctions.*;
 import uofa.lbirdsey.castle.casl.numType
 import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup
 import uofa.lbirdsey.castle.casl.Expression
@@ -17,6 +16,7 @@ import uofa.lbirdsey.castle.casl.Entity
 import java.util.List
 import uofa.lbirdsey.castle.casl.CASL_Macro
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 
 class MacroGenerator {
 //Highly Repast Specific
@@ -44,27 +44,27 @@ class MacroGenerator {
 			var mac = (macro as CASL_Macro_FilterAndFunction)
 			if (mac.sym !== null) {
 				var decl = mac.sym
-				output += decl.name+".stream().filter("+printExpression(mac.cond)+")."+mac.misc.toString
+				output += decl.name+".stream().filter("+Printers.printExpression(mac.cond)+")."+mac.misc.toString
 			}
 		} else if (macro instanceof CASL_Macro_CountConditions) {
 			var mac = (macro as CASL_Macro_CountConditions)
 			if (mac.sym !== null) {
-				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity.get"+printExpression(mac.cond)+"()"+").count()"
+				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity.get"+Printers.printExpression(mac.cond)+"()"+").count()"
 			}
 		} else if (macro instanceof CASL_Macro_Random) {
 			var mac = (macro as CASL_Macro_Random)
 			if (mac.type == numType.INT) {
 				if (mac.high === null) {
-					output += "Utilities.generateRandomRangeInteger(0,"+printExpression(mac.low)+");"
+					output += "Utilities.generateRandomRangeInteger(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "Utilities.generateRandomRangeInteger("+printExpression(mac.low)+","+printExpression(mac.high)+");"
+					output += "Utilities.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 				
 			} else if (mac.type == numType.FLOAT) {
 				if (mac.high === null) {
-					output += "Utilities.generateRandomRangeDouble(0,"+printExpression(mac.low)+");"
+					output += "Utilities.generateRandomRangeDouble(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "Utilities.generateRandomRangeDouble("+printExpression(mac.low)+","+printExpression(mac.high)+");"
+					output += "Utilities.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
@@ -73,7 +73,7 @@ class MacroGenerator {
 				var entityType = mac.sym.name //TODO: Make this better
 				output += mac.sym.name+".forEach("+"Function<"+entityType+",Void> fn = new Function<"+entityType+",Void>() {"
 				+"\n\tpublic Void apply("+entityType+" o) {"
-				+"\n\t\to."+printExpression(mac.expr)+";"
+				+"\n\t\to."+Printers.printExpression(mac.expr)+";"
 				+"\n\t\treturn null;"
 				+"\n\t}"
 				+"\n}"+")"

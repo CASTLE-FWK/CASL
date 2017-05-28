@@ -14,10 +14,9 @@ import uofa.lbirdsey.castle.casl.End_Condition
 import uofa.lbirdsey.castle.casl.Field
 import org.eclipse.emf.ecore.EObject
 import uofa.lbirdsey.castle.casl.Concern
-import uofa.lbirdsey.castle.generator.semanticGroups.HelperFunctions
 import java.util.ArrayList
-import uofa.lbirdsey.castle.casl.impl.FieldImpl
-import uofa.lbirdsey.castle.casl.impl.ConcernImpl
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 
 class SystemValidator extends AbstractCASLValidator {
 	
@@ -60,15 +59,12 @@ class SystemValidator extends AbstractCASLValidator {
 		var ArrayList<String> undefinedVars = newArrayList();
 		for (EObject p : parameters){
 			var paramName = "";
-//			print((p as Field).declaration.name)
-			paramName = HelperFunctions.getFieldName(p as Field)
-//			if (p instanceof Field){
-//				paramName = HelperFunctions.getFieldName(p as Field)
-//			} else if (p instanceof Concern){
-//				paramName = (p as Concern).name
-//			}			
+			if (p instanceof Field){
+				paramName = HelperFunctions.getFieldName(p as Field)
+			} else if (p instanceof Concern){
+				paramName = (p as Concern).name
+			}			
 			paramNames.add(paramName);
-//			print(paramName)
 		}
 
 		var found = false;
@@ -93,9 +89,6 @@ class SystemValidator extends AbstractCASLValidator {
 			//Throw an error
 			error("The following END_CONDITIONS have not been defined in the system PARAMETERS: "+missing,CaslPackage::eINSTANCE.system_End_conditions);
 		}
-		
-		
-		
 	}
 	
 	@Check

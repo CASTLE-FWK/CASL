@@ -255,13 +255,13 @@ class RepastGenerator_OLDCASL implements IGenerator {
 			
 			/*****«g.name.toFirstUpper» Functions*****/
 			«generateFunctions(g)»
-			
-			/*****«g.name.toFirstUpper» Transmissions*****/
-			«generateTransmissions(g)»
-			
-			/*****«g.name.toFirstUpper» Internals*****/
-			«generateInternals(g)»
-			
+«««			
+«««			/*****«g.name.toFirstUpper» Transmissions*****/
+«««			«generateTransmissions(g)»
+«««			
+«««			/*****«g.name.toFirstUpper» Internals*****/
+«««			«generateInternals(g)»
+«««			
 «««			/*****Repast Functions*****/
 «««			«g.miscRepast()»
 			
@@ -1144,27 +1144,27 @@ class RepastGenerator_OLDCASL implements IGenerator {
 	'''
 
 	
-	def generateTransmissions(Group grp) '''
-		«FOR transmission : grp.group_transmissions.transmissions»
-«««		need to do signature and return/params. then the body can be done (DAMN JAVA)
-		private void «transmission.name»(«FOR fp : transmission.functionParameters»«printFunctionParameter(fp as FunctionParameter)», «ENDFOR») {
-			«FOR statement : transmission.body»
-				«parseBodyElement(statement)»
-			«ENDFOR»
-		}
-		«ENDFOR»		
-	'''
-	
-	def generateInternals(Group grp)'''
-		«FOR internal : grp.group_internals.internals»
-«««		need to do signature and return/params. then the body can be done (DAMN JAVA)
-		private void «internal.name»(«FOR fp : internal.functionParameters»«printFunctionParameter(fp as FunctionParameter)», «ENDFOR») {
-			«FOR statement : internal.body»
-				«parseBodyElement(statement)»
-			«ENDFOR»
-		}
-		«ENDFOR»		
-	'''
+//	def generateTransmissions(Group grp) '''
+//		«FOR transmission : grp.group_transmissions.transmissions»
+//«««		need to do signature and return/params. then the body can be done (DAMN JAVA)
+//		private void «transmission.name»(«FOR fp : transmission.functionParameters»«printFunctionParameter(fp as FunctionParameter)», «ENDFOR») {
+//			«FOR statement : transmission.body»
+//				«parseBodyElement(statement)»
+//			«ENDFOR»
+//		}
+//		«ENDFOR»		
+//	'''
+//	
+//	def generateInternals(Group grp)'''
+//		«FOR internal : grp.group_internals.internals»
+//«««		need to do signature and return/params. then the body can be done (DAMN JAVA)
+//		private void «internal.name»(«FOR fp : internal.functionParameters»«printFunctionParameter(fp as FunctionParameter)», «ENDFOR») {
+//			«FOR statement : internal.body»
+//				«parseBodyElement(statement)»
+//			«ENDFOR»
+//		}
+//		«ENDFOR»		
+//	'''
 
 //************SYSTEM & CASL LIB GENERATION***********//	
 
