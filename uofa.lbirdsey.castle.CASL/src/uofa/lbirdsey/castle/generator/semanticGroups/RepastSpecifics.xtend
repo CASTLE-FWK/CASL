@@ -12,7 +12,7 @@ class RepastSpecifics {
 		static def String generateSystemBuilder(){
 		var imports = "";
 		imports = 
-"import stdSimLib.Utilities;
+"import stdSimLib.utilities.Utilities;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
@@ -46,7 +46,7 @@ import castleComponents.Trigger;"
 		//imports
 		val imports = 
 "
-import stdSimLib.Utilities;
+import stdSimLib.utilities.Utilities;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ import castleComponents.EntityID;"
 		val imports = 
 "import repast.simphony.context.Context;
 import repast.simphony.context.DefaultContext;
-import stdSimLib.Utilities;
+import stdSimLib.utilities.Utilities;
 
 import java.awt.Color;
 import java.util.ArrayList;
