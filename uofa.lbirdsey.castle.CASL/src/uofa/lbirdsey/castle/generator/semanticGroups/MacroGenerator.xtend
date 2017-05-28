@@ -55,16 +55,16 @@ class MacroGenerator {
 			var mac = (macro as CASL_Macro_Random)
 			if (mac.type == numType.INT) {
 				if (mac.high === null) {
-					output += "Utilities.generateRandomRangeInteger(0,"+Printers.printExpression(mac.low)+");"
+					output += "RandomGen.generateRandomRangeInteger(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "Utilities.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
+					output += "RandomGen.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 				
 			} else if (mac.type == numType.FLOAT) {
 				if (mac.high === null) {
-					output += "Utilities.generateRandomRangeDouble(0,"+Printers.printExpression(mac.low)+");"
+					output += "RandomGen.generateRandomRangeDouble(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "Utilities.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
+					output += "RandomGen.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
