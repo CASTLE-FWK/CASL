@@ -796,7 +796,7 @@ CASL_Macro_Populate:
 ;
 
 CASL_Macro_TODO:
-	"TODO:"str = STRING
+	"TODO:"str = STRING';'
 ;
 
 //How to initialise a proj
