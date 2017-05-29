@@ -10,13 +10,14 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Print
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch
 import uofa.lbirdsey.castle.casl.numType
-import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup
+import uofa.lbirdsey.castle.casl.CASL_Macro_Populate
 import uofa.lbirdsey.castle.casl.Expression
 import uofa.lbirdsey.castle.casl.Entity
 import java.util.List
 import uofa.lbirdsey.castle.casl.CASL_Macro
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
+import org.eclipse.emf.ecore.EObject
 
 class MacroGenerator {
 //Highly Repast Specific
@@ -90,9 +91,9 @@ class MacroGenerator {
 //				return "laslsl"
 			}
 			
-		} else if (macro instanceof CASL_Macro_EntitySetup){
-			val es = macro as CASL_Macro_EntitySetup;
-			return entitySetup(es.initNum, es.ent, es.params);
+		} else if (macro instanceof CASL_Macro_Populate){
+			val es = macro as CASL_Macro_Populate;
+			return entitySetup(es.initNum, es.ent, es.body);
 		} else if (macro instanceof CASL_Macro_TODO){
 			val mac = (macro as CASL_Macro_TODO);
 			return "//TODO: "+mac.str+'\n';
@@ -100,7 +101,13 @@ class MacroGenerator {
 		return output;
 	}
 	
-	static def String entitySetup(Expression initNum, Entity ent, List<Expression> params){
+	/**
+	 * This is the wonder populate function.
+	 * It takes in the stuff from CASL.POPULATE and churns out some perfectly working
+	 * code to populate the entities specified.
+	 * This is so not a hard thing to write...
+	 */
+	static def String entitySetup(Expression initNum, Entity ent, List<EObject> params){
 		var output = "//Auto Entity Generator";
 		output += '''
 			for (int i = 0; i < «initNum»; i++) {
