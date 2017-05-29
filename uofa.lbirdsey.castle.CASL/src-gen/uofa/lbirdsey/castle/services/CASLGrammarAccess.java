@@ -7229,15 +7229,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEntEntityIDTerminalRuleCall_5_0_1 = (RuleCall)cEntEntityCrossReference_5_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cParamsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cParamsExpressionParserRuleCall_8_0 = (RuleCall)cParamsAssignment_8.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cParamsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cParamsExpressionParserRuleCall_8_0_0 = (RuleCall)cParamsAssignment_8_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
+		////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 		//CASL_Macro_EntitySetup:
-		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
+		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')'
+		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"POPULATE"
@@ -7273,11 +7276,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
 		
+		//(params+=Expression ';')*
+		public Group getGroup_8() { return cGroup_8; }
+		
 		//params+=Expression
-		public Assignment getParamsAssignment_8() { return cParamsAssignment_8; }
+		public Assignment getParamsAssignment_8_0() { return cParamsAssignment_8_0; }
 		
 		//Expression
-		public RuleCall getParamsExpressionParserRuleCall_8_0() { return cParamsExpressionParserRuleCall_8_0; }
+		public RuleCall getParamsExpressionParserRuleCall_8_0_0() { return cParamsExpressionParserRuleCall_8_0_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_8_1() { return cSemicolonKeyword_8_1; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
@@ -10131,8 +10140,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getCASL_Macro_MetricSwitchAccess().getRule();
 	}
 	
+	////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 	//CASL_Macro_EntitySetup:
-	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' params+=Expression ')';
+	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')';
 	public CASL_Macro_EntitySetupElements getCASL_Macro_EntitySetupAccess() {
 		return pCASL_Macro_EntitySetup;
 	}

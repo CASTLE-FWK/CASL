@@ -1400,7 +1400,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_EntitySetup returns CASL_Macro_EntitySetup
 	 *
 	 * Constraint:
-	 *     (initNum=Expression ent=[Entity|ID] params+=Expression)
+	 *     (initNum=Expression ent=[Entity|ID] params+=Expression*)
 	 */
 	protected void sequence_CASL_Macro_EntitySetup(ISerializationContext context, CASL_Macro_EntitySetup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

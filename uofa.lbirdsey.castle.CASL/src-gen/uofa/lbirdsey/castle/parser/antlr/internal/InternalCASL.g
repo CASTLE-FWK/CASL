@@ -11311,26 +11311,32 @@ ruleCASL_Macro_EntitySetup returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0());
-				}
-				lv_params_8_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCASL_Macro_EntitySetupRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0_0());
 					}
-					add(
-						$current,
-						"params",
-						lv_params_8_0,
-						"uofa.lbirdsey.castle.CASL.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_params_8_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_EntitySetupRule());
+						}
+						add(
+							$current,
+							"params",
+							lv_params_8_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
-		otherlv_9=')'
+			otherlv_9=';'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_EntitySetupAccess().getSemicolonKeyword_8_1());
+			}
+		)*
+		otherlv_10=')'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_9());
 		}
 	)
 ;

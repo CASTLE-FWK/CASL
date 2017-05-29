@@ -787,8 +787,9 @@ CASL_Macro_MetricSwitch:
 	"METRIC["sw = BooleanValue"]"
 ;
 
+//Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 CASL_Macro_EntitySetup:
-	"POPULATE"  '('(initNum = Expression)')' '['( (ent = [Entity]) )']' '('(params += Expression)')'
+	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('(params += Expression';')* ')'
 ;
 
 CASL_Macro_TODO:

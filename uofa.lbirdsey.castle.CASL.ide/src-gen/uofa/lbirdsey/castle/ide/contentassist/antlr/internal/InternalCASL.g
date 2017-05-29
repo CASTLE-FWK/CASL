@@ -27640,9 +27640,9 @@ rule__CASL_Macro_EntitySetup__Group__8__Impl
 	}
 :
 (
-	{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsAssignment_8()); }
-	(rule__CASL_Macro_EntitySetup__ParamsAssignment_8)
-	{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsAssignment_8()); }
+	{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getGroup_8()); }
+	(rule__CASL_Macro_EntitySetup__Group_8__0)*
+	{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getGroup_8()); }
 )
 ;
 finally {
@@ -27669,6 +27669,60 @@ rule__CASL_Macro_EntitySetup__Group__9__Impl
 	{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_9()); }
 	')'
 	{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__CASL_Macro_EntitySetup__Group_8__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_EntitySetup__Group_8__0__Impl
+	rule__CASL_Macro_EntitySetup__Group_8__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_EntitySetup__Group_8__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsAssignment_8_0()); }
+	(rule__CASL_Macro_EntitySetup__ParamsAssignment_8_0)
+	{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsAssignment_8_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_EntitySetup__Group_8__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_EntitySetup__Group_8__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_EntitySetup__Group_8__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getSemicolonKeyword_8_1()); }
+	';'
+	{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getSemicolonKeyword_8_1()); }
 )
 ;
 finally {
@@ -34220,15 +34274,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__CASL_Macro_EntitySetup__ParamsAssignment_8
+rule__CASL_Macro_EntitySetup__ParamsAssignment_8_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0()); }
+		{ before(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0_0()); }
 		ruleExpression
-		{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0()); }
+		{ after(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0_0()); }
 	)
 ;
 finally {
