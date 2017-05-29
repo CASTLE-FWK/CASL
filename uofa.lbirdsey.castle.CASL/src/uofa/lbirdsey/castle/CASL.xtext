@@ -788,6 +788,7 @@ CASL_Macro_MetricSwitch:
 ;
 
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
+//First 2 terms should be the other way around
 CASL_Macro_Populate:
 	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
 	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
