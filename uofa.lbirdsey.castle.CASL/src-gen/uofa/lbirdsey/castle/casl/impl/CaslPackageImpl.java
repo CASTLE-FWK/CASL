@@ -641,7 +641,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass casL_Macro_EntitySetupEClass = null;
+  private EClass casL_Macro_PopulateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -4270,13 +4270,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCASL_Macro_EntitySetup()
+  public EClass getCASL_Macro_Populate()
   {
-    if (casL_Macro_EntitySetupEClass == null)
+    if (casL_Macro_PopulateEClass == null)
     {
-      casL_Macro_EntitySetupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
+      casL_Macro_PopulateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
     }
-    return casL_Macro_EntitySetupEClass;
+    return casL_Macro_PopulateEClass;
   }
 
   /**
@@ -4284,9 +4284,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_EntitySetup_InitNum()
+  public EReference getCASL_Macro_Populate_InitNum()
   {
-        return (EReference)getCASL_Macro_EntitySetup().getEStructuralFeatures().get(0);
+        return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -4294,9 +4294,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_EntitySetup_Ent()
+  public EReference getCASL_Macro_Populate_Ent()
   {
-        return (EReference)getCASL_Macro_EntitySetup().getEStructuralFeatures().get(1);
+        return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -4304,9 +4304,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_EntitySetup_Params()
+  public EReference getCASL_Macro_Populate_Body()
   {
-        return (EReference)getCASL_Macro_EntitySetup().getEStructuralFeatures().get(2);
+        return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(2);
   }
 
   /**

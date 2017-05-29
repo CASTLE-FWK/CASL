@@ -3627,14 +3627,14 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_METRIC_SWITCH_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_EntitySetupImpl <em>CASL Macro Entity Setup</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl <em>CASL Macro Populate</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.CASL_Macro_EntitySetupImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_EntitySetup()
+   * @see uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Populate()
    * @generated
    */
-  int CASL_MACRO_ENTITY_SETUP = 85;
+  int CASL_MACRO_POPULATE = 85;
 
   /**
    * The feature id for the '<em><b>Init Num</b></em>' containment reference.
@@ -3643,7 +3643,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_ENTITY_SETUP__INIT_NUM = CASL_MACRO_FEATURE_COUNT + 0;
+  int CASL_MACRO_POPULATE__INIT_NUM = CASL_MACRO_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Ent</b></em>' reference.
@@ -3652,25 +3652,25 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_ENTITY_SETUP__ENT = CASL_MACRO_FEATURE_COUNT + 1;
+  int CASL_MACRO_POPULATE__ENT = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_ENTITY_SETUP__PARAMS = CASL_MACRO_FEATURE_COUNT + 2;
+  int CASL_MACRO_POPULATE__BODY = CASL_MACRO_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>CASL Macro Entity Setup</em>' class.
+   * The number of structural features of the '<em>CASL Macro Populate</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_ENTITY_SETUP_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 3;
+  int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl <em>CASL Macro TODO</em>}' class.
@@ -8370,47 +8370,47 @@ public interface CaslPackage extends EPackage
   EAttribute getCASL_Macro_MetricSwitch_Sw();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup <em>CASL Macro Entity Setup</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate <em>CASL Macro Populate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>CASL Macro Entity Setup</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup
+   * @return the meta object for class '<em>CASL Macro Populate</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate
    * @generated
    */
-  EClass getCASL_Macro_EntitySetup();
+  EClass getCASL_Macro_Populate();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getInitNum <em>Init Num</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Init Num</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getInitNum()
-   * @see #getCASL_Macro_EntitySetup()
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum()
+   * @see #getCASL_Macro_Populate()
    * @generated
    */
-  EReference getCASL_Macro_EntitySetup_InitNum();
+  EReference getCASL_Macro_Populate_InitNum();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getEnt <em>Ent</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Ent</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getEnt()
-   * @see #getCASL_Macro_EntitySetup()
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt()
+   * @see #getCASL_Macro_Populate()
    * @generated
    */
-  EReference getCASL_Macro_EntitySetup_Ent();
+  EReference getCASL_Macro_Populate_Ent();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getParams()
-   * @see #getCASL_Macro_EntitySetup()
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody()
+   * @see #getCASL_Macro_Populate()
    * @generated
    */
-  EReference getCASL_Macro_EntitySetup_Params();
+  EReference getCASL_Macro_Populate_Body();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO <em>CASL Macro TODO</em>}'.

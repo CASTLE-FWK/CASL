@@ -118,6 +118,9 @@ class MacroGenerator {
 		return output;
 	}
 	
+	/**
+	 * 
+	 */
 	static def String generateMetricSender(String name){
 		//How to do this:
 			/* 1: Figure out what type of thing the block is

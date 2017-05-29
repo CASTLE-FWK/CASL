@@ -31,11 +31,11 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
-import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
@@ -828,11 +828,11 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.CASL_MACRO_ENTITY_SETUP:
+      case CaslPackage.CASL_MACRO_POPULATE:
       {
-        CASL_Macro_EntitySetup casL_Macro_EntitySetup = (CASL_Macro_EntitySetup)theEObject;
-        T result = caseCASL_Macro_EntitySetup(casL_Macro_EntitySetup);
-        if (result == null) result = caseCASL_Macro(casL_Macro_EntitySetup);
+        CASL_Macro_Populate casL_Macro_Populate = (CASL_Macro_Populate)theEObject;
+        T result = caseCASL_Macro_Populate(casL_Macro_Populate);
+        if (result == null) result = caseCASL_Macro(casL_Macro_Populate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2465,17 +2465,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Entity Setup</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CASL Macro Entity Setup</em>'.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCASL_Macro_EntitySetup(CASL_Macro_EntitySetup object)
+  public T caseCASL_Macro_Populate(CASL_Macro_Populate object)
   {
     return null;
   }

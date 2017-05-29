@@ -33,11 +33,11 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
-import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
@@ -617,9 +617,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createCASL_Macro_MetricSwitchAdapter();
       }
       @Override
-      public Adapter caseCASL_Macro_EntitySetup(CASL_Macro_EntitySetup object)
+      public Adapter caseCASL_Macro_Populate(CASL_Macro_Populate object)
       {
-        return createCASL_Macro_EntitySetupAdapter();
+        return createCASL_Macro_PopulateAdapter();
       }
       @Override
       public Adapter caseCASL_Macro_TODO(CASL_Macro_TODO object)
@@ -2084,16 +2084,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup <em>CASL Macro Entity Setup</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate <em>CASL Macro Populate</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate
    * @generated
    */
-  public Adapter createCASL_Macro_EntitySetupAdapter()
+  public Adapter createCASL_Macro_PopulateAdapter()
   {
     return null;
   }

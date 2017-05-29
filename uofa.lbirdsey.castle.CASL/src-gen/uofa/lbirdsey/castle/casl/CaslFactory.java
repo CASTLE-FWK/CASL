@@ -789,13 +789,13 @@ public interface CaslFactory extends EFactory
   CASL_Macro_MetricSwitch createCASL_Macro_MetricSwitch();
 
   /**
-   * Returns a new object of class '<em>CASL Macro Entity Setup</em>'.
+   * Returns a new object of class '<em>CASL Macro Populate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>CASL Macro Entity Setup</em>'.
+   * @return a new object of class '<em>CASL Macro Populate</em>'.
    * @generated
    */
-  CASL_Macro_EntitySetup createCASL_Macro_EntitySetup();
+  CASL_Macro_Populate createCASL_Macro_Populate();
 
   /**
    * Returns a new object of class '<em>CASL Macro TODO</em>'.

@@ -35,11 +35,11 @@ import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
-import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
@@ -248,9 +248,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.CASL_MACRO_COUNT_CONDITIONS:
 				sequence_CASL_Macro_CountConditions(context, (CASL_Macro_CountConditions) semanticObject); 
 				return; 
-			case CaslPackage.CASL_MACRO_ENTITY_SETUP:
-				sequence_CASL_Macro_EntitySetup(context, (CASL_Macro_EntitySetup) semanticObject); 
-				return; 
 			case CaslPackage.CASL_MACRO_FILTER_AND_FUNCTION:
 				sequence_CASL_Macro_FilterAndFunction(context, (CASL_Macro_FilterAndFunction) semanticObject); 
 				return; 
@@ -262,6 +259,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_NEIGHBOURS:
 				sequence_CASL_Macro_Neighbours(context, (CASL_Macro_Neighbours) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_POPULATE:
+				sequence_CASL_Macro_Populate(context, (CASL_Macro_Populate) semanticObject); 
 				return; 
 			case CaslPackage.CASL_MACRO_PRINT:
 				sequence_CASL_Macro_Print(context, (CASL_Macro_Print) semanticObject); 
@@ -1396,19 +1396,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     CASL_Macro returns CASL_Macro_EntitySetup
-	 *     CASL_Macro_EntitySetup returns CASL_Macro_EntitySetup
-	 *
-	 * Constraint:
-	 *     (initNum=Expression ent=[Entity|ID] params+=Expression*)
-	 */
-	protected void sequence_CASL_Macro_EntitySetup(ISerializationContext context, CASL_Macro_EntitySetup semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     CASL_Macro returns CASL_Macro_FilterAndFunction
 	 *     CASL_Macro_FilterAndFunction returns CASL_Macro_FilterAndFunction
 	 *
@@ -1495,6 +1482,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_Neighbours_SearchType(), false));
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getDistNUMBERTerminalRuleCall_4_0(), semanticObject.getDist());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_Populate
+	 *     CASL_Macro_Populate returns CASL_Macro_Populate
+	 *
+	 * Constraint:
+	 *     (initNum=Expression ent=[Entity|ID] (body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block)*)
+	 */
+	protected void sequence_CASL_Macro_Populate(ISerializationContext context, CASL_Macro_Populate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

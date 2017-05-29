@@ -39,11 +39,11 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
-import uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
@@ -288,7 +288,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_FOR_EACH: return createCASL_Macro_ForEach();
       case CaslPackage.CASL_MACRO_PRINT: return createCASL_Macro_Print();
       case CaslPackage.CASL_MACRO_METRIC_SWITCH: return createCASL_Macro_MetricSwitch();
-      case CaslPackage.CASL_MACRO_ENTITY_SETUP: return createCASL_Macro_EntitySetup();
+      case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
       case CaslPackage.CASL_MACRO_TODO: return createCASL_Macro_TODO();
       case CaslPackage.RAW_JAVA_BLOCK: return createRaw_Java_Block();
       case CaslPackage.FEATURE: return createFeature();
@@ -1377,10 +1377,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CASL_Macro_EntitySetup createCASL_Macro_EntitySetup()
+  public CASL_Macro_Populate createCASL_Macro_Populate()
   {
-    CASL_Macro_EntitySetupImpl casL_Macro_EntitySetup = new CASL_Macro_EntitySetupImpl();
-    return casL_Macro_EntitySetup;
+    CASL_Macro_PopulateImpl casL_Macro_Populate = new CASL_Macro_PopulateImpl();
+    return casL_Macro_Populate;
   }
 
   /**

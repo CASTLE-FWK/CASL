@@ -6873,18 +6873,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_ForEachParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cCASL_Macro_PrintParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cCASL_Macro_MetricSwitchParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cCASL_Macro_EntitySetupParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cCASL_Macro_PopulateParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cCASL_Macro_TODOParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
 		//CASL_Macro:
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_EntitySetup | CASL_Macro_TODO;
+		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_EntitySetup | CASL_Macro_TODO
+		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -6908,8 +6908,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//CASL_Macro_MetricSwitch
 		public RuleCall getCASL_Macro_MetricSwitchParserRuleCall_6() { return cCASL_Macro_MetricSwitchParserRuleCall_6; }
 		
-		//CASL_Macro_EntitySetup
-		public RuleCall getCASL_Macro_EntitySetupParserRuleCall_7() { return cCASL_Macro_EntitySetupParserRuleCall_7; }
+		//CASL_Macro_Populate
+		public RuleCall getCASL_Macro_PopulateParserRuleCall_7() { return cCASL_Macro_PopulateParserRuleCall_7; }
 		
 		//CASL_Macro_TODO
 		public RuleCall getCASL_Macro_TODOParserRuleCall_8() { return cCASL_Macro_TODOParserRuleCall_8; }
@@ -7215,8 +7215,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
 	}
-	public class CASL_Macro_EntitySetupElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_EntitySetup");
+	public class CASL_Macro_PopulateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Populate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPOPULATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -7230,17 +7230,29 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Assignment cParamsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
-		private final RuleCall cParamsExpressionParserRuleCall_8_0_0 = (RuleCall)cParamsAssignment_8_0.eContents().get(0);
+		private final Alternatives cAlternatives_8_0 = (Alternatives)cGroup_8.eContents().get(0);
+		private final Assignment cBodyAssignment_8_0_0 = (Assignment)cAlternatives_8_0.eContents().get(0);
+		private final RuleCall cBodyFieldParserRuleCall_8_0_0_0 = (RuleCall)cBodyAssignment_8_0_0.eContents().get(0);
+		private final Assignment cBodyAssignment_8_0_1 = (Assignment)cAlternatives_8_0.eContents().get(1);
+		private final RuleCall cBodyExpressionParserRuleCall_8_0_1_0 = (RuleCall)cBodyAssignment_8_0_1.eContents().get(0);
+		private final Assignment cBodyAssignment_8_0_2 = (Assignment)cAlternatives_8_0.eContents().get(2);
+		private final RuleCall cBodyFormulaParserRuleCall_8_0_2_0 = (RuleCall)cBodyAssignment_8_0_2.eContents().get(0);
+		private final Assignment cBodyAssignment_8_0_3 = (Assignment)cAlternatives_8_0.eContents().get(3);
+		private final RuleCall cBodySelfAssignedFormulaParserRuleCall_8_0_3_0 = (RuleCall)cBodyAssignment_8_0_3.eContents().get(0);
+		private final Assignment cBodyAssignment_8_0_4 = (Assignment)cAlternatives_8_0.eContents().get(4);
+		private final RuleCall cBodyRaw_Java_BlockParserRuleCall_8_0_4_0 = (RuleCall)cBodyAssignment_8_0_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
-		//CASL_Macro_EntitySetup:
-		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')';
+		//CASL_Macro_Populate:
+		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
+		//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')'
+		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
+		//body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"POPULATE"
@@ -7276,14 +7288,41 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
 		
-		//(params+=Expression ';')*
+		//((body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//params+=Expression
-		public Assignment getParamsAssignment_8_0() { return cParamsAssignment_8_0; }
+		//body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block
+		public Alternatives getAlternatives_8_0() { return cAlternatives_8_0; }
+		
+		//body+=Field
+		public Assignment getBodyAssignment_8_0_0() { return cBodyAssignment_8_0_0; }
+		
+		//Field
+		public RuleCall getBodyFieldParserRuleCall_8_0_0_0() { return cBodyFieldParserRuleCall_8_0_0_0; }
+		
+		//body+=Expression
+		public Assignment getBodyAssignment_8_0_1() { return cBodyAssignment_8_0_1; }
 		
 		//Expression
-		public RuleCall getParamsExpressionParserRuleCall_8_0_0() { return cParamsExpressionParserRuleCall_8_0_0; }
+		public RuleCall getBodyExpressionParserRuleCall_8_0_1_0() { return cBodyExpressionParserRuleCall_8_0_1_0; }
+		
+		//body+=Formula
+		public Assignment getBodyAssignment_8_0_2() { return cBodyAssignment_8_0_2; }
+		
+		//Formula
+		public RuleCall getBodyFormulaParserRuleCall_8_0_2_0() { return cBodyFormulaParserRuleCall_8_0_2_0; }
+		
+		//body+=SelfAssignedFormula
+		public Assignment getBodyAssignment_8_0_3() { return cBodyAssignment_8_0_3; }
+		
+		//SelfAssignedFormula
+		public RuleCall getBodySelfAssignedFormulaParserRuleCall_8_0_3_0() { return cBodySelfAssignedFormulaParserRuleCall_8_0_3_0; }
+		
+		//body+=Raw_Java_Block
+		public Assignment getBodyAssignment_8_0_4() { return cBodyAssignment_8_0_4; }
+		
+		//Raw_Java_Block
+		public RuleCall getBodyRaw_Java_BlockParserRuleCall_8_0_4_0() { return cBodyRaw_Java_BlockParserRuleCall_8_0_4_0; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_8_1() { return cSemicolonKeyword_8_1; }
@@ -8481,7 +8520,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_ForEachElements pCASL_Macro_ForEach;
 	private final CASL_Macro_PrintElements pCASL_Macro_Print;
 	private final CASL_Macro_MetricSwitchElements pCASL_Macro_MetricSwitch;
-	private final CASL_Macro_EntitySetupElements pCASL_Macro_EntitySetup;
+	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
 	private final WorldTypeElements eWorldType;
 	private final NumTypeElements eNumType;
@@ -8628,7 +8667,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_ForEach = new CASL_Macro_ForEachElements();
 		this.pCASL_Macro_Print = new CASL_Macro_PrintElements();
 		this.pCASL_Macro_MetricSwitch = new CASL_Macro_MetricSwitchElements();
-		this.pCASL_Macro_EntitySetup = new CASL_Macro_EntitySetupElements();
+		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
 		this.eWorldType = new WorldTypeElements();
 		this.eNumType = new NumTypeElements();
@@ -10061,7 +10100,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////Because it will probably be massive (and it also has to line up with stdlib)
 	//CASL_Macro:
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_EntitySetup | CASL_Macro_TODO;
+	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -10141,14 +10180,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
-	//CASL_Macro_EntitySetup:
-	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' (params+=Expression ';')* ')';
-	public CASL_Macro_EntitySetupElements getCASL_Macro_EntitySetupAccess() {
-		return pCASL_Macro_EntitySetup;
+	//CASL_Macro_Populate:
+	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
+	//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
+	//	')';
+	public CASL_Macro_PopulateElements getCASL_Macro_PopulateAccess() {
+		return pCASL_Macro_Populate;
 	}
 	
-	public ParserRule getCASL_Macro_EntitySetupRule() {
-		return getCASL_Macro_EntitySetupAccess().getRule();
+	public ParserRule getCASL_Macro_PopulateRule() {
+		return getCASL_Macro_PopulateAccess().getRule();
 	}
 	
 	//CASL_Macro_TODO:

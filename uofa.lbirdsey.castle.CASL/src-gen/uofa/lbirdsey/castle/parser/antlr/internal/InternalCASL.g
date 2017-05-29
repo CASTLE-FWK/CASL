@@ -10741,11 +10741,11 @@ ruleCASL_Macro returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_EntitySetupParserRuleCall_7());
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_PopulateParserRuleCall_7());
 		}
-		this_CASL_Macro_EntitySetup_7=ruleCASL_Macro_EntitySetup
+		this_CASL_Macro_Populate_7=ruleCASL_Macro_Populate
 		{
-			$current = $this_CASL_Macro_EntitySetup_7.current;
+			$current = $this_CASL_Macro_Populate_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -11237,15 +11237,15 @@ ruleCASL_Macro_MetricSwitch returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleCASL_Macro_EntitySetup
-entryRuleCASL_Macro_EntitySetup returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupRule()); }
-	iv_ruleCASL_Macro_EntitySetup=ruleCASL_Macro_EntitySetup
-	{ $current=$iv_ruleCASL_Macro_EntitySetup.current; }
+// Entry rule entryRuleCASL_Macro_Populate
+entryRuleCASL_Macro_Populate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_PopulateRule()); }
+	iv_ruleCASL_Macro_Populate=ruleCASL_Macro_Populate
+	{ $current=$iv_ruleCASL_Macro_Populate.current; }
 	EOF;
 
-// Rule CASL_Macro_EntitySetup
-ruleCASL_Macro_EntitySetup returns [EObject current=null]
+// Rule CASL_Macro_Populate
+ruleCASL_Macro_Populate returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -11255,21 +11255,21 @@ ruleCASL_Macro_EntitySetup returns [EObject current=null]
 	(
 		otherlv_0='POPULATE'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_EntitySetupAccess().getPOPULATEKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_PopulateAccess().getPOPULATEKeyword_0());
 		}
 		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_PopulateAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupAccess().getInitNumExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getInitNumExpressionParserRuleCall_2_0());
 				}
 				lv_initNum_2_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCASL_Macro_EntitySetupRule());
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
 					}
 					set(
 						$current,
@@ -11282,61 +11282,143 @@ ruleCASL_Macro_EntitySetup returns [EObject current=null]
 		)
 		otherlv_3=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_3());
 		}
 		otherlv_4='['
 		{
-			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_PopulateAccess().getLeftSquareBracketKeyword_4());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCASL_Macro_EntitySetupRule());
+						$current = createModelElement(grammarAccess.getCASL_Macro_PopulateRule());
 					}
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_EntitySetupAccess().getEntEntityCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_PopulateAccess().getEntEntityCrossReference_5_0());
 				}
 			)
 		)
 		otherlv_6=']'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_EntitySetupAccess().getRightSquareBracketKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_PopulateAccess().getRightSquareBracketKeyword_6());
 		}
 		otherlv_7='('
 		{
-			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_EntitySetupAccess().getLeftParenthesisKeyword_7());
+			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_PopulateAccess().getLeftParenthesisKeyword_7());
 		}
 		(
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getCASL_Macro_EntitySetupAccess().getParamsExpressionParserRuleCall_8_0_0());
-					}
-					lv_params_8_0=ruleExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCASL_Macro_EntitySetupRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyFieldParserRuleCall_8_0_0_0());
 						}
-						add(
-							$current,
-							"params",
-							lv_params_8_0,
-							"uofa.lbirdsey.castle.CASL.Expression");
-						afterParserOrEnumRuleCall();
-					}
+						lv_body_8_0=ruleField
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+							}
+							add(
+								$current,
+								"body",
+								lv_body_8_0,
+								"uofa.lbirdsey.castle.CASL.Field");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyExpressionParserRuleCall_8_0_1_0());
+						}
+						lv_body_9_0=ruleExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+							}
+							add(
+								$current,
+								"body",
+								lv_body_9_0,
+								"uofa.lbirdsey.castle.CASL.Expression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyFormulaParserRuleCall_8_0_2_0());
+						}
+						lv_body_10_0=ruleFormula
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+							}
+							add(
+								$current,
+								"body",
+								lv_body_10_0,
+								"uofa.lbirdsey.castle.CASL.Formula");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodySelfAssignedFormulaParserRuleCall_8_0_3_0());
+						}
+						lv_body_11_0=ruleSelfAssignedFormula
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+							}
+							add(
+								$current,
+								"body",
+								lv_body_11_0,
+								"uofa.lbirdsey.castle.CASL.SelfAssignedFormula");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				    |
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyRaw_Java_BlockParserRuleCall_8_0_4_0());
+						}
+						lv_body_12_0=ruleRaw_Java_Block
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+							}
+							add(
+								$current,
+								"body",
+								lv_body_12_0,
+								"uofa.lbirdsey.castle.CASL.Raw_Java_Block");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
 			)
-			otherlv_9=';'
+			otherlv_13=';'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_EntitySetupAccess().getSemicolonKeyword_8_1());
+				newLeafNode(otherlv_13, grammarAccess.getCASL_Macro_PopulateAccess().getSemicolonKeyword_8_1());
 			}
 		)*
-		otherlv_10=')'
+		otherlv_14=')'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getCASL_Macro_EntitySetupAccess().getRightParenthesisKeyword_9());
+			newLeafNode(otherlv_14, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_9());
 		}
 	)
 ;

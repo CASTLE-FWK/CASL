@@ -5,25 +5,27 @@ package uofa.lbirdsey.castle.casl;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>CASL Macro Entity Setup</b></em>'.
+ * A representation of the model object '<em><b>CASL Macro Populate</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getInitNum <em>Init Num</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getEnt <em>Ent</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getParams <em>Params</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody <em>Body</em>}</li>
  * </ul>
  *
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_EntitySetup()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate()
  * @model
  * @generated
  */
-public interface CASL_Macro_EntitySetup extends CASL_Macro
+public interface CASL_Macro_Populate extends CASL_Macro
 {
   /**
    * Returns the value of the '<em><b>Init Num</b></em>' containment reference.
@@ -35,14 +37,14 @@ public interface CASL_Macro_EntitySetup extends CASL_Macro
    * <!-- end-user-doc -->
    * @return the value of the '<em>Init Num</em>' containment reference.
    * @see #setInitNum(Expression)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_EntitySetup_InitNum()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_InitNum()
    * @model containment="true"
    * @generated
    */
   Expression getInitNum();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getInitNum <em>Init Num</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Init Num</em>' containment reference.
@@ -61,14 +63,14 @@ public interface CASL_Macro_EntitySetup extends CASL_Macro
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ent</em>' reference.
    * @see #setEnt(Entity)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_EntitySetup_Ent()
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Ent()
    * @model
    * @generated
    */
   Entity getEnt();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_EntitySetup#getEnt <em>Ent</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Ent</em>' reference.
@@ -78,19 +80,19 @@ public interface CASL_Macro_EntitySetup extends CASL_Macro
   void setEnt(Entity value);
 
   /**
-   * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Expression}.
+   * Returns the value of the '<em><b>Body</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Body</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Params</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_EntitySetup_Params()
+   * @return the value of the '<em>Body</em>' containment reference list.
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Body()
    * @model containment="true"
    * @generated
    */
-  EList<Expression> getParams();
+  EList<EObject> getBody();
 
-} // CASL_Macro_EntitySetup
+} // CASL_Macro_Populate
