@@ -1004,8 +1004,8 @@ public class HelperFunctions {
       Symbol _declaration_1 = field.getDeclaration();
       DataTypeDeclaration fiedecl = ((DataTypeDeclaration) _declaration_1);
       String _initInclude = fiedecl.getInitInclude();
-      boolean _notEquals = (!Objects.equal(_initInclude, null));
-      if (_notEquals) {
+      boolean _tripleNotEquals_1 = (_initInclude != null);
+      if (_tripleNotEquals_1) {
         String _output = output;
         String _firstUpper = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus = ("public static void set" + _firstUpper);
@@ -1019,15 +1019,15 @@ public class HelperFunctions {
         output = (_output_1 + _plus_3);
       }
       PrimitiveType _type = fiedecl.getType();
-      boolean _tripleNotEquals_1 = (_type != null);
-      if (_tripleNotEquals_1) {
+      boolean _tripleNotEquals_2 = (_type != null);
+      if (_tripleNotEquals_2) {
         String _output_2 = output;
         String _name = fiedecl.getType().getName();
         output = (_output_2 + _name);
       } else {
         NonPrimitiveType _obj = fiedecl.getObj();
-        boolean _tripleNotEquals_2 = (_obj != null);
-        if (_tripleNotEquals_2) {
+        boolean _tripleNotEquals_3 = (_obj != null);
+        if (_tripleNotEquals_3) {
           NonPrimitiveType _obj_1 = fiedecl.getObj();
           if ((_obj_1 instanceof uofa.lbirdsey.castle.casl.Object)) {
             NonPrimitiveType _obj_2 = fiedecl.getObj();
@@ -1036,8 +1036,8 @@ public class HelperFunctions {
             String _name_1 = npt.getName();
             output = (_output_3 + _name_1);
             NonPrimitiveType _useObj = fiedecl.getUseObj();
-            boolean _tripleNotEquals_3 = (_useObj != null);
-            if (_tripleNotEquals_3) {
+            boolean _tripleNotEquals_4 = (_useObj != null);
+            if (_tripleNotEquals_4) {
               String _output_4 = output;
               String _name_2 = fiedecl.getUseObj().getName();
               String _plus_4 = ("<" + _name_2);
@@ -1045,8 +1045,8 @@ public class HelperFunctions {
               output = (_output_4 + _plus_5);
             } else {
               PrimitiveType _useType = fiedecl.getUseType();
-              boolean _tripleNotEquals_4 = (_useType != null);
-              if (_tripleNotEquals_4) {
+              boolean _tripleNotEquals_5 = (_useType != null);
+              if (_tripleNotEquals_5) {
                 String _output_5 = output;
                 String _name_3 = fiedecl.getUseType().getName();
                 String _plus_6 = ("<" + _name_3);
@@ -1054,8 +1054,8 @@ public class HelperFunctions {
                 output = (_output_5 + _plus_7);
               } else {
                 Group _useGroup = fiedecl.getUseGroup();
-                boolean _tripleNotEquals_5 = (_useGroup != null);
-                if (_tripleNotEquals_5) {
+                boolean _tripleNotEquals_6 = (_useGroup != null);
+                if (_tripleNotEquals_6) {
                   String _output_6 = output;
                   String _name_4 = fiedecl.getUseGroup().getName();
                   String _plus_8 = ("<" + _name_4);
@@ -1063,8 +1063,8 @@ public class HelperFunctions {
                   output = (_output_6 + _plus_9);
                 } else {
                   Agent _useAgent = fiedecl.getUseAgent();
-                  boolean _tripleNotEquals_6 = (_useAgent != null);
-                  if (_tripleNotEquals_6) {
+                  boolean _tripleNotEquals_7 = (_useAgent != null);
+                  if (_tripleNotEquals_7) {
                     String _output_7 = output;
                     String _name_5 = fiedecl.getUseAgent().getName();
                     String _plus_10 = ("<" + _name_5);
@@ -1072,8 +1072,8 @@ public class HelperFunctions {
                     output = (_output_7 + _plus_11);
                   } else {
                     Environment _useEnv = fiedecl.getUseEnv();
-                    boolean _tripleNotEquals_7 = (_useEnv != null);
-                    if (_tripleNotEquals_7) {
+                    boolean _tripleNotEquals_8 = (_useEnv != null);
+                    if (_tripleNotEquals_8) {
                       String _output_8 = output;
                       String _name_6 = fiedecl.getUseEnv().getName();
                       String _plus_12 = ("<" + _name_6);
@@ -1095,8 +1095,8 @@ public class HelperFunctions {
         }
       }
       String _initInclude_1 = fiedecl.getInitInclude();
-      boolean _tripleNotEquals_8 = (_initInclude_1 != null);
-      if (_tripleNotEquals_8) {
+      boolean _tripleNotEquals_9 = (_initInclude_1 != null);
+      if (_tripleNotEquals_9) {
         String _output_10 = output;
         String _name_8 = fiedecl.getName();
         String _plus_14 = (" " + _name_8);
@@ -1126,15 +1126,15 @@ public class HelperFunctions {
         output = (_output_13 + "public ");
       }
       PrimitiveType _type_1 = fiedecl.getType();
-      boolean _tripleNotEquals_9 = (_type_1 != null);
-      if (_tripleNotEquals_9) {
+      boolean _tripleNotEquals_10 = (_type_1 != null);
+      if (_tripleNotEquals_10) {
         String _output_14 = output;
         String _name_14 = fiedecl.getType().getName();
         output = (_output_14 + _name_14);
       } else {
         NonPrimitiveType _obj_4 = fiedecl.getObj();
-        boolean _tripleNotEquals_10 = (_obj_4 != null);
-        if (_tripleNotEquals_10) {
+        boolean _tripleNotEquals_11 = (_obj_4 != null);
+        if (_tripleNotEquals_11) {
           NonPrimitiveType _obj_5 = fiedecl.getObj();
           if ((_obj_5 instanceof uofa.lbirdsey.castle.casl.Object)) {
             NonPrimitiveType _obj_6 = fiedecl.getObj();
@@ -1143,8 +1143,8 @@ public class HelperFunctions {
             String _name_15 = npt_1.getName();
             output = (_output_15 + _name_15);
             NonPrimitiveType _useObj_1 = fiedecl.getUseObj();
-            boolean _tripleNotEquals_11 = (_useObj_1 != null);
-            if (_tripleNotEquals_11) {
+            boolean _tripleNotEquals_12 = (_useObj_1 != null);
+            if (_tripleNotEquals_12) {
               String _output_16 = output;
               String _name_16 = fiedecl.getUseObj().getName();
               String _plus_26 = ("<" + _name_16);
@@ -1152,8 +1152,8 @@ public class HelperFunctions {
               output = (_output_16 + _plus_27);
             } else {
               PrimitiveType _useType_1 = fiedecl.getUseType();
-              boolean _tripleNotEquals_12 = (_useType_1 != null);
-              if (_tripleNotEquals_12) {
+              boolean _tripleNotEquals_13 = (_useType_1 != null);
+              if (_tripleNotEquals_13) {
                 String _output_17 = output;
                 String _name_17 = fiedecl.getUseType().getName();
                 String _plus_28 = ("<" + _name_17);
@@ -1161,8 +1161,8 @@ public class HelperFunctions {
                 output = (_output_17 + _plus_29);
               } else {
                 Group _useGroup_1 = fiedecl.getUseGroup();
-                boolean _tripleNotEquals_13 = (_useGroup_1 != null);
-                if (_tripleNotEquals_13) {
+                boolean _tripleNotEquals_14 = (_useGroup_1 != null);
+                if (_tripleNotEquals_14) {
                   String _output_18 = output;
                   String _name_18 = fiedecl.getUseGroup().getName();
                   String _plus_30 = ("<" + _name_18);
@@ -1170,8 +1170,8 @@ public class HelperFunctions {
                   output = (_output_18 + _plus_31);
                 } else {
                   Agent _useAgent_1 = fiedecl.getUseAgent();
-                  boolean _tripleNotEquals_14 = (_useAgent_1 != null);
-                  if (_tripleNotEquals_14) {
+                  boolean _tripleNotEquals_15 = (_useAgent_1 != null);
+                  if (_tripleNotEquals_15) {
                     String _output_19 = output;
                     String _name_19 = fiedecl.getUseAgent().getName();
                     String _plus_32 = ("<" + _name_19);
@@ -1179,8 +1179,8 @@ public class HelperFunctions {
                     output = (_output_19 + _plus_33);
                   } else {
                     Environment _useEnv_1 = fiedecl.getUseEnv();
-                    boolean _tripleNotEquals_15 = (_useEnv_1 != null);
-                    if (_tripleNotEquals_15) {
+                    boolean _tripleNotEquals_16 = (_useEnv_1 != null);
+                    if (_tripleNotEquals_16) {
                       String _output_20 = output;
                       String _name_20 = fiedecl.getUseEnv().getName();
                       String _plus_34 = ("<" + _name_20);
@@ -1202,8 +1202,8 @@ public class HelperFunctions {
         }
       }
       String _initInclude_2 = fiedecl.getInitInclude();
-      boolean _tripleNotEquals_16 = (_initInclude_2 != null);
-      if (_tripleNotEquals_16) {
+      boolean _tripleNotEquals_17 = (_initInclude_2 != null);
+      if (_tripleNotEquals_17) {
         String _output_22 = output;
         String _firstUpper_2 = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus_36 = (" get" + _firstUpper_2);
@@ -1224,8 +1224,8 @@ public class HelperFunctions {
       }
     } else {
       Symbol _agentFieldRef = field.getAgentFieldRef();
-      boolean _tripleNotEquals_17 = (_agentFieldRef != null);
-      if (_tripleNotEquals_17) {
+      boolean _tripleNotEquals_18 = (_agentFieldRef != null);
+      if (_tripleNotEquals_18) {
         Symbol _agentFieldRef_1 = field.getAgentFieldRef();
         AgentFieldReference fieagent = ((AgentFieldReference) _agentFieldRef_1);
         String _output_24 = output;
@@ -1260,8 +1260,8 @@ public class HelperFunctions {
         output = (_output_26 + _plus_59);
       } else {
         Symbol _envFieldRef = field.getEnvFieldRef();
-        boolean _tripleNotEquals_18 = (_envFieldRef != null);
-        if (_tripleNotEquals_18) {
+        boolean _tripleNotEquals_19 = (_envFieldRef != null);
+        if (_tripleNotEquals_19) {
           Symbol _envFieldRef_1 = field.getEnvFieldRef();
           EnvironmentFieldReference fieenv = ((EnvironmentFieldReference) _envFieldRef_1);
           String _output_27 = output;

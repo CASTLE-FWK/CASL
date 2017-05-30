@@ -513,7 +513,7 @@ class HelperFunctions {
 		var output = "";
 		if (field.declaration !== null) {
 			var fiedecl = field.declaration as DataTypeDeclaration;
-			if (fiedecl.initInclude != null) {
+			if (fiedecl.initInclude !== null) {
 				output += "public static void set" + fiedecl.name.toFirstUpper + "("
 			} else {
 				output += "public void set" + fiedecl.name.toFirstUpper + "("
@@ -597,232 +597,232 @@ class HelperFunctions {
 					return output;
 				}
 
-				// TODO: Determine what type of THING a string is
-				// 22/06/16: what does this actually do?
-				// 23/06/16: I know what this does and I'm making it better
-				static def locateType(String candidate) {
-					for (EObject type : Helpers.getTypes()) {
-						if (type instanceof Type) {
-							var tat = type as Type;
-							if (tat instanceof Object) {
-								if ((tat as Object).custom !== null) {
-									if ((type as Type).name.compareToIgnoreCase(candidate) == 0) {
-										return "CUSTOM:" + type.name;
-									}
-								}
-							}
-							if ((type as Type).name.compareToIgnoreCase(candidate) == 0) {
-								return type.name;
-							}
-						} else if (type instanceof Agent) {
-							if ((type as Agent).name.compareToIgnoreCase(candidate) == 0) {
-								return "agents." + type.name;
-							}
-						} else if (type instanceof Environment) {
-							if ((type as Environment).name.compareToIgnoreCase(candidate) == 0) {
-								return "environments." + type.name;
-							}
-						} else if (type instanceof Group) {
-							if ((type as Group).name.compareToIgnoreCase(candidate) == 0) {
-								return "groups." + type.name;
-							}
+	// TODO: Determine what type of THING a string is
+	// 22/06/16: what does this actually do?
+	// 23/06/16: I know what this does and I'm making it better
+	static def locateType(String candidate) {
+		for (EObject type : Helpers.getTypes()) {
+			if (type instanceof Type) {
+				var tat = type as Type;
+				if (tat instanceof Object) {
+					if ((tat as Object).custom !== null) {
+						if ((type as Type).name.compareToIgnoreCase(candidate) == 0) {
+							return "CUSTOM:" + type.name;
 						}
 					}
-					return "TYPE NOT FOUND: " + candidate;
 				}
-
-				// Order of precedence is super important here...
-				static def String parseTypesAsString(String iC, String systemRoot) {
-					var output = "";
-					// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
-					if (iC.contains("List")) {
-						// Ignore
-						output = "import java.util.List;"
-						return output;
-					}
-					if (iC.contains("LayoutParameters")) {
-						return output
-					}
-
-					if (iC.startsWith("agents.") || iC.startsWith("groups.") || iC.startsWith("environments.")) {
-						output += "import " + systemRoot + "." + iC + ";";
-					} else if (iC.startsWith("CUSTOM:")) {
-						var object = iC.split(":").get(1);
-						if (object.startsWith("Enums")) {
-							output += "import " + systemRoot + "." + object + ";";
-						} else {
-							output += "import " + systemRoot + ".objects." + object + ";";
-						}
-					} else if (iC.contains("<")) {
-						var typeBegin = iC.indexOf('<');
-						output += "import castleComponents.objects." + iC.substring(0, typeBegin) + ";"
-						var typeEnd = iC.indexOf('>');
-						output +=
-							HelperFunctions.parseTypesAsString(locateType(iC.substring(typeBegin + 1, typeEnd)),
-								systemRoot);
-					} else if (iC.startsWith("Enums.")) {
-						output += "import castleComponents." + iC + ";"
-					} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))) {
-						output = "";
-					} else if (iC.length() > 0) {
-						output += "import castleComponents.objects." + iC + ";";
-					}
-					return output;
+				if ((type as Type).name.compareToIgnoreCase(candidate) == 0) {
+					return type.name;
 				}
+			} else if (type instanceof Agent) {
+				if ((type as Agent).name.compareToIgnoreCase(candidate) == 0) {
+					return "agents." + type.name;
+				}
+			} else if (type instanceof Environment) {
+				if ((type as Environment).name.compareToIgnoreCase(candidate) == 0) {
+					return "environments." + type.name;
+				}
+			} else if (type instanceof Group) {
+				if ((type as Group).name.compareToIgnoreCase(candidate) == 0) {
+					return "groups." + type.name;
+				}
+			}
+		}
+		return "TYPE NOT FOUND: " + candidate;
+	}
 
-				// TODO: HERE 22/06/16
-				static def String parseTypesAsType(EObject iC, String systemRoot) {
-					var output = "";
-					// 1: Figure out what type iC is (ag/gr/en, object, enum, primitive, unknown)
+	// Order of precedence is super important here...
+	static def String parseTypesAsString(String iC, String systemRoot) {
+		var output = "";
+		// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
+		if (iC.contains("List")) {
+			// Ignore
+			output = "import java.util.List;"
+			return output;
+		}
+		if (iC.contains("LayoutParameters")) {
+			return output
+		}
+
+		if (iC.startsWith("agents.") || iC.startsWith("groups.") || iC.startsWith("environments.")) {
+			output += "import " + systemRoot + "." + iC + ";";
+		} else if (iC.startsWith("CUSTOM:")) {
+			var object = iC.split(":").get(1);
+			if (object.startsWith("Enums")) {
+				output += "import " + systemRoot + "." + object + ";";
+			} else {
+				output += "import " + systemRoot + ".objects." + object + ";";
+			}
+		} else if (iC.contains("<")) {
+			var typeBegin = iC.indexOf('<');
+			output += "import castleComponents.objects." + iC.substring(0, typeBegin) + ";"
+			var typeEnd = iC.indexOf('>');
+			output +=
+				HelperFunctions.parseTypesAsString(locateType(iC.substring(typeBegin + 1, typeEnd)),
+					systemRoot);
+		} else if (iC.startsWith("Enums.")) {
+			output += "import castleComponents." + iC + ";"
+		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))) {
+			output = "";
+		} else if (iC.length() > 0) {
+			output += "import castleComponents.objects." + iC + ";";
+		}
+		return output;
+	}
+
+	// TODO: HERE 22/06/16
+	static def String parseTypesAsType(EObject iC, String systemRoot) {
+		var output = "";
+		// 1: Figure out what type iC is (ag/gr/en, object, enum, primitive, unknown)
 //		if (iC instanceof Field){
 //			var ss = getFieldType(iC);
 //		}
-					var ss = getFieldType(iC as Field);
-					// 2: Figure out if its part of standard library or custom
+		var ss = getFieldType(iC as Field);
+		// 2: Figure out if its part of standard library or custom
 //		var owner = determineOwner(iC);
-					println("testing: " + ss);
+		println("testing: " + ss);
 
-					return output;
+		return output;
+	}
+
+	// Generate correct new statements
+	static def String initialiseFunctionParameterReturn(FunctionParameter fp) {
+		if (fp.type !== null) {
+			if (fp.type instanceof IntType) {
+				return "-0";
+			} else if (fp.type instanceof FloatType) {
+				return "-0.0";
+			} else if (fp.type instanceof BooleanType) {
+				return "false";
+			} else if (fp.type instanceof StringType) {
+				return "";
+			}
+		} else if (fp.obj !== null) {
+			return "null";
+		}
+	}
+
+	static def String metric_ToOutput(Entity_Feature ef) {
+		var output = "";
+		// Determine type of EF
+		if (ef instanceof Interaction) {
+			// 0: Is it from or is it to? COMMUNICATE or QUERY			
+			val in = ef as Interaction
+			val interType = in.interaction_type;
+			// 1: Build a list of entities that are mentioned (e.g. parameters, things in the body)
+			// 2: Pull out all Entities
+			// 3: Set interactionTo for each of them
+			// 4: For the recipient, set to interactionFrom
+			// 1: Function parameters
+			for (p : in.functionParameters) {
+				// Function parameters
+				val fp = p as FunctionParameter
+				if (fp.agent !== null || fp.env !== null || fp.grp !== null) {
+					output += "interactionTo(" + fp.name + ", \"" + in.name + "\");"
 				}
+			}
 
-				// Generate correct new statements
-				static def String initialiseFunctionParameterReturn(FunctionParameter fp) {
-					if (fp.type !== null) {
-						if (fp.type instanceof IntType) {
-							return "-0";
-						} else if (fp.type instanceof FloatType) {
-							return "-0.0";
-						} else if (fp.type instanceof BooleanType) {
-							return "false";
-						} else if (fp.type instanceof StringType) {
-							return "";
-						}
-					} else if (fp.obj !== null) {
-						return "null";
-					}
-				}
-
-				static def String metric_ToOutput(Entity_Feature ef) {
-					var output = "";
-					// Determine type of EF
-					if (ef instanceof Interaction) {
-						// 0: Is it from or is it to? COMMUNICATE or QUERY			
-						val in = ef as Interaction
-						val interType = in.interaction_type;
-						// 1: Build a list of entities that are mentioned (e.g. parameters, things in the body)
-						// 2: Pull out all Entities
-						// 3: Set interactionTo for each of them
-						// 4: For the recipient, set to interactionFrom
-						// 1: Function parameters
-						for (p : in.functionParameters) {
-							// Function parameters
-							val fp = p as FunctionParameter
-							if (fp.agent !== null || fp.env !== null || fp.grp !== null) {
-								output += "interactionTo(" + fp.name + ", \"" + in.name + "\");"
-							}
-						}
-
-						// 1: Body
-						// If the body element contains an interaction call of some type, then is should be listed
-						// A body can have a Field, Expression, Formula, or SelfAssignmentFormula
-						// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST
-						for (b : in.body) {
-							if (b instanceof Expression) {
+			// 1: Body
+			// If the body element contains an interaction call of some type, then is should be listed
+			// A body can have a Field, Expression, Formula, or SelfAssignmentFormula
+			// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST
+			for (b : in.body) {
+				if (b instanceof Expression) {
 //					val be = b as Expression
-								println(b);
-								if ((inferExpressionType(b).compareToIgnoreCase = "featurecallexp") == 0) {
-									val fc = (b as FeatureCall).fc
-									if (fc instanceof AgentInteractionFeatureCall) {
-										println("AIFC")
-									} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
-										println("GIFC")
-									}
-								}
-							}
+					println(b);
+					if ((inferExpressionType(b).compareToIgnoreCase = "featurecallexp") == 0) {
+						val fc = (b as FeatureCall).fc
+						if (fc instanceof AgentInteractionFeatureCall) {
+							println("AIFC")
+						} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
+							println("GIFC")
 						}
-
-					} else if (ef instanceof Behavior) {
-						// Get list of all parameters and called updateParameter on each of them
-						val be = ef as Behavior;
-						for (beb : be.body) {
-						}
-					} else if (ef instanceof AdaptiveProcess) {
-					} else if (ef instanceof GroupExternalInteractionFeatureCall) {
-					} else if (ef instanceof GroupSelfInternalInteractionsFeatureCall) {
 					}
-
-					return output;
 				}
+			}
 
-				// ********For phase assignments
-				// Behaviors
-				// Interactions
-				// Transmissions 
-				// Useful for debugging
-				static def String debug_PrintBehavior(Behavior b) {
-					return "Behavior: " + b.name + ", " + b.behavior_type + ", " + b.behavior_reaction_time
+		} else if (ef instanceof Behavior) {
+			// Get list of all parameters and called updateParameter on each of them
+			val be = ef as Behavior;
+			for (beb : be.body) {
+			}
+		} else if (ef instanceof AdaptiveProcess) {
+		} else if (ef instanceof GroupExternalInteractionFeatureCall) {
+		} else if (ef instanceof GroupSelfInternalInteractionsFeatureCall) {
+		}
+
+		return output;
+	}
+
+	// ********For phase assignments
+	// Behaviors
+	// Interactions
+	// Transmissions 
+	// Useful for debugging
+	static def String debug_PrintBehavior(Behavior b) {
+		return "Behavior: " + b.name + ", " + b.behavior_type + ", " + b.behavior_reaction_time
+	}
+
+	static def String debug_PrintInteraction(Interaction i) {
+		return "Interaction: " + i.name + ", " + i.interaction_type + ", " + i.trigger_type
+	}
+
+	/**
+	 * We are going about this in the wrong way
+	 * 1: Figure out return types
+	 * 2: Make sure each possible return location matches the same type
+	 * 3: Place "return" where these locations are as going through the body instead of this poor approach
+	 * Logic: 
+	 * 	1: Go through the body.
+	 * 	2: 
+	 */
+	static def String printMethodBody(EList<EObject> body, Entity_Feature caller) {
+		var output = "";
+		var returnType = inferMethodType(body);
+		var returnPrint = "";
+
+		if (returnType == "void") {
+			for (statement : body) {
+				output += TAB + parseBodyElement(statement, caller) + NL;
+			}
+		} else {
+			for (var int i = 0; i < body.size() - 1; i++) {
+				var statement = body.get(i);
+				output += TAB + parseBodyElement(statement, caller) + NL;
+			}
+			var finalLine = body.reverseView.head;
+			if (finalLine instanceof Field) {
+				output += TAB + parseBodyElement(finalLine, caller) + NL;
+				var ff = finalLine as Field;
+				if (ff.declaration !== null) {
+					returnPrint += TAB + RETURN_ + (ff.declaration as DataTypeDeclaration).name;
+				} else if (ff.agentFieldRef !== null) {
+					returnPrint += TAB + RETURN_ + (ff.agentFieldRef as AgentFieldReference).name;
+				} else if (ff.envFieldRef !== null) {
+					returnPrint += TAB + RETURN_ + (ff.envFieldRef as EnvironmentFieldReference).name;
+				} else if (ff.grpFieldRef !== null) {
+					returnPrint += TAB + RETURN_ + (ff.grpFieldRef as GroupFieldReference).name;
 				}
-
-				static def String debug_PrintInteraction(Interaction i) {
-					return "Interaction: " + i.name + ", " + i.interaction_type + ", " + i.trigger_type
+			} else if (finalLine instanceof Expression) {
+				var ee = finalLine as Expression
+				// If IfStatement do something nutty (insert returns into the final line of each then block)
+				if (ee instanceof IfStatement) {
+					returnPrint += TAB + Printers.printIfStatement(ee as IfStatement, 1, true);
+				} else if (ee instanceof ForLoop) {
+				} else if (ee instanceof ForEachLoop) {
+				} else {
+					returnPrint += RETURN_ + Printers.printExpression(ee)
 				}
-
-				/**
-				 * We are going about this in the wrong way
-				 * 1: Figure out return types
-				 * 2: Make sure each possible return location matches the same type
-				 * 3: Place "return" where these locations are as going through the body instead of this poor approach
-				 * Logic: 
-				 * 	1: Go through the body.
-				 * 	2: 
-				 */
-				static def String printMethodBody(EList<EObject> body, Entity_Feature caller) {
-					var output = "";
-					var returnType = inferMethodType(body);
-					var returnPrint = "";
-
-					if (returnType == "void") {
-						for (statement : body) {
-							output += TAB + parseBodyElement(statement, caller) + NL;
-						}
-					} else {
-						for (var int i = 0; i < body.size() - 1; i++) {
-							var statement = body.get(i);
-							output += TAB + parseBodyElement(statement, caller) + NL;
-						}
-						var finalLine = body.reverseView.head;
-						if (finalLine instanceof Field) {
-							output += TAB + parseBodyElement(finalLine, caller) + NL;
-							var ff = finalLine as Field;
-							if (ff.declaration !== null) {
-								returnPrint += TAB + RETURN_ + (ff.declaration as DataTypeDeclaration).name;
-							} else if (ff.agentFieldRef !== null) {
-								returnPrint += TAB + RETURN_ + (ff.agentFieldRef as AgentFieldReference).name;
-							} else if (ff.envFieldRef !== null) {
-								returnPrint += TAB + RETURN_ + (ff.envFieldRef as EnvironmentFieldReference).name;
-							} else if (ff.grpFieldRef !== null) {
-								returnPrint += TAB + RETURN_ + (ff.grpFieldRef as GroupFieldReference).name;
-							}
-						} else if (finalLine instanceof Expression) {
-							var ee = finalLine as Expression
-							// If IfStatement do something nutty (insert returns into the final line of each then block)
-							if (ee instanceof IfStatement) {
-								returnPrint += TAB + Printers.printIfStatement(ee as IfStatement, 1, true);
-							} else if (ee instanceof ForLoop) {
-							} else if (ee instanceof ForEachLoop) {
-							} else {
-								returnPrint += RETURN_ + Printers.printExpression(ee)
-							}
-						// What we need to do:
-						/*
-						 * We need to recursively dig through IfStatements, 
-						 * ForEachLoops and ForLoops to find terminating statements
-						 * 
-						 * 
-						 * 
-						 */
-						// If ForLoop or ForEachLoop *shrugs*
-						// If BooleanExpression
+			// What we need to do:
+			/*
+			 * We need to recursively dig through IfStatements, 
+			 * ForEachLoops and ForLoops to find terminating statements
+			 * 
+			 * 
+			 * 
+			 */
+			// If ForLoop or ForEachLoop *shrugs*
+			// If BooleanExpression
 //				if (ee instanceof FunctionCallExpr){
 //					var ff = ee.funcCall as FunctionCall
 //					
@@ -831,35 +831,35 @@ class HelperFunctions {
 //					var ff = ee.func as FeatureCall
 //					returnPrint += FeatureCallGenerator.printFeatureCall(ff);
 //				}
-						} else if (finalLine instanceof SelfAssignedFormula) {
-							var saf = finalLine as SelfAssignedFormula;
-							output += TAB + printSelfAssignedFormula(saf) + NL;
-							returnPrint += TAB + RETURN_ + "this." + saf.ref.name;
-						} else if (finalLine instanceof Formula) {
-							var saf = finalLine as Formula;
-							output += TAB + printFormula(saf) + NL;
-							returnPrint += TAB + RETURN_ + "this." + saf.sym.name;
-						} else {
-							println("FL: " + finalLine)
-						}
-
-						output += TAB + returnPrint + ';' + NL
-					}
-
-					// Check what each final line is, 
-					// If its an expression, print
-					// if its a declaratation or field, return the assigned name
-					return output;
-
-				}
-
-				static def ArrayList<String> populateImports(EList<EObject> body) {
-					var ArrayList<String> out = new ArrayList<String>();
-					for (statement : body) {
-						if (statement instanceof Field)
-							out.add(getFieldType(statement as Field));
-					}
-					return out;
-				}
+			} else if (finalLine instanceof SelfAssignedFormula) {
+				var saf = finalLine as SelfAssignedFormula;
+				output += TAB + printSelfAssignedFormula(saf) + NL;
+				returnPrint += TAB + RETURN_ + "this." + saf.ref.name;
+			} else if (finalLine instanceof Formula) {
+				var saf = finalLine as Formula;
+				output += TAB + printFormula(saf) + NL;
+				returnPrint += TAB + RETURN_ + "this." + saf.sym.name;
+			} else {
+				println("FL: " + finalLine)
 			}
+
+			output += TAB + returnPrint + ';' + NL
+		}
+
+		// Check what each final line is, 
+		// If its an expression, print
+		// if its a declaratation or field, return the assigned name
+		return output;
+
+	}
+
+	static def ArrayList<String> populateImports(EList<EObject> body) {
+		var ArrayList<String> out = new ArrayList<String>();
+		for (statement : body) {
+			if (statement instanceof Field)
+				out.add(getFieldType(statement as Field));
+		}
+		return out;
+	}
+}
 			

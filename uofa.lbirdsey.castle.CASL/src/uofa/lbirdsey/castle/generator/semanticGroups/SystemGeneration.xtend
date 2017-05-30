@@ -130,20 +130,11 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	def generateParameters(System sys){
 		var output = "//Fields\n"
 		for (field : sys.system_parameters.fields){
-			if (field instanceof Field){
-//				if ((field as Field).declaration !== null) {
-//					val fdt = (field as Field).declaration as DataTypeDeclaration
-//					if (fdt.initInclude != null){
-//						output += "private static "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
-//					} else {
-//						output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";
-//					}	
-//				} else {
-//					output += "private "+HelperFunctions.printFieldDeclarations(field as Field)+";\n";	
-//				}		
-				
-				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";			
-				libImports.add(HelperFunctions.getFieldType(field as Field));
+			if (field instanceof Field){	
+				if (!HelperFunctions.getFieldName(field as Field).equalsIgnoreCase("LayoutParameters")){ //Note: This could be expanded to handle a lot of special cases				
+					output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
+					libImports.add(HelperFunctions.getFieldType(field as Field));
+				}
 			} else if (field instanceof Concern){}			
 		}
 		
