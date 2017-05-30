@@ -771,7 +771,8 @@ CASL_Macro:
 	CASL_Macro_Print				|
 	CASL_Macro_MetricSwitch			|
 	CASL_Macro_Populate				|
-	CASL_Macro_TODO
+	CASL_Macro_TODO					|
+	CASL_Macro_Visualize
 ;
 
 CASL_Macro_Neighbours:
@@ -814,6 +815,11 @@ CASL_Macro_Populate:
 	')'
 ;
 
+//TODO: Fill this out
+CASL_Macro_Visualize:
+	"VISUALIZE"
+	
+;
 //How to initialise a proj
 //Use a macro that takes function names and parameters
 
