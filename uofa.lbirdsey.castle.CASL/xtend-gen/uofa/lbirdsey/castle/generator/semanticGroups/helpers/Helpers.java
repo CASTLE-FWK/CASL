@@ -85,4 +85,8 @@ public class Helpers {
     String fieldName = HelperFunctions.getFieldName(f);
     return false;
   }
+  
+  public static boolean containsAnInteraction(final EObject eo) {
+    return false;
+  }
 }

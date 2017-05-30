@@ -4,12 +4,19 @@ import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import uofa.lbirdsey.castle.casl.AgentInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.Behavior;
 import uofa.lbirdsey.castle.casl.BehaviorType;
 import uofa.lbirdsey.castle.casl.CaslPackage;
+import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.Interaction;
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.InteractionType;
 import uofa.lbirdsey.castle.validation.AbstractCASLValidator;
 
 /**
@@ -27,7 +34,8 @@ public class FeatureValidator extends AbstractCASLValidator {
         if (((beh instanceof InteractionFeatureCall) && Objects.equal(fn.getBehavior_type(), BehaviorType.SELF))) {
           String _name = fn.getName();
           String _plus = (_name + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION");
-          this.error(_plus, CaslPackage.eINSTANCE.getBehavior_Name());
+          this.error(_plus, 
+            CaslPackage.eINSTANCE.getBehavior_Name());
         } else {
           if (((!(beh instanceof InteractionFeatureCall)) && (!Objects.equal(fn.getBehavior_type(), BehaviorType.SELF)))) {
             String _name_1 = fn.getName();
@@ -39,10 +47,51 @@ public class FeatureValidator extends AbstractCASLValidator {
     }
   }
   
+  /**
+   * Interactions have 3 types: QUERY, INDIRECT, COMMUNICATION
+   * What this validator does is check to see if:
+   *  0: Make sure an actual interaction is happening
+   * 	1: A QUERY interaction is a request
+   *  2: A COMMUNICATE interaction is an acknowledged 2 way request
+   *  3: An INDIRECT interaction can't be validated
+   */
   @Check
   public void checkInteractions(final Interaction inter) {
+    final InteractionType interType = inter.getInteraction_type();
     final EList<EObject> interBody = inter.getBody();
+    boolean isAnInteraction = false;
     for (final EObject ib : interBody) {
+      if ((ib instanceof FeatureCallExp)) {
+        EObject beh = ((FeatureCallExp) ib).getFunc().getFc();
+        if ((beh instanceof GroupExternalInteractionFeatureCall)) {
+          isAnInteraction = true;
+        } else {
+          if ((beh instanceof AgentInteractionFeatureCall)) {
+            isAnInteraction = true;
+          } else {
+            if ((beh instanceof EnvironmentInteractionFeatureCall)) {
+              isAnInteraction = true;
+            } else {
+              if ((beh instanceof ExternalInteractionFeatureCall)) {
+                isAnInteraction = true;
+              } else {
+                if ((beh instanceof GroupInternalInteractionsFeatureCall)) {
+                  isAnInteraction = true;
+                } else {
+                  if ((beh instanceof GroupSelfInternalInteractionsFeatureCall)) {
+                    isAnInteraction = true;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if ((!isAnInteraction)) {
+      String _name = inter.getName();
+      String _plus = (_name + " is not actually an interaction. Please add some interaction.");
+      this.error(_plus, CaslPackage.eINSTANCE.getInteraction_Body());
     }
   }
 }

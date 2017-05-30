@@ -75,6 +75,12 @@ class Helpers {
 		return false;
 	}
 	
+	//TODO: FIll this in
+	static def boolean containsAnInteraction(EObject eo){
+		return false;
+		
+	}
+	
 	
 	
 }
