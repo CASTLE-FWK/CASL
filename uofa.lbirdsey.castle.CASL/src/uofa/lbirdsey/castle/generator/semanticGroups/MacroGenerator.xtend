@@ -21,7 +21,6 @@ class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
 		var output = "";		
 		val macro = mc.macroCall.macro 
-		println(macro.class)
 		if (macro instanceof CASL_Macro_Neighbours) {
 			output += "null;\n"
 			var ngh = (macro as CASL_Macro_Neighbours)
@@ -88,7 +87,7 @@ class MacroGenerator {
 				return generateMetricSender(name);
 			}			
 		} else if (macro instanceof CASL_Macro_Populate){
-			return entitySetup(macro as CASL_Macro_Populate);
+			return uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator.populator(macro as CASL_Macro_Populate);
 		} else if (macro instanceof CASL_Macro_TODO){
 			val mac = (macro as CASL_Macro_TODO);
 			return "//TODO: "+mac.str+'\n';
@@ -102,7 +101,7 @@ class MacroGenerator {
 	 * code to populate the entities specified.
 	 * This is so not a hard thing to write...
 	 */
-	static def String entitySetup(CASL_Macro_Populate pop){
+	static def String populator(CASL_Macro_Populate pop){
 		var output = "//Generated Entity Populator\n//This is unfortunately prone to error for the moment\n";
 //		output += ""
 		val layoutLocation = pop.layoutLocation;
@@ -114,7 +113,7 @@ class MacroGenerator {
 		output += Printers.printExpression(layoutLocation)+".initialize("+HelperFunctions.printFunctionArgs(layoutInitParams)+");\n";
 		//Now create the entities...
 		
-		//Something needs to happen here
+		//Something needs to happen here before initializing the entities
 		
 		
 		output += Printers.printExpression(layoutLocation)+".initializeEntities("+HelperFunctions.printFunctionArgs(entityInitParams)+");\n";
@@ -129,6 +128,12 @@ class MacroGenerator {
 		
 
 		return output;
+	}
+	
+	//This is for the populator
+	//TODO: Fill this in (and figure out how to do it)
+	static def String printInitializeParams(EList<Expression> params){
+		
 	}
 	
 	/**

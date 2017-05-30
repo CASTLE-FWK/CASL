@@ -541,7 +541,7 @@ public class HelperFunctions {
             strOut = (_strOut_2 + _metric_ToOutput);
           } else {
             String _strOut_3 = strOut;
-            Object _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
+            String _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
             strOut = (_strOut_3 + _parseMacro);
           }
         } else {

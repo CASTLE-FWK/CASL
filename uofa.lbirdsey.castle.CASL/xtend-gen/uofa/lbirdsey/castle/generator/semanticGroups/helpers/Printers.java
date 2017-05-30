@@ -768,7 +768,7 @@ public class Printers {
     Object _xifexpression = null;
     if ((expr instanceof MacroCall)) {
       StringConcatenation _builder = new StringConcatenation();
-      Object _parseMacro = MacroGenerator.parseMacro(((MacroCall) expr), name);
+      String _parseMacro = MacroGenerator.parseMacro(((MacroCall) expr), name);
       _builder.append(_parseMacro);
       _xifexpression = _builder;
     } else {
