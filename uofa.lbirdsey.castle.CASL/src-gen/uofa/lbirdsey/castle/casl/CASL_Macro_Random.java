@@ -26,7 +26,7 @@ public interface CASL_Macro_Random extends CASL_Macro
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link uofa.lbirdsey.castle.casl.numType}.
+   * The literals are from the enumeration {@link uofa.lbirdsey.castle.casl.RandomType}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -34,24 +34,24 @@ public interface CASL_Macro_Random extends CASL_Macro
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see uofa.lbirdsey.castle.casl.numType
-   * @see #setType(numType)
+   * @see uofa.lbirdsey.castle.casl.RandomType
+   * @see #setType(RandomType)
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Random_Type()
    * @model
    * @generated
    */
-  numType getType();
+  RandomType getType();
 
   /**
    * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Random#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
-   * @see uofa.lbirdsey.castle.casl.numType
+   * @see uofa.lbirdsey.castle.casl.RandomType
    * @see #getType()
    * @generated
    */
-  void setType(numType value);
+  void setType(RandomType value);
 
   /**
    * Returns the value of the '<em><b>Low</b></em>' containment reference.

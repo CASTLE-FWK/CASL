@@ -10322,6 +10322,51 @@ ruleGroup_Call returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleEntity_Call
+entryRuleEntity_Call returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEntity_CallRule()); }
+	iv_ruleEntity_Call=ruleEntity_Call
+	{ $current=$iv_ruleEntity_Call.current; }
+	EOF;
+
+// Rule Entity_Call
+ruleEntity_Call returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getEntity_CallAccess().getAgent_CallParserRuleCall_0());
+		}
+		this_Agent_Call_0=ruleAgent_Call
+		{
+			$current = $this_Agent_Call_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntity_CallAccess().getEnvironment_CallParserRuleCall_1());
+		}
+		this_Environment_Call_1=ruleEnvironment_Call
+		{
+			$current = $this_Environment_Call_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntity_CallAccess().getGroup_CallParserRuleCall_2());
+		}
+		this_Group_Call_2=ruleGroup_Call
+		{
+			$current = $this_Group_Call_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleObject
 entryRuleObject returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getObjectRule()); }
@@ -10757,6 +10802,14 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_TODO_8.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VisualizeParserRuleCall_9());
+		}
+		ruleCASL_Macro_Visualize
+		{
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11012,9 +11065,9 @@ ruleCASL_Macro_Random returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_RandomAccess().getTypeNumTypeEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_RandomAccess().getTypeRandomTypeEnumRuleCall_2_0());
 				}
-				lv_type_2_0=rulenumType
+				lv_type_2_0=ruleRandomType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCASL_Macro_RandomRule());
@@ -11023,7 +11076,7 @@ ruleCASL_Macro_Random returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_2_0,
-						"uofa.lbirdsey.castle.CASL.numType");
+						"uofa.lbirdsey.castle.CASL.RandomType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -11302,170 +11355,175 @@ ruleCASL_Macro_Populate returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_PopulateAccess().getPOPULATEKeyword_0());
 		}
-		otherlv_1='('
+		otherlv_1='['
 		{
-			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_PopulateAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_PopulateAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getInitNumExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutLocationExpressionParserRuleCall_2_0());
 				}
-				lv_initNum_2_0=ruleExpression
+				lv_layoutLocation_2_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
 					}
 					set(
 						$current,
-						"initNum",
-						lv_initNum_2_0,
+						"layoutLocation",
+						lv_layoutLocation_2_0,
 						"uofa.lbirdsey.castle.CASL.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3=')'
+		otherlv_3=']('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_3());
-		}
-		otherlv_4='['
-		{
-			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_PopulateAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_PopulateAccess().getRightSquareBracketLeftParenthesisKeyword_3());
 		}
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCASL_Macro_PopulateRule());
-					}
+					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutInitParamsExpressionParserRuleCall_4_0());
 				}
-				otherlv_5=RULE_ID
+				lv_layoutInitParams_4_0=ruleExpression
 				{
-					newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_PopulateAccess().getEntEntityCrossReference_5_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+					}
+					add(
+						$current,
+						"layoutInitParams",
+						lv_layoutInitParams_4_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_PopulateAccess().getCommaKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutInitParamsExpressionParserRuleCall_5_1_0());
+					}
+					lv_layoutInitParams_6_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+						}
+						add(
+							$current,
+							"layoutInitParams",
+							lv_layoutInitParams_6_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_7=')['
+		{
+			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisLeftSquareBracketKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getEntEntity_CallParserRuleCall_7_0());
+				}
+				lv_ent_8_0=ruleEntity_Call
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+					}
+					set(
+						$current,
+						"ent",
+						lv_ent_8_0,
+						"uofa.lbirdsey.castle.CASL.Entity_Call");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6=']'
+		otherlv_9=']('
 		{
-			newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_PopulateAccess().getRightSquareBracketKeyword_6());
-		}
-		otherlv_7='('
-		{
-			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_PopulateAccess().getLeftParenthesisKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_PopulateAccess().getRightSquareBracketLeftParenthesisKeyword_8());
 		}
 		(
 			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getEntityInitParamsExpressionParserRuleCall_9_0());
+				}
+				lv_entityInitParams_10_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
+					}
+					add(
+						$current,
+						"entityInitParams",
+						lv_entityInitParams_10_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			otherlv_11=','
+			{
+				newLeafNode(otherlv_11, grammarAccess.getCASL_Macro_PopulateAccess().getCommaKeyword_10_0());
+			}
+			(
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyFieldParserRuleCall_8_0_0_0());
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getEntityInitParamsExpressionParserRuleCall_10_1_0());
+					}
+					lv_entityInitParams_12_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
 						}
-						lv_body_8_0=ruleField
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
-							}
-							add(
-								$current,
-								"body",
-								lv_body_8_0,
-								"uofa.lbirdsey.castle.CASL.Field");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				    |
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyExpressionParserRuleCall_8_0_1_0());
-						}
-						lv_body_9_0=ruleExpression
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
-							}
-							add(
-								$current,
-								"body",
-								lv_body_9_0,
-								"uofa.lbirdsey.castle.CASL.Expression");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				    |
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyFormulaParserRuleCall_8_0_2_0());
-						}
-						lv_body_10_0=ruleFormula
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
-							}
-							add(
-								$current,
-								"body",
-								lv_body_10_0,
-								"uofa.lbirdsey.castle.CASL.Formula");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				    |
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodySelfAssignedFormulaParserRuleCall_8_0_3_0());
-						}
-						lv_body_11_0=ruleSelfAssignedFormula
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
-							}
-							add(
-								$current,
-								"body",
-								lv_body_11_0,
-								"uofa.lbirdsey.castle.CASL.SelfAssignedFormula");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				    |
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCASL_Macro_PopulateAccess().getBodyRaw_Java_BlockParserRuleCall_8_0_4_0());
-						}
-						lv_body_12_0=ruleRaw_Java_Block
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCASL_Macro_PopulateRule());
-							}
-							add(
-								$current,
-								"body",
-								lv_body_12_0,
-								"uofa.lbirdsey.castle.CASL.Raw_Java_Block");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"entityInitParams",
+							lv_entityInitParams_12_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
-			otherlv_13=';'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getCASL_Macro_PopulateAccess().getSemicolonKeyword_8_1());
-			}
 		)*
-		otherlv_14=')'
+		otherlv_13=')'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_9());
+			newLeafNode(otherlv_13, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_11());
 		}
 	)
+;
+
+// Entry rule entryRuleCASL_Macro_Visualize
+entryRuleCASL_Macro_Visualize returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_VisualizeRule()); }
+	iv_ruleCASL_Macro_Visualize=ruleCASL_Macro_Visualize
+	{ $current=$iv_ruleCASL_Macro_Visualize.current.getText(); }
+	EOF;
+
+// Rule CASL_Macro_Visualize
+ruleCASL_Macro_Visualize returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='VISUALIZE'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getCASL_Macro_VisualizeAccess().getVISUALIZEKeyword());
+	}
 ;
 
 // Entry rule entryRuleRaw_Java_Block
@@ -12570,8 +12628,8 @@ ruleWorldType returns [Enumerator current=null]
 	)
 ;
 
-// Rule numType
-rulenumType returns [Enumerator current=null]
+// Rule RandomType
+ruleRandomType returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -12582,16 +12640,24 @@ rulenumType returns [Enumerator current=null]
 		(
 			enumLiteral_0='INT'
 			{
-				$current = grammarAccess.getNumTypeAccess().getINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getNumTypeAccess().getINTEnumLiteralDeclaration_0());
+				$current = grammarAccess.getRandomTypeAccess().getINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getRandomTypeAccess().getINTEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='FLOAT'
 			{
-				$current = grammarAccess.getNumTypeAccess().getFLOATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getNumTypeAccess().getFLOATEnumLiteralDeclaration_1());
+				$current = grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='BOOL'
+			{
+				$current = grammarAccess.getRandomTypeAccess().getBOOLEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getRandomTypeAccess().getBOOLEnumLiteralDeclaration_2());
 			}
 		)
 	)

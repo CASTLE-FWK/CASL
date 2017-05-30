@@ -5,8 +5,6 @@ package uofa.lbirdsey.castle.casl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>CASL Macro Populate</b></em>'.
@@ -16,9 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutLocation <em>Layout Location</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutInitParams <em>Layout Init Params</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEntityInitParams <em>Entity Init Params</em>}</li>
  * </ul>
  *
  * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate()
@@ -28,71 +27,87 @@ import org.eclipse.emf.ecore.EObject;
 public interface CASL_Macro_Populate extends CASL_Macro
 {
   /**
-   * Returns the value of the '<em><b>Init Num</b></em>' containment reference.
+   * Returns the value of the '<em><b>Layout Location</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Init Num</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Layout Location</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Init Num</em>' containment reference.
-   * @see #setInitNum(Expression)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_InitNum()
+   * @return the value of the '<em>Layout Location</em>' containment reference.
+   * @see #setLayoutLocation(Expression)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_LayoutLocation()
    * @model containment="true"
    * @generated
    */
-  Expression getInitNum();
+  Expression getLayoutLocation();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}' containment reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutLocation <em>Layout Location</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Init Num</em>' containment reference.
-   * @see #getInitNum()
+   * @param value the new value of the '<em>Layout Location</em>' containment reference.
+   * @see #getLayoutLocation()
    * @generated
    */
-  void setInitNum(Expression value);
+  void setLayoutLocation(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Ent</b></em>' reference.
+   * Returns the value of the '<em><b>Layout Init Params</b></em>' containment reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ent</em>' reference isn't clear,
+   * If the meaning of the '<em>Layout Init Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ent</em>' reference.
-   * @see #setEnt(Entity)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Ent()
-   * @model
+   * @return the value of the '<em>Layout Init Params</em>' containment reference list.
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_LayoutInitParams()
+   * @model containment="true"
    * @generated
    */
-  Entity getEnt();
+  EList<Expression> getLayoutInitParams();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}' reference.
+   * Returns the value of the '<em><b>Ent</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ent</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ent</em>' containment reference.
+   * @see #setEnt(Entity_Call)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Ent()
+   * @model containment="true"
+   * @generated
+   */
+  Entity_Call getEnt();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ent</em>' reference.
+   * @param value the new value of the '<em>Ent</em>' containment reference.
    * @see #getEnt()
    * @generated
    */
-  void setEnt(Entity value);
+  void setEnt(Entity_Call value);
 
   /**
-   * Returns the value of the '<em><b>Body</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * Returns the value of the '<em><b>Entity Init Params</b></em>' containment reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Body</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Entity Init Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Body</em>' containment reference list.
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Body()
+   * @return the value of the '<em>Entity Init Params</em>' containment reference list.
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_EntityInitParams()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getBody();
+  EList<Expression> getEntityInitParams();
 
 } // CASL_Macro_Populate

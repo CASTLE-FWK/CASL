@@ -54,6 +54,7 @@ import uofa.lbirdsey.castle.casl.ElseIfExpr;
 import uofa.lbirdsey.castle.casl.End_Condition;
 import uofa.lbirdsey.castle.casl.End_Conditions;
 import uofa.lbirdsey.castle.casl.Entity;
+import uofa.lbirdsey.castle.casl.Entity_Call;
 import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.EnumCall;
 import uofa.lbirdsey.castle.casl.EnumCallExpr;
@@ -560,6 +561,11 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGroup_Call(Group_Call object)
       {
         return createGroup_CallAdapter();
+      }
+      @Override
+      public Adapter caseEntity_Call(Entity_Call object)
+      {
+        return createEntity_CallAdapter();
       }
       @Override
       public Adapter caseObject(uofa.lbirdsey.castle.casl.Object object)
@@ -1914,6 +1920,21 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGroup_CallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.Entity_Call <em>Entity Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.Entity_Call
+   * @generated
+   */
+  public Adapter createEntity_CallAdapter()
   {
     return null;
   }

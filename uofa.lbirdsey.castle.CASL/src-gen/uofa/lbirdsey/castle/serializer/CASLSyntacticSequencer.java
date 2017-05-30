@@ -35,9 +35,22 @@ public class CASLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getCASL_Macro_VisualizeRule())
+			return getCASL_Macro_VisualizeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * CASL_Macro_Visualize:
+	 * 	"VISUALIZE"
+	 * 	
+	 * ;
+	 */
+	protected String getCASL_Macro_VisualizeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "VISUALIZE";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

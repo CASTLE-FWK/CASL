@@ -22,7 +22,7 @@ package uofa.lbirdsey.castle.casl;
  * @model
  * @generated
  */
-public interface Agent_Call extends Expression
+public interface Agent_Call extends Expression, Entity_Call
 {
   /**
    * Returns the value of the '<em><b>Agent Call</b></em>' containment reference.

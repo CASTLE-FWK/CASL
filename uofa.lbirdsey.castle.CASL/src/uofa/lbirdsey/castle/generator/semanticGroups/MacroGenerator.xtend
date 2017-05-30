@@ -9,7 +9,6 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Random
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch
-import uofa.lbirdsey.castle.casl.numType
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate
 import uofa.lbirdsey.castle.casl.Expression
 import uofa.lbirdsey.castle.casl.Entity
@@ -18,6 +17,9 @@ import uofa.lbirdsey.castle.casl.CASL_Macro
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 import org.eclipse.emf.ecore.EObject
+import uofa.lbirdsey.castle.casl.RandomType
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import org.eclipse.emf.common.util.EList
 
 class MacroGenerator {
 //Highly Repast Specific
@@ -54,19 +56,21 @@ class MacroGenerator {
 			}
 		} else if (macro instanceof CASL_Macro_Random) {
 			var mac = (macro as CASL_Macro_Random)
-			if (mac.type == numType.INT) {
+			if (mac.type == RandomType.INT) {
 				if (mac.high === null) {
 					output += "RandomGen.generateRandomRangeInteger(0,"+Printers.printExpression(mac.low)+");"
 				} else {
 					output += "RandomGen.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 				
-			} else if (mac.type == numType.FLOAT) {
+			} else if (mac.type == RandomType.FLOAT) {
 				if (mac.high === null) {
 					output += "RandomGen.generateRandomRangeDouble(0,"+Printers.printExpression(mac.low)+");"
 				} else {
 					output += "RandomGen.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
+			} else if (mac.type == RandomType.BOOL){
+				//TODO this
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
 			var mac = (macro as CASL_Macro_ForEach)
@@ -92,8 +96,7 @@ class MacroGenerator {
 			}
 			
 		} else if (macro instanceof CASL_Macro_Populate){
-			val es = macro as CASL_Macro_Populate;
-			return entitySetup(es.initNum, es.ent, es.body);
+			return entitySetup(macro as CASL_Macro_Populate);
 		} else if (macro instanceof CASL_Macro_TODO){
 			val mac = (macro as CASL_Macro_TODO);
 			return "//TODO: "+mac.str+'\n';
@@ -107,14 +110,20 @@ class MacroGenerator {
 	 * code to populate the entities specified.
 	 * This is so not a hard thing to write...
 	 */
-	static def String entitySetup(Expression initNum, Entity ent, List<EObject> params){
-		var output = "//Auto Entity Generator";
-		output += '''
-			for (int i = 0; i < «initNum»; i++) {
-				
-			}
-		'''
+	static def String entitySetup(CASL_Macro_Populate pop){
+		var output = "//Generated Entity Populator\n//This is unfortunately prone to error for the moment";
+		output += ""
+		val layoutLocation = pop.layoutLocation;
+		val EList<Expression> layoutInitParams = pop.layoutInitParams;
+		val entityCall = pop.ent;
+		val EList<Expression> entityInitParams = pop.entityInitParams;
 		
+		//Initialize the layout type
+		output += layoutLocation+".initialize("+HelperFunctions.printFunctionArgs(layoutInitParams)+");\n";
+		//Now create the entities...
+		
+		
+
 		return output;
 	}
 	

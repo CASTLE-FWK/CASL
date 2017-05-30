@@ -6655,6 +6655,29 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedNameCall
 		public RuleCall getQncQualifiedNameCallParserRuleCall_3_1_0() { return cQncQualifiedNameCallParserRuleCall_3_1_0; }
 	}
+	public class Entity_CallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Entity_Call");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cAgent_CallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEnvironment_CallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cGroup_CallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Entity_Call:
+		//	Agent_Call | Environment_Call | Group_Call;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Agent_Call | Environment_Call | Group_Call
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Agent_Call
+		public RuleCall getAgent_CallParserRuleCall_0() { return cAgent_CallParserRuleCall_0; }
+		
+		//Environment_Call
+		public RuleCall getEnvironment_CallParserRuleCall_1() { return cEnvironment_CallParserRuleCall_1; }
+		
+		//Group_Call
+		public RuleCall getGroup_CallParserRuleCall_2() { return cGroup_CallParserRuleCall_2; }
+	}
 	public class ObjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Object");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -6880,16 +6903,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_MetricSwitchParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cCASL_Macro_PopulateParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cCASL_Macro_TODOParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cCASL_Macro_VisualizeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
 		//CASL_Macro:
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO;
+		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+		//	CASL_Macro_Visualize;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
+		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+		//CASL_Macro_Visualize
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -6918,6 +6944,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_TODO
 		public RuleCall getCASL_Macro_TODOParserRuleCall_8() { return cCASL_Macro_TODOParserRuleCall_8; }
+		
+		//CASL_Macro_Visualize
+		public RuleCall getCASL_Macro_VisualizeParserRuleCall_9() { return cCASL_Macro_VisualizeParserRuleCall_9; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -7070,7 +7099,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRANDOMKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeNumTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeRandomTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cLowAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cLowExpressionParserRuleCall_4_0 = (RuleCall)cLowAssignment_4.eContents().get(0);
@@ -7081,10 +7110,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//CASL_Macro_Random:
-		//	"RANDOM" '[' type=numType '](' low=Expression (',' high=Expression)? ')';
+		//	"RANDOM" '[' type=RandomType '](' low=Expression (',' high=Expression)? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"RANDOM" '[' type=numType '](' low=Expression (',' high=Expression)? ')'
+		//"RANDOM" '[' type=RandomType '](' low=Expression (',' high=Expression)? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"RANDOM"
@@ -7093,11 +7122,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//type=numType
+		//type=RandomType
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
-		//numType
-		public RuleCall getTypeNumTypeEnumRuleCall_2_0() { return cTypeNumTypeEnumRuleCall_2_0; }
+		//RandomType
+		public RuleCall getTypeRandomTypeEnumRuleCall_2_0() { return cTypeRandomTypeEnumRuleCall_2_0; }
 		
 		//']('
 		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
@@ -7251,117 +7280,133 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Populate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPOPULATEKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cInitNumAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInitNumExpressionParserRuleCall_2_0 = (RuleCall)cInitNumAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cEntAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cEntEntityCrossReference_5_0 = (CrossReference)cEntAssignment_5.eContents().get(0);
-		private final RuleCall cEntEntityIDTerminalRuleCall_5_0_1 = (RuleCall)cEntEntityCrossReference_5_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Alternatives cAlternatives_8_0 = (Alternatives)cGroup_8.eContents().get(0);
-		private final Assignment cBodyAssignment_8_0_0 = (Assignment)cAlternatives_8_0.eContents().get(0);
-		private final RuleCall cBodyFieldParserRuleCall_8_0_0_0 = (RuleCall)cBodyAssignment_8_0_0.eContents().get(0);
-		private final Assignment cBodyAssignment_8_0_1 = (Assignment)cAlternatives_8_0.eContents().get(1);
-		private final RuleCall cBodyExpressionParserRuleCall_8_0_1_0 = (RuleCall)cBodyAssignment_8_0_1.eContents().get(0);
-		private final Assignment cBodyAssignment_8_0_2 = (Assignment)cAlternatives_8_0.eContents().get(2);
-		private final RuleCall cBodyFormulaParserRuleCall_8_0_2_0 = (RuleCall)cBodyAssignment_8_0_2.eContents().get(0);
-		private final Assignment cBodyAssignment_8_0_3 = (Assignment)cAlternatives_8_0.eContents().get(3);
-		private final RuleCall cBodySelfAssignedFormulaParserRuleCall_8_0_3_0 = (RuleCall)cBodyAssignment_8_0_3.eContents().get(0);
-		private final Assignment cBodyAssignment_8_0_4 = (Assignment)cAlternatives_8_0.eContents().get(4);
-		private final RuleCall cBodyRaw_Java_BlockParserRuleCall_8_0_4_0 = (RuleCall)cBodyAssignment_8_0_4.eContents().get(0);
-		private final Keyword cSemicolonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLayoutLocationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLayoutLocationExpressionParserRuleCall_2_0 = (RuleCall)cLayoutLocationAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLayoutInitParamsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLayoutInitParamsExpressionParserRuleCall_4_0 = (RuleCall)cLayoutInitParamsAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLayoutInitParamsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLayoutInitParamsExpressionParserRuleCall_5_1_0 = (RuleCall)cLayoutInitParamsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightParenthesisLeftSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cEntAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cEntEntity_CallParserRuleCall_7_0 = (RuleCall)cEntAssignment_7.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cEntityInitParamsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cEntityInitParamsExpressionParserRuleCall_9_0 = (RuleCall)cEntityInitParamsAssignment_9.eContents().get(0);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cEntityInitParamsAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cEntityInitParamsExpressionParserRuleCall_10_1_0 = (RuleCall)cEntityInitParamsAssignment_10_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 		////First 2 terms should be the other way around
+		////What the call should look like
+		///**
+		// * 
+		// 	CASL.POPULATE[LAYOUT](Layout init params)[ENTITY](Entity init params);
+		// 	* LAYOUT: should be a reference to a LAYOUT type 
+		// 	* Layout init params: infinite list of expressions that matches the layouts init function
+		// 	* ENTITY: Should be a type of entity that exists in the model
+		// 	* Entity init params: infinite list of expressions that matches the entities init parameters
+		//*/ //CASL_Macro_Populate:
+		////	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+		////	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+		////	')'
+		////;
 		//CASL_Macro_Populate:
-		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
-		//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
-		//	')';
+		//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
+		//	ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
+		//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+		//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+		//	//	')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
-		//body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')* ')'
+		//"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
+		//ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"POPULATE"
 		public Keyword getPOPULATEKeyword_0() { return cPOPULATEKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//initNum=Expression
-		public Assignment getInitNumAssignment_2() { return cInitNumAssignment_2; }
-		
-		//Expression
-		public RuleCall getInitNumExpressionParserRuleCall_2_0() { return cInitNumExpressionParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//ent=[Entity]
-		public Assignment getEntAssignment_5() { return cEntAssignment_5; }
-		
-		//[Entity]
-		public CrossReference getEntEntityCrossReference_5_0() { return cEntEntityCrossReference_5_0; }
-		
-		//ID
-		public RuleCall getEntEntityIDTerminalRuleCall_5_0_1() { return cEntEntityIDTerminalRuleCall_5_0_1; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
-		
-		//((body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block
-		public Alternatives getAlternatives_8_0() { return cAlternatives_8_0; }
-		
-		//body+=Field
-		public Assignment getBodyAssignment_8_0_0() { return cBodyAssignment_8_0_0; }
-		
-		//Field
-		public RuleCall getBodyFieldParserRuleCall_8_0_0_0() { return cBodyFieldParserRuleCall_8_0_0_0; }
-		
-		//body+=Expression
-		public Assignment getBodyAssignment_8_0_1() { return cBodyAssignment_8_0_1; }
+		//layoutLocation=Expression
+		public Assignment getLayoutLocationAssignment_2() { return cLayoutLocationAssignment_2; }
 		
 		//Expression
-		public RuleCall getBodyExpressionParserRuleCall_8_0_1_0() { return cBodyExpressionParserRuleCall_8_0_1_0; }
+		public RuleCall getLayoutLocationExpressionParserRuleCall_2_0() { return cLayoutLocationExpressionParserRuleCall_2_0; }
 		
-		//body+=Formula
-		public Assignment getBodyAssignment_8_0_2() { return cBodyAssignment_8_0_2; }
+		//']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_3() { return cRightSquareBracketLeftParenthesisKeyword_3; }
 		
-		//Formula
-		public RuleCall getBodyFormulaParserRuleCall_8_0_2_0() { return cBodyFormulaParserRuleCall_8_0_2_0; }
+		//layoutInitParams+=Expression?
+		public Assignment getLayoutInitParamsAssignment_4() { return cLayoutInitParamsAssignment_4; }
 		
-		//body+=SelfAssignedFormula
-		public Assignment getBodyAssignment_8_0_3() { return cBodyAssignment_8_0_3; }
+		//Expression
+		public RuleCall getLayoutInitParamsExpressionParserRuleCall_4_0() { return cLayoutInitParamsExpressionParserRuleCall_4_0; }
 		
-		//SelfAssignedFormula
-		public RuleCall getBodySelfAssignedFormulaParserRuleCall_8_0_3_0() { return cBodySelfAssignedFormulaParserRuleCall_8_0_3_0; }
+		//(',' layoutInitParams+=Expression)*
+		public Group getGroup_5() { return cGroup_5; }
 		
-		//body+=Raw_Java_Block
-		public Assignment getBodyAssignment_8_0_4() { return cBodyAssignment_8_0_4; }
+		//','
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//Raw_Java_Block
-		public RuleCall getBodyRaw_Java_BlockParserRuleCall_8_0_4_0() { return cBodyRaw_Java_BlockParserRuleCall_8_0_4_0; }
+		//layoutInitParams+=Expression
+		public Assignment getLayoutInitParamsAssignment_5_1() { return cLayoutInitParamsAssignment_5_1; }
 		
-		//';'
-		public Keyword getSemicolonKeyword_8_1() { return cSemicolonKeyword_8_1; }
+		//Expression
+		public RuleCall getLayoutInitParamsExpressionParserRuleCall_5_1_0() { return cLayoutInitParamsExpressionParserRuleCall_5_1_0; }
+		
+		//')['
+		public Keyword getRightParenthesisLeftSquareBracketKeyword_6() { return cRightParenthesisLeftSquareBracketKeyword_6; }
+		
+		//ent=Entity_Call
+		public Assignment getEntAssignment_7() { return cEntAssignment_7; }
+		
+		//Entity_Call
+		public RuleCall getEntEntity_CallParserRuleCall_7_0() { return cEntEntity_CallParserRuleCall_7_0; }
+		
+		//']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_8() { return cRightSquareBracketLeftParenthesisKeyword_8; }
+		
+		//entityInitParams+=Expression?
+		public Assignment getEntityInitParamsAssignment_9() { return cEntityInitParamsAssignment_9; }
+		
+		//Expression
+		public RuleCall getEntityInitParamsExpressionParserRuleCall_9_0() { return cEntityInitParamsExpressionParserRuleCall_9_0; }
+		
+		//(',' entityInitParams+=Expression)*
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//','
+		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		
+		//entityInitParams+=Expression
+		public Assignment getEntityInitParamsAssignment_10_1() { return cEntityInitParamsAssignment_10_1; }
+		
+		//Expression
+		public RuleCall getEntityInitParamsExpressionParserRuleCall_10_1_0() { return cEntityInitParamsExpressionParserRuleCall_10_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
+		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+	}
+	public class CASL_Macro_VisualizeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Visualize");
+		private final Keyword cVISUALIZEKeyword = (Keyword)rule.eContents().get(1);
+		
+		////TODO: Fill this out
+		//CASL_Macro_Visualize:
+		//	"VISUALIZE";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"VISUALIZE"
+		public Keyword getVISUALIZEKeyword() { return cVISUALIZEKeyword; }
 	}
 	public class Raw_Java_BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Raw_Java_Block");
@@ -8381,19 +8426,21 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"SPACE"
 		public Keyword getSPACESPACEKeyword_1_0() { return cSPACESPACEKeyword_1_0; }
 	}
-	public class NumTypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.numType");
+	public class RandomTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.RandomType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cINTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cINTINTKeyword_0_0 = (Keyword)cINTEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cFLOATEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cFLOATFLOATKeyword_1_0 = (Keyword)cFLOATEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cBOOLEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cBOOLBOOLKeyword_2_0 = (Keyword)cBOOLEnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum numType:
-		//	INT | FLOAT;
+		//enum RandomType:
+		//	INT | FLOAT | BOOL;
 		public EnumRule getRule() { return rule; }
 		
-		//INT | FLOAT
+		//INT | FLOAT | BOOL
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//INT
@@ -8407,6 +8454,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"FLOAT"
 		public Keyword getFLOATFLOATKeyword_1_0() { return cFLOATFLOATKeyword_1_0; }
+		
+		//BOOL
+		public EnumLiteralDeclaration getBOOLEnumLiteralDeclaration_2() { return cBOOLEnumLiteralDeclaration_2; }
+		
+		//"BOOL"
+		public Keyword getBOOLBOOLKeyword_2_0() { return cBOOLBOOLKeyword_2_0; }
 	}
 	
 	private final CaslElements pCasl;
@@ -8518,6 +8571,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final Agent_CallElements pAgent_Call;
 	private final Environment_CallElements pEnvironment_Call;
 	private final Group_CallElements pGroup_Call;
+	private final Entity_CallElements pEntity_Call;
 	private final ObjectElements pObject;
 	private final EnumElements pEnum;
 	private final Enum_FieldElements pEnum_Field;
@@ -8532,8 +8586,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_MetricSwitchElements pCASL_Macro_MetricSwitch;
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
 	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
+	private final CASL_Macro_VisualizeElements pCASL_Macro_Visualize;
 	private final WorldTypeElements eWorldType;
-	private final NumTypeElements eNumType;
+	private final RandomTypeElements eRandomType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
 	private final Raw_JavaElements pRaw_Java;
 	private final FeatureElements pFeature;
@@ -8665,6 +8720,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAgent_Call = new Agent_CallElements();
 		this.pEnvironment_Call = new Environment_CallElements();
 		this.pGroup_Call = new Group_CallElements();
+		this.pEntity_Call = new Entity_CallElements();
 		this.pObject = new ObjectElements();
 		this.pEnum = new EnumElements();
 		this.pEnum_Field = new Enum_FieldElements();
@@ -8679,8 +8735,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_MetricSwitch = new CASL_Macro_MetricSwitchElements();
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
 		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
+		this.pCASL_Macro_Visualize = new CASL_Macro_VisualizeElements();
 		this.eWorldType = new WorldTypeElements();
-		this.eNumType = new NumTypeElements();
+		this.eRandomType = new RandomTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
 		this.pRaw_Java = new Raw_JavaElements();
 		this.pFeature = new FeatureElements();
@@ -10066,6 +10123,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getGroup_CallAccess().getRule();
 	}
 	
+	//Entity_Call:
+	//	Agent_Call | Environment_Call | Group_Call;
+	public Entity_CallElements getEntity_CallAccess() {
+		return pEntity_Call;
+	}
+	
+	public ParserRule getEntity_CallRule() {
+		return getEntity_CallAccess().getRule();
+	}
+	
 	//Object:
 	//	{Object} custom='custom'? 'obj' name=ID ('<' useType=[Object] '>')? ':' '{' (fields+=Field ';' | fields+=Function)*
 	//	'};';
@@ -10115,7 +10182,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////Because it will probably be massive (and it also has to line up with stdlib)
 	//CASL_Macro:
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO;
+	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+	//	CASL_Macro_Visualize;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -10155,7 +10223,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_Random:
-	//	"RANDOM" '[' type=numType '](' low=Expression (',' high=Expression)? ')';
+	//	"RANDOM" '[' type=RandomType '](' low=Expression (',' high=Expression)? ')';
 	public CASL_Macro_RandomElements getCASL_Macro_RandomAccess() {
 		return pCASL_Macro_Random;
 	}
@@ -10206,16 +10274,43 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 	////First 2 terms should be the other way around
+	////What the call should look like
+	///**
+	// * 
+	// 	CASL.POPULATE[LAYOUT](Layout init params)[ENTITY](Entity init params);
+	// 	* LAYOUT: should be a reference to a LAYOUT type 
+	// 	* Layout init params: infinite list of expressions that matches the layouts init function
+	// 	* ENTITY: Should be a type of entity that exists in the model
+	// 	* Entity init params: infinite list of expressions that matches the entities init parameters
+	//*/ //CASL_Macro_Populate:
+	////	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+	////	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+	////	')'
+	////;
 	//CASL_Macro_Populate:
-	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
-	//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
-	//	')';
+	//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
+	//	ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
+	//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+	//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+	//	//	')'
+	//;
 	public CASL_Macro_PopulateElements getCASL_Macro_PopulateAccess() {
 		return pCASL_Macro_Populate;
 	}
 	
 	public ParserRule getCASL_Macro_PopulateRule() {
 		return getCASL_Macro_PopulateAccess().getRule();
+	}
+	
+	////TODO: Fill this out
+	//CASL_Macro_Visualize:
+	//	"VISUALIZE";
+	public CASL_Macro_VisualizeElements getCASL_Macro_VisualizeAccess() {
+		return pCASL_Macro_Visualize;
+	}
+	
+	public ParserRule getCASL_Macro_VisualizeRule() {
+		return getCASL_Macro_VisualizeAccess().getRule();
 	}
 	
 	//enum WorldType:
@@ -10228,14 +10323,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getWorldTypeAccess().getRule();
 	}
 	
-	//enum numType:
-	//	INT | FLOAT;
-	public NumTypeElements getNumTypeAccess() {
-		return eNumType;
+	//enum RandomType:
+	//	INT | FLOAT | BOOL;
+	public RandomTypeElements getRandomTypeAccess() {
+		return eRandomType;
 	}
 	
-	public EnumRule getNumTypeRule() {
-		return getNumTypeAccess().getRule();
+	public EnumRule getRandomTypeRule() {
+		return getRandomTypeAccess().getRule();
 	}
 	
 	///*****Java 8-isms *****/ /*I'm not sure if burning these into

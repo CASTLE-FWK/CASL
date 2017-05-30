@@ -506,24 +506,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="SystemCall">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="call" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Agent_Call" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Agent_Call" eSuperTypes="#//Expression #//Entity_Call">
     <eStructuralFeatures xsi:type="ecore:EReference" name="agentCall" eType="#//Agent_Call"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qnc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Environment_Call" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment_Call" eSuperTypes="#//Expression #//Entity_Call">
     <eStructuralFeatures xsi:type="ecore:EReference" name="environmentCall" eType="#//Environment_Call"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="env" eType="#//Environment"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qnc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Group_Call" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Group_Call" eSuperTypes="#//Expression #//Entity_Call">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groupCall" eType="#//Group_Call"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="grp" eType="#//Group"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qnc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity_Call"/>
   <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//NonPrimitiveType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useType" eType="#//Object"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
@@ -555,7 +556,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Random" eSuperTypes="#//CASL_Macro">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//numType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RandomType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="low" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="high" eType="#//Expression"
@@ -576,19 +577,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Populate" eSuperTypes="#//CASL_Macro">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initNum" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutLocation" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ent" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutInitParams" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ent" eType="#//Entity_Call"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityInitParams" upperBound="-1"
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WorldType">
     <eLiterals name="GRID" literal="GRID"/>
     <eLiterals name="SPACE" value="1" literal="SPACE"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="numType">
+  <eClassifiers xsi:type="ecore:EEnum" name="RandomType">
     <eLiterals name="INT" literal="INT"/>
     <eLiterals name="FLOAT" value="1" literal="FLOAT"/>
+    <eLiterals name="BOOL" value="2" literal="BOOL"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Raw_Java_Block">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -690,6 +690,15 @@ public interface CaslFactory extends EFactory
   Group_Call createGroup_Call();
 
   /**
+   * Returns a new object of class '<em>Entity Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Call</em>'.
+   * @generated
+   */
+  Entity_Call createEntity_Call();
+
+  /**
    * Returns a new object of class '<em>Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

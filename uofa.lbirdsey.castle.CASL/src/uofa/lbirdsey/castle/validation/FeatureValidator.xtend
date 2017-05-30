@@ -59,30 +59,30 @@ class FeatureValidator extends AbstractCASLValidator{
 				//Do task 0
 				//if (containsAnInteraction(ib)) { //Do Something; }
 				
-			if (ib instanceof FeatureCallExp){
-				var beh = (ib as FeatureCallExp).func.fc;
-				if (beh instanceof GroupExternalInteractionFeatureCall){
-					isAnInteraction = true;
-				} else if (beh instanceof AgentInteractionFeatureCall){ 
-					isAnInteraction = true;
-				} else if (beh instanceof EnvironmentInteractionFeatureCall){
-					isAnInteraction = true;
-				} else if (beh instanceof ExternalInteractionFeatureCall){
-					isAnInteraction = true;
-				} else if (beh instanceof GroupInternalInteractionsFeatureCall){
-					isAnInteraction = true;
-				} else if (beh instanceof GroupSelfInternalInteractionsFeatureCall){
-					isAnInteraction = true;
-				}
-			}
+//			if (ib instanceof FeatureCallExp){
+//				var beh = (ib as FeatureCallExp).func.fc;
+//				if (beh instanceof GroupExternalInteractionFeatureCall){
+//					isAnInteraction = true;
+//				} else if (beh instanceof AgentInteractionFeatureCall){ 
+//					isAnInteraction = true;
+//				} else if (beh instanceof EnvironmentInteractionFeatureCall){
+//					isAnInteraction = true;
+//				} else if (beh instanceof ExternalInteractionFeatureCall){
+//					isAnInteraction = true;
+//				} else if (beh instanceof GroupInternalInteractionsFeatureCall){
+//					isAnInteraction = true;
+//				} else if (beh instanceof GroupSelfInternalInteractionsFeatureCall){
+//					isAnInteraction = true;
+//				}
+//			}
 
 			//Explore the references and check to see if
 				//Task 1 || Task 2	 
 		}
 		
-		if (!isAnInteraction){
-			error(inter.name+" is not actually an interaction. Please add some interaction.", CaslPackage::eINSTANCE.interaction_Body)			
-		}
+//		if (!isAnInteraction){
+//			error(inter.name+" is not actually an interaction. Please add some interaction.", CaslPackage::eINSTANCE.interaction_Body)			
+//		}
 	}
 	
 }

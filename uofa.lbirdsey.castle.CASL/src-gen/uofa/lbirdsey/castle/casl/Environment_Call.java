@@ -22,7 +22,7 @@ package uofa.lbirdsey.castle.casl;
  * @model
  * @generated
  */
-public interface Environment_Call extends Expression
+public interface Environment_Call extends Expression, Entity_Call
 {
   /**
    * Returns the value of the '<em><b>Environment Call</b></em>' containment reference.

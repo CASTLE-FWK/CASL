@@ -11,14 +11,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>num Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Random Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see uofa.lbirdsey.castle.casl.CaslPackage#getnumType()
+ * @see uofa.lbirdsey.castle.casl.CaslPackage#getRandomType()
  * @model
  * @generated
  */
-public enum numType implements Enumerator
+public enum RandomType implements Enumerator
 {
   /**
    * The '<em><b>INT</b></em>' literal object.
@@ -38,7 +38,17 @@ public enum numType implements Enumerator
    * @generated
    * @ordered
    */
-  FLOAT(1, "FLOAT", "FLOAT");
+  FLOAT(1, "FLOAT", "FLOAT"),
+
+  /**
+   * The '<em><b>BOOL</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BOOL_VALUE
+   * @generated
+   * @ordered
+   */
+  BOOL(2, "BOOL", "BOOL");
 
   /**
    * The '<em><b>INT</b></em>' literal value.
@@ -71,39 +81,55 @@ public enum numType implements Enumerator
   public static final int FLOAT_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>num Type</b></em>' enumerators.
+   * The '<em><b>BOOL</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>BOOL</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #BOOL
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int BOOL_VALUE = 2;
+
+  /**
+   * An array of all the '<em><b>Random Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final numType[] VALUES_ARRAY =
-    new numType[]
+  private static final RandomType[] VALUES_ARRAY =
+    new RandomType[]
     {
       INT,
       FLOAT,
+      BOOL,
     };
 
   /**
-   * A public read-only list of all the '<em><b>num Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Random Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<numType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<RandomType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>num Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Random Type</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static numType get(String literal)
+  public static RandomType get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      numType result = VALUES_ARRAY[i];
+      RandomType result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -113,18 +139,18 @@ public enum numType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>num Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Random Type</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static numType getByName(String name)
+  public static RandomType getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      numType result = VALUES_ARRAY[i];
+      RandomType result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -134,19 +160,20 @@ public enum numType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>num Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Random Type</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static numType get(int value)
+  public static RandomType get(int value)
   {
     switch (value)
     {
       case INT_VALUE: return INT;
       case FLOAT_VALUE: return FLOAT;
+      case BOOL_VALUE: return BOOL;
     }
     return null;
   }
@@ -178,7 +205,7 @@ public enum numType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private numType(int value, String name, String literal)
+  private RandomType(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -227,4 +254,4 @@ public enum numType implements Enumerator
     return literal;
   }
   
-} //numType
+} //RandomType

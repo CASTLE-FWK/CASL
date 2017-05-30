@@ -167,7 +167,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_AgentInteractions(context, (AgentInteractions) semanticObject); 
 				return; 
 			case CaslPackage.AGENT_CALL:
-				if (rule == grammarAccess.getAgent_CallRule()) {
+				if (rule == grammarAccess.getAgent_CallRule()
+						|| rule == grammarAccess.getEntity_CallRule()) {
 					sequence_Agent_Call(context, (Agent_Call) semanticObject); 
 					return; 
 				}
@@ -349,7 +350,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					sequence_Atomic(context, (Environment_Call) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getEnvironment_CallRule()) {
+				else if (rule == grammarAccess.getEnvironment_CallRule()
+						|| rule == grammarAccess.getEntity_CallRule()) {
 					sequence_Environment_Call(context, (Environment_Call) semanticObject); 
 					return; 
 				}
@@ -458,7 +460,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					sequence_Atomic(context, (Group_Call) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getGroup_CallRule()) {
+				else if (rule == grammarAccess.getGroup_CallRule()
+						|| rule == grammarAccess.getEntity_CallRule()) {
 					sequence_Group_Call(context, (Group_Call) semanticObject); 
 					return; 
 				}
@@ -762,6 +765,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Agent_Call returns Agent_Call
+	 *     Entity_Call returns Agent_Call
 	 *
 	 * Constraint:
 	 *     (agent=[Agent|ID] qnc=QualifiedNameCall?)
@@ -1491,7 +1495,14 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Populate returns CASL_Macro_Populate
 	 *
 	 * Constraint:
-	 *     (initNum=Expression ent=[Entity|ID] (body+=Field | body+=Expression | body+=Formula | body+=SelfAssignedFormula | body+=Raw_Java_Block)*)
+	 *     (
+	 *         layoutLocation=Expression 
+	 *         layoutInitParams+=Expression? 
+	 *         layoutInitParams+=Expression* 
+	 *         ent=Entity_Call 
+	 *         entityInitParams+=Expression? 
+	 *         entityInitParams+=Expression*
+	 *     )
 	 */
 	protected void sequence_CASL_Macro_Populate(ISerializationContext context, CASL_Macro_Populate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1523,7 +1534,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Random returns CASL_Macro_Random
 	 *
 	 * Constraint:
-	 *     (type=numType low=Expression high=Expression?)
+	 *     (type=RandomType low=Expression high=Expression?)
 	 */
 	protected void sequence_CASL_Macro_Random(ISerializationContext context, CASL_Macro_Random semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1825,6 +1836,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Environment_Call returns Environment_Call
+	 *     Entity_Call returns Environment_Call
 	 *
 	 * Constraint:
 	 *     (env=[Environment|ID] qnc=QualifiedNameCall?)
@@ -2340,6 +2352,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Group_Call returns Group_Call
+	 *     Entity_Call returns Group_Call
 	 *
 	 * Constraint:
 	 *     (grp=[Group|ID] qnc=QualifiedNameCall?)
@@ -2470,8 +2483,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

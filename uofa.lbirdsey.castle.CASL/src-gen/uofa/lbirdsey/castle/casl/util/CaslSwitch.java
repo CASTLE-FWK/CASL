@@ -52,6 +52,7 @@ import uofa.lbirdsey.castle.casl.ElseIfExpr;
 import uofa.lbirdsey.castle.casl.End_Condition;
 import uofa.lbirdsey.castle.casl.End_Conditions;
 import uofa.lbirdsey.castle.casl.Entity;
+import uofa.lbirdsey.castle.casl.Entity_Call;
 import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.EnumCall;
 import uofa.lbirdsey.castle.casl.EnumCallExpr;
@@ -719,6 +720,7 @@ public class CaslSwitch<T> extends Switch<T>
         Agent_Call agent_Call = (Agent_Call)theEObject;
         T result = caseAgent_Call(agent_Call);
         if (result == null) result = caseExpression(agent_Call);
+        if (result == null) result = caseEntity_Call(agent_Call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -727,6 +729,7 @@ public class CaslSwitch<T> extends Switch<T>
         Environment_Call environment_Call = (Environment_Call)theEObject;
         T result = caseEnvironment_Call(environment_Call);
         if (result == null) result = caseExpression(environment_Call);
+        if (result == null) result = caseEntity_Call(environment_Call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -735,6 +738,14 @@ public class CaslSwitch<T> extends Switch<T>
         Group_Call group_Call = (Group_Call)theEObject;
         T result = caseGroup_Call(group_Call);
         if (result == null) result = caseExpression(group_Call);
+        if (result == null) result = caseEntity_Call(group_Call);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.ENTITY_CALL:
+      {
+        Entity_Call entity_Call = (Entity_Call)theEObject;
+        T result = caseEntity_Call(entity_Call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2284,6 +2295,22 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGroup_Call(Group_Call object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntity_Call(Entity_Call object)
   {
     return null;
   }

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.numType;
+import uofa.lbirdsey.castle.casl.RandomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class CASL_Macro_RandomImpl extends CASL_MacroImpl implements CASL_Macro_
    * @generated
    * @ordered
    */
-  protected static final numType TYPE_EDEFAULT = numType.INT;
+  protected static final RandomType TYPE_EDEFAULT = RandomType.INT;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -51,7 +51,7 @@ public class CASL_Macro_RandomImpl extends CASL_MacroImpl implements CASL_Macro_
    * @generated
    * @ordered
    */
-  protected numType type = TYPE_EDEFAULT;
+  protected RandomType type = TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getLow() <em>Low</em>}' containment reference.
@@ -99,7 +99,7 @@ public class CASL_Macro_RandomImpl extends CASL_MacroImpl implements CASL_Macro_
    * <!-- end-user-doc -->
    * @generated
    */
-  public numType getType()
+  public RandomType getType()
   {
     return type;
   }
@@ -109,9 +109,9 @@ public class CASL_Macro_RandomImpl extends CASL_MacroImpl implements CASL_Macro_
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(numType newType)
+  public void setType(RandomType newType)
   {
-    numType oldType = type;
+    RandomType oldType = type;
     type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_RANDOM__TYPE, oldType, type));
@@ -262,7 +262,7 @@ public class CASL_Macro_RandomImpl extends CASL_MacroImpl implements CASL_Macro_
     switch (featureID)
     {
       case CaslPackage.CASL_MACRO_RANDOM__TYPE:
-        setType((numType)newValue);
+        setType((RandomType)newValue);
         return;
       case CaslPackage.CASL_MACRO_RANDOM__LOW:
         setLow((Expression)newValue);

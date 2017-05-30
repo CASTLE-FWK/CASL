@@ -737,6 +737,10 @@ Group_Call:
 	{Group_Call} 'GROUP.' grp = [Group] ('.'qnc=QualifiedNameCall)?
 ;
 
+Entity_Call:
+	Agent_Call | Environment_Call | Group_Call
+;
+
 Object:
 	{Object}
 	(custom = 'custom')?'obj' name = ID ('<'useType = [Object]'>')?':' '{'
@@ -788,7 +792,7 @@ CASL_Macro_CountConditions:
 ;
 
 CASL_Macro_Random:
-	"RANDOM"'['type=numType']('low=Expression (',' high=Expression)?')'
+	"RANDOM"'['type=RandomType']('low=Expression (',' high=Expression)?')'
 ;
 
 CASL_Macro_ForEach:
@@ -809,10 +813,28 @@ CASL_Macro_TODO:
 
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 //First 2 terms should be the other way around
+//What the call should look like
+/**
+ * 
+ 	CASL.POPULATE[LAYOUT](Layout init params)[ENTITY](Entity init params);
+ 	* LAYOUT: should be a reference to a LAYOUT type 
+ 	* Layout init params: infinite list of expressions that matches the layouts init function
+ 	* ENTITY: Should be a type of entity that exists in the model
+ 	* Entity init params: infinite list of expressions that matches the entities init parameters
+*/
+
+//CASL_Macro_Populate:
+//	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+//	')'
+//;
 CASL_Macro_Populate:
-	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-	')'
+	"POPULATE" '['layoutLocation = Expression']('(layoutInitParams += Expression)? (',' layoutInitParams += Expression)*')['
+	(ent = Entity_Call)']('(entityInitParams += Expression)? (',' entityInitParams += Expression)*')' 
+	
+//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
+//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
+//	')'
 ;
 
 //TODO: Fill this out
@@ -827,8 +849,8 @@ enum WorldType:
 	GRID | SPACE
 ;
 
-enum numType:
-	INT | FLOAT
+enum RandomType:
+	INT | FLOAT | BOOL
 ;
 
 /*****Java 8-isms *****/

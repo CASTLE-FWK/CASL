@@ -101,9 +101,10 @@
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GRID"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/SPACE"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//numType">
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//numType/INT"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//numType/FLOAT"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/BOOL"/>
     </genEnums>
     <genClasses ecoreClass="CASL.ecore#//Casl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Casl/packageElements"/>
@@ -427,6 +428,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//Group_Call/grp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Group_Call/qnc"/>
     </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//Entity_Call"/>
     <genClasses ecoreClass="CASL.ecore#//Object">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//Object/useType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Object/fields"/>
@@ -471,9 +473,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_TODO/str"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Populate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/initNum"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/ent"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/layoutLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/layoutInitParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/ent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/entityInitParams"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Raw_Java_Block">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Raw_Java_Block/name"/>

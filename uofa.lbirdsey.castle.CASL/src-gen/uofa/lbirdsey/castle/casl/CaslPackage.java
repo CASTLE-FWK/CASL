@@ -3211,6 +3211,25 @@ public interface CaslPackage extends EPackage
   int GROUP_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Entity_CallImpl <em>Entity Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uofa.lbirdsey.castle.casl.impl.Entity_CallImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEntity_Call()
+   * @generated
+   */
+  int ENTITY_CALL = 74;
+
+  /**
+   * The number of structural features of the '<em>Entity Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_CALL_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.ObjectImpl <em>Object</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3218,7 +3237,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getObject()
    * @generated
    */
-  int OBJECT = 74;
+  int OBJECT = 75;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3273,7 +3292,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnum()
    * @generated
    */
-  int ENUM = 75;
+  int ENUM = 76;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3319,7 +3338,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Call()
    * @generated
    */
-  int CASL_MACRO_CALL = 76;
+  int CASL_MACRO_CALL = 77;
 
   /**
    * The feature id for the '<em><b>Macro</b></em>' containment reference.
@@ -3347,7 +3366,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro()
    * @generated
    */
-  int CASL_MACRO = 77;
+  int CASL_MACRO = 78;
 
   /**
    * The number of structural features of the '<em>CASL Macro</em>' class.
@@ -3366,7 +3385,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Neighbours()
    * @generated
    */
-  int CASL_MACRO_NEIGHBOURS = 78;
+  int CASL_MACRO_NEIGHBOURS = 79;
 
   /**
    * The feature id for the '<em><b>World Type</b></em>' attribute.
@@ -3412,7 +3431,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_FilterAndFunction()
    * @generated
    */
-  int CASL_MACRO_FILTER_AND_FUNCTION = 79;
+  int CASL_MACRO_FILTER_AND_FUNCTION = 80;
 
   /**
    * The feature id for the '<em><b>Sym</b></em>' reference.
@@ -3458,7 +3477,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_CountConditions()
    * @generated
    */
-  int CASL_MACRO_COUNT_CONDITIONS = 80;
+  int CASL_MACRO_COUNT_CONDITIONS = 81;
 
   /**
    * The feature id for the '<em><b>Sym</b></em>' reference.
@@ -3495,7 +3514,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Random()
    * @generated
    */
-  int CASL_MACRO_RANDOM = 81;
+  int CASL_MACRO_RANDOM = 82;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -3541,7 +3560,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_ForEach()
    * @generated
    */
-  int CASL_MACRO_FOR_EACH = 82;
+  int CASL_MACRO_FOR_EACH = 83;
 
   /**
    * The feature id for the '<em><b>Sym</b></em>' reference.
@@ -3578,7 +3597,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Print()
    * @generated
    */
-  int CASL_MACRO_PRINT = 83;
+  int CASL_MACRO_PRINT = 84;
 
   /**
    * The feature id for the '<em><b>Str</b></em>' attribute.
@@ -3606,7 +3625,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_MetricSwitch()
    * @generated
    */
-  int CASL_MACRO_METRIC_SWITCH = 84;
+  int CASL_MACRO_METRIC_SWITCH = 85;
 
   /**
    * The feature id for the '<em><b>Sw</b></em>' attribute.
@@ -3634,7 +3653,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_TODO()
    * @generated
    */
-  int CASL_MACRO_TODO = 85;
+  int CASL_MACRO_TODO = 86;
 
   /**
    * The feature id for the '<em><b>Str</b></em>' attribute.
@@ -3662,34 +3681,43 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Populate()
    * @generated
    */
-  int CASL_MACRO_POPULATE = 86;
+  int CASL_MACRO_POPULATE = 87;
 
   /**
-   * The feature id for the '<em><b>Init Num</b></em>' containment reference.
+   * The feature id for the '<em><b>Layout Location</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE__INIT_NUM = CASL_MACRO_FEATURE_COUNT + 0;
+  int CASL_MACRO_POPULATE__LAYOUT_LOCATION = CASL_MACRO_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Ent</b></em>' reference.
+   * The feature id for the '<em><b>Layout Init Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE__ENT = CASL_MACRO_FEATURE_COUNT + 1;
+  int CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ent</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE__BODY = CASL_MACRO_FEATURE_COUNT + 2;
+  int CASL_MACRO_POPULATE__ENT = CASL_MACRO_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Entity Init Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS = CASL_MACRO_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>CASL Macro Populate</em>' class.
@@ -3698,7 +3726,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 3;
+  int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Raw_Java_BlockImpl <em>Raw Java Block</em>}' class.
@@ -3708,7 +3736,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getRaw_Java_Block()
    * @generated
    */
-  int RAW_JAVA_BLOCK = 87;
+  int RAW_JAVA_BLOCK = 88;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3745,7 +3773,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 88;
+  int FEATURE = 89;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -3791,7 +3819,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 89;
+  int ABSTRACT_ELEMENT = 90;
 
   /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
@@ -3810,7 +3838,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getPackageDeclaration()
    * @generated
    */
-  int PACKAGE_DECLARATION = 90;
+  int PACKAGE_DECLARATION = 91;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3847,7 +3875,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 91;
+  int IMPORT = 92;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -3875,7 +3903,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAgentFieldReference()
    * @generated
    */
-  int AGENT_FIELD_REFERENCE = 92;
+  int AGENT_FIELD_REFERENCE = 93;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3921,7 +3949,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnvironmentFieldReference()
    * @generated
    */
-  int ENVIRONMENT_FIELD_REFERENCE = 93;
+  int ENVIRONMENT_FIELD_REFERENCE = 94;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3967,7 +3995,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getGroupFieldReference()
    * @generated
    */
-  int GROUP_FIELD_REFERENCE = 94;
+  int GROUP_FIELD_REFERENCE = 95;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4013,7 +4041,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getFunctionParameter()
    * @generated
    */
-  int FUNCTION_PARAMETER = 95;
+  int FUNCTION_PARAMETER = 96;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4131,7 +4159,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAgentInteraction()
    * @generated
    */
-  int AGENT_INTERACTION = 96;
+  int AGENT_INTERACTION = 97;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4204,7 +4232,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnvironmentInteraction()
    * @generated
    */
-  int ENVIRONMENT_INTERACTION = 97;
+  int ENVIRONMENT_INTERACTION = 98;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4277,7 +4305,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEGInteraction()
    * @generated
    */
-  int EG_INTERACTION = 98;
+  int EG_INTERACTION = 99;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4359,7 +4387,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getDataTypeDeclaration()
    * @generated
    */
-  int DATA_TYPE_DECLARATION = 99;
+  int DATA_TYPE_DECLARATION = 100;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4468,7 +4496,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getBooleanExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 100;
+  int BOOLEAN_EXPRESSION = 101;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4514,7 +4542,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEquals()
    * @generated
    */
-  int EQUALS = 101;
+  int EQUALS = 102;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4560,7 +4588,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 102;
+  int COMPARISON = 103;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4606,7 +4634,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getSubtraction()
    * @generated
    */
-  int SUBTRACTION = 103;
+  int SUBTRACTION = 104;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4652,7 +4680,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 104;
+  int ADDITION = 105;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4698,7 +4726,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 105;
+  int MULTIPLICATION = 106;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4744,7 +4772,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 106;
+  int DIV = 107;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4790,7 +4818,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 107;
+  int BOOLEAN_NEGATION = 108;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -4818,7 +4846,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getArithmeticSigned()
    * @generated
    */
-  int ARITHMETIC_SIGNED = 108;
+  int ARITHMETIC_SIGNED = 109;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -4846,7 +4874,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 109;
+  int NUMBER_LITERAL = 110;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4874,7 +4902,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 110;
+  int STRING_LITERAL = 111;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -4902,7 +4930,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getNullTypeLiteral()
    * @generated
    */
-  int NULL_TYPE_LITERAL = 111;
+  int NULL_TYPE_LITERAL = 112;
 
   /**
    * The feature id for the '<em><b>Nulltype</b></em>' containment reference.
@@ -4930,7 +4958,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getTypeRef()
    * @generated
    */
-  int TYPE_REF = 112;
+  int TYPE_REF = 113;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -4958,7 +4986,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getSystemCallObj()
    * @generated
    */
-  int SYSTEM_CALL_OBJ = 113;
+  int SYSTEM_CALL_OBJ = 114;
 
   /**
    * The feature id for the '<em><b>Sys Call</b></em>' containment reference.
@@ -4986,7 +5014,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getFeatureCallExp()
    * @generated
    */
-  int FEATURE_CALL_EXP = 114;
+  int FEATURE_CALL_EXP = 115;
 
   /**
    * The feature id for the '<em><b>Func</b></em>' containment reference.
@@ -5014,7 +5042,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getSelfCallExpr()
    * @generated
    */
-  int SELF_CALL_EXPR = 115;
+  int SELF_CALL_EXPR = 116;
 
   /**
    * The feature id for the '<em><b>Self Call</b></em>' containment reference.
@@ -5042,7 +5070,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getMacroCall()
    * @generated
    */
-  int MACRO_CALL = 116;
+  int MACRO_CALL = 117;
 
   /**
    * The feature id for the '<em><b>Macro Call</b></em>' containment reference.
@@ -5070,7 +5098,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getFunctionCallExpr()
    * @generated
    */
-  int FUNCTION_CALL_EXPR = 117;
+  int FUNCTION_CALL_EXPR = 118;
 
   /**
    * The feature id for the '<em><b>Func Call</b></em>' containment reference.
@@ -5098,7 +5126,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnumCallExpr()
    * @generated
    */
-  int ENUM_CALL_EXPR = 118;
+  int ENUM_CALL_EXPR = 119;
 
   /**
    * The feature id for the '<em><b>Enum Call</b></em>' containment reference.
@@ -5126,7 +5154,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnvironment_Attribute()
    * @generated
    */
-  int ENVIRONMENT_ATTRIBUTE = 119;
+  int ENVIRONMENT_ATTRIBUTE = 120;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.Environment_Type <em>Environment Type</em>}' enum.
@@ -5136,7 +5164,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEnvironment_Type()
    * @generated
    */
-  int ENVIRONMENT_TYPE = 120;
+  int ENVIRONMENT_TYPE = 121;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.EndConditionTypes <em>End Condition Types</em>}' enum.
@@ -5146,7 +5174,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getEndConditionTypes()
    * @generated
    */
-  int END_CONDITION_TYPES = 121;
+  int END_CONDITION_TYPES = 122;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.CAS_Rule_Types <em>CAS Rule Types</em>}' enum.
@@ -5156,7 +5184,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCAS_Rule_Types()
    * @generated
    */
-  int CAS_RULE_TYPES = 122;
+  int CAS_RULE_TYPES = 123;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.CAS_Rule_Exception <em>CAS Rule Exception</em>}' enum.
@@ -5166,7 +5194,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCAS_Rule_Exception()
    * @generated
    */
-  int CAS_RULE_EXCEPTION = 123;
+  int CAS_RULE_EXCEPTION = 124;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.CAS_Inspection_Level <em>CAS Inspection Level</em>}' enum.
@@ -5176,7 +5204,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCAS_Inspection_Level()
    * @generated
    */
-  int CAS_INSPECTION_LEVEL = 124;
+  int CAS_INSPECTION_LEVEL = 125;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch <em>CAS Semantic Group Switch</em>}' enum.
@@ -5186,7 +5214,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCAS_Semantic_Group_Switch()
    * @generated
    */
-  int CAS_SEMANTIC_GROUP_SWITCH = 125;
+  int CAS_SEMANTIC_GROUP_SWITCH = 126;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.Transmission_Phase <em>Transmission Phase</em>}' enum.
@@ -5196,7 +5224,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getTransmission_Phase()
    * @generated
    */
-  int TRANSMISSION_PHASE = 126;
+  int TRANSMISSION_PHASE = 127;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.Transmission_Contents <em>Transmission Contents</em>}' enum.
@@ -5206,7 +5234,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getTransmission_Contents()
    * @generated
    */
-  int TRANSMISSION_CONTENTS = 127;
+  int TRANSMISSION_CONTENTS = 128;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.Transmission_Repeat <em>Transmission Repeat</em>}' enum.
@@ -5216,7 +5244,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getTransmission_Repeat()
    * @generated
    */
-  int TRANSMISSION_REPEAT = 128;
+  int TRANSMISSION_REPEAT = 129;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.BehaviorType <em>Behavior Type</em>}' enum.
@@ -5226,7 +5254,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getBehaviorType()
    * @generated
    */
-  int BEHAVIOR_TYPE = 129;
+  int BEHAVIOR_TYPE = 130;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.BehaviorReactionTime <em>Behavior Reaction Time</em>}' enum.
@@ -5236,7 +5264,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getBehaviorReactionTime()
    * @generated
    */
-  int BEHAVIOR_REACTION_TIME = 130;
+  int BEHAVIOR_REACTION_TIME = 131;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.LayoutType <em>Layout Type</em>}' enum.
@@ -5246,7 +5274,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getLayoutType()
    * @generated
    */
-  int LAYOUT_TYPE = 131;
+  int LAYOUT_TYPE = 132;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.InteractionType <em>Interaction Type</em>}' enum.
@@ -5256,7 +5284,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getInteractionType()
    * @generated
    */
-  int INTERACTION_TYPE = 132;
+  int INTERACTION_TYPE = 133;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.InteractionTriggerTypes <em>Interaction Trigger Types</em>}' enum.
@@ -5266,7 +5294,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getInteractionTriggerTypes()
    * @generated
    */
-  int INTERACTION_TRIGGER_TYPES = 133;
+  int INTERACTION_TRIGGER_TYPES = 134;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.AdaptationType <em>Adaptation Type</em>}' enum.
@@ -5276,7 +5304,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAdaptationType()
    * @generated
    */
-  int ADAPTATION_TYPE = 134;
+  int ADAPTATION_TYPE = 135;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.AdaptationDelay <em>Adaptation Delay</em>}' enum.
@@ -5286,7 +5314,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAdaptationDelay()
    * @generated
    */
-  int ADAPTATION_DELAY = 135;
+  int ADAPTATION_DELAY = 136;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.SubSystemType <em>Sub System Type</em>}' enum.
@@ -5296,7 +5324,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getSubSystemType()
    * @generated
    */
-  int SUB_SYSTEM_TYPE = 136;
+  int SUB_SYSTEM_TYPE = 137;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.WorldType <em>World Type</em>}' enum.
@@ -5306,17 +5334,17 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getWorldType()
    * @generated
    */
-  int WORLD_TYPE = 137;
+  int WORLD_TYPE = 138;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.numType <em>num Type</em>}' enum.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.numType
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getnumType()
+   * @see uofa.lbirdsey.castle.casl.RandomType
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getRandomType()
    * @generated
    */
-  int NUM_TYPE = 138;
+  int RANDOM_TYPE = 139;
 
 
   /**
@@ -8051,6 +8079,16 @@ public interface CaslPackage extends EPackage
   EAttribute getGroup_Call_Qnc();
 
   /**
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Entity_Call <em>Entity Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Call</em>'.
+   * @see uofa.lbirdsey.castle.casl.Entity_Call
+   * @generated
+   */
+  EClass getEntity_Call();
+
+  /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Object <em>Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8401,21 +8439,32 @@ public interface CaslPackage extends EPackage
   EClass getCASL_Macro_Populate();
 
   /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum <em>Init Num</em>}'.
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutLocation <em>Layout Location</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Init Num</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getInitNum()
+   * @return the meta object for the containment reference '<em>Layout Location</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutLocation()
    * @see #getCASL_Macro_Populate()
    * @generated
    */
-  EReference getCASL_Macro_Populate_InitNum();
+  EReference getCASL_Macro_Populate_LayoutLocation();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutInitParams <em>Layout Init Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ent</em>'.
+   * @return the meta object for the containment reference list '<em>Layout Init Params</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutInitParams()
+   * @see #getCASL_Macro_Populate()
+   * @generated
+   */
+  EReference getCASL_Macro_Populate_LayoutInitParams();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ent</em>'.
    * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt()
    * @see #getCASL_Macro_Populate()
    * @generated
@@ -8423,15 +8472,15 @@ public interface CaslPackage extends EPackage
   EReference getCASL_Macro_Populate_Ent();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEntityInitParams <em>Entity Init Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Body</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getBody()
+   * @return the meta object for the containment reference list '<em>Entity Init Params</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEntityInitParams()
    * @see #getCASL_Macro_Populate()
    * @generated
    */
-  EReference getCASL_Macro_Populate_Body();
+  EReference getCASL_Macro_Populate_EntityInitParams();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Raw_Java_Block <em>Raw Java Block</em>}'.
@@ -9681,14 +9730,14 @@ public interface CaslPackage extends EPackage
   EEnum getWorldType();
 
   /**
-   * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.numType <em>num Type</em>}'.
+   * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>num Type</em>'.
-   * @see uofa.lbirdsey.castle.casl.numType
+   * @return the meta object for enum '<em>Random Type</em>'.
+   * @see uofa.lbirdsey.castle.casl.RandomType
    * @generated
    */
-  EEnum getnumType();
+  EEnum getRandomType();
 
   /**
    * Returns the factory that creates the instances of the model.

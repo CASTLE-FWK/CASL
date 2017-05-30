@@ -66,6 +66,7 @@ import uofa.lbirdsey.castle.casl.EndConditionTypes;
 import uofa.lbirdsey.castle.casl.End_Condition;
 import uofa.lbirdsey.castle.casl.End_Conditions;
 import uofa.lbirdsey.castle.casl.Entity;
+import uofa.lbirdsey.castle.casl.Entity_Call;
 import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.EnumCall;
 import uofa.lbirdsey.castle.casl.EnumCallExpr;
@@ -129,6 +130,7 @@ import uofa.lbirdsey.castle.casl.NumberLiteral;
 import uofa.lbirdsey.castle.casl.PackageDeclaration;
 import uofa.lbirdsey.castle.casl.Parameters;
 import uofa.lbirdsey.castle.casl.PrimitiveType;
+import uofa.lbirdsey.castle.casl.RandomType;
 import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
@@ -149,7 +151,6 @@ import uofa.lbirdsey.castle.casl.Transmission_Repeat;
 import uofa.lbirdsey.castle.casl.Type;
 import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.casl.WorldType;
-import uofa.lbirdsey.castle.casl.numType;
 
 /**
  * <!-- begin-user-doc -->
@@ -277,6 +278,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.AGENT_CALL: return createAgent_Call();
       case CaslPackage.ENVIRONMENT_CALL: return createEnvironment_Call();
       case CaslPackage.GROUP_CALL: return createGroup_Call();
+      case CaslPackage.ENTITY_CALL: return createEntity_Call();
       case CaslPackage.OBJECT: return createObject();
       case CaslPackage.ENUM: return createEnum();
       case CaslPackage.CASL_MACRO_CALL: return createCASL_Macro_Call();
@@ -375,8 +377,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return createSubSystemTypeFromString(eDataType, initialValue);
       case CaslPackage.WORLD_TYPE:
         return createWorldTypeFromString(eDataType, initialValue);
-      case CaslPackage.NUM_TYPE:
-        return createnumTypeFromString(eDataType, initialValue);
+      case CaslPackage.RANDOM_TYPE:
+        return createRandomTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -430,8 +432,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return convertSubSystemTypeToString(eDataType, instanceValue);
       case CaslPackage.WORLD_TYPE:
         return convertWorldTypeToString(eDataType, instanceValue);
-      case CaslPackage.NUM_TYPE:
-        return convertnumTypeToString(eDataType, instanceValue);
+      case CaslPackage.RANDOM_TYPE:
+        return convertRandomTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -1249,6 +1251,17 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
   {
     Group_CallImpl group_Call = new Group_CallImpl();
     return group_Call;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Entity_Call createEntity_Call()
+  {
+    Entity_CallImpl entity_Call = new Entity_CallImpl();
+    return entity_Call;
   }
 
   /**
@@ -2169,9 +2182,9 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public numType createnumTypeFromString(EDataType eDataType, String initialValue)
+  public RandomType createRandomTypeFromString(EDataType eDataType, String initialValue)
   {
-    numType result = numType.get(initialValue);
+    RandomType result = RandomType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -2181,7 +2194,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertnumTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertRandomTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

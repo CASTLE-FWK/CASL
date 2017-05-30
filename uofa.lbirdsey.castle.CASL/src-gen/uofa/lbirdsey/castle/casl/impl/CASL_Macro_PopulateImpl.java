@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.Entity;
+import uofa.lbirdsey.castle.casl.Entity_Call;
 import uofa.lbirdsey.castle.casl.Expression;
 
 /**
@@ -32,9 +31,10 @@ import uofa.lbirdsey.castle.casl.Expression;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getInitNum <em>Init Num</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getLayoutLocation <em>Layout Location</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getLayoutInitParams <em>Layout Init Params</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getEnt <em>Ent</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getEntityInitParams <em>Entity Init Params</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,34 +42,44 @@ import uofa.lbirdsey.castle.casl.Expression;
 public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macro_Populate
 {
   /**
-   * The cached value of the '{@link #getInitNum() <em>Init Num</em>}' containment reference.
+   * The cached value of the '{@link #getLayoutLocation() <em>Layout Location</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInitNum()
+   * @see #getLayoutLocation()
    * @generated
    * @ordered
    */
-  protected Expression initNum;
+  protected Expression layoutLocation;
 
   /**
-   * The cached value of the '{@link #getEnt() <em>Ent</em>}' reference.
+   * The cached value of the '{@link #getLayoutInitParams() <em>Layout Init Params</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLayoutInitParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expression> layoutInitParams;
+
+  /**
+   * The cached value of the '{@link #getEnt() <em>Ent</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEnt()
    * @generated
    * @ordered
    */
-  protected Entity ent;
+  protected Entity_Call ent;
 
   /**
-   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference list.
+   * The cached value of the '{@link #getEntityInitParams() <em>Entity Init Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBody()
+   * @see #getEntityInitParams()
    * @generated
    * @ordered
    */
-  protected EList<EObject> body;
+  protected EList<Expression> entityInitParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,9 +107,9 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getInitNum()
+  public Expression getLayoutLocation()
   {
-    return initNum;
+    return layoutLocation;
   }
 
   /**
@@ -107,13 +117,13 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInitNum(Expression newInitNum, NotificationChain msgs)
+  public NotificationChain basicSetLayoutLocation(Expression newLayoutLocation, NotificationChain msgs)
   {
-    Expression oldInitNum = initNum;
-    initNum = newInitNum;
+    Expression oldLayoutLocation = layoutLocation;
+    layoutLocation = newLayoutLocation;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__INIT_NUM, oldInitNum, newInitNum);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION, oldLayoutLocation, newLayoutLocation);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -124,20 +134,20 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInitNum(Expression newInitNum)
+  public void setLayoutLocation(Expression newLayoutLocation)
   {
-    if (newInitNum != initNum)
+    if (newLayoutLocation != layoutLocation)
     {
       NotificationChain msgs = null;
-      if (initNum != null)
-        msgs = ((InternalEObject)initNum).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__INIT_NUM, null, msgs);
-      if (newInitNum != null)
-        msgs = ((InternalEObject)newInitNum).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__INIT_NUM, null, msgs);
-      msgs = basicSetInitNum(newInitNum, msgs);
+      if (layoutLocation != null)
+        msgs = ((InternalEObject)layoutLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION, null, msgs);
+      if (newLayoutLocation != null)
+        msgs = ((InternalEObject)newLayoutLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION, null, msgs);
+      msgs = basicSetLayoutLocation(newLayoutLocation, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__INIT_NUM, newInitNum, newInitNum));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION, newLayoutLocation, newLayoutLocation));
   }
 
   /**
@@ -145,19 +155,13 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity getEnt()
+  public EList<Expression> getLayoutInitParams()
   {
-    if (ent != null && ent.eIsProxy())
+    if (layoutInitParams == null)
     {
-      InternalEObject oldEnt = (InternalEObject)ent;
-      ent = (Entity)eResolveProxy(oldEnt);
-      if (ent != oldEnt)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.CASL_MACRO_POPULATE__ENT, oldEnt, ent));
-      }
+      layoutInitParams = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS);
     }
-    return ent;
+    return layoutInitParams;
   }
 
   /**
@@ -165,7 +169,7 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity basicGetEnt()
+  public Entity_Call getEnt()
   {
     return ent;
   }
@@ -175,12 +179,16 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEnt(Entity newEnt)
+  public NotificationChain basicSetEnt(Entity_Call newEnt, NotificationChain msgs)
   {
-    Entity oldEnt = ent;
+    Entity_Call oldEnt = ent;
     ent = newEnt;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__ENT, oldEnt, ent));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__ENT, oldEnt, newEnt);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -188,13 +196,34 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getBody()
+  public void setEnt(Entity_Call newEnt)
   {
-    if (body == null)
+    if (newEnt != ent)
     {
-      body = new EObjectContainmentEList<EObject>(EObject.class, this, CaslPackage.CASL_MACRO_POPULATE__BODY);
+      NotificationChain msgs = null;
+      if (ent != null)
+        msgs = ((InternalEObject)ent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__ENT, null, msgs);
+      if (newEnt != null)
+        msgs = ((InternalEObject)newEnt).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__ENT, null, msgs);
+      msgs = basicSetEnt(newEnt, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return body;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__ENT, newEnt, newEnt));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expression> getEntityInitParams()
+  {
+    if (entityInitParams == null)
+    {
+      entityInitParams = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS);
+    }
+    return entityInitParams;
   }
 
   /**
@@ -207,10 +236,14 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_POPULATE__INIT_NUM:
-        return basicSetInitNum(null, msgs);
-      case CaslPackage.CASL_MACRO_POPULATE__BODY:
-        return ((InternalEList<?>)getBody()).basicRemove(otherEnd, msgs);
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION:
+        return basicSetLayoutLocation(null, msgs);
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
+        return ((InternalEList<?>)getLayoutInitParams()).basicRemove(otherEnd, msgs);
+      case CaslPackage.CASL_MACRO_POPULATE__ENT:
+        return basicSetEnt(null, msgs);
+      case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
+        return ((InternalEList<?>)getEntityInitParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -225,13 +258,14 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_POPULATE__INIT_NUM:
-        return getInitNum();
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION:
+        return getLayoutLocation();
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
+        return getLayoutInitParams();
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
-        if (resolve) return getEnt();
-        return basicGetEnt();
-      case CaslPackage.CASL_MACRO_POPULATE__BODY:
-        return getBody();
+        return getEnt();
+      case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
+        return getEntityInitParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -247,15 +281,19 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_POPULATE__INIT_NUM:
-        setInitNum((Expression)newValue);
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION:
+        setLayoutLocation((Expression)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
+        getLayoutInitParams().clear();
+        getLayoutInitParams().addAll((Collection<? extends Expression>)newValue);
         return;
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
-        setEnt((Entity)newValue);
+        setEnt((Entity_Call)newValue);
         return;
-      case CaslPackage.CASL_MACRO_POPULATE__BODY:
-        getBody().clear();
-        getBody().addAll((Collection<? extends EObject>)newValue);
+      case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
+        getEntityInitParams().clear();
+        getEntityInitParams().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -271,14 +309,17 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_POPULATE__INIT_NUM:
-        setInitNum((Expression)null);
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION:
+        setLayoutLocation((Expression)null);
+        return;
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
+        getLayoutInitParams().clear();
         return;
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
-        setEnt((Entity)null);
+        setEnt((Entity_Call)null);
         return;
-      case CaslPackage.CASL_MACRO_POPULATE__BODY:
-        getBody().clear();
+      case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
+        getEntityInitParams().clear();
         return;
     }
     super.eUnset(featureID);
@@ -294,12 +335,14 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_POPULATE__INIT_NUM:
-        return initNum != null;
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_LOCATION:
+        return layoutLocation != null;
+      case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
+        return layoutInitParams != null && !layoutInitParams.isEmpty();
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         return ent != null;
-      case CaslPackage.CASL_MACRO_POPULATE__BODY:
-        return body != null && !body.isEmpty();
+      case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
+        return entityInitParams != null && !entityInitParams.isEmpty();
     }
     return super.eIsSet(featureID);
   }
