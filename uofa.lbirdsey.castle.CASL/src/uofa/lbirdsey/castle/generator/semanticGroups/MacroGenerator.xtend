@@ -116,7 +116,7 @@ class MacroGenerator {
 		//Something needs to happen here before initializing the entities
 		
 		
-		output += Printers.printExpression(layoutLocation)+".initializeEntities("+HelperFunctions.printFunctionArgs(entityInitParams)+");\n";
+		output += Printers.printExpression(layoutLocation)+".initializeEntities("+printInitializeParams(entityInitParams)+");\n";
 		
 		/*
 		 * 
@@ -131,9 +131,19 @@ class MacroGenerator {
 	}
 	
 	//This is for the populator
-	//TODO: Fill this in (and figure out how to do it)
+	//TODO: Figure out what the sticky parts are
 	static def String printInitializeParams(EList<Expression> params){
-		
+		val parameterSize = params.size
+		var strOut = "";
+		if (parameterSize == 0) {
+			return ""
+		} else {
+			for (i : 0 ..< parameterSize - 1) {
+				strOut += Printers.printExpression(params.get(i) as Expression) + ", "
+			}
+			strOut += Printers.printExpression(params.get(parameterSize - 1) as Expression)
+			return strOut
+		}	
 	}
 	
 	/**
