@@ -4,25 +4,20 @@
 package uofa.lbirdsey.castle.validation
 
 import java.util.List
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
 import org.eclipse.xtext.validation.ComposedChecks
 import uofa.lbirdsey.castle.casl.Agent
+import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
 import uofa.lbirdsey.castle.casl.CaslPackage
 import uofa.lbirdsey.castle.casl.Entity
 import uofa.lbirdsey.castle.casl.Environment
+import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.Function
 import uofa.lbirdsey.castle.casl.Group
-import uofa.lbirdsey.castle.casl.Behavior
-import uofa.lbirdsey.castle.casl.Interaction
-import uofa.lbirdsey.castle.casl.BehaviorType
-import uofa.lbirdsey.castle.casl.InteractionFeatureCall
-import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.System
-import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
-import uofa.lbirdsey.castle.casl.Field
-import org.eclipse.emf.ecore.EObject
-import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 
 /**
  * This class contains custom validation rules. 
@@ -30,7 +25,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
   
-@ComposedChecks( validators = #[AgentValidator, GroupValidator, EnvironmentValidator, SystemValidator] )
+@ComposedChecks( validators = #[AgentValidator, GroupValidator, EnvironmentValidator, SystemValidator, FeatureValidator] )
 public class CASLValidator extends AbstractCASLValidator {
 	/****Global Checks ****/
 	@Check
@@ -79,35 +74,7 @@ public class CASLValidator extends AbstractCASLValidator {
 		}
 	}
 	
-	@Check
-	def checkBehavior(Behavior behavior) {			
-		var fn = behavior
-		var behaviorBody = fn.body;
-		for (bb : behaviorBody){
-			//Do the infection type test
-			if (bb instanceof FeatureCall){
-				var beh = bb.fc;
-				if (beh instanceof InteractionFeatureCall && fn.behavior_type == BehaviorType.SELF){
-					//If contains an interaction trigger and is set to self, warn/error					
-					error(fn.name+" contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove Interaction", CaslPackage::eINSTANCE.behavior_Name)			
-				} else if (!(beh instanceof InteractionFeatureCall) && !(fn.behavior_type == BehaviorType.SELF)){
-					//If does not contains an interaction trigger and is set to self, warn/error
-					error(fn.name+" is set to AFFECT but has no Interaction.", CaslPackage::eINSTANCE.behavior_Name)			
-				}			
-			} 
-		}
-	}
-
-	//Interaction checks
-	@Check
-	def checkInteractions(Interaction inter){
-		//Check that the Interaction actually COMMUNICATEs or QUERYs		
-		
-		val interBody = inter.body;
-		for (ib : interBody){
-			
-		}
-	}
+	
 	
 	//Check that each group and environment has LayoutParameters defined
 	@Check

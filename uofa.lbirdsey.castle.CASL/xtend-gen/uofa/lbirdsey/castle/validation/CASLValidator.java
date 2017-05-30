@@ -5,28 +5,23 @@ package uofa.lbirdsey.castle.validation;
 
 import com.google.common.base.Objects;
 import java.util.List;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ComposedChecks;
 import uofa.lbirdsey.castle.casl.Agent;
-import uofa.lbirdsey.castle.casl.Behavior;
-import uofa.lbirdsey.castle.casl.BehaviorType;
 import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Entity;
 import uofa.lbirdsey.castle.casl.Environment;
-import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Function;
 import uofa.lbirdsey.castle.casl.Group;
-import uofa.lbirdsey.castle.casl.Interaction;
-import uofa.lbirdsey.castle.casl.InteractionFeatureCall;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions;
 import uofa.lbirdsey.castle.validation.AbstractCASLValidator;
 import uofa.lbirdsey.castle.validation.AgentValidator;
 import uofa.lbirdsey.castle.validation.EnvironmentValidator;
+import uofa.lbirdsey.castle.validation.FeatureValidator;
 import uofa.lbirdsey.castle.validation.GroupValidator;
 import uofa.lbirdsey.castle.validation.SystemValidator;
 
@@ -35,7 +30,7 @@ import uofa.lbirdsey.castle.validation.SystemValidator;
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
-@ComposedChecks(validators = { AgentValidator.class, GroupValidator.class, EnvironmentValidator.class, SystemValidator.class })
+@ComposedChecks(validators = { AgentValidator.class, GroupValidator.class, EnvironmentValidator.class, SystemValidator.class, FeatureValidator.class })
 @SuppressWarnings("all")
 public class CASLValidator extends AbstractCASLValidator {
   /**
@@ -103,35 +98,6 @@ public class CASLValidator extends AbstractCASLValidator {
     }
     if ((!exists)) {
       this.error((entClass + " does not contain an initialize function"), CaslPackage.eINSTANCE.getEntity_Name());
-    }
-  }
-  
-  @Check
-  public void checkBehavior(final Behavior behavior) {
-    Behavior fn = behavior;
-    EList<EObject> behaviorBody = fn.getBody();
-    for (final EObject bb : behaviorBody) {
-      if ((bb instanceof FeatureCall)) {
-        EObject beh = ((FeatureCall)bb).getFc();
-        if (((beh instanceof InteractionFeatureCall) && Objects.equal(fn.getBehavior_type(), BehaviorType.SELF))) {
-          String _name = fn.getName();
-          String _plus = (_name + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove Interaction");
-          this.error(_plus, CaslPackage.eINSTANCE.getBehavior_Name());
-        } else {
-          if (((!(beh instanceof InteractionFeatureCall)) && (!Objects.equal(fn.getBehavior_type(), BehaviorType.SELF)))) {
-            String _name_1 = fn.getName();
-            String _plus_1 = (_name_1 + " is set to AFFECT but has no Interaction.");
-            this.error(_plus_1, CaslPackage.eINSTANCE.getBehavior_Name());
-          }
-        }
-      }
-    }
-  }
-  
-  @Check
-  public void checkInteractions(final Interaction inter) {
-    final EList<EObject> interBody = inter.getBody();
-    for (final EObject ib : interBody) {
     }
   }
   
