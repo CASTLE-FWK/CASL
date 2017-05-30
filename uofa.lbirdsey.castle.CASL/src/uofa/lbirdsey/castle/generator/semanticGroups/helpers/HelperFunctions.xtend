@@ -288,8 +288,11 @@ class HelperFunctions {
 			}
 		} else if (statement instanceof MacroCall) {
 			val mc = (statement as MacroCall).macroCall.macro;
-			if (mc instanceof CASL_Macro_MetricSwitch)
+			if (mc instanceof CASL_Macro_MetricSwitch){
 				strOut += metric_ToOutput(caller);
+			} else{ 
+				strOut += MacroGenerator.parseMacro((statement as MacroCall), null);				
+			}
 		} else if (statement instanceof Expression) {
 			strOut += Printers.printExpression(statement as Expression)
 		} else if (statement instanceof Formula) {
@@ -481,10 +484,6 @@ class HelperFunctions {
 			output = "groups." + gfr.grp.name.toFirstUpper
 		}
 		return output;
-	}
-
-	static def String newLine() {
-		return "\n";
 	}
 
 	// TODO: Ahh crap

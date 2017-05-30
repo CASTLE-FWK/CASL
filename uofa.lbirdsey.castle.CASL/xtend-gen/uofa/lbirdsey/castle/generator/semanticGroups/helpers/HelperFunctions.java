@@ -539,41 +539,45 @@ public class HelperFunctions {
             String _strOut_2 = strOut;
             String _metric_ToOutput = HelperFunctions.metric_ToOutput(caller);
             strOut = (_strOut_2 + _metric_ToOutput);
+          } else {
+            String _strOut_3 = strOut;
+            Object _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
+            strOut = (_strOut_3 + _parseMacro);
           }
         } else {
           if ((statement instanceof Expression)) {
-            String _strOut_3 = strOut;
+            String _strOut_4 = strOut;
             Object _printExpression = Printers.printExpression(((Expression) statement));
-            strOut = (_strOut_3 + _printExpression);
+            strOut = (_strOut_4 + _printExpression);
           } else {
             if ((statement instanceof Formula)) {
-              String _strOut_4 = strOut;
+              String _strOut_5 = strOut;
               String _printFormula = HelperFunctions.printFormula(((Formula) statement));
-              strOut = (_strOut_4 + _printFormula);
+              strOut = (_strOut_5 + _printFormula);
             } else {
               if ((statement instanceof SelfAssignedFormula)) {
-                String _strOut_5 = strOut;
+                String _strOut_6 = strOut;
                 String _printSelfAssignedFormula = HelperFunctions.printSelfAssignedFormula(((SelfAssignedFormula) statement));
-                strOut = (_strOut_5 + _printSelfAssignedFormula);
+                strOut = (_strOut_6 + _printSelfAssignedFormula);
               } else {
                 if ((statement instanceof Raw_Java_Block)) {
-                  String _strOut_6 = strOut;
+                  String _strOut_7 = strOut;
                   String _name_1 = ((Raw_Java_Block) statement).getName();
                   String _plus_2 = ("//Raw Java Block: " + _name_1);
                   String _plus_3 = (_plus_2 + " {\n");
-                  strOut = (_strOut_6 + _plus_3);
+                  strOut = (_strOut_7 + _plus_3);
                   EList<String> _rawStatements = ((Raw_Java_Block) statement).getRawStatements();
                   for (final String rawJava : _rawStatements) {
-                    String _strOut_7 = strOut;
+                    String _strOut_8 = strOut;
                     String _string = rawJava.toString();
                     String _plus_4 = (_string + "\n");
-                    strOut = (_strOut_7 + _plus_4);
+                    strOut = (_strOut_8 + _plus_4);
                   }
-                  String _strOut_8 = strOut;
-                  strOut = (_strOut_8 + "}");
-                } else {
                   String _strOut_9 = strOut;
-                  strOut = (_strOut_9 + "ERROR WITH BODY ELEMENT");
+                  strOut = (_strOut_9 + "}");
+                } else {
+                  String _strOut_10 = strOut;
+                  strOut = (_strOut_10 + "ERROR WITH BODY ELEMENT");
                 }
               }
             }
@@ -949,10 +953,6 @@ public class HelperFunctions {
       }
     }
     return output;
-  }
-  
-  public static String newLine() {
-    return "\n";
   }
   
   public static String getSymbolType(final Symbol t) {

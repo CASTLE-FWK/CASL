@@ -10802,14 +10802,6 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_TODO_8.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VisualizeParserRuleCall_9());
-		}
-		ruleCASL_Macro_Visualize
-		{
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -11502,28 +11494,6 @@ ruleCASL_Macro_Populate returns [EObject current=null]
 			newLeafNode(otherlv_13, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_11());
 		}
 	)
-;
-
-// Entry rule entryRuleCASL_Macro_Visualize
-entryRuleCASL_Macro_Visualize returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCASL_Macro_VisualizeRule()); }
-	iv_ruleCASL_Macro_Visualize=ruleCASL_Macro_Visualize
-	{ $current=$iv_ruleCASL_Macro_Visualize.current.getText(); }
-	EOF;
-
-// Rule CASL_Macro_Visualize
-ruleCASL_Macro_Visualize returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='VISUALIZE'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCASL_Macro_VisualizeAccess().getVISUALIZEKeyword());
-	}
 ;
 
 // Entry rule entryRuleRaw_Java_Block

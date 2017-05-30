@@ -191,6 +191,8 @@ class EnvironmentGeneration {
 				output += "\t"+HelperFunctions.inferFunctionParameterType(function.returnType as FunctionParameter)+" "
 				output += function.returnType.name+" = "+HelperFunctions.initialiseFunctionParameterReturn(function.returnType as FunctionParameter) +";\n";
 			}
+			
+			//This needs to go
 			if (function.name.compareTo("initialise") == 0){
 				for (sb : env.env_parameters.fields){
 					if (sb instanceof Concern){
@@ -200,15 +202,19 @@ class EnvironmentGeneration {
 					}
 				}
 			}
-			for (statement : function.body){
-				if (statement instanceof Field){
-					libImports.add(HelperFunctions.getFieldType(statement as Field))
-				}
-				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-			}
-			if (function.returnType !== null){
-				output += "\treturn "+function.returnType.name+";\n"
-			}
+			
+			
+			output += HelperFunctions.printMethodBody(function.body, function);
+			libImports.addAll(HelperFunctions.populateImports(function.body))
+//			for (statement : function.body){
+//				if (statement instanceof Field){
+//					libImports.add(HelperFunctions.getFieldType(statement as Field))
+//				}
+//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
+//			}
+//			if (function.returnType !== null){
+//				output += "\treturn "+function.returnType.name+";\n"
+//			}
 			output += "\n}\n"
 		}
 		return output;

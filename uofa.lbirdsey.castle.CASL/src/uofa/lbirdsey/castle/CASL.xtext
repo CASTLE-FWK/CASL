@@ -766,7 +766,7 @@ CASL_Macro_Call:
 
 //CASL_MACRO should become it's own DSL (or own library function)
 //Because it will probably be massive (and it also has to line up with stdlib)
-CASL_Macro:
+CASL_Macro:	
 	CASL_Macro_Neighbours 			| 
 	CASL_Macro_FilterAndFunction 	|
 	CASL_Macro_CountConditions		| 
@@ -775,8 +775,8 @@ CASL_Macro:
 	CASL_Macro_Print				|
 	CASL_Macro_MetricSwitch			|
 	CASL_Macro_Populate				|
-	CASL_Macro_TODO					|
-	CASL_Macro_Visualize
+	CASL_Macro_TODO					
+//	CASL_Macro_Visualize
 ;
 
 CASL_Macro_Neighbours:

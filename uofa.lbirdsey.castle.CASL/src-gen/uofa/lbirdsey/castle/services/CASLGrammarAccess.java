@@ -6903,19 +6903,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_MetricSwitchParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cCASL_Macro_PopulateParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cCASL_Macro_TODOParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cCASL_Macro_VisualizeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
 		//CASL_Macro:
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-		//	CASL_Macro_Visualize;
+		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
+		//	//	CASL_Macro_Visualize
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-		//CASL_Macro_Visualize
+		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -6944,9 +6943,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_TODO
 		public RuleCall getCASL_Macro_TODOParserRuleCall_8() { return cCASL_Macro_TODOParserRuleCall_8; }
-		
-		//CASL_Macro_Visualize
-		public RuleCall getCASL_Macro_VisualizeParserRuleCall_9() { return cCASL_Macro_VisualizeParserRuleCall_9; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -10182,8 +10178,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////Because it will probably be massive (and it also has to line up with stdlib)
 	//CASL_Macro:
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-	//	CASL_Macro_Visualize;
+	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
+	//	//	CASL_Macro_Visualize
+	//;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}

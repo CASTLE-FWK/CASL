@@ -198,10 +198,7 @@ class AgentGeneration {
 			output += HelperFunctions.printMethodBody(behavior.body, behavior)
 			libImports.addAll(HelperFunctions.populateImports(behavior.body))
 			output += "\n}\n"
-			
-			
-			
-			
+
 			//Create the trigger object here
 			var triggerString = "";
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){

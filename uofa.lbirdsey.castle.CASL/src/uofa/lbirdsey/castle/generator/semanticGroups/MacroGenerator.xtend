@@ -11,21 +11,17 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate
 import uofa.lbirdsey.castle.casl.Expression
-import uofa.lbirdsey.castle.casl.Entity
-import java.util.List
-import uofa.lbirdsey.castle.casl.CASL_Macro
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
-import org.eclipse.emf.ecore.EObject
 import uofa.lbirdsey.castle.casl.RandomType
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
 
 class MacroGenerator {
-//Highly Repast Specific
-	static def parseMacro(MacroCall mc, String name) {
+	static def parseMacro(MacroCall mc, String name) {		
 		var output = "";		
-		var macro = mc.macroCall.macro
+		val macro = mc.macroCall.macro 
+		println(macro.class)
 		if (macro instanceof CASL_Macro_Neighbours) {
 			output += "null;\n"
 			var ngh = (macro as CASL_Macro_Neighbours)
@@ -84,17 +80,13 @@ class MacroGenerator {
 				+"\n}"+")"
 			}
 		} else if (macro instanceof CASL_Macro_Print) {
-			var mac = (macro as CASL_Macro_Print)
-			output += "System.out.println(\""+mac.str+"\");\n"
-			
+			output += "System.out.println(\""+(macro as CASL_Macro_Print).str+"\");\n"			
 		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)
 			if (isEnabled){
 				return generateMetricSender(name);
-//				return "laslsl"
-			}
-			
+			}			
 		} else if (macro instanceof CASL_Macro_Populate){
 			return entitySetup(macro as CASL_Macro_Populate);
 		} else if (macro instanceof CASL_Macro_TODO){
@@ -111,16 +103,28 @@ class MacroGenerator {
 	 * This is so not a hard thing to write...
 	 */
 	static def String entitySetup(CASL_Macro_Populate pop){
-		var output = "//Generated Entity Populator\n//This is unfortunately prone to error for the moment";
-		output += ""
+		var output = "//Generated Entity Populator\n//This is unfortunately prone to error for the moment\n";
+//		output += ""
 		val layoutLocation = pop.layoutLocation;
 		val EList<Expression> layoutInitParams = pop.layoutInitParams;
 		val entityCall = pop.ent;
 		val EList<Expression> entityInitParams = pop.entityInitParams;
 		
 		//Initialize the layout type
-		output += layoutLocation+".initialize("+HelperFunctions.printFunctionArgs(layoutInitParams)+");\n";
+		output += Printers.printExpression(layoutLocation)+".initialize("+HelperFunctions.printFunctionArgs(layoutInitParams)+");\n";
 		//Now create the entities...
+		
+		//Something needs to happen here
+		
+		
+		output += Printers.printExpression(layoutLocation)+".initializeEntities("+HelperFunctions.printFunctionArgs(entityInitParams)+");\n";
+		
+		/*
+		 * 
+		 * layoutLocation.initializeEntities(
+		 * 
+		 * 
+		 */
 		
 		
 

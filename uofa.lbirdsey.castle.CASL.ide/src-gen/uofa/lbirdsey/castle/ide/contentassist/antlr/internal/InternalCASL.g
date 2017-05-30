@@ -2600,31 +2600,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleCASL_Macro_Visualize
-entryRuleCASL_Macro_Visualize
-:
-{ before(grammarAccess.getCASL_Macro_VisualizeRule()); }
-	 ruleCASL_Macro_Visualize
-{ after(grammarAccess.getCASL_Macro_VisualizeRule()); } 
-	 EOF 
-;
-
-// Rule CASL_Macro_Visualize
-ruleCASL_Macro_Visualize 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getCASL_Macro_VisualizeAccess().getVISUALIZEKeyword()); }
-		'VISUALIZE'
-		{ after(grammarAccess.getCASL_Macro_VisualizeAccess().getVISUALIZEKeyword()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleRaw_Java_Block
 entryRuleRaw_Java_Block
 :
@@ -4546,12 +4521,6 @@ rule__CASL_Macro__Alternatives
 		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_TODOParserRuleCall_8()); }
 		ruleCASL_Macro_TODO
 		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_TODOParserRuleCall_8()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VisualizeParserRuleCall_9()); }
-		ruleCASL_Macro_Visualize
-		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VisualizeParserRuleCall_9()); }
 	)
 ;
 finally {
