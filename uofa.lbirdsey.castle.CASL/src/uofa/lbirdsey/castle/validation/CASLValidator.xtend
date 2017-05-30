@@ -19,6 +19,10 @@ import uofa.lbirdsey.castle.casl.InteractionFeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.System
 import uofa.lbirdsey.castle.casl.CAS_Semantic_Group_Switch
+import uofa.lbirdsey.castle.casl.Field
+import org.eclipse.emf.ecore.EObject
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants
 
 /**
  * This class contains custom validation rules. 
@@ -102,6 +106,31 @@ public class CASLValidator extends AbstractCASLValidator {
 		val interBody = inter.body;
 		for (ib : interBody){
 			
+		}
+	}
+	
+	//Check that each group and environment has LayoutParameters defined
+	@Check
+	def checkForLayoutParameterVariable(Entity ent){
+		var List<EObject> fields; 
+		 if (ent instanceof Environment){
+			var env = ent as Environment;
+			fields = env.env_parameters.fields;
+		} else if (ent instanceof Group){
+			var grp = ent as Group;
+			fields = grp.group_parameters.fields;
+		}
+		var lpPresent = false;
+		for (EObject f : fields){
+			if (f instanceof Field){
+				var fi = f as Field;
+				if (HelperFunctions.getFieldName(fi as Field).equalsIgnoreCase(Constants.LAYOUT_PARAMETERS_NAME)){
+					lpPresent = true;
+				}
+			}
+		}
+		if (!lpPresent){
+			error(ent.name+" does not have "+Constants.LAYOUT_PARAMETERS_NAME+" defined in its parameters. ", CaslPackage::eINSTANCE.entity_Name);
 		}
 	}
 	

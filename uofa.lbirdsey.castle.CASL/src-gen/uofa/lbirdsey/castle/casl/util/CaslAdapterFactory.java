@@ -617,14 +617,14 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createCASL_Macro_MetricSwitchAdapter();
       }
       @Override
-      public Adapter caseCASL_Macro_Populate(CASL_Macro_Populate object)
-      {
-        return createCASL_Macro_PopulateAdapter();
-      }
-      @Override
       public Adapter caseCASL_Macro_TODO(CASL_Macro_TODO object)
       {
         return createCASL_Macro_TODOAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_Populate(CASL_Macro_Populate object)
+      {
+        return createCASL_Macro_PopulateAdapter();
       }
       @Override
       public Adapter caseRaw_Java_Block(Raw_Java_Block object)
@@ -2084,21 +2084,6 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate <em>CASL Macro Populate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate
-   * @generated
-   */
-  public Adapter createCASL_Macro_PopulateAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO <em>CASL Macro TODO</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2109,6 +2094,21 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCASL_Macro_TODOAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate <em>CASL Macro Populate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate
+   * @generated
+   */
+  public Adapter createCASL_Macro_PopulateAdapter()
   {
     return null;
   }

@@ -65,8 +65,7 @@ class GroupGeneration {
 					}	
 				}				
 			}
-		}
-		
+		}		
 		
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
@@ -147,9 +146,13 @@ class GroupGeneration {
 		var output = "//Fields\n"
 		for (field : grp.group_parameters.fields){
 			if (field instanceof Field){
-				output += "private "+Printers.printFieldDeclarations(field as Field)+";\n";
-				libImports.add(HelperFunctions.getFieldType(field as Field));
-			} else if (field instanceof Concern){}			
+				if (!HelperFunctions.getFieldName(field as Field).equalsIgnoreCase("LayoutParameters")){ //Note: This could be expanded to handle a lot of special cases				
+					output += "private "+Printers.printFieldDeclarations(field as Field)+";\n";
+					libImports.add(HelperFunctions.getFieldType(field as Field));
+				}
+			} else if (field instanceof Concern){
+				
+			}			
 		}
 		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes."+grp.layoutType+");\n"
 		

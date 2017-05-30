@@ -1296,10 +1296,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//GroupExternalInteraction:
 		//	{GroupExternalInteraction} name=ID '[' transmissionPhase=Transmission_Phase ']['
-		//	transmissionContents=Transmission_Contents '][' transmissionRepeat=Transmission_Repeat ('('
-		//	reaction_time_parm=Expression ')')? '](' (functionParameters+=FunctionParameter (','
-		//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
-		//	body+=SelfAssignedFormula) ';')*
+		//	transmissionContents=Transmission_Contents ']['
+		//	transmissionRepeat=Transmission_Repeat ('(' reaction_time_parm=Expression ')')? ']('
+		//	(functionParameters+=FunctionParameter (',' functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field |
+		//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -2166,8 +2166,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//FunctionParameter Symbol:
 		//	{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
-		//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] |
-		//	'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')? | 'grp' grp=[Group]) ':' name=ID;
+		//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] |
+		//	':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment])
+		//	'>')? | 'grp' grp=[Group])
+		//	':' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
@@ -2500,9 +2502,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		// * name:[BehaviorType](Inputs){};
 		// */ Behavior:
 		//	name=ID '[' behavior_type=BehaviorType '][' behavior_reaction_time=BehaviorReactionTime ('('
-		//	reaction_time_parm=Expression ')')? '](' functionParameters+=FunctionParameter? (','
-		//	functionParameters+=FunctionParameter)* '):' '{' ((body+=Field | body+=Expression | body+=Formula |
-		//	body+=SelfAssignedFormula) ';')*
+		//	reaction_time_parm=Expression ')')? ']('
+		//	functionParameters+=FunctionParameter? (',' functionParameters+=FunctionParameter)* '):' '{' ((body+=Field |
+		//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
 		//	'};';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4803,7 +4805,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//DataTypeDeclaration Symbol:
 		//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (':'
-		//	useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] |
+		//	useObj=[NonPrimitiveType] |
+		//	':' useType=PrimitiveType |
+		//	'<' ('grp.' useGroup=[Group] |
+		//	'agt.' useAgent=[Agent] |
 		//	'env.' useEnv=[Environment]) '>')?) ':' name=ID ('=' expr=Expression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -7215,6 +7220,33 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
 	}
+	public class CASL_Macro_TODOElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_TODO");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTODOKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cStrAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStrSTRINGTerminalRuleCall_1_0 = (RuleCall)cStrAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//CASL_Macro_TODO:
+		//	"TODO:" str=STRING ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"TODO:" str=STRING ';'
+		public Group getGroup() { return cGroup; }
+		
+		//"TODO:"
+		public Keyword getTODOKeyword_0() { return cTODOKeyword_0; }
+		
+		//str=STRING
+		public Assignment getStrAssignment_1() { return cStrAssignment_1; }
+		
+		//STRING
+		public RuleCall getStrSTRINGTerminalRuleCall_1_0() { return cStrSTRINGTerminalRuleCall_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
 	public class CASL_Macro_PopulateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Populate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -7245,6 +7277,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
+		////First 2 terms should be the other way around
 		//CASL_Macro_Populate:
 		//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
 		//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
@@ -7329,29 +7362,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
-	}
-	public class CASL_Macro_TODOElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_TODO");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTODOKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStrAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStrSTRINGTerminalRuleCall_1_0 = (RuleCall)cStrAssignment_1.eContents().get(0);
-		
-		//CASL_Macro_TODO:
-		//	"TODO:" str=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"TODO:" str=STRING
-		public Group getGroup() { return cGroup; }
-		
-		//"TODO:"
-		public Keyword getTODOKeyword_0() { return cTODOKeyword_0; }
-		
-		//str=STRING
-		public Assignment getStrAssignment_1() { return cStrAssignment_1; }
-		
-		//STRING
-		public RuleCall getStrSTRINGTerminalRuleCall_1_0() { return cStrSTRINGTerminalRuleCall_1_0; }
 	}
 	public class Raw_Java_BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Raw_Java_Block");
@@ -8520,8 +8530,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_ForEachElements pCASL_Macro_ForEach;
 	private final CASL_Macro_PrintElements pCASL_Macro_Print;
 	private final CASL_Macro_MetricSwitchElements pCASL_Macro_MetricSwitch;
-	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
+	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final WorldTypeElements eWorldType;
 	private final NumTypeElements eNumType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
@@ -8667,8 +8677,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_ForEach = new CASL_Macro_ForEachElements();
 		this.pCASL_Macro_Print = new CASL_Macro_PrintElements();
 		this.pCASL_Macro_MetricSwitch = new CASL_Macro_MetricSwitchElements();
-		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
+		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.eWorldType = new WorldTypeElements();
 		this.eNumType = new NumTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
@@ -9080,10 +9090,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//GroupExternalInteraction:
 	//	{GroupExternalInteraction} name=ID '[' transmissionPhase=Transmission_Phase ']['
-	//	transmissionContents=Transmission_Contents '][' transmissionRepeat=Transmission_Repeat ('('
-	//	reaction_time_parm=Expression ')')? '](' (functionParameters+=FunctionParameter (','
-	//	functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field | body+=Expression | body+=Formula |
-	//	body+=SelfAssignedFormula) ';')*
+	//	transmissionContents=Transmission_Contents ']['
+	//	transmissionRepeat=Transmission_Repeat ('(' reaction_time_parm=Expression ')')? ']('
+	//	(functionParameters+=FunctionParameter (',' functionParameters+=FunctionParameter)*)? '):' '{' ((body+=Field |
+	//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
 	//	'};';
 	public GroupExternalInteractionElements getGroupExternalInteractionAccess() {
 		return pGroupExternalInteraction;
@@ -9246,8 +9256,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//FunctionParameter Symbol:
 	//	{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
-	//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] |
-	//	'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')? | 'grp' grp=[Group]) ':' name=ID;
+	//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] |
+	//	':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment])
+	//	'>')? | 'grp' grp=[Group])
+	//	':' name=ID;
 	public FunctionParameterElements getFunctionParameterAccess() {
 		return pFunctionParameter;
 	}
@@ -9286,9 +9298,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	// * name:[BehaviorType](Inputs){};
 	// */ Behavior:
 	//	name=ID '[' behavior_type=BehaviorType '][' behavior_reaction_time=BehaviorReactionTime ('('
-	//	reaction_time_parm=Expression ')')? '](' functionParameters+=FunctionParameter? (','
-	//	functionParameters+=FunctionParameter)* '):' '{' ((body+=Field | body+=Expression | body+=Formula |
-	//	body+=SelfAssignedFormula) ';')*
+	//	reaction_time_parm=Expression ')')? ']('
+	//	functionParameters+=FunctionParameter? (',' functionParameters+=FunctionParameter)* '):' '{' ((body+=Field |
+	//	body+=Expression | body+=Formula | body+=SelfAssignedFormula) ';')*
 	//	'};';
 	public BehaviorElements getBehaviorAccess() {
 		return pBehavior;
@@ -9782,7 +9794,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//DataTypeDeclaration Symbol:
 	//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (':'
-	//	useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] |
+	//	useObj=[NonPrimitiveType] |
+	//	':' useType=PrimitiveType |
+	//	'<' ('grp.' useGroup=[Group] |
+	//	'agt.' useAgent=[Agent] |
 	//	'env.' useEnv=[Environment]) '>')?) ':' name=ID ('=' expr=Expression)?;
 	public DataTypeDeclarationElements getDataTypeDeclarationAccess() {
 		return pDataTypeDeclaration;
@@ -10179,7 +10194,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getCASL_Macro_MetricSwitchAccess().getRule();
 	}
 	
+	//CASL_Macro_TODO:
+	//	"TODO:" str=STRING ';';
+	public CASL_Macro_TODOElements getCASL_Macro_TODOAccess() {
+		return pCASL_Macro_TODO;
+	}
+	
+	public ParserRule getCASL_Macro_TODORule() {
+		return getCASL_Macro_TODOAccess().getRule();
+	}
+	
 	////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
+	////First 2 terms should be the other way around
 	//CASL_Macro_Populate:
 	//	"POPULATE" '(' initNum=Expression ')' '[' ent=[Entity] ']' '(' ((body+=Field | body+=Expression | body+=Formula |
 	//	body+=SelfAssignedFormula | body+=Raw_Java_Block) ';')*
@@ -10190,16 +10216,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCASL_Macro_PopulateRule() {
 		return getCASL_Macro_PopulateAccess().getRule();
-	}
-	
-	//CASL_Macro_TODO:
-	//	"TODO:" str=STRING;
-	public CASL_Macro_TODOElements getCASL_Macro_TODOAccess() {
-		return pCASL_Macro_TODO;
-	}
-	
-	public ParserRule getCASL_Macro_TODORule() {
-		return getCASL_Macro_TODOAccess().getRule();
 	}
 	
 	//enum WorldType:

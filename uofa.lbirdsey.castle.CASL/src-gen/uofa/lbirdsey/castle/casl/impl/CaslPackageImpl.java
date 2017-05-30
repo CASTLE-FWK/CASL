@@ -641,14 +641,14 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass casL_Macro_PopulateEClass = null;
+  private EClass casL_Macro_TODOEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass casL_Macro_TODOEClass = null;
+  private EClass casL_Macro_PopulateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -4270,11 +4270,35 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCASL_Macro_TODO()
+  {
+    if (casL_Macro_TODOEClass == null)
+    {
+      casL_Macro_TODOEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
+    }
+    return casL_Macro_TODOEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCASL_Macro_TODO_Str()
+  {
+        return (EAttribute)getCASL_Macro_TODO().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCASL_Macro_Populate()
   {
     if (casL_Macro_PopulateEClass == null)
     {
-      casL_Macro_PopulateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
+      casL_Macro_PopulateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(104);
     }
     return casL_Macro_PopulateEClass;
   }
@@ -4307,30 +4331,6 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   public EReference getCASL_Macro_Populate_Body()
   {
         return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCASL_Macro_TODO()
-  {
-    if (casL_Macro_TODOEClass == null)
-    {
-      casL_Macro_TODOEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(104);
-    }
-    return casL_Macro_TODOEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCASL_Macro_TODO_Str()
-  {
-        return (EAttribute)getCASL_Macro_TODO().getEStructuralFeatures().get(0);
   }
 
   /**

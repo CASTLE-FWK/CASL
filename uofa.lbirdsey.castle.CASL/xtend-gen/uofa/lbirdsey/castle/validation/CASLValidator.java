@@ -17,10 +17,13 @@ import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Entity;
 import uofa.lbirdsey.castle.casl.Environment;
 import uofa.lbirdsey.castle.casl.FeatureCall;
+import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Function;
 import uofa.lbirdsey.castle.casl.Group;
 import uofa.lbirdsey.castle.casl.Interaction;
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions;
 import uofa.lbirdsey.castle.validation.AbstractCASLValidator;
 import uofa.lbirdsey.castle.validation.AgentValidator;
 import uofa.lbirdsey.castle.validation.EnvironmentValidator;
@@ -129,6 +132,37 @@ public class CASLValidator extends AbstractCASLValidator {
   public void checkInteractions(final Interaction inter) {
     final EList<EObject> interBody = inter.getBody();
     for (final EObject ib : interBody) {
+    }
+  }
+  
+  @Check
+  public void checkForLayoutParameterVariable(final Entity ent) {
+    List<EObject> fields = null;
+    if ((ent instanceof Environment)) {
+      Environment env = ((Environment) ent);
+      fields = env.getEnv_parameters().getFields();
+    } else {
+      if ((ent instanceof Group)) {
+        Group grp = ((Group) ent);
+        fields = grp.getGroup_parameters().getFields();
+      }
+    }
+    boolean lpPresent = false;
+    for (final EObject f : fields) {
+      if ((f instanceof Field)) {
+        Field fi = ((Field) f);
+        boolean _equalsIgnoreCase = HelperFunctions.getFieldName(((Field) fi)).equalsIgnoreCase(Constants.LAYOUT_PARAMETERS_NAME);
+        if (_equalsIgnoreCase) {
+          lpPresent = true;
+        }
+      }
+    }
+    if ((!lpPresent)) {
+      String _name = ent.getName();
+      String _plus = (_name + " does not have ");
+      String _plus_1 = (_plus + Constants.LAYOUT_PARAMETERS_NAME);
+      String _plus_2 = (_plus_1 + " defined in its parameters. ");
+      this.error(_plus_2, CaslPackage.eINSTANCE.getEntity_Name());
     }
   }
 }

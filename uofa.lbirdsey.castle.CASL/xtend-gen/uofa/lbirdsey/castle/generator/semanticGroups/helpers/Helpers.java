@@ -2,11 +2,13 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
+import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.impl.AgentImpl;
 import uofa.lbirdsey.castle.casl.impl.EnvironmentImpl;
 import uofa.lbirdsey.castle.casl.impl.GroupImpl;
 import uofa.lbirdsey.castle.casl.impl.ObjectImpl;
 import uofa.lbirdsey.castle.casl.impl.SystemImpl;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions;
 
 @SuppressWarnings("all")
 public class Helpers {
@@ -77,5 +79,10 @@ public class Helpers {
         }
       }
     }
+  }
+  
+  public static boolean checkForSpecialCase(final Field f) {
+    String fieldName = HelperFunctions.getFieldName(f);
+    return false;
   }
 }

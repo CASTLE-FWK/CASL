@@ -789,15 +789,6 @@ public interface CaslFactory extends EFactory
   CASL_Macro_MetricSwitch createCASL_Macro_MetricSwitch();
 
   /**
-   * Returns a new object of class '<em>CASL Macro Populate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>CASL Macro Populate</em>'.
-   * @generated
-   */
-  CASL_Macro_Populate createCASL_Macro_Populate();
-
-  /**
    * Returns a new object of class '<em>CASL Macro TODO</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -805,6 +796,15 @@ public interface CaslFactory extends EFactory
    * @generated
    */
   CASL_Macro_TODO createCASL_Macro_TODO();
+
+  /**
+   * Returns a new object of class '<em>CASL Macro Populate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro Populate</em>'.
+   * @generated
+   */
+  CASL_Macro_Populate createCASL_Macro_Populate();
 
   /**
    * Returns a new object of class '<em>Raw Java Block</em>'.

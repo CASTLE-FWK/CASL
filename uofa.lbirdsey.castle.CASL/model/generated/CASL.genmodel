@@ -467,13 +467,13 @@
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_MetricSwitch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_MetricSwitch/sw"/>
     </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_TODO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_TODO/str"/>
+    </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Populate">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/initNum"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/ent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/body"/>
-    </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_TODO">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_TODO/str"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Raw_Java_Block">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Raw_Java_Block/name"/>

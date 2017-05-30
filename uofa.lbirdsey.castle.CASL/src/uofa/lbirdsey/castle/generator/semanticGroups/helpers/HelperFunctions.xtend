@@ -454,12 +454,7 @@ class HelperFunctions {
 					if ((fdt.obj as Object).custom !== null) {
 						output = "CUSTOM:";
 					}
-					
-					//Skip certain things like Layouts, LayoutParameters
-					if ((fdt.obj as Object).name.equalsIgnoreCase("LayoutParameters")){
-						return output;
-					} 
-					
+										
 					if (fdt.useObj !== null) {
 						output += fdt.obj.name + "<" + fdt.useObj.name + ">"
 					} else if (fdt.useGroup !== null) {

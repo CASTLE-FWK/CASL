@@ -3627,6 +3627,34 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_METRIC_SWITCH_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl <em>CASL Macro TODO</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_TODO()
+   * @generated
+   */
+  int CASL_MACRO_TODO = 85;
+
+  /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_TODO__STR = CASL_MACRO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>CASL Macro TODO</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_TODO_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl <em>CASL Macro Populate</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3634,7 +3662,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_Populate()
    * @generated
    */
-  int CASL_MACRO_POPULATE = 85;
+  int CASL_MACRO_POPULATE = 86;
 
   /**
    * The feature id for the '<em><b>Init Num</b></em>' containment reference.
@@ -3671,34 +3699,6 @@ public interface CaslPackage extends EPackage
    * @ordered
    */
   int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl <em>CASL Macro TODO</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getCASL_Macro_TODO()
-   * @generated
-   */
-  int CASL_MACRO_TODO = 86;
-
-  /**
-   * The feature id for the '<em><b>Str</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASL_MACRO_TODO__STR = CASL_MACRO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>CASL Macro TODO</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASL_MACRO_TODO_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Raw_Java_BlockImpl <em>Raw Java Block</em>}' class.
@@ -8370,6 +8370,27 @@ public interface CaslPackage extends EPackage
   EAttribute getCASL_Macro_MetricSwitch_Sw();
 
   /**
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO <em>CASL Macro TODO</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>CASL Macro TODO</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_TODO
+   * @generated
+   */
+  EClass getCASL_Macro_TODO();
+
+  /**
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO#getStr <em>Str</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_TODO#getStr()
+   * @see #getCASL_Macro_TODO()
+   * @generated
+   */
+  EAttribute getCASL_Macro_TODO_Str();
+
+  /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate <em>CASL Macro Populate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8411,27 +8432,6 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EReference getCASL_Macro_Populate_Body();
-
-  /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO <em>CASL Macro TODO</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>CASL Macro TODO</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_TODO
-   * @generated
-   */
-  EClass getCASL_Macro_TODO();
-
-  /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO#getStr <em>Str</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Str</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_TODO#getStr()
-   * @see #getCASL_Macro_TODO()
-   * @generated
-   */
-  EAttribute getCASL_Macro_TODO_Str();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.Raw_Java_Block <em>Raw Java Block</em>}'.

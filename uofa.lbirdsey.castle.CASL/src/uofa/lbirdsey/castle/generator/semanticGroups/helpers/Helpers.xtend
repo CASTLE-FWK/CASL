@@ -7,6 +7,7 @@ import uofa.lbirdsey.castle.casl.impl.SystemImpl
 import org.eclipse.emf.ecore.EObject
 import uofa.lbirdsey.castle.casl.impl.ObjectImpl
 import java.util.ArrayList
+import uofa.lbirdsey.castle.casl.Field
 
 class Helpers {
 	
@@ -64,6 +65,15 @@ class Helpers {
 			return "ERROR 3"
 		}
 	}	
+	
+	//TODO: Fill this in
+	static def boolean checkForSpecialCase(Field f){
+		//There are many special cases to handle for parameters and imports
+		//This will mainly fix the import issue  but there is also the layoutParameters issue
+		var fieldName = HelperFunctions.getFieldName(f);
+		
+		return false;
+	}
 	
 	
 	

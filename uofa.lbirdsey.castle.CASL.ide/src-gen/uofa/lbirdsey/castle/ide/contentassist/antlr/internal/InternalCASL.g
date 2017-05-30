@@ -2525,31 +2525,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleCASL_Macro_Populate
-entryRuleCASL_Macro_Populate
-:
-{ before(grammarAccess.getCASL_Macro_PopulateRule()); }
-	 ruleCASL_Macro_Populate
-{ after(grammarAccess.getCASL_Macro_PopulateRule()); } 
-	 EOF 
-;
-
-// Rule CASL_Macro_Populate
-ruleCASL_Macro_Populate 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getCASL_Macro_PopulateAccess().getGroup()); }
-		(rule__CASL_Macro_Populate__Group__0)
-		{ after(grammarAccess.getCASL_Macro_PopulateAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleCASL_Macro_TODO
 entryRuleCASL_Macro_TODO
 :
@@ -2569,6 +2544,31 @@ ruleCASL_Macro_TODO
 		{ before(grammarAccess.getCASL_Macro_TODOAccess().getGroup()); }
 		(rule__CASL_Macro_TODO__Group__0)
 		{ after(grammarAccess.getCASL_Macro_TODOAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleCASL_Macro_Populate
+entryRuleCASL_Macro_Populate
+:
+{ before(grammarAccess.getCASL_Macro_PopulateRule()); }
+	 ruleCASL_Macro_Populate
+{ after(grammarAccess.getCASL_Macro_PopulateRule()); } 
+	 EOF 
+;
+
+// Rule CASL_Macro_Populate
+ruleCASL_Macro_Populate 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getCASL_Macro_PopulateAccess().getGroup()); }
+		(rule__CASL_Macro_Populate__Group__0)
+		{ after(grammarAccess.getCASL_Macro_PopulateAccess().getGroup()); }
 	)
 ;
 finally {
@@ -27445,6 +27445,87 @@ finally {
 }
 
 
+rule__CASL_Macro_TODO__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_TODO__Group__0__Impl
+	rule__CASL_Macro_TODO__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_TODO__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0()); }
+	'TODO:'
+	{ after(grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_TODO__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_TODO__Group__1__Impl
+	rule__CASL_Macro_TODO__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_TODO__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1()); }
+	(rule__CASL_Macro_TODO__StrAssignment_1)
+	{ after(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_TODO__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_TODO__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_TODO__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_TODOAccess().getSemicolonKeyword_2()); }
+	';'
+	{ after(grammarAccess.getCASL_Macro_TODOAccess().getSemicolonKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__CASL_Macro_Populate__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -27762,60 +27843,6 @@ rule__CASL_Macro_Populate__Group_8__1__Impl
 	{ before(grammarAccess.getCASL_Macro_PopulateAccess().getSemicolonKeyword_8_1()); }
 	';'
 	{ after(grammarAccess.getCASL_Macro_PopulateAccess().getSemicolonKeyword_8_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__CASL_Macro_TODO__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CASL_Macro_TODO__Group__0__Impl
-	rule__CASL_Macro_TODO__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CASL_Macro_TODO__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0()); }
-	'TODO:'
-	{ after(grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CASL_Macro_TODO__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CASL_Macro_TODO__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CASL_Macro_TODO__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1()); }
-	(rule__CASL_Macro_TODO__StrAssignment_1)
-	{ after(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1()); }
 )
 ;
 finally {
@@ -34279,6 +34306,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__CASL_Macro_TODO__StrAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__CASL_Macro_Populate__InitNumAssignment_2
 	@init {
 		int stackSize = keepStackSize();
@@ -34382,21 +34424,6 @@ rule__CASL_Macro_Populate__BodyAssignment_8_0_4
 		{ before(grammarAccess.getCASL_Macro_PopulateAccess().getBodyRaw_Java_BlockParserRuleCall_8_0_4_0()); }
 		ruleRaw_Java_Block
 		{ after(grammarAccess.getCASL_Macro_PopulateAccess().getBodyRaw_Java_BlockParserRuleCall_8_0_4_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CASL_Macro_TODO__StrAssignment_1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {

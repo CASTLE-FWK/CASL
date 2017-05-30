@@ -67,7 +67,7 @@ class Printers {
 	}
 
 	static def String printFieldDeclarations(Field f) {
-		// Prints out the type, var name and expression if it has one.
+		// Prints out the type, var name and expression if it has one		
 		var output = "";
 		if (f.declaration !== null) {
 			val fdt = f.declaration as DataTypeDeclaration
@@ -95,6 +95,7 @@ class Printers {
 						}
 					}
 				} else if (fdt.obj instanceof Object) {
+														
 					if (fdt.expr !== null) {
 						if (fdt.useObj !== null) {
 							output += fdt.obj.name + "<" + fdt.useObj.name + "> " + fdt.name + " = " +

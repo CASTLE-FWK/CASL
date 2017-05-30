@@ -11237,6 +11237,51 @@ ruleCASL_Macro_MetricSwitch returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCASL_Macro_TODO
+entryRuleCASL_Macro_TODO returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_TODORule()); }
+	iv_ruleCASL_Macro_TODO=ruleCASL_Macro_TODO
+	{ $current=$iv_ruleCASL_Macro_TODO.current; }
+	EOF;
+
+// Rule CASL_Macro_TODO
+ruleCASL_Macro_TODO returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='TODO:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0());
+		}
+		(
+			(
+				lv_str_1_0=RULE_STRING
+				{
+					newLeafNode(lv_str_1_0, grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCASL_Macro_TODORule());
+					}
+					setWithLastConsumed(
+						$current,
+						"str",
+						lv_str_1_0,
+						"uofa.lbirdsey.castle.CASL.STRING");
+				}
+			)
+		)
+		otherlv_2=';'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_TODOAccess().getSemicolonKeyword_2());
+		}
+	)
+;
+
 // Entry rule entryRuleCASL_Macro_Populate
 entryRuleCASL_Macro_Populate returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCASL_Macro_PopulateRule()); }
@@ -11420,47 +11465,6 @@ ruleCASL_Macro_Populate returns [EObject current=null]
 		{
 			newLeafNode(otherlv_14, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_9());
 		}
-	)
-;
-
-// Entry rule entryRuleCASL_Macro_TODO
-entryRuleCASL_Macro_TODO returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCASL_Macro_TODORule()); }
-	iv_ruleCASL_Macro_TODO=ruleCASL_Macro_TODO
-	{ $current=$iv_ruleCASL_Macro_TODO.current; }
-	EOF;
-
-// Rule CASL_Macro_TODO
-ruleCASL_Macro_TODO returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='TODO:'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_TODOAccess().getTODOKeyword_0());
-		}
-		(
-			(
-				lv_str_1_0=RULE_STRING
-				{
-					newLeafNode(lv_str_1_0, grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCASL_Macro_TODORule());
-					}
-					setWithLastConsumed(
-						$current,
-						"str",
-						lv_str_1_0,
-						"uofa.lbirdsey.castle.CASL.STRING");
-				}
-			)
-		)
 	)
 ;
 

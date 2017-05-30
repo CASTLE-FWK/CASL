@@ -828,19 +828,19 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.CASL_MACRO_POPULATE:
-      {
-        CASL_Macro_Populate casL_Macro_Populate = (CASL_Macro_Populate)theEObject;
-        T result = caseCASL_Macro_Populate(casL_Macro_Populate);
-        if (result == null) result = caseCASL_Macro(casL_Macro_Populate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CaslPackage.CASL_MACRO_TODO:
       {
         CASL_Macro_TODO casL_Macro_TODO = (CASL_Macro_TODO)theEObject;
         T result = caseCASL_Macro_TODO(casL_Macro_TODO);
         if (result == null) result = caseCASL_Macro(casL_Macro_TODO);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.CASL_MACRO_POPULATE:
+      {
+        CASL_Macro_Populate casL_Macro_Populate = (CASL_Macro_Populate)theEObject;
+        T result = caseCASL_Macro_Populate(casL_Macro_Populate);
+        if (result == null) result = caseCASL_Macro(casL_Macro_Populate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2465,22 +2465,6 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCASL_Macro_Populate(CASL_Macro_Populate object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>CASL Macro TODO</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2492,6 +2476,22 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCASL_Macro_TODO(CASL_Macro_TODO object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro Populate</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCASL_Macro_Populate(CASL_Macro_Populate object)
   {
     return null;
   }

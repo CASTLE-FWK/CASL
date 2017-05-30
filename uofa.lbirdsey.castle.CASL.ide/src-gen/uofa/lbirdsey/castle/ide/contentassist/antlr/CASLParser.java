@@ -304,9 +304,9 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_ForEachAccess().getGroup(), "rule__CASL_Macro_ForEach__Group__0");
 					put(grammarAccess.getCASL_Macro_PrintAccess().getGroup(), "rule__CASL_Macro_Print__Group__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup(), "rule__CASL_Macro_MetricSwitch__Group__0");
+					put(grammarAccess.getCASL_Macro_TODOAccess().getGroup(), "rule__CASL_Macro_TODO__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup(), "rule__CASL_Macro_Populate__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_8(), "rule__CASL_Macro_Populate__Group_8__0");
-					put(grammarAccess.getCASL_Macro_TODOAccess().getGroup(), "rule__CASL_Macro_TODO__Group__0");
 					put(grammarAccess.getRaw_Java_BlockAccess().getGroup(), "rule__Raw_Java_Block__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup_1(), "rule__Feature__Group_1__0");
@@ -677,6 +677,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_ForEachAccess().getExprAssignment_3(), "rule__CASL_Macro_ForEach__ExprAssignment_3");
 					put(grammarAccess.getCASL_Macro_PrintAccess().getStrAssignment_1(), "rule__CASL_Macro_Print__StrAssignment_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwAssignment_1(), "rule__CASL_Macro_MetricSwitch__SwAssignment_1");
+					put(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1(), "rule__CASL_Macro_TODO__StrAssignment_1");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getInitNumAssignment_2(), "rule__CASL_Macro_Populate__InitNumAssignment_2");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getEntAssignment_5(), "rule__CASL_Macro_Populate__EntAssignment_5");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getBodyAssignment_8_0_0(), "rule__CASL_Macro_Populate__BodyAssignment_8_0_0");
@@ -684,7 +685,6 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getBodyAssignment_8_0_2(), "rule__CASL_Macro_Populate__BodyAssignment_8_0_2");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getBodyAssignment_8_0_3(), "rule__CASL_Macro_Populate__BodyAssignment_8_0_3");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getBodyAssignment_8_0_4(), "rule__CASL_Macro_Populate__BodyAssignment_8_0_4");
-					put(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1(), "rule__CASL_Macro_TODO__StrAssignment_1");
 					put(grammarAccess.getRaw_Java_BlockAccess().getNameAssignment_2(), "rule__Raw_Java_Block__NameAssignment_2");
 					put(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5(), "rule__Raw_Java_Block__RawStatementsAssignment_5");
 					put(grammarAccess.getFeatureAccess().getTypeAssignment_0(), "rule__Feature__TypeAssignment_0");

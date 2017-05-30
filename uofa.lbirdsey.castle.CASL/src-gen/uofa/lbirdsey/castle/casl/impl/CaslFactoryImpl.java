@@ -288,8 +288,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_FOR_EACH: return createCASL_Macro_ForEach();
       case CaslPackage.CASL_MACRO_PRINT: return createCASL_Macro_Print();
       case CaslPackage.CASL_MACRO_METRIC_SWITCH: return createCASL_Macro_MetricSwitch();
-      case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
       case CaslPackage.CASL_MACRO_TODO: return createCASL_Macro_TODO();
+      case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
       case CaslPackage.RAW_JAVA_BLOCK: return createRaw_Java_Block();
       case CaslPackage.FEATURE: return createFeature();
       case CaslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
@@ -1377,10 +1377,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CASL_Macro_Populate createCASL_Macro_Populate()
+  public CASL_Macro_TODO createCASL_Macro_TODO()
   {
-    CASL_Macro_PopulateImpl casL_Macro_Populate = new CASL_Macro_PopulateImpl();
-    return casL_Macro_Populate;
+    CASL_Macro_TODOImpl casL_Macro_TODO = new CASL_Macro_TODOImpl();
+    return casL_Macro_TODO;
   }
 
   /**
@@ -1388,10 +1388,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CASL_Macro_TODO createCASL_Macro_TODO()
+  public CASL_Macro_Populate createCASL_Macro_Populate()
   {
-    CASL_Macro_TODOImpl casL_Macro_TODO = new CASL_Macro_TODOImpl();
-    return casL_Macro_TODO;
+    CASL_Macro_PopulateImpl casL_Macro_Populate = new CASL_Macro_PopulateImpl();
+    return casL_Macro_Populate;
   }
 
   /**
