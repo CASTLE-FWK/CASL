@@ -147,6 +147,9 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "\n//Getters & Setters\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){
+				if ((field as Field).declaration !== null){
+//					(((field as Field).declaration) as DataTypeDeclaration).setInitInclude("*");
+				}
 				output += HelperFunctions.generateGettersSetters(field as Field)+"\n"
 			}
 		}
@@ -170,24 +173,25 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		return str
 	}	
 	
+	//30/05/17: This is now redundant
 	def generateEndConditions(System sys)'''
-		//End Condition Fields
-		«FOR endCond : sys.end_conditions.end_conditions»
-		«IF (endCond.endType == EndConditionTypes.STEPS)»
-			private int «endCond.name»;
-		«ENDIF»
-		«ENDFOR»
-		
-		//End Condition Getters & Setters
-		«FOR endCond : sys.end_conditions.end_conditions»
-			«IF (endCond.endType == EndConditionTypes.STEPS)»
-			public void set«endCond.name.toFirstUpper»(int «endCond.name») {
-				this.«endCond.name» = «endCond.name»;
-			}
-			public int get«endCond.name.toFirstUpper»() {
-				return «endCond.name»;
-			}«ENDIF»
-		«ENDFOR»
+«««		//End Condition Fields
+«««		«FOR endCond : sys.end_conditions.end_conditions»
+«««		«IF (endCond.endType == EndConditionTypes.STEPS)»
+«««			private int «endCond.name»;
+«««		«ENDIF»
+«««		«ENDFOR»
+«««		
+«««		//End Condition Getters & Setters
+«««		«FOR endCond : sys.end_conditions.end_conditions»
+«««			«IF (endCond.endType == EndConditionTypes.STEPS)»
+«««			public void set«endCond.name.toFirstUpper»(int «endCond.name») {
+«««				this.«endCond.name» = «endCond.name»;
+«««			}
+«««			public int get«endCond.name.toFirstUpper»() {
+«««				return «endCond.name»;
+«««			}«ENDIF»
+«««		«ENDFOR»
 	'''
 	
 	//TODO: (For all functions) make sure init is special and gets dumped into the intialise function

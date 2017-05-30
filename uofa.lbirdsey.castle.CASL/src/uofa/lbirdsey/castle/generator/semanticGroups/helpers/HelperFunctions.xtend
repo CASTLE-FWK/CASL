@@ -509,11 +509,15 @@ class HelperFunctions {
 		}
 	}
 
-	static def String generateGettersSetters(Field field) {
+	static def String generateGettersSetters(Field field){
+		return generateGettersSetters(field, false);
+	}
+
+	static def String generateGettersSetters(Field field, boolean makeStatic) {
 		var output = "";
 		if (field.declaration !== null) {
 			var fiedecl = field.declaration as DataTypeDeclaration;
-			if (fiedecl.initInclude !== null) {
+			if (fiedecl.initInclude !== null || makeStatic) {
 				output += "public static void set" + fiedecl.name.toFirstUpper + "("
 			} else {
 				output += "public void set" + fiedecl.name.toFirstUpper + "("
@@ -595,7 +599,7 @@ class HelperFunctions {
 					";\n}\n"	
 		}
 					return output;
-				}
+	}
 
 	// TODO: Determine what type of THING a string is
 	// 22/06/16: what does this actually do?
