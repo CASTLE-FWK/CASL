@@ -31,24 +31,14 @@ public enum BehaviorType implements Enumerator
   SELF(0, "SELF", "SELF"),
 
   /**
-   * The '<em><b>ENVIRONMENT</b></em>' literal object.
+   * The '<em><b>AFFECT</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #ENVIRONMENT_VALUE
+   * @see #AFFECT_VALUE
    * @generated
    * @ordered
    */
-  ENVIRONMENT(1, "ENVIRONMENT", "ENVIRONMENT"),
-
-  /**
-   * The '<em><b>AGENT</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #AGENT_VALUE
-   * @generated
-   * @ordered
-   */
-  AGENT(2, "AGENT", "AGENT");
+  AFFECT(1, "AFFECT", "AFFECT");
 
   /**
    * The '<em><b>SELF</b></em>' literal value.
@@ -66,34 +56,19 @@ public enum BehaviorType implements Enumerator
   public static final int SELF_VALUE = 0;
 
   /**
-   * The '<em><b>ENVIRONMENT</b></em>' literal value.
+   * The '<em><b>AFFECT</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>ENVIRONMENT</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>AFFECT</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #ENVIRONMENT
+   * @see #AFFECT
    * @model
    * @generated
    * @ordered
    */
-  public static final int ENVIRONMENT_VALUE = 1;
-
-  /**
-   * The '<em><b>AGENT</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>AGENT</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #AGENT
-   * @model
-   * @generated
-   * @ordered
-   */
-  public static final int AGENT_VALUE = 2;
+  public static final int AFFECT_VALUE = 1;
 
   /**
    * An array of all the '<em><b>Behavior Type</b></em>' enumerators.
@@ -105,8 +80,7 @@ public enum BehaviorType implements Enumerator
     new BehaviorType[]
     {
       SELF,
-      ENVIRONMENT,
-      AGENT,
+      AFFECT,
     };
 
   /**
@@ -172,8 +146,7 @@ public enum BehaviorType implements Enumerator
     switch (value)
     {
       case SELF_VALUE: return SELF;
-      case ENVIRONMENT_VALUE: return ENVIRONMENT;
-      case AGENT_VALUE: return AGENT;
+      case AFFECT_VALUE: return AFFECT;
     }
     return null;
   }

@@ -4845,15 +4845,9 @@ rule__BehaviorType__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getBehaviorTypeAccess().getENVIRONMENTEnumLiteralDeclaration_1()); }
-		('ENVIRONMENT')
-		{ after(grammarAccess.getBehaviorTypeAccess().getENVIRONMENTEnumLiteralDeclaration_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getBehaviorTypeAccess().getAGENTEnumLiteralDeclaration_2()); }
-		('AGENT')
-		{ after(grammarAccess.getBehaviorTypeAccess().getAGENTEnumLiteralDeclaration_2()); }
+		{ before(grammarAccess.getBehaviorTypeAccess().getAFFECTEnumLiteralDeclaration_1()); }
+		('AFFECT')
+		{ after(grammarAccess.getBehaviorTypeAccess().getAFFECTEnumLiteralDeclaration_1()); }
 	)
 ;
 finally {

@@ -54,8 +54,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//BehaviorType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorType/SELF"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorType/ENVIRONMENT"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorType/AGENT"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorType/AFFECT"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//BehaviorReactionTime">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//BehaviorReactionTime/INSTANT"/>

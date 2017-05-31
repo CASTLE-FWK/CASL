@@ -8092,16 +8092,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSELFEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSELFSELFKeyword_0_0 = (Keyword)cSELFEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cENVIRONMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cENVIRONMENTENVIRONMENTKeyword_1_0 = (Keyword)cENVIRONMENTEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cAGENTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cAGENTAGENTKeyword_2_0 = (Keyword)cAGENTEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cAFFECTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cAFFECTAFFECTKeyword_1_0 = (Keyword)cAFFECTEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum BehaviorType:
-		//	SELF | ENVIRONMENT | AGENT;
+		//	SELF | AFFECT;
 		public EnumRule getRule() { return rule; }
 		
-		//SELF | ENVIRONMENT | AGENT
+		//SELF | AFFECT
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SELF
@@ -8110,17 +8108,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"SELF"
 		public Keyword getSELFSELFKeyword_0_0() { return cSELFSELFKeyword_0_0; }
 		
-		//ENVIRONMENT
-		public EnumLiteralDeclaration getENVIRONMENTEnumLiteralDeclaration_1() { return cENVIRONMENTEnumLiteralDeclaration_1; }
+		//AFFECT
+		public EnumLiteralDeclaration getAFFECTEnumLiteralDeclaration_1() { return cAFFECTEnumLiteralDeclaration_1; }
 		
-		//"ENVIRONMENT"
-		public Keyword getENVIRONMENTENVIRONMENTKeyword_1_0() { return cENVIRONMENTENVIRONMENTKeyword_1_0; }
-		
-		//AGENT
-		public EnumLiteralDeclaration getAGENTEnumLiteralDeclaration_2() { return cAGENTEnumLiteralDeclaration_2; }
-		
-		//"AGENT"
-		public Keyword getAGENTAGENTKeyword_2_0() { return cAGENTAGENTKeyword_2_0; }
+		//"AFFECT"
+		public Keyword getAFFECTAFFECTKeyword_1_0() { return cAFFECTAFFECTKeyword_1_0; }
 	}
 	public class BehaviorReactionTimeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.BehaviorReactionTime");
@@ -9389,7 +9381,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum BehaviorType:
-	//	SELF | ENVIRONMENT | AGENT;
+	//	SELF | AFFECT;
 	public BehaviorTypeElements getBehaviorTypeAccess() {
 		return eBehaviorType;
 	}

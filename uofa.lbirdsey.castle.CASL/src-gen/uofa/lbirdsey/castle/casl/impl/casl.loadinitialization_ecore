@@ -261,8 +261,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BehaviorType">
     <eLiterals name="SELF" literal="SELF"/>
-    <eLiterals name="ENVIRONMENT" value="1" literal="ENVIRONMENT"/>
-    <eLiterals name="AGENT" value="2" literal="AGENT"/>
+    <eLiterals name="AFFECT" value="1" literal="AFFECT"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BehaviorReactionTime">
     <eLiterals name="INSTANT" literal="INSTANT"/>

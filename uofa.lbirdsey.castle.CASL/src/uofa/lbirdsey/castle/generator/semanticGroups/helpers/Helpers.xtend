@@ -97,6 +97,28 @@ class Helpers {
 		
 	}
 	
+	static def boolean isAPrimitive(String str){
+		if (str.equalsIgnoreCase("void") ||
+				str.equalsIgnoreCase("boolean") ||
+				str.equalsIgnoreCase("int")|| 
+				str.equalsIgnoreCase("String") ||
+				str.equalsIgnoreCase("float") ||
+				str.equalsIgnoreCase("double") ) {
+				return true;
+		}
+		return false;
+	}
+	
+	static def boolean isANumber(String str){
+		if (
+				str.equalsIgnoreCase("int")|| 
+				str.equalsIgnoreCase("float") ||
+				str.equalsIgnoreCase("double") ) {
+				return true;
+		}
+		return false;	
+	}
+	
 	
 	
 }

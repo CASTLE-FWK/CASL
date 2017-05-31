@@ -12292,18 +12292,10 @@ ruleBehaviorType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='ENVIRONMENT'
+			enumLiteral_1='AFFECT'
 			{
-				$current = grammarAccess.getBehaviorTypeAccess().getENVIRONMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getBehaviorTypeAccess().getENVIRONMENTEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='AGENT'
-			{
-				$current = grammarAccess.getBehaviorTypeAccess().getAGENTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getBehaviorTypeAccess().getAGENTEnumLiteralDeclaration_2());
+				$current = grammarAccess.getBehaviorTypeAccess().getAFFECTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getBehaviorTypeAccess().getAFFECTEnumLiteralDeclaration_1());
 			}
 		)
 	)

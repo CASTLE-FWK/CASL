@@ -110,4 +110,25 @@ public class Helpers {
   public static boolean containsAnInteraction(final EObject eo) {
     return false;
   }
+  
+  public static boolean isAPrimitive(final String str) {
+    if ((((((str.equalsIgnoreCase("void") || 
+      str.equalsIgnoreCase("boolean")) || 
+      str.equalsIgnoreCase("int")) || 
+      str.equalsIgnoreCase("String")) || 
+      str.equalsIgnoreCase("float")) || 
+      str.equalsIgnoreCase("double"))) {
+      return true;
+    }
+    return false;
+  }
+  
+  public static boolean isANumber(final String str) {
+    if (((str.equalsIgnoreCase("int") || 
+      str.equalsIgnoreCase("float")) || 
+      str.equalsIgnoreCase("double"))) {
+      return true;
+    }
+    return false;
+  }
 }
