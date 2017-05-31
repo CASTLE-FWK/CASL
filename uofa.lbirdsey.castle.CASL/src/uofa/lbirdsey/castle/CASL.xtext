@@ -823,21 +823,16 @@ CASL_Macro_TODO:
  	* Entity init params: infinite list of expressions that matches the entities init parameters
 */
 
-//CASL_Macro_Populate:
-//	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-//	')'
-//;
 CASL_Macro_Populate:
 	"POPULATE" '['layoutLocation = Expression']('(layoutInitParams += Expression)? (',' layoutInitParams += Expression)*')['
 	(count = Expression)','(ent = Entity_Call)']('(entityInitParams += Expression)? (',' entityInitParams += Expression)*')' 
-	
-//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-//	')'
 ;
 
 //TODO: Fill this out
+/**
+ * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+ *
+ */
 CASL_Macro_Visualize:
 	"VISUALIZE"
 	
