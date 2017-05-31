@@ -135,7 +135,7 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j));\n"
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+");\n"
 			output += TAB + "}\n}\n"
-		}
+		} 
 		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		/*
