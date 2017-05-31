@@ -369,7 +369,7 @@ Behaviors:
 ;
 
 enum BehaviorType:
-	SELF | ENVIRONMENT | AGENT
+	SELF | AFFECT
 ;
 
 enum BehaviorReactionTime:

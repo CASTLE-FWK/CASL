@@ -5,8 +5,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import uofa.lbirdsey.castle.casl.Behavior;
+import uofa.lbirdsey.castle.casl.BehaviorReactionTime;
 import uofa.lbirdsey.castle.casl.BehaviorType;
 import uofa.lbirdsey.castle.casl.CaslPackage;
+import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Interaction;
 import uofa.lbirdsey.castle.casl.InteractionFeatureCall;
@@ -18,23 +20,40 @@ import uofa.lbirdsey.castle.validation.AbstractCASLValidator;
  */
 @SuppressWarnings("all")
 public class FeatureValidator extends AbstractCASLValidator {
+  /**
+   * This checks to make sure that a BEHAVIOR marked as SELF does not lead to any interactions, directly.
+   * Calling a SELF to an AFFECT is fine
+   */
   @Check
   public void checkBehavior(final Behavior behavior) {
-    Behavior fn = behavior;
-    EList<EObject> behaviorBody = fn.getBody();
+    final Behavior fn = behavior;
+    final EList<EObject> behaviorBody = fn.getBody();
+    final BehaviorType behaviorType = fn.getBehavior_type();
+    final BehaviorReactionTime reactionType = fn.getBehavior_reaction_time();
+    final Expression reactionTime = fn.getReaction_time_parm();
+    if ((Objects.equal(reactionType, BehaviorReactionTime.STEP) || Objects.equal(reactionType, BehaviorReactionTime.REPEAT))) {
+      if ((reactionTime == null)) {
+        String _name = fn.getName();
+        String _plus = (_name + " is using ");
+        String _plus_1 = (_plus + reactionType);
+        String _plus_2 = (_plus_1 + " as the reaction type but has not specified an amount of steps.");
+        this.error(_plus_2, 
+          CaslPackage.eINSTANCE.getBehavior_Name());
+      }
+    }
     for (final EObject bb : behaviorBody) {
       if ((bb instanceof FeatureCallExp)) {
         EObject beh = ((FeatureCallExp) bb).getFunc().getFc();
-        if (((beh instanceof InteractionFeatureCall) && Objects.equal(fn.getBehavior_type(), BehaviorType.SELF))) {
-          String _name = fn.getName();
-          String _plus = (_name + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION");
-          this.error(_plus, 
+        if (((beh instanceof InteractionFeatureCall) && Objects.equal(behaviorType, BehaviorType.SELF))) {
+          String _name_1 = fn.getName();
+          String _plus_3 = (_name_1 + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION");
+          this.error(_plus_3, 
             CaslPackage.eINSTANCE.getBehavior_Name());
         } else {
-          if (((!(beh instanceof InteractionFeatureCall)) && (!Objects.equal(fn.getBehavior_type(), BehaviorType.SELF)))) {
-            String _name_1 = fn.getName();
-            String _plus_1 = (_name_1 + " is set to AFFECT but has no INTERACTION.");
-            this.error(_plus_1, CaslPackage.eINSTANCE.getBehavior_Name());
+          if (((!(beh instanceof InteractionFeatureCall)) && (!Objects.equal(behaviorType, BehaviorType.SELF)))) {
+            String _name_2 = fn.getName();
+            String _plus_4 = (_name_2 + " is set to AFFECT but has no INTERACTION.");
+            this.error(_plus_4, CaslPackage.eINSTANCE.getBehavior_Name());
           }
         }
       }

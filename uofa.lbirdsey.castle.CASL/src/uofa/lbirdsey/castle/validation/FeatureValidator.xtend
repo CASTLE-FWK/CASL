@@ -14,26 +14,44 @@ import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall
 import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
 import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
 import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall
+import uofa.lbirdsey.castle.casl.BehaviorReactionTime
 
 /**
  * This class handles the validation of the features
  */
 class FeatureValidator extends AbstractCASLValidator{
 	
+	/**
+	 * This checks to make sure that a BEHAVIOR marked as SELF does not lead to any interactions, directly.
+	 * Calling a SELF to an AFFECT is fine
+	 */
 	@Check
 	def checkBehavior(Behavior behavior) {			
-		var fn = behavior
-		var behaviorBody = fn.body;
+		val fn = behavior
+		val behaviorBody = fn.body;
+		val behaviorType = fn.behavior_type;
+		val reactionType = fn.behavior_reaction_time;
+		val reactionTime = fn.reaction_time_parm; 
+//		val isreactionTime = printExpression(reactionTime)
+		//Check that a number has been specified
+		if (reactionType == BehaviorReactionTime.STEP || reactionType == BehaviorReactionTime.REPEAT){
+			if (reactionTime === null){
+				error(fn.name+" is using "+reactionType+" as the reaction type but has not specified an amount of steps.",
+					CaslPackage::eINSTANCE.behavior_Name);				
+			}
+		}
+		
+		
 		for (EObject bb : behaviorBody){
 			//Do the infection type test
 			if (bb instanceof FeatureCallExp){
 				var beh = (bb as FeatureCallExp).func.fc;
-				if (beh instanceof InteractionFeatureCall && fn.behavior_type == BehaviorType.SELF){
+				if (beh instanceof InteractionFeatureCall && behaviorType == BehaviorType.SELF){
 					//If contains an interaction trigger and is set to self, warn/error					
 					error(fn.name+" contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION", 
 						CaslPackage::eINSTANCE.behavior_Name
 					)			
-				} else if (!(beh instanceof InteractionFeatureCall) && !(fn.behavior_type == BehaviorType.SELF)){
+				} else if (!(beh instanceof InteractionFeatureCall) && !(behaviorType == BehaviorType.SELF)){
 					//If does not contains an interaction trigger and is set to self, warn/error
 					error(fn.name+" is set to AFFECT but has no INTERACTION.", CaslPackage::eINSTANCE.behavior_Name)			
 				}			
@@ -49,6 +67,7 @@ class FeatureValidator extends AbstractCASLValidator{
 	 *  2: A COMMUNICATE interaction is an acknowledged 2 way request
 	 *  3: An INDIRECT interaction can't be validated
 	 */
+	 //TODO: Finish this
 	@Check
 	def checkInteractions(Interaction inter){
 		val interType = inter.interaction_type;	
