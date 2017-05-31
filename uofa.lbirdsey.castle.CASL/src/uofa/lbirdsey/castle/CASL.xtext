@@ -830,7 +830,7 @@ CASL_Macro_TODO:
 //;
 CASL_Macro_Populate:
 	"POPULATE" '['layoutLocation = Expression']('(layoutInitParams += Expression)? (',' layoutInitParams += Expression)*')['
-	(ent = Entity_Call)']('(entityInitParams += Expression)? (',' entityInitParams += Expression)*')' 
+	(count = Expression)','(ent = Entity_Call)']('(entityInitParams += Expression)? (',' entityInitParams += Expression)*')' 
 	
 //	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
 //	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*

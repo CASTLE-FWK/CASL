@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutLocation <em>Layout Location</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getLayoutInitParams <em>Layout Init Params</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getCount <em>Count</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEntityInitParams <em>Entity Init Params</em>}</li>
  * </ul>
@@ -67,6 +68,32 @@ public interface CASL_Macro_Populate extends CASL_Macro
    * @generated
    */
   EList<Expression> getLayoutInitParams();
+
+  /**
+   * Returns the value of the '<em><b>Count</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Count</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Count</em>' containment reference.
+   * @see #setCount(Expression)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Populate_Count()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getCount();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getCount <em>Count</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Count</em>' containment reference.
+   * @see #getCount()
+   * @generated
+   */
+  void setCount(Expression value);
 
   /**
    * Returns the value of the '<em><b>Ent</b></em>' containment reference.

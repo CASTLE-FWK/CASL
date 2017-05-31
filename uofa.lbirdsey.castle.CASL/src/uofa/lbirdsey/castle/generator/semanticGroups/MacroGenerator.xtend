@@ -16,6 +16,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 import uofa.lbirdsey.castle.casl.RandomType
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -106,18 +107,33 @@ class MacroGenerator {
 //		output += ""
 		val layoutLocation = pop.layoutLocation;
 		val EList<Expression> layoutInitParams = pop.layoutInitParams;
+		val counter = pop.count;
+		val String counterAsString = Printers.printExpression(counter) as String;
 		val entityCall = pop.ent;
+		val String entityName = Helpers.getEntityNameFromCall(entityCall);
+		val String tmpEntityName = "tmp_"+entityName.toLowerCase
 		val EList<Expression> entityInitParams = pop.entityInitParams;
 		
 		//Initialize the layout type
 		output += Printers.printExpression(layoutLocation)+".initialize("+HelperFunctions.printFunctionArgs(layoutInitParams)+");\n";
+		
 		//Now create the entities...
 		
 		//Something needs to happen here before initializing the entities
+		output += "ArrayList<"+entityName+">" +entityName.toLowerCase+"List = new ArrayList<"+entityName+">();\n"
 		
+//		output += Printers.printExpression(layoutLocation)+".initializeEntities("+counterAsString+","+printInitializeParams(entityInitParams)+");\n";
 		
-		output += Printers.printExpression(layoutLocation)+".initializeEntities("+printInitializeParams(entityInitParams)+");\n";
-		
+		//Determine the type of counter range
+		if (counterAsString.equalsIgnoreCase("vector2")){
+			output += "int xRange = (int)range.getX();\nint yRange = (int)range.getY();\nfor (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){\n"
+			//Do the cycling
+			output += entityName+" "+tmpEntityName+" = new "+entityName+"();\n"
+			output += tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+");\n" 
+			output += entityName.toLowerCase+"List.add("+tmpEntityName+");\n"
+			output += "\t}\n}\n"
+		}
+		 
 		/*
 		 * 
 		 * layoutLocation.initializeEntities(

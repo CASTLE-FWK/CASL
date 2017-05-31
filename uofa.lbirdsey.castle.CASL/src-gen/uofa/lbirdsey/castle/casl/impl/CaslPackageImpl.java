@@ -4349,7 +4349,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_Populate_Ent()
+  public EReference getCASL_Macro_Populate_Count()
   {
         return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(2);
   }
@@ -4359,9 +4359,19 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_Populate_EntityInitParams()
+  public EReference getCASL_Macro_Populate_Ent()
   {
         return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCASL_Macro_Populate_EntityInitParams()
+  {
+        return (EReference)getCASL_Macro_Populate().getEStructuralFeatures().get(4);
   }
 
   /**

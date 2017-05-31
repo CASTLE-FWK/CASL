@@ -581,6 +581,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="layoutInitParams" upperBound="-1"
         eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="count" eType="#//Expression"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ent" eType="#//Entity_Call"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityInitParams" upperBound="-1"

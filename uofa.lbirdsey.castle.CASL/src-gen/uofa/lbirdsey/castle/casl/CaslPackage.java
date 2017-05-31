@@ -3702,13 +3702,22 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS = CASL_MACRO_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Count</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_POPULATE__COUNT = CASL_MACRO_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Ent</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE__ENT = CASL_MACRO_FEATURE_COUNT + 2;
+  int CASL_MACRO_POPULATE__ENT = CASL_MACRO_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Entity Init Params</b></em>' containment reference list.
@@ -3717,7 +3726,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS = CASL_MACRO_FEATURE_COUNT + 3;
+  int CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS = CASL_MACRO_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>CASL Macro Populate</em>' class.
@@ -3726,7 +3735,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 4;
+  int CASL_MACRO_POPULATE_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.Raw_Java_BlockImpl <em>Raw Java Block</em>}' class.
@@ -8459,6 +8468,17 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EReference getCASL_Macro_Populate_LayoutInitParams();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getCount <em>Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Count</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getCount()
+   * @see #getCASL_Macro_Populate()
+   * @generated
+   */
+  EReference getCASL_Macro_Populate_Count();
 
   /**
    * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Populate#getEnt <em>Ent</em>}'.

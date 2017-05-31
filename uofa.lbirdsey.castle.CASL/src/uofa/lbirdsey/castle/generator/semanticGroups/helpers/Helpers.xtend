@@ -8,6 +8,10 @@ import org.eclipse.emf.ecore.EObject
 import uofa.lbirdsey.castle.casl.impl.ObjectImpl
 import java.util.ArrayList
 import uofa.lbirdsey.castle.casl.Field
+import uofa.lbirdsey.castle.casl.Entity_Call
+import uofa.lbirdsey.castle.casl.Agent_Call
+import uofa.lbirdsey.castle.casl.Environment_Call
+import uofa.lbirdsey.castle.casl.Group_Call
 
 class Helpers {
 	
@@ -65,6 +69,18 @@ class Helpers {
 			return "ERROR 3"
 		}
 	}	
+	
+	static def String getEntityNameFromCall(Entity_Call ec){
+		if (ec instanceof Agent_Call){
+			return (ec as Agent_Call).agent.name;
+		} else if (ec instanceof Environment_Call){
+			return (ec as Environment_Call).env.name;
+		} else if (ec instanceof Group_Call){
+			return (ec as Group_Call).grp.name;
+		} else {
+			return "ERROR: getEntityNameFromCall: "+ec.class
+		}
+	}
 	
 	//TODO: Fill this in
 	static def boolean checkForSpecialCase(Field f){

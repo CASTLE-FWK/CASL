@@ -2,7 +2,11 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
+import uofa.lbirdsey.castle.casl.Agent_Call;
+import uofa.lbirdsey.castle.casl.Entity_Call;
+import uofa.lbirdsey.castle.casl.Environment_Call;
 import uofa.lbirdsey.castle.casl.Field;
+import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.impl.AgentImpl;
 import uofa.lbirdsey.castle.casl.impl.EnvironmentImpl;
 import uofa.lbirdsey.castle.casl.impl.GroupImpl;
@@ -76,6 +80,23 @@ public class Helpers {
               return "ERROR 3";
             }
           }
+        }
+      }
+    }
+  }
+  
+  public static String getEntityNameFromCall(final Entity_Call ec) {
+    if ((ec instanceof Agent_Call)) {
+      return ((Agent_Call) ec).getAgent().getName();
+    } else {
+      if ((ec instanceof Environment_Call)) {
+        return ((Environment_Call) ec).getEnv().getName();
+      } else {
+        if ((ec instanceof Group_Call)) {
+          return ((Group_Call) ec).getGrp().getName();
+        } else {
+          Class<? extends Entity_Call> _class = ec.getClass();
+          return ("ERROR: getEntityNameFromCall: " + _class);
         }
       }
     }

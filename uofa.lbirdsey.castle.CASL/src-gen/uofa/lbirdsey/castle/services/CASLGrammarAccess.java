@@ -7287,16 +7287,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLayoutInitParamsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cLayoutInitParamsExpressionParserRuleCall_5_1_0 = (RuleCall)cLayoutInitParamsAssignment_5_1.eContents().get(0);
 		private final Keyword cRightParenthesisLeftSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cEntAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cEntEntity_CallParserRuleCall_7_0 = (RuleCall)cEntAssignment_7.eContents().get(0);
-		private final Keyword cRightSquareBracketLeftParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cEntityInitParamsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cEntityInitParamsExpressionParserRuleCall_9_0 = (RuleCall)cEntityInitParamsAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cEntityInitParamsAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cEntityInitParamsExpressionParserRuleCall_10_1_0 = (RuleCall)cEntityInitParamsAssignment_10_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cCountAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cCountExpressionParserRuleCall_7_0 = (RuleCall)cCountAssignment_7.eContents().get(0);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cEntAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cEntEntity_CallParserRuleCall_9_0 = (RuleCall)cEntAssignment_9.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cEntityInitParamsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cEntityInitParamsExpressionParserRuleCall_11_0 = (RuleCall)cEntityInitParamsAssignment_11.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cCommaKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cEntityInitParamsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cEntityInitParamsExpressionParserRuleCall_12_1_0 = (RuleCall)cEntityInitParamsAssignment_12_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 		////First 2 terms should be the other way around
@@ -7315,7 +7318,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		////;
 		//CASL_Macro_Populate:
 		//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
-		//	ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
+		//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
 		//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
 		//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
 		//	//	')'
@@ -7323,7 +7326,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
-		//ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
+		//count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"POPULATE"
@@ -7362,35 +7365,44 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//')['
 		public Keyword getRightParenthesisLeftSquareBracketKeyword_6() { return cRightParenthesisLeftSquareBracketKeyword_6; }
 		
-		//ent=Entity_Call
-		public Assignment getEntAssignment_7() { return cEntAssignment_7; }
-		
-		//Entity_Call
-		public RuleCall getEntEntity_CallParserRuleCall_7_0() { return cEntEntity_CallParserRuleCall_7_0; }
-		
-		//']('
-		public Keyword getRightSquareBracketLeftParenthesisKeyword_8() { return cRightSquareBracketLeftParenthesisKeyword_8; }
-		
-		//entityInitParams+=Expression?
-		public Assignment getEntityInitParamsAssignment_9() { return cEntityInitParamsAssignment_9; }
+		//count=Expression
+		public Assignment getCountAssignment_7() { return cCountAssignment_7; }
 		
 		//Expression
-		public RuleCall getEntityInitParamsExpressionParserRuleCall_9_0() { return cEntityInitParamsExpressionParserRuleCall_9_0; }
-		
-		//(',' entityInitParams+=Expression)*
-		public Group getGroup_10() { return cGroup_10; }
+		public RuleCall getCountExpressionParserRuleCall_7_0() { return cCountExpressionParserRuleCall_7_0; }
 		
 		//','
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//entityInitParams+=Expression
-		public Assignment getEntityInitParamsAssignment_10_1() { return cEntityInitParamsAssignment_10_1; }
+		//ent=Entity_Call
+		public Assignment getEntAssignment_9() { return cEntAssignment_9; }
+		
+		//Entity_Call
+		public RuleCall getEntEntity_CallParserRuleCall_9_0() { return cEntEntity_CallParserRuleCall_9_0; }
+		
+		//']('
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_10() { return cRightSquareBracketLeftParenthesisKeyword_10; }
+		
+		//entityInitParams+=Expression?
+		public Assignment getEntityInitParamsAssignment_11() { return cEntityInitParamsAssignment_11; }
 		
 		//Expression
-		public RuleCall getEntityInitParamsExpressionParserRuleCall_10_1_0() { return cEntityInitParamsExpressionParserRuleCall_10_1_0; }
+		public RuleCall getEntityInitParamsExpressionParserRuleCall_11_0() { return cEntityInitParamsExpressionParserRuleCall_11_0; }
+		
+		//(',' entityInitParams+=Expression)*
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//','
+		public Keyword getCommaKeyword_12_0() { return cCommaKeyword_12_0; }
+		
+		//entityInitParams+=Expression
+		public Assignment getEntityInitParamsAssignment_12_1() { return cEntityInitParamsAssignment_12_1; }
+		
+		//Expression
+		public RuleCall getEntityInitParamsExpressionParserRuleCall_12_1_0() { return cEntityInitParamsExpressionParserRuleCall_12_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
 	}
 	public class CASL_Macro_VisualizeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Visualize");
@@ -10286,7 +10298,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////;
 	//CASL_Macro_Populate:
 	//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
-	//	ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
+	//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
 	//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
 	//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
 	//	//	')'

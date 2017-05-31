@@ -33,6 +33,7 @@ import uofa.lbirdsey.castle.casl.Expression;
  * <ul>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getLayoutLocation <em>Layout Location</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getLayoutInitParams <em>Layout Init Params</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getCount <em>Count</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getEnt <em>Ent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_PopulateImpl#getEntityInitParams <em>Entity Init Params</em>}</li>
  * </ul>
@@ -60,6 +61,16 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * @ordered
    */
   protected EList<Expression> layoutInitParams;
+
+  /**
+   * The cached value of the '{@link #getCount() <em>Count</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCount()
+   * @generated
+   * @ordered
+   */
+  protected Expression count;
 
   /**
    * The cached value of the '{@link #getEnt() <em>Ent</em>}' containment reference.
@@ -169,6 +180,54 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expression getCount()
+  {
+    return count;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCount(Expression newCount, NotificationChain msgs)
+  {
+    Expression oldCount = count;
+    count = newCount;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__COUNT, oldCount, newCount);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCount(Expression newCount)
+  {
+    if (newCount != count)
+    {
+      NotificationChain msgs = null;
+      if (count != null)
+        msgs = ((InternalEObject)count).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__COUNT, null, msgs);
+      if (newCount != null)
+        msgs = ((InternalEObject)newCount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.CASL_MACRO_POPULATE__COUNT, null, msgs);
+      msgs = basicSetCount(newCount, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_POPULATE__COUNT, newCount, newCount));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Entity_Call getEnt()
   {
     return ent;
@@ -240,6 +299,8 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
         return basicSetLayoutLocation(null, msgs);
       case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
         return ((InternalEList<?>)getLayoutInitParams()).basicRemove(otherEnd, msgs);
+      case CaslPackage.CASL_MACRO_POPULATE__COUNT:
+        return basicSetCount(null, msgs);
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         return basicSetEnt(null, msgs);
       case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
@@ -262,6 +323,8 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
         return getLayoutLocation();
       case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
         return getLayoutInitParams();
+      case CaslPackage.CASL_MACRO_POPULATE__COUNT:
+        return getCount();
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         return getEnt();
       case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
@@ -287,6 +350,9 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
       case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
         getLayoutInitParams().clear();
         getLayoutInitParams().addAll((Collection<? extends Expression>)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_POPULATE__COUNT:
+        setCount((Expression)newValue);
         return;
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         setEnt((Entity_Call)newValue);
@@ -315,6 +381,9 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
       case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
         getLayoutInitParams().clear();
         return;
+      case CaslPackage.CASL_MACRO_POPULATE__COUNT:
+        setCount((Expression)null);
+        return;
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         setEnt((Entity_Call)null);
         return;
@@ -339,6 +408,8 @@ public class CASL_Macro_PopulateImpl extends CASL_MacroImpl implements CASL_Macr
         return layoutLocation != null;
       case CaslPackage.CASL_MACRO_POPULATE__LAYOUT_INIT_PARAMS:
         return layoutInitParams != null && !layoutInitParams.isEmpty();
+      case CaslPackage.CASL_MACRO_POPULATE__COUNT:
+        return count != null;
       case CaslPackage.CASL_MACRO_POPULATE__ENT:
         return ent != null;
       case CaslPackage.CASL_MACRO_POPULATE__ENTITY_INIT_PARAMS:
