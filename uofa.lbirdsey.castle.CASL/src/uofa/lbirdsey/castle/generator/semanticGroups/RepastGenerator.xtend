@@ -106,14 +106,14 @@ class RepastGenerator implements IGenerator2 {
 				var pkgs = ae as Object
 //	 			HelperFunctions.addToTypesArray(pkgs as Object);
 				fsa.generateFile(dirName + "/objects/" + pkgs.name + ".java",
-					pkgs.createPackages.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
+					pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
 			} else if (ae instanceof Enum) {
 				var pkgs = ae as Enum
 // 				HelperFunctions.addToTypesArray(pkgs as Enum);
 				// Generate all ENUMS then place into a single file
 				fsa.generateFile(dirName + "/objects/" + pkgs.name + "_ENUM.java",
-					pkgs.createPackages.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
+					pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
 			}
 		}
@@ -121,7 +121,7 @@ class RepastGenerator implements IGenerator2 {
 		for (e : resource.allContents.toIterable.filter(Agent)) {
 //			HelperFunctions.addToTypesArray(e as Agent);
 			fsa.generateFile(dirName + "/agents/" + e.fullyQualifiedName.toString("/") + ".java",
-				e.compileAgent.toString.replaceAll("string", "String").replaceAll("bool", "boolean").replaceAll("(;)+",
+				e.compileAgent.toString.replaceAll("string\\s+", "String").replaceAll("bool\\s+", "boolean ").replaceAll("(;)+",
 					";"))
 		}
 
@@ -130,7 +130,7 @@ class RepastGenerator implements IGenerator2 {
 			for (e : resource.allContents.toIterable.filter(Group)) {
 				// HelperFunctions.addToTypesArray(e as Group);
 				fsa.generateFile(dirName + "/groups/" + e.fullyQualifiedName.toString("/") + ".java",
-					e.compileGroup.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
+					e.compileGroup.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
 			}
 		}
@@ -139,7 +139,7 @@ class RepastGenerator implements IGenerator2 {
 		for (e : resource.allContents.toIterable.filter(Environment)) {
 //			HelperFunctions.addToTypesArray(e as Environment);
 			fsa.generateFile(dirName + "/environments/" + e.fullyQualifiedName.toString("/") + ".java",
-				e.compileEnvironment.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
+				e.compileEnvironment.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 					replaceAll("(;)+", ";"))
 		}
 	}
