@@ -53,10 +53,8 @@ class GroupGeneration {
 		imports += "import castleComponents.Entity;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 
-		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC !== null){
-				//imports += HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
@@ -73,7 +71,6 @@ class GroupGeneration {
 		//What other dynamic stuff is needed...
 		
 		//Parse Group rules
-//		imports += "import castleComponents.Enums.RepresentationTypes;\n"
 		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
 		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
 //		imports += "import castleComponents.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
@@ -112,18 +109,10 @@ class GroupGeneration {
 			«generateSimulateFunction(theGroup)»
 			«assignActionsAndPrintPhases(theGroup)»
 				
-	«««			/*****Repast Functions*****/
-	«««			«theGroup.miscRepast()»
-
 			/*****Pre-defined Schedules - setup(), action(), and cleanup()*****/
 			«createInitalisePhase(theGroup)»
-«««			«createSetupPhase(theGroup)»
-«««			«createActionPhase(theGroup)»
-«««			«createCleanupPhase(theGroup)»
 			«createFinalPhase(theGroup)»
 				
-«««			/*****Schedule Initialisation*****/
-«««			«print(theGroup.createSchedule)»
 		}
 	'''
 	
@@ -191,15 +180,17 @@ class GroupGeneration {
 					}
 				}
 			}
-			for (statement : function.body){
-				if (statement instanceof Field){
-					libImports.add(HelperFunctions.getFieldType(statement as Field))
-				}
-				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-			}
-			if (function.returnType !== null){
-				output += "\treturn "+function.returnType.name+";\n"
-			}
+//			for (statement : function.body){
+//				if (statement instanceof Field){
+//					libImports.add(HelperFunctions.getFieldType(statement as Field))
+//				}
+//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
+//			}
+//			if (function.returnType !== null){
+//				output += "\treturn "+function.returnType.name+";\n"
+//			}
+			output += HelperFunctions.printMethodBody(function.body, function);
+			libImports.addAll(HelperFunctions.populateImports(function.body))
 			output += "\n}\n"
 		}
 		return output;
@@ -352,23 +343,7 @@ class GroupGeneration {
 	def getLayoutType(Group grp){
 		return grp.group_rules.layout_type;
 	}
-	
-	//TODO: This needs to be handlded and configured somehow across both GROUPS and ENVIRONMENTS
-	//How can we determine what agents a group wants in it initally?
-	def initGridLayout(){
-		var str = "";
-		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
-		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
-		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
-		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
-		str += "\t\t\t//....\n" //TODO
-		str += "\t\t}\n\t}\n"
-		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
-		str += "\t\tgrp.initialise();\n"
-		str += "\t}\n"
-		str += "}"
-		return str;
-	}
+
 	//In this we create and initialise the groups into the environment
 	def String createInitalisePhase(Group g){
 			var output = "";
@@ -492,7 +467,6 @@ class GroupGeneration {
 		}
 		
 		//Set up the triggered objects
-//		str += "ArrayList<Trigger> triggers = new ArrayList<Trigger>();\n"
 		for (trig : triggeredActions){
 			str += trig+"\n"
 		}

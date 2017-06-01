@@ -63,12 +63,8 @@ class EnvironmentGeneration {
 		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
 		imports += "import java.util.concurrent.Executors;\n import java.util.Collections;\n"
 		
-		//iC = importCandidate
-		
-		
 		for (String iC : libImports){
 			if (iC !== null){
-				//imports += HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
@@ -84,7 +80,6 @@ class EnvironmentGeneration {
 		}
 		//What other dynamic stuff is needed...
 		//Parse Env rules
-//		imports += "import castleComponents.Enums.RepresentationTypes;\n"
 		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
 		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
 //		imports += "import castleComponents.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
@@ -108,7 +103,6 @@ class EnvironmentGeneration {
 			
 			/*****«theEnvironment.name.toFirstUpper» Functions*****/
 			«generateFunctions(theEnvironment)»			
-«««			«print(createInitialiseFunction(theEnvironment))»
 			
 			/*****«theEnvironment.name.toFirstUpper» Behaviors*****/
 			«generateBehaviors(theEnvironment)»
@@ -129,20 +123,8 @@ class EnvironmentGeneration {
 			«generateSimulateFunction(theEnvironment)»
 			
 			/*****Trigger Scheduling*****/
-«««			«createSetupPhase(theEnvironment)»
-«««			«createActionPhase(theEnvironment)»
-«««			«createCleanupPhase(theEnvironment)»
 			«createInitialiseFunction(theEnvironment)»
 			«assignActionsAndPrintPhases(theEnvironment)»
-			
-			/*****Build Groups*****/
-«««			«repastBuildInitialiser(theEnvironment)»
-			
-			/*****Repast Functions*****/
-«««			«miscRepast(theEnvironment)»
-			
-«««			/*****Schedule Initialisation*****/
-«««			«print(theEnvironment.createSchedule)»
 		}
 		'''
 	}
@@ -192,7 +174,7 @@ class EnvironmentGeneration {
 				output += function.returnType.name+" = "+HelperFunctions.initialiseFunctionParameterReturn(function.returnType as FunctionParameter) +";\n";
 			}
 			
-			//This needs to go
+			//This needs to go or be fixed
 			if (function.name.compareTo("initialise") == 0){
 				for (sb : env.env_parameters.fields){
 					if (sb instanceof Concern){
@@ -202,19 +184,10 @@ class EnvironmentGeneration {
 					}
 				}
 			}
-			
-			
+						
 			output += HelperFunctions.printMethodBody(function.body, function);
 			libImports.addAll(HelperFunctions.populateImports(function.body))
-//			for (statement : function.body){
-//				if (statement instanceof Field){
-//					libImports.add(HelperFunctions.getFieldType(statement as Field))
-//				}
-//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-//			}
-//			if (function.returnType !== null){
-//				output += "\treturn "+function.returnType.name+";\n"
-//			}
+			
 			output += "\n}\n"
 		}
 		return output;
@@ -359,38 +332,24 @@ class EnvironmentGeneration {
 		str += "\tsetupQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tactionQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tcleanupQueue = new ArrayList<Function<"+env.name+",Void>>();\n"
-			str+="//This is a pointless comment\n\n"
-		//Get layout type
-//		val layoutType = getLayoutType(env);
-
-//		str += "\tcontainedEntities.addAll(layoutParameters.getContainedGroups());\n"	
-
-
-
-//		switch(layoutType){
-//			case LayoutType.GRID:
-//				str += initGridLayout()
-//			default:
-//				str += "ERROR WITH LAYOUT INIT"
-//		}
 		str += "\t\t\n}"
 		return str;
 	}
 	
-	def initGridLayout(){
-		var str = "";
-		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
-		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
-		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
-		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
-		str += "\t\t\t//....\n" //TODO
-		str += "\t\t}\n\t}\n"
-		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
-		str += "\t\tgrp.initialise();\n"
-		str += "\t}\n"
-		str += "}"
-		return str;
-	}
+//	def initGridLayout(){
+//		var str = "";
+//		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
+//		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
+//		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
+//		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
+//		str += "\t\t\t//....\n" //TODO
+//		str += "\t\t}\n\t}\n"
+//		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
+//		str += "\t\tgrp.initialise();\n"
+//		str += "\t}\n"
+//		str += "}"
+//		return str;
+//	}
 	
 	def String generateSimulateFunction(Environment env){
 		if (groupsActive){
@@ -439,10 +398,6 @@ class EnvironmentGeneration {
 			str += "\t\tbroadcast(MessageType.CLOCK, getCurrentStep());\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Setup();\n"
-//			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
-			
-//			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
-			
 			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			
@@ -456,9 +411,6 @@ class EnvironmentGeneration {
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Cleanup();\n"
-//			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
-			
-//			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
 			
 			str += "\t}\n"			 
 			str += "}\n"
@@ -581,62 +533,4 @@ class EnvironmentGeneration {
 
 		return str;		
 	}
-	
-	
-	
-	
-		def createInitalisePhase(Environment env)'''
-		@Override
-		public void initialise(){
-			setupQueue = new ArrayList<Function<«env.name»,Void>>();
-			actionQueue = new ArrayList<Function<«env.name»,Void>>();
-			cleanupQueue = new ArrayList<Function<«env.name»,Void>>();
-		}
-	'''
-	
-	def createSetupPhase(Environment env)'''
-		@Override
-		public void phase_Setup(){
-			cleanupQueue.clear();
-		}
-	'''
-	
-	def createActionPhase(Environment env)'''
-		@Override
-		public void phase_Action(){
-		}
-	'''
-	
-	def createCleanupPhase(Environment env)'''
-		@Override
-		public void phase_Cleanup(){
-			cleanupQueue.forEach(f -> f.apply(this));
-				«FOR sb : env.env_parameters.fields»
-				«IF sb instanceof Concern»
-					«FOR sbf : sb.stateFields»
-					updateState("«sbf.ref.name»",«sbf.ref.name»);
-					«ENDFOR»
-				«ENDIF»
-			«ENDFOR»
-		}
-	'''
-	
-	
-	
-			def miscRepast(Environment env)'''
-		public void assignSpace(Grid<Agent> grid, ContinuousSpace<Agent> space) {
-			setGrid(grid);
-			setSpace(space);
-		}
-		@Override
-		public void setPosition(Vector2 vector){
-			super.setPosition(vector);
-					
-			space.moveTo(this, position.getX(), position.getY());
-			grid.moveTo(this, (int)position.getX(), (int)position.getY());
-		}
-		public double getCurrentTickCount() {
-				return RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
-		}
-	'''
 }

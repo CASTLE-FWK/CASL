@@ -71,19 +71,12 @@ import uofa.lbirdsey.castle.casl.Type;
 import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.generator.semanticGroups.FeatureCallGenerator;
 import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers;
 
 @SuppressWarnings("all")
 public class HelperFunctions {
-  private final static String TAB = "\t";
-  
-  private final static String NL = "\n";
-  
-  private final static String RETURN_ = "return ";
-  
-  private final static String SC = ";";
-  
   public static String inferMethodType(final EList<EObject> body) {
     final EObject finalTerm = IterableExtensions.<EObject>head(ListExtensions.<EObject>reverseView(body));
     String output = "";
@@ -541,7 +534,7 @@ public class HelperFunctions {
             strOut = (_strOut_2 + _metric_ToOutput);
           } else {
             String _strOut_3 = strOut;
-            Object _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
+            String _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
             strOut = (_strOut_3 + _parseMacro);
           }
         } else {
@@ -1558,8 +1551,8 @@ public class HelperFunctions {
       for (final EObject statement : body) {
         String _output = output;
         String _parseBodyElement = HelperFunctions.parseBodyElement(statement, caller);
-        String _plus = (HelperFunctions.TAB + _parseBodyElement);
-        String _plus_1 = (_plus + HelperFunctions.NL);
+        String _plus = (Constants.TAB + _parseBodyElement);
+        String _plus_1 = (_plus + Constants.NL);
         output = (_output + _plus_1);
       }
     } else {
@@ -1568,8 +1561,8 @@ public class HelperFunctions {
           EObject statement_1 = body.get(i);
           String _output_1 = output;
           String _parseBodyElement_1 = HelperFunctions.parseBodyElement(statement_1, caller);
-          String _plus_2 = (HelperFunctions.TAB + _parseBodyElement_1);
-          String _plus_3 = (_plus_2 + HelperFunctions.NL);
+          String _plus_2 = (Constants.TAB + _parseBodyElement_1);
+          String _plus_3 = (_plus_2 + Constants.NL);
           output = (_output_1 + _plus_3);
         }
       }
@@ -1577,8 +1570,8 @@ public class HelperFunctions {
       if ((finalLine instanceof Field)) {
         String _output_1 = output;
         String _parseBodyElement_1 = HelperFunctions.parseBodyElement(finalLine, caller);
-        String _plus_2 = (HelperFunctions.TAB + _parseBodyElement_1);
-        String _plus_3 = (_plus_2 + HelperFunctions.NL);
+        String _plus_2 = (Constants.TAB + _parseBodyElement_1);
+        String _plus_3 = (_plus_2 + Constants.NL);
         output = (_output_1 + _plus_3);
         Field ff = ((Field) finalLine);
         Symbol _declaration = ff.getDeclaration();
@@ -1587,7 +1580,7 @@ public class HelperFunctions {
           String _returnPrint = returnPrint;
           Symbol _declaration_1 = ff.getDeclaration();
           String _name = ((DataTypeDeclaration) _declaration_1).getName();
-          String _plus_4 = ((HelperFunctions.TAB + HelperFunctions.RETURN_) + _name);
+          String _plus_4 = ((Constants.TAB + Constants.RETURN_) + _name);
           returnPrint = (_returnPrint + _plus_4);
         } else {
           Symbol _agentFieldRef = ff.getAgentFieldRef();
@@ -1596,7 +1589,7 @@ public class HelperFunctions {
             String _returnPrint_1 = returnPrint;
             Symbol _agentFieldRef_1 = ff.getAgentFieldRef();
             String _name_1 = ((AgentFieldReference) _agentFieldRef_1).getName();
-            String _plus_5 = ((HelperFunctions.TAB + HelperFunctions.RETURN_) + _name_1);
+            String _plus_5 = ((Constants.TAB + Constants.RETURN_) + _name_1);
             returnPrint = (_returnPrint_1 + _plus_5);
           } else {
             Symbol _envFieldRef = ff.getEnvFieldRef();
@@ -1605,7 +1598,7 @@ public class HelperFunctions {
               String _returnPrint_2 = returnPrint;
               Symbol _envFieldRef_1 = ff.getEnvFieldRef();
               String _name_2 = ((EnvironmentFieldReference) _envFieldRef_1).getName();
-              String _plus_6 = ((HelperFunctions.TAB + HelperFunctions.RETURN_) + _name_2);
+              String _plus_6 = ((Constants.TAB + Constants.RETURN_) + _name_2);
               returnPrint = (_returnPrint_2 + _plus_6);
             } else {
               Symbol _grpFieldRef = ff.getGrpFieldRef();
@@ -1614,7 +1607,7 @@ public class HelperFunctions {
                 String _returnPrint_3 = returnPrint;
                 Symbol _grpFieldRef_1 = ff.getGrpFieldRef();
                 String _name_3 = ((GroupFieldReference) _grpFieldRef_1).getName();
-                String _plus_7 = ((HelperFunctions.TAB + HelperFunctions.RETURN_) + _name_3);
+                String _plus_7 = ((Constants.TAB + Constants.RETURN_) + _name_3);
                 returnPrint = (_returnPrint_3 + _plus_7);
               }
             }
@@ -1626,7 +1619,7 @@ public class HelperFunctions {
           if ((ee instanceof IfStatement)) {
             String _returnPrint_4 = returnPrint;
             String _printIfStatement = Printers.printIfStatement(((IfStatement) ee), 1, true);
-            String _plus_8 = (HelperFunctions.TAB + _printIfStatement);
+            String _plus_8 = (Constants.TAB + _printIfStatement);
             returnPrint = (_returnPrint_4 + _plus_8);
           } else {
             if ((ee instanceof ForLoop)) {
@@ -1635,7 +1628,7 @@ public class HelperFunctions {
               } else {
                 String _returnPrint_5 = returnPrint;
                 Object _printExpression = Printers.printExpression(ee);
-                String _plus_9 = (HelperFunctions.RETURN_ + _printExpression);
+                String _plus_9 = (Constants.RETURN_ + _printExpression);
                 returnPrint = (_returnPrint_5 + _plus_9);
               }
             }
@@ -1645,24 +1638,24 @@ public class HelperFunctions {
             SelfAssignedFormula saf = ((SelfAssignedFormula) finalLine);
             String _output_2 = output;
             String _printSelfAssignedFormula = HelperFunctions.printSelfAssignedFormula(saf);
-            String _plus_10 = (HelperFunctions.TAB + _printSelfAssignedFormula);
-            String _plus_11 = (_plus_10 + HelperFunctions.NL);
+            String _plus_10 = (Constants.TAB + _printSelfAssignedFormula);
+            String _plus_11 = (_plus_10 + Constants.NL);
             output = (_output_2 + _plus_11);
             String _returnPrint_6 = returnPrint;
             String _name_4 = saf.getRef().getName();
-            String _plus_12 = (((HelperFunctions.TAB + HelperFunctions.RETURN_) + "this.") + _name_4);
+            String _plus_12 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_4);
             returnPrint = (_returnPrint_6 + _plus_12);
           } else {
             if ((finalLine instanceof Formula)) {
               Formula saf_1 = ((Formula) finalLine);
               String _output_3 = output;
               String _printFormula = HelperFunctions.printFormula(saf_1);
-              String _plus_13 = (HelperFunctions.TAB + _printFormula);
-              String _plus_14 = (_plus_13 + HelperFunctions.NL);
+              String _plus_13 = (Constants.TAB + _printFormula);
+              String _plus_14 = (_plus_13 + Constants.NL);
               output = (_output_3 + _plus_14);
               String _returnPrint_7 = returnPrint;
               String _name_5 = saf_1.getSym().getName();
-              String _plus_15 = (((HelperFunctions.TAB + HelperFunctions.RETURN_) + "this.") + _name_5);
+              String _plus_15 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_5);
               returnPrint = (_returnPrint_7 + _plus_15);
             } else {
               InputOutput.<String>println(("FL: " + finalLine));
@@ -1671,7 +1664,7 @@ public class HelperFunctions {
         }
       }
       String _output_4 = output;
-      output = (_output_4 + (((HelperFunctions.TAB + returnPrint) + ";") + HelperFunctions.NL));
+      output = (_output_4 + (((Constants.TAB + returnPrint) + ";") + Constants.NL));
     }
     return output;
   }

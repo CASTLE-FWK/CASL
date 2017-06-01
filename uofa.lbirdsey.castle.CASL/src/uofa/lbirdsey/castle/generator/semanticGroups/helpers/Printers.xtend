@@ -39,13 +39,9 @@ import uofa.lbirdsey.castle.casl.SystemCallObj
 import uofa.lbirdsey.castle.casl.TypeRef
 import uofa.lbirdsey.castle.generator.semanticGroups.FeatureCallGenerator
 import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator
+import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 
 class Printers {
-
-	static val String TAB = '\t';
-	static val String NL = '\n';
-	static val RETURN_ = "return ";
-	static val SC = ';';
 
 	// Copyright printing
 	static def String copyrightPrint(String fname) {

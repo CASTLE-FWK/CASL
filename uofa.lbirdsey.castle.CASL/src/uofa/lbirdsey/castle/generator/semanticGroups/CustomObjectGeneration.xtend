@@ -35,7 +35,6 @@ class CustomObjectGeneration {
 		var imports = "//Automated Custom Object Import Generation"
 		for (String iC : libImports){
 			if (iC !== null){
-				//imports += HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
@@ -75,7 +74,6 @@ class CustomObjectGeneration {
 						val func = field as Function
 						output  += "\t"
 						if (func.returnType != null) {
-//							output += (func.returnType as FunctionParameter).type.name
 							output += HelperFunctions.inferFunctionParameterType((func.returnType as FunctionParameter))
 						} else {
 							output += "void"

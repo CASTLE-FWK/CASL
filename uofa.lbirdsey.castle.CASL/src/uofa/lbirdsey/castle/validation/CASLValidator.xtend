@@ -74,8 +74,6 @@ public class CASLValidator extends AbstractCASLValidator {
 		}
 	}
 	
-	
-	
 	//Check that each group and environment has LayoutParameters defined
 	@Check
 	def checkForLayoutParameterVariable(Entity ent){

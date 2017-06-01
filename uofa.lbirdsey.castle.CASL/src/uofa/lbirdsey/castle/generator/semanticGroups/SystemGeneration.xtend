@@ -104,9 +104,6 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 	/*****System Functions*****/
 	«generateFunctions(theSystem)»
-	
-«««	/*****Termination Conditions*****/
-«««	«generateEndConditions(theSystem)»
 			
 «««			/*****CAS Checking*****/
 «««			«generateCASChecker(theSystem)»
@@ -147,9 +144,6 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "\n//Getters & Setters\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){
-				if ((field as Field).declaration !== null){
-//					(((field as Field).declaration) as DataTypeDeclaration).setInitInclude("*");
-				}
 				output += HelperFunctions.generateGettersSetters(field as Field)+"\n"
 			}
 		}
@@ -172,27 +166,6 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 		return str
 	}	
-	
-	//30/05/17: This is now redundant
-	def generateEndConditions(System sys)'''
-«««		//End Condition Fields
-«««		«FOR endCond : sys.end_conditions.end_conditions»
-«««		«IF (endCond.endType == EndConditionTypes.STEPS)»
-«««			private int «endCond.name»;
-«««		«ENDIF»
-«««		«ENDFOR»
-«««		
-«««		//End Condition Getters & Setters
-«««		«FOR endCond : sys.end_conditions.end_conditions»
-«««			«IF (endCond.endType == EndConditionTypes.STEPS)»
-«««			public void set«endCond.name.toFirstUpper»(int «endCond.name») {
-«««				this.«endCond.name» = «endCond.name»;
-«««			}
-«««			public int get«endCond.name.toFirstUpper»() {
-«««				return «endCond.name»;
-«««			}«ENDIF»
-«««		«ENDFOR»
-	'''
 	
 	//TODO: (For all functions) make sure init is special and gets dumped into the intialise function
 	def generateFunctions(System sys){
@@ -302,17 +275,17 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		 */
 		<T> void broadcast(MessageType messageType, T contents){
 			Message<T> message = new Message<T>(messageType, contents, clock);
-	
+		
 			//Really you want generate a bunch of messages and put them in the queue
-	
+		
 			for (Environment env : storedEnvironments){
 				env.receiveMessage(new Message<T>(messageType, contents, clock, env));
 			}
-	
+		
 			for (SemanticGroup grp : storedGroups){
 				grp.receiveMessage(new Message<T>(messageType, contents, clock, grp));
 			}
-	
+		
 			// notifyAll(); //??
 		}'''
 	
@@ -391,13 +364,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		//hard code anything (however in the future it would be useful to skip any manual stuff)
 
 		//Space set up		
-		var spaceSetUp = "\t//Initialise the visual stuff and assign Agents places in space\n"
-//		spaceSetUp += "\tGridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n"
-//		spaceSetUp += "\tGrid<Agent> grid = gridFactory.createGrid(\"grid\", context, new GridBuilderParameters<Agent>(new StrictBorders(),new SimpleGridAdder<Agent>(), false, areaSizeX, areaSizeY));\n"
-//		
-//		spaceSetUp += "\tContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder.createContinuousSpaceFactory(null);\n"
-//		spaceSetUp += "\tContinuousSpace<Agent> space = spaceFactory.createContinuousSpace(\"space\", context, new SimpleCartesianAdder<Agent>(), new repast.simphony.space.continuous.StrictBorders(), areaSizeX, areaSizeY);\n"
-		str += spaceSetUp
+
 		
 		var scheduleSetup = "\n";
 		scheduleSetup += "\t//Set Schedule for CASFeatures ()\n"
@@ -420,54 +387,14 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += scheduleSetup;
 		
 		//Initialise Agents/Environments
-		//Only Tier1 agents get generated here (and they should never exist)
-		var agentSetUp = "\n\t//Initialse Agents"
-//		var idGenCounter = 0;
-		for (agent : sys.agent_types.agent_types){
-			agentSetUp += "\n\t//Create the "+agent.agent_type_name+" population\n"
-//			agentSetUp += "\tfor (int i = 0; i < get"+agent.agent_type_name+"Population();i++) {\n"			
-//			agentSetUp += "\t\t"+agent.agent_type_name+" tmp"+agent.agent_type_name+" = new "+agent.agent_type_name+"(space, grid, \""+agent.agent_type_name+"_\"+i"+",new Vector2(0,0));\n" //TODO: How do we handle init specifics??
-//			
-//			agentSetUp += "\t\t"+agent.agent_type_name+"List.add(tmp"+agent.agent_type_name+");\n"
-//			agentSetUp += "\t\tcontext.add(tmp"+agent.agent_type_name+");\n"
-//			
-//			//specifics			
-//			agentSetUp +="\t\ttmp"+agent.agent_type_name+".init();\n"
-//			agentSetUp += "\t\t//registerAgentState_Init(tmp"+agent.agent_type_name+");\n"
-//			agentSetUp += "\t}\n"
-		}
+		//Initialize() & layouts are responsible for creating entities
 		
-		str += agentSetUp;
-		
-		var groupSetUp = "\t//Set up groups and subcontexts\n"		
-		for (group : sys.group_types.group_types){
-			groupSetUp += "\t//Creating the "+group.group_type_name+"\n"
-//			groupSetUp += "\t
-		}
-		
-		
-		str += groupSetUp;
-		var envSetUp = "\t//Initialise Environments"		
-		var long idGen = 0l;
-		for (env : sys.environment_types.environment_types){
-			envSetUp +="\t//Creating the "+env.environment_type_name+"\n"
-			envSetUp += "\t"+env.environment_type_name +" "+env.environment_type_name.toFirstLower +" = new "+env.environment_type_name+"(new EntityID(\""+env.environment_type_name+"\","+idGen+"));\n"
-			
-			//specifics
-			envSetUp += "\t"+env.environment_type_name.toFirstLower+".initialise();\n"
-			
-			envSetUp += "\t"+env.environment_type_name+"List.add("+env.environment_type_name.toFirstLower+");\n"
-			envSetUp +="\tcontext.add("+env.environment_type_name.toFirstLower+");"
-			idGen++;
-		}
-		
-		str += envSetUp;
 		
 		//Set up the main System init stuff
 		str +="\n\tinitialize();\n\ttheContext = context;\n";
 		
 		
-		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
+//		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
 		
 		str += "\ttier1Entities = storedEnvironments.size();";
 		str += "\n\treturn context;"

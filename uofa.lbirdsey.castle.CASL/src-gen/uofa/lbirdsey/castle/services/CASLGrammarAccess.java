@@ -7311,18 +7311,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		// 	* Layout init params: infinite list of expressions that matches the layouts init function
 		// 	* ENTITY: Should be a type of entity that exists in the model
 		// 	* Entity init params: infinite list of expressions that matches the entities init parameters
-		//*/ //CASL_Macro_Populate:
-		////	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-		////	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-		////	')'
-		////;
-		//CASL_Macro_Populate:
+		//*/ CASL_Macro_Populate:
 		//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
-		//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
-		//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-		//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-		//	//	')'
-		//;
+		//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
@@ -7409,7 +7400,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVISUALIZEKeyword = (Keyword)rule.eContents().get(1);
 		
 		////TODO: Fill this out
-		//CASL_Macro_Visualize:
+		///**
+		// * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+		// *
+		// */ CASL_Macro_Visualize:
 		//	"VISUALIZE";
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -10283,18 +10277,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	// 	* Layout init params: infinite list of expressions that matches the layouts init function
 	// 	* ENTITY: Should be a type of entity that exists in the model
 	// 	* Entity init params: infinite list of expressions that matches the entities init parameters
-	//*/ //CASL_Macro_Populate:
-	////	"POPULATE"  '('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-	////	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-	////	')'
-	////;
-	//CASL_Macro_Populate:
+	//*/ CASL_Macro_Populate:
 	//	"POPULATE" '[' layoutLocation=Expression '](' layoutInitParams+=Expression? (',' layoutInitParams+=Expression)* ')['
-	//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')'
-	//	//	'('(initNum = Expression)')' '[' (ent = [Entity] )']' '('
-	//	//	((body += Field  | body += Expression | body += Formula | body += SelfAssignedFormula | body += Raw_Java_Block )';')*
-	//	//	')'
-	//;
+	//	count=Expression ',' ent=Entity_Call '](' entityInitParams+=Expression? (',' entityInitParams+=Expression)* ')';
 	public CASL_Macro_PopulateElements getCASL_Macro_PopulateAccess() {
 		return pCASL_Macro_Populate;
 	}
@@ -10304,7 +10289,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////TODO: Fill this out
-	//CASL_Macro_Visualize:
+	///**
+	// * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+	// *
+	// */ CASL_Macro_Visualize:
 	//	"VISUALIZE";
 	public CASL_Macro_VisualizeElements getCASL_Macro_VisualizeAccess() {
 		return pCASL_Macro_Visualize;

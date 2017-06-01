@@ -43,10 +43,8 @@ class AgentGeneration {
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.Entity;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
-		//iC = importCandidate
 		for (String iC : libImports){
 			if (iC !== null){
-				//imports += HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
@@ -101,9 +99,6 @@ class AgentGeneration {
 			/*****Pre-defined Schedules - setup(), action(), and cleanup()*****/
 			«createInitalisePhase(theAgent)»
 			«assignActionsToPhases(theAgent)»
-«««			«createSetupPhase(theAgent)»
-«««			«createActionPhase(theAgent)»
-«««			«createCleanupPhase(theAgent)»
 			«createFinalPhase(theAgent)»
 		}
 	'''
@@ -153,15 +148,17 @@ class AgentGeneration {
 					}
 				}
 			}
-			for (statement : function.body){
-				if (statement instanceof Field){
-					libImports.add("Error: FUNCBD "+HelperFunctions.getFieldType(statement as Field))
-				}
-				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-			}
-			if (function.returnType !== null){
-				output += "\treturn "+function.returnType.name+";\n"
-			}
+			output += HelperFunctions.printMethodBody(function.body, function);
+			libImports.addAll(HelperFunctions.populateImports(function.body))
+//			for (statement : function.body){
+//				if (statement instanceof Field){
+//					libImports.add("Error: FUNCBD "+HelperFunctions.getFieldType(statement as Field))
+//				}
+//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
+//			}
+//			if (function.returnType !== null){
+//				output += "\treturn "+function.returnType.name+";\n"
+//			}
 			output += "\n}\n"
 		}
 		return output;
@@ -301,10 +298,10 @@ class AgentGeneration {
 	
 	
 	def createFinalPhase(Agent a)'''
-																		@Override
-																		public void final_call(){
-																		}
-																	'''
+		@Override
+		public void final_call(){
+		}
+	'''
 	
 	def String createInitalisePhase(Agent a){
 		var output = "";
@@ -429,33 +426,5 @@ class AgentGeneration {
 
 		return str;		
 	}
-	
-
-	def createSetupPhase(Agent a)'''
-																						@Override
-																						public void phase_Setup(){
-																							cleanupQueue.clear();
-																						}
-																					'''
-	
-	def createActionPhase(Agent a)'''
-																						@Override
-																						public void phase_Action(){
-																						}
-																					'''
-	
-	
-	def createCleanupPhase(Agent a)'''
-																						public void phase_Cleanup(){
-																							cleanupQueue.forEach(f -> f.apply(this));
-																								«FOR sb : a.agent_parameters.fields»
-																									«IF sb instanceof Concern»
-																										«FOR sbf : sb.stateFields»
-																											updateState("«sbf.ref.name»",«sbf.ref.name»);
-																										«ENDFOR»
-																									«ENDIF»
-																							«ENDFOR»
-																						}
-																					'''
 }
 																				

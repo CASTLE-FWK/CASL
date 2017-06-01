@@ -27,13 +27,6 @@ class MacroGenerator {
 			output += "null;\n"
 			var ngh = (macro as CASL_Macro_Neighbours)
 			if (ngh.worldType == WorldType.GRID) {
-//				output += "GridPoint pt = grid.getLocation(this);\nGridCellNgh<"+ngh.searchType.name.toFirstUpper+"> nghCreator;\n"
-//				output += "nghCreator = new GridCellNgh<"+ngh.searchType.name.toFirstUpper+">(grid, pt, "+ngh.searchType.name.toFirstUpper+".class, "+ngh.dist+", "+ngh.dist+");\n"
-//				output += "List<GridCell<"+ngh.searchType.name.toFirstUpper+">> gridCells = nghCreator.getNeighborhood(false);\n"
-//				output += "List<"+ngh.searchType.name.toFirstUpper+"> "+name+" = new ArrayList<"+ngh.searchType.name.toFirstUpper+">();\n"
-//				output += "for (GridCell<"+ngh.searchType.name.toFirstUpper+"> "+ngh.searchType.name.toFirstLower+"s : grid"+ngh.searchType.name.toFirstUpper+"s) {\n"	
-//				output += "\t"+ngh.searchType.name.toFirstUpper+" tmp"+ngh.searchType.name.toFirstUpper+" = "+ngh.searchType.name.toFirstLower+"s.items().iterator().next();\n"
-//				output += "\t"+name+".add(tmpCell);\n}"
 
 		
 			} else if (ngh.worldType == WorldType.SPACE) {
@@ -123,8 +116,6 @@ class MacroGenerator {
 		//Something needs to happen here before initializing the entities
 		output += "ArrayList<"+entityName+">" +entityName.toLowerCase+"List = new ArrayList<"+entityName+">();\n"
 		
-//		output += Printers.printExpression(layoutLocation)+".initializeEntities("+counterAsString+","+printInitializeParams(entityInitParams)+");\n";
-		
 		//Determine the type of counter range
 		println(counterAsString)
 		if (counterAsString.equalsIgnoreCase("vector2")){
@@ -138,20 +129,11 @@ class MacroGenerator {
 		} 
 		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
-		/*
-		 * 
-		 * layoutLocation.initializeEntities(
-		 * 
-		 * 
-		 */
-		
-		
-
 		return output;
 	}
 	
 	//This is for the populator
-	//TODO: Figure out what the sticky parts are
+	//TODO: Figure out what the sticky parts are (e.g. function passes)
 	static def String printInitializeParams(EList<Expression> params){
 		val parameterSize = params.size
 		var strOut = "";

@@ -48,19 +48,12 @@ import uofa.lbirdsey.castle.casl.SystemCallObj;
 import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.generator.semanticGroups.FeatureCallGenerator;
 import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers;
 
 @SuppressWarnings("all")
 public class Printers {
-  private final static String TAB = "\t";
-  
-  private final static String NL = "\n";
-  
-  private final static String RETURN_ = "return ";
-  
-  private final static String SC = ";";
-  
   public static String copyrightPrint(final String fname) {
     String copyrightNote = "";
     String fileName = fname.replaceAll(" ", "").trim();
@@ -805,10 +798,10 @@ public class Printers {
   
   public static String printIfStatement(final IfStatement iff, final int depth, final boolean returns) {
     String output = "";
-    String TABS = Printers.TAB;
+    String TABS = Constants.TAB;
     for (int i = 0; (i < depth); i++) {
       String _TABS = TABS;
-      TABS = (_TABS + Printers.TAB);
+      TABS = (_TABS + Constants.TAB);
     }
     String _output = output;
     Object _printExpression = Printers.printExpression(iff.getCondition());
@@ -830,16 +823,16 @@ public class Printers {
             String _output_2 = output;
             String _autoPrinter = Printers.autoPrinter(obj);
             String _plus_3 = ((TABS + "return ") + _autoPrinter);
-            String _plus_4 = (_plus_3 + Printers.SC);
-            String _plus_5 = (_plus_4 + Printers.NL);
+            String _plus_4 = (_plus_3 + Constants.SC);
+            String _plus_5 = (_plus_4 + Constants.NL);
             output = (_output_2 + _plus_5);
           }
         } else {
           String _output_3 = output;
           String _autoPrinter_1 = Printers.autoPrinter(obj);
           String _plus_6 = (TABS + _autoPrinter_1);
-          String _plus_7 = (_plus_6 + Printers.SC);
-          String _plus_8 = (_plus_7 + Printers.NL);
+          String _plus_7 = (_plus_6 + Constants.SC);
+          String _plus_8 = (_plus_7 + Constants.NL);
           output = (_output_3 + _plus_8);
         }
       }
@@ -872,16 +865,16 @@ public class Printers {
                   String _output_4 = output;
                   String _autoPrinter = Printers.autoPrinter(obj);
                   String _plus_5 = ((TABS + "return ") + _autoPrinter);
-                  String _plus_6 = (_plus_5 + Printers.SC);
-                  String _plus_7 = (_plus_6 + Printers.NL);
+                  String _plus_6 = (_plus_5 + Constants.SC);
+                  String _plus_7 = (_plus_6 + Constants.NL);
                   output = (_output_4 + _plus_7);
                 }
               } else {
                 String _output_5 = output;
                 String _autoPrinter_1 = Printers.autoPrinter(obj);
                 String _plus_8 = (TABS + _autoPrinter_1);
-                String _plus_9 = (_plus_8 + Printers.SC);
-                String _plus_10 = (_plus_9 + Printers.NL);
+                String _plus_9 = (_plus_8 + Constants.SC);
+                String _plus_10 = (_plus_9 + Constants.NL);
                 output = (_output_5 + _plus_10);
               }
             }
@@ -910,16 +903,16 @@ public class Printers {
               String _output_4 = output;
               String _autoPrinter = Printers.autoPrinter(obj);
               String _plus_2 = ((TABS + "return ") + _autoPrinter);
-              String _plus_3 = (_plus_2 + Printers.SC);
-              String _plus_4 = (_plus_3 + Printers.NL);
+              String _plus_3 = (_plus_2 + Constants.SC);
+              String _plus_4 = (_plus_3 + Constants.NL);
               output = (_output_4 + _plus_4);
             }
           } else {
             String _output_5 = output;
             String _autoPrinter_1 = Printers.autoPrinter(obj);
             String _plus_5 = (TABS + _autoPrinter_1);
-            String _plus_6 = (_plus_5 + Printers.SC);
-            String _plus_7 = (_plus_6 + Printers.NL);
+            String _plus_6 = (_plus_5 + Constants.SC);
+            String _plus_7 = (_plus_6 + Constants.NL);
             output = (_output_5 + _plus_7);
           }
         }

@@ -59,12 +59,9 @@ import uofa.lbirdsey.castle.casl.TypeRef
 import uofa.lbirdsey.castle.generator.semanticGroups.FeatureCallGenerator
 import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator
 
-class HelperFunctions {
+import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 
-	static val String TAB = '\t';
-	static val String NL = '\n';
-	static val RETURN_ = "return ";
-	static val SC = ';';
+class HelperFunctions {
 
 	// There's clearly a better way to do this
 	static def String inferMethodType(EList<EObject> body) {

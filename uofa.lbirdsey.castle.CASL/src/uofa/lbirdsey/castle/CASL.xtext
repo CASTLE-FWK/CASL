@@ -637,7 +637,7 @@ ForEachLoop:
 ForEachAccess returns Symbol:
 	name = ID
 ;
-
+ 
 //TODO: compounded elseifs
 IfStatement:
     'if' '(' condition = Expression ')' 'then' ((then += Expression | then += SelfAssignedFormula | then += Formula | then += Field)';')+
@@ -849,11 +849,7 @@ enum RandomType:
 ;
 
 /*****Java 8-isms *****/
-/*I'm not sure if burning these into
- * Casl is a good idea... but it makes sense but
- * it also means that we may end up writing java-lite
- * A possible better approach would be to create Macros
- * that casl uses but instantly knows how to translate
+/*
  * We could also have a class that parses raw Java functions with
  * wildcards etc
  */ 
