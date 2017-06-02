@@ -255,6 +255,7 @@ class HelperFunctions {
 			for (elseif : ifstate.elseifexpr) {
 				var tmpReturn = inferGeneralType(elseif.elseifthen.reverseView.head)
 				if (tmpReturn.compareTo(returnType) != 0 && returnType.length == 0) {
+					throwCASLError("error with inferring elseif exp","inferIfStatementReturnType",HelperFunctions.getClass().toString());
 					output = returnType + "_ERROR"
 				} else {
 					returnType = tmpReturn;
@@ -264,6 +265,7 @@ class HelperFunctions {
 		if (ifstate.elseexp !== null) {
 			var tmpReturn = inferGeneralType(ifstate.elseexp.reverseView.head)
 			if (tmpReturn.compareTo(returnType) != 0 && returnType.length == 0) {
+				throwCASLError("error with inferring else exp","inferIfStatementReturnType",HelperFunctions.getClass().toString());
 				output = returnType + "_ERROR"
 			} else {
 				returnType = tmpReturn;
@@ -304,6 +306,7 @@ class HelperFunctions {
 			}
 			strOut += "}"
 		} else {
+			throwCASLError("error with body element","parseBodyElement",HelperFunctions.getClass().toString());
 			strOut += "ERROR WITH BODY ELEMENT"
 		}
 		return (strOut + ";");

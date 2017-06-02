@@ -482,6 +482,7 @@ public class HelperFunctions {
         {
           String tmpReturn = HelperFunctions.inferGeneralType(IterableExtensions.<EObject>head(ListExtensions.<EObject>reverseView(elseif.getElseifthen())));
           if (((tmpReturn.compareTo(returnType) != 0) && (returnType.length() == 0))) {
+            Constants.throwCASLError("error with inferring elseif exp", "inferIfStatementReturnType", HelperFunctions.class.getClass().toString());
             output = (returnType + "_ERROR");
           } else {
             returnType = tmpReturn;
@@ -494,6 +495,7 @@ public class HelperFunctions {
     if (_tripleNotEquals_1) {
       String tmpReturn = HelperFunctions.inferGeneralType(IterableExtensions.<EObject>head(ListExtensions.<EObject>reverseView(ifstate.getElseexp())));
       if (((tmpReturn.compareTo(returnType) != 0) && (returnType.length() == 0))) {
+        Constants.throwCASLError("error with inferring else exp", "inferIfStatementReturnType", HelperFunctions.class.getClass().toString());
         output = (returnType + "_ERROR");
       } else {
         returnType = tmpReturn;
@@ -569,6 +571,7 @@ public class HelperFunctions {
                   String _strOut_9 = strOut;
                   strOut = (_strOut_9 + "}");
                 } else {
+                  Constants.throwCASLError("error with body element", "parseBodyElement", HelperFunctions.class.getClass().toString());
                   String _strOut_10 = strOut;
                   strOut = (_strOut_10 + "ERROR WITH BODY ELEMENT");
                 }

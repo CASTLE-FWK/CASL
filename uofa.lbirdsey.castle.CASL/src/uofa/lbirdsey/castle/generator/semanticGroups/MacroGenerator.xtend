@@ -147,6 +147,8 @@ class MacroGenerator {
 		return output;
 	}
 	
+	
+	
 	static def String printContainerAdd(String entityType, String tmpEntityName){
 		if (entityType == AGENT) {
 			return "storedAgents.add("+tmpEntityName+")"
@@ -155,7 +157,7 @@ class MacroGenerator {
 		} else if (entityType == GROUP) {
 			return "storedGroups.add("+tmpEntityName+")"+ LINE_END
 		} else {
-			return throwCASLError("invalid entity type","printContainerAdd","MacroGenerator");
+			throwCASLError("invalid entity type","printContainerAdd","MacroGenerator");
 		}
 	}
 	
