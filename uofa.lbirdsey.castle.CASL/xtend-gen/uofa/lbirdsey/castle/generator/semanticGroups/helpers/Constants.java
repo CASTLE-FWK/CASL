@@ -1,6 +1,6 @@
 package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
-import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class Constants {
@@ -26,8 +26,11 @@ public class Constants {
   
   public final static String LINE_END = (Constants.SC + Constants.NL);
   
-  public static String printCASLError(final String description, final String location, final String clazz) {
-    InputOutput.<String>println(((((("ERROR: " + description) + " at loc: ") + location) + " class: ") + clazz));
-    return (((((("[ERROR: " + description) + " at loc: ") + location) + " class: ") + clazz) + "]");
+  public static String throwCASLError(final String description, final String location, final String clazz) {
+    try {
+      throw new Exception(((((("ERROR: " + description) + " at loc: ") + location) + " class: ") + clazz));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

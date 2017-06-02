@@ -161,7 +161,6 @@ class GroupGeneration {
 				if (!(function.returnType instanceof FunctionParameter)){
 						libImports.add(HelperFunctions.getFieldType(function.returnType as Field))
 				}
-//				libImports.add("GRPFN"+HelperFunctions.inferSymbolType((function.returnType as Symbol)));
 				output += HelperFunctions.inferSymbolType(function.returnType)+" ";
 			} else {
 				output += "void ";
@@ -180,15 +179,6 @@ class GroupGeneration {
 					}
 				}
 			}
-//			for (statement : function.body){
-//				if (statement instanceof Field){
-//					libImports.add(HelperFunctions.getFieldType(statement as Field))
-//				}
-//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-//			}
-//			if (function.returnType !== null){
-//				output += "\treturn "+function.returnType.name+";\n"
-//			}
 			output += HelperFunctions.printMethodBody(function.body, function);
 			libImports.addAll(HelperFunctions.populateImports(function.body))
 			output += "\n}\n"

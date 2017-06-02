@@ -150,15 +150,6 @@ class AgentGeneration {
 			}
 			output += HelperFunctions.printMethodBody(function.body, function);
 			libImports.addAll(HelperFunctions.populateImports(function.body))
-//			for (statement : function.body){
-//				if (statement instanceof Field){
-//					libImports.add("Error: FUNCBD "+HelperFunctions.getFieldType(statement as Field))
-//				}
-//				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
-//			}
-//			if (function.returnType !== null){
-//				output += "\treturn "+function.returnType.name+";\n"
-//			}
 			output += "\n}\n"
 		}
 		return output;
@@ -377,7 +368,6 @@ class AgentGeneration {
 		}
 		
 		//Set up the triggered objects
-//		str += "ArrayList<Trigger> triggers = new ArrayList<Trigger>();\n"
 		for (trig : triggeredActions){
 			str += trig+"\n"
 		}
@@ -427,4 +417,3 @@ class AgentGeneration {
 		return str;		
 	}
 }
-																				

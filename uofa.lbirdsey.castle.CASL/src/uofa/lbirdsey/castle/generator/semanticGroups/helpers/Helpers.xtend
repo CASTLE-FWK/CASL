@@ -71,7 +71,7 @@ class Helpers {
 		} else if (eo instanceof ObjectImpl){
 			return OBJECT;
 		} else {
-			return printCASLError("Cannot determine entity type","determineEntityType","Helpers");
+			throwCASLError("Cannot determine entity type","determineEntityType","Helpers");
 		}
 	}	
 	
@@ -83,18 +83,17 @@ class Helpers {
 		} else if (ec instanceof Group_Call){
 			return (ec as Group_Call).grp.name;
 		} else {
-			return printCASLError("Cannot infer name","getEntityNameFromCall","Helpers");
+			throwCASLError("Cannot infer name","getEntityNameFromCall","Helpers");
 		}
 	}
 	
 	static def String getNameFromExpression(Expression e){
-		println(e.class)
 		if (e instanceof Field){
 			return HelperFunctions.getFieldName(e as Field);
 		} else if (e instanceof TypeRef){
 			return getSymbolName((e as TypeRef).type)
 		} else {
-			return printCASLError("Cannot infer name","getNameFromExpression","Helpers");
+			throwCASLError("Cannot infer name","getNameFromExpression","Helpers");
 		}
 	}
 	
@@ -106,7 +105,7 @@ class Helpers {
 		} else if (ec instanceof Group_Call){
 			return GROUP;
 		} else {
-			return printCASLError("Cannot infer entity type", "getEntityTypeFromCall","Helpers");
+			throwCASLError("Cannot infer entity type", "getEntityTypeFromCall","Helpers");
 		}
 	}
 	

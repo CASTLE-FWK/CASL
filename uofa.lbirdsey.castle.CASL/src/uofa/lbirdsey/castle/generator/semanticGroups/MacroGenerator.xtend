@@ -18,7 +18,6 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
-import uofa.lbirdsey.castle.casl.Field
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -129,8 +128,7 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
-			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
-			
+			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END			
 			output += TAB + "}\n}\n"
 		} else if (Helpers.isANumber(counterAsString)){
 			output += "int limit = (int)" + counterName + LINE_END
@@ -157,7 +155,7 @@ class MacroGenerator {
 		} else if (entityType == GROUP) {
 			return "storedGroups.add("+tmpEntityName+")"+ LINE_END
 		} else {
-			return printCASLError("invalid entity type","printContainerAdd","MacroGenerator");
+			return throwCASLError("invalid entity type","printContainerAdd","MacroGenerator");
 		}
 	}
 	
