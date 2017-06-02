@@ -131,8 +131,5 @@ class Helpers {
 				return true;
 		}
 		return false;	
-	}
-	
-	
-	
+	}	
 }

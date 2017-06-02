@@ -18,6 +18,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
+import uofa.lbirdsey.castle.casl.Field
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -102,6 +103,7 @@ class MacroGenerator {
 		val layoutLocation = pop.layoutLocation;
 		val EList<Expression> layoutInitParams = pop.layoutInitParams;
 		val counter = pop.count;
+		var String counterName = HelperFunctions.getFieldName(counter as Field);		
 		val String counterAsString = HelperFunctions.inferExpressionType(counter) as String;
 		val entityCall = pop.ent;
 		val String entityName = Helpers.getEntityNameFromCall(entityCall);
@@ -117,38 +119,50 @@ class MacroGenerator {
 		//Something needs to happen here before initializing the entities
 		output += "ArrayList<"+entityName+">" +entityName.toLowerCase+"List = new ArrayList<"+entityName+">();\n"
 		
-		
-		
 		//Determine the type of counter range
 		//println(counterAsString) //This is very useful
 		if (counterAsString.equalsIgnoreCase("vector2")){
-			output += "int xRange = (int)range.getX();\nint yRange = (int)range.getY();\nfor (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){\n"
+			output += "int xRange = (int)"+counterName+".getX();\nint yRange = (int)"+counterName+".getY()"+ SC + NL +
+				"for (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){"+ NL
 			//Do the cycling
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+SC+NL
-			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+SC+NL 
-			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+SC+NL
-			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+SC+NL
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+LINE_END
+			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
+			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
+			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END
 			
 			//Add to the above containedGroup/containedEnvironemnt/containedAgents list
 			//1: Check for type (SYSTEM contains Envs & groups, ENVs contain GROUPS, GROUPS contain Agents
-			if (entityType == AGENT) {
-				output += "storedAgents.add("+tmpEntityName+");"+NL
-			} else if (entityType == ENVIRONMENT) {
-				output += "storedEnvironments.add("+tmpEntityName+");"+NL
-			} else if (entityType == GROUP) {
-				output += "storedGroups.add("+tmpEntityName+");"+NL
-			}
+			output += TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
 			
 			
 			
 			output += TAB + "}\n}\n"
-		} //else if (counterAssString.is a number: create things in that range)
-		
+		} else if (Helpers.isANumber(counterAsString)){
+			output += "int limit = (int)" + counterName + LINE_END
+			output += "for (int i = 0; i < limit; i++) { " + NL
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+LINE_END
+			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
+			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
+			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
+			output += TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
+		} 
 		
 		//Add the entities to the layout parameter class as well
 		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		return output;
+	}
+	
+	static def String printContainerAdd(String entityType, String tmpEntityName){
+		if (entityType == AGENT) {
+			return "storedAgents.add("+tmpEntityName+")"
+		} else if (entityType == ENVIRONMENT) {
+			return "storedEnvironments.add("+tmpEntityName+")"
+		} else if (entityType == GROUP) {
+			return "storedGroups.add("+tmpEntityName+")"+ LINE_END
+		} else {
+			return printCASLError("invalid entity type","printContainerAdd","MacroGenerator");
+		}
 	}
 	
 	//This is for the populator

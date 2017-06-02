@@ -325,5 +325,5 @@ class Printers {
 
 	static def String printIfStatement(IfStatement is) {
 		return printIfStatement(is, 1, false);
-	}
+	}	
 }
