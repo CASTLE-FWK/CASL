@@ -12,7 +12,8 @@ import uofa.lbirdsey.castle.casl.Entity_Call
 import uofa.lbirdsey.castle.casl.Agent_Call
 import uofa.lbirdsey.castle.casl.Environment_Call
 import uofa.lbirdsey.castle.casl.Group_Call
-import uofa.lbirdsey.castle.casl.Entity_Feature
+
+import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 
 class Helpers {
 	
@@ -57,15 +58,15 @@ class Helpers {
 	//Find out what type the EObject is
 	static def String determineEntityType(EObject eo){
 		if (eo instanceof AgentImpl){
-			return "agent";
+			return AGENT;
 		} else if (eo instanceof GroupImpl){
-			return "group";
+			return GROUP;
 		} else if (eo instanceof EnvironmentImpl){
-			return "environment";
+			return ENVIRONMENT;
 		} else if (eo instanceof SystemImpl) {
-			return "system";
+			return SYSTEM;
 		} else if (eo instanceof ObjectImpl){
-			return "object"
+			return OBJECT;
 		} else {
 			return "ERROR 3"
 		}
@@ -83,13 +84,16 @@ class Helpers {
 		}
 	}
 	
-	//TODO: This is super important (02/06/17)
-	static def String determineEntityNameFromFeatureCall(Entity_Feature ef){
-		var output = "";
-		println(ef.class)
-		
-		
-		return output;
+	static def String getEntityTypeFromCall(Entity_Call ec){
+		if (ec instanceof Agent_Call){
+			return AGENT;
+		} else if (ec instanceof Environment_Call){
+			return ENVIRONMENT;
+		} else if (ec instanceof Group_Call){
+			return GROUP;
+		} else {
+			return "ERROR: getEntityNameFromCall: "+ec.class
+		}
 	}
 	
 	//TODO: Fill this in

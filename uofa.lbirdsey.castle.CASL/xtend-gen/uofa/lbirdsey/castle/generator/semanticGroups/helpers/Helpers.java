@@ -2,10 +2,8 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import uofa.lbirdsey.castle.casl.Agent_Call;
 import uofa.lbirdsey.castle.casl.Entity_Call;
-import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.Environment_Call;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Group_Call;
@@ -14,6 +12,7 @@ import uofa.lbirdsey.castle.casl.impl.EnvironmentImpl;
 import uofa.lbirdsey.castle.casl.impl.GroupImpl;
 import uofa.lbirdsey.castle.casl.impl.ObjectImpl;
 import uofa.lbirdsey.castle.casl.impl.SystemImpl;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions;
 
 @SuppressWarnings("all")
@@ -65,19 +64,19 @@ public class Helpers {
   
   public static String determineEntityType(final EObject eo) {
     if ((eo instanceof AgentImpl)) {
-      return "agent";
+      return Constants.AGENT;
     } else {
       if ((eo instanceof GroupImpl)) {
-        return "group";
+        return Constants.GROUP;
       } else {
         if ((eo instanceof EnvironmentImpl)) {
-          return "environment";
+          return Constants.ENVIRONMENT;
         } else {
           if ((eo instanceof SystemImpl)) {
-            return "system";
+            return Constants.SYSTEM;
           } else {
             if ((eo instanceof ObjectImpl)) {
-              return "object";
+              return Constants.OBJECT;
             } else {
               return "ERROR 3";
             }
@@ -104,10 +103,21 @@ public class Helpers {
     }
   }
   
-  public static String determineEntityNameFromFeatureCall(final Entity_Feature ef) {
-    String output = "";
-    InputOutput.<Class<? extends Entity_Feature>>println(ef.getClass());
-    return output;
+  public static String getEntityTypeFromCall(final Entity_Call ec) {
+    if ((ec instanceof Agent_Call)) {
+      return Constants.AGENT;
+    } else {
+      if ((ec instanceof Environment_Call)) {
+        return Constants.ENVIRONMENT;
+      } else {
+        if ((ec instanceof Group_Call)) {
+          return Constants.GROUP;
+        } else {
+          Class<? extends Entity_Call> _class = ec.getClass();
+          return ("ERROR: getEntityNameFromCall: " + _class);
+        }
+      }
+    }
   }
   
   public static boolean checkForSpecialCase(final Field f) {

@@ -17,9 +17,9 @@ import uofa.lbirdsey.castle.casl.RandomType
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
+import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 
 class MacroGenerator {
-	static val TAB = "\t"
 	static def parseMacro(MacroCall mc, String name) {		
 		var output = "";		
 		val macro = mc.macroCall.macro 
@@ -105,6 +105,7 @@ class MacroGenerator {
 		val String counterAsString = HelperFunctions.inferExpressionType(counter) as String;
 		val entityCall = pop.ent;
 		val String entityName = Helpers.getEntityNameFromCall(entityCall);
+		val String entityType = Helpers.getEntityTypeFromCall(entityCall);
 		val String tmpEntityName = "tmp_"+entityName.toLowerCase
 		val EList<Expression> entityInitParams = pop.entityInitParams;
 		
@@ -116,19 +117,27 @@ class MacroGenerator {
 		//Something needs to happen here before initializing the entities
 		output += "ArrayList<"+entityName+">" +entityName.toLowerCase+"List = new ArrayList<"+entityName+">();\n"
 		
+		
+		
 		//Determine the type of counter range
 		//println(counterAsString) //This is very useful
 		if (counterAsString.equalsIgnoreCase("vector2")){
 			output += "int xRange = (int)range.getX();\nint yRange = (int)range.getY();\nfor (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){\n"
 			//Do the cycling
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"();\n"
-			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+");\n" 
-			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j));\n"
-			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+");\n"
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+SC+NL
+			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+SC+NL 
+			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+SC+NL
+			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+SC+NL
 			
 			//Add to the above containedGroup/containedEnvironemnt/containedAgents list
 			//1: Check for type (SYSTEM contains Envs & groups, ENVs contain GROUPS, GROUPS contain Agents
-			
+			if (entityType == AGENT) {
+				output += "storedAgents.add("+tmpEntityName+");"+NL
+			} else if (entityType == ENVIRONMENT) {
+				output += "storedEnvironments.add("+tmpEntityName+");"+NL
+			} else if (entityType == GROUP) {
+				output += "storedGroups.add("+tmpEntityName+");"+NL
+			}
 			
 			
 			

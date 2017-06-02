@@ -288,8 +288,8 @@ class HelperFunctions {
 			if (mc instanceof CASL_Macro_MetricSwitch){
 				strOut += metric_ToOutput(caller);
 			} else { 
-//				strOut += MacroGenerator.parseMacro((statement as MacroCall), Helpers.determineEntityNameFromFeatureCall(caller));	
-				strOut += Printers.printExpression(statement, null);			
+//				strOut += MacroGenerator.parseMacro((statement as MacroCall), );	
+				strOut += Printers.printExpression(statement, null);
 			}
 		} else if (statement instanceof Expression) {
 			strOut += Printers.printExpression(statement as Expression)
