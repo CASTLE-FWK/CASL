@@ -12,6 +12,7 @@ import uofa.lbirdsey.castle.casl.Entity_Call
 import uofa.lbirdsey.castle.casl.Agent_Call
 import uofa.lbirdsey.castle.casl.Environment_Call
 import uofa.lbirdsey.castle.casl.Group_Call
+import uofa.lbirdsey.castle.casl.Entity_Feature
 
 class Helpers {
 	
@@ -80,6 +81,15 @@ class Helpers {
 		} else {
 			return "ERROR: getEntityNameFromCall: "+ec.class
 		}
+	}
+	
+	//TODO: This is super important (02/06/17)
+	static def String determineEntityNameFromFeatureCall(Entity_Feature ef){
+		var output = "";
+		println(ef.class)
+		
+		
+		return output;
 	}
 	
 	//TODO: Fill this in

@@ -45,7 +45,7 @@ class RepastGenerator implements IGenerator2 {
 
 	override afterGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {
 //		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-		print("post generation")
+//		print("post generation")
 	}
 
 	override beforeGenerate(Resource input, IFileSystemAccess2 fsa, IGeneratorContext context) {

@@ -117,7 +117,7 @@ class MacroGenerator {
 		output += "ArrayList<"+entityName+">" +entityName.toLowerCase+"List = new ArrayList<"+entityName+">();\n"
 		
 		//Determine the type of counter range
-		println(counterAsString)
+		//println(counterAsString) //This is very useful
 		if (counterAsString.equalsIgnoreCase("vector2")){
 			output += "int xRange = (int)range.getX();\nint yRange = (int)range.getY();\nfor (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){\n"
 			//Do the cycling
@@ -125,8 +125,15 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+");\n" 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j));\n"
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+");\n"
+			
+			//Add to the above containedGroup/containedEnvironemnt/containedAgents list
+			//1: Check for type (SYSTEM contains Envs & groups, ENVs contain GROUPS, GROUPS contain Agents
+			
+			
+			
+			
 			output += TAB + "}\n}\n"
-		} 
+		} //else if (counterAssString.is a number: create things in that range)
 		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		return output;

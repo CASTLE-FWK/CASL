@@ -287,8 +287,9 @@ class HelperFunctions {
 			val mc = (statement as MacroCall).macroCall.macro;
 			if (mc instanceof CASL_Macro_MetricSwitch){
 				strOut += metric_ToOutput(caller);
-			} else{ 
-				strOut += MacroGenerator.parseMacro((statement as MacroCall), null);				
+			} else { 
+//				strOut += MacroGenerator.parseMacro((statement as MacroCall), Helpers.determineEntityNameFromFeatureCall(caller));	
+				strOut += Printers.printExpression(statement, null);			
 			}
 		} else if (statement instanceof Expression) {
 			strOut += Printers.printExpression(statement as Expression)
@@ -298,7 +299,6 @@ class HelperFunctions {
 			strOut += HelperFunctions.printSelfAssignedFormula((statement as SelfAssignedFormula))
 		} else if (statement instanceof Raw_Java_Block) {
 			strOut += "//Raw Java Block: " + (statement as Raw_Java_Block).name + " {\n"
-//			strOut += (statement as Raw_Java_Block).rj
 			for (rawJava : (statement as Raw_Java_Block).rawStatements) {
 				strOut += rawJava.toString + "\n"
 			}

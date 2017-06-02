@@ -2,8 +2,10 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import uofa.lbirdsey.castle.casl.Agent_Call;
 import uofa.lbirdsey.castle.casl.Entity_Call;
+import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.Environment_Call;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Group_Call;
@@ -100,6 +102,12 @@ public class Helpers {
         }
       }
     }
+  }
+  
+  public static String determineEntityNameFromFeatureCall(final Entity_Feature ef) {
+    String output = "";
+    InputOutput.<Class<? extends Entity_Feature>>println(ef.getClass());
+    return output;
   }
   
   public static boolean checkForSpecialCase(final Field f) {

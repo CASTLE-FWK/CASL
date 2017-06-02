@@ -4,6 +4,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uofa.lbirdsey.castle.casl.Addition;
 import uofa.lbirdsey.castle.casl.Agent;
@@ -760,10 +761,15 @@ public class Printers {
   public static Object printExpression(final Expression expr, final String name) {
     Object _xifexpression = null;
     if ((expr instanceof MacroCall)) {
-      StringConcatenation _builder = new StringConcatenation();
-      Object _parseMacro = MacroGenerator.parseMacro(((MacroCall) expr), name);
-      _builder.append(_parseMacro);
-      _xifexpression = _builder;
+      CharSequence _xblockexpression = null;
+      {
+        InputOutput.<String>println(("printers printexpression: " + name));
+        StringConcatenation _builder = new StringConcatenation();
+        String _parseMacro = MacroGenerator.parseMacro(((MacroCall) expr), name);
+        _builder.append(_parseMacro);
+        _xblockexpression = _builder;
+      }
+      _xifexpression = _xblockexpression;
     } else {
       _xifexpression = Printers.printExpression(expr);
     }

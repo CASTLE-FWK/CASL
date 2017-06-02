@@ -241,6 +241,7 @@ class Printers {
 
 	static def printExpression(Expression expr, String name) {
 		if (expr instanceof MacroCall) {
+			println("printers printexpression: "+name)
 			'''«MacroGenerator.parseMacro((expr as MacroCall), name)»'''
 		} else {
 			printExpression(expr)

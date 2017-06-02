@@ -534,14 +534,14 @@ public class HelperFunctions {
             strOut = (_strOut_2 + _metric_ToOutput);
           } else {
             String _strOut_3 = strOut;
-            String _parseMacro = MacroGenerator.parseMacro(((MacroCall) statement), null);
-            strOut = (_strOut_3 + _parseMacro);
+            Object _printExpression = Printers.printExpression(((Expression)statement), null);
+            strOut = (_strOut_3 + _printExpression);
           }
         } else {
           if ((statement instanceof Expression)) {
             String _strOut_4 = strOut;
-            Object _printExpression = Printers.printExpression(((Expression) statement));
-            strOut = (_strOut_4 + _printExpression);
+            Object _printExpression_1 = Printers.printExpression(((Expression) statement));
+            strOut = (_strOut_4 + _printExpression_1);
           } else {
             if ((statement instanceof Formula)) {
               String _strOut_5 = strOut;
