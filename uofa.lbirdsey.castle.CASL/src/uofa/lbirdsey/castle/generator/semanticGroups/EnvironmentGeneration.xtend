@@ -4,11 +4,7 @@ import uofa.lbirdsey.castle.casl.Environment
 import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
 import uofa.lbirdsey.castle.casl.Concern
-import uofa.lbirdsey.castle.casl.LayoutType
 import java.util.ArrayList
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import com.google.inject.Inject
-import uofa.lbirdsey.castle.casl.Symbol
 import org.eclipse.emf.ecore.EObject
 import java.util.HashSet
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
