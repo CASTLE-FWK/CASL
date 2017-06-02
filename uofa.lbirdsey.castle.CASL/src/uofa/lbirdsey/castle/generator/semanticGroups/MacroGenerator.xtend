@@ -143,6 +143,9 @@ class MacroGenerator {
 			
 			output += TAB + "}\n}\n"
 		} //else if (counterAssString.is a number: create things in that range)
+		
+		
+		//Add the entities to the layout parameter class as well
 		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		return output;
