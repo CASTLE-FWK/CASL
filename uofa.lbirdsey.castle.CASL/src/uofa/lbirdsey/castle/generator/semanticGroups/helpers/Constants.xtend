@@ -14,7 +14,7 @@ class Constants {
 	public static val OBJECT = "object"
 	public static val LINE_END = SC + NL;
 	public static def String printCASLError(String description, String location, String clazz){
-		println("ERROR: "+description+" at loc: "+location+" class: "+clazz)
-		return "[ERROR: "+description+" at loc: "+location+" class: "+clazz+"]"
+		println("ERROR: "+description+" at loc: "+location+" class: "+clazz);
+		return "[ERROR: "+description+" at loc: "+location+" class: "+clazz+"]";
 	}
 }

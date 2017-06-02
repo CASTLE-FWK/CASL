@@ -14,6 +14,9 @@ import uofa.lbirdsey.castle.casl.Environment_Call
 import uofa.lbirdsey.castle.casl.Group_Call
 
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
+import uofa.lbirdsey.castle.casl.Expression
+import uofa.lbirdsey.castle.casl.TypeRef
+import uofa.lbirdsey.castle.casl.Symbol
 
 class Helpers {
 	
@@ -68,7 +71,7 @@ class Helpers {
 		} else if (eo instanceof ObjectImpl){
 			return OBJECT;
 		} else {
-			return "ERROR 3"
+			return printCASLError("Cannot determine entity type","determineEntityType","Helpers");
 		}
 	}	
 	
@@ -80,7 +83,18 @@ class Helpers {
 		} else if (ec instanceof Group_Call){
 			return (ec as Group_Call).grp.name;
 		} else {
-			return "ERROR: getEntityNameFromCall: "+ec.class
+			return printCASLError("Cannot infer name","getEntityNameFromCall","Helpers");
+		}
+	}
+	
+	static def String getNameFromExpression(Expression e){
+		println(e.class)
+		if (e instanceof Field){
+			return HelperFunctions.getFieldName(e as Field);
+		} else if (e instanceof TypeRef){
+			return getSymbolName((e as TypeRef).type)
+		} else {
+			return printCASLError("Cannot infer name","getNameFromExpression","Helpers");
 		}
 	}
 	
@@ -92,7 +106,7 @@ class Helpers {
 		} else if (ec instanceof Group_Call){
 			return GROUP;
 		} else {
-			return "ERROR: getEntityNameFromCall: "+ec.class
+			return printCASLError("Cannot infer entity type", "getEntityTypeFromCall","Helpers");
 		}
 	}
 	
@@ -132,4 +146,8 @@ class Helpers {
 		}
 		return false;	
 	}	
+	
+	static def String getSymbolName(Symbol s){
+		return s.name;
+	}
 }

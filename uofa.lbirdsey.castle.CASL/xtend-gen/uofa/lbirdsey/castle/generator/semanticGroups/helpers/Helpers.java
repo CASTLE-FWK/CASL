@@ -2,11 +2,15 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import uofa.lbirdsey.castle.casl.Agent_Call;
 import uofa.lbirdsey.castle.casl.Entity_Call;
 import uofa.lbirdsey.castle.casl.Environment_Call;
+import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Group_Call;
+import uofa.lbirdsey.castle.casl.Symbol;
+import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.casl.impl.AgentImpl;
 import uofa.lbirdsey.castle.casl.impl.EnvironmentImpl;
 import uofa.lbirdsey.castle.casl.impl.GroupImpl;
@@ -78,7 +82,7 @@ public class Helpers {
             if ((eo instanceof ObjectImpl)) {
               return Constants.OBJECT;
             } else {
-              return "ERROR 3";
+              return Constants.printCASLError("Cannot determine entity type", "determineEntityType", "Helpers");
             }
           }
         }
@@ -96,9 +100,21 @@ public class Helpers {
         if ((ec instanceof Group_Call)) {
           return ((Group_Call) ec).getGrp().getName();
         } else {
-          Class<? extends Entity_Call> _class = ec.getClass();
-          return ("ERROR: getEntityNameFromCall: " + _class);
+          return Constants.printCASLError("Cannot infer name", "getEntityNameFromCall", "Helpers");
         }
+      }
+    }
+  }
+  
+  public static String getNameFromExpression(final Expression e) {
+    InputOutput.<Class<? extends Expression>>println(e.getClass());
+    if ((e instanceof Field)) {
+      return HelperFunctions.getFieldName(((Field) e));
+    } else {
+      if ((e instanceof TypeRef)) {
+        return Helpers.getSymbolName(((TypeRef) e).getType());
+      } else {
+        return Constants.printCASLError("Cannot infer name", "getNameFromExpression", "Helpers");
       }
     }
   }
@@ -113,8 +129,7 @@ public class Helpers {
         if ((ec instanceof Group_Call)) {
           return Constants.GROUP;
         } else {
-          Class<? extends Entity_Call> _class = ec.getClass();
-          return ("ERROR: getEntityNameFromCall: " + _class);
+          return Constants.printCASLError("Cannot infer entity type", "getEntityTypeFromCall", "Helpers");
         }
       }
     }
@@ -148,5 +163,9 @@ public class Helpers {
       return true;
     }
     return false;
+  }
+  
+  public static String getSymbolName(final Symbol s) {
+    return s.getName();
   }
 }

@@ -103,7 +103,7 @@ class MacroGenerator {
 		val layoutLocation = pop.layoutLocation;
 		val EList<Expression> layoutInitParams = pop.layoutInitParams;
 		val counter = pop.count;
-		var String counterName = HelperFunctions.getFieldName(counter as Field);		
+		var String counterName = Helpers.getNameFromExpression(counter);		
 		val String counterAsString = HelperFunctions.inferExpressionType(counter) as String;
 		val entityCall = pop.ent;
 		val String entityName = Helpers.getEntityNameFromCall(entityCall);
@@ -128,13 +128,8 @@ class MacroGenerator {
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
-			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END
-			
-			//Add to the above containedGroup/containedEnvironemnt/containedAgents list
-			//1: Check for type (SYSTEM contains Envs & groups, ENVs contain GROUPS, GROUPS contain Agents
-			output += TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
-			
-			
+			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
+			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
 			
 			output += TAB + "}\n}\n"
 		} else if (Helpers.isANumber(counterAsString)){
@@ -144,7 +139,8 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
-			output += TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
+			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
+			output += TAB + "}\n}\n"
 		} 
 		
 		//Add the entities to the layout parameter class as well
