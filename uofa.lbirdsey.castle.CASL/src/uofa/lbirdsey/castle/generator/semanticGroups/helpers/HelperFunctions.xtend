@@ -486,7 +486,7 @@ class HelperFunctions {
 		return output;
 	}
 
-	// TODO: Ahh crap
+	//TODO: Ahh crap
 	static def String getSymbolType(Symbol t) {
 		if (t instanceof Field) {
 			return getFieldType(t as Field);
@@ -716,6 +716,7 @@ class HelperFunctions {
 			// 2: Pull out all Entities
 			// 3: Set interactionTo for each of them
 			// 4: For the recipient, set to interactionFrom
+			
 			// 1: Function parameters
 			for (p : in.functionParameters) {
 				// Function parameters
@@ -733,7 +734,7 @@ class HelperFunctions {
 				if (b instanceof Expression) {
 //					val be = b as Expression
 					println(b);
-					if ((inferExpressionType(b).compareToIgnoreCase = "featurecallexp") == 0) {
+					if ((inferExpressionType(b).compareToIgnoreCase("featurecallexp") == 0) {
 						val fc = (b as FeatureCall).fc
 						if (fc instanceof AgentInteractionFeatureCall) {
 							println("AIFC")
@@ -746,12 +747,20 @@ class HelperFunctions {
 
 		} else if (ef instanceof Behavior) {
 			// Get list of all parameters and called updateParameter on each of them
+			// Also call updateFeature since a behavior has been triggered
 			val be = ef as Behavior;
+			output += "updateFeature("+be.name+",FeatureTypes.BEHAVIOR)" + LINE_END
 			for (beb : be.body) {
+				
+				
 			}
 		} else if (ef instanceof AdaptiveProcess) {
+			val ap = ef as AdaptiveProcess;
+			output += "updateFeature("+ap.name+",FeatureTypes.ADAPTATION)" + LINE_END
 		} else if (ef instanceof GroupExternalInteractionFeatureCall) {
+			//This is an interaction
 		} else if (ef instanceof GroupSelfInternalInteractionsFeatureCall) {
+			//This is an interaction			
 		}
 
 		return output;

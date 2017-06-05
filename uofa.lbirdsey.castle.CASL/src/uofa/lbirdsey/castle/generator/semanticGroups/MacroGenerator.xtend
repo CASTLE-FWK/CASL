@@ -181,6 +181,10 @@ class MacroGenerator {
 	 * 
 	 */
 	static def String generateMetricSender(String name){
+		//Note: This is actually done in the HelperFunctions class for some readosn.
+		
+		
+		
 		//How to do this:
 			/* 1: Figure out what type of thing the block is
 			 * 2: Check what the switch is (True/false)
