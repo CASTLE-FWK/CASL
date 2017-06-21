@@ -1479,8 +1479,7 @@ public class HelperFunctions {
       for (final EObject b : _body) {
         if ((b instanceof Expression)) {
           InputOutput.<Expression>println(((Expression)b));
-          String _inferExpressionType = HelperFunctions.inferExpressionType(((Expression)b));
-          int _compareToIgnoreCase = _inferExpressionType.compareToIgnoreCase("featurecallexp");
+          int _compareToIgnoreCase = HelperFunctions.inferExpressionType(((Expression)b)).compareToIgnoreCase("featurecallexp");
           boolean _equals = (_compareToIgnoreCase == 0);
           if (_equals) {
             final EObject fc = ((FeatureCall) b).getFc();
@@ -1497,11 +1496,24 @@ public class HelperFunctions {
     } else {
       if ((ef instanceof Behavior)) {
         final Behavior be = ((Behavior) ef);
+        String _output = output;
+        String _name = be.getName();
+        String _plus = ("updateFeature(" + _name);
+        String _plus_1 = (_plus + ",FeatureTypes.BEHAVIOR)");
+        String _plus_2 = (_plus_1 + Constants.LINE_END);
+        output = (_output + _plus_2);
         EList<EObject> _body_1 = be.getBody();
         for (final EObject beb : _body_1) {
         }
       } else {
         if ((ef instanceof AdaptiveProcess)) {
+          final AdaptiveProcess ap = ((AdaptiveProcess) ef);
+          String _output_1 = output;
+          String _name_1 = ap.getName();
+          String _plus_3 = ("updateFeature(" + _name_1);
+          String _plus_4 = (_plus_3 + ",FeatureTypes.ADAPTATION)");
+          String _plus_5 = (_plus_4 + Constants.LINE_END);
+          output = (_output_1 + _plus_5);
         } else {
           if ((ef instanceof GroupExternalInteractionFeatureCall)) {
           } else {

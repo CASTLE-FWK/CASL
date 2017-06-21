@@ -7423,11 +7423,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRawStatementsRaw_JavaParserRuleCall_5_0 = (RuleCall)cRawStatementsAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		///*****Java 8-isms *****/ /*I'm not sure if burning these into
-		// * Casl is a good idea... but it makes sense but
-		// * it also means that we may end up writing java-lite
-		// * A possible better approach would be to create Macros
-		// * that casl uses but instantly knows how to translate
+		///*****Java 8-isms *****/ /*
 		// * We could also have a class that parses raw Java functions with
 		// * wildcards etc
 		// */ Raw_Java_Block:
@@ -10322,11 +10318,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRandomTypeAccess().getRule();
 	}
 	
-	///*****Java 8-isms *****/ /*I'm not sure if burning these into
-	// * Casl is a good idea... but it makes sense but
-	// * it also means that we may end up writing java-lite
-	// * A possible better approach would be to create Macros
-	// * that casl uses but instantly knows how to translate
+	///*****Java 8-isms *****/ /*
 	// * We could also have a class that parses raw Java functions with
 	// * wildcards etc
 	// */ Raw_Java_Block:

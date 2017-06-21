@@ -734,7 +734,7 @@ class HelperFunctions {
 				if (b instanceof Expression) {
 //					val be = b as Expression
 					println(b);
-					if ((inferExpressionType(b).compareToIgnoreCase("featurecallexp") == 0) {
+					if ((inferExpressionType(b).compareToIgnoreCase("featurecallexp") == 0)) {
 						val fc = (b as FeatureCall).fc
 						if (fc instanceof AgentInteractionFeatureCall) {
 							println("AIFC")

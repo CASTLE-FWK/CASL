@@ -180,11 +180,17 @@ class EnvironmentGeneration {
 					}
 				}
 			}
-						
-			output += HelperFunctions.printMethodBody(function.body, function);
-			libImports.addAll(HelperFunctions.populateImports(function.body))
 			
+			libImports.addAll(HelperFunctions.populateImports(function.body))
+				
+			for (statement : function.body){
+				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
+			}
+			if (function.returnType !== null){
+				output += "\treturn "+function.returnType.name+";\n"
+			}
 			output += "\n}\n"
+					
 		}
 		return output;
 	}
