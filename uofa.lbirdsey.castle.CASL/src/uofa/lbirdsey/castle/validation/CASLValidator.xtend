@@ -99,6 +99,25 @@ public class CASLValidator extends AbstractCASLValidator {
 		}
 	}
 	
+	@Check
+	def checkForLayoutParameterVariable(System s){
+		var List<EObject> fields; 
+		fields = s.system_parameters.fields;
+		var lpPresent = false;
+		for (EObject f : fields){
+			if (f instanceof Field){
+				var fi = f as Field;
+				if (HelperFunctions.getFieldName(fi as Field).equalsIgnoreCase(Constants.LAYOUT_PARAMETERS_NAME)){
+					lpPresent = true;
+				}
+			}
+		}
+		if (!lpPresent){
+			error("The SYSTEM "+s.name+" does not have "+Constants.LAYOUT_PARAMETERS_NAME+" defined in its parameters. ", CaslPackage::eINSTANCE.system_System_parameters);
+		}
+		
+	}
+	
 	
 
 	

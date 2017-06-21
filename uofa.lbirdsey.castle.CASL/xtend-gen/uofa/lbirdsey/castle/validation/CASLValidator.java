@@ -131,4 +131,28 @@ public class CASLValidator extends AbstractCASLValidator {
       this.error(_plus_2, CaslPackage.eINSTANCE.getEntity_Name());
     }
   }
+  
+  @Check
+  public void checkForLayoutParameterVariable(final uofa.lbirdsey.castle.casl.System s) {
+    List<EObject> fields = null;
+    fields = s.getSystem_parameters().getFields();
+    boolean lpPresent = false;
+    for (final EObject f : fields) {
+      if ((f instanceof Field)) {
+        Field fi = ((Field) f);
+        boolean _equalsIgnoreCase = HelperFunctions.getFieldName(((Field) fi)).equalsIgnoreCase(Constants.LAYOUT_PARAMETERS_NAME);
+        if (_equalsIgnoreCase) {
+          lpPresent = true;
+        }
+      }
+    }
+    if ((!lpPresent)) {
+      String _name = s.getName();
+      String _plus = ("The SYSTEM " + _name);
+      String _plus_1 = (_plus + " does not have ");
+      String _plus_2 = (_plus_1 + Constants.LAYOUT_PARAMETERS_NAME);
+      String _plus_3 = (_plus_2 + " defined in its parameters. ");
+      this.error(_plus_3, CaslPackage.eINSTANCE.getSystem_System_parameters());
+    }
+  }
 }
