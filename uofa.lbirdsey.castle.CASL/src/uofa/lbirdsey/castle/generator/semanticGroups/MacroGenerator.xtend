@@ -82,7 +82,7 @@ class MacroGenerator {
 				return generateMetricSender(name);
 			}			
 		} else if (macro instanceof CASL_Macro_Populate){
-			return uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator.populator(macro as CASL_Macro_Populate);
+			return MacroGenerator.populator(macro as CASL_Macro_Populate);
 		} else if (macro instanceof CASL_Macro_TODO){
 			val mac = (macro as CASL_Macro_TODO);
 			return "//TODO: "+mac.str+'\n';
@@ -124,7 +124,7 @@ class MacroGenerator {
 			output += "int xRange = (int)"+counterName+".getX();\nint yRange = (int)"+counterName+".getY()"+ SC + NL +
 				"for (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){"+ NL
 			//Do the cycling
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+LINE_END
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
@@ -133,7 +133,7 @@ class MacroGenerator {
 		} else if (Helpers.isANumber(counterAsString)){
 			output += "int limit = (int)" + counterName + LINE_END
 			output += "for (int i = 0; i < limit; i++) { " + NL
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"()"+LINE_END
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
