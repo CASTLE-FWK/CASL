@@ -514,9 +514,11 @@ class HelperFunctions {
 
 	static def String generateGettersSetters(Field field, boolean makeStatic) {
 		var output = "";
+		var isStatic = makeStatic;
 		if (field.declaration !== null) {
 			var fiedecl = field.declaration as DataTypeDeclaration;
 			if (fiedecl.initInclude !== null || makeStatic) {
+				isStatic = true;
 				output += "public static void set" + fiedecl.name.toFirstUpper + "("
 			} else {
 				output += "public void set" + fiedecl.name.toFirstUpper + "("
@@ -544,7 +546,7 @@ class HelperFunctions {
 				}
 			}
 
-			if (fiedecl.initInclude !== null) {
+			if (fiedecl.initInclude !== null || makeStatic) {
 				output += " " + fiedecl.name + "_) {\n\t" + fiedecl.name + " = " + fiedecl.name + "_;\n}\n"
 				output += "public static "
 
@@ -574,7 +576,7 @@ class HelperFunctions {
 					output += fiedecl.obj.name
 				}
 			}
-			if (fiedecl.initInclude !== null) {
+			if (fiedecl.initInclude !== null || makeStatic) {
 				output += " get" + fiedecl.name.toFirstUpper + "() {\n\treturn " + fiedecl.name + ";\n}\n"
 			} else {
 				output += " get" + fiedecl.name.toFirstUpper + "() {\n\treturn this." + fiedecl.name + ";\n}\n"

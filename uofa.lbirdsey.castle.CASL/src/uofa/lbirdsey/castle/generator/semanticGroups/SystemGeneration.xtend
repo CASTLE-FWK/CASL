@@ -35,7 +35,7 @@ class SystemGeneration {
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
-			if (iC != null){
+			if (iC !== null){
 				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
@@ -128,10 +128,12 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var output = "//Fields\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
-				if (!HelperFunctions.getFieldName(field as Field).equalsIgnoreCase("LayoutParameters")){ //Note: This could be expanded to handle a lot of special cases				
-					output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
-					libImports.add(HelperFunctions.getFieldType(field as Field));
-				}
+				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
+				libImports.add(HelperFunctions.getFieldType(field as Field));
+//				if (!HelperFunctions.getFieldName(field as Field).equalsIgnoreCase("LayoutParameters")){ //Note: This could be expanded to handle a lot of special cases				
+//					output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
+//					libImports.add(HelperFunctions.getFieldType(field as Field));
+//				}
 			} else if (field instanceof Concern){}			
 		}
 		
@@ -144,7 +146,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "\n//Getters & Setters\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){
-				output += HelperFunctions.generateGettersSetters(field as Field)+"\n"
+				output += HelperFunctions.generateGettersSetters(field as Field, true)+"\n"
 			}
 		}
 		return output;
@@ -172,7 +174,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var output = "";
 		for (function : sys.system_functions.functions){
 			output += "public "
-			if (function.returnType != null){
+			if (function.returnType !== null){
 				if (!(function.returnType instanceof FunctionParameter)){
 						libImports.add(HelperFunctions.getFieldType(function.returnType as Field))
 				}
@@ -182,7 +184,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 				output += "void ";
 			}
 			output += function.name+"("+HelperFunctions.printFunctionParameters(function.functionParameters)+") {\n";
-			if (function.returnType != null){
+			if (function.returnType !== null){
 				output += "\t"+HelperFunctions.inferFunctionParameterType(function.returnType as FunctionParameter)+" "
 				output += function.returnType.name+" = "+HelperFunctions.initialiseFunctionParameterReturn(function.returnType as FunctionParameter) +";\n";
 			}
@@ -201,7 +203,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 				}
 				output += "\t"+HelperFunctions.parseBodyElement(statement, function)+"\n"
 			}
-			if (function.returnType != null){
+			if (function.returnType !== null){
 				output += "\treturn "+function.returnType.name+";\n"
 			}
 			output += "\n}\n"

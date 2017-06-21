@@ -998,12 +998,14 @@ public class HelperFunctions {
   
   public static String generateGettersSetters(final Field field, final boolean makeStatic) {
     String output = "";
+    boolean isStatic = makeStatic;
     Symbol _declaration = field.getDeclaration();
     boolean _tripleNotEquals = (_declaration != null);
     if (_tripleNotEquals) {
       Symbol _declaration_1 = field.getDeclaration();
       DataTypeDeclaration fiedecl = ((DataTypeDeclaration) _declaration_1);
       if (((fiedecl.getInitInclude() != null) || makeStatic)) {
+        isStatic = true;
         String _output = output;
         String _firstUpper = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus = ("public static void set" + _firstUpper);
@@ -1092,9 +1094,7 @@ public class HelperFunctions {
           }
         }
       }
-      String _initInclude = fiedecl.getInitInclude();
-      boolean _tripleNotEquals_8 = (_initInclude != null);
-      if (_tripleNotEquals_8) {
+      if (((fiedecl.getInitInclude() != null) || makeStatic)) {
         String _output_10 = output;
         String _name_8 = fiedecl.getName();
         String _plus_14 = (" " + _name_8);
@@ -1124,15 +1124,15 @@ public class HelperFunctions {
         output = (_output_13 + "public ");
       }
       PrimitiveType _type_1 = fiedecl.getType();
-      boolean _tripleNotEquals_9 = (_type_1 != null);
-      if (_tripleNotEquals_9) {
+      boolean _tripleNotEquals_8 = (_type_1 != null);
+      if (_tripleNotEquals_8) {
         String _output_14 = output;
         String _name_14 = fiedecl.getType().getName();
         output = (_output_14 + _name_14);
       } else {
         NonPrimitiveType _obj_4 = fiedecl.getObj();
-        boolean _tripleNotEquals_10 = (_obj_4 != null);
-        if (_tripleNotEquals_10) {
+        boolean _tripleNotEquals_9 = (_obj_4 != null);
+        if (_tripleNotEquals_9) {
           NonPrimitiveType _obj_5 = fiedecl.getObj();
           if ((_obj_5 instanceof uofa.lbirdsey.castle.casl.Object)) {
             NonPrimitiveType _obj_6 = fiedecl.getObj();
@@ -1141,8 +1141,8 @@ public class HelperFunctions {
             String _name_15 = npt_1.getName();
             output = (_output_15 + _name_15);
             NonPrimitiveType _useObj_1 = fiedecl.getUseObj();
-            boolean _tripleNotEquals_11 = (_useObj_1 != null);
-            if (_tripleNotEquals_11) {
+            boolean _tripleNotEquals_10 = (_useObj_1 != null);
+            if (_tripleNotEquals_10) {
               String _output_16 = output;
               String _name_16 = fiedecl.getUseObj().getName();
               String _plus_26 = ("<" + _name_16);
@@ -1150,8 +1150,8 @@ public class HelperFunctions {
               output = (_output_16 + _plus_27);
             } else {
               PrimitiveType _useType_1 = fiedecl.getUseType();
-              boolean _tripleNotEquals_12 = (_useType_1 != null);
-              if (_tripleNotEquals_12) {
+              boolean _tripleNotEquals_11 = (_useType_1 != null);
+              if (_tripleNotEquals_11) {
                 String _output_17 = output;
                 String _name_17 = fiedecl.getUseType().getName();
                 String _plus_28 = ("<" + _name_17);
@@ -1159,8 +1159,8 @@ public class HelperFunctions {
                 output = (_output_17 + _plus_29);
               } else {
                 Group _useGroup_1 = fiedecl.getUseGroup();
-                boolean _tripleNotEquals_13 = (_useGroup_1 != null);
-                if (_tripleNotEquals_13) {
+                boolean _tripleNotEquals_12 = (_useGroup_1 != null);
+                if (_tripleNotEquals_12) {
                   String _output_18 = output;
                   String _name_18 = fiedecl.getUseGroup().getName();
                   String _plus_30 = ("<" + _name_18);
@@ -1168,8 +1168,8 @@ public class HelperFunctions {
                   output = (_output_18 + _plus_31);
                 } else {
                   Agent _useAgent_1 = fiedecl.getUseAgent();
-                  boolean _tripleNotEquals_14 = (_useAgent_1 != null);
-                  if (_tripleNotEquals_14) {
+                  boolean _tripleNotEquals_13 = (_useAgent_1 != null);
+                  if (_tripleNotEquals_13) {
                     String _output_19 = output;
                     String _name_19 = fiedecl.getUseAgent().getName();
                     String _plus_32 = ("<" + _name_19);
@@ -1177,8 +1177,8 @@ public class HelperFunctions {
                     output = (_output_19 + _plus_33);
                   } else {
                     Environment _useEnv_1 = fiedecl.getUseEnv();
-                    boolean _tripleNotEquals_15 = (_useEnv_1 != null);
-                    if (_tripleNotEquals_15) {
+                    boolean _tripleNotEquals_14 = (_useEnv_1 != null);
+                    if (_tripleNotEquals_14) {
                       String _output_20 = output;
                       String _name_20 = fiedecl.getUseEnv().getName();
                       String _plus_34 = ("<" + _name_20);
@@ -1199,9 +1199,7 @@ public class HelperFunctions {
           }
         }
       }
-      String _initInclude_1 = fiedecl.getInitInclude();
-      boolean _tripleNotEquals_16 = (_initInclude_1 != null);
-      if (_tripleNotEquals_16) {
+      if (((fiedecl.getInitInclude() != null) || makeStatic)) {
         String _output_22 = output;
         String _firstUpper_2 = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus_36 = (" get" + _firstUpper_2);
@@ -1222,8 +1220,8 @@ public class HelperFunctions {
       }
     } else {
       Symbol _agentFieldRef = field.getAgentFieldRef();
-      boolean _tripleNotEquals_17 = (_agentFieldRef != null);
-      if (_tripleNotEquals_17) {
+      boolean _tripleNotEquals_15 = (_agentFieldRef != null);
+      if (_tripleNotEquals_15) {
         Symbol _agentFieldRef_1 = field.getAgentFieldRef();
         AgentFieldReference fieagent = ((AgentFieldReference) _agentFieldRef_1);
         String _output_24 = output;
@@ -1258,8 +1256,8 @@ public class HelperFunctions {
         output = (_output_26 + _plus_59);
       } else {
         Symbol _envFieldRef = field.getEnvFieldRef();
-        boolean _tripleNotEquals_18 = (_envFieldRef != null);
-        if (_tripleNotEquals_18) {
+        boolean _tripleNotEquals_16 = (_envFieldRef != null);
+        if (_tripleNotEquals_16) {
           Symbol _envFieldRef_1 = field.getEnvFieldRef();
           EnvironmentFieldReference fieenv = ((EnvironmentFieldReference) _envFieldRef_1);
           String _output_27 = output;
