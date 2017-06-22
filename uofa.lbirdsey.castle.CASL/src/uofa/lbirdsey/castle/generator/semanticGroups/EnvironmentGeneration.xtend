@@ -406,7 +406,7 @@ class EnvironmentGeneration {
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			
 			str += "\t\tphase_Action();\n"
-			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			str += "\t\tArrayList<Agent> containedEntities = storedAgents;\n"
 			//Shuffle
 			str += "\t\tCollections.shuffle(containedEntities);\n"
 			
@@ -498,7 +498,7 @@ class EnvironmentGeneration {
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
 //		str += "\tcleanupQueue.clear();\n"
-		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
+//		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
 		for (item : setupPhase){
 			str += "\t"+item+"\n"
 		}
@@ -525,7 +525,7 @@ class EnvironmentGeneration {
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
 //		str += "\tactionQueue.clear();\n"
-		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
+//		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
 		for (item : cleanupPhase){
 			str += "\t"+item+"\n"
 		}

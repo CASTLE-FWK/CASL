@@ -94,7 +94,7 @@ class MacroGenerator {
 	 * This is the wonder populate function.
 	 * It takes in the stuff from CASL.POPULATE and churns out some perfectly working
 	 * code to populate the entities specified.
-	 * This is so not a hard thing to write...
+	 * This is sooooo not a hard thing to write...
 	 */
 	static def String populator(CASL_Macro_Populate pop){
 		var output = "//Generated Entity Populator\n//This is unfortunately prone to error for the moment\n";
@@ -128,7 +128,8 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
-			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END			
+			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
+			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END			
 			output += TAB + "}\n}\n"
 		} else if (Helpers.isANumber(counterAsString)){
 			output += "int limit = (int)" + counterName + LINE_END
@@ -138,11 +139,13 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
+			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END
 			output += TAB + "}\n}\n"
 		} 
 		
 		//Add the entities to the layout parameter class as well
-		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
+		//TODO: This doesn't work
+//		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		return output;
 	}
