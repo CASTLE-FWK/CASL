@@ -32,6 +32,8 @@ class SystemGeneration {
 		//Add in the imports
 		var imports = "//Automated System Import Generation\nimport castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
+		imports += "import stdSimLib.*;\n"
+		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		//iC = importCandidate
 		for (String iC : libImports){
@@ -40,7 +42,7 @@ class SystemGeneration {
 				var String[] splt = str.split(";");
 				for (String s : splt){
 					if (s.length() > 0){
-						importsToPrint.add(s+";");						
+						importsToPrint.add(s+";");
 					}	
 				}
 			}

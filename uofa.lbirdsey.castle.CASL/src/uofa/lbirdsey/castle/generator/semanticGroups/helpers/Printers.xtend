@@ -216,9 +216,9 @@ class Printers {
 				'''!«printExpression((expr as BooleanNegation).expression)»'''
 			else if (expr instanceof ArithmeticSigned)
 				'''-«printExpression((expr as ArithmeticSigned).expression)»'''
-			else if (expr instanceof MacroCall)
+			else if (expr instanceof MacroCall) {
 				return MacroGenerator.parseMacro((expr as MacroCall), null)
-			else if (expr instanceof NullTypeLiteral)
+			}else if (expr instanceof NullTypeLiteral)
 				return "null"
 			else if (expr instanceof FunctionCallExpr)
 				return HelperFunctions.printFunctionCall((expr as FunctionCallExpr).funcCall)

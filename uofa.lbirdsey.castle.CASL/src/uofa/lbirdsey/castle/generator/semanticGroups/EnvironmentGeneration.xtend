@@ -55,6 +55,8 @@ class EnvironmentGeneration {
 		var imports = "//Automated Environment Import Generation\n import castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import stdSimLib.*;\n"
+		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Entity;\n import castleComponents.objects.Vector2;\n"
 		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
 		imports += "import java.util.concurrent.Executors;\n import java.util.Collections;\n"

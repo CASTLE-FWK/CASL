@@ -60,7 +60,7 @@ class MacroGenerator {
 					output += "RandomGen.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 				}
 			} else if (mac.type == RandomType.BOOL){
-				//TODO this
+				output += "RandomGen.generateBiasedCoinFlip("+Printers.printExpression(mac.low)+")"
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
 			var mac = (macro as CASL_Macro_ForEach)
@@ -124,7 +124,7 @@ class MacroGenerator {
 			output += "int xRange = (int)"+counterName+".getX();\nint yRange = (int)"+counterName+".getY()"+ SC + NL +
 				"for (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){"+ NL
 			//Do the cycling
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
