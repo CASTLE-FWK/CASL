@@ -125,7 +125,8 @@ class MacroGenerator {
 				"for (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){"+ NL
 			//Do the cycling
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
-			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
+			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
+			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
@@ -136,6 +137,7 @@ class MacroGenerator {
 			output += "for (int i = 0; i < limit; i++) { " + NL
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
+			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
