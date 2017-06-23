@@ -351,7 +351,7 @@ class AgentGeneration {
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
 				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
 				if (steps == 1){
-					actionPhase.add(behavior.name+"(this);")
+//					actionPhase.add(behavior.name+"(this);")
 				} else {
 					var interAsFunc = "TO_DO (generation behaviour repeat > 1 step"; //TODO: This...thing
 					var tObj = "Trigger "+behavior.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+a.name.toFirstUpper+".class);"
@@ -364,7 +364,7 @@ class AgentGeneration {
 				//Expecting a numeric value
 				var steps = (interaction.triggerParam.expr as NumberLiteral).value.toBigInteger.intValue
 				if (steps.equals(1)) {
-					actionPhase.add(interaction.name+"(this);")	
+//					actionPhase.add(interaction.name+"(this);")	
 				} else {
 					var interAsFunc = "TO_DO";
 					var tObj = "Trigger "+interaction.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+a.name.toFirstUpper+");"
