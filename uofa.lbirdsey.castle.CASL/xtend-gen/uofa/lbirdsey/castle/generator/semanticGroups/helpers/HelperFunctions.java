@@ -1456,7 +1456,7 @@ public class HelperFunctions {
     String output = "";
     if ((ef instanceof Interaction)) {
       final Interaction in = ((Interaction) ef);
-      final InteractionType interType = in.getInteraction_type();
+      final String interType = in.getInteraction_type().getName();
       EList<Symbol> _functionParameters = in.getFunctionParameters();
       for (final Symbol p : _functionParameters) {
         {
@@ -1464,12 +1464,15 @@ public class HelperFunctions {
           if ((((fp.getAgent() != null) || (fp.getEnv() != null)) || (fp.getGrp() != null))) {
             String _output = output;
             String _name = fp.getName();
-            String _plus = ("interactionTo(" + _name);
-            String _plus_1 = (_plus + ", \"");
+            String _plus = ("addInteraction(" + _name);
+            String _plus_1 = (_plus + ", InteractionType.");
+            String _upperCase = interType.toUpperCase();
+            String _plus_2 = (_plus_1 + _upperCase);
+            String _plus_3 = (_plus_2 + ", \"");
             String _name_1 = in.getName();
-            String _plus_2 = (_plus_1 + _name_1);
-            String _plus_3 = (_plus_2 + "\");");
-            output = (_output + _plus_3);
+            String _plus_4 = (_plus_3 + _name_1);
+            String _plus_5 = (_plus_4 + "\");\n");
+            output = (_output + _plus_5);
           }
         }
       }

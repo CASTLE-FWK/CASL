@@ -42,6 +42,7 @@ class AgentGeneration {
 		var imports = "//Automated Agent Import Generation\nimport castleComponents.Agent;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.Entity;\n"
+		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 		for (String iC : libImports){
 			if (iC !== null){

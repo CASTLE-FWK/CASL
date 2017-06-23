@@ -713,7 +713,7 @@ class HelperFunctions {
 		if (ef instanceof Interaction) {
 			// 0: Is it from or is it to? COMMUNICATE or QUERY			
 			val in = ef as Interaction
-			val interType = in.interaction_type;
+			val interType = in.interaction_type.getName;
 			// 1: Build a list of entities that are mentioned (e.g. parameters, things in the body)
 			// 2: Pull out all Entities
 			// 3: Set interactionTo for each of them
@@ -724,7 +724,7 @@ class HelperFunctions {
 				// Function parameters
 				val fp = p as FunctionParameter
 				if (fp.agent !== null || fp.env !== null || fp.grp !== null) {
-					output += "interactionTo(" + fp.name + ", \"" + in.name + "\");"
+					output += "addInteraction(" + fp.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
 				}
 			}
 
