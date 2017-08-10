@@ -99,7 +99,7 @@ class Helpers {
 			if (sc.ref !== null){
 				return getSymbolName(sc.ref);
 			}
-			else {			
+			else {
 				throwCASLError("Cannot infer name","getNameFromExpression","Helpers");
 			}
 						

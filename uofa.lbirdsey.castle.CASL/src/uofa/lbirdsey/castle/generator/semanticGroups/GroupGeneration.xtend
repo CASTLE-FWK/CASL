@@ -49,8 +49,10 @@ class GroupGeneration {
 		//Add in the imports
 		var imports = "//Automated Group Import Generation\nimport castleComponents.SemanticGroup;\n";
 		imports += "import castleComponents.Environment;\nimport castleComponents.Agent;\n"
-		imports += "import castleComponents.representations.LayoutParameters;\n"
 		imports += "import castleComponents.Entity;\n"
+		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import stdSimLib.*;\n"
+		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 

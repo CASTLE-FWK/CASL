@@ -42,6 +42,9 @@ class AgentGeneration {
 		var imports = "//Automated Agent Import Generation\nimport castleComponents.Agent;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.Entity;\n"
+		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import stdSimLib.*;\n"
+		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 		for (String iC : libImports){
