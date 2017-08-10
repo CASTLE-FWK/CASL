@@ -17,6 +17,8 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import uofa.lbirdsey.castle.casl.Expression
 import uofa.lbirdsey.castle.casl.TypeRef
 import uofa.lbirdsey.castle.casl.Symbol
+import uofa.lbirdsey.castle.casl.SelfCall
+import uofa.lbirdsey.castle.casl.SelfCallExpr
 
 class Helpers {
 	
@@ -92,7 +94,16 @@ class Helpers {
 			return HelperFunctions.getFieldName(e as Field);
 		} else if (e instanceof TypeRef){
 			return getSymbolName((e as TypeRef).type)
-		} else {
+		} else if (e instanceof SelfCallExpr){
+			val sc = (e as SelfCallExpr).selfCall;
+			if (sc.ref !== null){
+				return getSymbolName(sc.ref);
+			}
+			else {			
+				throwCASLError("Cannot infer name","getNameFromExpression","Helpers");
+			}
+						
+		} else {			
 			throwCASLError("Cannot infer name","getNameFromExpression","Helpers");
 		}
 	}

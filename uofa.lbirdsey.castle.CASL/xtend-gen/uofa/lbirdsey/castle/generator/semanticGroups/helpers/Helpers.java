@@ -8,6 +8,8 @@ import uofa.lbirdsey.castle.casl.Environment_Call;
 import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.Group_Call;
+import uofa.lbirdsey.castle.casl.SelfCall;
+import uofa.lbirdsey.castle.casl.SelfCallExpr;
 import uofa.lbirdsey.castle.casl.Symbol;
 import uofa.lbirdsey.castle.casl.TypeRef;
 import uofa.lbirdsey.castle.casl.impl.AgentImpl;
@@ -130,7 +132,26 @@ public class Helpers {
       if ((e instanceof TypeRef)) {
         return Helpers.getSymbolName(((TypeRef) e).getType());
       } else {
-        _xifexpression_1 = Constants.throwCASLError("Cannot infer name", "getNameFromExpression", "Helpers");
+        String _xifexpression_2 = null;
+        if ((e instanceof SelfCallExpr)) {
+          String _xblockexpression = null;
+          {
+            final SelfCall sc = ((SelfCallExpr) e).getSelfCall();
+            String _xifexpression_3 = null;
+            Symbol _ref = sc.getRef();
+            boolean _tripleNotEquals = (_ref != null);
+            if (_tripleNotEquals) {
+              return Helpers.getSymbolName(sc.getRef());
+            } else {
+              _xifexpression_3 = Constants.throwCASLError("Cannot infer name", "getNameFromExpression", "Helpers");
+            }
+            _xblockexpression = _xifexpression_3;
+          }
+          _xifexpression_2 = _xblockexpression;
+        } else {
+          _xifexpression_2 = Constants.throwCASLError("Cannot infer name", "getNameFromExpression", "Helpers");
+        }
+        _xifexpression_1 = _xifexpression_2;
       }
       _xifexpression = _xifexpression_1;
     }
