@@ -837,7 +837,7 @@ CASL_Macro_Populate:
  *
  */
 CASL_Macro_Visualize:
-	"VISUALIZE"
+	"VISUALIZE" '['projectionPosition = Expression']''['projectionColourUpdater = Expression']''['projectionShape = STRING']'
 	
 ;
 //How to initialise a proj
