@@ -830,7 +830,10 @@ CASL_Macro_Populate:
 
 //TODO: Fill this out
 /**
- * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+ * CASL.VISUALIZE[ProjectionPosition][ProjectionColourUpdater (how to manage this for diff var types)]
+ [ProjectionShapeUpdater (same as above)]
+ * When this is called, the agent will appear in the simulation
+ * 
  *
  */
 CASL_Macro_Visualize:
