@@ -1,9 +1,11 @@
 package uofa.lbirdsey.castle.generator.semanticGroups;
 
-import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.emf.common.util.EList;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
+import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers;
 
 @SuppressWarnings("all")
 public class VisualisationGenerator {
@@ -15,20 +17,35 @@ public class VisualisationGenerator {
     String _xblockexpression = null;
     {
       final String rep = d.getRepresentationType().toString();
-      InputOutput.<String>print((("The Rep: " + rep) + "\n"));
-      String _switchResult = null;
-      if (rep != null) {
-        switch (rep) {
-          case "GRID":
-            return "//SOME GRID CODE GENERATION";
-          default:
-            _switchResult = Constants.throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator");
-            break;
+      String output = "";
+      String _xifexpression = null;
+      boolean _equalsIgnoreCase = rep.equalsIgnoreCase("GRID");
+      if (_equalsIgnoreCase) {
+        output = "GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n";
+        EList<Expression> _toProject = d.getToProject();
+        for (final Expression a : _toProject) {
+          {
+            String nameOfProjection = Helpers.getNameFromExpression(a);
+            String _output = output;
+            String _lowerCase = nameOfProjection.toLowerCase();
+            String _plus = ("\tGrid<Entity> " + _lowerCase);
+            String _plus_1 = (_plus + "_Grid = gridFactory.createGrid(\"");
+            String _plus_2 = (_plus_1 + nameOfProjection);
+            String _plus_3 = (_plus_2 + "\", context, ");
+            String _plus_4 = (_plus_3 + 
+              "new GridBuilderParameters<Agent>(new StrictBorders(),new SimpleGridAdder<Agent>(), false, ");
+            String _plus_5 = (_plus_4 + nameOfProjection);
+            String _plus_6 = (_plus_5 + ".getX(), ");
+            String _plus_7 = (_plus_6 + nameOfProjection);
+            String _plus_8 = (_plus_7 + ".getY()));");
+            output = (_output + _plus_8);
+          }
         }
+        return output;
       } else {
-        _switchResult = Constants.throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator");
+        _xifexpression = Constants.throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator");
       }
-      _xblockexpression = _switchResult;
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
