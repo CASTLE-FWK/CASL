@@ -308,6 +308,9 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup(), "rule__CASL_Macro_Populate__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_5(), "rule__CASL_Macro_Populate__Group_5__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_12(), "rule__CASL_Macro_Populate__Group_12__0");
+					put(grammarAccess.getCASL_Macro_VisualizeAccess().getGroup(), "rule__CASL_Macro_Visualize__Group__0");
+					put(grammarAccess.getCASL_Macro_DisplayAccess().getGroup(), "rule__CASL_Macro_Display__Group__0");
+					put(grammarAccess.getCASL_Macro_DisplayAccess().getGroup_6(), "rule__CASL_Macro_Display__Group_6__0");
 					put(grammarAccess.getRaw_Java_BlockAccess().getGroup(), "rule__Raw_Java_Block__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup_1(), "rule__Feature__Group_1__0");
@@ -686,6 +689,12 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getEntAssignment_9(), "rule__CASL_Macro_Populate__EntAssignment_9");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getEntityInitParamsAssignment_11(), "rule__CASL_Macro_Populate__EntityInitParamsAssignment_11");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getEntityInitParamsAssignment_12_1(), "rule__CASL_Macro_Populate__EntityInitParamsAssignment_12_1");
+					put(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionPositionAssignment_2(), "rule__CASL_Macro_Visualize__ProjectionPositionAssignment_2");
+					put(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionColourUpdaterAssignment_5(), "rule__CASL_Macro_Visualize__ProjectionColourUpdaterAssignment_5");
+					put(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionShapeAssignment_8(), "rule__CASL_Macro_Visualize__ProjectionShapeAssignment_8");
+					put(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeAssignment_2(), "rule__CASL_Macro_Display__RepresentationTypeAssignment_2");
+					put(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectAssignment_5(), "rule__CASL_Macro_Display__ToProjectAssignment_5");
+					put(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectAssignment_6_1(), "rule__CASL_Macro_Display__ToProjectAssignment_6_1");
 					put(grammarAccess.getRaw_Java_BlockAccess().getNameAssignment_2(), "rule__Raw_Java_Block__NameAssignment_2");
 					put(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5(), "rule__Raw_Java_Block__RawStatementsAssignment_5");
 					put(grammarAccess.getFeatureAccess().getTypeAssignment_0(), "rule__Feature__TypeAssignment_0");

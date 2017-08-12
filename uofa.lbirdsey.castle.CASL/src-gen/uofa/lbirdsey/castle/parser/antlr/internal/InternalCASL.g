@@ -10802,6 +10802,24 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_TODO_8.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VisualizeParserRuleCall_9());
+		}
+		this_CASL_Macro_Visualize_9=ruleCASL_Macro_Visualize
+		{
+			$current = $this_CASL_Macro_Visualize_9.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_DisplayParserRuleCall_10());
+		}
+		this_CASL_Macro_Display_10=ruleCASL_Macro_Display
+		{
+			$current = $this_CASL_Macro_Display_10.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11515,6 +11533,211 @@ ruleCASL_Macro_Populate returns [EObject current=null]
 		otherlv_15=')'
 		{
 			newLeafNode(otherlv_15, grammarAccess.getCASL_Macro_PopulateAccess().getRightParenthesisKeyword_13());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_Visualize
+entryRuleCASL_Macro_Visualize returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_VisualizeRule()); }
+	iv_ruleCASL_Macro_Visualize=ruleCASL_Macro_Visualize
+	{ $current=$iv_ruleCASL_Macro_Visualize.current; }
+	EOF;
+
+// Rule CASL_Macro_Visualize
+ruleCASL_Macro_Visualize returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='VISUALIZE'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_VisualizeAccess().getVISUALIZEKeyword_0());
+		}
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_VisualizeAccess().getLeftSquareBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionPositionExpressionParserRuleCall_2_0());
+				}
+				lv_projectionPosition_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_VisualizeRule());
+					}
+					set(
+						$current,
+						"projectionPosition",
+						lv_projectionPosition_2_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=']'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_VisualizeAccess().getRightSquareBracketKeyword_3());
+		}
+		otherlv_4='['
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_VisualizeAccess().getLeftSquareBracketKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionColourUpdaterExpressionParserRuleCall_5_0());
+				}
+				lv_projectionColourUpdater_5_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_VisualizeRule());
+					}
+					set(
+						$current,
+						"projectionColourUpdater",
+						lv_projectionColourUpdater_5_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6=']'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_VisualizeAccess().getRightSquareBracketKeyword_6());
+		}
+		otherlv_7='['
+		{
+			newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_VisualizeAccess().getLeftSquareBracketKeyword_7());
+		}
+		(
+			(
+				lv_projectionShape_8_0=RULE_STRING
+				{
+					newLeafNode(lv_projectionShape_8_0, grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionShapeSTRINGTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCASL_Macro_VisualizeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"projectionShape",
+						lv_projectionShape_8_0,
+						"uofa.lbirdsey.castle.CASL.STRING");
+				}
+			)
+		)
+		otherlv_9=']'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_VisualizeAccess().getRightSquareBracketKeyword_9());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_Display
+entryRuleCASL_Macro_Display returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_DisplayRule()); }
+	iv_ruleCASL_Macro_Display=ruleCASL_Macro_Display
+	{ $current=$iv_ruleCASL_Macro_Display.current; }
+	EOF;
+
+// Rule CASL_Macro_Display
+ruleCASL_Macro_Display returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='DISPLAY'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_DisplayAccess().getDISPLAYKeyword_0());
+		}
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_DisplayAccess().getLeftSquareBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeWorldTypeEnumRuleCall_2_0());
+				}
+				lv_representationType_2_0=ruleWorldType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_DisplayRule());
+					}
+					set(
+						$current,
+						"representationType",
+						lv_representationType_2_0,
+						"uofa.lbirdsey.castle.CASL.WorldType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=']'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_DisplayAccess().getRightSquareBracketKeyword_3());
+		}
+		otherlv_4='('
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_DisplayAccess().getLeftParenthesisKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectExpressionParserRuleCall_5_0());
+				}
+				lv_toProject_5_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_DisplayRule());
+					}
+					add(
+						$current,
+						"toProject",
+						lv_toProject_5_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_6=','
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_DisplayAccess().getCommaKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectExpressionParserRuleCall_6_1_0());
+					}
+					lv_toProject_7_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_DisplayRule());
+						}
+						add(
+							$current,
+							"toProject",
+							lv_toProject_7_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_8=')'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getCASL_Macro_DisplayAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;
@@ -12604,10 +12827,58 @@ ruleWorldType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='SPACE'
+			enumLiteral_1='TORUS'
 			{
-				$current = grammarAccess.getWorldTypeAccess().getSPACEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getWorldTypeAccess().getSPACEEnumLiteralDeclaration_1());
+				$current = grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='BOUND'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='GRAPH'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='NETWORK'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4());
+			}
+		)
+		    |
+		(
+			enumLiteral_5='GIS'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5());
+			}
+		)
+		    |
+		(
+			enumLiteral_6='MESH3D'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6());
+			}
+		)
+		    |
+		(
+			enumLiteral_7='CONTINUOUS'
+			{
+				$current = grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_7, grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7());
 			}
 		)
 	)

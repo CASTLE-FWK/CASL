@@ -28,7 +28,7 @@ public class Constants {
   
   public static String throwCASLError(final String description, final String location, final String clazz) {
     try {
-      throw new Exception(((((("ERROR: " + description) + " at loc: ") + location) + " class: ") + clazz));
+      throw new Exception(((((("CASL_ERROR: " + description) + " at loc: ") + location) + " class: ") + clazz));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

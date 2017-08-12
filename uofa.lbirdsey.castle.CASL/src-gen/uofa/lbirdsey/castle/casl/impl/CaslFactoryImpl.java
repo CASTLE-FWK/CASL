@@ -39,6 +39,7 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -47,6 +48,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
 import uofa.lbirdsey.castle.casl.CAS_Inspection_Level;
 import uofa.lbirdsey.castle.casl.CAS_Rule_Exception;
 import uofa.lbirdsey.castle.casl.CAS_Rule_Types;
@@ -292,6 +294,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_METRIC_SWITCH: return createCASL_Macro_MetricSwitch();
       case CaslPackage.CASL_MACRO_TODO: return createCASL_Macro_TODO();
       case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
+      case CaslPackage.CASL_MACRO_VISUALIZE: return createCASL_Macro_Visualize();
+      case CaslPackage.CASL_MACRO_DISPLAY: return createCASL_Macro_Display();
       case CaslPackage.RAW_JAVA_BLOCK: return createRaw_Java_Block();
       case CaslPackage.FEATURE: return createFeature();
       case CaslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
@@ -1405,6 +1409,28 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
   {
     CASL_Macro_PopulateImpl casL_Macro_Populate = new CASL_Macro_PopulateImpl();
     return casL_Macro_Populate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_Visualize createCASL_Macro_Visualize()
+  {
+    CASL_Macro_VisualizeImpl casL_Macro_Visualize = new CASL_Macro_VisualizeImpl();
+    return casL_Macro_Visualize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_Display createCASL_Macro_Display()
+  {
+    CASL_Macro_DisplayImpl casL_Macro_Display = new CASL_Macro_DisplayImpl();
+    return casL_Macro_Display;
   }
 
   /**

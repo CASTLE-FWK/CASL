@@ -35,6 +35,7 @@ import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -43,6 +44,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
 import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -249,6 +251,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.CASL_MACRO_COUNT_CONDITIONS:
 				sequence_CASL_Macro_CountConditions(context, (CASL_Macro_CountConditions) semanticObject); 
 				return; 
+			case CaslPackage.CASL_MACRO_DISPLAY:
+				sequence_CASL_Macro_Display(context, (CASL_Macro_Display) semanticObject); 
+				return; 
 			case CaslPackage.CASL_MACRO_FILTER_AND_FUNCTION:
 				sequence_CASL_Macro_FilterAndFunction(context, (CASL_Macro_FilterAndFunction) semanticObject); 
 				return; 
@@ -272,6 +277,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_TODO:
 				sequence_CASL_Macro_TODO(context, (CASL_Macro_TODO) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_VISUALIZE:
+				sequence_CASL_Macro_Visualize(context, (CASL_Macro_Visualize) semanticObject); 
 				return; 
 			case CaslPackage.CAS_RULES:
 				sequence_CAS_Rules(context, (CAS_Rules) semanticObject); 
@@ -1400,6 +1408,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_Display
+	 *     CASL_Macro_Display returns CASL_Macro_Display
+	 *
+	 * Constraint:
+	 *     (representationType=WorldType toProject+=Expression toProject+=Expression?)
+	 */
+	protected void sequence_CASL_Macro_Display(ISerializationContext context, CASL_Macro_Display semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CASL_Macro returns CASL_Macro_FilterAndFunction
 	 *     CASL_Macro_FilterAndFunction returns CASL_Macro_FilterAndFunction
 	 *
@@ -1557,6 +1578,31 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCASL_Macro_TODOAccess().getStrSTRINGTerminalRuleCall_1_0(), semanticObject.getStr());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_Visualize
+	 *     CASL_Macro_Visualize returns CASL_Macro_Visualize
+	 *
+	 * Constraint:
+	 *     (projectionPosition=Expression projectionColourUpdater=Expression projectionShape=STRING)
+	 */
+	protected void sequence_CASL_Macro_Visualize(ISerializationContext context, CASL_Macro_Visualize semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionPosition()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionPosition()));
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionColourUpdater()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionColourUpdater()));
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionShape()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Visualize_ProjectionShape()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionPositionExpressionParserRuleCall_2_0(), semanticObject.getProjectionPosition());
+		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionColourUpdaterExpressionParserRuleCall_5_0(), semanticObject.getProjectionColourUpdater());
+		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionShapeSTRINGTerminalRuleCall_8_0(), semanticObject.getProjectionShape());
 		feeder.finish();
 	}
 	
@@ -2484,8 +2530,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

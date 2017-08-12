@@ -31,14 +31,74 @@ public enum WorldType implements Enumerator
   GRID(0, "GRID", "GRID"),
 
   /**
-   * The '<em><b>SPACE</b></em>' literal object.
+   * The '<em><b>TORUS</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SPACE_VALUE
+   * @see #TORUS_VALUE
    * @generated
    * @ordered
    */
-  SPACE(1, "SPACE", "SPACE");
+  TORUS(1, "TORUS", "TORUS"),
+
+  /**
+   * The '<em><b>BOUND</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BOUND_VALUE
+   * @generated
+   * @ordered
+   */
+  BOUND(2, "BOUND", "BOUND"),
+
+  /**
+   * The '<em><b>GRAPH</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #GRAPH_VALUE
+   * @generated
+   * @ordered
+   */
+  GRAPH(3, "GRAPH", "GRAPH"),
+
+  /**
+   * The '<em><b>NETWORK</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NETWORK_VALUE
+   * @generated
+   * @ordered
+   */
+  NETWORK(4, "NETWORK", "NETWORK"),
+
+  /**
+   * The '<em><b>GIS</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #GIS_VALUE
+   * @generated
+   * @ordered
+   */
+  GIS(5, "GIS", "GIS"),
+
+  /**
+   * The '<em><b>MESH3D</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #MESH3D_VALUE
+   * @generated
+   * @ordered
+   */
+  MESH3D(6, "MESH3D", "MESH3D"),
+
+  /**
+   * The '<em><b>CONTINUOUS</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #CONTINUOUS_VALUE
+   * @generated
+   * @ordered
+   */
+  CONTINUOUS(7, "CONTINUOUS", "CONTINUOUS");
 
   /**
    * The '<em><b>GRID</b></em>' literal value.
@@ -56,19 +116,109 @@ public enum WorldType implements Enumerator
   public static final int GRID_VALUE = 0;
 
   /**
-   * The '<em><b>SPACE</b></em>' literal value.
+   * The '<em><b>TORUS</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>SPACE</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TORUS</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #SPACE
+   * @see #TORUS
    * @model
    * @generated
    * @ordered
    */
-  public static final int SPACE_VALUE = 1;
+  public static final int TORUS_VALUE = 1;
+
+  /**
+   * The '<em><b>BOUND</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>BOUND</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #BOUND
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int BOUND_VALUE = 2;
+
+  /**
+   * The '<em><b>GRAPH</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>GRAPH</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #GRAPH
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int GRAPH_VALUE = 3;
+
+  /**
+   * The '<em><b>NETWORK</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>NETWORK</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #NETWORK
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int NETWORK_VALUE = 4;
+
+  /**
+   * The '<em><b>GIS</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>GIS</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #GIS
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int GIS_VALUE = 5;
+
+  /**
+   * The '<em><b>MESH3D</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>MESH3D</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #MESH3D
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int MESH3D_VALUE = 6;
+
+  /**
+   * The '<em><b>CONTINUOUS</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>CONTINUOUS</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #CONTINUOUS
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int CONTINUOUS_VALUE = 7;
 
   /**
    * An array of all the '<em><b>World Type</b></em>' enumerators.
@@ -80,7 +230,13 @@ public enum WorldType implements Enumerator
     new WorldType[]
     {
       GRID,
-      SPACE,
+      TORUS,
+      BOUND,
+      GRAPH,
+      NETWORK,
+      GIS,
+      MESH3D,
+      CONTINUOUS,
     };
 
   /**
@@ -146,7 +302,13 @@ public enum WorldType implements Enumerator
     switch (value)
     {
       case GRID_VALUE: return GRID;
-      case SPACE_VALUE: return SPACE;
+      case TORUS_VALUE: return TORUS;
+      case BOUND_VALUE: return BOUND;
+      case GRAPH_VALUE: return GRAPH;
+      case NETWORK_VALUE: return NETWORK;
+      case GIS_VALUE: return GIS;
+      case MESH3D_VALUE: return MESH3D;
+      case CONTINUOUS_VALUE: return CONTINUOUS;
     }
     return null;
   }

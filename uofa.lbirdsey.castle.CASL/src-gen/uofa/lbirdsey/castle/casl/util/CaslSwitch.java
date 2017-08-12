@@ -31,6 +31,7 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -39,6 +40,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
 import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -852,6 +854,22 @@ public class CaslSwitch<T> extends Switch<T>
         CASL_Macro_Populate casL_Macro_Populate = (CASL_Macro_Populate)theEObject;
         T result = caseCASL_Macro_Populate(casL_Macro_Populate);
         if (result == null) result = caseCASL_Macro(casL_Macro_Populate);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.CASL_MACRO_VISUALIZE:
+      {
+        CASL_Macro_Visualize casL_Macro_Visualize = (CASL_Macro_Visualize)theEObject;
+        T result = caseCASL_Macro_Visualize(casL_Macro_Visualize);
+        if (result == null) result = caseCASL_Macro(casL_Macro_Visualize);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.CASL_MACRO_DISPLAY:
+      {
+        CASL_Macro_Display casL_Macro_Display = (CASL_Macro_Display)theEObject;
+        T result = caseCASL_Macro_Display(casL_Macro_Display);
+        if (result == null) result = caseCASL_Macro(casL_Macro_Display);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2519,6 +2537,38 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCASL_Macro_Populate(CASL_Macro_Populate object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Visualize</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro Visualize</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCASL_Macro_Visualize(CASL_Macro_Visualize object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Display</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro Display</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCASL_Macro_Display(CASL_Macro_Display object)
   {
     return null;
   }

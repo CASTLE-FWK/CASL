@@ -6903,18 +6903,20 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_MetricSwitchParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cCASL_Macro_PopulateParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cCASL_Macro_TODOParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cCASL_Macro_VisualizeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cCASL_Macro_DisplayParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
 		//CASL_Macro:
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
-		//	//	CASL_Macro_Visualize
-		//;
+		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+		//	CASL_Macro_Visualize | CASL_Macro_Display;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
+		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+		//CASL_Macro_Visualize | CASL_Macro_Display
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -6943,6 +6945,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_TODO
 		public RuleCall getCASL_Macro_TODOParserRuleCall_8() { return cCASL_Macro_TODOParserRuleCall_8; }
+		
+		//CASL_Macro_Visualize
+		public RuleCall getCASL_Macro_VisualizeParserRuleCall_9() { return cCASL_Macro_VisualizeParserRuleCall_9; }
+		
+		//CASL_Macro_Display
+		public RuleCall getCASL_Macro_DisplayParserRuleCall_10() { return cCASL_Macro_DisplayParserRuleCall_10; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -7397,18 +7405,147 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class CASL_Macro_VisualizeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Visualize");
-		private final Keyword cVISUALIZEKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVISUALIZEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cProjectionPositionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cProjectionPositionExpressionParserRuleCall_2_0 = (RuleCall)cProjectionPositionAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cProjectionColourUpdaterAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cProjectionColourUpdaterExpressionParserRuleCall_5_0 = (RuleCall)cProjectionColourUpdaterAssignment_5.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cProjectionShapeAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cProjectionShapeSTRINGTerminalRuleCall_8_0 = (RuleCall)cProjectionShapeAssignment_8.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		////TODO: Fill this out
 		///**
-		// * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+		// * CASL.VISUALIZE[ProjectionPosition][ProjectionColourUpdater (how to manage this for diff var types)]
+		// [ProjectionShapeUpdater (same as above)]
+		// * When this is called, the agent will appear in the simulation
+		// * 
 		// *
 		// */ CASL_Macro_Visualize:
-		//	"VISUALIZE";
+		//	"VISUALIZE" '[' projectionPosition=Expression ']' '[' projectionColourUpdater=Expression ']' '['
+		//	projectionShape=STRING ']';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//"VISUALIZE" '[' projectionPosition=Expression ']' '[' projectionColourUpdater=Expression ']' '[' projectionShape=STRING
+		//']'
+		public Group getGroup() { return cGroup; }
+		
 		//"VISUALIZE"
-		public Keyword getVISUALIZEKeyword() { return cVISUALIZEKeyword; }
+		public Keyword getVISUALIZEKeyword_0() { return cVISUALIZEKeyword_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//projectionPosition=Expression
+		public Assignment getProjectionPositionAssignment_2() { return cProjectionPositionAssignment_2; }
+		
+		//Expression
+		public RuleCall getProjectionPositionExpressionParserRuleCall_2_0() { return cProjectionPositionExpressionParserRuleCall_2_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		
+		//projectionColourUpdater=Expression
+		public Assignment getProjectionColourUpdaterAssignment_5() { return cProjectionColourUpdaterAssignment_5; }
+		
+		//Expression
+		public RuleCall getProjectionColourUpdaterExpressionParserRuleCall_5_0() { return cProjectionColourUpdaterExpressionParserRuleCall_5_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_7() { return cLeftSquareBracketKeyword_7; }
+		
+		//projectionShape=STRING
+		public Assignment getProjectionShapeAssignment_8() { return cProjectionShapeAssignment_8; }
+		
+		//STRING
+		public RuleCall getProjectionShapeSTRINGTerminalRuleCall_8_0() { return cProjectionShapeSTRINGTerminalRuleCall_8_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
+	}
+	public class CASL_Macro_DisplayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Display");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDISPLAYKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cRepresentationTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRepresentationTypeWorldTypeEnumRuleCall_2_0 = (RuleCall)cRepresentationTypeAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cToProjectAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cToProjectExpressionParserRuleCall_5_0 = (RuleCall)cToProjectAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cToProjectAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cToProjectExpressionParserRuleCall_6_1_0 = (RuleCall)cToProjectAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		////So this doesn't quite work.
+		////We need to visualise the environment (or group) and then configure how the entities contained within are visualized
+		////The LayoutParameters object could contain some useful feautres (or at least be used to convey things)
+		////LayoutParameters.layoutType gives us A LOT of useful info (this means we'd have to have a special generator for each rep type)
+		////Should there be 2 visualize call types: 1 for env, 1 for grp/agt?
+		////This takes the ENUM representationType stored in LayoutParameter, this means there'll have to be some degree of validation
+		////& scoping (probably)
+		////It takes the representationType and then a list of layouts to project (they all have to be the same type as the repType?
+		////Solution:
+		//CASL_Macro_Display:
+		//	"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')'
+		public Group getGroup() { return cGroup; }
+		
+		//"DISPLAY"
+		public Keyword getDISPLAYKeyword_0() { return cDISPLAYKeyword_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//representationType=WorldType
+		public Assignment getRepresentationTypeAssignment_2() { return cRepresentationTypeAssignment_2; }
+		
+		//WorldType
+		public RuleCall getRepresentationTypeWorldTypeEnumRuleCall_2_0() { return cRepresentationTypeWorldTypeEnumRuleCall_2_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//toProject+=Expression
+		public Assignment getToProjectAssignment_5() { return cToProjectAssignment_5; }
+		
+		//Expression
+		public RuleCall getToProjectExpressionParserRuleCall_5_0() { return cToProjectExpressionParserRuleCall_5_0; }
+		
+		//(',' toProject+=Expression)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//','
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//toProject+=Expression
+		public Assignment getToProjectAssignment_6_1() { return cToProjectAssignment_6_1; }
+		
+		//Expression
+		public RuleCall getToProjectExpressionParserRuleCall_6_1_0() { return cToProjectExpressionParserRuleCall_6_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class Raw_Java_BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.Raw_Java_Block");
@@ -8394,14 +8531,26 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cGRIDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cGRIDGRIDKeyword_0_0 = (Keyword)cGRIDEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cSPACEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cSPACESPACEKeyword_1_0 = (Keyword)cSPACEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTORUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cTORUSTORUSKeyword_1_0 = (Keyword)cTORUSEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cBOUNDEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cBOUNDBOUNDKeyword_2_0 = (Keyword)cBOUNDEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cGRAPHEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cGRAPHGRAPHKeyword_3_0 = (Keyword)cGRAPHEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cNETWORKEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cNETWORKNETWORKKeyword_4_0 = (Keyword)cNETWORKEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cGISEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cGISGISKeyword_5_0 = (Keyword)cGISEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cMESH3DEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cMESH3DMESH3DKeyword_6_0 = (Keyword)cMESH3DEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cCONTINUOUSEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cCONTINUOUSCONTINUOUSKeyword_7_0 = (Keyword)cCONTINUOUSEnumLiteralDeclaration_7.eContents().get(0);
 		
 		//enum WorldType:
-		//	GRID | SPACE;
+		//	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS;
 		public EnumRule getRule() { return rule; }
 		
-		//GRID | SPACE
+		//GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//GRID
@@ -8410,11 +8559,47 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"GRID"
 		public Keyword getGRIDGRIDKeyword_0_0() { return cGRIDGRIDKeyword_0_0; }
 		
-		//SPACE
-		public EnumLiteralDeclaration getSPACEEnumLiteralDeclaration_1() { return cSPACEEnumLiteralDeclaration_1; }
+		//TORUS
+		public EnumLiteralDeclaration getTORUSEnumLiteralDeclaration_1() { return cTORUSEnumLiteralDeclaration_1; }
 		
-		//"SPACE"
-		public Keyword getSPACESPACEKeyword_1_0() { return cSPACESPACEKeyword_1_0; }
+		//"TORUS"
+		public Keyword getTORUSTORUSKeyword_1_0() { return cTORUSTORUSKeyword_1_0; }
+		
+		//BOUND
+		public EnumLiteralDeclaration getBOUNDEnumLiteralDeclaration_2() { return cBOUNDEnumLiteralDeclaration_2; }
+		
+		//"BOUND"
+		public Keyword getBOUNDBOUNDKeyword_2_0() { return cBOUNDBOUNDKeyword_2_0; }
+		
+		//GRAPH
+		public EnumLiteralDeclaration getGRAPHEnumLiteralDeclaration_3() { return cGRAPHEnumLiteralDeclaration_3; }
+		
+		//"GRAPH"
+		public Keyword getGRAPHGRAPHKeyword_3_0() { return cGRAPHGRAPHKeyword_3_0; }
+		
+		//NETWORK
+		public EnumLiteralDeclaration getNETWORKEnumLiteralDeclaration_4() { return cNETWORKEnumLiteralDeclaration_4; }
+		
+		//"NETWORK"
+		public Keyword getNETWORKNETWORKKeyword_4_0() { return cNETWORKNETWORKKeyword_4_0; }
+		
+		//GIS
+		public EnumLiteralDeclaration getGISEnumLiteralDeclaration_5() { return cGISEnumLiteralDeclaration_5; }
+		
+		//"GIS"
+		public Keyword getGISGISKeyword_5_0() { return cGISGISKeyword_5_0; }
+		
+		//MESH3D
+		public EnumLiteralDeclaration getMESH3DEnumLiteralDeclaration_6() { return cMESH3DEnumLiteralDeclaration_6; }
+		
+		//"MESH3D"
+		public Keyword getMESH3DMESH3DKeyword_6_0() { return cMESH3DMESH3DKeyword_6_0; }
+		
+		//CONTINUOUS
+		public EnumLiteralDeclaration getCONTINUOUSEnumLiteralDeclaration_7() { return cCONTINUOUSEnumLiteralDeclaration_7; }
+		
+		//"CONTINUOUS"
+		public Keyword getCONTINUOUSCONTINUOUSKeyword_7_0() { return cCONTINUOUSCONTINUOUSKeyword_7_0; }
 	}
 	public class RandomTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.RandomType");
@@ -8577,6 +8762,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
 	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_VisualizeElements pCASL_Macro_Visualize;
+	private final CASL_Macro_DisplayElements pCASL_Macro_Display;
 	private final WorldTypeElements eWorldType;
 	private final RandomTypeElements eRandomType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
@@ -8726,6 +8912,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
 		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_Visualize = new CASL_Macro_VisualizeElements();
+		this.pCASL_Macro_Display = new CASL_Macro_DisplayElements();
 		this.eWorldType = new WorldTypeElements();
 		this.eRandomType = new RandomTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
@@ -10172,9 +10359,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////Because it will probably be massive (and it also has to line up with stdlib)
 	//CASL_Macro:
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
-	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO
-	//	//	CASL_Macro_Visualize
-	//;
+	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
+	//	CASL_Macro_Visualize | CASL_Macro_Display;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -10286,10 +10472,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////TODO: Fill this out
 	///**
-	// * CASL.VISUALIZE[PositionUpdate][ColorUpdate] 
+	// * CASL.VISUALIZE[ProjectionPosition][ProjectionColourUpdater (how to manage this for diff var types)]
+	// [ProjectionShapeUpdater (same as above)]
+	// * When this is called, the agent will appear in the simulation
+	// * 
 	// *
 	// */ CASL_Macro_Visualize:
-	//	"VISUALIZE";
+	//	"VISUALIZE" '[' projectionPosition=Expression ']' '[' projectionColourUpdater=Expression ']' '['
+	//	projectionShape=STRING ']';
 	public CASL_Macro_VisualizeElements getCASL_Macro_VisualizeAccess() {
 		return pCASL_Macro_Visualize;
 	}
@@ -10298,8 +10488,27 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getCASL_Macro_VisualizeAccess().getRule();
 	}
 	
+	////So this doesn't quite work.
+	////We need to visualise the environment (or group) and then configure how the entities contained within are visualized
+	////The LayoutParameters object could contain some useful feautres (or at least be used to convey things)
+	////LayoutParameters.layoutType gives us A LOT of useful info (this means we'd have to have a special generator for each rep type)
+	////Should there be 2 visualize call types: 1 for env, 1 for grp/agt?
+	////This takes the ENUM representationType stored in LayoutParameter, this means there'll have to be some degree of validation
+	////& scoping (probably)
+	////It takes the representationType and then a list of layouts to project (they all have to be the same type as the repType?
+	////Solution:
+	//CASL_Macro_Display:
+	//	"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
+	public CASL_Macro_DisplayElements getCASL_Macro_DisplayAccess() {
+		return pCASL_Macro_Display;
+	}
+	
+	public ParserRule getCASL_Macro_DisplayRule() {
+		return getCASL_Macro_DisplayAccess().getRule();
+	}
+	
 	//enum WorldType:
-	//	GRID | SPACE;
+	//	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS;
 	public WorldTypeElements getWorldTypeAccess() {
 		return eWorldType;
 	}

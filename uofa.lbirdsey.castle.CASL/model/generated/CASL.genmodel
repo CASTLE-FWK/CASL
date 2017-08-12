@@ -98,7 +98,13 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//WorldType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GRID"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/SPACE"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/TORUS"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/BOUND"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GRAPH"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/NETWORK"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GIS"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/MESH3D"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/CONTINUOUS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
@@ -477,6 +483,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/count"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/ent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/entityInitParams"/>
+    </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Visualize">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Visualize/projectionPosition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Visualize/projectionColourUpdater"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Visualize/projectionShape"/>
+    </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Display">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Display/representationType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Display/toProject"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//Raw_Java_Block">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//Raw_Java_Block/name"/>

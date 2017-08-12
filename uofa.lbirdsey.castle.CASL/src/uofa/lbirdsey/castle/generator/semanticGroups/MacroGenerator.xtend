@@ -18,6 +18,8 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import org.eclipse.emf.common.util.EList
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize
+import uofa.lbirdsey.castle.casl.CASL_Macro_Display
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -29,8 +31,6 @@ class MacroGenerator {
 			if (ngh.worldType == WorldType.GRID) {
 
 		
-			} else if (ngh.worldType == WorldType.SPACE) {
-				
 			}
 
 		} else if (macro instanceof CASL_Macro_FilterAndFunction) {
@@ -86,6 +86,10 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_TODO){
 			val mac = (macro as CASL_Macro_TODO);
 			return "//TODO: "+mac.str+'\n';
+		} else if (macro instanceof CASL_Macro_Visualize){
+			return VisualisationGenerator.generateVisualiser(macro as CASL_Macro_Visualize);
+		} else if (macro instanceof CASL_Macro_Display){
+			return VisualisationGenerator.generateDisplayer(macro as CASL_Macro_Display);
 		}
 		return output;
 	}

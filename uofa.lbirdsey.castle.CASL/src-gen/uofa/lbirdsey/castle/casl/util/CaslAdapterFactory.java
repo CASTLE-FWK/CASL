@@ -33,6 +33,7 @@ import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -41,6 +42,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
 import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -631,6 +633,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCASL_Macro_Populate(CASL_Macro_Populate object)
       {
         return createCASL_Macro_PopulateAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_Visualize(CASL_Macro_Visualize object)
+      {
+        return createCASL_Macro_VisualizeAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_Display(CASL_Macro_Display object)
+      {
+        return createCASL_Macro_DisplayAdapter();
       }
       @Override
       public Adapter caseRaw_Java_Block(Raw_Java_Block object)
@@ -2130,6 +2142,36 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCASL_Macro_PopulateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Visualize <em>CASL Macro Visualize</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Visualize
+   * @generated
+   */
+  public Adapter createCASL_Macro_VisualizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Display <em>CASL Macro Display</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Display
+   * @generated
+   */
+  public Adapter createCASL_Macro_DisplayAdapter()
   {
     return null;
   }

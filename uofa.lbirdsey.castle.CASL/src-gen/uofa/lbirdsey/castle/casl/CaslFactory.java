@@ -816,6 +816,24 @@ public interface CaslFactory extends EFactory
   CASL_Macro_Populate createCASL_Macro_Populate();
 
   /**
+   * Returns a new object of class '<em>CASL Macro Visualize</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro Visualize</em>'.
+   * @generated
+   */
+  CASL_Macro_Visualize createCASL_Macro_Visualize();
+
+  /**
+   * Returns a new object of class '<em>CASL Macro Display</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro Display</em>'.
+   * @generated
+   */
+  CASL_Macro_Display createCASL_Macro_Display();
+
+  /**
    * Returns a new object of class '<em>Raw Java Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
