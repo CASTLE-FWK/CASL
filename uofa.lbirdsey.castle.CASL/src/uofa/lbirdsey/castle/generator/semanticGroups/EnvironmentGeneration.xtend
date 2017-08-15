@@ -124,6 +124,9 @@ class EnvironmentGeneration {
 			/*****Trigger Scheduling*****/
 			«createInitialiseFunction(theEnvironment)»
 			«assignActionsAndPrintPhases(theEnvironment)»
+			
+			/*****Platform Specifics*****/
+			«generateRepastSpecifics(theEnvironment)»
 		}
 		'''
 	}
@@ -341,20 +344,6 @@ class EnvironmentGeneration {
 		return str;
 	}
 	
-//	def initGridLayout(){
-//		var str = "";
-//		str += "\tfor (int i = 0; i < layoutParameters.gridX(); i++){\n"
-//		str += "\t\tfor (int j = 0; j < layoutParameters.gridY(); j++){\n"
-//		str += "\t\t\t SemanticGroup tmpGrp = new SemanticGroup(getEntityID().toString()+\"_Group\", i, layoutParameters, this, i , j);\n" //TODO
-//		str += "\t\t\tstoredGroups.add(tmpGrp);\n"
-//		str += "\t\t\t//....\n" //TODO
-//		str += "\t\t}\n\t}\n"
-//		str += "\tfor (SemanticGroup grp : storedGroups) {\n"
-//		str += "\t\tgrp.initialise();\n"
-//		str += "\t}\n"
-//		str += "}"
-//		return str;
-//	}
 	
 	def String generateSimulateFunction(Environment env){
 		if (groupsActive){
@@ -420,6 +409,11 @@ class EnvironmentGeneration {
 			str += "\t}\n"			 
 			str += "}\n"
 		return str;
+	}
+	
+	def String generateRepastSpecifics(Environment env){
+		var str = "Context<Entity> repastContext;\n"
+		str += "public void setRepastContext(Context<Entity> rc){\n\trepastContext=rc;\n}\n"
 	}
 	
 	def assignActionsAndPrintPhases(Environment env){

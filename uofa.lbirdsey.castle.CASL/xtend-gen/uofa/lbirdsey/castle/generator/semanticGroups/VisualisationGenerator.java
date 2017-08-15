@@ -28,12 +28,12 @@ public class VisualisationGenerator {
             String nameOfProjection = Helpers.getNameFromExpression(a);
             String _output = output;
             String _lowerCase = nameOfProjection.toLowerCase();
-            String _plus = ("\tGrid<Entity> " + _lowerCase);
+            String _plus = ("\trepast.simphony.space.grid.Grid<Entity> " + _lowerCase);
             String _plus_1 = (_plus + "_Grid = gridFactory.createGrid(\"");
             String _plus_2 = (_plus_1 + nameOfProjection);
-            String _plus_3 = (_plus_2 + "\", context, ");
+            String _plus_3 = (_plus_2 + "\", repastContext, ");
             String _plus_4 = (_plus_3 + 
-              "new GridBuilderParameters<Agent>(new StrictBorders(),new SimpleGridAdder<Agent>(), false, ");
+              "new GridBuilderParameters<Entity>(new StrictBorders(),new SimpleGridAdder<Entity>(), false, ");
             String _plus_5 = (_plus_4 + nameOfProjection);
             String _plus_6 = (_plus_5 + ".getX(), ");
             String _plus_7 = (_plus_6 + nameOfProjection);

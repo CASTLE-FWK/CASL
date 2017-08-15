@@ -1,17 +1,14 @@
 package uofa.lbirdsey.castle.generator.semanticGroups
 
-import com.google.inject.Inject
 import java.math.BigDecimal
 import java.util.ArrayList
 import java.util.HashSet
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.naming.IQualifiedNameProvider
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime
 import uofa.lbirdsey.castle.casl.Field
 import uofa.lbirdsey.castle.casl.FunctionParameter
 import uofa.lbirdsey.castle.casl.Group
 import uofa.lbirdsey.castle.casl.Group_Rules
-import uofa.lbirdsey.castle.casl.LayoutType
 import uofa.lbirdsey.castle.casl.Concern
 import uofa.lbirdsey.castle.casl.Transmission_Phase
 import uofa.lbirdsey.castle.casl.Transmission_Repeat
@@ -54,6 +51,7 @@ class GroupGeneration {
 		imports += "import stdSimLib.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
+		imports += "import repast.simphony.context.Context;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 
 		for (String iC : libImports){
@@ -71,12 +69,9 @@ class GroupGeneration {
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
 		}
-		//What other dynamic stuff is needed...
-		
 		//Parse Group rules
 		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
 		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
-//		imports += "import castleComponents.representations."+(parseGroupRules(theGroup.group_rules).toLowerCase.toFirstUpper)+";\n"
 		
 		//Prepend import statements
 		fileContents = imports +"\n" + fileContents;
@@ -115,6 +110,10 @@ class GroupGeneration {
 			/*****Pre-defined Schedules - setup(), action(), and cleanup()*****/
 			«createInitalisePhase(theGroup)»
 			«createFinalPhase(theGroup)»
+			
+			
+			/*****Specifics*****/
+			«generateRepastSpecifics(theGroup)»
 				
 		}
 	'''
@@ -337,6 +336,11 @@ class GroupGeneration {
 			str += "\t}\n"			 
 			str += "}\n"
 		return str;
+	}
+	
+	def String generateRepastSpecifics(Group grp){
+		var str = "Context<Entity> repastContext;\n"
+		str += "public void setRepastContext(Context<Entity> rc){\n\trepastContext=rc;\n}\n"
 	}
 	
 	def getLayoutType(Group grp){

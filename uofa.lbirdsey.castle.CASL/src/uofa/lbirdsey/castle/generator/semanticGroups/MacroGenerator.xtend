@@ -129,33 +129,57 @@ class MacroGenerator {
 				"for (int i = 0; i < xRange; i++){\n\tfor (int j = 0; j < yRange; j++){"+ NL
 			//Do the cycling
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
+			//Add to the Repast Context
+			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
+			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
-			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END			
+			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END
+			
+			 
+						
 			output += TAB + "}\n}\n"
 		} else if (Helpers.isANumber(counterAsString)){
 			output += "int limit = (int)" + counterName + LINE_END
 			output += "for (int i = 0; i < limit; i++) { " + NL
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
+			//Add to the Repast Context
+			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
+			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
 			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END
+			
+			
+			
+			
 			output += TAB + "}\n}\n"
 		} 
 		
 		//Add the entities to the layout parameter class as well
 		//TODO: This doesn't work
-//		output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
+		//output += Printers.printExpression(layoutLocation)+".addEntities("+entityName.toLowerCase+"List);\n";
 		 
 		return output;
 	}
 	
+	static def String addRepastContextAdder(String entityType, String tmpEntityName){
+		if (entityType == AGENT) {
+			return "repastContext.add("+tmpEntityName+")"+LINE_END
+		} else if (entityType == ENVIRONMENT) {
+			return tmpEntityName+".setRepastContext(repastContext);\nrepastContext.add("+tmpEntityName+")"+LINE_END
+		} else if (entityType == GROUP) {
+			return tmpEntityName+".setRepastContext(repastContext.getSubContext);repastContext.addSubContext("+tmpEntityName+")"+LINE_END
+		} else {
+			throwCASLError("invalid entity type","addRepastContextAdder","MacroGenerator");
+		}
+	}
 	
 	
 	static def String printContainerAdd(String entityType, String tmpEntityName){

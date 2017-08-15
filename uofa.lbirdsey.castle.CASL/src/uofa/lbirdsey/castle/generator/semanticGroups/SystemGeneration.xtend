@@ -142,7 +142,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "//For all Systems\nint clock = 0;\nint numberOfSteps;\nEntityID sysID;\n";
 		output += "//Tier Below\nArrayList<Environment> storedEnvironments;\nArrayList<SemanticGroup> storedGroups;\n"
 		output += "MessageQueue messageQueue;\nPhase currentPhase;\nint tier1Entities = 0;\n"
-		output += "//Repast Specific\nContext<Entity> theContext;\n"
+		output += "//Repast Specific\nContext<Entity> repastContext;\n"
 		
 		
 		output += "\n//Getters & Setters\n"
@@ -339,6 +339,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	def String repastBuildInitialiser(System sys){
 		var str = "";
 		str = "public Context<Entity> build (Context<Entity> context) {\n\tcontext.setId(\""+sys.name+"\");\n"
+		str += "\trepastContext = context;\n";
 		str += "\t//Initialise lists to contain Agents and Environments\n"
 		str += initialiseSystem(sys)
 		str += "\n\t//Get parameters from Repast\n\tParameters params = RunEnvironment.getInstance().getParameters();\n"
@@ -361,14 +362,13 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		}
 		str += paramGetters + "\n"
 		str += finalSteps + "\n"
-		//Using the system parameters. How do we write this to the Repast Xml file though?
-		//Using another code generator!
 		
 		//Setting up the display (although the manual part of Repast may prevent us from having to
 		//hard code anything (however in the future it would be useful to skip any manual stuff)
-
-		//Space set up		
-
+		
+				
+		
+	
 		
 		var scheduleSetup = "\n";
 		scheduleSetup += "\t//Set Schedule for CASFeatures ()\n"
@@ -395,8 +395,13 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 		
 		//Set up the main System init stuff
-		str +="\n\tinitialize();\n\ttheContext = context;\n";
+		str +="\n\tinitialize();"
 		
+		//What we want to have here is context adding of environments and subcontext adding of groups (if an SG model)
+		//TODOkjashd8891
+
+
+
 		
 //		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
 		
