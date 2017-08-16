@@ -338,7 +338,7 @@ class AgentGeneration {
 		var cleanupPhase = newArrayList
 		
 		var str = "//Schedules\n"
-		str += "//The NULL Triggers\n"
+		str += "//The uninitialized Triggers\n"
 		for (s : triggersToPrintInit){
 			str += "Trigger "+s+";\n"
 		}
@@ -392,9 +392,10 @@ class AgentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : setupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(setupTriggers);\n"
+//		str += "\tfor (Trigger t : setupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 		
 		//Action Phase
@@ -403,11 +404,9 @@ class AgentGeneration {
 //		str += "\tsetupQueue.clear();\n"
 		for (item : actionPhase){
 			str += "\t"+item+"\n"
-		} 
+		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : actionTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(actionTriggers);\n"
 		str +="}\n\n"
 				
 		//Cleanup phase
@@ -419,9 +418,10 @@ class AgentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : cleanupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(cleanupTriggers);\n"
+//		str += "\tfor (Trigger t : cleanupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 
 		return str;		

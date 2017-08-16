@@ -256,7 +256,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			str += "\t\t \n\t}\n"
 			str +="\t/**********CLEANUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
-			str +="\tcurrentPhase = Phase.SETUP; \n"
+			str +="\tcurrentPhase = Phase.CLEANUP; \n"
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
 			str += "\t//Broadcast Phase.SETUP to tier1 entities\n\tbroadcast(MessageType.PHASE, currentPhase);\n\n"
 			str += "\t//Make things go\n"
@@ -395,7 +395,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 		
 		//Set up the main System init stuff
-		str +="\n\tinitialize();"
+		str +="\n\tinitialize();\n"
 		
 		//What we want to have here is context adding of environments and subcontext adding of groups (if an SG model)
 		//TODOkjashd8891

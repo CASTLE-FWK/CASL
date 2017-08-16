@@ -478,42 +478,42 @@ class GroupGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
-		str += "\tcleanupQueue.clear();\n"
-		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
+//		str += "\tcleanupQueue.clear();\n"
+//		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
 		for (item : setupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : setupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(setupTriggers);\n"
+//		str += "\tfor (Trigger t : setupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 		
 		//Action Phase
 		str += "@Override\n"
 		str += "public void phase_Action() {\n"
-		str += "\tsetupQueue.clear();\n"
+//		str += "\tsetupQueue.clear();\n"
 		for (item : actionPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : actionTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(actionTriggers);\n"
 		str +="}\n\n"
 				
 		//Cleanup phase
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
-		str += "\tactionQueue.clear();\n"
-		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
+//		str += "\tactionQueue.clear();\n"
+//		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
 		for (item : cleanupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : cleanupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(cleanupTriggers);\n"
+//		str += "\tfor (Trigger t : cleanupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 
 		return str;		

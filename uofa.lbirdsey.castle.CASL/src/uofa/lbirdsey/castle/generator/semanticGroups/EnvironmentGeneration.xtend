@@ -392,6 +392,10 @@ class EnvironmentGeneration {
 			str += "\t\tbroadcast(MessageType.CLOCK, getCurrentStep());\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Setup();\n"
+			str += "\t\tArrayList<Agent> containedEntities = storedAgents;\n"
+			//Shuffle
+			str += "\t\tCollections.shuffle(containedEntities);\n"
+			str += "\t\tfor (Entity e : containedEntities){e.phase_Setup();}\n"
 			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			
@@ -404,7 +408,12 @@ class EnvironmentGeneration {
 			
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
+			
 			str += "\t\tphase_Cleanup();\n"
+			str += "\t\tArrayList<Agent> containedEntities = storedAgents;\n"
+			//Shuffle
+			str += "\t\tCollections.shuffle(containedEntities);\n"
+			str += "\t\tfor (Entity e : containedEntities){e.phase_Cleanup();}\n"
 			
 			str += "\t}\n"			 
 			str += "}\n"
@@ -498,9 +507,10 @@ class EnvironmentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : setupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(setupTriggers);\n"
+//		str += "\tfor (Trigger t : setupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 		
 		//Action Phase
@@ -511,9 +521,7 @@ class EnvironmentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : actionTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(actionTriggers);\n"
 		str +="}\n\n"
 				
 		//Cleanup phase
@@ -525,9 +533,10 @@ class EnvironmentGeneration {
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
-		str += "\tfor (Trigger t : cleanupTriggers) {\n"
-		str += "\t\tt.trigger();\n"
-		str += "\t}\n"
+		str += "\tpullTriggers(cleanupTriggers);\n"
+//		str += "\tfor (Trigger t : cleanupTriggers) {\n"
+//		str += "\t\tt.trigger();\n"
+//		str += "\t}\n"
 		str +="}\n\n"
 
 		return str;		

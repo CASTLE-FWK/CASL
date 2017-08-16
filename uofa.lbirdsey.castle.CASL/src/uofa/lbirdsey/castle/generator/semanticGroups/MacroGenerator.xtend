@@ -130,7 +130,7 @@ class MacroGenerator {
 			//Do the cycling
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			//Add to the Repast Context
-			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
+//			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
 			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
@@ -147,7 +147,7 @@ class MacroGenerator {
 			output += "for (int i = 0; i < limit; i++) { " + NL
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
 			//Add to the Repast Context
-			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
+//			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
 			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
