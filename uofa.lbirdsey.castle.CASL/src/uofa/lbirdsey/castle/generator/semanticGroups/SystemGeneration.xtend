@@ -128,14 +128,11 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	
 	def generateParameters(System sys){
 		var output = "//Fields\n"
+		output += "ArrayList<Parameter<?>> simulationParameters = new ArrayList<Parameter<?>>();\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
 				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
 				libImports.add(HelperFunctions.getFieldType(field as Field));
-//				if (!HelperFunctions.getFieldName(field as Field).equalsIgnoreCase("LayoutParameters")){ //Note: This could be expanded to handle a lot of special cases				
-//					output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
-//					libImports.add(HelperFunctions.getFieldType(field as Field));
-//				}
 			} else if (field instanceof Concern){}			
 		}
 		
@@ -345,7 +342,8 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			var ff = (field as Field)
 			var fdt = ff.declaration as DataTypeDeclaration
 			if (fdt.initInclude !== null)
-				paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"			
+				paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"
+				paramGetters += "simulationParameters.add(new Parameter<"+HelperFunctions.getFieldType(ff)+">("+fdt.name+", \""+fdt.name+"\"));\n"
 		}
 		
 		//Stuff for termination
@@ -358,13 +356,6 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		}
 		str += paramGetters + "\n"
 		str += finalSteps + "\n"
-		
-		//Setting up the display (although the manual part of Repast may prevent us from having to
-		//hard code anything (however in the future it would be useful to skip any manual stuff)
-		
-				
-		
-	
 		
 		var scheduleSetup = "\n";
 		scheduleSetup += "\t//Set Schedule for CASFeatures ()\n"
@@ -397,8 +388,8 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		//TODOkjashd8891
 
 
-
-		
+		str += "\t//Export information to Logger and/or Database\n"
+		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
 //		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
 		
 		str += "\ttier1Entities = storedEnvironments.size();";
