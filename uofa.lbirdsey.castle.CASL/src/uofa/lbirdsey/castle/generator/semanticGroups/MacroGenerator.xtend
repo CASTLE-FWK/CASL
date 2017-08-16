@@ -21,6 +21,7 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log
+import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -78,9 +79,17 @@ class MacroGenerator {
 			output += "System.out.println(\""+(macro as CASL_Macro_Print).str+"\");\n"			
 		} else if (macro instanceof CASL_Macro_Log) {
 			output += "logger.log(\""+(macro as CASL_Macro_Log).str+"\");\n"
-		}
-		
-		 else if (macro instanceof CASL_Macro_MetricSwitch){
+		} else if (macro instanceof CASL_Macro_InitLogger){
+			val il = (macro as CASL_Macro_InitLogger);
+			val isMuted = (il.mute == true)
+			val isToConsole = (il.toConsole == true);
+			val isToFile = (il.toFile == true);
+			var filePath = "\"\"";
+			if (isToFile){
+				filePath = Printers.printExpression(il.filePath) as String;
+			}
+			output += "logger.setup("+isMuted+','+isToConsole+','+isToFile+','+filePath+")\n"
+		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)
 			if (isEnabled){

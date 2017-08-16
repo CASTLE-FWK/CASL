@@ -10829,6 +10829,15 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_Log_11.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_InitLoggerParserRuleCall_12());
+		}
+		this_CASL_Macro_InitLogger_12=ruleCASL_Macro_InitLogger
+		{
+			$current = $this_CASL_Macro_InitLogger_12.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11259,6 +11268,123 @@ ruleCASL_Macro_Print returns [EObject current=null]
 		otherlv_2=')'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_PrintAccess().getRightParenthesisKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_InitLogger
+entryRuleCASL_Macro_InitLogger returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerRule()); }
+	iv_ruleCASL_Macro_InitLogger=ruleCASL_Macro_InitLogger
+	{ $current=$iv_ruleCASL_Macro_InitLogger.current; }
+	EOF;
+
+// Rule CASL_Macro_InitLogger
+ruleCASL_Macro_InitLogger returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='LOGGER('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_InitLoggerAccess().getLOGGERKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getMuteBooleanValueParserRuleCall_1_0());
+				}
+				lv_mute_1_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"mute",
+						lv_mute_1_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=','
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getToConsoleBooleanValueParserRuleCall_3_0());
+				}
+				lv_toConsole_3_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"toConsole",
+						lv_toConsole_3_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getToFileBooleanValueParserRuleCall_5_0());
+				}
+				lv_toFile_5_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"toFile",
+						lv_toFile_5_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_6=','
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathExpressionParserRuleCall_6_1_0());
+					}
+					lv_filePath_7_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+						}
+						set(
+							$current,
+							"filePath",
+							lv_filePath_7_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_8=')'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getCASL_Macro_InitLoggerAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;

@@ -38,6 +38,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
+import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
@@ -260,6 +261,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_FOR_EACH:
 				sequence_CASL_Macro_ForEach(context, (CASL_Macro_ForEach) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_INIT_LOGGER:
+				sequence_CASL_Macro_InitLogger(context, (CASL_Macro_InitLogger) semanticObject); 
 				return; 
 			case CaslPackage.CASL_MACRO_LOG:
 				sequence_CASL_Macro_Log(context, (CASL_Macro_Log) semanticObject); 
@@ -1472,6 +1476,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_InitLogger
+	 *     CASL_Macro_InitLogger returns CASL_Macro_InitLogger
+	 *
+	 * Constraint:
+	 *     (mute=BooleanValue toConsole=BooleanValue toFile=BooleanValue filePath=Expression?)
+	 */
+	protected void sequence_CASL_Macro_InitLogger(ISerializationContext context, CASL_Macro_InitLogger semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CASL_Macro returns CASL_Macro_Log
 	 *     CASL_Macro_Log returns CASL_Macro_Log
 	 *
@@ -2553,8 +2570,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=SelfAssignedFormula? 
-	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=Field)? elseexp+=SelfAssignedFormula?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

@@ -471,6 +471,12 @@
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Print">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Print/str"/>
     </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_InitLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_InitLogger/mute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_InitLogger/toConsole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_InitLogger/toFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_InitLogger/filePath"/>
+    </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Log">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Log/str"/>
     </genClasses>

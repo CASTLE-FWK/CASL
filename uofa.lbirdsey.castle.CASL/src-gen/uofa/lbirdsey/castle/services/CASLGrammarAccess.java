@@ -6906,18 +6906,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_VisualizeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cCASL_Macro_DisplayParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final RuleCall cCASL_Macro_LogParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cCASL_Macro_InitLoggerParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
 		//CASL_Macro:
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-		//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log;
+		//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-		//CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log
+		//CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -6955,6 +6956,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_Log
 		public RuleCall getCASL_Macro_LogParserRuleCall_11() { return cCASL_Macro_LogParserRuleCall_11; }
+		
+		//CASL_Macro_InitLogger
+		public RuleCall getCASL_Macro_InitLoggerParserRuleCall_12() { return cCASL_Macro_InitLoggerParserRuleCall_12; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -7229,6 +7233,73 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//")"
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+	}
+	public class CASL_Macro_InitLoggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_InitLogger");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLOGGERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMuteAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMuteBooleanValueParserRuleCall_1_0 = (RuleCall)cMuteAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToConsoleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cToConsoleBooleanValueParserRuleCall_3_0 = (RuleCall)cToConsoleAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cToFileAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cToFileBooleanValueParserRuleCall_5_0 = (RuleCall)cToFileAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cFilePathAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cFilePathExpressionParserRuleCall_6_1_0 = (RuleCall)cFilePathAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//CASL_Macro_InitLogger:
+		//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')'
+		public Group getGroup() { return cGroup; }
+		
+		//"LOGGER("
+		public Keyword getLOGGERKeyword_0() { return cLOGGERKeyword_0; }
+		
+		//mute=BooleanValue
+		public Assignment getMuteAssignment_1() { return cMuteAssignment_1; }
+		
+		//BooleanValue
+		public RuleCall getMuteBooleanValueParserRuleCall_1_0() { return cMuteBooleanValueParserRuleCall_1_0; }
+		
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//toConsole=BooleanValue
+		public Assignment getToConsoleAssignment_3() { return cToConsoleAssignment_3; }
+		
+		//BooleanValue
+		public RuleCall getToConsoleBooleanValueParserRuleCall_3_0() { return cToConsoleBooleanValueParserRuleCall_3_0; }
+		
+		//','
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//toFile=BooleanValue
+		public Assignment getToFileAssignment_5() { return cToFileAssignment_5; }
+		
+		//BooleanValue
+		public RuleCall getToFileBooleanValueParserRuleCall_5_0() { return cToFileBooleanValueParserRuleCall_5_0; }
+		
+		//(',' filePath=Expression)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//','
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//filePath=Expression
+		public Assignment getFilePathAssignment_6_1() { return cFilePathAssignment_6_1; }
+		
+		//Expression
+		public RuleCall getFilePathExpressionParserRuleCall_6_1_0() { return cFilePathExpressionParserRuleCall_6_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class CASL_Macro_LogElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Log");
@@ -8789,6 +8860,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_RandomElements pCASL_Macro_Random;
 	private final CASL_Macro_ForEachElements pCASL_Macro_ForEach;
 	private final CASL_Macro_PrintElements pCASL_Macro_Print;
+	private final CASL_Macro_InitLoggerElements pCASL_Macro_InitLogger;
 	private final CASL_Macro_LogElements pCASL_Macro_Log;
 	private final CASL_Macro_MetricSwitchElements pCASL_Macro_MetricSwitch;
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
@@ -8940,6 +9012,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_Random = new CASL_Macro_RandomElements();
 		this.pCASL_Macro_ForEach = new CASL_Macro_ForEachElements();
 		this.pCASL_Macro_Print = new CASL_Macro_PrintElements();
+		this.pCASL_Macro_InitLogger = new CASL_Macro_InitLoggerElements();
 		this.pCASL_Macro_Log = new CASL_Macro_LogElements();
 		this.pCASL_Macro_MetricSwitch = new CASL_Macro_MetricSwitchElements();
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
@@ -10393,7 +10466,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//CASL_Macro:
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
-	//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log;
+	//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -10460,6 +10533,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCASL_Macro_PrintRule() {
 		return getCASL_Macro_PrintAccess().getRule();
+	}
+	
+	//CASL_Macro_InitLogger:
+	//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')';
+	public CASL_Macro_InitLoggerElements getCASL_Macro_InitLoggerAccess() {
+		return pCASL_Macro_InitLogger;
+	}
+	
+	public ParserRule getCASL_Macro_InitLoggerRule() {
+		return getCASL_Macro_InitLoggerAccess().getRule();
 	}
 	
 	//CASL_Macro_Log:
