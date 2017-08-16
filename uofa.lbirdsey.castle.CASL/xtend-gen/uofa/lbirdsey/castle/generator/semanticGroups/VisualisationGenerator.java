@@ -21,7 +21,6 @@ public class VisualisationGenerator {
       String _xifexpression = null;
       boolean _equalsIgnoreCase = rep.equalsIgnoreCase("GRID");
       if (_equalsIgnoreCase) {
-        output = "GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n";
         EList<Expression> _toProject = d.getToProject();
         for (final Expression a : _toProject) {
           String nameOfProjection = Helpers.getNameFromExpression(a);

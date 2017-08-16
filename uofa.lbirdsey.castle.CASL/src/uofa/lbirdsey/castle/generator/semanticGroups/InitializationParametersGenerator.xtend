@@ -27,7 +27,7 @@ class InitializationParametersGenerator {
 						}
 						copy = copy.replaceAll("XXX",name.toString()).replaceAll("YYY",type.toString())
 						if (type == "string" || initVal == "__NULL__"){
-							copy = copy.replaceAll("ZZZ","\""+initVal+"\"");
+							copy = copy.replaceAll("\"ZZZ\"",initVal);
 						} else {
 							copy = copy.replaceAll("ZZZ",initVal);
 						}

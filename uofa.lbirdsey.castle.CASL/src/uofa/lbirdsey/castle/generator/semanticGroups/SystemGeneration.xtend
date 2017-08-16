@@ -129,6 +129,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	def generateParameters(System sys){
 		var output = "//Fields\n"
 		output += "ArrayList<Parameter<?>> simulationParameters = new ArrayList<Parameter<?>>();\n"
+		output += "Logger logger;\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
 				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
@@ -228,7 +229,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 			str += "public void simulate() {\n";
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
-			str += "logger.log(\"Step \"+ clock + \");\"\n"
+			str += "logger.log(\"Step \"+ clock);\n"
 			str +="\t//Wait for Tier1 ACKS\n\n//Begin the fun\n"
 			str +="\t/**********SETUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
@@ -322,9 +323,9 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 //		str += "\tsendToFile(runningString);\n"
 		str += "}\n"
 
-		str += "public void prefixStepNumber(){\n"
-		str += "\trunningString += \"step:\t\"+(int)getCurrentTickCount()+\" \";\n"
-		str += "}\n"
+//		str += "public void prefixStepNumber(){\n"
+//		str += "\trunningString += \"step:\t\"+(int)getCurrentTickCount()+\" \";\n"
+//		str += "}\n"
 		return str		
 	}
 	
@@ -332,7 +333,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 		str = "public Context<Entity> build (Context<Entity> context) {\n\tcontext.setId(\""+sys.name+"\");\n"
 		str += "\trepastContext = context;\n";
-		str += "logger = new Logger();"
+		str += "\tlogger = new Logger();"
 		str += "\t//Initialise lists to contain Agents and Environments\n"
 		str += initialiseSystem(sys)
 		str += "\n\t//Get parameters from Repast\n\tParameters params = RunEnvironment.getInstance().getParameters();\n"
@@ -341,9 +342,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		for (field : sys.system_parameters.fields){
 			var ff = (field as Field)
 			var fdt = ff.declaration as DataTypeDeclaration
-			if (fdt.initInclude !== null)
+			if (fdt.initInclude !== null){
 				paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"
-				paramGetters += "simulationParameters.add(new Parameter<"+HelperFunctions.getFieldType(ff)+">("+fdt.name+", \""+fdt.name+"\"));\n"
+				paramGetters += "\tsimulationParameters.add(new Parameter<"+HelperFunctions.getFieldType(ff)+">("+fdt.name+", \""+fdt.name+"\"));\n"
+			}
 		}
 		
 		//Stuff for termination

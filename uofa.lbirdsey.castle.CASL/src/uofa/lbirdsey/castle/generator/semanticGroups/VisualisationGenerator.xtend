@@ -23,7 +23,7 @@ class VisualisationGenerator {
 		
 		
 		if (rep.equalsIgnoreCase("GRID")){
-			output = "GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n"
+//			output = "GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n"
 			
 				//Cycle through each of the things we want to project
 				for (a : d.toProject) {
