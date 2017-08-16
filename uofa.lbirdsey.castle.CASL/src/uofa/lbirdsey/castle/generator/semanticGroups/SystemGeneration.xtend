@@ -319,16 +319,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += "public void sendToFile(String str){\n"
 		str += "\tUtilities.writeToFile(str, System.getProperty(\"user.dir\")+outPath);\n"
 		str += "}\n"
-		
-		str += "String runningString = \"\";\n"
-		
-		str += "public void addToCurrentLog(String str){\n"
-		str += "\trunningString += str + \"\\n\";\n"
-		str += "}\n"
-		
+	
 		str += "public void finalCall(){\n"
-		str += "\t//finalCASFeatureCall();\n"
-		str += "\tsendToFile(runningString);\n"
+//		str += "\t//finalCASFeatureCall();\n"
+//		str += "\tsendToFile(runningString);\n"
 		str += "}\n"
 
 		str += "public void prefixStepNumber(){\n"
@@ -376,20 +370,20 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		scheduleSetup += "\t//Set Schedule for CASFeatures ()\n"
 		scheduleSetup += "\tISchedule schedule;\n"
 		scheduleSetup += "\tschedule = RunEnvironment.getInstance().getCurrentSchedule();\n"
-		scheduleSetup += "\tScheduleParameters casFeatureRunner = ScheduleParameters.createRepeating(0,1,ScheduleParameters.LAST_PRIORITY + 1);\n"
-//		scheduleSetup += "\tschedule.schedule(casFeatureRunner,this,\"runCASFeatureChecks\");\n"
+		scheduleSetup += "//\tScheduleParameters casFeatureRunner = ScheduleParameters.createRepeating(0,1,ScheduleParameters.LAST_PRIORITY + 1);\n"
+		scheduleSetup += "//\tschedule.schedule(casFeatureRunner,this,\"runCASFeatureChecks\");\n"
 		
 		scheduleSetup += "\n\t//Timing\n"
 		scheduleSetup += "\tScheduleParameters stepper = ScheduleParameters.createRepeating(0,1,ScheduleParameters.FIRST_PRIORITY);\n"
 		scheduleSetup += "\tschedule.schedule(stepper,this,\"simulate\");\n"
- 		scheduleSetup += "\tschedule.schedule(stepper,this,\"prefixStepNumber\");\n"
+ 		scheduleSetup += "//\tschedule.schedule(stepper,this,\"prefixStepNumber\");\n"
 		scheduleSetup += "\tScheduleParameters timerSchedule = ScheduleParameters.createRepeating(0,1,ScheduleParameters.LAST_PRIORITY + 100);\n"
 		scheduleSetup += "\tschedule.schedule(timerSchedule,this,\"timer\");\n"
 		scheduleSetup += "\tScheduleParameters initTimerSchedule = ScheduleParameters.createOneTime(0,ScheduleParameters.FIRST_PRIORITY);\n"
 		scheduleSetup += "\tschedule.schedule(initTimerSchedule,this,\"initTimer\");\n"
 		scheduleSetup += "\tScheduleParameters printFinalTime = ScheduleParameters.createAtEnd(ScheduleParameters.LAST_PRIORITY);\n"
 		scheduleSetup += "\tschedule.schedule(printFinalTime,this,\"printTimer\");\n"
-//		scheduleSetup += "\tschedule.schedule(printFinalTime,this,\"finalCall\");\n"
+		scheduleSetup += "\tschedule.schedule(printFinalTime,this,\"finalCall\");\n"
 		str += scheduleSetup;
 		
 		//Initialise Agents/Environments
