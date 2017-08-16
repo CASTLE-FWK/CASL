@@ -20,6 +20,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display
+import uofa.lbirdsey.castle.casl.CASL_Macro_Log
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -75,7 +76,11 @@ class MacroGenerator {
 			}
 		} else if (macro instanceof CASL_Macro_Print) {
 			output += "System.out.println(\""+(macro as CASL_Macro_Print).str+"\");\n"			
-		} else if (macro instanceof CASL_Macro_MetricSwitch){
+		} else if (macro instanceof CASL_Macro_Log) {
+			output += "logger.log(\""+(macro as CASL_Macro_Log).str+"\");\n"
+		}
+		
+		 else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)
 			if (isEnabled){
@@ -134,6 +139,7 @@ class MacroGenerator {
 			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
@@ -151,6 +157,7 @@ class MacroGenerator {
 			
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END

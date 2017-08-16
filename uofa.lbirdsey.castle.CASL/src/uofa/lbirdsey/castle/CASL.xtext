@@ -777,7 +777,8 @@ CASL_Macro:
 	CASL_Macro_Populate				|
 	CASL_Macro_TODO					|					
 	CASL_Macro_Visualize			|
-	CASL_Macro_Display
+	CASL_Macro_Display				|
+	CASL_Macro_Log
 ;
 
 CASL_Macro_Neighbours:
@@ -802,6 +803,10 @@ CASL_Macro_ForEach:
 
 CASL_Macro_Print:
 	"PRINT("str = STRING")"
+;
+
+CASL_Macro_Log:
+	"LOG("str = STRING")"
 ;
 
 CASL_Macro_MetricSwitch:

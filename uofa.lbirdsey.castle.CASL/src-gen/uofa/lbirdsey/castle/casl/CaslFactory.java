@@ -789,6 +789,15 @@ public interface CaslFactory extends EFactory
   CASL_Macro_Print createCASL_Macro_Print();
 
   /**
+   * Returns a new object of class '<em>CASL Macro Log</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro Log</em>'.
+   * @generated
+   */
+  CASL_Macro_Log createCASL_Macro_Log();
+
+  /**
    * Returns a new object of class '<em>CASL Macro Metric Switch</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

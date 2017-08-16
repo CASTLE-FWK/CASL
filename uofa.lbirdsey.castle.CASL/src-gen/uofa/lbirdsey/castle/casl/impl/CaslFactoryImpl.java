@@ -42,6 +42,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
@@ -291,6 +292,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_RANDOM: return createCASL_Macro_Random();
       case CaslPackage.CASL_MACRO_FOR_EACH: return createCASL_Macro_ForEach();
       case CaslPackage.CASL_MACRO_PRINT: return createCASL_Macro_Print();
+      case CaslPackage.CASL_MACRO_LOG: return createCASL_Macro_Log();
       case CaslPackage.CASL_MACRO_METRIC_SWITCH: return createCASL_Macro_MetricSwitch();
       case CaslPackage.CASL_MACRO_TODO: return createCASL_Macro_TODO();
       case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
@@ -1376,6 +1378,17 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
   {
     CASL_Macro_PrintImpl casL_Macro_Print = new CASL_Macro_PrintImpl();
     return casL_Macro_Print;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_Log createCASL_Macro_Log()
+  {
+    CASL_Macro_LogImpl casL_Macro_Log = new CASL_Macro_LogImpl();
+    return casL_Macro_Log;
   }
 
   /**

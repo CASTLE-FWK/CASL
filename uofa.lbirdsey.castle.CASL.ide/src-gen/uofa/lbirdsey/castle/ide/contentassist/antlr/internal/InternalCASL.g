@@ -2525,6 +2525,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleCASL_Macro_Log
+entryRuleCASL_Macro_Log
+:
+{ before(grammarAccess.getCASL_Macro_LogRule()); }
+	 ruleCASL_Macro_Log
+{ after(grammarAccess.getCASL_Macro_LogRule()); } 
+	 EOF 
+;
+
+// Rule CASL_Macro_Log
+ruleCASL_Macro_Log 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getCASL_Macro_LogAccess().getGroup()); }
+		(rule__CASL_Macro_Log__Group__0)
+		{ after(grammarAccess.getCASL_Macro_LogAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleCASL_Macro_MetricSwitch
 entryRuleCASL_Macro_MetricSwitch
 :
@@ -4583,6 +4608,12 @@ rule__CASL_Macro__Alternatives
 		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_DisplayParserRuleCall_10()); }
 		ruleCASL_Macro_Display
 		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_DisplayParserRuleCall_10()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_LogParserRuleCall_11()); }
+		ruleCASL_Macro_Log
+		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_LogParserRuleCall_11()); }
 	)
 ;
 finally {
@@ -27475,6 +27506,87 @@ finally {
 }
 
 
+rule__CASL_Macro_Log__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_Log__Group__0__Impl
+	rule__CASL_Macro_Log__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_LogAccess().getLOGKeyword_0()); }
+	'LOG('
+	{ after(grammarAccess.getCASL_Macro_LogAccess().getLOGKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_Log__Group__1__Impl
+	rule__CASL_Macro_Log__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_LogAccess().getStrAssignment_1()); }
+	(rule__CASL_Macro_Log__StrAssignment_1)
+	{ after(grammarAccess.getCASL_Macro_LogAccess().getStrAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_Log__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_LogAccess().getRightParenthesisKeyword_2()); }
+	')'
+	{ after(grammarAccess.getCASL_Macro_LogAccess().getRightParenthesisKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__CASL_Macro_MetricSwitch__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -35098,6 +35210,21 @@ rule__CASL_Macro_Print__StrAssignment_1
 		{ before(grammarAccess.getCASL_Macro_PrintAccess().getStrSTRINGTerminalRuleCall_1_0()); }
 		RULE_STRING
 		{ after(grammarAccess.getCASL_Macro_PrintAccess().getStrSTRINGTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_Log__StrAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getCASL_Macro_LogAccess().getStrSTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getCASL_Macro_LogAccess().getStrSTRINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {

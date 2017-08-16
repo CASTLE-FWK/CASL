@@ -34,6 +34,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
@@ -830,6 +831,14 @@ public class CaslSwitch<T> extends Switch<T>
         CASL_Macro_Print casL_Macro_Print = (CASL_Macro_Print)theEObject;
         T result = caseCASL_Macro_Print(casL_Macro_Print);
         if (result == null) result = caseCASL_Macro(casL_Macro_Print);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.CASL_MACRO_LOG:
+      {
+        CASL_Macro_Log casL_Macro_Log = (CASL_Macro_Log)theEObject;
+        T result = caseCASL_Macro_Log(casL_Macro_Log);
+        if (result == null) result = caseCASL_Macro(casL_Macro_Log);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2489,6 +2498,22 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCASL_Macro_Print(CASL_Macro_Print object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro Log</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro Log</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCASL_Macro_Log(CASL_Macro_Log object)
   {
     return null;
   }

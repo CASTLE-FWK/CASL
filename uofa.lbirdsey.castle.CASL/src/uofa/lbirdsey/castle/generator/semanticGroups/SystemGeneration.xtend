@@ -231,6 +231,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 			str += "public void simulate() {\n";
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
+			str += "logger.log(Step \"+ clock + \");\n"
 			str +="\t//Wait for Tier1 ACKS\n\n//Begin the fun\n"
 			str +="\t/**********SETUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
@@ -340,6 +341,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 		str = "public Context<Entity> build (Context<Entity> context) {\n\tcontext.setId(\""+sys.name+"\");\n"
 		str += "\trepastContext = context;\n";
+		str += "logger = new Logger();"
 		str += "\t//Initialise lists to contain Agents and Environments\n"
 		str += initialiseSystem(sys)
 		str += "\n\t//Get parameters from Repast\n\tParameters params = RunEnvironment.getInstance().getParameters();\n"

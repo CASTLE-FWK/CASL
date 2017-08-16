@@ -36,6 +36,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
@@ -618,6 +619,11 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCASL_Macro_Print(CASL_Macro_Print object)
       {
         return createCASL_Macro_PrintAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_Log(CASL_Macro_Log object)
+      {
+        return createCASL_Macro_LogAdapter();
       }
       @Override
       public Adapter caseCASL_Macro_MetricSwitch(CASL_Macro_MetricSwitch object)
@@ -2097,6 +2103,21 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCASL_Macro_PrintAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log <em>CASL Macro Log</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Log
+   * @generated
+   */
+  public Adapter createCASL_Macro_LogAdapter()
   {
     return null;
   }

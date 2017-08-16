@@ -31,8 +31,8 @@ class VisualisationGenerator {
 					var nameOfProjection = Helpers.getNameFromExpression(a);
 					
 					
-					output += "\trepast.simphony.space.grid.Grid<Entity> "+nameOfProjection.toLowerCase+"_Grid = gridFactory.createGrid(\""+nameOfProjection+ "\", repastContext, "+
-						"new GridBuilderParameters<Entity>(new StrictBorders(),new SimpleGridAdder<Entity>(), false, "+nameOfProjection+".getX(), "+nameOfProjection+".getY()));" 
+//					output += "\trepast.simphony.space.grid.Grid<Entity> "+nameOfProjection.toLowerCase+"_Grid = gridFactory.createGrid(\""+nameOfProjection+ "\", repastContext, "+
+//						"new GridBuilderParameters<Entity>(new StrictBorders(),new SimpleGridAdder<Entity>(), false, "+nameOfProjection+".getX(), "+nameOfProjection+".getY()));" 
 				}
 				return output;
 		} else {

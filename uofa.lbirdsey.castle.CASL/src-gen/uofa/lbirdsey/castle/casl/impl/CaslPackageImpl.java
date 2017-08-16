@@ -641,6 +641,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass casL_Macro_LogEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass casL_Macro_MetricSwitchEClass = null;
 
   /**
@@ -4281,11 +4288,35 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCASL_Macro_Log()
+  {
+    if (casL_Macro_LogEClass == null)
+    {
+      casL_Macro_LogEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
+    }
+    return casL_Macro_LogEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCASL_Macro_Log_Str()
+  {
+        return (EAttribute)getCASL_Macro_Log().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCASL_Macro_MetricSwitch()
   {
     if (casL_Macro_MetricSwitchEClass == null)
     {
-      casL_Macro_MetricSwitchEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(103);
+      casL_Macro_MetricSwitchEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(104);
     }
     return casL_Macro_MetricSwitchEClass;
   }
@@ -4309,7 +4340,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (casL_Macro_TODOEClass == null)
     {
-      casL_Macro_TODOEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(104);
+      casL_Macro_TODOEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(105);
     }
     return casL_Macro_TODOEClass;
   }
@@ -4333,7 +4364,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (casL_Macro_PopulateEClass == null)
     {
-      casL_Macro_PopulateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(105);
+      casL_Macro_PopulateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(106);
     }
     return casL_Macro_PopulateEClass;
   }
@@ -4397,7 +4428,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (casL_Macro_VisualizeEClass == null)
     {
-      casL_Macro_VisualizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(106);
+      casL_Macro_VisualizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(107);
     }
     return casL_Macro_VisualizeEClass;
   }
@@ -4441,7 +4472,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (casL_Macro_DisplayEClass == null)
     {
-      casL_Macro_DisplayEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(107);
+      casL_Macro_DisplayEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(108);
     }
     return casL_Macro_DisplayEClass;
   }
@@ -4475,7 +4506,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (raw_Java_BlockEClass == null)
     {
-      raw_Java_BlockEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(110);
+      raw_Java_BlockEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(111);
     }
     return raw_Java_BlockEClass;
   }
@@ -4509,7 +4540,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (featureEClass == null)
     {
-      featureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(111);
+      featureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(112);
     }
     return featureEClass;
   }
@@ -4553,7 +4584,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (abstractElementEClass == null)
     {
-      abstractElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(112);
+      abstractElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(113);
     }
     return abstractElementEClass;
   }
@@ -4567,7 +4598,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (packageDeclarationEClass == null)
     {
-      packageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(113);
+      packageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(114);
     }
     return packageDeclarationEClass;
   }
@@ -4601,7 +4632,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (importEClass == null)
     {
-      importEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(114);
+      importEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(115);
     }
     return importEClass;
   }
@@ -4625,7 +4656,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (agentFieldReferenceEClass == null)
     {
-      agentFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(115);
+      agentFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(116);
     }
     return agentFieldReferenceEClass;
   }
@@ -4659,7 +4690,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (environmentFieldReferenceEClass == null)
     {
-      environmentFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(116);
+      environmentFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(117);
     }
     return environmentFieldReferenceEClass;
   }
@@ -4693,7 +4724,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (groupFieldReferenceEClass == null)
     {
-      groupFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(117);
+      groupFieldReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(118);
     }
     return groupFieldReferenceEClass;
   }
@@ -4727,7 +4758,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (functionParameterEClass == null)
     {
-      functionParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(118);
+      functionParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(119);
     }
     return functionParameterEClass;
   }
@@ -4841,7 +4872,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (agentInteractionEClass == null)
     {
-      agentInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(119);
+      agentInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(120);
     }
     return agentInteractionEClass;
   }
@@ -4855,7 +4886,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (environmentInteractionEClass == null)
     {
-      environmentInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(120);
+      environmentInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(121);
     }
     return environmentInteractionEClass;
   }
@@ -4869,7 +4900,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (egInteractionEClass == null)
     {
-      egInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(121);
+      egInteractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(122);
     }
     return egInteractionEClass;
   }
@@ -4893,7 +4924,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (dataTypeDeclarationEClass == null)
     {
-      dataTypeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(122);
+      dataTypeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(123);
     }
     return dataTypeDeclarationEClass;
   }
@@ -4997,7 +5028,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (booleanExpressionEClass == null)
     {
-      booleanExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(123);
+      booleanExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(124);
     }
     return booleanExpressionEClass;
   }
@@ -5041,7 +5072,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (equalsEClass == null)
     {
-      equalsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(124);
+      equalsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(125);
     }
     return equalsEClass;
   }
@@ -5085,7 +5116,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (comparisonEClass == null)
     {
-      comparisonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(125);
+      comparisonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(126);
     }
     return comparisonEClass;
   }
@@ -5129,7 +5160,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (subtractionEClass == null)
     {
-      subtractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(126);
+      subtractionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(127);
     }
     return subtractionEClass;
   }
@@ -5173,7 +5204,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (additionEClass == null)
     {
-      additionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(127);
+      additionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(128);
     }
     return additionEClass;
   }
@@ -5217,7 +5248,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (multiplicationEClass == null)
     {
-      multiplicationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(128);
+      multiplicationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(129);
     }
     return multiplicationEClass;
   }
@@ -5261,7 +5292,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (divEClass == null)
     {
-      divEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(129);
+      divEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(130);
     }
     return divEClass;
   }
@@ -5305,7 +5336,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (booleanNegationEClass == null)
     {
-      booleanNegationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(130);
+      booleanNegationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(131);
     }
     return booleanNegationEClass;
   }
@@ -5329,7 +5360,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (arithmeticSignedEClass == null)
     {
-      arithmeticSignedEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(131);
+      arithmeticSignedEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(132);
     }
     return arithmeticSignedEClass;
   }
@@ -5353,7 +5384,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (numberLiteralEClass == null)
     {
-      numberLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(132);
+      numberLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(133);
     }
     return numberLiteralEClass;
   }
@@ -5377,7 +5408,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (stringLiteralEClass == null)
     {
-      stringLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(133);
+      stringLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(134);
     }
     return stringLiteralEClass;
   }
@@ -5401,7 +5432,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (nullTypeLiteralEClass == null)
     {
-      nullTypeLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(134);
+      nullTypeLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(135);
     }
     return nullTypeLiteralEClass;
   }
@@ -5425,7 +5456,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (typeRefEClass == null)
     {
-      typeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(135);
+      typeRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(136);
     }
     return typeRefEClass;
   }
@@ -5449,7 +5480,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (systemCallObjEClass == null)
     {
-      systemCallObjEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(136);
+      systemCallObjEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(137);
     }
     return systemCallObjEClass;
   }
@@ -5473,7 +5504,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (featureCallExpEClass == null)
     {
-      featureCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(137);
+      featureCallExpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(138);
     }
     return featureCallExpEClass;
   }
@@ -5497,7 +5528,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (selfCallExprEClass == null)
     {
-      selfCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(138);
+      selfCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(139);
     }
     return selfCallExprEClass;
   }
@@ -5521,7 +5552,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (macroCallEClass == null)
     {
-      macroCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(139);
+      macroCallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(140);
     }
     return macroCallEClass;
   }
@@ -5545,7 +5576,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (functionCallExprEClass == null)
     {
-      functionCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(140);
+      functionCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(141);
     }
     return functionCallExprEClass;
   }
@@ -5569,7 +5600,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (enumCallExprEClass == null)
     {
-      enumCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(141);
+      enumCallExprEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(142);
     }
     return enumCallExprEClass;
   }
@@ -5845,7 +5876,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (worldTypeEEnum == null)
     {
-      worldTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(108);
+      worldTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(109);
     }
     return worldTypeEEnum;
   }
@@ -5859,7 +5890,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
   {
     if (randomTypeEEnum == null)
     {
-      randomTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(109);
+      randomTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(110);
     }
     return randomTypeEEnum;
   }
