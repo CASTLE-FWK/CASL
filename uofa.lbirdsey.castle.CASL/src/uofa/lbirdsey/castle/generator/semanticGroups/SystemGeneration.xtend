@@ -229,7 +229,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 			str += "public void simulate() {\n";
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
-			str += "logger.log(\"Step \"+ clock);\n"
+			str += "logger.newStep(clock);\n"
 			str +="\t//Wait for Tier1 ACKS\n\n//Begin the fun\n"
 			str +="\t/**********SETUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
@@ -313,10 +313,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += "}\n"
 		
 		str += "/****Results Exporting*****/\n"
-		str += "String outPath = \"/output/\"+(name.replaceAll(\" \",\"\"))+\"_\"+Utilities.generateTimeStamp() +\".txt\";\n"
-		str += "public void sendToFile(String str){\n"
-		str += "\tUtilities.writeToFile(str, System.getProperty(\"user.dir\")+outPath);\n"
-		str += "}\n"
+//		str += "String outPath = \"/output/\"+(name.replaceAll(\" \",\"\"))+\"_\"+Utilities.generateTimeStamp() +\".txt\";\n"
+//		str += "public void sendToFile(String str){\n"
+//		str += "\tUtilities.writeToFile(str, System.getProperty(\"user.dir\")+outPath);\n"
+//		str += "}\n"
 	
 		str += "public void finalCall(){\n"
 //		str += "\t//finalCASFeatureCall();\n"

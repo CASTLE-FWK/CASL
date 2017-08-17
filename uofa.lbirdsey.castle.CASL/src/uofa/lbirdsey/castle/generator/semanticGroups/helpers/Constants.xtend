@@ -13,6 +13,7 @@ class Constants {
 	public static val SYSTEM = "system"
 	public static val OBJECT = "object"
 	public static val LINE_END = SC + NL;
+	
 	public static def String throwCASLError(String description, String location, String clazz){
 //		println("ERROR: "+description+" at loc: "+location+" class: "+clazz);
 		throw new Exception("CASL_ERROR: "+description+" at loc: "+location+" class: "+clazz);

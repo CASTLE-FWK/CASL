@@ -88,7 +88,7 @@ class MacroGenerator {
 			if (isToFile){
 				filePath = Printers.printExpression(il.filePath) as String;
 			}
-			output += "logger.setup("+isMuted+','+isToConsole+','+isToFile+','+filePath+")\n"
+			output += "logger.setup("+isMuted+','+isToConsole+','+isToFile+','+filePath+", name)"
 		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)
@@ -145,10 +145,10 @@ class MacroGenerator {
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
-			
+			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
-			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
+			
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(i,j))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END			
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
@@ -163,10 +163,10 @@ class MacroGenerator {
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
-			
+			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
-			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
+			
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
