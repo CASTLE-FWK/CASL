@@ -308,17 +308,18 @@ class GroupGeneration {
 			str += "\t\tbroadcast(MessageType.CLOCK, getCurrentStep());\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Setup();\n"
-			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+//			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedAgents);\n"
 			str += "\t\tfor (Entity e : containedEntities){\n\t\t\te.phase_Setup();\n\t\t}\n"
 			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
 			str += "\t\t broadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Action();\n"
-			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedAgents);\n"
 			str += "\t\tfor (Entity e : containedEntities){\n\t\t\te.phase_Action();\n\t\t}\n"
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Cleanup();\n"
-			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
+			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedAgents);\n"
 			str += "\t\tfor (Entity e : containedEntities){\n\t\t\te.phase_Cleanup();\n\t\t}\n"
 			str += "\t}\n"			 
 			str += "}\n"
@@ -465,9 +466,9 @@ class GroupGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
-		for (item : setupPhase){
-			str += "\t"+item+"\n"
-		}
+//		for (item : setupPhase){
+//			str += "\t"+item+"\n"
+//		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(setupTriggers);\n"
 		str +="}\n\n"
@@ -476,9 +477,10 @@ class GroupGeneration {
 		str += "@Override\n"
 		str += "public void phase_Action() {\n"
 //		str += "\tsetupQueue.clear();\n"
-		for (item : actionPhase){
-			str += "\t"+item+"\n"
-		}
+//		for (item : actionPhase){
+//			str += "\t"+item+"\n"
+//		}
+		
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(actionTriggers);\n"
 		str +="}\n\n"
@@ -486,9 +488,9 @@ class GroupGeneration {
 		//Cleanup phase
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
-		for (item : cleanupPhase){
-			str += "\t"+item+"\n"
-		}
+//		for (item : cleanupPhase){
+//			str += "\t"+item+"\n"
+//		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
 		str +="}\n\n"
