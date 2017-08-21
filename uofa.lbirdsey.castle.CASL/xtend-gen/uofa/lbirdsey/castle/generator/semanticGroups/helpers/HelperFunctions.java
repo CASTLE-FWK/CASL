@@ -2,6 +2,7 @@ package uofa.lbirdsey.castle.generator.semanticGroups.helpers;
 
 import com.google.common.base.Objects;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
@@ -1693,5 +1694,23 @@ public class HelperFunctions {
       }
     }
     return out;
+  }
+  
+  public static HashSet<String> parseImportsForGeneration(final ArrayList<String> libImports, final String sysRoot) {
+    HashSet<String> importsToPrint = new HashSet<String>();
+    for (final String iC : libImports) {
+      if ((iC != null)) {
+        String str = HelperFunctions.parseTypesAsString(iC, sysRoot);
+        String[] splt = str.split(";");
+        for (final String s : splt) {
+          int _length = s.length();
+          boolean _greaterThan = (_length > 0);
+          if (_greaterThan) {
+            importsToPrint.add((s + ";"));
+          }
+        }
+      }
+    }
+    return importsToPrint;
   }
 }

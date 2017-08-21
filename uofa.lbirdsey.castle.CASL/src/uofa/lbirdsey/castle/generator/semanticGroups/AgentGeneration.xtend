@@ -47,16 +47,10 @@ class AgentGeneration {
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
-		for (String iC : libImports){
-			if (iC !== null){
-				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
-				var String[] splt = str.split(";");
-				for (String s : splt){
-					if (s.length() > 0){
-						importsToPrint.add(s+";");						
-					}	
-				}				
-			}
+
+		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
+		if (allImports !== null){
+			importsToPrint.addAll(allImports);
 		}
 		
 		for (String iC : importsToPrint){
@@ -386,22 +380,16 @@ class AgentGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
-//		str += "\tcleanupQueue.clear();\n"
-//		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
 		for (item : setupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(setupTriggers);\n"
-//		str += "\tfor (Trigger t : setupTriggers) {\n"
-//		str += "\t\tt.trigger();\n"
-//		str += "\t}\n"
 		str +="}\n\n"
 		
 		//Action Phase
 		str += "@Override\n"
 		str += "public void phase_Action() {\n"
-//		str += "\tsetupQueue.clear();\n"
 		for (item : actionPhase){
 			str += "\t"+item+"\n"
 		}
@@ -412,16 +400,11 @@ class AgentGeneration {
 		//Cleanup phase
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
-//		str += "\tactionQueue.clear();\n"
-//		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
 		for (item : cleanupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
-//		str += "\tfor (Trigger t : cleanupTriggers) {\n"
-//		str += "\t\tt.trigger();\n"
-//		str += "\t}\n"
 		str +="}\n\n"
 
 		return str;		

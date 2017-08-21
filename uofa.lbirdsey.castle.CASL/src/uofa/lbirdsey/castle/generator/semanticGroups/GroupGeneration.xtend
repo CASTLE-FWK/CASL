@@ -54,17 +54,10 @@ class GroupGeneration {
 		imports += "import repast.simphony.context.Context;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
 
-		for (String iC : libImports){
-			if (iC !== null){
-				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
-				var String[] splt = str.split(";");
-				for (String s : splt){
-					if (s.length() > 0){
-						importsToPrint.add(s+";");						
-					}	
-				}				
-			}
-		}		
+		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
+		if (allImports !== null){
+			importsToPrint.addAll(allImports);
+		}	
 		
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
@@ -236,7 +229,6 @@ class GroupGeneration {
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+behavior.name+"((("+grp.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, true, this);\n\n"
-//				initialList.add("actionTriggers.add("+Printers.getNameForTrigger(behavior.name)+"(this))");
 				initialList.add("actionTriggers.add("+Printers.getNameForTrigger(behavior.name)+")");
 				triggersStringsToPrint.add(triggerString);
 			}
@@ -268,13 +260,10 @@ class GroupGeneration {
 			if (transmission.transmissionRepeat == Transmission_Repeat.REPEAT){
 				val steps = (Printers.printExpression(transmission.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
 				triggersToPrintInit.add(Printers.getNameForTrigger(transmission.name));
-				
 				triggerString = Printers.getNameForTrigger(transmission.name) +" = new Trigger ("+steps+", \""+transmission.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+transmission.name+"();\n"
 				triggerString += "\t\treturn null;\n\t\t}}, true, this);\n\n"
-				initialList.add(phase+"Triggers.add("+Printers.getNameForTrigger(transmission.name)+")");
-//				output += triggerString;
 				triggersStringsToPrint.add(triggerString);
 			} else if (transmission.transmissionRepeat == Transmission_Repeat.SINGLE){
 				triggersToPrintInit.add(Printers.getNameForTrigger(transmission.name));
@@ -283,8 +272,6 @@ class GroupGeneration {
 				triggerString += "\t\t(("+grp.name.toFirstUpper+") o)."+transmission.name+"();\n"
 				triggerString += "\t\treturn null;\n\t\t}}, false, this);\n\n"
 				triggersStringsToPrint.add(triggerString);
-//				initialList.add(phase+"Triggers.add("+Printers.getNameForTrigger(transmission.name)+"(this))");
-//				output += triggerString;
 			} else if (transmission.transmissionRepeat == Transmission_Repeat.CALLED){
 				//Do nothing yet
 			}
@@ -478,16 +465,11 @@ class GroupGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
-//		str += "\tcleanupQueue.clear();\n"
-//		str += "\tsetupQueue.forEach(f -> f.apply(this));\n"
 		for (item : setupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(setupTriggers);\n"
-//		str += "\tfor (Trigger t : setupTriggers) {\n"
-//		str += "\t\tt.trigger();\n"
-//		str += "\t}\n"
 		str +="}\n\n"
 		
 		//Action Phase
@@ -504,16 +486,11 @@ class GroupGeneration {
 		//Cleanup phase
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
-//		str += "\tactionQueue.clear();\n"
-//		str += "\tcleanupQueue.forEach(f -> f.apply(this));\n"
 		for (item : cleanupPhase){
 			str += "\t"+item+"\n"
 		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
-//		str += "\tfor (Trigger t : cleanupTriggers) {\n"
-//		str += "\t\tt.trigger();\n"
-//		str += "\t}\n"
 		str +="}\n\n"
 
 		return str;		

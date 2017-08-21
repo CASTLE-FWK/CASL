@@ -60,6 +60,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.FeatureCallGenerator
 import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator
 
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
+import java.util.HashSet
 
 class HelperFunctions {
 
@@ -289,8 +290,7 @@ class HelperFunctions {
 			val mc = (statement as MacroCall).macroCall.macro;
 			if (mc instanceof CASL_Macro_MetricSwitch){
 				strOut += metric_ToOutput(caller);
-			} else { 
-//				strOut += MacroGenerator.parseMacro((statement as MacroCall), );	
+			} else { 	
 				strOut += Printers.printExpression(statement, null);
 			}
 		} else if (statement instanceof Expression) {
@@ -876,6 +876,19 @@ class HelperFunctions {
 		return out;
 	}
 	
-
+	static def HashSet<String> parseImportsForGeneration(ArrayList<String> libImports, String sysRoot){
+		var importsToPrint = new HashSet<String>();
+		for (String iC : libImports){
+			if (iC !== null){
+				var str = parseTypesAsString(iC, sysRoot);
+				var String[] splt = str.split(";");
+				for (String s : splt){
+					if (s.length() > 0){
+						importsToPrint.add(s+";");						
+					}	
+				}				
+			}
+		}
+		return importsToPrint;		
+	}
 }
-			

@@ -35,18 +35,12 @@ class SystemGeneration {
 		imports += "import stdSimLib.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
-		//iC = importCandidate
-		for (String iC : libImports){
-			if (iC !== null){
-				var str = HelperFunctions.parseTypesAsString(iC, systemRoot);
-				var String[] splt = str.split(";");
-				for (String s : splt){
-					if (s.length() > 0){
-						importsToPrint.add(s+";");
-					}	
-				}
-			}
+		
+		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
+		if (allImports !== null){
+			importsToPrint.addAll(allImports);
 		}
+		
 		//What other dynamic stuff is needed...
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
