@@ -44,14 +44,13 @@ import uofa.lbirdsey.castle.casl.Function;
 import uofa.lbirdsey.castle.casl.FunctionCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Group;
-import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
 import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
-import uofa.lbirdsey.castle.casl.GroupSelfInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.IfStatement;
 import uofa.lbirdsey.castle.casl.IntType;
 import uofa.lbirdsey.castle.casl.Interaction;
-import uofa.lbirdsey.castle.casl.InteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.InteractionTriggerTypes;
 import uofa.lbirdsey.castle.casl.InteractionType;
 import uofa.lbirdsey.castle.casl.MacroCall;
@@ -272,16 +271,8 @@ public class HelperFunctions {
             FeatureCall _fec = sce.getFec();
             boolean _tripleNotEquals_3 = (_fec != null);
             if (_tripleNotEquals_3) {
-              FeatureCall _fec_1 = sce.getFec();
-              if ((_fec_1 instanceof InteractionFeatureCall)) {
-                FeatureCall _func = ((FeatureCallExp) expr).getFunc();
-                String _inferMethodType = HelperFunctions.inferMethodType(
-                  ((InteractionFeatureCall) _func).getProcess().getBody());
-                String _plus = ("" + _inferMethodType);
-                output = _plus;
-              } else {
-                output = "void";
-              }
+              FeatureCall featCall = sce.getFec();
+              output = FeatureCallGenerator.inferFeatureCallType(featCall);
             }
           }
         }
@@ -1416,7 +1407,6 @@ public class HelperFunctions {
   public static String parseTypesAsType(final EObject iC, final String systemRoot) {
     String output = "";
     String ss = HelperFunctions.getFieldType(((Field) iC));
-    InputOutput.<String>println(("testing: " + ss));
     return output;
   }
   
@@ -1481,6 +1471,7 @@ public class HelperFunctions {
       for (final EObject b : _body) {
         if ((b instanceof Expression)) {
           InputOutput.<Expression>println(((Expression)b));
+          InputOutput.<String>println(HelperFunctions.inferExpressionType(((Expression)b)));
           int _compareToIgnoreCase = HelperFunctions.inferExpressionType(((Expression)b)).compareToIgnoreCase("featurecallexp");
           boolean _equals = (_compareToIgnoreCase == 0);
           if (_equals) {
@@ -1512,14 +1503,28 @@ public class HelperFunctions {
           final AdaptiveProcess ap = ((AdaptiveProcess) ef);
           String _output_1 = output;
           String _name_1 = ap.getName();
-          String _plus_3 = ("updateFeature(" + _name_1);
-          String _plus_4 = (_plus_3 + ",FeatureTypes.ADAPTATION)");
+          String _plus_3 = ("updateFeature(\"" + _name_1);
+          String _plus_4 = (_plus_3 + "\",FeatureTypes.ADAPTATION)");
           String _plus_5 = (_plus_4 + Constants.LINE_END);
           output = (_output_1 + _plus_5);
         } else {
-          if ((ef instanceof GroupExternalInteractionFeatureCall)) {
+          if ((ef instanceof GroupExternalInteraction)) {
+            final GroupExternalInteraction ei = ((GroupExternalInteraction) ef);
+            String _output_2 = output;
+            String _name_2 = ei.getName();
+            String _plus_6 = ("updateFeature(\"" + _name_2);
+            String _plus_7 = (_plus_6 + "\",FeatureTypes.EXTERNAL_INTERACTION)");
+            String _plus_8 = (_plus_7 + Constants.LINE_END);
+            output = (_output_2 + _plus_8);
           } else {
-            if ((ef instanceof GroupSelfInternalInteractionsFeatureCall)) {
+            if ((ef instanceof GroupInternalInteraction)) {
+              final GroupInternalInteraction ii = ((GroupInternalInteraction) ef);
+              String _output_3 = output;
+              String _name_3 = ii.getName();
+              String _plus_9 = ("updateFeature(\"" + _name_3);
+              String _plus_10 = (_plus_9 + "\",FeatureTypes.INTERNAL_INTERACTION)");
+              String _plus_11 = (_plus_10 + Constants.LINE_END);
+              output = (_output_3 + _plus_11);
             }
           }
         }

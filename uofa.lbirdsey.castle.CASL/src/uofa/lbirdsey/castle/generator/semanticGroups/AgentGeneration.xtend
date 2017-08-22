@@ -236,7 +236,7 @@ class AgentGeneration {
 			output += "public ";
 			output += HelperFunctions.inferMethodType(interaction.body)+" " +interaction.name+ "(" + HelperFunctions.printFunctionParameters(interaction.functionParameters) +")"
 			output += " {\n"
-			output += HelperFunctions.printMethodBody(interaction.body, interaction)
+			output += HelperFunctions.printMethodBody(interaction.body, interaction);
 			libImports.addAll(HelperFunctions.populateImports(interaction.body))
 			output += "\n}\n"	
 		}

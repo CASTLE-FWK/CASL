@@ -61,6 +61,8 @@ import uofa.lbirdsey.castle.generator.semanticGroups.MacroGenerator
 
 import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import java.util.HashSet
+import uofa.lbirdsey.castle.casl.GroupExternalInteraction
+import uofa.lbirdsey.castle.casl.GroupInternalInteraction
 
 class HelperFunctions {
 
@@ -140,17 +142,13 @@ class HelperFunctions {
 				} else if (sce.fc !== null) {
 					if (sce.fc.func.returnType !== null) {
 						output = inferSymbolType(sce.fc.func.returnType);
-					} else {
+					} else {		
 						output = "void"
 					}
 				} else if (sce.fec !== null) {
-					if (sce.fec instanceof InteractionFeatureCall) {
-						output = "" +
-							HelperFunctions.inferMethodType(
-								((expr as FeatureCallExp).func as InteractionFeatureCall).process.body)
-					} else {
-						output = "void"
-					}
+					var featCall = sce.fec
+					
+					output = FeatureCallGenerator.inferFeatureCallType(featCall);
 				}
 			} else if (expr instanceof NumberLiteral)
 				output = "float"
@@ -162,9 +160,9 @@ class HelperFunctions {
 				output = "string"
 			else if (expr instanceof TypeRef)
 				output = inferSymbolType((expr as TypeRef).type)
-			else if (expr instanceof FeatureCallExp)
-				output = FeatureCallGenerator.inferFeatureCallType(expr as FeatureCallExp)
-			else if (expr instanceof IfStatement)
+			else if (expr instanceof FeatureCallExp){
+				output = FeatureCallGenerator.inferFeatureCallType(expr as FeatureCallExp)				
+			}else if (expr instanceof IfStatement)
 				output = inferIfStatementReturnType(expr as IfStatement)
 			else if (expr instanceof BooleanExpression)
 				output = "andor"
@@ -239,7 +237,7 @@ class HelperFunctions {
 			output = inferExpressionType(eobj as Expression)
 		} else if (eobj instanceof Enum) {
 			output = (eobj as Enum).name
-		} else if (eobj instanceof SelfCall) {
+		} else if (eobj instanceof SelfCall) {			
 			output = "selfcall"
 		} else {
 			output = "void"
@@ -685,7 +683,7 @@ class HelperFunctions {
 		var ss = getFieldType(iC as Field);
 		// 2: Figure out if its part of standard library or custom
 //		var owner = determineOwner(iC);
-		println("testing: " + ss);
+//		println("testing: " + ss);
 
 		return output;
 	}
@@ -727,15 +725,16 @@ class HelperFunctions {
 					output += "addInteraction(" + fp.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
 				}
 			}
-
 			// 1: Body
 			// If the body element contains an interaction call of some type, then is should be listed
-			// A body can have a Field, Expression, Formula, or SelfAssignmentFormula
+			// A body can have a Field, Expression, Formula, or SelfAssignmentFormula, SelfCall
 			// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST
+			
 			for (b : in.body) {
 				if (b instanceof Expression) {
 //					val be = b as Expression
 					println(b);
+					println(inferExpressionType(b));										
 					if ((inferExpressionType(b).compareToIgnoreCase("featurecallexp") == 0)) {
 						val fc = (b as FeatureCall).fc
 						if (fc instanceof AgentInteractionFeatureCall) {
@@ -753,16 +752,21 @@ class HelperFunctions {
 			val be = ef as Behavior;
 			output += "updateFeature(\""+be.name+"\",FeatureTypes.BEHAVIOR)" + LINE_END
 			for (beb : be.body) {
-				
+				//Look for interaction calls
 				
 			}
 		} else if (ef instanceof AdaptiveProcess) {
 			val ap = ef as AdaptiveProcess;
-			output += "updateFeature("+ap.name+",FeatureTypes.ADAPTATION)" + LINE_END
-		} else if (ef instanceof GroupExternalInteractionFeatureCall) {
+			output += "updateFeature(\""+ap.name+"\",FeatureTypes.ADAPTATION)" + LINE_END
+		} else if (ef instanceof GroupExternalInteraction) {
 			//This is an interaction
-		} else if (ef instanceof GroupSelfInternalInteractionsFeatureCall) {
-			//This is an interaction			
+			val ei = ef as GroupExternalInteraction;
+			output += "updateFeature(\""+ei.name+"\",FeatureTypes.EXTERNAL_INTERACTION)" + LINE_END
+			
+		} else if (ef instanceof GroupInternalInteraction) {
+			//This is an interaction
+			val ii = ef as GroupInternalInteraction;
+			output += "updateFeature(\""+ii.name+"\",FeatureTypes.INTERNAL_INTERACTION)" + LINE_END
 		}
 
 		return output;
