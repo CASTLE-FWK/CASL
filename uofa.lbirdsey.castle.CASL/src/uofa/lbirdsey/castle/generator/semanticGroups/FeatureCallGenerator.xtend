@@ -18,7 +18,7 @@ import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
-
+import org.eclipse.emf.ecore.EObject
 
 class FeatureCallGenerator {
 
@@ -147,6 +147,34 @@ class FeatureCallGenerator {
 		} else{
 			Constants.throwCASLError("Cannot get Feature Call name", "getFeatureCallName", "FeatureCallGenerator");
 			'''ERROR WITH FEATURE CALL:«fc.fc.toString»'''			
+		}
+	}
+	
+	static def EObject getFeatureCallFeatureType(FeatureCall fce){
+		var fc = fce.fc;
+		if (fc instanceof AdaptiveProcessFeatureCall)
+			return fc as AdaptiveProcessFeatureCall
+		else if (fc instanceof AgentInteractionFeatureCall)
+			return fc as AgentInteractionFeatureCall
+		else if (fc instanceof EnvironmentInteractionFeatureCall)
+			return fc as EnvironmentInteractionFeatureCall
+		else if (fc instanceof InteractionFeatureCall) {
+			return fc as InteractionFeatureCall
+		} else if (fc instanceof FunctionFeatureCall) {
+			return fc as FunctionFeatureCall
+		} else if (fc instanceof BehaviorFeatureCall) {
+			return fc as BehaviorFeatureCall
+		} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
+			return fc as GroupInternalInteractionsFeatureCall
+		} else if (fc instanceof GroupSelfInternalInteractionsFeatureCall) {
+			return fc as GroupSelfInternalInteractionsFeatureCall
+		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
+			return fc as GroupExternalInteractionFeatureCall
+		} else if (fc instanceof ExternalInteractionFeatureCall) {
+			return fc as ExternalInteractionFeatureCall
+		} else{
+			Constants.throwCASLError("Cannot infer Feature Call type", "getFeatureCallFeatureType", "FeatureCallGenerator");
+			return null;
 		}
 	}
 }

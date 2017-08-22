@@ -14,6 +14,9 @@ import uofa.lbirdsey.castle.casl.AdaptiveProcess;
 import uofa.lbirdsey.castle.casl.Addition;
 import uofa.lbirdsey.castle.casl.Agent;
 import uofa.lbirdsey.castle.casl.AgentFieldReference;
+import uofa.lbirdsey.castle.casl.AgentInteraction;
+import uofa.lbirdsey.castle.casl.AgentInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.Agent_Call;
 import uofa.lbirdsey.castle.casl.ArithmeticSigned;
 import uofa.lbirdsey.castle.casl.Behavior;
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime;
@@ -30,6 +33,9 @@ import uofa.lbirdsey.castle.casl.ElseIfExpr;
 import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.Environment;
 import uofa.lbirdsey.castle.casl.EnvironmentFieldReference;
+import uofa.lbirdsey.castle.casl.EnvironmentInteraction;
+import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall;
+import uofa.lbirdsey.castle.casl.Environment_Call;
 import uofa.lbirdsey.castle.casl.Equals;
 import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.casl.FeatureCall;
@@ -44,8 +50,11 @@ import uofa.lbirdsey.castle.casl.FunctionCall;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Group;
 import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
 import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
+import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
+import uofa.lbirdsey.castle.casl.Group_Call;
 import uofa.lbirdsey.castle.casl.IfStatement;
 import uofa.lbirdsey.castle.casl.IntType;
 import uofa.lbirdsey.castle.casl.Interaction;
@@ -56,7 +65,6 @@ import uofa.lbirdsey.castle.casl.Multiplication;
 import uofa.lbirdsey.castle.casl.NonPrimitiveType;
 import uofa.lbirdsey.castle.casl.NumberLiteral;
 import uofa.lbirdsey.castle.casl.PrimitiveType;
-import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
@@ -500,7 +508,7 @@ public class HelperFunctions {
     if ((statement instanceof Field)) {
       String _strOut = strOut;
       String _printFieldDeclarations = Printers.printFieldDeclarations(((Field) statement));
-      String _plus = (_printFieldDeclarations + ";");
+      String _plus = (_printFieldDeclarations + Constants.SC);
       strOut = (_strOut + _plus);
     } else {
       if ((statement instanceof FunctionCall)) {
@@ -511,7 +519,8 @@ public class HelperFunctions {
           String _strOut_1 = strOut;
           String _name = ((FunctionCall) statement).getFunc().getName();
           String _plus_1 = (_name + "(THINGS TO PASS)");
-          strOut = (_strOut_1 + _plus_1);
+          String _plus_2 = (_plus_1 + Constants.SC);
+          strOut = (_strOut_1 + _plus_2);
         } else {
           EList<Symbol> _fields = st.getFields();
           boolean _tripleNotEquals_1 = (_fields != null);
@@ -528,51 +537,163 @@ public class HelperFunctions {
           } else {
             String _strOut_3 = strOut;
             Object _printExpression = Printers.printExpression(((Expression)statement), null);
-            strOut = (_strOut_3 + _printExpression);
+            String _plus_3 = (_printExpression + Constants.SC);
+            strOut = (_strOut_3 + _plus_3);
           }
         } else {
           if ((statement instanceof Expression)) {
             String _strOut_4 = strOut;
             Object _printExpression_1 = Printers.printExpression(((Expression) statement));
-            strOut = (_strOut_4 + _printExpression_1);
+            String _plus_4 = (_printExpression_1 + Constants.SC);
+            strOut = (_strOut_4 + _plus_4);
           } else {
             if ((statement instanceof Formula)) {
               String _strOut_5 = strOut;
               String _printFormula = HelperFunctions.printFormula(((Formula) statement));
-              strOut = (_strOut_5 + _printFormula);
+              String _plus_5 = (_printFormula + Constants.SC);
+              strOut = (_strOut_5 + _plus_5);
             } else {
               if ((statement instanceof SelfAssignedFormula)) {
                 String _strOut_6 = strOut;
                 String _printSelfAssignedFormula = HelperFunctions.printSelfAssignedFormula(((SelfAssignedFormula) statement));
-                strOut = (_strOut_6 + _printSelfAssignedFormula);
+                String _plus_6 = (_printSelfAssignedFormula + Constants.SC);
+                strOut = (_strOut_6 + _plus_6);
               } else {
-                if ((statement instanceof Raw_Java_Block)) {
-                  String _strOut_7 = strOut;
-                  String _name_1 = ((Raw_Java_Block) statement).getName();
-                  String _plus_2 = ("//Raw Java Block: " + _name_1);
-                  String _plus_3 = (_plus_2 + " {\n");
-                  strOut = (_strOut_7 + _plus_3);
-                  EList<String> _rawStatements = ((Raw_Java_Block) statement).getRawStatements();
-                  for (final String rawJava : _rawStatements) {
-                    String _strOut_8 = strOut;
-                    String _string = rawJava.toString();
-                    String _plus_4 = (_string + "\n");
-                    strOut = (_strOut_8 + _plus_4);
-                  }
-                  String _strOut_9 = strOut;
-                  strOut = (_strOut_9 + "}");
-                } else {
-                  Constants.throwCASLError("error with body element", "parseBodyElement", "HelperFunctions");
-                  String _strOut_10 = strOut;
-                  strOut = (_strOut_10 + "ERROR WITH BODY ELEMENT");
-                }
+                Constants.throwCASLError("error with body element", "parseBodyElement", "HelperFunctions");
+                String _strOut_7 = strOut;
+                strOut = (_strOut_7 + "ERROR WITH BODY ELEMENT");
               }
             }
           }
         }
       }
     }
-    return (strOut + ";");
+    return strOut;
+  }
+  
+  public static EObject getInteractionFromStatement(final EObject statement) {
+    Object _xblockexpression = null;
+    {
+      String strOut = "";
+      Object _xifexpression = null;
+      if ((statement instanceof Field)) {
+        Symbol _declaration = ((Field) statement).getDeclaration();
+        boolean _tripleNotEquals = (_declaration != null);
+        if (_tripleNotEquals) {
+          Symbol _declaration_1 = ((Field) statement).getDeclaration();
+          return HelperFunctions.getInteractionFromStatement(((DataTypeDeclaration) _declaration_1).getExpr());
+        }
+      } else {
+        Object _xifexpression_1 = null;
+        if ((statement instanceof FunctionCall)) {
+          Object _xblockexpression_1 = null;
+          {
+            FunctionCall st = ((FunctionCall) statement);
+            Object _xifexpression_2 = null;
+            Function _func = st.getFunc();
+            boolean _tripleNotEquals_1 = (_func != null);
+            if (_tripleNotEquals_1) {
+              _xifexpression_2 = null;
+            } else {
+              Object _xifexpression_3 = null;
+              EList<Symbol> _fields = st.getFields();
+              boolean _tripleNotEquals_2 = (_fields != null);
+              if (_tripleNotEquals_2) {
+                _xifexpression_3 = null;
+              }
+              _xifexpression_2 = _xifexpression_3;
+            }
+            _xblockexpression_1 = _xifexpression_2;
+          }
+          _xifexpression_1 = _xblockexpression_1;
+        } else {
+          Object _xifexpression_2 = null;
+          if ((statement instanceof MacroCall)) {
+            Object _xblockexpression_2 = null;
+            {
+              final CASL_Macro mc = ((MacroCall) statement).getMacroCall().getMacro();
+              Object _xifexpression_3 = null;
+              if ((mc instanceof CASL_Macro_MetricSwitch)) {
+                _xifexpression_3 = null;
+              } else {
+                _xifexpression_3 = null;
+              }
+              _xblockexpression_2 = _xifexpression_3;
+            }
+            _xifexpression_2 = _xblockexpression_2;
+          } else {
+            Object _xifexpression_3 = null;
+            if ((statement instanceof Expression)) {
+              Object _xblockexpression_3 = null;
+              {
+                final Expression expr = ((Expression) statement);
+                Object _xifexpression_4 = null;
+                if ((expr instanceof SelfCallExpr)) {
+                  return FeatureCallGenerator.getFeatureCallFeatureType(((SelfCallExpr) expr).getSelfCall().getFec());
+                } else {
+                  Object _xifexpression_5 = null;
+                  if ((expr instanceof FeatureCallExp)) {
+                    return FeatureCallGenerator.getFeatureCallFeatureType(((FeatureCallExp) expr).getFunc());
+                  } else {
+                    Object _xifexpression_6 = null;
+                    if ((expr instanceof Group_Call)) {
+                      _xifexpression_6 = null;
+                    } else {
+                      Object _xifexpression_7 = null;
+                      if ((expr instanceof Agent_Call)) {
+                        _xifexpression_7 = null;
+                      } else {
+                        Object _xifexpression_8 = null;
+                        if ((expr instanceof Environment_Call)) {
+                          _xifexpression_8 = null;
+                        }
+                        _xifexpression_7 = _xifexpression_8;
+                      }
+                      _xifexpression_6 = _xifexpression_7;
+                    }
+                    _xifexpression_5 = _xifexpression_6;
+                  }
+                  _xifexpression_4 = _xifexpression_5;
+                }
+                _xblockexpression_3 = _xifexpression_4;
+              }
+              _xifexpression_3 = _xblockexpression_3;
+            } else {
+              Object _xifexpression_4 = null;
+              if ((statement instanceof Formula)) {
+                _xifexpression_4 = null;
+              } else {
+                Object _xifexpression_5 = null;
+                if ((statement instanceof SelfAssignedFormula)) {
+                  Object _xifexpression_6 = null;
+                  if ((HelperFunctions.isAnInteraction(((SelfAssignedFormula) statement).getRef()) || HelperFunctions.isAnInteraction(((SelfAssignedFormula) statement).getObjField()))) {
+                    _xifexpression_6 = null;
+                  }
+                  _xifexpression_5 = _xifexpression_6;
+                } else {
+                  Constants.throwCASLError("error with finding interaction in statement", "getInteractionFromStatement", "HelperFunctions");
+                  return null;
+                }
+                _xifexpression_4 = _xifexpression_5;
+              }
+              _xifexpression_3 = _xifexpression_4;
+            }
+            _xifexpression_2 = _xifexpression_3;
+          }
+          _xifexpression_1 = _xifexpression_2;
+        }
+        _xifexpression = _xifexpression_1;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return ((EObject)_xblockexpression);
+  }
+  
+  public static boolean isAnInteraction(final EObject eo) {
+    if ((((((eo instanceof Interaction) || (eo instanceof GroupExternalInteraction)) || (eo instanceof GroupInternalInteraction)) || (eo instanceof AgentInteraction)) || (eo instanceof EnvironmentInteraction))) {
+      return true;
+    }
+    return false;
   }
   
   public static String printFunctionParameter(final FunctionParameter fp) {
@@ -1468,6 +1589,68 @@ public class HelperFunctions {
       }
       EList<EObject> _body = in.getBody();
       for (final EObject b : _body) {
+        {
+          final EObject featureType = HelperFunctions.getInteractionFromStatement(b);
+          if ((featureType instanceof GroupInternalInteractionsFeatureCall)) {
+            final GroupInternalInteractionsFeatureCall gii = ((GroupInternalInteractionsFeatureCall) featureType);
+            String _output = output;
+            String _name = gii.getGrp().getName();
+            String _plus = ("addInteraction(" + _name);
+            String _plus_1 = (_plus + ", InteractionType.");
+            String _upperCase = interType.toUpperCase();
+            String _plus_2 = (_plus_1 + _upperCase);
+            String _plus_3 = (_plus_2 + ", \"");
+            String _name_1 = in.getName();
+            String _plus_4 = (_plus_3 + _name_1);
+            String _plus_5 = (_plus_4 + "\");\n");
+            output = (_output + _plus_5);
+          } else {
+            if ((featureType instanceof AgentInteractionFeatureCall)) {
+              final AgentInteractionFeatureCall gii_1 = ((AgentInteractionFeatureCall) featureType);
+              String _output_1 = output;
+              String _name_2 = gii_1.getAgt().getName();
+              String _plus_6 = ("addInteraction(" + _name_2);
+              String _plus_7 = (_plus_6 + ", InteractionType.");
+              String _upperCase_1 = interType.toUpperCase();
+              String _plus_8 = (_plus_7 + _upperCase_1);
+              String _plus_9 = (_plus_8 + ", \"");
+              String _name_3 = in.getName();
+              String _plus_10 = (_plus_9 + _name_3);
+              String _plus_11 = (_plus_10 + "\");\n");
+              output = (_output_1 + _plus_11);
+            } else {
+              if ((featureType instanceof GroupExternalInteractionFeatureCall)) {
+                final GroupExternalInteractionFeatureCall gii_2 = ((GroupExternalInteractionFeatureCall) featureType);
+                String _output_2 = output;
+                String _name_4 = gii_2.getGrp().getName();
+                String _plus_12 = ("addInteraction(" + _name_4);
+                String _plus_13 = (_plus_12 + ", InteractionType.");
+                String _upperCase_2 = interType.toUpperCase();
+                String _plus_14 = (_plus_13 + _upperCase_2);
+                String _plus_15 = (_plus_14 + ", \"");
+                String _name_5 = in.getName();
+                String _plus_16 = (_plus_15 + _name_5);
+                String _plus_17 = (_plus_16 + "\");\n");
+                output = (_output_2 + _plus_17);
+              } else {
+                if ((featureType instanceof EnvironmentInteractionFeatureCall)) {
+                  final EnvironmentInteractionFeatureCall gii_3 = ((EnvironmentInteractionFeatureCall) featureType);
+                  String _output_3 = output;
+                  String _name_6 = gii_3.getEnv().getName();
+                  String _plus_18 = ("addInteraction(" + _name_6);
+                  String _plus_19 = (_plus_18 + ", InteractionType.");
+                  String _upperCase_3 = interType.toUpperCase();
+                  String _plus_20 = (_plus_19 + _upperCase_3);
+                  String _plus_21 = (_plus_20 + ", \"");
+                  String _name_7 = in.getName();
+                  String _plus_22 = (_plus_21 + _name_7);
+                  String _plus_23 = (_plus_22 + "\");\n");
+                  output = (_output_3 + _plus_23);
+                }
+              }
+            }
+          }
+        }
       }
     } else {
       if ((ef instanceof Behavior)) {

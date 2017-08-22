@@ -63,6 +63,12 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import java.util.HashSet
 import uofa.lbirdsey.castle.casl.GroupExternalInteraction
 import uofa.lbirdsey.castle.casl.GroupInternalInteraction
+import uofa.lbirdsey.castle.casl.EnvironmentInteraction
+import uofa.lbirdsey.castle.casl.AgentInteraction
+import uofa.lbirdsey.castle.casl.Group_Call
+import uofa.lbirdsey.castle.casl.Agent_Call
+import uofa.lbirdsey.castle.casl.Environment_Call
+import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall
 
 class HelperFunctions {
 
@@ -276,38 +282,86 @@ class HelperFunctions {
 	static def String parseBodyElement(EObject statement, Entity_Feature caller) {
 		var strOut = "";
 		if (statement instanceof Field) {
-			strOut += Printers.printFieldDeclarations(statement as Field) + ";"
+			strOut += Printers.printFieldDeclarations(statement as Field) + SC
 		} else if (statement instanceof FunctionCall) {
 			var st = statement as FunctionCall;
 			if (st.func !== null) {
-				strOut += (statement as FunctionCall).func.name + "(THINGS TO PASS)"
+				strOut += (statement as FunctionCall).func.name + "(THINGS TO PASS)" + SC
 			} else if (st.fields !== null) {
 				// do something else
 			}
 		} else if (statement instanceof MacroCall) {
 			val mc = (statement as MacroCall).macroCall.macro;
 			if (mc instanceof CASL_Macro_MetricSwitch){
-				strOut += metric_ToOutput(caller);
+				strOut += metric_ToOutput(caller); 
 			} else { 	
-				strOut += Printers.printExpression(statement, null);
+				strOut += Printers.printExpression(statement, null)  + SC;
 			}
 		} else if (statement instanceof Expression) {
-			strOut += Printers.printExpression(statement as Expression)
+			strOut += Printers.printExpression(statement as Expression) + SC
 		} else if (statement instanceof Formula) {
-			strOut += HelperFunctions.printFormula((statement as Formula))
+			strOut += HelperFunctions.printFormula((statement as Formula)) + SC
 		} else if (statement instanceof SelfAssignedFormula) {
-			strOut += HelperFunctions.printSelfAssignedFormula((statement as SelfAssignedFormula))
-		} else if (statement instanceof Raw_Java_Block) {
-			strOut += "//Raw Java Block: " + (statement as Raw_Java_Block).name + " {\n"
-			for (rawJava : (statement as Raw_Java_Block).rawStatements) {
-				strOut += rawJava.toString + "\n"
-			}
-			strOut += "}"
+			strOut += HelperFunctions.printSelfAssignedFormula((statement as SelfAssignedFormula)) + SC
 		} else {
 			throwCASLError("error with body element","parseBodyElement","HelperFunctions");
 			strOut += "ERROR WITH BODY ELEMENT"
 		}
-		return (strOut + ";");
+		return strOut;
+	}
+	
+	static def EObject getInteractionFromStatement(EObject statement){
+		var strOut = "";		
+		if (statement instanceof Field) {
+			if ((statement as Field).declaration !== null){
+				return getInteractionFromStatement(((statement as Field).declaration as DataTypeDeclaration).expr)
+			}
+		} else if (statement instanceof FunctionCall) {
+			var st = statement as FunctionCall;
+			if (st.func !== null) {
+//				strOut += (statement as FunctionCall).func.name + "(THINGS TO PASS)"
+			} else if (st.fields !== null) {
+				// do something else
+			}
+		} else if (statement instanceof MacroCall) {
+			val mc = (statement as MacroCall).macroCall.macro;
+			if (mc instanceof CASL_Macro_MetricSwitch){
+			} else { 	
+//				strOut += Printers.printExpression(statement, null);
+			}
+		} else if (statement instanceof Expression) {
+			val expr = statement as Expression;
+			if (expr instanceof SelfCallExpr){
+				return FeatureCallGenerator.getFeatureCallFeatureType((expr as SelfCallExpr).selfCall.fec);
+			} else if (expr instanceof FeatureCallExp){
+				return FeatureCallGenerator.getFeatureCallFeatureType((expr as FeatureCallExp).func);
+			} else if (expr instanceof Group_Call){
+				
+			} else if (expr instanceof Agent_Call){
+				
+			} else if (expr instanceof Environment_Call){
+				
+			}
+
+		} else if (statement instanceof Formula) {
+//			strOut += HelperFunctions.printFormula((statement as Formula))
+		} else if (statement instanceof SelfAssignedFormula) {			
+			if (isAnInteraction((statement as SelfAssignedFormula).ref) || isAnInteraction((statement as SelfAssignedFormula).objField)){
+//				strOut = "THE INTERACTION NAME"
+			}
+		} else {
+			throwCASLError("error with finding interaction in statement","getInteractionFromStatement","HelperFunctions");
+			return null;
+		}	
+	}
+	
+	static def boolean isAnInteraction(EObject eo){
+		if (eo instanceof Interaction || eo instanceof GroupExternalInteraction || eo instanceof GroupInternalInteraction 
+			|| eo instanceof AgentInteraction || eo instanceof EnvironmentInteraction) {
+			return true;
+		}
+		return false;
+		
 	}
 
 	static def String printFunctionParameter(FunctionParameter fp) {
@@ -731,7 +785,24 @@ class HelperFunctions {
 			// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST			
 			for (b : in.body) {
 				//what is the corresponding interaction call?
-				
+				//I.e. look at each line, check if an interaction OF ANY TYPE is present
+				//How the fuck do we do this?
+				val featureType = getInteractionFromStatement(b);
+//				println("the interaction: "+featureType);
+				if (featureType instanceof GroupInternalInteractionsFeatureCall){
+					val gii = featureType as GroupInternalInteractionsFeatureCall;
+					output += "addInteraction(" + gii.grp.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
+				} else if (featureType instanceof AgentInteractionFeatureCall){
+					val gii = featureType as AgentInteractionFeatureCall;
+					output += "addInteraction(" + gii.agt.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
+				}  else if (featureType instanceof GroupExternalInteractionFeatureCall){
+					val gii = featureType as GroupExternalInteractionFeatureCall;
+					output += "addInteraction(" + gii.grp.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
+				} else if (featureType instanceof EnvironmentInteractionFeatureCall){
+					val gii = featureType as EnvironmentInteractionFeatureCall;
+					output += "addInteraction(" + gii.env.name + ", InteractionType."+interType.toUpperCase+", \"" + in.name + "\");\n"
+				} 
+	
 			}
 
 		} else if (ef instanceof Behavior) {
