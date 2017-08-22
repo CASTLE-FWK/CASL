@@ -751,7 +751,7 @@ class HelperFunctions {
 			// Get list of all parameters and called updateParameter on each of them
 			// Also call updateFeature since a behavior has been triggered
 			val be = ef as Behavior;
-			output += "updateFeature("+be.name+",FeatureTypes.BEHAVIOR)" + LINE_END
+			output += "updateFeature(\""+be.name+"\",FeatureTypes.BEHAVIOR)" + LINE_END
 			for (beb : be.body) {
 				
 				

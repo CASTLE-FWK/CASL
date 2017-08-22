@@ -452,8 +452,7 @@ class GroupGeneration {
 					} else if (phase == Transmission_Phase.CLEANUP){
 						
 					}
-				}
-					
+				}					
 			} 			
 		}
 		
@@ -466,9 +465,6 @@ class GroupGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
-//		for (item : setupPhase){
-//			str += "\t"+item+"\n"
-//		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(setupTriggers);\n"
 		str +="}\n\n"
@@ -476,10 +472,6 @@ class GroupGeneration {
 		//Action Phase
 		str += "@Override\n"
 		str += "public void phase_Action() {\n"
-//		str += "\tsetupQueue.clear();\n"
-//		for (item : actionPhase){
-//			str += "\t"+item+"\n"
-//		}
 		
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(actionTriggers);\n"
@@ -488,9 +480,6 @@ class GroupGeneration {
 		//Cleanup phase
 		str += "@Override\n"
 		str += "public void phase_Cleanup() {\n"
-//		for (item : cleanupPhase){
-//			str += "\t"+item+"\n"
-//		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
 		str +="}\n\n"

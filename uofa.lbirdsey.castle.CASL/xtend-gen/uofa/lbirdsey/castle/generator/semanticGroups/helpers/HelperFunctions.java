@@ -1500,8 +1500,8 @@ public class HelperFunctions {
         final Behavior be = ((Behavior) ef);
         String _output = output;
         String _name = be.getName();
-        String _plus = ("updateFeature(" + _name);
-        String _plus_1 = (_plus + ",FeatureTypes.BEHAVIOR)");
+        String _plus = ("updateFeature(\"" + _name);
+        String _plus_1 = (_plus + "\",FeatureTypes.BEHAVIOR)");
         String _plus_2 = (_plus_1 + Constants.LINE_END);
         output = (_output + _plus_2);
         EList<EObject> _body_1 = be.getBody();
