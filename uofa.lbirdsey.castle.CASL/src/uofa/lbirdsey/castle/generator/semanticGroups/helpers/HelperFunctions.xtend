@@ -142,12 +142,12 @@ class HelperFunctions {
 				} else if (sce.fc !== null) {
 					if (sce.fc.func.returnType !== null) {
 						output = inferSymbolType(sce.fc.func.returnType);
-					} else {		
+					} else {
 						output = "void"
 					}
 				} else if (sce.fec !== null) {
 					var featCall = sce.fec
-					
+					println(sce.fec)				
 					output = FeatureCallGenerator.inferFeatureCallType(featCall);
 				}
 			} else if (expr instanceof NumberLiteral)
@@ -304,7 +304,7 @@ class HelperFunctions {
 			}
 			strOut += "}"
 		} else {
-			throwCASLError("error with body element","parseBodyElement",HelperFunctions.getClass().toString());
+			throwCASLError("error with body element","parseBodyElement","HelperFunctions");
 			strOut += "ERROR WITH BODY ELEMENT"
 		}
 		return (strOut + ";");
@@ -728,22 +728,10 @@ class HelperFunctions {
 			// 1: Body
 			// If the body element contains an interaction call of some type, then is should be listed
 			// A body can have a Field, Expression, Formula, or SelfAssignmentFormula, SelfCall
-			// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST
-			
+			// TODO: NEED TO CONTINUE THIS BUT I HAVE TO CHANGE THE COMPARISON TEST FIRST			
 			for (b : in.body) {
-				if (b instanceof Expression) {
-//					val be = b as Expression
-					println(b);
-					println(inferExpressionType(b));										
-					if ((inferExpressionType(b).compareToIgnoreCase("featurecallexp") == 0)) {
-						val fc = (b as FeatureCall).fc
-						if (fc instanceof AgentInteractionFeatureCall) {
-							println("AIFC")
-						} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
-							println("GIFC")
-						}
-					}
-				}
+				//what is the corresponding interaction call?
+				
 			}
 
 		} else if (ef instanceof Behavior) {

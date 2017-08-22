@@ -14,7 +14,6 @@ import uofa.lbirdsey.castle.casl.AdaptiveProcess;
 import uofa.lbirdsey.castle.casl.Addition;
 import uofa.lbirdsey.castle.casl.Agent;
 import uofa.lbirdsey.castle.casl.AgentFieldReference;
-import uofa.lbirdsey.castle.casl.AgentInteractionFeatureCall;
 import uofa.lbirdsey.castle.casl.ArithmeticSigned;
 import uofa.lbirdsey.castle.casl.Behavior;
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime;
@@ -47,7 +46,6 @@ import uofa.lbirdsey.castle.casl.Group;
 import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
 import uofa.lbirdsey.castle.casl.GroupFieldReference;
 import uofa.lbirdsey.castle.casl.GroupInternalInteraction;
-import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall;
 import uofa.lbirdsey.castle.casl.IfStatement;
 import uofa.lbirdsey.castle.casl.IntType;
 import uofa.lbirdsey.castle.casl.Interaction;
@@ -272,6 +270,7 @@ public class HelperFunctions {
             boolean _tripleNotEquals_3 = (_fec != null);
             if (_tripleNotEquals_3) {
               FeatureCall featCall = sce.getFec();
+              InputOutput.<FeatureCall>println(sce.getFec());
               output = FeatureCallGenerator.inferFeatureCallType(featCall);
             }
           }
@@ -563,7 +562,7 @@ public class HelperFunctions {
                   String _strOut_9 = strOut;
                   strOut = (_strOut_9 + "}");
                 } else {
-                  Constants.throwCASLError("error with body element", "parseBodyElement", HelperFunctions.class.getClass().toString());
+                  Constants.throwCASLError("error with body element", "parseBodyElement", "HelperFunctions");
                   String _strOut_10 = strOut;
                   strOut = (_strOut_10 + "ERROR WITH BODY ELEMENT");
                 }
@@ -1469,22 +1468,6 @@ public class HelperFunctions {
       }
       EList<EObject> _body = in.getBody();
       for (final EObject b : _body) {
-        if ((b instanceof Expression)) {
-          InputOutput.<Expression>println(((Expression)b));
-          InputOutput.<String>println(HelperFunctions.inferExpressionType(((Expression)b)));
-          int _compareToIgnoreCase = HelperFunctions.inferExpressionType(((Expression)b)).compareToIgnoreCase("featurecallexp");
-          boolean _equals = (_compareToIgnoreCase == 0);
-          if (_equals) {
-            final EObject fc = ((FeatureCall) b).getFc();
-            if ((fc instanceof AgentInteractionFeatureCall)) {
-              InputOutput.<String>println("AIFC");
-            } else {
-              if ((fc instanceof GroupInternalInteractionsFeatureCall)) {
-                InputOutput.<String>println("GIFC");
-              }
-            }
-          }
-        }
       }
     } else {
       if ((ef instanceof Behavior)) {

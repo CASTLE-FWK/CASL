@@ -17,49 +17,17 @@ import uofa.lbirdsey.castle.casl.ExternalInteractionFeatureCall
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Helpers
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Printers
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants;
+
 
 class FeatureCallGenerator {
 
 	// Determine the return type of the feature call
 	static def String inferFeatureCallType(FeatureCallExp featcall) {
-		var fc = featcall.func.fc;
-		if (fc instanceof AdaptiveProcessFeatureCall)
-			return HelperFunctions.inferMethodType((fc as AdaptiveProcessFeatureCall).process.body)
-		else if (fc instanceof AgentInteractionFeatureCall)
-			return HelperFunctions.inferMethodType((fc as AgentInteractionFeatureCall).process.body)
-		else if (fc instanceof EnvironmentInteractionFeatureCall)
-			return HelperFunctions.inferMethodType((fc as EnvironmentInteractionFeatureCall).process.body)
-		else if (fc instanceof InteractionFeatureCall) {
-			var ifc = (fc as InteractionFeatureCall).process;
-			return HelperFunctions.inferMethodType(ifc.body);
-		} else if (fc instanceof FunctionFeatureCall) {
-			var ifc = (fc as FunctionFeatureCall).process;
-			if ((ifc as Function).returnType !== null) {
-				return HelperFunctions.inferSymbolType((ifc as Function).returnType)
-			} else {
-				return "void"
-			}
-
-		} else if (fc instanceof BehaviorFeatureCall) {
-			var bfc = (fc as BehaviorFeatureCall).process;
-			if (bfc.behavior_reaction_time == BehaviorReactionTime.INSTANT) {
-				return HelperFunctions.inferMethodType(bfc.body);
-			} else {
-				return "void";
-			}
-		} else if (fc instanceof GroupInternalInteractionsFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupInternalInteractionsFeatureCall).process.body)
-		} else if (fc instanceof GroupSelfInternalInteractionsFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupSelfInternalInteractionsFeatureCall).process.body)
-		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as GroupExternalInteractionFeatureCall).process.body)
-		} else if (fc instanceof ExternalInteractionFeatureCall) {
-			return HelperFunctions.inferMethodType((fc as ExternalInteractionFeatureCall).process.body)
-		} else
-			"Error with inferring featurecall"
+		return inferFeatureCallType(featcall.func);
 	}
-	
-		// Determine the return type of the feature call
+
+	// Determine the return type of the feature call
 	static def String inferFeatureCallType(FeatureCall fce) {
 		var fc = fce.fc;
 		if (fc instanceof AdaptiveProcessFeatureCall)
@@ -78,7 +46,6 @@ class FeatureCallGenerator {
 			} else {
 				return "void"
 			}
-
 		} else if (fc instanceof BehaviorFeatureCall) {
 			var bfc = (fc as BehaviorFeatureCall).process;
 			if (bfc.behavior_reaction_time == BehaviorReactionTime.INSTANT) {
@@ -94,8 +61,10 @@ class FeatureCallGenerator {
 			return HelperFunctions.inferMethodType((fc as GroupExternalInteractionFeatureCall).process.body)
 		} else if (fc instanceof ExternalInteractionFeatureCall) {
 			return HelperFunctions.inferMethodType((fc as ExternalInteractionFeatureCall).process.body)
-		} else
-			"Error with inferring featurecall"
+		} else{
+			Constants.throwCASLError("Cannot infer Feature Call type", "inferFeatureCallType", "FeatureCallGenerator");
+			return "Error with inferring featurecall"
+		}
 	}
 
 	static def printFeatureCall(FeatureCall featcall) {
@@ -134,8 +103,10 @@ class FeatureCallGenerator {
 			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
 		} else if (fc instanceof ExternalInteractionFeatureCall) {
 			'''«(fc as ExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else
+		} else{
+			Constants.throwCASLError("Cannot print Feature Call", "printFeatureCall", "FeatureCallGenerator");
 			'''ERROR WITH FEATURE CALL:«fc.toString»'''
+		}
 	}
 
 	static def String getFeatureCallName(FeatureCall fc) {
@@ -173,7 +144,9 @@ class FeatureCallGenerator {
 			'''«(fc as GroupExternalInteractionFeatureCall).grp.name».«(fc as GroupExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
 		} else if (fc instanceof ExternalInteractionFeatureCall) {
 			'''«(fc as ExternalInteractionFeatureCall).process.name»(«HelperFunctions.printFunctionArgs(fc.inputs)»)'''
-		} else
-			'''ERROR WITH FEATURE CALL:«fc.fc.toString»'''
+		} else{
+			Constants.throwCASLError("Cannot get Feature Call name", "getFeatureCallName", "FeatureCallGenerator");
+			'''ERROR WITH FEATURE CALL:«fc.fc.toString»'''			
+		}
 	}
 }
