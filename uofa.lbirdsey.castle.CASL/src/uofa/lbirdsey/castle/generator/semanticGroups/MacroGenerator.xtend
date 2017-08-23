@@ -89,6 +89,10 @@ class MacroGenerator {
 				filePath = Printers.printExpression(il.filePath) as String;
 			}
 			output += "logger.setup("+isMuted+','+isToConsole+','+isToFile+','+filePath+", name)"
+			
+			
+			
+			
 		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)
@@ -146,6 +150,7 @@ class MacroGenerator {
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
 			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			
@@ -164,6 +169,7 @@ class MacroGenerator {
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
 			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			

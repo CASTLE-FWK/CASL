@@ -123,7 +123,9 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	def generateParameters(System sys){
 		var output = "//Fields\n"
 		output += "ArrayList<Parameter<?>> simulationParameters = new ArrayList<Parameter<?>>();\n"
+		output += "SimulationInfo simulationInfo;\n"
 		output += "Logger logger;\n"
+		output += "Output output;\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
 				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
@@ -307,19 +309,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += "}\n"
 		
 		str += "/****Results Exporting*****/\n"
-//		str += "String outPath = \"/output/\"+(name.replaceAll(\" \",\"\"))+\"_\"+Utilities.generateTimeStamp() +\".txt\";\n"
-//		str += "public void sendToFile(String str){\n"
-//		str += "\tUtilities.writeToFile(str, System.getProperty(\"user.dir\")+outPath);\n"
-//		str += "}\n"
 	
 		str += "public void finalCall(){\n"
-//		str += "\t//finalCASFeatureCall();\n"
-//		str += "\tsendToFile(runningString);\n"
 		str += "}\n"
 
-//		str += "public void prefixStepNumber(){\n"
-//		str += "\trunningString += \"step:\t\"+(int)getCurrentTickCount()+\" \";\n"
-//		str += "}\n"
 		return str		
 	}
 	
@@ -327,7 +320,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 		str = "public Context<Entity> build (Context<Entity> context) {\n\tcontext.setId(\""+sys.name+"\");\n"
 		str += "\trepastContext = context;\n";
-		str += "\tlogger = new Logger();"
+
 		str += "\t//Initialise lists to contain Agents and Environments\n"
 		str += initialiseSystem(sys)
 		str += "\n\t//Get parameters from Repast\n\tParameters params = RunEnvironment.getInstance().getParameters();\n"
@@ -375,17 +368,22 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		
 		//Initialise Agents/Environments
 		//Initialize() & layouts are responsible for creating entities
+		str += "\t//Fill the simulationInfo\n"
+		str += "\tsimulationInfo = new SimulationInfo(name, description, sysName + \"-\" + Utilities.generateTimeStamp());\n"
+		str += "\t//Set up the outputter and logger\n"	
+		str += "\toutput = new Output();"
+		str += "\tlogger = new Logger(output);"
+		str += "\t//Export information to Logger and/or Database\n"
+		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
+		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
+		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\");\n"
 		
 		
 		//Set up the main System init stuff
 		str +="\n\tinitialize();\n"
 		
 		//What we want to have here is context adding of environments and subcontext adding of groups (if an SG model)
-		//TODOkjashd8891
 
-
-		str += "\t//Export information to Logger and/or Database\n"
-		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
 //		str += "\tstoredEnvironments.addAll(layoutParameters.getContainedEnvironments());\n"	
 		
 		str += "\ttier1Entities = storedEnvironments.size();";

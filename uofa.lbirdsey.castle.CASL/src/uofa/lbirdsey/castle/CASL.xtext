@@ -807,12 +807,14 @@ CASL_Macro_Print:
 ;
 
 CASL_Macro_InitLogger:
-	"LOGGER("mute = BooleanValue ',' toConsole = BooleanValue','toFile = BooleanValue(','filePath = Expression)?')'
+	"LOGGER("mute = BooleanValue ',' toConsole = BooleanValue','toFile = BooleanValue (','filePath = Expression)?')'
 ;
 
 CASL_Macro_Log:
 	"LOG("str = STRING")"
 ;
+
+//How to deal with model data sending to database and or file
 
 CASL_Macro_MetricSwitch:
 	"METRIC["sw = BooleanValue"]" ('('manualUpdates += Expression')')?
