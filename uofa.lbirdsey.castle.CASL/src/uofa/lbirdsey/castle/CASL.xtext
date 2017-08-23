@@ -815,7 +815,7 @@ CASL_Macro_Log:
 ;
 
 CASL_Macro_MetricSwitch:
-	"METRIC["sw = BooleanValue"]"
+	"METRIC["sw = BooleanValue"]" ('('manualUpdates += Expression')')?
 ;
 
 CASL_Macro_TODO:

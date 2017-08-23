@@ -3720,13 +3720,22 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_METRIC_SWITCH__SW = CASL_MACRO_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Manual Updates</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES = CASL_MACRO_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>CASL Macro Metric Switch</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_METRIC_SWITCH_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 1;
+  int CASL_MACRO_METRIC_SWITCH_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_TODOImpl <em>CASL Macro TODO</em>}' class.
@@ -8656,6 +8665,17 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EAttribute getCASL_Macro_MetricSwitch_Sw();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch#getManualUpdates <em>Manual Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Manual Updates</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch#getManualUpdates()
+   * @see #getCASL_Macro_MetricSwitch()
+   * @generated
+   */
+  EReference getCASL_Macro_MetricSwitch_ManualUpdates();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_TODO <em>CASL Macro TODO</em>}'.

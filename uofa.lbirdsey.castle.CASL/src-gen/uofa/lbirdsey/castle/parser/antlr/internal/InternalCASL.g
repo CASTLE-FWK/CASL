@@ -11477,6 +11477,35 @@ ruleCASL_Macro_MetricSwitch returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightSquareBracketKeyword_2());
 		}
+		(
+			otherlv_3='('
+			{
+				newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_MetricSwitchAccess().getLeftParenthesisKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesExpressionParserRuleCall_3_1_0());
+					}
+					lv_manualUpdates_4_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_MetricSwitchRule());
+						}
+						add(
+							$current,
+							"manualUpdates",
+							lv_manualUpdates_4_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightParenthesisKeyword_3_2());
+			}
+		)?
 	)
 ;
 

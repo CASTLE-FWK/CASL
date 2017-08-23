@@ -293,7 +293,7 @@ class HelperFunctions {
 		} else if (statement instanceof MacroCall) {
 			val mc = (statement as MacroCall).macroCall.macro;
 			if (mc instanceof CASL_Macro_MetricSwitch){
-				strOut += metric_ToOutput(caller); 
+				strOut += metric_ToOutput(caller, mc as CASL_Macro_MetricSwitch); 
 			} else { 	
 				strOut += Printers.printExpression(statement, null)  + SC;
 			}
@@ -759,7 +759,7 @@ class HelperFunctions {
 		}
 	}
 
-	static def String metric_ToOutput(Entity_Feature ef) {
+	static def String metric_ToOutput(Entity_Feature ef, CASL_Macro_MetricSwitch mc) {
 		var output = "";
 		// Determine type of EF
 		if (ef instanceof Interaction) {
@@ -826,6 +826,13 @@ class HelperFunctions {
 			//This is an interaction
 			val ii = ef as GroupInternalInteraction;
 			output += "updateFeature(\""+ii.name+"\",FeatureTypes.INTERNAL_INTERACTION)" + LINE_END
+		}
+		
+		if (mc.manualUpdates !== null){
+			//Cycle through and print things
+			for (ex : mc.manualUpdates){
+				output += "updateParameter(\""Printers.printExpression(ex)+"\", "+Printers.printExpression(ex)+")"+LINE_END
+			}
 		}
 
 		return output;

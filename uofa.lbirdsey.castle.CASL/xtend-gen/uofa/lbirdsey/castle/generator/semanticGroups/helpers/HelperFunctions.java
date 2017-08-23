@@ -532,7 +532,7 @@ public class HelperFunctions {
           final CASL_Macro mc = ((MacroCall) statement).getMacroCall().getMacro();
           if ((mc instanceof CASL_Macro_MetricSwitch)) {
             String _strOut_2 = strOut;
-            String _metric_ToOutput = HelperFunctions.metric_ToOutput(caller);
+            String _metric_ToOutput = HelperFunctions.metric_ToOutput(caller, ((CASL_Macro_MetricSwitch) mc));
             strOut = (_strOut_2 + _metric_ToOutput);
           } else {
             String _strOut_3 = strOut;
@@ -1563,7 +1563,7 @@ public class HelperFunctions {
     return null;
   }
   
-  public static String metric_ToOutput(final Entity_Feature ef) {
+  public static String metric_ToOutput(final Entity_Feature ef, final CASL_Macro_MetricSwitch mc) {
     String output = "";
     if ((ef instanceof Interaction)) {
       final Interaction in = ((Interaction) ef);
@@ -1693,6 +1693,23 @@ public class HelperFunctions {
               output = (_output_3 + _plus_11);
             }
           }
+        }
+      }
+    }
+    EList<Expression> _manualUpdates = mc.getManualUpdates();
+    boolean _tripleNotEquals = (_manualUpdates != null);
+    if (_tripleNotEquals) {
+      EList<Expression> _manualUpdates_1 = mc.getManualUpdates();
+      for (final Expression ex : _manualUpdates_1) {
+        {
+          String _output_4 = output;
+          output = (_output_4 + "updateParameter(\"");
+          Object _printExpression = Printers.printExpression(ex);
+          String _plus_12 = (_printExpression + "\", ");
+          Object _printExpression_1 = Printers.printExpression(ex);
+          String _plus_13 = (_plus_12 + _printExpression_1);
+          String _plus_14 = (_plus_13 + ")");
+          /* (_plus_14 + Constants.LINE_END); */
         }
       }
     }

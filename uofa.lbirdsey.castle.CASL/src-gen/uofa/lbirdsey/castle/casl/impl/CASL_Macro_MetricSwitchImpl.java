@@ -3,14 +3,24 @@
  */
 package uofa.lbirdsey.castle.casl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CaslPackage;
+import uofa.lbirdsey.castle.casl.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +31,7 @@ import uofa.lbirdsey.castle.casl.CaslPackage;
  * </p>
  * <ul>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_MetricSwitchImpl#isSw <em>Sw</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_MetricSwitchImpl#getManualUpdates <em>Manual Updates</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +57,16 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
    * @ordered
    */
   protected boolean sw = SW_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getManualUpdates() <em>Manual Updates</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getManualUpdates()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expression> manualUpdates;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +117,36 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Expression> getManualUpdates()
+  {
+    if (manualUpdates == null)
+    {
+      manualUpdates = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES);
+    }
+    return manualUpdates;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES:
+        return ((InternalEList<?>)getManualUpdates()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +154,8 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
     {
       case CaslPackage.CASL_MACRO_METRIC_SWITCH__SW:
         return isSw();
+      case CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES:
+        return getManualUpdates();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,6 +165,7 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -119,6 +173,10 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
     {
       case CaslPackage.CASL_MACRO_METRIC_SWITCH__SW:
         setSw((Boolean)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES:
+        getManualUpdates().clear();
+        getManualUpdates().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +195,9 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
       case CaslPackage.CASL_MACRO_METRIC_SWITCH__SW:
         setSw(SW_EDEFAULT);
         return;
+      case CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES:
+        getManualUpdates().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +214,8 @@ public class CASL_Macro_MetricSwitchImpl extends CASL_MacroImpl implements CASL_
     {
       case CaslPackage.CASL_MACRO_METRIC_SWITCH__SW:
         return sw != SW_EDEFAULT;
+      case CaslPackage.CASL_MACRO_METRIC_SWITCH__MANUAL_UPDATES:
+        return manualUpdates != null && !manualUpdates.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -482,6 +482,7 @@
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_MetricSwitch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_MetricSwitch/sw"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_MetricSwitch/manualUpdates"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_TODO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_TODO/str"/>

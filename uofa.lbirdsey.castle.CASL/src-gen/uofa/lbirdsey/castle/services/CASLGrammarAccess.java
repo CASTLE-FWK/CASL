@@ -7335,12 +7335,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSwAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSwBooleanValueParserRuleCall_1_0 = (RuleCall)cSwAssignment_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cManualUpdatesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cManualUpdatesExpressionParserRuleCall_3_1_0 = (RuleCall)cManualUpdatesAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//CASL_Macro_MetricSwitch:
-		//	"METRIC[" sw=BooleanValue "]";
+		//	"METRIC[" sw=BooleanValue "]" ('(' manualUpdates+=Expression ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"METRIC[" sw=BooleanValue "]"
+		//"METRIC[" sw=BooleanValue "]" ('(' manualUpdates+=Expression ')')?
 		public Group getGroup() { return cGroup; }
 		
 		//"METRIC["
@@ -7354,6 +7359,21 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+		
+		//('(' manualUpdates+=Expression ')')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
+		
+		//manualUpdates+=Expression
+		public Assignment getManualUpdatesAssignment_3_1() { return cManualUpdatesAssignment_3_1; }
+		
+		//Expression
+		public RuleCall getManualUpdatesExpressionParserRuleCall_3_1_0() { return cManualUpdatesExpressionParserRuleCall_3_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 	}
 	public class CASL_Macro_TODOElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_TODO");
@@ -10556,7 +10576,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_MetricSwitch:
-	//	"METRIC[" sw=BooleanValue "]";
+	//	"METRIC[" sw=BooleanValue "]" ('(' manualUpdates+=Expression ')')?;
 	public CASL_Macro_MetricSwitchElements getCASL_Macro_MetricSwitchAccess() {
 		return pCASL_Macro_MetricSwitch;
 	}

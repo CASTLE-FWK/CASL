@@ -4397,6 +4397,16 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getCASL_Macro_MetricSwitch_ManualUpdates()
+  {
+        return (EReference)getCASL_Macro_MetricSwitch().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCASL_Macro_TODO()
   {
     if (casL_Macro_TODOEClass == null)

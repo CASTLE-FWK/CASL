@@ -1512,16 +1512,10 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_MetricSwitch returns CASL_Macro_MetricSwitch
 	 *
 	 * Constraint:
-	 *     sw=BooleanValue
+	 *     (sw=BooleanValue manualUpdates+=Expression?)
 	 */
 	protected void sequence_CASL_Macro_MetricSwitch(ISerializationContext context, CASL_Macro_MetricSwitch semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_MetricSwitch_Sw()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_MetricSwitch_Sw()));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwBooleanValueParserRuleCall_1_0(), semanticObject.isSw());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2570,8 +2564,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Field? 
-	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
+	 *         elseexp+=Formula? 
+	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

@@ -27948,6 +27948,7 @@ rule__CASL_Macro_MetricSwitch__Group__2
 	}
 :
 	rule__CASL_Macro_MetricSwitch__Group__2__Impl
+	rule__CASL_Macro_MetricSwitch__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -27962,6 +27963,113 @@ rule__CASL_Macro_MetricSwitch__Group__2__Impl
 	{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightSquareBracketKeyword_2()); }
 	']'
 	{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightSquareBracketKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_MetricSwitch__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup_3()); }
+	(rule__CASL_Macro_MetricSwitch__Group_3__0)?
+	{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__CASL_Macro_MetricSwitch__Group_3__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_MetricSwitch__Group_3__0__Impl
+	rule__CASL_Macro_MetricSwitch__Group_3__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group_3__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getLeftParenthesisKeyword_3_0()); }
+	'('
+	{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getLeftParenthesisKeyword_3_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group_3__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_MetricSwitch__Group_3__1__Impl
+	rule__CASL_Macro_MetricSwitch__Group_3__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group_3__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesAssignment_3_1()); }
+	(rule__CASL_Macro_MetricSwitch__ManualUpdatesAssignment_3_1)
+	{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesAssignment_3_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group_3__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_MetricSwitch__Group_3__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__Group_3__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightParenthesisKeyword_3_2()); }
+	')'
+	{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getRightParenthesisKeyword_3_2()); }
 )
 ;
 finally {
@@ -35601,6 +35709,21 @@ rule__CASL_Macro_MetricSwitch__SwAssignment_1
 		{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwBooleanValueParserRuleCall_1_0()); }
 		ruleBooleanValue
 		{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwBooleanValueParserRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_MetricSwitch__ManualUpdatesAssignment_3_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesExpressionParserRuleCall_3_1_0()); }
+		ruleExpression
+		{ after(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesExpressionParserRuleCall_3_1_0()); }
 	)
 ;
 finally {

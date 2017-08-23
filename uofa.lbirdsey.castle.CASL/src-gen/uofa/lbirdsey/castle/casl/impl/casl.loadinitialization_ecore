@@ -581,6 +581,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_MetricSwitch" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sw" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manualUpdates" upperBound="-1"
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_TODO" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
