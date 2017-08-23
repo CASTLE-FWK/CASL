@@ -482,6 +482,7 @@ class GroupGeneration {
 		str += "public void phase_Cleanup() {\n"
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
+		str += "super.phase_Cleanup();\n"
 		str +="}\n\n"
 
 		return str;		

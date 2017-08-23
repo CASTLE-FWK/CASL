@@ -380,6 +380,7 @@ class AgentGeneration {
 		//Setup phase
 		str += "@Override\n"
 		str += "public void phase_Setup() {\n"
+		
 		for (item : setupPhase){
 			str += "\t"+item+"\n"
 		}
@@ -405,6 +406,7 @@ class AgentGeneration {
 		}
 		str += "\t//Activate triggers\n"
 		str += "\tpullTriggers(cleanupTriggers);\n"
+		str += "super.phase_Cleanup();\n"
 		str +="}\n\n"
 
 		return str;		

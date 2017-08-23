@@ -126,6 +126,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		output += "SimulationInfo simulationInfo;\n"
 		output += "Logger logger;\n"
 		output += "Output output;\n"
+		output += "int stepsUntilTermination;\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
 				output += "public static "+Printers.printFieldDeclarations(field as Field)+";\n";
@@ -225,7 +226,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		var str = "";
 			str += "public void simulate() {\n";
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
-			str += "logger.newStep(clock);\n"
+			str += output_newStep(sys);
 			str +="\t//Wait for Tier1 ACKS\n\n//Begin the fun\n"
 			str +="\t/**********SETUP PHASE**********/ \n\n"
 			str +="\tclock = (int)getCurrentTickCount();\n"
@@ -261,8 +262,28 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			str += "\tenvExecutor.shutdown();\n"
 			str += "\twhile(!envExecutor.isTerminated()){\n" //EWWWW
 			str += "\t\t \n\t}\n"
+			str += output_endOfStep(sys);
 			str += "}\n"
 		return str;
+	}
+	
+	def String output_newStep(System sys){
+		var str = "//New step logging and model data sending\n"
+		str += "if (!loggerIsNull()) { \n logger.newStep(clock);\n}\n"
+		str += "if (!dbIsNull()) {\n dbOut.newStep();\n}\n"
+		
+	}
+	
+	def String output_endOfStep(System sys){
+		var str = "//New step logging and model data sending\n"
+		str += "if (!loggerIsNull()) { \n logger.endOfStep(clock);\n}\n"
+		str += "if (!dbIsNull()) {\n dbOut.endOfStep();\n}\n"	
+	}
+	
+	def String output_endOfSim(System sys){
+		var str = "//Simulation has finished. Perform cleanup and sending of final data\n"
+		str += "if (!loggerIsNull()) { \n logger.endOfStep(clock);\n}\n"
+		str += "if (!dbIsNull()) {\n dbOut.endOfSimulation(clock, time, );\n}\n"	
 	}
 	
 	def String generateBroadcastFunction(System sys)'''
@@ -311,10 +332,12 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		str += "/****Results Exporting*****/\n"
 	
 		str += "public void finalCall(){\n"
+		
 		str += "}\n"
 
 		return str		
 	}
+
 	
 	def String repastBuildInitialiser(System sys){
 		var str = "";
@@ -341,10 +364,12 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			if (endCond.endType == EndConditionTypes.STEPS) {
 				paramGetters += "\tset"+endCond.name.toFirstUpper+"((int)params.getValue(\""+endCond.name+"\"));\n"
 				finalSteps = "\tRunEnvironment.getInstance().endAt(get"+endCond.name.toFirstUpper+"());"
+				str +="\tstepsUntilTermination = get"+endCond.name.toFirstUpper+"();\n"		
 			}
 		}
 		str += paramGetters + "\n"
 		str += finalSteps + "\n"
+		
 		
 		var scheduleSetup = "\n";
 		scheduleSetup += "\t//Set Schedule for CASFeatures ()\n"
