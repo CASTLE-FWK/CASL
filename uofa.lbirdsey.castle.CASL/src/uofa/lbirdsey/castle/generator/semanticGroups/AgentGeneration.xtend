@@ -194,7 +194,7 @@ class AgentGeneration {
 			//Create the trigger object here
 			var triggerString = "";
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
-				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue; //TODO: Why is it like this?
 				triggersToPrintInit.add(Printers.getNameForTrigger(behavior.name));
 				triggerString = Printers.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"

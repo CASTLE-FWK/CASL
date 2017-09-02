@@ -28,6 +28,7 @@ import uofa.lbirdsey.castle.casl.AgentFieldReference
 import uofa.lbirdsey.castle.casl.EnumCall
 import uofa.lbirdsey.castle.casl.GroupFieldReference
 import uofa.lbirdsey.castle.casl.GroupInternalInteractionsFeatureCall
+import uofa.lbirdsey.castle.casl.GroupExternalInteractionFeatureCall
 
 /**
  * This class contains custom scoping description.
@@ -66,6 +67,14 @@ class CASLScopeProvider extends AbstractDeclarativeScopeProvider {
 			return Scopes.scopeFor((context.grp as FunctionParameter).grp.group_internal_interactions.internal_interactions);
 		} else if (context.grp instanceof GroupFieldReference) {	
 			return Scopes.scopeFor((context.grp as GroupFieldReference).grp.group_internal_interactions.internal_interactions); 			
+		} 
+	}
+	
+	def scope_GroupExternalInteractionsFeatureCall_process(GroupExternalInteractionFeatureCall context, EReference ref) {
+		if (context.grp instanceof FunctionParameter){
+			return Scopes.scopeFor((context.grp as FunctionParameter).grp.group_external_interactions.external_interactions);
+		} else if (context.grp instanceof GroupFieldReference) {	
+			return Scopes.scopeFor((context.grp as GroupFieldReference).grp.group_external_interactions.external_interactions); 			
 		} 
 	}
 	

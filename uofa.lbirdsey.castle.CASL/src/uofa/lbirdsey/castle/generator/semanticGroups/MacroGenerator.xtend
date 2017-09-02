@@ -78,7 +78,7 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_Print) {
 			output += "System.out.println(\""+(macro as CASL_Macro_Print).str+"\");\n"			
 		} else if (macro instanceof CASL_Macro_Log) {
-			output += "logger.log(\""+(macro as CASL_Macro_Log).str+"\");\n"
+			output += "log(\""+(macro as CASL_Macro_Log).str+"\");\n"
 		} else if (macro instanceof CASL_Macro_InitLogger){
 			val il = (macro as CASL_Macro_InitLogger);
 			val isMuted = (il.mute == true)
