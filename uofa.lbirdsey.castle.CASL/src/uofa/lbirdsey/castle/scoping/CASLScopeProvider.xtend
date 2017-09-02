@@ -70,7 +70,7 @@ class CASLScopeProvider extends AbstractDeclarativeScopeProvider {
 		} 
 	}
 	
-	def scope_GroupExternalInteractionsFeatureCall_process(GroupExternalInteractionFeatureCall context, EReference ref) {
+	def scope_GroupExternalInteractionFeatureCall_process(GroupExternalInteractionFeatureCall context, EReference ref) {
 		if (context.grp instanceof FunctionParameter){
 			return Scopes.scopeFor((context.grp as FunctionParameter).grp.group_external_interactions.external_interactions);
 		} else if (context.grp instanceof GroupFieldReference) {	
