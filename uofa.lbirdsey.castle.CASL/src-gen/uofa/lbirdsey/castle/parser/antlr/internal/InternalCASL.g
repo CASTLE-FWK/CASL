@@ -13125,6 +13125,14 @@ ruleRandomType returns [Enumerator current=null]
 				newLeafNode(enumLiteral_2, grammarAccess.getRandomTypeAccess().getBOOLEnumLiteralDeclaration_2());
 			}
 		)
+		    |
+		(
+			enumLiteral_3='VECTOR2'
+			{
+				$current = grammarAccess.getRandomTypeAccess().getVECTOR2EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getRandomTypeAccess().getVECTOR2EnumLiteralDeclaration_3());
+			}
+		)
 	)
 ;
 

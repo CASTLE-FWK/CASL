@@ -63,6 +63,8 @@ class MacroGenerator {
 				}
 			} else if (mac.type == RandomType.BOOL){
 				output += "RandomGen.generateBiasedCoinFlip("+Printers.printExpression(mac.low)+")"
+			} else if (mac.type == RandomType.VECTOR2){
+				output += "RandomGen.randomiseVectorDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
 			var mac = (macro as CASL_Macro_ForEach)

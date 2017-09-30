@@ -877,7 +877,7 @@ enum WorldType:
 
 
 enum RandomType:
-	INT | FLOAT | BOOL
+	INT | FLOAT | BOOL | VECTOR2
 ;
 
 /*****Java 8-isms *****/

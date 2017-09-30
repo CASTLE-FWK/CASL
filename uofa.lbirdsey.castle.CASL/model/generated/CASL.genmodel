@@ -110,6 +110,7 @@
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/VECTOR2"/>
     </genEnums>
     <genClasses ecoreClass="CASL.ecore#//Casl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//Casl/packageElements"/>

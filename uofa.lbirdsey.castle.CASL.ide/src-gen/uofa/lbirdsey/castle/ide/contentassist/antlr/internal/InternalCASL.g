@@ -5276,6 +5276,12 @@ rule__RandomType__Alternatives
 		('BOOL')
 		{ after(grammarAccess.getRandomTypeAccess().getBOOLEnumLiteralDeclaration_2()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getRandomTypeAccess().getVECTOR2EnumLiteralDeclaration_3()); }
+		('VECTOR2')
+		{ after(grammarAccess.getRandomTypeAccess().getVECTOR2EnumLiteralDeclaration_3()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

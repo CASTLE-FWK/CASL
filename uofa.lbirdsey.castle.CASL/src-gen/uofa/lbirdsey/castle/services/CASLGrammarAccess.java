@@ -7341,6 +7341,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cManualUpdatesExpressionParserRuleCall_3_1_0 = (RuleCall)cManualUpdatesAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
+		////How to deal with model data sending to database and or file
 		//CASL_Macro_MetricSwitch:
 		//	"METRIC[" sw=BooleanValue "]" ('(' manualUpdates+=Expression ')')?;
 		@Override public ParserRule getRule() { return rule; }
@@ -8732,12 +8733,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFLOATFLOATKeyword_1_0 = (Keyword)cFLOATEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cBOOLEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cBOOLBOOLKeyword_2_0 = (Keyword)cBOOLEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cVECTOR2EnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cVECTOR2VECTOR2Keyword_3_0 = (Keyword)cVECTOR2EnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum RandomType:
-		//	INT | FLOAT | BOOL;
+		//	INT | FLOAT | BOOL | VECTOR2;
 		public EnumRule getRule() { return rule; }
 		
-		//INT | FLOAT | BOOL
+		//INT | FLOAT | BOOL | VECTOR2
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//INT
@@ -8757,6 +8760,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"BOOL"
 		public Keyword getBOOLBOOLKeyword_2_0() { return cBOOLBOOLKeyword_2_0; }
+		
+		//VECTOR2
+		public EnumLiteralDeclaration getVECTOR2EnumLiteralDeclaration_3() { return cVECTOR2EnumLiteralDeclaration_3; }
+		
+		//"VECTOR2"
+		public Keyword getVECTOR2VECTOR2Keyword_3_0() { return cVECTOR2VECTOR2Keyword_3_0; }
 	}
 	
 	private final CaslElements pCasl;
@@ -10575,6 +10584,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getCASL_Macro_LogAccess().getRule();
 	}
 	
+	////How to deal with model data sending to database and or file
 	//CASL_Macro_MetricSwitch:
 	//	"METRIC[" sw=BooleanValue "]" ('(' manualUpdates+=Expression ')')?;
 	public CASL_Macro_MetricSwitchElements getCASL_Macro_MetricSwitchAccess() {
@@ -10664,7 +10674,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum RandomType:
-	//	INT | FLOAT | BOOL;
+	//	INT | FLOAT | BOOL | VECTOR2;
 	public RandomTypeElements getRandomTypeAccess() {
 		return eRandomType;
 	}

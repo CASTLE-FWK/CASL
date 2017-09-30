@@ -625,6 +625,7 @@
     <eLiterals name="INT" literal="INT"/>
     <eLiterals name="FLOAT" value="1" literal="FLOAT"/>
     <eLiterals name="BOOL" value="2" literal="BOOL"/>
+    <eLiterals name="VECTOR2" value="3" literal="VECTOR2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Raw_Java_Block">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

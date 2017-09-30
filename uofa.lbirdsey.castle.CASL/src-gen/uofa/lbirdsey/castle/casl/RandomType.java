@@ -48,7 +48,17 @@ public enum RandomType implements Enumerator
    * @generated
    * @ordered
    */
-  BOOL(2, "BOOL", "BOOL");
+  BOOL(2, "BOOL", "BOOL"),
+
+  /**
+   * The '<em><b>VECTOR2</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #VECTOR2_VALUE
+   * @generated
+   * @ordered
+   */
+  VECTOR2(3, "VECTOR2", "VECTOR2");
 
   /**
    * The '<em><b>INT</b></em>' literal value.
@@ -96,6 +106,21 @@ public enum RandomType implements Enumerator
   public static final int BOOL_VALUE = 2;
 
   /**
+   * The '<em><b>VECTOR2</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>VECTOR2</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #VECTOR2
+   * @model
+   * @generated
+   * @ordered
+   */
+  public static final int VECTOR2_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>Random Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -107,6 +132,7 @@ public enum RandomType implements Enumerator
       INT,
       FLOAT,
       BOOL,
+      VECTOR2,
     };
 
   /**
@@ -174,6 +200,7 @@ public enum RandomType implements Enumerator
       case INT_VALUE: return INT;
       case FLOAT_VALUE: return FLOAT;
       case BOOL_VALUE: return BOOL;
+      case VECTOR2_VALUE: return VECTOR2;
     }
     return null;
   }
