@@ -27,7 +27,14 @@ public class VisualisationGenerator {
         }
         return output;
       } else {
-        _xifexpression = Constants.throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator");
+        String _xifexpression_1 = null;
+        boolean _equalsIgnoreCase_1 = rep.equalsIgnoreCase("CONTINUOUS");
+        if (_equalsIgnoreCase_1) {
+          return output;
+        } else {
+          _xifexpression_1 = Constants.throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator");
+        }
+        _xifexpression = _xifexpression_1;
       }
       _xblockexpression = _xifexpression;
     }

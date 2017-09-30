@@ -270,6 +270,7 @@ class HelperFunctions {
 		if (ifstate.elseexp !== null) {
 			var tmpReturn = inferGeneralType(ifstate.elseexp.reverseView.head)
 			if (tmpReturn.compareTo(returnType) != 0 && returnType.length == 0) {
+				//TODO (03/09/2017) bug
 				throwCASLError("error with inferring else exp","inferIfStatementReturnType",HelperFunctions.getClass().toString());
 				output = returnType + "_ERROR"
 			} else {

@@ -13,6 +13,9 @@ class VisualisationGenerator {
 		return "";
 	}
 	
+	
+	//30/09/2017: I THINK WE'VE MADE THIS CLASS REDUNDANT
+	
 	/*
 	 * 
 	 */
@@ -21,7 +24,7 @@ class VisualisationGenerator {
 		val String rep =  d.representationType.toString;
 		var output = "";
 		
-		
+	
 		if (rep.equalsIgnoreCase("GRID")){
 //			output = "GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);\n"
 			
@@ -35,6 +38,8 @@ class VisualisationGenerator {
 //						"new GridBuilderParameters<Entity>(new StrictBorders(),new SimpleGridAdder<Entity>(), false, "+nameOfProjection+".getX(), "+nameOfProjection+".getY()));" 
 				}
 				return output;
+		} else if (rep.equalsIgnoreCase("CONTINUOUS")) {
+			return output;		
 		} else {
 			throwCASLError("Unknown representation type", "generateDisplayer", "VisualisationGenerator")	
 		}
