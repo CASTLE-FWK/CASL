@@ -121,7 +121,7 @@ class RepastGenerator implements IGenerator2 {
 		for (e : resource.allContents.toIterable.filter(Agent)) {
 //			HelperFunctions.addToTypesArray(e as Agent);
 			fsa.generateFile(dirName + "/agents/" + e.fullyQualifiedName.toString("/") + ".java",
-				e.compileAgent.toString.replaceAll("string\\s+", "String").replaceAll("bool\\s+", "boolean ").replaceAll("(;)+",
+				e.compileAgent.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").replaceAll("(;)+",
 					";"))
 		}
 
