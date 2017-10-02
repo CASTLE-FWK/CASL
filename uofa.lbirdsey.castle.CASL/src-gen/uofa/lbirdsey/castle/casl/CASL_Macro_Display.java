@@ -26,7 +26,7 @@ public interface CASL_Macro_Display extends CASL_Macro
 {
   /**
    * Returns the value of the '<em><b>Representation Type</b></em>' attribute.
-   * The literals are from the enumeration {@link uofa.lbirdsey.castle.casl.WorldType}.
+   * The literals are from the enumeration {@link uofa.lbirdsey.castle.casl.LayoutType}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Representation Type</em>' attribute isn't clear,
@@ -34,24 +34,24 @@ public interface CASL_Macro_Display extends CASL_Macro
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Representation Type</em>' attribute.
-   * @see uofa.lbirdsey.castle.casl.WorldType
-   * @see #setRepresentationType(WorldType)
+   * @see uofa.lbirdsey.castle.casl.LayoutType
+   * @see #setRepresentationType(LayoutType)
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Display_RepresentationType()
    * @model
    * @generated
    */
-  WorldType getRepresentationType();
+  LayoutType getRepresentationType();
 
   /**
    * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Display#getRepresentationType <em>Representation Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Representation Type</em>' attribute.
-   * @see uofa.lbirdsey.castle.casl.WorldType
+   * @see uofa.lbirdsey.castle.casl.LayoutType
    * @see #getRepresentationType()
    * @generated
    */
-  void setRepresentationType(WorldType value);
+  void setRepresentationType(LayoutType value);
 
   /**
    * Returns the value of the '<em><b>To Project</b></em>' containment reference list.

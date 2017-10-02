@@ -138,7 +138,7 @@ class GroupGeneration {
 				
 			}			
 		}
-		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes."+grp.layoutType+");\n"
+		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes.REP_"+grp.layoutType+");\n"
 		
 		output += "\n//Getters & Setters\n"
 		for (field : grp.group_parameters.fields){

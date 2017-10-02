@@ -96,16 +96,6 @@
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//SubSystemType/SELF"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//SubSystemType/SYSTEM"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//WorldType">
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GRID"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/TORUS"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/BOUND"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GRAPH"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/NETWORK"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/GIS"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/MESH3D"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//WorldType/CONTINUOUS"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>

@@ -154,7 +154,6 @@ import uofa.lbirdsey.castle.casl.Transmission_Phase;
 import uofa.lbirdsey.castle.casl.Transmission_Repeat;
 import uofa.lbirdsey.castle.casl.Type;
 import uofa.lbirdsey.castle.casl.TypeRef;
-import uofa.lbirdsey.castle.casl.WorldType;
 
 /**
  * <!-- begin-user-doc -->
@@ -383,8 +382,6 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return createAdaptationDelayFromString(eDataType, initialValue);
       case CaslPackage.SUB_SYSTEM_TYPE:
         return createSubSystemTypeFromString(eDataType, initialValue);
-      case CaslPackage.WORLD_TYPE:
-        return createWorldTypeFromString(eDataType, initialValue);
       case CaslPackage.RANDOM_TYPE:
         return createRandomTypeFromString(eDataType, initialValue);
       default:
@@ -438,8 +435,6 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return convertAdaptationDelayToString(eDataType, instanceValue);
       case CaslPackage.SUB_SYSTEM_TYPE:
         return convertSubSystemTypeToString(eDataType, instanceValue);
-      case CaslPackage.WORLD_TYPE:
-        return convertWorldTypeToString(eDataType, instanceValue);
       case CaslPackage.RANDOM_TYPE:
         return convertRandomTypeToString(eDataType, instanceValue);
       default:
@@ -2203,28 +2198,6 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * @generated
    */
   public String convertSubSystemTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public WorldType createWorldTypeFromString(EDataType eDataType, String initialValue)
-  {
-    WorldType result = WorldType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertWorldTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Expression;
-import uofa.lbirdsey.castle.casl.WorldType;
+import uofa.lbirdsey.castle.casl.LayoutType;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public class CASL_Macro_DisplayImpl extends CASL_MacroImpl implements CASL_Macro
    * @generated
    * @ordered
    */
-  protected static final WorldType REPRESENTATION_TYPE_EDEFAULT = WorldType.GRID;
+  protected static final LayoutType REPRESENTATION_TYPE_EDEFAULT = LayoutType.GRID;
 
   /**
    * The cached value of the '{@link #getRepresentationType() <em>Representation Type</em>}' attribute.
@@ -57,7 +57,7 @@ public class CASL_Macro_DisplayImpl extends CASL_MacroImpl implements CASL_Macro
    * @generated
    * @ordered
    */
-  protected WorldType representationType = REPRESENTATION_TYPE_EDEFAULT;
+  protected LayoutType representationType = REPRESENTATION_TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getToProject() <em>To Project</em>}' containment reference list.
@@ -95,7 +95,7 @@ public class CASL_Macro_DisplayImpl extends CASL_MacroImpl implements CASL_Macro
    * <!-- end-user-doc -->
    * @generated
    */
-  public WorldType getRepresentationType()
+  public LayoutType getRepresentationType()
   {
     return representationType;
   }
@@ -105,9 +105,9 @@ public class CASL_Macro_DisplayImpl extends CASL_MacroImpl implements CASL_Macro
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRepresentationType(WorldType newRepresentationType)
+  public void setRepresentationType(LayoutType newRepresentationType)
   {
-    WorldType oldRepresentationType = representationType;
+    LayoutType oldRepresentationType = representationType;
     representationType = newRepresentationType == null ? REPRESENTATION_TYPE_EDEFAULT : newRepresentationType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_DISPLAY__REPRESENTATION_TYPE, oldRepresentationType, representationType));
@@ -173,7 +173,7 @@ public class CASL_Macro_DisplayImpl extends CASL_MacroImpl implements CASL_Macro
     switch (featureID)
     {
       case CaslPackage.CASL_MACRO_DISPLAY__REPRESENTATION_TYPE:
-        setRepresentationType((WorldType)newValue);
+        setRepresentationType((LayoutType)newValue);
         return;
       case CaslPackage.CASL_MACRO_DISPLAY__TO_PROJECT:
         getToProject().clear();

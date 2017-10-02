@@ -1420,7 +1420,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Display returns CASL_Macro_Display
 	 *
 	 * Constraint:
-	 *     (representationType=WorldType toProject+=Expression toProject+=Expression?)
+	 *     (representationType=LayoutType toProject+=Expression toProject+=Expression?)
 	 */
 	protected void sequence_CASL_Macro_Display(ISerializationContext context, CASL_Macro_Display semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1525,7 +1525,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Neighbours returns CASL_Macro_Neighbours
 	 *
 	 * Constraint:
-	 *     (worldType=WorldType searchType=[Entity|ID] dist=NUMBER)
+	 *     (worldType=LayoutType searchType=[Entity|ID] dist=NUMBER)
 	 */
 	protected void sequence_CASL_Macro_Neighbours(ISerializationContext context, CASL_Macro_Neighbours semanticObject) {
 		if (errorAcceptor != null) {
@@ -1537,7 +1537,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Neighbours_Dist()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0(), semanticObject.getWorldType());
+		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeLayoutTypeEnumRuleCall_0_0(), semanticObject.getWorldType());
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getSearchTypeEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_Neighbours_SearchType(), false));
 		feeder.accept(grammarAccess.getCASL_Macro_NeighboursAccess().getDistNUMBERTerminalRuleCall_4_0(), semanticObject.getDist());
 		feeder.finish();
@@ -2564,8 +2564,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=Expression? 
+	 *         ((elseexp+=Formula | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Expression?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

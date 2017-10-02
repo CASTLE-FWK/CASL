@@ -35,6 +35,10 @@ class SystemGeneration {
 		imports += "import stdSimLib.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
+		imports += "import castleComponents.CASSystem;\n"
+		imports += "import castleComponents.Output;\n"
+		imports += "import castleComponents.SimulationInfo;\n"
+		imports += "import dataGenerator.OutputToJSON_Mongo;\n"
 		
 		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
 		if (allImports !== null){
@@ -58,7 +62,7 @@ class SystemGeneration {
 	def String printLocal()'''
 «RepastSpecifics.generateSystemBuilder()»
 
-public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Entity> {
+public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements ContextBuilder<Entity> {
 	String name = "«theSystem.name»";
 	String description = "«theSystem.desc.replaceAll("\n","\"\n\t + \"")»";
 «««			/*****Ruleset*****/
@@ -123,9 +127,10 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 	def generateParameters(System sys){
 		var output = "//Fields\n"
 		output += "ArrayList<Parameter<?>> simulationParameters = new ArrayList<Parameter<?>>();\n"
-		output += "SimulationInfo simulationInfo;\n"
-		output += "Logger logger;\n"
-		output += "Output output;\n"
+//		output += "SimulationInfo simulationInfo;\n"
+//		output += "Logger logger;\n"
+//		output += "Output output;\n"
+//		output += "OutputToJSON_Mongo dbOut = null;\n"
 		output += "int stepsUntilTermination;\n"
 		for (field : sys.system_parameters.fields){
 			if (field instanceof Field){	
@@ -354,7 +359,7 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 			var fdt = ff.declaration as DataTypeDeclaration
 			if (fdt.initInclude !== null){
 				paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"
-				paramGetters += "\tsimulationParameters.add(new Parameter<"+HelperFunctions.getFieldType(ff)+">("+fdt.name+", \""+fdt.name+"\"));\n"
+				paramGetters += "\tsimulationParameters.add(new Parameter<"+HelperFunctions.javafy(HelperFunctions.getFieldType(ff))+">("+fdt.name+", \""+fdt.name+"\"));\n"
 			}
 		}
 		
@@ -394,14 +399,14 @@ public class «theSystem.name.replaceAll(" ","")» implements ContextBuilder<Ent
 		//Initialise Agents/Environments
 		//Initialize() & layouts are responsible for creating entities
 		str += "\t//Fill the simulationInfo\n"
-		str += "\tsimulationInfo = new SimulationInfo(name, description, sysName + \"-\" + Utilities.generateTimeStamp());\n"
+		str += "\tsimulationInfo = new SimulationInfo(name, description, name + \"-\" + Utilities.generateTimeStamp());\n"
 		str += "\t//Set up the outputter and logger\n"	
-		str += "\toutput = new Output();"
-		str += "\tlogger = new Logger(output);"
+		str += "\toutput = new Output();\n"
+		str += "\tlogger = new Logger(output, simulationInfo);\n"
 		str += "\t//Export information to Logger and/or Database\n"
 		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
 		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
-		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\");\n"
+		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\", name);\n"
 		
 		
 		//Set up the main System init stuff

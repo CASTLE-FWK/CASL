@@ -6964,7 +6964,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cWorldTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cWorldTypeWorldTypeEnumRuleCall_0_0 = (RuleCall)cWorldTypeAssignment_0.eContents().get(0);
+		private final RuleCall cWorldTypeLayoutTypeEnumRuleCall_0_0 = (RuleCall)cWorldTypeAssignment_0.eContents().get(0);
 		private final Keyword cGetNeighboursKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cSearchTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cSearchTypeEntityCrossReference_2_0 = (CrossReference)cSearchTypeAssignment_2.eContents().get(0);
@@ -6975,17 +6975,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//CASL_Macro_Neighbours:
-		//	worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
+		//	worldType=LayoutType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')'
+		//worldType=LayoutType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')'
 		public Group getGroup() { return cGroup; }
 		
-		//worldType=WorldType
+		//worldType=LayoutType
 		public Assignment getWorldTypeAssignment_0() { return cWorldTypeAssignment_0; }
 		
-		//WorldType
-		public RuleCall getWorldTypeWorldTypeEnumRuleCall_0_0() { return cWorldTypeWorldTypeEnumRuleCall_0_0; }
+		//LayoutType
+		public RuleCall getWorldTypeLayoutTypeEnumRuleCall_0_0() { return cWorldTypeLayoutTypeEnumRuleCall_0_0; }
 		
 		//'.GetNeighbours['
 		public Keyword getGetNeighboursKeyword_1() { return cGetNeighboursKeyword_1; }
@@ -7604,7 +7604,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDISPLAYKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRepresentationTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRepresentationTypeWorldTypeEnumRuleCall_2_0 = (RuleCall)cRepresentationTypeAssignment_2.eContents().get(0);
+		private final RuleCall cRepresentationTypeLayoutTypeEnumRuleCall_2_0 = (RuleCall)cRepresentationTypeAssignment_2.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cToProjectAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -7625,10 +7625,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		////It takes the representationType and then a list of layouts to project (they all have to be the same type as the repType?
 		////Solution:
 		//CASL_Macro_Display:
-		//	"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
+		//	"DISPLAY" '[' representationType=LayoutType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')'
+		//"DISPLAY" '[' representationType=LayoutType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"DISPLAY"
@@ -7637,11 +7637,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//representationType=WorldType
+		//representationType=LayoutType
 		public Assignment getRepresentationTypeAssignment_2() { return cRepresentationTypeAssignment_2; }
 		
-		//WorldType
-		public RuleCall getRepresentationTypeWorldTypeEnumRuleCall_2_0() { return cRepresentationTypeWorldTypeEnumRuleCall_2_0; }
+		//LayoutType
+		public RuleCall getRepresentationTypeLayoutTypeEnumRuleCall_2_0() { return cRepresentationTypeLayoutTypeEnumRuleCall_2_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
@@ -8649,81 +8649,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"SYSTEM"
 		public Keyword getSYSTEMSYSTEMKeyword_1_0() { return cSYSTEMSYSTEMKeyword_1_0; }
 	}
-	public class WorldTypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.WorldType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cGRIDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cGRIDGRIDKeyword_0_0 = (Keyword)cGRIDEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cTORUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cTORUSTORUSKeyword_1_0 = (Keyword)cTORUSEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cBOUNDEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cBOUNDBOUNDKeyword_2_0 = (Keyword)cBOUNDEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cGRAPHEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cGRAPHGRAPHKeyword_3_0 = (Keyword)cGRAPHEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cNETWORKEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cNETWORKNETWORKKeyword_4_0 = (Keyword)cNETWORKEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cGISEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cGISGISKeyword_5_0 = (Keyword)cGISEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cMESH3DEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cMESH3DMESH3DKeyword_6_0 = (Keyword)cMESH3DEnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cCONTINUOUSEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cCONTINUOUSCONTINUOUSKeyword_7_0 = (Keyword)cCONTINUOUSEnumLiteralDeclaration_7.eContents().get(0);
-		
-		//enum WorldType:
-		//	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS;
-		public EnumRule getRule() { return rule; }
-		
-		//GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//GRID
-		public EnumLiteralDeclaration getGRIDEnumLiteralDeclaration_0() { return cGRIDEnumLiteralDeclaration_0; }
-		
-		//"GRID"
-		public Keyword getGRIDGRIDKeyword_0_0() { return cGRIDGRIDKeyword_0_0; }
-		
-		//TORUS
-		public EnumLiteralDeclaration getTORUSEnumLiteralDeclaration_1() { return cTORUSEnumLiteralDeclaration_1; }
-		
-		//"TORUS"
-		public Keyword getTORUSTORUSKeyword_1_0() { return cTORUSTORUSKeyword_1_0; }
-		
-		//BOUND
-		public EnumLiteralDeclaration getBOUNDEnumLiteralDeclaration_2() { return cBOUNDEnumLiteralDeclaration_2; }
-		
-		//"BOUND"
-		public Keyword getBOUNDBOUNDKeyword_2_0() { return cBOUNDBOUNDKeyword_2_0; }
-		
-		//GRAPH
-		public EnumLiteralDeclaration getGRAPHEnumLiteralDeclaration_3() { return cGRAPHEnumLiteralDeclaration_3; }
-		
-		//"GRAPH"
-		public Keyword getGRAPHGRAPHKeyword_3_0() { return cGRAPHGRAPHKeyword_3_0; }
-		
-		//NETWORK
-		public EnumLiteralDeclaration getNETWORKEnumLiteralDeclaration_4() { return cNETWORKEnumLiteralDeclaration_4; }
-		
-		//"NETWORK"
-		public Keyword getNETWORKNETWORKKeyword_4_0() { return cNETWORKNETWORKKeyword_4_0; }
-		
-		//GIS
-		public EnumLiteralDeclaration getGISEnumLiteralDeclaration_5() { return cGISEnumLiteralDeclaration_5; }
-		
-		//"GIS"
-		public Keyword getGISGISKeyword_5_0() { return cGISGISKeyword_5_0; }
-		
-		//MESH3D
-		public EnumLiteralDeclaration getMESH3DEnumLiteralDeclaration_6() { return cMESH3DEnumLiteralDeclaration_6; }
-		
-		//"MESH3D"
-		public Keyword getMESH3DMESH3DKeyword_6_0() { return cMESH3DMESH3DKeyword_6_0; }
-		
-		//CONTINUOUS
-		public EnumLiteralDeclaration getCONTINUOUSEnumLiteralDeclaration_7() { return cCONTINUOUSEnumLiteralDeclaration_7; }
-		
-		//"CONTINUOUS"
-		public Keyword getCONTINUOUSCONTINUOUSKeyword_7_0() { return cCONTINUOUSCONTINUOUSKeyword_7_0; }
-	}
 	public class RandomTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.RandomType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -8896,7 +8821,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_VisualizeElements pCASL_Macro_Visualize;
 	private final CASL_Macro_DisplayElements pCASL_Macro_Display;
-	private final WorldTypeElements eWorldType;
 	private final RandomTypeElements eRandomType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
 	private final Raw_JavaElements pRaw_Java;
@@ -9048,7 +8972,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_Visualize = new CASL_Macro_VisualizeElements();
 		this.pCASL_Macro_Display = new CASL_Macro_DisplayElements();
-		this.eWorldType = new WorldTypeElements();
 		this.eRandomType = new RandomTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
 		this.pRaw_Java = new Raw_JavaElements();
@@ -10505,7 +10428,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_Neighbours:
-	//	worldType=WorldType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
+	//	worldType=LayoutType '.GetNeighbours[' searchType=[Entity] '](' dist=NUMBER ')';
 	public CASL_Macro_NeighboursElements getCASL_Macro_NeighboursAccess() {
 		return pCASL_Macro_Neighbours;
 	}
@@ -10654,23 +10577,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	////It takes the representationType and then a list of layouts to project (they all have to be the same type as the repType?
 	////Solution:
 	//CASL_Macro_Display:
-	//	"DISPLAY" '[' representationType=WorldType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
+	//	"DISPLAY" '[' representationType=LayoutType ']' '(' toProject+=Expression (',' toProject+=Expression)? ')';
 	public CASL_Macro_DisplayElements getCASL_Macro_DisplayAccess() {
 		return pCASL_Macro_Display;
 	}
 	
 	public ParserRule getCASL_Macro_DisplayRule() {
 		return getCASL_Macro_DisplayAccess().getRule();
-	}
-	
-	//enum WorldType:
-	//	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS;
-	public WorldTypeElements getWorldTypeAccess() {
-		return eWorldType;
-	}
-	
-	public EnumRule getWorldTypeRule() {
-		return getWorldTypeAccess().getRule();
 	}
 	
 	//enum RandomType:

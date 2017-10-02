@@ -3188,22 +3188,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule WorldType
-ruleWorldType
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getAlternatives()); }
-		(rule__WorldType__Alternatives)
-		{ after(grammarAccess.getWorldTypeAccess().getAlternatives()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Rule RandomType
 ruleRandomType
 	@init {
@@ -5191,63 +5175,6 @@ rule__SubSystemType__Alternatives
 		{ before(grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1()); }
 		('SYSTEM')
 		{ after(grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__WorldType__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0()); }
-		('GRID')
-		{ after(grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1()); }
-		('TORUS')
-		{ after(grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2()); }
-		('BOUND')
-		{ after(grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3()); }
-		('GRAPH')
-		{ after(grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4()); }
-		('NETWORK')
-		{ after(grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5()); }
-		('GIS')
-		{ after(grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6()); }
-		('MESH3D')
-		{ after(grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7()); }
-		('CONTINUOUS')
-		{ after(grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7()); }
 	)
 ;
 finally {
@@ -35411,9 +35338,9 @@ rule__CASL_Macro_Neighbours__WorldTypeAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0()); }
-		ruleWorldType
-		{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0()); }
+		{ before(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeLayoutTypeEnumRuleCall_0_0()); }
+		ruleLayoutType
+		{ after(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeLayoutTypeEnumRuleCall_0_0()); }
 	)
 ;
 finally {
@@ -35907,9 +35834,9 @@ rule__CASL_Macro_Display__RepresentationTypeAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeWorldTypeEnumRuleCall_2_0()); }
-		ruleWorldType
-		{ after(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeWorldTypeEnumRuleCall_2_0()); }
+		{ before(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeLayoutTypeEnumRuleCall_2_0()); }
+		ruleLayoutType
+		{ after(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeLayoutTypeEnumRuleCall_2_0()); }
 	)
 ;
 finally {

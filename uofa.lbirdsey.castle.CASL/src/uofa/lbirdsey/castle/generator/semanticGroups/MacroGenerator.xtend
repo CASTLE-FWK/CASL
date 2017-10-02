@@ -2,7 +2,6 @@ package uofa.lbirdsey.castle.generator.semanticGroups
 
 import uofa.lbirdsey.castle.casl.MacroCall
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours
-import uofa.lbirdsey.castle.casl.WorldType
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random
@@ -22,6 +21,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger
+import uofa.lbirdsey.castle.casl.LayoutType
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -30,7 +30,7 @@ class MacroGenerator {
 		if (macro instanceof CASL_Macro_Neighbours) {
 			output += "null;\n"
 			var ngh = (macro as CASL_Macro_Neighbours)
-			if (ngh.worldType == WorldType.GRID) {
+			if (ngh.worldType == LayoutType.GRID) {
 
 		
 			}
