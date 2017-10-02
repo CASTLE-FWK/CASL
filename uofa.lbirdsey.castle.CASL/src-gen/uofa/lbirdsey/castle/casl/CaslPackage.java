@@ -5511,16 +5511,6 @@ public interface CaslPackage extends EPackage
   int SUB_SYSTEM_TYPE = 141;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.WorldType <em>World Type</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.WorldType
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getWorldType()
-   * @generated
-   */
-  int WORLD_TYPE = 142;
-
-  /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5528,7 +5518,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getRandomType()
    * @generated
    */
-  int RANDOM_TYPE = 143;
+  int RANDOM_TYPE = 142;
 
 
   /**
@@ -10074,16 +10064,6 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EEnum getSubSystemType();
-
-  /**
-   * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.WorldType <em>World Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>World Type</em>'.
-   * @see uofa.lbirdsey.castle.casl.WorldType
-   * @generated
-   */
-  EEnum getWorldType();
 
   /**
    * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}'.

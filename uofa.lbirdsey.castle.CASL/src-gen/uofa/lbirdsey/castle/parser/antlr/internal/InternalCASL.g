@@ -10860,9 +10860,9 @@ ruleCASL_Macro_Neighbours returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeLayoutTypeEnumRuleCall_0_0());
 				}
-				lv_worldType_0_0=ruleWorldType
+				lv_worldType_0_0=ruleLayoutType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCASL_Macro_NeighboursRule());
@@ -10871,7 +10871,7 @@ ruleCASL_Macro_Neighbours returns [EObject current=null]
 						$current,
 						"worldType",
 						lv_worldType_0_0,
-						"uofa.lbirdsey.castle.CASL.WorldType");
+						"uofa.lbirdsey.castle.CASL.LayoutType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -11876,9 +11876,9 @@ ruleCASL_Macro_Display returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeWorldTypeEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeLayoutTypeEnumRuleCall_2_0());
 				}
-				lv_representationType_2_0=ruleWorldType
+				lv_representationType_2_0=ruleLayoutType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCASL_Macro_DisplayRule());
@@ -11887,7 +11887,7 @@ ruleCASL_Macro_Display returns [EObject current=null]
 						$current,
 						"representationType",
 						lv_representationType_2_0,
-						"uofa.lbirdsey.castle.CASL.WorldType");
+						"uofa.lbirdsey.castle.CASL.LayoutType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -13013,81 +13013,6 @@ ruleSubSystemType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1());
-			}
-		)
-	)
-;
-
-// Rule WorldType
-ruleWorldType returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='GRID'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='TORUS'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='BOUND'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2());
-			}
-		)
-		    |
-		(
-			enumLiteral_3='GRAPH'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3());
-			}
-		)
-		    |
-		(
-			enumLiteral_4='NETWORK'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4());
-			}
-		)
-		    |
-		(
-			enumLiteral_5='GIS'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5());
-			}
-		)
-		    |
-		(
-			enumLiteral_6='MESH3D'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6());
-			}
-		)
-		    |
-		(
-			enumLiteral_7='CONTINUOUS'
-			{
-				$current = grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_7, grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7());
 			}
 		)
 	)

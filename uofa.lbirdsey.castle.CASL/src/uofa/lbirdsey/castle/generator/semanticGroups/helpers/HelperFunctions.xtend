@@ -962,4 +962,20 @@ class HelperFunctions {
 		}
 		return importsToPrint;		
 	}
+	
+	/**
+	 * This turns primitives and common CASLisms into the correct Javaisms
+	 */
+	static def String javafy(String in){
+		switch (in){
+			case "int":
+				return "Integer"
+			case "string":
+				return "String"
+			case "float":
+				return "Float"
+			default:
+				return in
+		}
+	}
 }

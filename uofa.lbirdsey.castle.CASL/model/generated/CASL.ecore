@@ -539,7 +539,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro"/>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Neighbours" eSuperTypes="#//CASL_Macro">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldType" eType="#//WorldType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worldType" eType="#//LayoutType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="searchType" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dist" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
   </eClassifiers>
@@ -607,19 +607,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectionShape" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Display" eSuperTypes="#//CASL_Macro">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="representationType" eType="#//WorldType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="representationType" eType="#//LayoutType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toProject" upperBound="-1"
         eType="#//Expression" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="WorldType">
-    <eLiterals name="GRID" literal="GRID"/>
-    <eLiterals name="TORUS" value="1" literal="TORUS"/>
-    <eLiterals name="BOUND" value="2" literal="BOUND"/>
-    <eLiterals name="GRAPH" value="3" literal="GRAPH"/>
-    <eLiterals name="NETWORK" value="4" literal="NETWORK"/>
-    <eLiterals name="GIS" value="5" literal="GIS"/>
-    <eLiterals name="MESH3D" value="6" literal="MESH3D"/>
-    <eLiterals name="CONTINUOUS" value="7" literal="CONTINUOUS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RandomType">
     <eLiterals name="INT" literal="INT"/>

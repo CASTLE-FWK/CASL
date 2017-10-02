@@ -140,7 +140,7 @@ class EnvironmentGeneration {
 		}
 		
 		//Layout Parameter stuff
-		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes."+env.layoutType+");\n"
+		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes.REP_"+env.layoutType+");\n"
 		
 		output += "\n//Getters & Setters\n"
 		for (field : env.env_parameters.fields){

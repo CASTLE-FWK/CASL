@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CaslPackage;
 import uofa.lbirdsey.castle.casl.Entity;
-import uofa.lbirdsey.castle.casl.WorldType;
+import uofa.lbirdsey.castle.casl.LayoutType;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * @generated
    * @ordered
    */
-  protected static final WorldType WORLD_TYPE_EDEFAULT = WorldType.GRID;
+  protected static final LayoutType WORLD_TYPE_EDEFAULT = LayoutType.GRID;
 
   /**
    * The cached value of the '{@link #getWorldType() <em>World Type</em>}' attribute.
@@ -52,7 +52,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * @generated
    * @ordered
    */
-  protected WorldType worldType = WORLD_TYPE_EDEFAULT;
+  protected LayoutType worldType = WORLD_TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSearchType() <em>Search Type</em>}' reference.
@@ -110,7 +110,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
-  public WorldType getWorldType()
+  public LayoutType getWorldType()
   {
     return worldType;
   }
@@ -120,9 +120,9 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWorldType(WorldType newWorldType)
+  public void setWorldType(LayoutType newWorldType)
   {
-    WorldType oldWorldType = worldType;
+    LayoutType oldWorldType = worldType;
     worldType = newWorldType == null ? WORLD_TYPE_EDEFAULT : newWorldType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_NEIGHBOURS__WORLD_TYPE, oldWorldType, worldType));
@@ -226,7 +226,7 @@ public class CASL_Macro_NeighboursImpl extends CASL_MacroImpl implements CASL_Ma
     switch (featureID)
     {
       case CaslPackage.CASL_MACRO_NEIGHBOURS__WORLD_TYPE:
-        setWorldType((WorldType)newValue);
+        setWorldType((LayoutType)newValue);
         return;
       case CaslPackage.CASL_MACRO_NEIGHBOURS__SEARCH_TYPE:
         setSearchType((Entity)newValue);

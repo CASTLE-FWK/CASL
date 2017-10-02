@@ -8402,15 +8402,15 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     if ( (LA35_0==32) ) {
                         int LA35_1 = input.LA(2);
 
-                        if ( ((LA35_1>=75 && LA35_1<=79)) ) {
-                            alt35=2;
-                        }
-                        else if ( (LA35_1==RULE_ID) ) {
-                            int LA35_4 = input.LA(3);
+                        if ( (LA35_1==RULE_ID) ) {
+                            int LA35_3 = input.LA(3);
 
-                            if ( (LA35_4==32) ) {
+                            if ( (LA35_3==32) ) {
                                 alt35=1;
                             }
+                        }
+                        else if ( ((LA35_1>=75 && LA35_1<=79)) ) {
+                            alt35=2;
                         }
                     }
                     else if ( (LA35_0==53) ) {
@@ -17706,11 +17706,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                 {
                 int LA97_1 = input.LA(2);
 
-                if ( (LA97_1==111) ) {
-                    alt97=1;
-                }
-                else if ( (LA97_1==112) ) {
+                if ( (LA97_1==112) ) {
                     alt97=2;
+                }
+                else if ( (LA97_1==111) ) {
+                    alt97=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -18996,15 +18996,15 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     if ( (LA102_0==32) ) {
                         int LA102_1 = input.LA(2);
 
-                        if ( (LA102_1==RULE_ID) ) {
-                            int LA102_3 = input.LA(3);
+                        if ( ((LA102_1>=75 && LA102_1<=79)) ) {
+                            alt102=2;
+                        }
+                        else if ( (LA102_1==RULE_ID) ) {
+                            int LA102_4 = input.LA(3);
 
-                            if ( (LA102_3==32) ) {
+                            if ( (LA102_4==32) ) {
                                 alt102=1;
                             }
-                        }
-                        else if ( ((LA102_1>=75 && LA102_1<=79)) ) {
-                            alt102=2;
                         }
                     }
                     else if ( (LA102_0==53) ) {
@@ -28378,7 +28378,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Neighbours"
-    // InternalCASL.g:10852:1: ruleCASL_Macro_Neighbours returns [EObject current=null] : ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) ;
+    // InternalCASL.g:10852:1: ruleCASL_Macro_Neighbours returns [EObject current=null] : ( ( (lv_worldType_0_0= ruleLayoutType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) ;
     public final EObject ruleCASL_Macro_Neighbours() throws RecognitionException {
         EObject current = null;
 
@@ -28394,25 +28394,25 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:10858:2: ( ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) )
-            // InternalCASL.g:10859:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
+            // InternalCASL.g:10858:2: ( ( ( (lv_worldType_0_0= ruleLayoutType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' ) )
+            // InternalCASL.g:10859:2: ( ( (lv_worldType_0_0= ruleLayoutType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
             {
-            // InternalCASL.g:10859:2: ( ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
-            // InternalCASL.g:10860:3: ( (lv_worldType_0_0= ruleWorldType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')'
+            // InternalCASL.g:10859:2: ( ( (lv_worldType_0_0= ruleLayoutType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')' )
+            // InternalCASL.g:10860:3: ( (lv_worldType_0_0= ruleLayoutType ) ) otherlv_1= '.GetNeighbours[' ( (otherlv_2= RULE_ID ) ) otherlv_3= '](' ( (lv_dist_4_0= RULE_NUMBER ) ) otherlv_5= ')'
             {
-            // InternalCASL.g:10860:3: ( (lv_worldType_0_0= ruleWorldType ) )
-            // InternalCASL.g:10861:4: (lv_worldType_0_0= ruleWorldType )
+            // InternalCASL.g:10860:3: ( (lv_worldType_0_0= ruleLayoutType ) )
+            // InternalCASL.g:10861:4: (lv_worldType_0_0= ruleLayoutType )
             {
-            // InternalCASL.g:10861:4: (lv_worldType_0_0= ruleWorldType )
-            // InternalCASL.g:10862:5: lv_worldType_0_0= ruleWorldType
+            // InternalCASL.g:10861:4: (lv_worldType_0_0= ruleLayoutType )
+            // InternalCASL.g:10862:5: lv_worldType_0_0= ruleLayoutType
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeWorldTypeEnumRuleCall_0_0());
+              					newCompositeNode(grammarAccess.getCASL_Macro_NeighboursAccess().getWorldTypeLayoutTypeEnumRuleCall_0_0());
               				
             }
             pushFollow(FOLLOW_119);
-            lv_worldType_0_0=ruleWorldType();
+            lv_worldType_0_0=ruleLayoutType();
 
             state._fsp--;
             if (state.failed) return current;
@@ -28425,7 +28425,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               						current,
               						"worldType",
               						lv_worldType_0_0,
-              						"uofa.lbirdsey.castle.CASL.WorldType");
+              						"uofa.lbirdsey.castle.CASL.LayoutType");
               					afterParserOrEnumRuleCall();
               				
             }
@@ -30899,7 +30899,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_Display"
-    // InternalCASL.g:11860:1: ruleCASL_Macro_Display returns [EObject current=null] : (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleWorldType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' ) ;
+    // InternalCASL.g:11860:1: ruleCASL_Macro_Display returns [EObject current=null] : (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleLayoutType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' ) ;
     public final EObject ruleCASL_Macro_Display() throws RecognitionException {
         EObject current = null;
 
@@ -30920,11 +30920,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11866:2: ( (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleWorldType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' ) )
-            // InternalCASL.g:11867:2: (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleWorldType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' )
+            // InternalCASL.g:11866:2: ( (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleLayoutType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' ) )
+            // InternalCASL.g:11867:2: (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleLayoutType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' )
             {
-            // InternalCASL.g:11867:2: (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleWorldType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' )
-            // InternalCASL.g:11868:3: otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleWorldType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')'
+            // InternalCASL.g:11867:2: (otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleLayoutType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')' )
+            // InternalCASL.g:11868:3: otherlv_0= 'DISPLAY' otherlv_1= '[' ( (lv_representationType_2_0= ruleLayoutType ) ) otherlv_3= ']' otherlv_4= '(' ( (lv_toProject_5_0= ruleExpression ) ) (otherlv_6= ',' ( (lv_toProject_7_0= ruleExpression ) ) )? otherlv_8= ')'
             {
             otherlv_0=(Token)match(input,127,FOLLOW_48); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -30938,19 +30938,19 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_DisplayAccess().getLeftSquareBracketKeyword_1());
               		
             }
-            // InternalCASL.g:11876:3: ( (lv_representationType_2_0= ruleWorldType ) )
-            // InternalCASL.g:11877:4: (lv_representationType_2_0= ruleWorldType )
+            // InternalCASL.g:11876:3: ( (lv_representationType_2_0= ruleLayoutType ) )
+            // InternalCASL.g:11877:4: (lv_representationType_2_0= ruleLayoutType )
             {
-            // InternalCASL.g:11877:4: (lv_representationType_2_0= ruleWorldType )
-            // InternalCASL.g:11878:5: lv_representationType_2_0= ruleWorldType
+            // InternalCASL.g:11877:4: (lv_representationType_2_0= ruleLayoutType )
+            // InternalCASL.g:11878:5: lv_representationType_2_0= ruleLayoutType
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeWorldTypeEnumRuleCall_2_0());
+              					newCompositeNode(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeLayoutTypeEnumRuleCall_2_0());
               				
             }
             pushFollow(FOLLOW_88);
-            lv_representationType_2_0=ruleWorldType();
+            lv_representationType_2_0=ruleLayoutType();
 
             state._fsp--;
             if (state.failed) return current;
@@ -30963,7 +30963,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               						current,
               						"representationType",
               						lv_representationType_2_0,
-              						"uofa.lbirdsey.castle.CASL.WorldType");
+              						"uofa.lbirdsey.castle.CASL.LayoutType");
               					afterParserOrEnumRuleCall();
               				
             }
@@ -34659,257 +34659,8 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSubSystemType"
 
 
-    // $ANTLR start "ruleWorldType"
-    // InternalCASL.g:13022:1: ruleWorldType returns [Enumerator current=null] : ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) ;
-    public final Enumerator ruleWorldType() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-        Token enumLiteral_3=null;
-        Token enumLiteral_4=null;
-        Token enumLiteral_5=null;
-        Token enumLiteral_6=null;
-        Token enumLiteral_7=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCASL.g:13028:2: ( ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) ) )
-            // InternalCASL.g:13029:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
-            {
-            // InternalCASL.g:13029:2: ( (enumLiteral_0= 'GRID' ) | (enumLiteral_1= 'TORUS' ) | (enumLiteral_2= 'BOUND' ) | (enumLiteral_3= 'GRAPH' ) | (enumLiteral_4= 'NETWORK' ) | (enumLiteral_5= 'GIS' ) | (enumLiteral_6= 'MESH3D' ) | (enumLiteral_7= 'CONTINUOUS' ) )
-            int alt182=8;
-            switch ( input.LA(1) ) {
-            case 163:
-                {
-                alt182=1;
-                }
-                break;
-            case 164:
-                {
-                alt182=2;
-                }
-                break;
-            case 165:
-                {
-                alt182=3;
-                }
-                break;
-            case 166:
-                {
-                alt182=4;
-                }
-                break;
-            case 167:
-                {
-                alt182=5;
-                }
-                break;
-            case 168:
-                {
-                alt182=6;
-                }
-                break;
-            case 169:
-                {
-                alt182=7;
-                }
-                break;
-            case 170:
-                {
-                alt182=8;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 182, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt182) {
-                case 1 :
-                    // InternalCASL.g:13030:3: (enumLiteral_0= 'GRID' )
-                    {
-                    // InternalCASL.g:13030:3: (enumLiteral_0= 'GRID' )
-                    // InternalCASL.g:13031:4: enumLiteral_0= 'GRID'
-                    {
-                    enumLiteral_0=(Token)match(input,163,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_0, grammarAccess.getWorldTypeAccess().getGRIDEnumLiteralDeclaration_0());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCASL.g:13038:3: (enumLiteral_1= 'TORUS' )
-                    {
-                    // InternalCASL.g:13038:3: (enumLiteral_1= 'TORUS' )
-                    // InternalCASL.g:13039:4: enumLiteral_1= 'TORUS'
-                    {
-                    enumLiteral_1=(Token)match(input,164,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_1, grammarAccess.getWorldTypeAccess().getTORUSEnumLiteralDeclaration_1());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalCASL.g:13046:3: (enumLiteral_2= 'BOUND' )
-                    {
-                    // InternalCASL.g:13046:3: (enumLiteral_2= 'BOUND' )
-                    // InternalCASL.g:13047:4: enumLiteral_2= 'BOUND'
-                    {
-                    enumLiteral_2=(Token)match(input,165,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_2, grammarAccess.getWorldTypeAccess().getBOUNDEnumLiteralDeclaration_2());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalCASL.g:13054:3: (enumLiteral_3= 'GRAPH' )
-                    {
-                    // InternalCASL.g:13054:3: (enumLiteral_3= 'GRAPH' )
-                    // InternalCASL.g:13055:4: enumLiteral_3= 'GRAPH'
-                    {
-                    enumLiteral_3=(Token)match(input,166,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_3, grammarAccess.getWorldTypeAccess().getGRAPHEnumLiteralDeclaration_3());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalCASL.g:13062:3: (enumLiteral_4= 'NETWORK' )
-                    {
-                    // InternalCASL.g:13062:3: (enumLiteral_4= 'NETWORK' )
-                    // InternalCASL.g:13063:4: enumLiteral_4= 'NETWORK'
-                    {
-                    enumLiteral_4=(Token)match(input,167,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_4, grammarAccess.getWorldTypeAccess().getNETWORKEnumLiteralDeclaration_4());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalCASL.g:13070:3: (enumLiteral_5= 'GIS' )
-                    {
-                    // InternalCASL.g:13070:3: (enumLiteral_5= 'GIS' )
-                    // InternalCASL.g:13071:4: enumLiteral_5= 'GIS'
-                    {
-                    enumLiteral_5=(Token)match(input,168,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_5, grammarAccess.getWorldTypeAccess().getGISEnumLiteralDeclaration_5());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // InternalCASL.g:13078:3: (enumLiteral_6= 'MESH3D' )
-                    {
-                    // InternalCASL.g:13078:3: (enumLiteral_6= 'MESH3D' )
-                    // InternalCASL.g:13079:4: enumLiteral_6= 'MESH3D'
-                    {
-                    enumLiteral_6=(Token)match(input,169,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_6, grammarAccess.getWorldTypeAccess().getMESH3DEnumLiteralDeclaration_6());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 8 :
-                    // InternalCASL.g:13086:3: (enumLiteral_7= 'CONTINUOUS' )
-                    {
-                    // InternalCASL.g:13086:3: (enumLiteral_7= 'CONTINUOUS' )
-                    // InternalCASL.g:13087:4: enumLiteral_7= 'CONTINUOUS'
-                    {
-                    enumLiteral_7=(Token)match(input,170,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				current = grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_7, grammarAccess.getWorldTypeAccess().getCONTINUOUSEnumLiteralDeclaration_7());
-                      			
-                    }
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-
-              	leaveRule();
-
-            }
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleWorldType"
-
-
     // $ANTLR start "ruleRandomType"
-    // InternalCASL.g:13097:1: ruleRandomType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) ;
+    // InternalCASL.g:13022:1: ruleRandomType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) ;
     public final Enumerator ruleRandomType() throws RecognitionException {
         Enumerator current = null;
 
@@ -34922,46 +34673,46 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:13103:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) )
-            // InternalCASL.g:13104:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
+            // InternalCASL.g:13028:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) )
+            // InternalCASL.g:13029:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
             {
-            // InternalCASL.g:13104:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
-            int alt183=4;
+            // InternalCASL.g:13029:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
+            int alt182=4;
             switch ( input.LA(1) ) {
             case 181:
                 {
-                alt183=1;
+                alt182=1;
                 }
                 break;
             case 182:
                 {
-                alt183=2;
+                alt182=2;
                 }
                 break;
             case 183:
                 {
-                alt183=3;
+                alt182=3;
                 }
                 break;
             case 184:
                 {
-                alt183=4;
+                alt182=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 183, 0, input);
+                    new NoViableAltException("", 182, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt183) {
+            switch (alt182) {
                 case 1 :
-                    // InternalCASL.g:13105:3: (enumLiteral_0= 'INT' )
+                    // InternalCASL.g:13030:3: (enumLiteral_0= 'INT' )
                     {
-                    // InternalCASL.g:13105:3: (enumLiteral_0= 'INT' )
-                    // InternalCASL.g:13106:4: enumLiteral_0= 'INT'
+                    // InternalCASL.g:13030:3: (enumLiteral_0= 'INT' )
+                    // InternalCASL.g:13031:4: enumLiteral_0= 'INT'
                     {
                     enumLiteral_0=(Token)match(input,181,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -34977,10 +34728,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:13113:3: (enumLiteral_1= 'FLOAT' )
+                    // InternalCASL.g:13038:3: (enumLiteral_1= 'FLOAT' )
                     {
-                    // InternalCASL.g:13113:3: (enumLiteral_1= 'FLOAT' )
-                    // InternalCASL.g:13114:4: enumLiteral_1= 'FLOAT'
+                    // InternalCASL.g:13038:3: (enumLiteral_1= 'FLOAT' )
+                    // InternalCASL.g:13039:4: enumLiteral_1= 'FLOAT'
                     {
                     enumLiteral_1=(Token)match(input,182,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -34996,10 +34747,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:13121:3: (enumLiteral_2= 'BOOL' )
+                    // InternalCASL.g:13046:3: (enumLiteral_2= 'BOOL' )
                     {
-                    // InternalCASL.g:13121:3: (enumLiteral_2= 'BOOL' )
-                    // InternalCASL.g:13122:4: enumLiteral_2= 'BOOL'
+                    // InternalCASL.g:13046:3: (enumLiteral_2= 'BOOL' )
+                    // InternalCASL.g:13047:4: enumLiteral_2= 'BOOL'
                     {
                     enumLiteral_2=(Token)match(input,183,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -35015,10 +34766,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalCASL.g:13129:3: (enumLiteral_3= 'VECTOR2' )
+                    // InternalCASL.g:13054:3: (enumLiteral_3= 'VECTOR2' )
                     {
-                    // InternalCASL.g:13129:3: (enumLiteral_3= 'VECTOR2' )
-                    // InternalCASL.g:13130:4: enumLiteral_3= 'VECTOR2'
+                    // InternalCASL.g:13054:3: (enumLiteral_3= 'VECTOR2' )
+                    // InternalCASL.g:13055:4: enumLiteral_3= 'VECTOR2'
                     {
                     enumLiteral_3=(Token)match(input,184,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -35345,11 +35096,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
     }
     static final String dfa_13s = "\1\5\1\uffff\1\101\11\uffff";
     static final String dfa_14s = "\1\110\1\uffff\1\105\11\uffff";
-    static final String dfa_15s = "\1\uffff\1\1\1\uffff\1\4\1\5\1\6\1\10\1\12\1\11\1\2\1\7\1\3";
+    static final String dfa_15s = "\1\uffff\1\1\1\uffff\1\4\1\5\1\6\1\10\1\12\1\7\1\3\1\11\1\2";
     static final String[] dfa_16s = {
             "\1\2\71\uffff\1\1\1\3\2\uffff\1\7\2\uffff\1\6\1\4\1\5",
             "",
-            "\1\11\1\12\1\uffff\1\10\1\13",
+            "\1\13\1\10\1\uffff\1\12\1\11",
             "",
             "",
             "",

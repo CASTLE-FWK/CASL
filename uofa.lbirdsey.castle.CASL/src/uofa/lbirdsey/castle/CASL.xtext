@@ -783,7 +783,7 @@ CASL_Macro:
 ;
 
 CASL_Macro_Neighbours:
-	worldType = WorldType'.GetNeighbours['searchType = [Entity]']('dist = NUMBER')'
+	worldType = LayoutType'.GetNeighbours['searchType = [Entity]']('dist = NUMBER')'
 ;
 
 CASL_Macro_FilterAndFunction:
@@ -865,16 +865,8 @@ CASL_Macro_Visualize:
 
 //Solution:
 CASL_Macro_Display:
-	"DISPLAY" '['representationType = WorldType']''('toProject += Expression (','toProject += Expression)?  ')'
+	"DISPLAY" '['representationType = LayoutType']''('toProject += Expression (','toProject += Expression)?  ')'
 ;
-
-//How to initialise a proj
-//Use a macro that takes function names and parameters
-
-enum WorldType:
-	GRID | TORUS | BOUND | GRAPH | NETWORK | GIS | MESH3D | CONTINUOUS
-;
-
 
 enum RandomType:
 	INT | FLOAT | BOOL | VECTOR2
