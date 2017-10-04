@@ -142,12 +142,12 @@ class EnvironmentGeneration {
 		//Layout Parameter stuff
 		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes.REP_"+env.layoutType+");\n"
 		
-		output += "\n//Getters & Setters\n"
-		for (field : env.env_parameters.fields){
-			if (field instanceof Field){
-				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
-			}
-		}
+//		output += "\n//Getters & Setters\n"
+//		for (field : env.env_parameters.fields){
+//			if (field instanceof Field){
+//				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
+//			}
+//		}
 		return output;
 	}  
 	

@@ -43,7 +43,8 @@ class AgentGeneration {
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.Entity;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
-		imports += "import stdSimLib.*;\n"
+		//imports += "import stdSimLib.*;\n"
+		imports += "import castleComponents.objects.Vector2;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
@@ -168,12 +169,12 @@ class AgentGeneration {
 			} else if (field instanceof Concern){}			
 		}
 		
-		output += "\n//Getters & Setters\n"
-		for (field : a.agent_parameters.fields){
-			if (field instanceof Field){
-				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
-			}
-		}
+//		output += "\n//Getters & Setters\n"
+//		for (field : a.agent_parameters.fields){
+//			if (field instanceof Field){
+//				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
+//			}
+//		}
 		return output;
 	}  
 	

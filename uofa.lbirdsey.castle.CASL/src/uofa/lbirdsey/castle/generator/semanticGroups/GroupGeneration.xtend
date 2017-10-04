@@ -140,12 +140,12 @@ class GroupGeneration {
 		}
 		output += "private LayoutParameters layoutParameters = new LayoutParameters(RepresentationTypes.REP_"+grp.layoutType+");\n"
 		
-		output += "\n//Getters & Setters\n"
-		for (field : grp.group_parameters.fields){
-			if (field instanceof Field){
-				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
-			}
-		}
+//		output += "\n//Getters & Setters\n"
+//		for (field : grp.group_parameters.fields){
+//			if (field instanceof Field){
+//				output +=HelperFunctions.generateGettersSetters(field as Field)+"\n"
+//			}
+//		}
 		return output;
 	}  
 	def generateFunctions(Group grp){
