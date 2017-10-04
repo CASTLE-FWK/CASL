@@ -1472,6 +1472,10 @@ public class HelperFunctions {
     boolean _contains_1 = iC.contains("LayoutParameters");
     if (_contains_1) {
       return output;
+    } else {
+      if ((((iC.endsWith("Continuous;") || iC.endsWith("Grid;")) || iC.endsWith("string;")) || iC.endsWith("Vector2"))) {
+        return output;
+      }
     }
     if (((iC.startsWith("agents.") || iC.startsWith("groups.")) || iC.startsWith("environments."))) {
       String _output = output;

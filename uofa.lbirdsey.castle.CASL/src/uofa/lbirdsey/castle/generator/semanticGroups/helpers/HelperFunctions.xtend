@@ -700,6 +700,8 @@ class HelperFunctions {
 		}
 		if (iC.contains("LayoutParameters")) {
 			return output
+		} else if (iC.endsWith("Continuous;") || iC.endsWith("Grid;") || iC.endsWith("string;") || iC.endsWith("Vector2")){
+			return output;
 		}
 
 		if (iC.startsWith("agents.") || iC.startsWith("groups.") || iC.startsWith("environments.")) {
@@ -954,6 +956,10 @@ class HelperFunctions {
 				var str = parseTypesAsString(iC, sysRoot);
 				var String[] splt = str.split(";");
 				for (String s : splt){
+					//Check if suffix is a reserved word
+//					String suffix = 
+					
+					
 					if (s.length() > 0){
 						importsToPrint.add(s+";");						
 					}	
