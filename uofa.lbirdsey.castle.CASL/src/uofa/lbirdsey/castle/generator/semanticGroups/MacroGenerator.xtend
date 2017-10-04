@@ -167,7 +167,7 @@ class MacroGenerator {
 		} else if (Helpers.isANumber(counterAsString)){
 			output += "int limit = (int)" + counterName + LINE_END
 			output += "for (int i = 0; i < limit; i++) { " + NL
-			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID("+entityName+"))"+LINE_END
+			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
 			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
