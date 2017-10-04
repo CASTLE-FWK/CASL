@@ -406,7 +406,10 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\t//Export information to Logger and/or Database\n"
 		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
 		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
-		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\", name);\n"
+		
+		//Removed until we get MongoDB back up and running
+		str += "//\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\", name);\n"
+		
 		
 		
 		//Set up the main System init stuff
