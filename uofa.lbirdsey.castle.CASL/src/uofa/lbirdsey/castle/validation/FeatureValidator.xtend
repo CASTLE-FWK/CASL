@@ -49,20 +49,29 @@ class FeatureValidator extends AbstractCASLValidator{
 		
 		
 		//Check that the behavior is doing an interaction or not based on the BehaviorType
+		
+		var containsInteraction = false;
+		var containsBehavior = false;
 		for (EObject bb : behaviorBody){
 			//Do the infection type test
 			if (bb instanceof FeatureCallExp){
 				var beh = (bb as FeatureCallExp).func.fc;
-				if (beh instanceof InteractionFeatureCall && behaviorType == BehaviorType.SELF){
+				if (beh instanceof InteractionFeatureCall){
 					//If contains an interaction trigger and is set to self, warn/error					
-					error(fn.name+" contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION", 
-						CaslPackage::eINSTANCE.behavior_Name
-					)			
-				} else if (!(beh instanceof InteractionFeatureCall) && (behaviorType == BehaviorType.AFFECT)){
+					containsInteraction = true;			
+				} else if (!(beh instanceof InteractionFeatureCall)){
 					//If does not contains an interaction trigger and is set to self, warn/error
-					error(fn.name+" is set to AFFECT but has no INTERACTION.", CaslPackage::eINSTANCE.behavior_Name)			
+					containsBehavior = true;
 				}			
 			} 
+		}
+		
+		if (containsInteraction && behaviorType == BehaviorType.SELF && !containsBehavior){
+			error(fn.name+" contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION", 
+				CaslPackage::eINSTANCE.behavior_Name
+			)	
+		} else if (!containsInteraction && behaviorType == BehaviorType.AFFECT && containsBehavior){
+			error(fn.name+" is set to AFFECT but has no INTERACTION, consider changing type to SELF.", CaslPackage::eINSTANCE.behavior_Name)		
 		}
 	}
 

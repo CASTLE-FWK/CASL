@@ -52,21 +52,30 @@ public class FeatureValidator extends AbstractCASLValidator {
         }
       }
     }
+    boolean containsInteraction = false;
+    boolean containsBehavior = false;
     for (final EObject bb : behaviorBody) {
       if ((bb instanceof FeatureCallExp)) {
         EObject beh = ((FeatureCallExp) bb).getFunc().getFc();
-        if (((beh instanceof InteractionFeatureCall) && Objects.equal(behaviorType, BehaviorType.SELF))) {
-          String _name_2 = fn.getName();
-          String _plus_4 = (_name_2 + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION");
-          this.error(_plus_4, 
-            CaslPackage.eINSTANCE.getBehavior_Name());
+        if ((beh instanceof InteractionFeatureCall)) {
+          containsInteraction = true;
         } else {
-          if (((!(beh instanceof InteractionFeatureCall)) && Objects.equal(behaviorType, BehaviorType.AFFECT))) {
-            String _name_3 = fn.getName();
-            String _plus_5 = (_name_3 + " is set to AFFECT but has no INTERACTION.");
-            this.error(_plus_5, CaslPackage.eINSTANCE.getBehavior_Name());
+          if ((!(beh instanceof InteractionFeatureCall))) {
+            containsBehavior = true;
           }
         }
+      }
+    }
+    if (((containsInteraction && Objects.equal(behaviorType, BehaviorType.SELF)) && (!containsBehavior))) {
+      String _name_2 = fn.getName();
+      String _plus_4 = (_name_2 + " contains an Interaction but Behavior Type is set to SELF. Change to AFFECT or remove the INTERACTION");
+      this.error(_plus_4, 
+        CaslPackage.eINSTANCE.getBehavior_Name());
+    } else {
+      if ((((!containsInteraction) && Objects.equal(behaviorType, BehaviorType.AFFECT)) && containsBehavior)) {
+        String _name_3 = fn.getName();
+        String _plus_5 = (_name_3 + " is set to AFFECT but has no INTERACTION, consider changing type to SELF.");
+        this.error(_plus_5, CaslPackage.eINSTANCE.getBehavior_Name());
       }
     }
   }
