@@ -52,19 +52,19 @@ class MacroGenerator {
 				if (mac.high === null) {
 					output += "RandomGen.generateRandomRangeInteger(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "RandomGen.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
+					output += "RandomGen.generateRandomRangeInteger("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+")"
 				}
 				
 			} else if (mac.type == RandomType.FLOAT) {
 				if (mac.high === null) {
 					output += "RandomGen.generateRandomRangeDouble(0,"+Printers.printExpression(mac.low)+");"
 				} else {
-					output += "RandomGen.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
+					output += "RandomGen.generateRandomRangeDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+")"
 				}
 			} else if (mac.type == RandomType.BOOL){
 				output += "RandomGen.generateBiasedCoinFlip("+Printers.printExpression(mac.low)+")"
 			} else if (mac.type == RandomType.VECTOR2){
-				output += "RandomGen.randomiseVectorDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+");"
+				output += "RandomGen.randomiseVectorDouble("+Printers.printExpression(mac.low)+","+Printers.printExpression(mac.high)+")"
 			}
 		} else if (macro instanceof CASL_Macro_ForEach) {
 			var mac = (macro as CASL_Macro_ForEach)
