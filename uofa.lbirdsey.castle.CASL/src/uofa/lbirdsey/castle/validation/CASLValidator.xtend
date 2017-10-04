@@ -18,6 +18,9 @@ import uofa.lbirdsey.castle.casl.Group
 import uofa.lbirdsey.castle.casl.System
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants
 import uofa.lbirdsey.castle.generator.semanticGroups.helpers.HelperFunctions
+import uofa.lbirdsey.castle.casl.Casl
+import castleComponents.SemanticGroup
+import java.util.HashSet
 
 /**
  * This class contains custom validation rules. 
@@ -41,7 +44,7 @@ public class CASLValidator extends AbstractCASLValidator {
 		var sgActive = sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE;
 		if (sgActive){
 			//Count number of Groups defined
-			
+			//TODO
 		}
 	}
 	
@@ -118,8 +121,40 @@ public class CASLValidator extends AbstractCASLValidator {
 		
 	}
 	
+	@Check
+	def checkForDuplicateNamedEntities(Casl c){
+		var HashSet<String> allEntities = newHashSet();
+		var List<Agent> allAgents = c.agents;
+		var List<Environment> allEnvs = c.environments;
+		var List<Group> allGrps = c.groups
+		
+		for (Agent a : allAgents){
+			if (!allEntities.add(a.name)){
+				error("The AGENT "+a.name+" has a taken name, please remove or rename.", CaslPackage::eINSTANCE.casl_Agents);
+			}
+		}
+		
+		for (Environment e : allEnvs){
+			if (!allEntities.add(e.name)){
+				error("The ENVIRONMENT "+e.name+" has a taken name, please remove or rename.", CaslPackage::eINSTANCE.casl_Environments);
+			}
+		}
+		
+		for (Group g : allGrps){
+			if (!allEntities.add(g.name)){
+				error("The GROUP "+g.name+" has a taken name, please remove or rename.", CaslPackage::eINSTANCE.casl_Groups);
+			}
+		}
+			
+	}
+	//Check that the system has an actual name
+	@Check
+	def ensureSystemHasANonZeroName(System s){
+		if (s.name.length <= 0){
+			error("Please give the SYSTEM a name.", CaslPackage::eINSTANCE.system_Name)
+		}
+	}
 	
-
 	
 	/*****Environment Checking *****/
 }
