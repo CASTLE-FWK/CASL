@@ -44,7 +44,7 @@ class AgentGeneration {
 		imports += "import castleComponents.Entity;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		//imports += "import stdSimLib.*;\n"
-		imports += "import castleComponents.objects.Vector2;\n"
+		imports += "import castleComponents.objects.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"

@@ -55,7 +55,7 @@ class EnvironmentGeneration {
 		var imports = "//Automated Environment Import Generation\n import castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
-		imports += "import stdSimLib.*;\n"
+		imports += "import castleComponents.objects.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import castleComponents.Entity;\n import castleComponents.objects.Vector2;\n"
