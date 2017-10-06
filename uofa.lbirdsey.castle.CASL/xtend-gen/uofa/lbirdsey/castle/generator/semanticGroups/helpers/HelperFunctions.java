@@ -278,7 +278,6 @@ public class HelperFunctions {
             boolean _tripleNotEquals_3 = (_fec != null);
             if (_tripleNotEquals_3) {
               FeatureCall featCall = sce.getFec();
-              InputOutput.<FeatureCall>println(sce.getFec());
               output = FeatureCallGenerator.inferFeatureCallType(featCall);
             }
           }
@@ -1464,6 +1463,7 @@ public class HelperFunctions {
   
   public static String parseTypesAsString(final String iC, final String systemRoot) {
     String output = "";
+    InputOutput.<String>println(iC);
     boolean _contains = iC.contains("List");
     if (_contains) {
       output = "import java.util.List;";
@@ -1473,7 +1473,8 @@ public class HelperFunctions {
     if (_contains_1) {
       return output;
     } else {
-      if ((((iC.endsWith("Continuous;") || iC.endsWith("Grid;")) || iC.endsWith("string;")) || iC.endsWith("Vector2"))) {
+      if ((((iC.endsWith("Continuous") || iC.endsWith("Grid")) || iC.endsWith("string")) || iC.endsWith("Vector2"))) {
+        InputOutput.<String>print((("LAYOUT FOUND: " + iC) + "\n"));
         return output;
       }
     }
@@ -1496,11 +1497,16 @@ public class HelperFunctions {
         boolean _contains_2 = iC.contains("<");
         if (_contains_2) {
           int typeBegin = iC.indexOf("<");
-          String _output_3 = output;
-          String _substring = iC.substring(0, typeBegin);
-          String _plus = ("import castleComponents.objects." + _substring);
-          String _plus_1 = (_plus + ";");
-          output = (_output_3 + _plus_1);
+          String paramType = iC.substring(0, typeBegin);
+          boolean _checkForReservedLayoutWords = HelperFunctions.checkForReservedLayoutWords(paramType);
+          boolean _not = (!_checkForReservedLayoutWords);
+          if (_not) {
+            String _output_3 = output;
+            String _substring = iC.substring(0, typeBegin);
+            String _plus = ("import castleComponents.objects." + _substring);
+            String _plus_1 = (_plus + ";");
+            output = (_output_3 + _plus_1);
+          }
           int typeEnd = iC.indexOf(">");
           String _output_4 = output;
           String _parseTypesAsString = HelperFunctions.parseTypesAsString(HelperFunctions.locateType(iC.substring((typeBegin + 1), typeEnd)), systemRoot);
@@ -1526,6 +1532,14 @@ public class HelperFunctions {
       }
     }
     return output;
+  }
+  
+  public static boolean checkForReservedLayoutWords(final String str) {
+    return (((((str.compareToIgnoreCase("continuous") == 0) || 
+      (str.compareToIgnoreCase("grid") == 0)) || 
+      (str.compareToIgnoreCase("network") == 0)) || 
+      (str.compareToIgnoreCase("map2d") == 0)) || 
+      (str.compareToIgnoreCase("torus") == 0));
   }
   
   public static String parseTypesAsType(final EObject iC, final String systemRoot) {
@@ -1867,7 +1881,6 @@ public class HelperFunctions {
               String _plus_15 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_5);
               returnPrint = (_returnPrint_7 + _plus_15);
             } else {
-              InputOutput.<String>println(("FL: " + finalLine));
             }
           }
         }

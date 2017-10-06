@@ -153,7 +153,7 @@ class HelperFunctions {
 					}
 				} else if (sce.fec !== null) {
 					var featCall = sce.fec
-					println(sce.fec)				
+//					println(sce.fec)				
 					output = FeatureCallGenerator.inferFeatureCallType(featCall);
 				}
 			} else if (expr instanceof NumberLiteral)
@@ -692,6 +692,7 @@ class HelperFunctions {
 	// Order of precedence is super important here...
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
+		println(iC);
 		// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
 		if (iC.contains("List")) {
 			// Ignore
@@ -700,7 +701,8 @@ class HelperFunctions {
 		}
 		if (iC.contains("LayoutParameters")) {
 			return output
-		} else if (iC.endsWith("Continuous;") || iC.endsWith("Grid;") || iC.endsWith("string;") || iC.endsWith("Vector2")){
+		} else if (iC.endsWith("Continuous") || iC.endsWith("Grid") || iC.endsWith("string") || iC.endsWith("Vector2")){
+			print("LAYOUT FOUND: "+iC+"\n");
 			return output;
 		}
 
@@ -715,7 +717,10 @@ class HelperFunctions {
 			}
 		} else if (iC.contains("<")) {
 			var typeBegin = iC.indexOf('<');
-			output += "import castleComponents.objects." + iC.substring(0, typeBegin) + ";"
+			var String paramType =  iC.substring(0, typeBegin)
+			if (!checkForReservedLayoutWords(paramType)) {
+				output += "import castleComponents.objects." + iC.substring(0, typeBegin) + ";"
+			}
 			var typeEnd = iC.indexOf('>');
 			output +=
 				HelperFunctions.parseTypesAsString(locateType(iC.substring(typeBegin + 1, typeEnd)),
@@ -728,6 +733,14 @@ class HelperFunctions {
 			output += "import castleComponents.objects." + iC + ";";
 		}
 		return output;
+	}
+	
+	static def boolean checkForReservedLayoutWords(String str){
+		return (str.compareToIgnoreCase("continuous") == 0 ||
+			str.compareToIgnoreCase("grid") == 0 ||
+			str.compareToIgnoreCase("network") == 0 ||
+			str.compareToIgnoreCase("map2d") == 0 ||
+			str.compareToIgnoreCase("torus") == 0);
 	}
 
 	// TODO: HERE 22/06/16
@@ -927,7 +940,7 @@ class HelperFunctions {
 				output += TAB + printFormula(saf) + NL;
 				returnPrint += TAB + RETURN_ + "this." + saf.sym.name;
 			} else {
-				println("FL: " + finalLine)
+//				println("FL: " + finalLine)
 			}
 
 			output += TAB + returnPrint + ';' + NL
