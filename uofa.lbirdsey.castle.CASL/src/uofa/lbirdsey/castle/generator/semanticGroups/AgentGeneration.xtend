@@ -352,9 +352,9 @@ class AgentGeneration {
 				if (steps == 1){
 //					actionPhase.add(behavior.name+"(this);")
 				} else {
-					var interAsFunc = "TO_DO (generation behaviour repeat > 1 step"; //TODO: This...thing
-					var tObj = "Trigger "+behavior.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+a.name.toFirstUpper+".class);"
-					triggeredActions.add(tObj)	
+//					var interAsFunc = "TO_DO (generation behaviour repeat > 1 step"; //TODO: This...thing
+//					var tObj = "Trigger "+behavior.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+a.name.toFirstUpper+".class);"
+//					triggeredActions.add(tObj)	
 				}
 			}
 		}

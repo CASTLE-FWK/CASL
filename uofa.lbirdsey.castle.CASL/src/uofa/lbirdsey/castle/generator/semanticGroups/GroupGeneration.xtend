@@ -403,13 +403,13 @@ class GroupGeneration {
 				//This should be pushed to the cleanup phase in the same step. Is already handled
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
 				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
-				if (steps == 1){
-					actionPhase.add(behavior.name+"(this);")
-				} else {
-					var interAsFunc = "TO_DO (generation behaviour repeat > 1 step"; //TODO: This...thing
-					var tObj = "Trigger "+behavior.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+g.name.toFirstUpper+".class);"
-					triggeredActions.add(tObj)	
-				}
+//				if (steps == 1){
+//					actionPhase.add(behavior.name+"(this);")
+//				} else {
+//					var interAsFunc = "TO_DO (generation behaviour repeat > 1 step"; //TODO: This...thing
+//					var tObj = "Trigger "+behavior.name+"_trigger = new Trigger("+steps+","+interAsFunc+", true, "+g.name.toFirstUpper+".class);"
+//					triggeredActions.add(tObj)	
+//				}
 			}
 		}
 		/*
