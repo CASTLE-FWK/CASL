@@ -32,7 +32,7 @@ class SystemGeneration {
 		//Add in the imports
 		var imports = "//Automated System Import Generation\nimport castleComponents.Environment;\n";
 		imports += "import castleComponents.SemanticGroup;\n"
-//		imports += "import stdSimLib.*;\n"
+		imports += "import stdSimLib.*;\n"
 		imports += "import castleComponents.objects.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"

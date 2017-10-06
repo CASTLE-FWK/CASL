@@ -49,6 +49,7 @@ class GroupGeneration {
 		imports += "import castleComponents.Entity;\n"
 		imports += "import castleComponents.representations.LayoutParameters;\n"
 		imports += "import castleComponents.objects.*;\n"
+		imports += "import stdSimLib.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import repast.simphony.context.Context;\n"
