@@ -692,17 +692,19 @@ class HelperFunctions {
 	// Order of precedence is super important here...
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
-		println(iC);
+//		println(iC);
 		// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
 		if (iC.contains("List")) {
 			// Ignore
 			output = "import java.util.List;"
 			return output;
+		} 
+		if (iC.contains("string")){
+			return output;
 		}
 		if (iC.contains("LayoutParameters")) {
 			return output
 		} else if (iC.endsWith("Continuous") || iC.endsWith("Grid") || iC.endsWith("string") || iC.endsWith("Vector2")){
-			print("LAYOUT FOUND: "+iC+"\n");
 			return output;
 		}
 
@@ -730,7 +732,9 @@ class HelperFunctions {
 		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))) {
 			output = "";
 		} else if (iC.length() > 0) {
-			output += "import castleComponents.objects." + iC + ";";
+			if (!checkForReservedLayoutWords(iC)) {
+				output += "import castleComponents.objects." + iC + ";";
+			}
 		}
 		return output;
 	}

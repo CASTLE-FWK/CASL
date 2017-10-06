@@ -6,7 +6,6 @@ import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -1463,18 +1462,20 @@ public class HelperFunctions {
   
   public static String parseTypesAsString(final String iC, final String systemRoot) {
     String output = "";
-    InputOutput.<String>println(iC);
     boolean _contains = iC.contains("List");
     if (_contains) {
       output = "import java.util.List;";
       return output;
     }
-    boolean _contains_1 = iC.contains("LayoutParameters");
+    boolean _contains_1 = iC.contains("string");
     if (_contains_1) {
+      return output;
+    }
+    boolean _contains_2 = iC.contains("LayoutParameters");
+    if (_contains_2) {
       return output;
     } else {
       if ((((iC.endsWith("Continuous") || iC.endsWith("Grid")) || iC.endsWith("string")) || iC.endsWith("Vector2"))) {
-        InputOutput.<String>print((("LAYOUT FOUND: " + iC) + "\n"));
         return output;
       }
     }
@@ -1494,8 +1495,8 @@ public class HelperFunctions {
           output = (_output_2 + (((("import " + systemRoot) + ".objects.") + object) + ";"));
         }
       } else {
-        boolean _contains_2 = iC.contains("<");
-        if (_contains_2) {
+        boolean _contains_3 = iC.contains("<");
+        if (_contains_3) {
           int typeBegin = iC.indexOf("<");
           String paramType = iC.substring(0, typeBegin);
           boolean _checkForReservedLayoutWords = HelperFunctions.checkForReservedLayoutWords(paramType);
@@ -1523,8 +1524,12 @@ public class HelperFunctions {
               int _length = iC.length();
               boolean _greaterThan = (_length > 0);
               if (_greaterThan) {
-                String _output_6 = output;
-                output = (_output_6 + (("import castleComponents.objects." + iC) + ";"));
+                boolean _checkForReservedLayoutWords_1 = HelperFunctions.checkForReservedLayoutWords(iC);
+                boolean _not_1 = (!_checkForReservedLayoutWords_1);
+                if (_not_1) {
+                  String _output_6 = output;
+                  output = (_output_6 + (("import castleComponents.objects." + iC) + ";"));
+                }
               }
             }
           }
