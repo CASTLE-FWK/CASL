@@ -937,11 +937,11 @@ class HelperFunctions {
 //				}
 			} else if (finalLine instanceof SelfAssignedFormula) {
 				var saf = finalLine as SelfAssignedFormula;
-				output += TAB + printSelfAssignedFormula(saf) + NL;
+				output += TAB + printSelfAssignedFormula(saf) + ';'+NL;
 				returnPrint += TAB + RETURN_ + "this." + saf.ref.name;
 			} else if (finalLine instanceof Formula) {
 				var saf = finalLine as Formula;
-				output += TAB + printFormula(saf) + NL;
+				output += TAB + printFormula(saf) + ';' + NL;
 				returnPrint += TAB + RETURN_ + "this." + saf.sym.name;
 			} else {
 //				println("FL: " + finalLine)

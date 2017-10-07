@@ -1867,24 +1867,26 @@ public class HelperFunctions {
             String _output_2 = output;
             String _printSelfAssignedFormula = HelperFunctions.printSelfAssignedFormula(saf);
             String _plus_10 = (Constants.TAB + _printSelfAssignedFormula);
-            String _plus_11 = (_plus_10 + Constants.NL);
-            output = (_output_2 + _plus_11);
+            String _plus_11 = (_plus_10 + ";");
+            String _plus_12 = (_plus_11 + Constants.NL);
+            output = (_output_2 + _plus_12);
             String _returnPrint_6 = returnPrint;
             String _name_4 = saf.getRef().getName();
-            String _plus_12 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_4);
-            returnPrint = (_returnPrint_6 + _plus_12);
+            String _plus_13 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_4);
+            returnPrint = (_returnPrint_6 + _plus_13);
           } else {
             if ((finalLine instanceof Formula)) {
               Formula saf_1 = ((Formula) finalLine);
               String _output_3 = output;
               String _printFormula = HelperFunctions.printFormula(saf_1);
-              String _plus_13 = (Constants.TAB + _printFormula);
-              String _plus_14 = (_plus_13 + Constants.NL);
-              output = (_output_3 + _plus_14);
+              String _plus_14 = (Constants.TAB + _printFormula);
+              String _plus_15 = (_plus_14 + ";");
+              String _plus_16 = (_plus_15 + Constants.NL);
+              output = (_output_3 + _plus_16);
               String _returnPrint_7 = returnPrint;
               String _name_5 = saf_1.getSym().getName();
-              String _plus_15 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_5);
-              returnPrint = (_returnPrint_7 + _plus_15);
+              String _plus_17 = (((Constants.TAB + Constants.RETURN_) + "this.") + _name_5);
+              returnPrint = (_returnPrint_7 + _plus_17);
             } else {
             }
           }
