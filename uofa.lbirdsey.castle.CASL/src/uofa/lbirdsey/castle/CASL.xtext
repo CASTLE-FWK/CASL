@@ -807,7 +807,7 @@ CASL_Macro_Print:
 ;
 
 CASL_Macro_InitLogger:
-	"LOGGER("mute = BooleanValue ',' toConsole = BooleanValue','toFile = BooleanValue (','filePath = Expression)?')'
+	"LOGGER("mute = BooleanValue ',' toConsole = BooleanValue','toFile = BooleanValue','infoToConsole = BooleanValue','infoToFile = BooleanValue ',' infoToDB = BooleanValue (','filePath = Expression)?')'
 ;
 
 CASL_Macro_Log:

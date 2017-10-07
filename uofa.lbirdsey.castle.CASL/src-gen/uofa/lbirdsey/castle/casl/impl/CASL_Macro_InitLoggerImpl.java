@@ -26,6 +26,9 @@ import uofa.lbirdsey.castle.casl.Expression;
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isMute <em>Mute</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isToConsole <em>To Console</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isToFile <em>To File</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isInfoToConsole <em>Info To Console</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isInfoToFile <em>Info To File</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#isInfoToDB <em>Info To DB</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_InitLoggerImpl#getFilePath <em>File Path</em>}</li>
  * </ul>
  *
@@ -92,6 +95,66 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
    * @ordered
    */
   protected boolean toFile = TO_FILE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isInfoToConsole() <em>Info To Console</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToConsole()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean INFO_TO_CONSOLE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInfoToConsole() <em>Info To Console</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToConsole()
+   * @generated
+   * @ordered
+   */
+  protected boolean infoToConsole = INFO_TO_CONSOLE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isInfoToFile() <em>Info To File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToFile()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean INFO_TO_FILE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInfoToFile() <em>Info To File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToFile()
+   * @generated
+   * @ordered
+   */
+  protected boolean infoToFile = INFO_TO_FILE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isInfoToDB() <em>Info To DB</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToDB()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean INFO_TO_DB_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInfoToDB() <em>Info To DB</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInfoToDB()
+   * @generated
+   * @ordered
+   */
+  protected boolean infoToDB = INFO_TO_DB_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getFilePath() <em>File Path</em>}' containment reference.
@@ -198,6 +261,75 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isInfoToConsole()
+  {
+    return infoToConsole;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInfoToConsole(boolean newInfoToConsole)
+  {
+    boolean oldInfoToConsole = infoToConsole;
+    infoToConsole = newInfoToConsole;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE, oldInfoToConsole, infoToConsole));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isInfoToFile()
+  {
+    return infoToFile;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInfoToFile(boolean newInfoToFile)
+  {
+    boolean oldInfoToFile = infoToFile;
+    infoToFile = newInfoToFile;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_FILE, oldInfoToFile, infoToFile));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isInfoToDB()
+  {
+    return infoToDB;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInfoToDB(boolean newInfoToDB)
+  {
+    boolean oldInfoToDB = infoToDB;
+    infoToDB = newInfoToDB;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_DB, oldInfoToDB, infoToDB));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expression getFilePath()
   {
     return filePath;
@@ -273,6 +405,12 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
         return isToConsole();
       case CaslPackage.CASL_MACRO_INIT_LOGGER__TO_FILE:
         return isToFile();
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE:
+        return isInfoToConsole();
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_FILE:
+        return isInfoToFile();
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_DB:
+        return isInfoToDB();
       case CaslPackage.CASL_MACRO_INIT_LOGGER__FILE_PATH:
         return getFilePath();
     }
@@ -297,6 +435,15 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
         return;
       case CaslPackage.CASL_MACRO_INIT_LOGGER__TO_FILE:
         setToFile((Boolean)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE:
+        setInfoToConsole((Boolean)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_FILE:
+        setInfoToFile((Boolean)newValue);
+        return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_DB:
+        setInfoToDB((Boolean)newValue);
         return;
       case CaslPackage.CASL_MACRO_INIT_LOGGER__FILE_PATH:
         setFilePath((Expression)newValue);
@@ -324,6 +471,15 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
       case CaslPackage.CASL_MACRO_INIT_LOGGER__TO_FILE:
         setToFile(TO_FILE_EDEFAULT);
         return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE:
+        setInfoToConsole(INFO_TO_CONSOLE_EDEFAULT);
+        return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_FILE:
+        setInfoToFile(INFO_TO_FILE_EDEFAULT);
+        return;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_DB:
+        setInfoToDB(INFO_TO_DB_EDEFAULT);
+        return;
       case CaslPackage.CASL_MACRO_INIT_LOGGER__FILE_PATH:
         setFilePath((Expression)null);
         return;
@@ -347,6 +503,12 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
         return toConsole != TO_CONSOLE_EDEFAULT;
       case CaslPackage.CASL_MACRO_INIT_LOGGER__TO_FILE:
         return toFile != TO_FILE_EDEFAULT;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE:
+        return infoToConsole != INFO_TO_CONSOLE_EDEFAULT;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_FILE:
+        return infoToFile != INFO_TO_FILE_EDEFAULT;
+      case CaslPackage.CASL_MACRO_INIT_LOGGER__INFO_TO_DB:
+        return infoToDB != INFO_TO_DB_EDEFAULT;
       case CaslPackage.CASL_MACRO_INIT_LOGGER__FILE_PATH:
         return filePath != null;
     }
@@ -370,6 +532,12 @@ public class CASL_Macro_InitLoggerImpl extends CASL_MacroImpl implements CASL_Ma
     result.append(toConsole);
     result.append(", toFile: ");
     result.append(toFile);
+    result.append(", infoToConsole: ");
+    result.append(infoToConsole);
+    result.append(", infoToFile: ");
+    result.append(infoToFile);
+    result.append(", infoToDB: ");
+    result.append(infoToDB);
     result.append(')');
     return result.toString();
   }

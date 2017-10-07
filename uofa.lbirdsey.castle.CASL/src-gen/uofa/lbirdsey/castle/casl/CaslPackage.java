@@ -3655,13 +3655,40 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_INIT_LOGGER__TO_FILE = CASL_MACRO_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Info To Console</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_INIT_LOGGER__INFO_TO_CONSOLE = CASL_MACRO_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Info To File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_INIT_LOGGER__INFO_TO_FILE = CASL_MACRO_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Info To DB</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_INIT_LOGGER__INFO_TO_DB = CASL_MACRO_FEATURE_COUNT + 5;
+
+  /**
    * The feature id for the '<em><b>File Path</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_INIT_LOGGER__FILE_PATH = CASL_MACRO_FEATURE_COUNT + 3;
+  int CASL_MACRO_INIT_LOGGER__FILE_PATH = CASL_MACRO_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>CASL Macro Init Logger</em>' class.
@@ -3670,7 +3697,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_INIT_LOGGER_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 4;
+  int CASL_MACRO_INIT_LOGGER_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_LogImpl <em>CASL Macro Log</em>}' class.
@@ -8602,6 +8629,39 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EAttribute getCASL_Macro_InitLogger_ToFile();
+
+  /**
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToConsole <em>Info To Console</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Info To Console</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToConsole()
+   * @see #getCASL_Macro_InitLogger()
+   * @generated
+   */
+  EAttribute getCASL_Macro_InitLogger_InfoToConsole();
+
+  /**
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToFile <em>Info To File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Info To File</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToFile()
+   * @see #getCASL_Macro_InitLogger()
+   * @generated
+   */
+  EAttribute getCASL_Macro_InitLogger_InfoToFile();
+
+  /**
+   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToDB <em>Info To DB</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Info To DB</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToDB()
+   * @see #getCASL_Macro_InitLogger()
+   * @generated
+   */
+  EAttribute getCASL_Macro_InitLogger_InfoToDB();
 
   /**
    * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#getFilePath <em>File Path</em>}'.

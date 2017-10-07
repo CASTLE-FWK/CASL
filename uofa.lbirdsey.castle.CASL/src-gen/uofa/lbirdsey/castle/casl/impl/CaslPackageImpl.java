@@ -4332,9 +4332,39 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCASL_Macro_InitLogger_InfoToConsole()
+  {
+        return (EAttribute)getCASL_Macro_InitLogger().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCASL_Macro_InitLogger_InfoToFile()
+  {
+        return (EAttribute)getCASL_Macro_InitLogger().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCASL_Macro_InitLogger_InfoToDB()
+  {
+        return (EAttribute)getCASL_Macro_InitLogger().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getCASL_Macro_InitLogger_FilePath()
   {
-        return (EReference)getCASL_Macro_InitLogger().getEStructuralFeatures().get(3);
+        return (EReference)getCASL_Macro_InitLogger().getEStructuralFeatures().get(6);
   }
 
   /**

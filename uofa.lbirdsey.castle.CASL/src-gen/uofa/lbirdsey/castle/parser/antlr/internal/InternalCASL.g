@@ -11357,17 +11357,86 @@ ruleCASL_Macro_InitLogger returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_6());
+		}
 		(
-			otherlv_6=','
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToConsoleBooleanValueParserRuleCall_7_0());
+				}
+				lv_infoToConsole_7_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"infoToConsole",
+						lv_infoToConsole_7_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8=','
+		{
+			newLeafNode(otherlv_8, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_8());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToFileBooleanValueParserRuleCall_9_0());
+				}
+				lv_infoToFile_9_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"infoToFile",
+						lv_infoToFile_9_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_10=','
+		{
+			newLeafNode(otherlv_10, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToDBBooleanValueParserRuleCall_11_0());
+				}
+				lv_infoToDB_11_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
+					}
+					set(
+						$current,
+						"infoToDB",
+						lv_infoToDB_11_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_12=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_12, grammarAccess.getCASL_Macro_InitLoggerAccess().getCommaKeyword_12_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathExpressionParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathExpressionParserRuleCall_12_1_0());
 					}
-					lv_filePath_7_0=ruleExpression
+					lv_filePath_13_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCASL_Macro_InitLoggerRule());
@@ -11375,16 +11444,16 @@ ruleCASL_Macro_InitLogger returns [EObject current=null]
 						set(
 							$current,
 							"filePath",
-							lv_filePath_7_0,
+							lv_filePath_13_0,
 							"uofa.lbirdsey.castle.CASL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_8=')'
+		otherlv_14=')'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getCASL_Macro_InitLoggerAccess().getRightParenthesisKeyword_7());
+			newLeafNode(otherlv_14, grammarAccess.getCASL_Macro_InitLoggerAccess().getRightParenthesisKeyword_13());
 		}
 	)
 ;

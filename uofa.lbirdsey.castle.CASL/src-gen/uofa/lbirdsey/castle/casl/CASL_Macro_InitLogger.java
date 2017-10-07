@@ -16,6 +16,9 @@ package uofa.lbirdsey.castle.casl;
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isMute <em>Mute</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isToConsole <em>To Console</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isToFile <em>To File</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToConsole <em>Info To Console</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToFile <em>Info To File</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToDB <em>Info To DB</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#getFilePath <em>File Path</em>}</li>
  * </ul>
  *
@@ -102,6 +105,84 @@ public interface CASL_Macro_InitLogger extends CASL_Macro
    * @generated
    */
   void setToFile(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Info To Console</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Info To Console</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Info To Console</em>' attribute.
+   * @see #setInfoToConsole(boolean)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_InitLogger_InfoToConsole()
+   * @model
+   * @generated
+   */
+  boolean isInfoToConsole();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToConsole <em>Info To Console</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Info To Console</em>' attribute.
+   * @see #isInfoToConsole()
+   * @generated
+   */
+  void setInfoToConsole(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Info To File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Info To File</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Info To File</em>' attribute.
+   * @see #setInfoToFile(boolean)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_InitLogger_InfoToFile()
+   * @model
+   * @generated
+   */
+  boolean isInfoToFile();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToFile <em>Info To File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Info To File</em>' attribute.
+   * @see #isInfoToFile()
+   * @generated
+   */
+  void setInfoToFile(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Info To DB</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Info To DB</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Info To DB</em>' attribute.
+   * @see #setInfoToDB(boolean)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_InitLogger_InfoToDB()
+   * @model
+   * @generated
+   */
+  boolean isInfoToDB();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger#isInfoToDB <em>Info To DB</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Info To DB</em>' attribute.
+   * @see #isInfoToDB()
+   * @generated
+   */
+  void setInfoToDB(boolean value);
 
   /**
    * Returns the value of the '<em><b>File Path</b></em>' containment reference.

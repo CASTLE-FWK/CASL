@@ -1480,7 +1480,15 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_InitLogger returns CASL_Macro_InitLogger
 	 *
 	 * Constraint:
-	 *     (mute=BooleanValue toConsole=BooleanValue toFile=BooleanValue filePath=Expression?)
+	 *     (
+	 *         mute=BooleanValue 
+	 *         toConsole=BooleanValue 
+	 *         toFile=BooleanValue 
+	 *         infoToConsole=BooleanValue 
+	 *         infoToFile=BooleanValue 
+	 *         infoToDB=BooleanValue 
+	 *         filePath=Expression?
+	 *     )
 	 */
 	protected void sequence_CASL_Macro_InitLogger(ISerializationContext context, CASL_Macro_InitLogger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2564,8 +2572,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Field? 
-	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
+	 *         elseexp+=Expression? 
+	 *         ((elseexp+=Formula | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Expression?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

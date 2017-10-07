@@ -303,7 +303,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_ForEachAccess().getGroup(), "rule__CASL_Macro_ForEach__Group__0");
 					put(grammarAccess.getCASL_Macro_PrintAccess().getGroup(), "rule__CASL_Macro_Print__Group__0");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getGroup(), "rule__CASL_Macro_InitLogger__Group__0");
-					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getGroup_6(), "rule__CASL_Macro_InitLogger__Group_6__0");
+					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getGroup_12(), "rule__CASL_Macro_InitLogger__Group_12__0");
 					put(grammarAccess.getCASL_Macro_LogAccess().getGroup(), "rule__CASL_Macro_Log__Group__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup(), "rule__CASL_Macro_MetricSwitch__Group__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup_3(), "rule__CASL_Macro_MetricSwitch__Group_3__0");
@@ -686,7 +686,10 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getMuteAssignment_1(), "rule__CASL_Macro_InitLogger__MuteAssignment_1");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getToConsoleAssignment_3(), "rule__CASL_Macro_InitLogger__ToConsoleAssignment_3");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getToFileAssignment_5(), "rule__CASL_Macro_InitLogger__ToFileAssignment_5");
-					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathAssignment_6_1(), "rule__CASL_Macro_InitLogger__FilePathAssignment_6_1");
+					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToConsoleAssignment_7(), "rule__CASL_Macro_InitLogger__InfoToConsoleAssignment_7");
+					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToFileAssignment_9(), "rule__CASL_Macro_InitLogger__InfoToFileAssignment_9");
+					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToDBAssignment_11(), "rule__CASL_Macro_InitLogger__InfoToDBAssignment_11");
+					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathAssignment_12_1(), "rule__CASL_Macro_InitLogger__FilePathAssignment_12_1");
 					put(grammarAccess.getCASL_Macro_LogAccess().getStrAssignment_1(), "rule__CASL_Macro_Log__StrAssignment_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwAssignment_1(), "rule__CASL_Macro_MetricSwitch__SwAssignment_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesAssignment_3_1(), "rule__CASL_Macro_MetricSwitch__ManualUpdatesAssignment_3_1");

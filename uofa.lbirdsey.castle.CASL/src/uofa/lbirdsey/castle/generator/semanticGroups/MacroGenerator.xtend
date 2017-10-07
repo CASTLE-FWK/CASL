@@ -85,17 +85,24 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_InitLogger){
 			val il = (macro as CASL_Macro_InitLogger);
 			val isMuted = (il.mute == true)
-			val isToConsole = (il.toConsole == true);
-			val isToFile = (il.toFile == true);
+			val isToConsole = (il.toConsole == true)
+			val isToFile = (il.toFile == true)
+			val infoIsToFile = (il.infoToFile == true)
+			val infoIsToConsole = (il.infoToConsole == true)
+			val infoIsToDB = (il.infoToDB == true)
 			var filePath = "\"\"";
 			if (isToFile){
 				filePath = Printers.printExpression(il.filePath) as String;
 			}
-			output += "logger.setup("+isMuted+','+isToConsole+','+isToFile+','+filePath+", name)"
-			
-			
-			
-			
+			output += "output.setup("+
+				isMuted+
+				','+isToConsole+
+				','+isToFile+
+				','+filePath+
+				","+infoIsToFile+
+				","+infoIsToConsole+
+				","+infoIsToDB+
+				")"
 		} else if (macro instanceof CASL_Macro_MetricSwitch){
 			var mac = (macro as CASL_Macro_MetricSwitch);
 			val isEnabled = (mac.sw == true)

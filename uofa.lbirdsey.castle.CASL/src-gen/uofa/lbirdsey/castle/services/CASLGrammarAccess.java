@@ -7246,17 +7246,28 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cToFileAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cToFileBooleanValueParserRuleCall_5_0 = (RuleCall)cToFileAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cFilePathAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cFilePathExpressionParserRuleCall_6_1_0 = (RuleCall)cFilePathAssignment_6_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cInfoToConsoleAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cInfoToConsoleBooleanValueParserRuleCall_7_0 = (RuleCall)cInfoToConsoleAssignment_7.eContents().get(0);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cInfoToFileAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cInfoToFileBooleanValueParserRuleCall_9_0 = (RuleCall)cInfoToFileAssignment_9.eContents().get(0);
+		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cInfoToDBAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cInfoToDBBooleanValueParserRuleCall_11_0 = (RuleCall)cInfoToDBAssignment_11.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cCommaKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cFilePathAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cFilePathExpressionParserRuleCall_12_1_0 = (RuleCall)cFilePathAssignment_12_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//CASL_Macro_InitLogger:
-		//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')';
+		//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue ',' infoToConsole=BooleanValue ','
+		//	infoToFile=BooleanValue ',' infoToDB=BooleanValue (',' filePath=Expression)? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')'
+		//"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue ',' infoToConsole=BooleanValue ','
+		//infoToFile=BooleanValue ',' infoToDB=BooleanValue (',' filePath=Expression)? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//"LOGGER("
@@ -7286,20 +7297,47 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//BooleanValue
 		public RuleCall getToFileBooleanValueParserRuleCall_5_0() { return cToFileBooleanValueParserRuleCall_5_0; }
 		
-		//(',' filePath=Expression)?
-		public Group getGroup_6() { return cGroup_6; }
+		//','
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		
+		//infoToConsole=BooleanValue
+		public Assignment getInfoToConsoleAssignment_7() { return cInfoToConsoleAssignment_7; }
+		
+		//BooleanValue
+		public RuleCall getInfoToConsoleBooleanValueParserRuleCall_7_0() { return cInfoToConsoleBooleanValueParserRuleCall_7_0; }
 		
 		//','
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		
+		//infoToFile=BooleanValue
+		public Assignment getInfoToFileAssignment_9() { return cInfoToFileAssignment_9; }
+		
+		//BooleanValue
+		public RuleCall getInfoToFileBooleanValueParserRuleCall_9_0() { return cInfoToFileBooleanValueParserRuleCall_9_0; }
+		
+		//','
+		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
+		
+		//infoToDB=BooleanValue
+		public Assignment getInfoToDBAssignment_11() { return cInfoToDBAssignment_11; }
+		
+		//BooleanValue
+		public RuleCall getInfoToDBBooleanValueParserRuleCall_11_0() { return cInfoToDBBooleanValueParserRuleCall_11_0; }
+		
+		//(',' filePath=Expression)?
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//','
+		public Keyword getCommaKeyword_12_0() { return cCommaKeyword_12_0; }
 		
 		//filePath=Expression
-		public Assignment getFilePathAssignment_6_1() { return cFilePathAssignment_6_1; }
+		public Assignment getFilePathAssignment_12_1() { return cFilePathAssignment_12_1; }
 		
 		//Expression
-		public RuleCall getFilePathExpressionParserRuleCall_6_1_0() { return cFilePathExpressionParserRuleCall_6_1_0; }
+		public RuleCall getFilePathExpressionParserRuleCall_12_1_0() { return cFilePathExpressionParserRuleCall_12_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
 	}
 	public class CASL_Macro_LogElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Log");
@@ -10488,7 +10526,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_InitLogger:
-	//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue (',' filePath=Expression)? ')';
+	//	"LOGGER(" mute=BooleanValue ',' toConsole=BooleanValue ',' toFile=BooleanValue ',' infoToConsole=BooleanValue ','
+	//	infoToFile=BooleanValue ',' infoToDB=BooleanValue (',' filePath=Expression)? ')';
 	public CASL_Macro_InitLoggerElements getCASL_Macro_InitLoggerAccess() {
 		return pCASL_Macro_InitLogger;
 	}
