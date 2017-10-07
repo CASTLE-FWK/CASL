@@ -183,7 +183,7 @@ class MacroGenerator {
 			
 			
 			
-			output += TAB + "}\n}\n"
+			output += TAB + "}\n"
 		} 
 		
 		//Add the entities to the layout parameter class as well
