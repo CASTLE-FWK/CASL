@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CaslPackage;
-import uofa.lbirdsey.castle.casl.Expression;
+import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.Symbol;
 
 /**
@@ -50,7 +50,7 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
    * @generated
    * @ordered
    */
-  protected Expression cond;
+  protected FeatureCall cond;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCond()
+  public FeatureCall getCond()
   {
     return cond;
   }
@@ -131,9 +131,9 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCond(Expression newCond, NotificationChain msgs)
+  public NotificationChain basicSetCond(FeatureCall newCond, NotificationChain msgs)
   {
-    Expression oldCond = cond;
+    FeatureCall oldCond = cond;
     cond = newCond;
     if (eNotificationRequired())
     {
@@ -148,7 +148,7 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCond(Expression newCond)
+  public void setCond(FeatureCall newCond)
   {
     if (newCond != cond)
     {
@@ -213,7 +213,7 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
         setSym((Symbol)newValue);
         return;
       case CaslPackage.CASL_MACRO_COUNT_CONDITIONS__COND:
-        setCond((Expression)newValue);
+        setCond((FeatureCall)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,7 +233,7 @@ public class CASL_Macro_CountConditionsImpl extends CASL_MacroImpl implements CA
         setSym((Symbol)null);
         return;
       case CaslPackage.CASL_MACRO_COUNT_CONDITIONS__COND:
-        setCond((Expression)null);
+        setCond((FeatureCall)null);
         return;
     }
     super.eUnset(featureID);

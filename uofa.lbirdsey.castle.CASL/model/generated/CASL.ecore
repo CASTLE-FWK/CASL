@@ -551,7 +551,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_CountConditions" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sym" eType="#//Symbol"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//FeatureCall"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Random" eSuperTypes="#//CASL_Macro">

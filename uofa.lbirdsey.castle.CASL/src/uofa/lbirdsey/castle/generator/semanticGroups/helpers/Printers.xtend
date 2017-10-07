@@ -44,6 +44,7 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 
 import java.text.SimpleDateFormat
 import java.util.Date
+import uofa.lbirdsey.castle.casl.FeatureCall
 
 class Printers {
 
@@ -205,8 +206,13 @@ class Printers {
 				return "\"" + (expr as StringLiteral).value + "\""
 			else if (expr instanceof TypeRef)
 				return (expr as TypeRef).type.name
-			else if (expr instanceof FeatureCallExp)
+			else if (expr instanceof FeatureCallExp){
+//				println("IM A FEATURE")
 				return FeatureCallGenerator.printFeatureCall((expr as FeatureCallExp).func)
+			}
+			else if (expr instanceof FeatureCall){
+				return FeatureCallGenerator.printFeatureCall(expr as FeatureCall)				
+			}
 			else if (expr instanceof IfStatement)
 				return printIfStatement((expr as IfStatement))
 			else if (expr instanceof BooleanExpression)

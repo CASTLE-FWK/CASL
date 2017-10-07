@@ -791,7 +791,7 @@ CASL_Macro_FilterAndFunction:
 ;
 
 CASL_Macro_CountConditions:
-	"COUNT["sym=[Symbol]"]("cond = Expression")"
+	"COUNT["sym=[Symbol]"]("cond = FeatureCall")"
 ;
 
 CASL_Macro_Random:

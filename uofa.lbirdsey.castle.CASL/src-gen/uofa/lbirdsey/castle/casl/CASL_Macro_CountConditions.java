@@ -58,12 +58,12 @@ public interface CASL_Macro_CountConditions extends CASL_Macro
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cond</em>' containment reference.
-   * @see #setCond(Expression)
+   * @see #setCond(FeatureCall)
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_CountConditions_Cond()
    * @model containment="true"
    * @generated
    */
-  Expression getCond();
+  FeatureCall getCond();
 
   /**
    * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions#getCond <em>Cond</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface CASL_Macro_CountConditions extends CASL_Macro
    * @see #getCond()
    * @generated
    */
-  void setCond(Expression value);
+  void setCond(FeatureCall value);
 
 } // CASL_Macro_CountConditions

@@ -88268,7 +88268,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:26937:1: ( rule__CASL_Macro_CountConditions__Group__2__Impl rule__CASL_Macro_CountConditions__Group__3 )
             // InternalCASL.g:26938:2: rule__CASL_Macro_CountConditions__Group__2__Impl rule__CASL_Macro_CountConditions__Group__3
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_96);
             rule__CASL_Macro_CountConditions__Group__2__Impl();
 
             state._fsp--;
@@ -113754,28 +113754,28 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CASL_Macro_CountConditions__CondAssignment_3"
-    // InternalCASL.g:35452:1: rule__CASL_Macro_CountConditions__CondAssignment_3 : ( ruleExpression ) ;
+    // InternalCASL.g:35452:1: rule__CASL_Macro_CountConditions__CondAssignment_3 : ( ruleFeatureCall ) ;
     public final void rule__CASL_Macro_CountConditions__CondAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:35456:1: ( ( ruleExpression ) )
-            // InternalCASL.g:35457:2: ( ruleExpression )
+            // InternalCASL.g:35456:1: ( ( ruleFeatureCall ) )
+            // InternalCASL.g:35457:2: ( ruleFeatureCall )
             {
-            // InternalCASL.g:35457:2: ( ruleExpression )
-            // InternalCASL.g:35458:3: ruleExpression
+            // InternalCASL.g:35457:2: ( ruleFeatureCall )
+            // InternalCASL.g:35458:3: ruleFeatureCall
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0()); 
+               before(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleExpression();
+            ruleFeatureCall();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0()); 
+               after(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0()); 
             }
 
             }

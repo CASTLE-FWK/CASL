@@ -28768,7 +28768,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCASL_Macro_CountConditions"
-    // InternalCASL.g:11014:1: ruleCASL_Macro_CountConditions returns [EObject current=null] : (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalCASL.g:11014:1: ruleCASL_Macro_CountConditions returns [EObject current=null] : (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleFeatureCall ) ) otherlv_4= ')' ) ;
     public final EObject ruleCASL_Macro_CountConditions() throws RecognitionException {
         EObject current = null;
 
@@ -28783,11 +28783,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:11020:2: ( (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalCASL.g:11021:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalCASL.g:11020:2: ( (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleFeatureCall ) ) otherlv_4= ')' ) )
+            // InternalCASL.g:11021:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleFeatureCall ) ) otherlv_4= ')' )
             {
-            // InternalCASL.g:11021:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalCASL.g:11022:3: otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalCASL.g:11021:2: (otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleFeatureCall ) ) otherlv_4= ')' )
+            // InternalCASL.g:11022:3: otherlv_0= 'COUNT[' ( (otherlv_1= RULE_ID ) ) otherlv_2= '](' ( (lv_cond_3_0= ruleFeatureCall ) ) otherlv_4= ')'
             {
             otherlv_0=(Token)match(input,116,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -28820,25 +28820,25 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,41,FOLLOW_54); if (state.failed) return current;
+            otherlv_2=(Token)match(input,41,FOLLOW_111); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_CountConditionsAccess().getRightSquareBracketLeftParenthesisKeyword_2());
               		
             }
-            // InternalCASL.g:11043:3: ( (lv_cond_3_0= ruleExpression ) )
-            // InternalCASL.g:11044:4: (lv_cond_3_0= ruleExpression )
+            // InternalCASL.g:11043:3: ( (lv_cond_3_0= ruleFeatureCall ) )
+            // InternalCASL.g:11044:4: (lv_cond_3_0= ruleFeatureCall )
             {
-            // InternalCASL.g:11044:4: (lv_cond_3_0= ruleExpression )
-            // InternalCASL.g:11045:5: lv_cond_3_0= ruleExpression
+            // InternalCASL.g:11044:4: (lv_cond_3_0= ruleFeatureCall )
+            // InternalCASL.g:11045:5: lv_cond_3_0= ruleFeatureCall
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0());
+              					newCompositeNode(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0());
               				
             }
             pushFollow(FOLLOW_55);
-            lv_cond_3_0=ruleExpression();
+            lv_cond_3_0=ruleFeatureCall();
 
             state._fsp--;
             if (state.failed) return current;
@@ -28851,7 +28851,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
               						current,
               						"cond",
               						lv_cond_3_0,
-              						"uofa.lbirdsey.castle.CASL.Expression");
+              						"uofa.lbirdsey.castle.CASL.FeatureCall");
               					afterParserOrEnumRuleCall();
               				
             }

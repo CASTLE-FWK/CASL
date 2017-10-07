@@ -11043,9 +11043,9 @@ ruleCASL_Macro_CountConditions returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0());
 				}
-				lv_cond_3_0=ruleExpression
+				lv_cond_3_0=ruleFeatureCall
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCASL_Macro_CountConditionsRule());
@@ -11054,7 +11054,7 @@ ruleCASL_Macro_CountConditions returns [EObject current=null]
 						$current,
 						"cond",
 						lv_cond_3_0,
-						"uofa.lbirdsey.castle.CASL.Expression");
+						"uofa.lbirdsey.castle.CASL.FeatureCall");
 					afterParserOrEnumRuleCall();
 				}
 			)

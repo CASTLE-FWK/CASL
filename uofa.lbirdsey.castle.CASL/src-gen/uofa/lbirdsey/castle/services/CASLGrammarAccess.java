@@ -7071,14 +7071,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSymSymbolIDTerminalRuleCall_1_0_1 = (RuleCall)cSymSymbolCrossReference_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cCondAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCondExpressionParserRuleCall_3_0 = (RuleCall)cCondAssignment_3.eContents().get(0);
+		private final RuleCall cCondFeatureCallParserRuleCall_3_0 = (RuleCall)cCondAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//CASL_Macro_CountConditions:
-		//	"COUNT[" sym=[Symbol] "](" cond=Expression ")";
+		//	"COUNT[" sym=[Symbol] "](" cond=FeatureCall ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"COUNT[" sym=[Symbol] "](" cond=Expression ")"
+		//"COUNT[" sym=[Symbol] "](" cond=FeatureCall ")"
 		public Group getGroup() { return cGroup; }
 		
 		//"COUNT["
@@ -7096,11 +7096,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"]("
 		public Keyword getRightSquareBracketLeftParenthesisKeyword_2() { return cRightSquareBracketLeftParenthesisKeyword_2; }
 		
-		//cond=Expression
+		//cond=FeatureCall
 		public Assignment getCondAssignment_3() { return cCondAssignment_3; }
 		
-		//Expression
-		public RuleCall getCondExpressionParserRuleCall_3_0() { return cCondExpressionParserRuleCall_3_0; }
+		//FeatureCall
+		public RuleCall getCondFeatureCallParserRuleCall_3_0() { return cCondFeatureCallParserRuleCall_3_0; }
 		
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -10448,7 +10448,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_CountConditions:
-	//	"COUNT[" sym=[Symbol] "](" cond=Expression ")";
+	//	"COUNT[" sym=[Symbol] "](" cond=FeatureCall ")";
 	public CASL_Macro_CountConditionsElements getCASL_Macro_CountConditionsAccess() {
 		return pCASL_Macro_CountConditions;
 	}

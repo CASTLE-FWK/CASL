@@ -1398,7 +1398,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_CountConditions returns CASL_Macro_CountConditions
 	 *
 	 * Constraint:
-	 *     (sym=[Symbol|ID] cond=Expression)
+	 *     (sym=[Symbol|ID] cond=FeatureCall)
 	 */
 	protected void sequence_CASL_Macro_CountConditions(ISerializationContext context, CASL_Macro_CountConditions semanticObject) {
 		if (errorAcceptor != null) {
@@ -1409,7 +1409,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCASL_Macro_CountConditionsAccess().getSymSymbolIDTerminalRuleCall_1_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_CountConditions_Sym(), false));
-		feeder.accept(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0(), semanticObject.getCond());
+		feeder.accept(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0(), semanticObject.getCond());
 		feeder.finish();
 	}
 	
@@ -2564,8 +2564,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

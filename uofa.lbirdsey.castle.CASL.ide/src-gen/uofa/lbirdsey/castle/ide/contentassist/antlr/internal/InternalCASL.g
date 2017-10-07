@@ -35455,9 +35455,9 @@ rule__CASL_Macro_CountConditions__CondAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0()); }
-		ruleExpression
-		{ after(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondExpressionParserRuleCall_3_0()); }
+		{ before(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0()); }
+		ruleFeatureCall
+		{ after(grammarAccess.getCASL_Macro_CountConditionsAccess().getCondFeatureCallParserRuleCall_3_0()); }
 	)
 ;
 finally {

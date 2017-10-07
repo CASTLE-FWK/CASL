@@ -22,6 +22,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Display
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger
 import uofa.lbirdsey.castle.casl.LayoutType
+import uofa.lbirdsey.castle.casl.FeatureCall
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -44,7 +45,8 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_CountConditions) {
 			var mac = (macro as CASL_Macro_CountConditions)
 			if (mac.sym !== null) {
-				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity.get"+Printers.printExpression(mac.cond)+"()"+").count()"
+				print(mac.cond.class)
+				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity."+FeatureCallGenerator.printFeatureCall(mac.cond as FeatureCall)+").count()"
 			}
 		} else if (macro instanceof CASL_Macro_Random) {
 			var mac = (macro as CASL_Macro_Random)
