@@ -45,7 +45,6 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_CountConditions) {
 			var mac = (macro as CASL_Macro_CountConditions)
 			if (mac.sym !== null) {
-				print(mac.cond.class)
 				output += "(int)"+mac.sym.name+".stream().filter(entity -> entity."+FeatureCallGenerator.printFeatureCall(mac.cond as FeatureCall)+").count()"
 			}
 		} else if (macro instanceof CASL_Macro_Random) {
@@ -153,8 +152,8 @@ class MacroGenerator {
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
-			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
-			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setOutput(output);"+LINE_END
+//			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			
@@ -172,8 +171,8 @@ class MacroGenerator {
 			output += TAB + TAB + entityName+" "+tmpEntityName+" = new "+entityName+"(EntityIDFactory.getNewID(\""+entityName+"\"))"+LINE_END
 			//Add to the Repast Context
 //			output += TAB + TAB + addRepastContextAdder(entityType, tmpEntityName);
-			output += TAB + TAB + tmpEntityName +".setLogger(logger);"+LINE_END
-			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
+			output += TAB + TAB + tmpEntityName +".setOutput(output);"+LINE_END
+//			output += TAB + TAB + tmpEntityName +".setDBOut(dbOut);"+LINE_END
 			output += TAB + TAB + tmpEntityName+".initialize("+printInitializeParams(entityInitParams)+")"+LINE_END 
 			output += TAB + TAB + tmpEntityName+".initialise()"+LINE_END
 			

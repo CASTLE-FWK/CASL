@@ -402,10 +402,11 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\t//Fill the simulationInfo\n"
 		str += "\tsimulationInfo = new SimulationInfo(name, description, name + \"-\" + Utilities.generateTimeStamp());\n"
 		str += "\t//Set up the outputter and logger\n"	
-		str += "\toutput = new Output();\n"
+		str += "\toutput = new Output(simulationInfo);\n"
 		str += "\tlogger = new Logger(output, simulationInfo);\n"
+		str += "\toutput.setLogger(logger);\n"
 		str += "\t//Export information to Logger and/or Database\n"
-		str += "\tlogger.writeSystemSpecs(name, description, simulationParameters);\n"
+		str += "\toutput.forceToConsole(writeSystemSpecs(name, description, simulationParameters));\n"
 		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
 		
 		//Removed until we get MongoDB back up and running
