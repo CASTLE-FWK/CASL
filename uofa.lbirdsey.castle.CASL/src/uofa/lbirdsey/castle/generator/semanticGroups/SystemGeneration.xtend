@@ -274,22 +274,19 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 	}
 	
 	def String output_newStep(System sys){
-		var str = "//New step logging and model data sending\n"
-		str += "if (!loggerIsNull()) { \n logger.newStep(clock);\n}\n"
-		str += "if (!dbIsNull()) {\n dbOut.newStep();\n}\n"
+		var str = "\t//New step logging and model data sending\n"
+		str += "\toutput.newStep(clock);\n"
 		
 	}
 	
 	def String output_endOfStep(System sys){
-		var str = "//New step logging and model data sending\n"
-		str += "if (!loggerIsNull()) { \n logger.endOfStep(clock);\n}\n"
-		str += "if (!dbIsNull()) {\n dbOut.endOfStep();\n}\n"	
+		var str = "\t//New step logging and model data sending\n"
+		str += "\toutput.endOfStep(clock);\n"
 	}
 	
 	def String output_endOfSim(System sys){
-		var str = "//Simulation has finished. Perform cleanup and sending of final data\n"
-		str += "if (!loggerIsNull()) { \n logger.endOfStep(clock);\n}\n"
-		str += "if (!dbIsNull()) {\n dbOut.endOfSimulation(clock, time, );\n}\n"	
+		var str = "\t//Simulation has finished. Perform cleanup and sending of final data\n"
+		str += "\toutput.endOfSimulation(clock, time, getTerminationStep());"
 	}
 	
 	def String generateBroadcastFunction(System sys)'''
@@ -338,7 +335,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "/****Results Exporting*****/\n"
 	
 		str += "public void finalCall(){\n"
-		
+		str += output_endOfSim(sys);
 		str += "}\n"
 
 		return str		
@@ -407,15 +404,16 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\toutput.setLogger(logger);\n"
 		str += "\t//Export information to Logger and/or Database\n"
 		str += "\toutput.forceToConsole(writeSystemSpecs(name, description, simulationParameters));\n"
-		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
-		
-		//Removed until we get MongoDB back up and running
-		str += "//\tdbOut = new OutputToJSON_Mongo(output, simulationInfo, \"simulations\", name);\n"
-		
 		
 		
 		//Set up the main System init stuff
 		str +="\n\tinitialize();\n"
+		
+		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
+		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo);\n"
+		str += "\toutput.setDatabaseOutput(dbOut);\n"
+		str += "\toutput.setUpDB(simulationInfo.getSystemName(), simulationInfo.getExecutionID(), \"simulations\");\n"
+		
 		
 		//What we want to have here is context adding of environments and subcontext adding of groups (if an SG model)
 
