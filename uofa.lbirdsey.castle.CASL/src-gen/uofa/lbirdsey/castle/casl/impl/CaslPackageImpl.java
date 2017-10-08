@@ -4386,9 +4386,9 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCASL_Macro_Log_Str()
+  public EReference getCASL_Macro_Log_Expr()
   {
-        return (EAttribute)getCASL_Macro_Log().getEStructuralFeatures().get(0);
+        return (EReference)getCASL_Macro_Log().getEStructuralFeatures().get(0);
   }
 
   /**

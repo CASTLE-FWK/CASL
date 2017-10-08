@@ -207,7 +207,6 @@ class Printers {
 			else if (expr instanceof TypeRef)
 				return (expr as TypeRef).type.name
 			else if (expr instanceof FeatureCallExp){
-//				println("IM A FEATURE")
 				return FeatureCallGenerator.printFeatureCall((expr as FeatureCallExp).func)
 			}
 			else if (expr instanceof FeatureCall){

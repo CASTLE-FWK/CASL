@@ -1501,16 +1501,10 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     CASL_Macro_Log returns CASL_Macro_Log
 	 *
 	 * Constraint:
-	 *     str=STRING
+	 *     (expr+=Expression expr+=Expression*)
 	 */
 	protected void sequence_CASL_Macro_Log(ISerializationContext context, CASL_Macro_Log semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Log_Str()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Log_Str()));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCASL_Macro_LogAccess().getStrSTRINGTerminalRuleCall_1_0(), semanticObject.getStr());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2572,8 +2566,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Expression? 
-	 *         ((elseexp+=Formula | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Expression?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

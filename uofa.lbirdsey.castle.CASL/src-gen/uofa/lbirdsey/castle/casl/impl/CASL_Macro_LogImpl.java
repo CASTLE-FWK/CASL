@@ -3,14 +3,21 @@
  */
 package uofa.lbirdsey.castle.casl.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CaslPackage;
+import uofa.lbirdsey.castle.casl.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +27,7 @@ import uofa.lbirdsey.castle.casl.CaslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_LogImpl#getStr <em>Str</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_LogImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +35,14 @@ import uofa.lbirdsey.castle.casl.CaslPackage;
 public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
 {
   /**
-   * The default value of the '{@link #getStr() <em>Str</em>}' attribute.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStr()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected static final String STR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getStr() <em>Str</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStr()
-   * @generated
-   * @ordered
-   */
-  protected String str = STR_EDEFAULT;
+  protected EList<Expression> expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +70,13 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getStr()
+  public EList<Expression> getExpr()
   {
-    return str;
+    if (expr == null)
+    {
+      expr = new EObjectContainmentEList<Expression>(Expression.class, this, CaslPackage.CASL_MACRO_LOG__EXPR);
+    }
+    return expr;
   }
 
   /**
@@ -83,12 +84,15 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStr(String newStr)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldStr = str;
-    str = newStr;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.CASL_MACRO_LOG__STR, oldStr, str));
+    switch (featureID)
+    {
+      case CaslPackage.CASL_MACRO_LOG__EXPR:
+        return ((InternalEList<?>)getExpr()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -101,8 +105,8 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_LOG__STR:
-        return getStr();
+      case CaslPackage.CASL_MACRO_LOG__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,13 +116,15 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_LOG__STR:
-        setStr((String)newValue);
+      case CaslPackage.CASL_MACRO_LOG__EXPR:
+        getExpr().clear();
+        getExpr().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +140,8 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_LOG__STR:
-        setStr(STR_EDEFAULT);
+      case CaslPackage.CASL_MACRO_LOG__EXPR:
+        getExpr().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +157,10 @@ public class CASL_Macro_LogImpl extends CASL_MacroImpl implements CASL_Macro_Log
   {
     switch (featureID)
     {
-      case CaslPackage.CASL_MACRO_LOG__STR:
-        return STR_EDEFAULT == null ? str != null : !STR_EDEFAULT.equals(str);
+      case CaslPackage.CASL_MACRO_LOG__EXPR:
+        return expr != null && !expr.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (str: ");
-    result.append(str);
-    result.append(')');
-    return result.toString();
   }
 
 } //CASL_Macro_LogImpl

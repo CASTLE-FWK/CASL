@@ -811,7 +811,7 @@ CASL_Macro_InitLogger:
 ;
 
 CASL_Macro_Log:
-	"LOG("str = STRING")"
+	"LOG("(expr += Expression) (',' expr += Expression)*")"
 ;
 
 //How to deal with model data sending to database and or file

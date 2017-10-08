@@ -7343,28 +7343,44 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Log");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLOGKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStrAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStrSTRINGTerminalRuleCall_1_0 = (RuleCall)cStrAssignment_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExprExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExprAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cExprExpressionParserRuleCall_2_1_0 = (RuleCall)cExprAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//CASL_Macro_Log:
-		//	"LOG(" str=STRING ")";
+		//	"LOG(" expr+=Expression (',' expr+=Expression)* ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"LOG(" str=STRING ")"
+		//"LOG(" expr+=Expression (',' expr+=Expression)* ")"
 		public Group getGroup() { return cGroup; }
 		
 		//"LOG("
 		public Keyword getLOGKeyword_0() { return cLOGKeyword_0; }
 		
-		//str=STRING
-		public Assignment getStrAssignment_1() { return cStrAssignment_1; }
+		//expr+=Expression
+		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
 		
-		//STRING
-		public RuleCall getStrSTRINGTerminalRuleCall_1_0() { return cStrSTRINGTerminalRuleCall_1_0; }
+		//Expression
+		public RuleCall getExprExpressionParserRuleCall_1_0() { return cExprExpressionParserRuleCall_1_0; }
+		
+		//(',' expr+=Expression)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//expr+=Expression
+		public Assignment getExprAssignment_2_1() { return cExprAssignment_2_1; }
+		
+		//Expression
+		public RuleCall getExprExpressionParserRuleCall_2_1_0() { return cExprExpressionParserRuleCall_2_1_0; }
 		
 		//")"
-		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class CASL_Macro_MetricSwitchElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_MetricSwitch");
@@ -10537,7 +10553,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_Log:
-	//	"LOG(" str=STRING ")";
+	//	"LOG(" expr+=Expression (',' expr+=Expression)* ")";
 	public CASL_Macro_LogElements getCASL_Macro_LogAccess() {
 		return pCASL_Macro_Log;
 	}

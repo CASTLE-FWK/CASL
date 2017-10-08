@@ -3710,13 +3710,13 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_LOG = 86;
 
   /**
-   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * The feature id for the '<em><b>Expr</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_LOG__STR = CASL_MACRO_FEATURE_COUNT + 0;
+  int CASL_MACRO_LOG__EXPR = CASL_MACRO_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>CASL Macro Log</em>' class.
@@ -8685,15 +8685,15 @@ public interface CaslPackage extends EPackage
   EClass getCASL_Macro_Log();
 
   /**
-   * Returns the meta object for the attribute '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log#getStr <em>Str</em>}'.
+   * Returns the meta object for the containment reference list '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Str</em>'.
-   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Log#getStr()
+   * @return the meta object for the containment reference list '<em>Expr</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Log#getExpr()
    * @see #getCASL_Macro_Log()
    * @generated
    */
-  EAttribute getCASL_Macro_Log_Str();
+  EReference getCASL_Macro_Log_Expr();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch <em>CASL Macro Metric Switch</em>}'.

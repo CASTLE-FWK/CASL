@@ -3,6 +3,7 @@
  */
 package uofa.lbirdsey.castle.casl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,7 @@ package uofa.lbirdsey.castle.casl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log#getStr <em>Str</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log#getExpr <em>Expr</em>}</li>
  * </ul>
  *
  * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Log()
@@ -23,29 +24,19 @@ package uofa.lbirdsey.castle.casl;
 public interface CASL_Macro_Log extends CASL_Macro
 {
   /**
-   * Returns the value of the '<em><b>Str</b></em>' attribute.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Str</em>' attribute isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Str</em>' attribute.
-   * @see #setStr(String)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Log_Str()
-   * @model
+   * @return the value of the '<em>Expr</em>' containment reference list.
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getCASL_Macro_Log_Expr()
+   * @model containment="true"
    * @generated
    */
-  String getStr();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Log#getStr <em>Str</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Str</em>' attribute.
-   * @see #getStr()
-   * @generated
-   */
-  void setStr(String value);
+  EList<Expression> getExpr();
 
 } // CASL_Macro_Log

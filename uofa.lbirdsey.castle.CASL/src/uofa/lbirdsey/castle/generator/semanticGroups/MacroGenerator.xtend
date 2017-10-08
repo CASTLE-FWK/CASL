@@ -81,7 +81,18 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_Print) {
 			output += "System.out.println(\""+(macro as CASL_Macro_Print).str+"\");\n"			
 		} else if (macro instanceof CASL_Macro_Log) {
-			output += "log(\""+(macro as CASL_Macro_Log).str+"\");\n"
+//			output += "log(\""+(macro as CASL_Macro_Log).str+"\");\n"
+			
+			var String str = "";
+			var int numArgs = (macro as CASL_Macro_Log).expr.size;
+			print("size: "+numArgs)
+			for (var i = 0; i < numArgs; i++){
+				str += Printers.printExpression((macro as CASL_Macro_Log).expr.get(i))
+				if (i != numArgs - 1){
+					str += " + ";
+				}
+			}
+			output += "log("+str+");\n"
 		} else if (macro instanceof CASL_Macro_InitLogger){
 			val il = (macro as CASL_Macro_InitLogger);
 			val isMuted = (il.mute == true)

@@ -305,6 +305,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getGroup(), "rule__CASL_Macro_InitLogger__Group__0");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getGroup_12(), "rule__CASL_Macro_InitLogger__Group_12__0");
 					put(grammarAccess.getCASL_Macro_LogAccess().getGroup(), "rule__CASL_Macro_Log__Group__0");
+					put(grammarAccess.getCASL_Macro_LogAccess().getGroup_2(), "rule__CASL_Macro_Log__Group_2__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup(), "rule__CASL_Macro_MetricSwitch__Group__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup_3(), "rule__CASL_Macro_MetricSwitch__Group_3__0");
 					put(grammarAccess.getCASL_Macro_TODOAccess().getGroup(), "rule__CASL_Macro_TODO__Group__0");
@@ -690,7 +691,8 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToFileAssignment_9(), "rule__CASL_Macro_InitLogger__InfoToFileAssignment_9");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getInfoToDBAssignment_11(), "rule__CASL_Macro_InitLogger__InfoToDBAssignment_11");
 					put(grammarAccess.getCASL_Macro_InitLoggerAccess().getFilePathAssignment_12_1(), "rule__CASL_Macro_InitLogger__FilePathAssignment_12_1");
-					put(grammarAccess.getCASL_Macro_LogAccess().getStrAssignment_1(), "rule__CASL_Macro_Log__StrAssignment_1");
+					put(grammarAccess.getCASL_Macro_LogAccess().getExprAssignment_1(), "rule__CASL_Macro_Log__ExprAssignment_1");
+					put(grammarAccess.getCASL_Macro_LogAccess().getExprAssignment_2_1(), "rule__CASL_Macro_Log__ExprAssignment_2_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwAssignment_1(), "rule__CASL_Macro_MetricSwitch__SwAssignment_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesAssignment_3_1(), "rule__CASL_Macro_MetricSwitch__ManualUpdatesAssignment_3_1");
 					put(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1(), "rule__CASL_Macro_TODO__StrAssignment_1");
