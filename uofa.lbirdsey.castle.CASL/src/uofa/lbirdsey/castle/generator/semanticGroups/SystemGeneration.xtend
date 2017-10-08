@@ -231,11 +231,11 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 	def String generateSimulateFunction(System sys){
 		var str = "";
 			str += "public void simulate() {\n";
+			str +="\tclock = (int)getCurrentTickCount();\n"
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
 			str += output_newStep(sys);
 			str +="\t//Wait for Tier1 ACKS\n\n//Begin the fun\n"
 			str +="\t/**********SETUP PHASE**********/ \n\n"
-			str +="\tclock = (int)getCurrentTickCount();\n"
 			str +="\tcurrentPhase = Phase.SETUP; \n"
 			str += "\t//Broadcast clock to tier1 entities\n\tbroadcast(MessageType.CLOCK,clock);\n";
 			str += "\t//Broadcast Phase.SETUP to tier1 entities\n\tbroadcast(MessageType.PHASE, currentPhase);\n\n"
