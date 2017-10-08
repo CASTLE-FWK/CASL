@@ -85,7 +85,6 @@ class MacroGenerator {
 			
 			var String str = "";
 			var int numArgs = (macro as CASL_Macro_Log).expr.size;
-			print("size: "+numArgs)
 			for (var i = 0; i < numArgs; i++){
 				str += Printers.printExpression((macro as CASL_Macro_Log).expr.get(i))
 				if (i != numArgs - 1){
