@@ -23,6 +23,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Log
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger
 import uofa.lbirdsey.castle.casl.LayoutType
 import uofa.lbirdsey.castle.casl.FeatureCall
+import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -128,6 +129,8 @@ class MacroGenerator {
 			return VisualisationGenerator.generateVisualiser(macro as CASL_Macro_Visualize);
 		} else if (macro instanceof CASL_Macro_Display){
 			return VisualisationGenerator.generateDisplayer(macro as CASL_Macro_Display);
+		} else if (macro instanceof CASL_Macro_GET_ID){
+			return "getEntityID()"
 		}
 		return output;
 	}

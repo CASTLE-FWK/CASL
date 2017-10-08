@@ -779,7 +779,8 @@ CASL_Macro:
 	CASL_Macro_Visualize			|
 	CASL_Macro_Display				|
 	CASL_Macro_Log					|
-	CASL_Macro_InitLogger
+	CASL_Macro_InitLogger			|
+	CASL_Macro_GET_ID
 ;
 
 CASL_Macro_Neighbours:
@@ -821,7 +822,12 @@ CASL_Macro_MetricSwitch:
 ;
 
 CASL_Macro_TODO:
-	"TODO:"str = STRING';'
+	"TODO:"str = STRING
+;
+
+CASL_Macro_GET_ID:
+	{CASL_Macro_GET_ID}
+	"GET_ID()"
 ;
 
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?

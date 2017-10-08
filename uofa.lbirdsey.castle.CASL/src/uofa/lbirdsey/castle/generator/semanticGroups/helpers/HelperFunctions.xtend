@@ -704,7 +704,7 @@ class HelperFunctions {
 		}
 		if (iC.contains("LayoutParameters")) {
 			return output
-		} else if (iC.endsWith("Continuous") || iC.endsWith("Grid") || iC.endsWith("string") || iC.endsWith("Vector2")){
+		} else if (iC.endsWith("Continuous") || iC.endsWith("Grid") || iC.endsWith("string") || iC.endsWith("Vector2") || iC.endsWith("EntityID")){
 			return output;
 		}
 

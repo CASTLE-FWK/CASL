@@ -1475,7 +1475,7 @@ public class HelperFunctions {
     if (_contains_2) {
       return output;
     } else {
-      if ((((iC.endsWith("Continuous") || iC.endsWith("Grid")) || iC.endsWith("string")) || iC.endsWith("Vector2"))) {
+      if (((((iC.endsWith("Continuous") || iC.endsWith("Grid")) || iC.endsWith("string")) || iC.endsWith("Vector2")) || iC.endsWith("EntityID"))) {
         return output;
       }
     }

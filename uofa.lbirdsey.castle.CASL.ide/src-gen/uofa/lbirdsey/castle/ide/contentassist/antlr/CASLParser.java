@@ -309,6 +309,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup(), "rule__CASL_Macro_MetricSwitch__Group__0");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getGroup_3(), "rule__CASL_Macro_MetricSwitch__Group_3__0");
 					put(grammarAccess.getCASL_Macro_TODOAccess().getGroup(), "rule__CASL_Macro_TODO__Group__0");
+					put(grammarAccess.getCASL_Macro_GET_IDAccess().getGroup(), "rule__CASL_Macro_GET_ID__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup(), "rule__CASL_Macro_Populate__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_5(), "rule__CASL_Macro_Populate__Group_5__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_12(), "rule__CASL_Macro_Populate__Group_12__0");

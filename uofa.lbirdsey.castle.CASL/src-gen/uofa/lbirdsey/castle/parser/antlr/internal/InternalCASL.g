@@ -10838,6 +10838,15 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_InitLogger_12.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_IDParserRuleCall_13());
+		}
+		this_CASL_Macro_GET_ID_13=ruleCASL_Macro_GET_ID
+		{
+			$current = $this_CASL_Macro_GET_ID_13.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11645,6 +11654,36 @@ ruleCASL_Macro_TODO returns [EObject current=null]
 		otherlv_2=';'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_TODOAccess().getSemicolonKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_GET_ID
+entryRuleCASL_Macro_GET_ID returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_GET_IDRule()); }
+	iv_ruleCASL_Macro_GET_ID=ruleCASL_Macro_GET_ID
+	{ $current=$iv_ruleCASL_Macro_GET_ID.current; }
+	EOF;
+
+// Rule CASL_Macro_GET_ID
+ruleCASL_Macro_GET_ID returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCASL_Macro_GET_IDAccess().getCASL_Macro_GET_IDAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='GET_ID();'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_GET_IDAccess().getGET_IDKeyword_1());
 		}
 	)
 ;

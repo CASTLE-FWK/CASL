@@ -38,6 +38,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
+import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -261,6 +262,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_FOR_EACH:
 				sequence_CASL_Macro_ForEach(context, (CASL_Macro_ForEach) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_GET_ID:
+				sequence_CASL_Macro_GET_ID(context, (CASL_Macro_GET_ID) semanticObject); 
 				return; 
 			case CaslPackage.CASL_MACRO_INIT_LOGGER:
 				sequence_CASL_Macro_InitLogger(context, (CASL_Macro_InitLogger) semanticObject); 
@@ -1471,6 +1475,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getCASL_Macro_ForEachAccess().getSymSymbolIDTerminalRuleCall_1_0_1(), semanticObject.eGet(CaslPackage.eINSTANCE.getCASL_Macro_ForEach_Sym(), false));
 		feeder.accept(grammarAccess.getCASL_Macro_ForEachAccess().getExprExpressionParserRuleCall_3_0(), semanticObject.getExpr());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_GET_ID
+	 *     CASL_Macro_GET_ID returns CASL_Macro_GET_ID
+	 *
+	 * Constraint:
+	 *     {CASL_Macro_GET_ID}
+	 */
+	protected void sequence_CASL_Macro_GET_ID(ISerializationContext context, CASL_Macro_GET_ID semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
