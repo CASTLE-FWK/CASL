@@ -4310,31 +4310,22 @@ public interface CaslPackage extends EPackage
   int FUNCTION_PARAMETER__ENV = SYMBOL_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Grp</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_PARAMETER__GRP = SYMBOL_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Obj</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_PARAMETER__OBJ = SYMBOL_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Use Obj</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_PARAMETER__USE_OBJ = SYMBOL_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Use Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_PARAMETER__USE_TYPE = SYMBOL_FEATURE_COUNT + 5;
+  int FUNCTION_PARAMETER__OBJ = SYMBOL_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Use Group</b></em>' reference.
@@ -4343,7 +4334,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_PARAMETER__USE_GROUP = SYMBOL_FEATURE_COUNT + 6;
+  int FUNCTION_PARAMETER__USE_GROUP = SYMBOL_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Use Agent</b></em>' reference.
@@ -4352,7 +4343,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_PARAMETER__USE_AGENT = SYMBOL_FEATURE_COUNT + 7;
+  int FUNCTION_PARAMETER__USE_AGENT = SYMBOL_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Use Env</b></em>' reference.
@@ -4361,16 +4352,25 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_PARAMETER__USE_ENV = SYMBOL_FEATURE_COUNT + 8;
+  int FUNCTION_PARAMETER__USE_ENV = SYMBOL_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Grp</b></em>' reference.
+   * The feature id for the '<em><b>Use Obj</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_PARAMETER__GRP = SYMBOL_FEATURE_COUNT + 9;
+  int FUNCTION_PARAMETER__USE_OBJ = SYMBOL_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Use Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_PARAMETER__USE_TYPE = SYMBOL_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Function Parameter</em>' class.
@@ -4656,31 +4656,13 @@ public interface CaslPackage extends EPackage
   int DATA_TYPE_DECLARATION__OBJ = SYMBOL_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Use Obj</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_DECLARATION__USE_OBJ = SYMBOL_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Use Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_DECLARATION__USE_TYPE = SYMBOL_FEATURE_COUNT + 4;
-
-  /**
    * The feature id for the '<em><b>Use Group</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION__USE_GROUP = SYMBOL_FEATURE_COUNT + 5;
+  int DATA_TYPE_DECLARATION__USE_GROUP = SYMBOL_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Use Agent</b></em>' reference.
@@ -4689,7 +4671,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION__USE_AGENT = SYMBOL_FEATURE_COUNT + 6;
+  int DATA_TYPE_DECLARATION__USE_AGENT = SYMBOL_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Use Env</b></em>' reference.
@@ -4698,7 +4680,25 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION__USE_ENV = SYMBOL_FEATURE_COUNT + 7;
+  int DATA_TYPE_DECLARATION__USE_ENV = SYMBOL_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Use Obj</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_DECLARATION__USE_OBJ = SYMBOL_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Use Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_DECLARATION__USE_TYPE = SYMBOL_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -9195,6 +9195,17 @@ public interface CaslPackage extends EPackage
   EReference getFunctionParameter_Env();
 
   /**
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Grp</em>'.
+   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getGrp()
+   * @see #getFunctionParameter()
+   * @generated
+   */
+  EReference getFunctionParameter_Grp();
+
+  /**
    * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getObj <em>Obj</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9204,28 +9215,6 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EReference getFunctionParameter_Obj();
-
-  /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Use Obj</em>'.
-   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj()
-   * @see #getFunctionParameter()
-   * @generated
-   */
-  EReference getFunctionParameter_UseObj();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Use Type</em>'.
-   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getUseType()
-   * @see #getFunctionParameter()
-   * @generated
-   */
-  EReference getFunctionParameter_UseType();
 
   /**
    * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseGroup <em>Use Group</em>}'.
@@ -9261,15 +9250,26 @@ public interface CaslPackage extends EPackage
   EReference getFunctionParameter_UseEnv();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}'.
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Grp</em>'.
-   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getGrp()
+   * @return the meta object for the reference '<em>Use Obj</em>'.
+   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj()
    * @see #getFunctionParameter()
    * @generated
    */
-  EReference getFunctionParameter_Grp();
+  EReference getFunctionParameter_UseObj();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Use Type</em>'.
+   * @see uofa.lbirdsey.castle.casl.FunctionParameter#getUseType()
+   * @see #getFunctionParameter()
+   * @generated
+   */
+  EReference getFunctionParameter_UseType();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.AgentInteraction <em>Agent Interaction</em>}'.
@@ -9356,28 +9356,6 @@ public interface CaslPackage extends EPackage
   EReference getDataTypeDeclaration_Obj();
 
   /**
-   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Use Obj</em>'.
-   * @see uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj()
-   * @see #getDataTypeDeclaration()
-   * @generated
-   */
-  EReference getDataTypeDeclaration_UseObj();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Use Type</em>'.
-   * @see uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType()
-   * @see #getDataTypeDeclaration()
-   * @generated
-   */
-  EReference getDataTypeDeclaration_UseType();
-
-  /**
    * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseGroup <em>Use Group</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9409,6 +9387,28 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EReference getDataTypeDeclaration_UseEnv();
+
+  /**
+   * Returns the meta object for the reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Use Obj</em>'.
+   * @see uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj()
+   * @see #getDataTypeDeclaration()
+   * @generated
+   */
+  EReference getDataTypeDeclaration_UseObj();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Use Type</em>'.
+   * @see uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType()
+   * @see #getDataTypeDeclaration()
+   * @generated
+   */
+  EReference getDataTypeDeclaration_UseType();
 
   /**
    * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getExpr <em>Expr</em>}'.

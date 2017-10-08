@@ -331,9 +331,22 @@ Functions:
 ;
 
 FunctionParameter returns Symbol:
-	{FunctionParameter} ('var' type = PrimitiveType |'agt' agent = [Agent]| 'env' env = [Environment] | 'var' obj = [NonPrimitiveType](':'useObj=[NonPrimitiveType] |  
-		':' useType = PrimitiveType | '<' ('grp.'useGroup = [Group] | 'agt.'useAgent = [Agent] | 'env.'useEnv = [Environment])'>')? | 'grp' grp = [Group])
-			':' name = ID
+	{FunctionParameter} (
+	'var' type = PrimitiveType 	|
+	'agt' agent = [Agent] 		|
+	'env' env = [Environment] 	|
+	'grp' grp = [Group] 		|
+	'var' obj = [NonPrimitiveType](
+//		':'useObj=[NonPrimitiveType] 	|  
+//		':' useType = PrimitiveType  	|
+		'<' (
+			'grp.'useGroup = [Group] 		|
+			'agt.'useAgent = [Agent] 		|
+			'env.'useEnv = [Environment]	|
+			'obj.'useObj=[NonPrimitiveType]	|
+			useType = PrimitiveType
+		)'>')? )
+	':' name = ID
 ;
 
 /*These StateBlocks inform things
@@ -596,12 +609,17 @@ BooleanValue returns ecore::EBoolean:
 ;
 
 DataTypeDeclaration returns Symbol:
-	{DataTypeDeclaration} 'var' (initInclude = "*")? (type = PrimitiveType 	|
-		obj = [NonPrimitiveType](':'useObj=[NonPrimitiveType] 				|  
-		':' useType = PrimitiveType 										|
-		'<' ('grp.'useGroup = [Group] 										|
-		'agt.'useAgent = [Agent] 											|
-		'env.'useEnv = [Environment] )'>')? ) ':' name=ID ('=' expr = Expression)?
+	{DataTypeDeclaration} 'var' (initInclude = "*")? (
+		type = PrimitiveType 	|
+		obj = [NonPrimitiveType](
+	//		':'useObj=[NonPrimitiveType] 				|  
+	//		':' useType = PrimitiveType 										|
+			'<' ('grp.'useGroup = [Group] 										|
+			'agt.'useAgent = [Agent] 											|
+			'env.'useEnv = [Environment]										| 
+			'obj.'useObj = [NonPrimitiveType]
+			useType = PrimitiveType		
+		)'>')? ) ':' name=ID ('=' expr = Expression)?
 ;
 
 /**

@@ -16,13 +16,13 @@ package uofa.lbirdsey.castle.casl;
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getType <em>Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getAgent <em>Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getEnv <em>Env</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getObj <em>Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseGroup <em>Use Group</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseAgent <em>Use Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseEnv <em>Use Env</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}</li>
  * </ul>
  *
  * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter()
@@ -110,6 +110,32 @@ public interface FunctionParameter extends Symbol
   void setEnv(Environment value);
 
   /**
+   * Returns the value of the '<em><b>Grp</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Grp</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Grp</em>' reference.
+   * @see #setGrp(Group)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_Grp()
+   * @model
+   * @generated
+   */
+  Group getGrp();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Grp</em>' reference.
+   * @see #getGrp()
+   * @generated
+   */
+  void setGrp(Group value);
+
+  /**
    * Returns the value of the '<em><b>Obj</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -134,58 +160,6 @@ public interface FunctionParameter extends Symbol
    * @generated
    */
   void setObj(NonPrimitiveType value);
-
-  /**
-   * Returns the value of the '<em><b>Use Obj</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use Obj</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Obj</em>' reference.
-   * @see #setUseObj(NonPrimitiveType)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseObj()
-   * @model
-   * @generated
-   */
-  NonPrimitiveType getUseObj();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Obj</em>' reference.
-   * @see #getUseObj()
-   * @generated
-   */
-  void setUseObj(NonPrimitiveType value);
-
-  /**
-   * Returns the value of the '<em><b>Use Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use Type</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Type</em>' containment reference.
-   * @see #setUseType(PrimitiveType)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseType()
-   * @model containment="true"
-   * @generated
-   */
-  PrimitiveType getUseType();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Type</em>' containment reference.
-   * @see #getUseType()
-   * @generated
-   */
-  void setUseType(PrimitiveType value);
 
   /**
    * Returns the value of the '<em><b>Use Group</b></em>' reference.
@@ -266,29 +240,55 @@ public interface FunctionParameter extends Symbol
   void setUseEnv(Environment value);
 
   /**
-   * Returns the value of the '<em><b>Grp</b></em>' reference.
+   * Returns the value of the '<em><b>Use Obj</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Grp</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Obj</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Grp</em>' reference.
-   * @see #setGrp(Group)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_Grp()
+   * @return the value of the '<em>Use Obj</em>' reference.
+   * @see #setUseObj(NonPrimitiveType)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseObj()
    * @model
    * @generated
    */
-  Group getGrp();
+  NonPrimitiveType getUseObj();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getGrp <em>Grp</em>}' reference.
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Grp</em>' reference.
-   * @see #getGrp()
+   * @param value the new value of the '<em>Use Obj</em>' reference.
+   * @see #getUseObj()
    * @generated
    */
-  void setGrp(Group value);
+  void setUseObj(NonPrimitiveType value);
+
+  /**
+   * Returns the value of the '<em><b>Use Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use Type</em>' containment reference.
+   * @see #setUseType(PrimitiveType)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseType()
+   * @model containment="true"
+   * @generated
+   */
+  PrimitiveType getUseType();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Use Type</em>' containment reference.
+   * @see #getUseType()
+   * @generated
+   */
+  void setUseType(PrimitiveType value);
 
 } // FunctionParameter

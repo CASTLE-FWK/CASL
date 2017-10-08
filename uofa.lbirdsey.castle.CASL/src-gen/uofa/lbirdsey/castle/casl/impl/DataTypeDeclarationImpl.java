@@ -31,11 +31,11 @@ import uofa.lbirdsey.castle.casl.PrimitiveType;
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getInitInclude <em>Init Include</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getObj <em>Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseObj <em>Use Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseGroup <em>Use Group</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseAgent <em>Use Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseEnv <em>Use Env</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseObj <em>Use Obj</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.DataTypeDeclarationImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  *
@@ -84,26 +84,6 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
   protected NonPrimitiveType obj;
 
   /**
-   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUseObj()
-   * @generated
-   * @ordered
-   */
-  protected NonPrimitiveType useObj;
-
-  /**
-   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUseType()
-   * @generated
-   * @ordered
-   */
-  protected PrimitiveType useType;
-
-  /**
    * The cached value of the '{@link #getUseGroup() <em>Use Group</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -132,6 +112,26 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
    * @ordered
    */
   protected Environment useEnv;
+
+  /**
+   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseObj()
+   * @generated
+   * @ordered
+   */
+  protected NonPrimitiveType useObj;
+
+  /**
+   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseType()
+   * @generated
+   * @ordered
+   */
+  protected PrimitiveType useType;
 
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -283,97 +283,6 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
    * <!-- end-user-doc -->
    * @generated
    */
-  public NonPrimitiveType getUseObj()
-  {
-    if (useObj != null && useObj.eIsProxy())
-    {
-      InternalEObject oldUseObj = (InternalEObject)useObj;
-      useObj = (NonPrimitiveType)eResolveProxy(oldUseObj);
-      if (useObj != oldUseObj)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ, oldUseObj, useObj));
-      }
-    }
-    return useObj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NonPrimitiveType basicGetUseObj()
-  {
-    return useObj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseObj(NonPrimitiveType newUseObj)
-  {
-    NonPrimitiveType oldUseObj = useObj;
-    useObj = newUseObj;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ, oldUseObj, useObj));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PrimitiveType getUseType()
-  {
-    return useType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetUseType(PrimitiveType newUseType, NotificationChain msgs)
-  {
-    PrimitiveType oldUseType = useType;
-    useType = newUseType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, oldUseType, newUseType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseType(PrimitiveType newUseType)
-  {
-    if (newUseType != useType)
-    {
-      NotificationChain msgs = null;
-      if (useType != null)
-        msgs = ((InternalEObject)useType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, null, msgs);
-      if (newUseType != null)
-        msgs = ((InternalEObject)newUseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, null, msgs);
-      msgs = basicSetUseType(newUseType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, newUseType, newUseType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Group getUseGroup()
   {
     if (useGroup != null && useGroup.eIsProxy())
@@ -503,6 +412,97 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
    * <!-- end-user-doc -->
    * @generated
    */
+  public NonPrimitiveType getUseObj()
+  {
+    if (useObj != null && useObj.eIsProxy())
+    {
+      InternalEObject oldUseObj = (InternalEObject)useObj;
+      useObj = (NonPrimitiveType)eResolveProxy(oldUseObj);
+      if (useObj != oldUseObj)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ, oldUseObj, useObj));
+      }
+    }
+    return useObj;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NonPrimitiveType basicGetUseObj()
+  {
+    return useObj;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUseObj(NonPrimitiveType newUseObj)
+  {
+    NonPrimitiveType oldUseObj = useObj;
+    useObj = newUseObj;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ, oldUseObj, useObj));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrimitiveType getUseType()
+  {
+    return useType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetUseType(PrimitiveType newUseType, NotificationChain msgs)
+  {
+    PrimitiveType oldUseType = useType;
+    useType = newUseType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, oldUseType, newUseType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUseType(PrimitiveType newUseType)
+  {
+    if (newUseType != useType)
+    {
+      NotificationChain msgs = null;
+      if (useType != null)
+        msgs = ((InternalEObject)useType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, null, msgs);
+      if (newUseType != null)
+        msgs = ((InternalEObject)newUseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, null, msgs);
+      msgs = basicSetUseType(newUseType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE, newUseType, newUseType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expression getExpr()
   {
     return expr;
@@ -583,11 +583,6 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
       case CaslPackage.DATA_TYPE_DECLARATION__OBJ:
         if (resolve) return getObj();
         return basicGetObj();
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
-        if (resolve) return getUseObj();
-        return basicGetUseObj();
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
-        return getUseType();
       case CaslPackage.DATA_TYPE_DECLARATION__USE_GROUP:
         if (resolve) return getUseGroup();
         return basicGetUseGroup();
@@ -597,6 +592,11 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
       case CaslPackage.DATA_TYPE_DECLARATION__USE_ENV:
         if (resolve) return getUseEnv();
         return basicGetUseEnv();
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
+        if (resolve) return getUseObj();
+        return basicGetUseObj();
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
+        return getUseType();
       case CaslPackage.DATA_TYPE_DECLARATION__EXPR:
         return getExpr();
     }
@@ -622,12 +622,6 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
       case CaslPackage.DATA_TYPE_DECLARATION__OBJ:
         setObj((NonPrimitiveType)newValue);
         return;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
-        setUseObj((NonPrimitiveType)newValue);
-        return;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
-        setUseType((PrimitiveType)newValue);
-        return;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_GROUP:
         setUseGroup((Group)newValue);
         return;
@@ -636,6 +630,12 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
         return;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_ENV:
         setUseEnv((Environment)newValue);
+        return;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
+        setUseObj((NonPrimitiveType)newValue);
+        return;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
+        setUseType((PrimitiveType)newValue);
         return;
       case CaslPackage.DATA_TYPE_DECLARATION__EXPR:
         setExpr((Expression)newValue);
@@ -663,12 +663,6 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
       case CaslPackage.DATA_TYPE_DECLARATION__OBJ:
         setObj((NonPrimitiveType)null);
         return;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
-        setUseObj((NonPrimitiveType)null);
-        return;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
-        setUseType((PrimitiveType)null);
-        return;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_GROUP:
         setUseGroup((Group)null);
         return;
@@ -677,6 +671,12 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
         return;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_ENV:
         setUseEnv((Environment)null);
+        return;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
+        setUseObj((NonPrimitiveType)null);
+        return;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
+        setUseType((PrimitiveType)null);
         return;
       case CaslPackage.DATA_TYPE_DECLARATION__EXPR:
         setExpr((Expression)null);
@@ -701,16 +701,16 @@ public class DataTypeDeclarationImpl extends SymbolImpl implements DataTypeDecla
         return type != null;
       case CaslPackage.DATA_TYPE_DECLARATION__OBJ:
         return obj != null;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
-        return useObj != null;
-      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
-        return useType != null;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_GROUP:
         return useGroup != null;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_AGENT:
         return useAgent != null;
       case CaslPackage.DATA_TYPE_DECLARATION__USE_ENV:
         return useEnv != null;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_OBJ:
+        return useObj != null;
+      case CaslPackage.DATA_TYPE_DECLARATION__USE_TYPE:
+        return useType != null;
       case CaslPackage.DATA_TYPE_DECLARATION__EXPR:
         return expr != null;
     }

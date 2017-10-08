@@ -16,11 +16,11 @@ package uofa.lbirdsey.castle.casl;
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getInitInclude <em>Init Include</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getType <em>Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getObj <em>Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseGroup <em>Use Group</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseAgent <em>Use Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseEnv <em>Use Env</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getExpr <em>Expr</em>}</li>
  * </ul>
  *
@@ -109,58 +109,6 @@ public interface DataTypeDeclaration extends Symbol
   void setObj(NonPrimitiveType value);
 
   /**
-   * Returns the value of the '<em><b>Use Obj</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use Obj</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Obj</em>' reference.
-   * @see #setUseObj(NonPrimitiveType)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getDataTypeDeclaration_UseObj()
-   * @model
-   * @generated
-   */
-  NonPrimitiveType getUseObj();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Obj</em>' reference.
-   * @see #getUseObj()
-   * @generated
-   */
-  void setUseObj(NonPrimitiveType value);
-
-  /**
-   * Returns the value of the '<em><b>Use Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use Type</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Type</em>' containment reference.
-   * @see #setUseType(PrimitiveType)
-   * @see uofa.lbirdsey.castle.casl.CaslPackage#getDataTypeDeclaration_UseType()
-   * @model containment="true"
-   * @generated
-   */
-  PrimitiveType getUseType();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Type</em>' containment reference.
-   * @see #getUseType()
-   * @generated
-   */
-  void setUseType(PrimitiveType value);
-
-  /**
    * Returns the value of the '<em><b>Use Group</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -237,6 +185,58 @@ public interface DataTypeDeclaration extends Symbol
    * @generated
    */
   void setUseEnv(Environment value);
+
+  /**
+   * Returns the value of the '<em><b>Use Obj</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use Obj</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use Obj</em>' reference.
+   * @see #setUseObj(NonPrimitiveType)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getDataTypeDeclaration_UseObj()
+   * @model
+   * @generated
+   */
+  NonPrimitiveType getUseObj();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseObj <em>Use Obj</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Use Obj</em>' reference.
+   * @see #getUseObj()
+   * @generated
+   */
+  void setUseObj(NonPrimitiveType value);
+
+  /**
+   * Returns the value of the '<em><b>Use Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use Type</em>' containment reference.
+   * @see #setUseType(PrimitiveType)
+   * @see uofa.lbirdsey.castle.casl.CaslPackage#getDataTypeDeclaration_UseType()
+   * @model containment="true"
+   * @generated
+   */
+  PrimitiveType getUseType();
+
+  /**
+   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.DataTypeDeclaration#getUseType <em>Use Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Use Type</em>' containment reference.
+   * @see #getUseType()
+   * @generated
+   */
+  void setUseType(PrimitiveType value);
 
   /**
    * Returns the value of the '<em><b>Expr</b></em>' containment reference.

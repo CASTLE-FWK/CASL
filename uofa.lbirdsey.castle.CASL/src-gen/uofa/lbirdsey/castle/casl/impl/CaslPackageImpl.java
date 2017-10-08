@@ -4913,7 +4913,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_Obj()
+  public EReference getFunctionParameter_Grp()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(3);
   }
@@ -4923,7 +4923,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_UseObj()
+  public EReference getFunctionParameter_Obj()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(4);
   }
@@ -4933,7 +4933,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_UseType()
+  public EReference getFunctionParameter_UseGroup()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(5);
   }
@@ -4943,7 +4943,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_UseGroup()
+  public EReference getFunctionParameter_UseAgent()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(6);
   }
@@ -4953,7 +4953,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_UseAgent()
+  public EReference getFunctionParameter_UseEnv()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(7);
   }
@@ -4963,7 +4963,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_UseEnv()
+  public EReference getFunctionParameter_UseObj()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(8);
   }
@@ -4973,7 +4973,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFunctionParameter_Grp()
+  public EReference getFunctionParameter_UseType()
   {
         return (EReference)getFunctionParameter().getEStructuralFeatures().get(9);
   }
@@ -5079,7 +5079,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_UseObj()
+  public EReference getDataTypeDeclaration_UseGroup()
   {
         return (EReference)getDataTypeDeclaration().getEStructuralFeatures().get(3);
   }
@@ -5089,7 +5089,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_UseType()
+  public EReference getDataTypeDeclaration_UseAgent()
   {
         return (EReference)getDataTypeDeclaration().getEStructuralFeatures().get(4);
   }
@@ -5099,7 +5099,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_UseGroup()
+  public EReference getDataTypeDeclaration_UseEnv()
   {
         return (EReference)getDataTypeDeclaration().getEStructuralFeatures().get(5);
   }
@@ -5109,7 +5109,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_UseAgent()
+  public EReference getDataTypeDeclaration_UseObj()
   {
         return (EReference)getDataTypeDeclaration().getEStructuralFeatures().get(6);
   }
@@ -5119,7 +5119,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_UseEnv()
+  public EReference getDataTypeDeclaration_UseType()
   {
         return (EReference)getDataTypeDeclaration().getEStructuralFeatures().get(7);
   }

@@ -1736,7 +1736,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             type=PrimitiveType | 
 	 *             (
 	 *                 obj=[NonPrimitiveType|ID] 
-	 *                 (useObj=[NonPrimitiveType|ID] | useType=PrimitiveType | useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID])?
+	 *                 (useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID] | (useObj=[NonPrimitiveType|ID] useType=PrimitiveType))?
 	 *             )
 	 *         ) 
 	 *         name=ID 
@@ -2291,11 +2291,11 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             type=PrimitiveType | 
 	 *             agent=[Agent|ID] | 
 	 *             env=[Environment|ID] | 
+	 *             grp=[Group|ID] | 
 	 *             (
 	 *                 obj=[NonPrimitiveType|ID] 
-	 *                 (useObj=[NonPrimitiveType|ID] | useType=PrimitiveType | useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID])?
-	 *             ) | 
-	 *             grp=[Group|ID]
+	 *                 (useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID] | useObj=[NonPrimitiveType|ID] | useType=PrimitiveType)?
+	 *             )
 	 *         ) 
 	 *         name=ID
 	 *     )

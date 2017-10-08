@@ -2122,67 +2122,75 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cEnvEnvironmentCrossReference_1_2_1_0 = (CrossReference)cEnvAssignment_1_2_1.eContents().get(0);
 		private final RuleCall cEnvEnvironmentIDTerminalRuleCall_1_2_1_0_1 = (RuleCall)cEnvEnvironmentCrossReference_1_2_1_0.eContents().get(1);
 		private final Group cGroup_1_3 = (Group)cAlternatives_1.eContents().get(3);
-		private final Keyword cVarKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final Assignment cObjAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
-		private final CrossReference cObjNonPrimitiveTypeCrossReference_1_3_1_0 = (CrossReference)cObjAssignment_1_3_1.eContents().get(0);
-		private final RuleCall cObjNonPrimitiveTypeIDTerminalRuleCall_1_3_1_0_1 = (RuleCall)cObjNonPrimitiveTypeCrossReference_1_3_1_0.eContents().get(1);
-		private final Alternatives cAlternatives_1_3_2 = (Alternatives)cGroup_1_3.eContents().get(2);
-		private final Group cGroup_1_3_2_0 = (Group)cAlternatives_1_3_2.eContents().get(0);
-		private final Keyword cColonKeyword_1_3_2_0_0 = (Keyword)cGroup_1_3_2_0.eContents().get(0);
-		private final Assignment cUseObjAssignment_1_3_2_0_1 = (Assignment)cGroup_1_3_2_0.eContents().get(1);
-		private final CrossReference cUseObjNonPrimitiveTypeCrossReference_1_3_2_0_1_0 = (CrossReference)cUseObjAssignment_1_3_2_0_1.eContents().get(0);
-		private final RuleCall cUseObjNonPrimitiveTypeIDTerminalRuleCall_1_3_2_0_1_0_1 = (RuleCall)cUseObjNonPrimitiveTypeCrossReference_1_3_2_0_1_0.eContents().get(1);
-		private final Group cGroup_1_3_2_1 = (Group)cAlternatives_1_3_2.eContents().get(1);
-		private final Keyword cColonKeyword_1_3_2_1_0 = (Keyword)cGroup_1_3_2_1.eContents().get(0);
-		private final Assignment cUseTypeAssignment_1_3_2_1_1 = (Assignment)cGroup_1_3_2_1.eContents().get(1);
-		private final RuleCall cUseTypePrimitiveTypeParserRuleCall_1_3_2_1_1_0 = (RuleCall)cUseTypeAssignment_1_3_2_1_1.eContents().get(0);
-		private final Group cGroup_1_3_2_2 = (Group)cAlternatives_1_3_2.eContents().get(2);
-		private final Keyword cLessThanSignKeyword_1_3_2_2_0 = (Keyword)cGroup_1_3_2_2.eContents().get(0);
-		private final Alternatives cAlternatives_1_3_2_2_1 = (Alternatives)cGroup_1_3_2_2.eContents().get(1);
-		private final Group cGroup_1_3_2_2_1_0 = (Group)cAlternatives_1_3_2_2_1.eContents().get(0);
-		private final Keyword cGrpKeyword_1_3_2_2_1_0_0 = (Keyword)cGroup_1_3_2_2_1_0.eContents().get(0);
-		private final Assignment cUseGroupAssignment_1_3_2_2_1_0_1 = (Assignment)cGroup_1_3_2_2_1_0.eContents().get(1);
-		private final CrossReference cUseGroupGroupCrossReference_1_3_2_2_1_0_1_0 = (CrossReference)cUseGroupAssignment_1_3_2_2_1_0_1.eContents().get(0);
-		private final RuleCall cUseGroupGroupIDTerminalRuleCall_1_3_2_2_1_0_1_0_1 = (RuleCall)cUseGroupGroupCrossReference_1_3_2_2_1_0_1_0.eContents().get(1);
-		private final Group cGroup_1_3_2_2_1_1 = (Group)cAlternatives_1_3_2_2_1.eContents().get(1);
-		private final Keyword cAgtKeyword_1_3_2_2_1_1_0 = (Keyword)cGroup_1_3_2_2_1_1.eContents().get(0);
-		private final Assignment cUseAgentAssignment_1_3_2_2_1_1_1 = (Assignment)cGroup_1_3_2_2_1_1.eContents().get(1);
-		private final CrossReference cUseAgentAgentCrossReference_1_3_2_2_1_1_1_0 = (CrossReference)cUseAgentAssignment_1_3_2_2_1_1_1.eContents().get(0);
-		private final RuleCall cUseAgentAgentIDTerminalRuleCall_1_3_2_2_1_1_1_0_1 = (RuleCall)cUseAgentAgentCrossReference_1_3_2_2_1_1_1_0.eContents().get(1);
-		private final Group cGroup_1_3_2_2_1_2 = (Group)cAlternatives_1_3_2_2_1.eContents().get(2);
-		private final Keyword cEnvKeyword_1_3_2_2_1_2_0 = (Keyword)cGroup_1_3_2_2_1_2.eContents().get(0);
-		private final Assignment cUseEnvAssignment_1_3_2_2_1_2_1 = (Assignment)cGroup_1_3_2_2_1_2.eContents().get(1);
-		private final CrossReference cUseEnvEnvironmentCrossReference_1_3_2_2_1_2_1_0 = (CrossReference)cUseEnvAssignment_1_3_2_2_1_2_1.eContents().get(0);
-		private final RuleCall cUseEnvEnvironmentIDTerminalRuleCall_1_3_2_2_1_2_1_0_1 = (RuleCall)cUseEnvEnvironmentCrossReference_1_3_2_2_1_2_1_0.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_1_3_2_2_2 = (Keyword)cGroup_1_3_2_2.eContents().get(2);
+		private final Keyword cGrpKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Assignment cGrpAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
+		private final CrossReference cGrpGroupCrossReference_1_3_1_0 = (CrossReference)cGrpAssignment_1_3_1.eContents().get(0);
+		private final RuleCall cGrpGroupIDTerminalRuleCall_1_3_1_0_1 = (RuleCall)cGrpGroupCrossReference_1_3_1_0.eContents().get(1);
 		private final Group cGroup_1_4 = (Group)cAlternatives_1.eContents().get(4);
-		private final Keyword cGrpKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
-		private final Assignment cGrpAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
-		private final CrossReference cGrpGroupCrossReference_1_4_1_0 = (CrossReference)cGrpAssignment_1_4_1.eContents().get(0);
-		private final RuleCall cGrpGroupIDTerminalRuleCall_1_4_1_0_1 = (RuleCall)cGrpGroupCrossReference_1_4_1_0.eContents().get(1);
+		private final Keyword cVarKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
+		private final Assignment cObjAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
+		private final CrossReference cObjNonPrimitiveTypeCrossReference_1_4_1_0 = (CrossReference)cObjAssignment_1_4_1.eContents().get(0);
+		private final RuleCall cObjNonPrimitiveTypeIDTerminalRuleCall_1_4_1_0_1 = (RuleCall)cObjNonPrimitiveTypeCrossReference_1_4_1_0.eContents().get(1);
+		private final Group cGroup_1_4_2 = (Group)cGroup_1_4.eContents().get(2);
+		private final Keyword cLessThanSignKeyword_1_4_2_0 = (Keyword)cGroup_1_4_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_4_2_1 = (Alternatives)cGroup_1_4_2.eContents().get(1);
+		private final Group cGroup_1_4_2_1_0 = (Group)cAlternatives_1_4_2_1.eContents().get(0);
+		private final Keyword cGrpKeyword_1_4_2_1_0_0 = (Keyword)cGroup_1_4_2_1_0.eContents().get(0);
+		private final Assignment cUseGroupAssignment_1_4_2_1_0_1 = (Assignment)cGroup_1_4_2_1_0.eContents().get(1);
+		private final CrossReference cUseGroupGroupCrossReference_1_4_2_1_0_1_0 = (CrossReference)cUseGroupAssignment_1_4_2_1_0_1.eContents().get(0);
+		private final RuleCall cUseGroupGroupIDTerminalRuleCall_1_4_2_1_0_1_0_1 = (RuleCall)cUseGroupGroupCrossReference_1_4_2_1_0_1_0.eContents().get(1);
+		private final Group cGroup_1_4_2_1_1 = (Group)cAlternatives_1_4_2_1.eContents().get(1);
+		private final Keyword cAgtKeyword_1_4_2_1_1_0 = (Keyword)cGroup_1_4_2_1_1.eContents().get(0);
+		private final Assignment cUseAgentAssignment_1_4_2_1_1_1 = (Assignment)cGroup_1_4_2_1_1.eContents().get(1);
+		private final CrossReference cUseAgentAgentCrossReference_1_4_2_1_1_1_0 = (CrossReference)cUseAgentAssignment_1_4_2_1_1_1.eContents().get(0);
+		private final RuleCall cUseAgentAgentIDTerminalRuleCall_1_4_2_1_1_1_0_1 = (RuleCall)cUseAgentAgentCrossReference_1_4_2_1_1_1_0.eContents().get(1);
+		private final Group cGroup_1_4_2_1_2 = (Group)cAlternatives_1_4_2_1.eContents().get(2);
+		private final Keyword cEnvKeyword_1_4_2_1_2_0 = (Keyword)cGroup_1_4_2_1_2.eContents().get(0);
+		private final Assignment cUseEnvAssignment_1_4_2_1_2_1 = (Assignment)cGroup_1_4_2_1_2.eContents().get(1);
+		private final CrossReference cUseEnvEnvironmentCrossReference_1_4_2_1_2_1_0 = (CrossReference)cUseEnvAssignment_1_4_2_1_2_1.eContents().get(0);
+		private final RuleCall cUseEnvEnvironmentIDTerminalRuleCall_1_4_2_1_2_1_0_1 = (RuleCall)cUseEnvEnvironmentCrossReference_1_4_2_1_2_1_0.eContents().get(1);
+		private final Group cGroup_1_4_2_1_3 = (Group)cAlternatives_1_4_2_1.eContents().get(3);
+		private final Keyword cObjKeyword_1_4_2_1_3_0 = (Keyword)cGroup_1_4_2_1_3.eContents().get(0);
+		private final Assignment cUseObjAssignment_1_4_2_1_3_1 = (Assignment)cGroup_1_4_2_1_3.eContents().get(1);
+		private final CrossReference cUseObjNonPrimitiveTypeCrossReference_1_4_2_1_3_1_0 = (CrossReference)cUseObjAssignment_1_4_2_1_3_1.eContents().get(0);
+		private final RuleCall cUseObjNonPrimitiveTypeIDTerminalRuleCall_1_4_2_1_3_1_0_1 = (RuleCall)cUseObjNonPrimitiveTypeCrossReference_1_4_2_1_3_1_0.eContents().get(1);
+		private final Assignment cUseTypeAssignment_1_4_2_1_4 = (Assignment)cAlternatives_1_4_2_1.eContents().get(4);
+		private final RuleCall cUseTypePrimitiveTypeParserRuleCall_1_4_2_1_4_0 = (RuleCall)cUseTypeAssignment_1_4_2_1_4.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_1_4_2_2 = (Keyword)cGroup_1_4_2.eContents().get(2);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//FunctionParameter Symbol:
-		//	{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
-		//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] |
-		//	':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment])
-		//	'>')? | 'grp' grp=[Group])
+		//	{FunctionParameter} ('var' type=PrimitiveType |
+		//	'agt' agent=[Agent] |
+		//	'env' env=[Environment] |
+		//	'grp' grp=[Group] |
+		//	'var' obj=[NonPrimitiveType] (
+		//	//		':'useObj=[NonPrimitiveType] 	|  
+		//	//		':' useType = PrimitiveType  	|
+		//	'<' ('grp.' useGroup=[Group] |
+		//	'agt.' useAgent=[Agent] |
+		//	'env.' useEnv=[Environment] |
+		//	'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?)
 		//	':' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
-		//obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] |
-		//'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')? | 'grp' grp=[Group]) ':' name=ID
+		//{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'grp' grp=[Group] |
+		//'var' obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
+		////		':' useType = PrimitiveType  	|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//| useType=PrimitiveType) '>')?) ':' name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//{FunctionParameter}
 		public Action getFunctionParameterAction_0() { return cFunctionParameterAction_0; }
 		
-		//'var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var' obj=[NonPrimitiveType] (':'
-		//useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.'
-		//useEnv=[Environment]) '>')? | 'grp' grp=[Group]
+		//'var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'grp' grp=[Group] | 'var'
+		//obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
+		////		':' useType = PrimitiveType  	|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//| useType=PrimitiveType) '>')?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'var' type=PrimitiveType
@@ -2227,124 +2235,122 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getEnvEnvironmentIDTerminalRuleCall_1_2_1_0_1() { return cEnvEnvironmentIDTerminalRuleCall_1_2_1_0_1; }
 		
-		//'var' obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] |
-		//'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')?
+		//'grp' grp=[Group]
 		public Group getGroup_1_3() { return cGroup_1_3; }
 		
-		//'var'
-		public Keyword getVarKeyword_1_3_0() { return cVarKeyword_1_3_0; }
-		
-		//obj=[NonPrimitiveType]
-		public Assignment getObjAssignment_1_3_1() { return cObjAssignment_1_3_1; }
-		
-		//[NonPrimitiveType]
-		public CrossReference getObjNonPrimitiveTypeCrossReference_1_3_1_0() { return cObjNonPrimitiveTypeCrossReference_1_3_1_0; }
-		
-		//ID
-		public RuleCall getObjNonPrimitiveTypeIDTerminalRuleCall_1_3_1_0_1() { return cObjNonPrimitiveTypeIDTerminalRuleCall_1_3_1_0_1; }
-		
-		//(':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] |
-		//'env.' useEnv=[Environment]) '>')?
-		public Alternatives getAlternatives_1_3_2() { return cAlternatives_1_3_2; }
-		
-		//':' useObj=[NonPrimitiveType]
-		public Group getGroup_1_3_2_0() { return cGroup_1_3_2_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1_3_2_0_0() { return cColonKeyword_1_3_2_0_0; }
-		
-		//useObj=[NonPrimitiveType]
-		public Assignment getUseObjAssignment_1_3_2_0_1() { return cUseObjAssignment_1_3_2_0_1; }
-		
-		//[NonPrimitiveType]
-		public CrossReference getUseObjNonPrimitiveTypeCrossReference_1_3_2_0_1_0() { return cUseObjNonPrimitiveTypeCrossReference_1_3_2_0_1_0; }
-		
-		//ID
-		public RuleCall getUseObjNonPrimitiveTypeIDTerminalRuleCall_1_3_2_0_1_0_1() { return cUseObjNonPrimitiveTypeIDTerminalRuleCall_1_3_2_0_1_0_1; }
-		
-		//':' useType=PrimitiveType
-		public Group getGroup_1_3_2_1() { return cGroup_1_3_2_1; }
-		
-		//':'
-		public Keyword getColonKeyword_1_3_2_1_0() { return cColonKeyword_1_3_2_1_0; }
-		
-		//useType=PrimitiveType
-		public Assignment getUseTypeAssignment_1_3_2_1_1() { return cUseTypeAssignment_1_3_2_1_1; }
-		
-		//PrimitiveType
-		public RuleCall getUseTypePrimitiveTypeParserRuleCall_1_3_2_1_1_0() { return cUseTypePrimitiveTypeParserRuleCall_1_3_2_1_1_0; }
-		
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>'
-		public Group getGroup_1_3_2_2() { return cGroup_1_3_2_2; }
-		
-		//'<'
-		public Keyword getLessThanSignKeyword_1_3_2_2_0() { return cLessThanSignKeyword_1_3_2_2_0; }
-		
-		//'grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]
-		public Alternatives getAlternatives_1_3_2_2_1() { return cAlternatives_1_3_2_2_1; }
-		
-		//'grp.' useGroup=[Group]
-		public Group getGroup_1_3_2_2_1_0() { return cGroup_1_3_2_2_1_0; }
-		
-		//'grp.'
-		public Keyword getGrpKeyword_1_3_2_2_1_0_0() { return cGrpKeyword_1_3_2_2_1_0_0; }
-		
-		//useGroup=[Group]
-		public Assignment getUseGroupAssignment_1_3_2_2_1_0_1() { return cUseGroupAssignment_1_3_2_2_1_0_1; }
-		
-		//[Group]
-		public CrossReference getUseGroupGroupCrossReference_1_3_2_2_1_0_1_0() { return cUseGroupGroupCrossReference_1_3_2_2_1_0_1_0; }
-		
-		//ID
-		public RuleCall getUseGroupGroupIDTerminalRuleCall_1_3_2_2_1_0_1_0_1() { return cUseGroupGroupIDTerminalRuleCall_1_3_2_2_1_0_1_0_1; }
-		
-		//'agt.' useAgent=[Agent]
-		public Group getGroup_1_3_2_2_1_1() { return cGroup_1_3_2_2_1_1; }
-		
-		//'agt.'
-		public Keyword getAgtKeyword_1_3_2_2_1_1_0() { return cAgtKeyword_1_3_2_2_1_1_0; }
-		
-		//useAgent=[Agent]
-		public Assignment getUseAgentAssignment_1_3_2_2_1_1_1() { return cUseAgentAssignment_1_3_2_2_1_1_1; }
-		
-		//[Agent]
-		public CrossReference getUseAgentAgentCrossReference_1_3_2_2_1_1_1_0() { return cUseAgentAgentCrossReference_1_3_2_2_1_1_1_0; }
-		
-		//ID
-		public RuleCall getUseAgentAgentIDTerminalRuleCall_1_3_2_2_1_1_1_0_1() { return cUseAgentAgentIDTerminalRuleCall_1_3_2_2_1_1_1_0_1; }
-		
-		//'env.' useEnv=[Environment]
-		public Group getGroup_1_3_2_2_1_2() { return cGroup_1_3_2_2_1_2; }
-		
-		//'env.'
-		public Keyword getEnvKeyword_1_3_2_2_1_2_0() { return cEnvKeyword_1_3_2_2_1_2_0; }
-		
-		//useEnv=[Environment]
-		public Assignment getUseEnvAssignment_1_3_2_2_1_2_1() { return cUseEnvAssignment_1_3_2_2_1_2_1; }
-		
-		//[Environment]
-		public CrossReference getUseEnvEnvironmentCrossReference_1_3_2_2_1_2_1_0() { return cUseEnvEnvironmentCrossReference_1_3_2_2_1_2_1_0; }
-		
-		//ID
-		public RuleCall getUseEnvEnvironmentIDTerminalRuleCall_1_3_2_2_1_2_1_0_1() { return cUseEnvEnvironmentIDTerminalRuleCall_1_3_2_2_1_2_1_0_1; }
-		
-		//'>'
-		public Keyword getGreaterThanSignKeyword_1_3_2_2_2() { return cGreaterThanSignKeyword_1_3_2_2_2; }
-		
-		//'grp' grp=[Group]
-		public Group getGroup_1_4() { return cGroup_1_4; }
-		
 		//'grp'
-		public Keyword getGrpKeyword_1_4_0() { return cGrpKeyword_1_4_0; }
+		public Keyword getGrpKeyword_1_3_0() { return cGrpKeyword_1_3_0; }
 		
 		//grp=[Group]
-		public Assignment getGrpAssignment_1_4_1() { return cGrpAssignment_1_4_1; }
+		public Assignment getGrpAssignment_1_3_1() { return cGrpAssignment_1_3_1; }
 		
 		//[Group]
-		public CrossReference getGrpGroupCrossReference_1_4_1_0() { return cGrpGroupCrossReference_1_4_1_0; }
+		public CrossReference getGrpGroupCrossReference_1_3_1_0() { return cGrpGroupCrossReference_1_3_1_0; }
 		
 		//ID
-		public RuleCall getGrpGroupIDTerminalRuleCall_1_4_1_0_1() { return cGrpGroupIDTerminalRuleCall_1_4_1_0_1; }
+		public RuleCall getGrpGroupIDTerminalRuleCall_1_3_1_0_1() { return cGrpGroupIDTerminalRuleCall_1_3_1_0_1; }
+		
+		//'var' obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
+		////		':' useType = PrimitiveType  	|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//| useType=PrimitiveType) '>')?
+		public Group getGroup_1_4() { return cGroup_1_4; }
+		
+		//'var'
+		public Keyword getVarKeyword_1_4_0() { return cVarKeyword_1_4_0; }
+		
+		//obj=[NonPrimitiveType]
+		public Assignment getObjAssignment_1_4_1() { return cObjAssignment_1_4_1; }
+		
+		//[NonPrimitiveType]
+		public CrossReference getObjNonPrimitiveTypeCrossReference_1_4_1_0() { return cObjNonPrimitiveTypeCrossReference_1_4_1_0; }
+		
+		//ID
+		public RuleCall getObjNonPrimitiveTypeIDTerminalRuleCall_1_4_1_0_1() { return cObjNonPrimitiveTypeIDTerminalRuleCall_1_4_1_0_1; }
+		
+		//( //		':'useObj=[NonPrimitiveType] 	|  
+		////		':' useType = PrimitiveType  	|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//| useType=PrimitiveType) '>')?
+		public Group getGroup_1_4_2() { return cGroup_1_4_2; }
+		
+		////		':'useObj=[NonPrimitiveType] 	|  
+		////		':' useType = PrimitiveType  	|
+		//'<'
+		public Keyword getLessThanSignKeyword_1_4_2_0() { return cLessThanSignKeyword_1_4_2_0; }
+		
+		//'grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType] |
+		//useType=PrimitiveType
+		public Alternatives getAlternatives_1_4_2_1() { return cAlternatives_1_4_2_1; }
+		
+		//'grp.' useGroup=[Group]
+		public Group getGroup_1_4_2_1_0() { return cGroup_1_4_2_1_0; }
+		
+		//'grp.'
+		public Keyword getGrpKeyword_1_4_2_1_0_0() { return cGrpKeyword_1_4_2_1_0_0; }
+		
+		//useGroup=[Group]
+		public Assignment getUseGroupAssignment_1_4_2_1_0_1() { return cUseGroupAssignment_1_4_2_1_0_1; }
+		
+		//[Group]
+		public CrossReference getUseGroupGroupCrossReference_1_4_2_1_0_1_0() { return cUseGroupGroupCrossReference_1_4_2_1_0_1_0; }
+		
+		//ID
+		public RuleCall getUseGroupGroupIDTerminalRuleCall_1_4_2_1_0_1_0_1() { return cUseGroupGroupIDTerminalRuleCall_1_4_2_1_0_1_0_1; }
+		
+		//'agt.' useAgent=[Agent]
+		public Group getGroup_1_4_2_1_1() { return cGroup_1_4_2_1_1; }
+		
+		//'agt.'
+		public Keyword getAgtKeyword_1_4_2_1_1_0() { return cAgtKeyword_1_4_2_1_1_0; }
+		
+		//useAgent=[Agent]
+		public Assignment getUseAgentAssignment_1_4_2_1_1_1() { return cUseAgentAssignment_1_4_2_1_1_1; }
+		
+		//[Agent]
+		public CrossReference getUseAgentAgentCrossReference_1_4_2_1_1_1_0() { return cUseAgentAgentCrossReference_1_4_2_1_1_1_0; }
+		
+		//ID
+		public RuleCall getUseAgentAgentIDTerminalRuleCall_1_4_2_1_1_1_0_1() { return cUseAgentAgentIDTerminalRuleCall_1_4_2_1_1_1_0_1; }
+		
+		//'env.' useEnv=[Environment]
+		public Group getGroup_1_4_2_1_2() { return cGroup_1_4_2_1_2; }
+		
+		//'env.'
+		public Keyword getEnvKeyword_1_4_2_1_2_0() { return cEnvKeyword_1_4_2_1_2_0; }
+		
+		//useEnv=[Environment]
+		public Assignment getUseEnvAssignment_1_4_2_1_2_1() { return cUseEnvAssignment_1_4_2_1_2_1; }
+		
+		//[Environment]
+		public CrossReference getUseEnvEnvironmentCrossReference_1_4_2_1_2_1_0() { return cUseEnvEnvironmentCrossReference_1_4_2_1_2_1_0; }
+		
+		//ID
+		public RuleCall getUseEnvEnvironmentIDTerminalRuleCall_1_4_2_1_2_1_0_1() { return cUseEnvEnvironmentIDTerminalRuleCall_1_4_2_1_2_1_0_1; }
+		
+		//'obj.' useObj=[NonPrimitiveType]
+		public Group getGroup_1_4_2_1_3() { return cGroup_1_4_2_1_3; }
+		
+		//'obj.'
+		public Keyword getObjKeyword_1_4_2_1_3_0() { return cObjKeyword_1_4_2_1_3_0; }
+		
+		//useObj=[NonPrimitiveType]
+		public Assignment getUseObjAssignment_1_4_2_1_3_1() { return cUseObjAssignment_1_4_2_1_3_1; }
+		
+		//[NonPrimitiveType]
+		public CrossReference getUseObjNonPrimitiveTypeCrossReference_1_4_2_1_3_1_0() { return cUseObjNonPrimitiveTypeCrossReference_1_4_2_1_3_1_0; }
+		
+		//ID
+		public RuleCall getUseObjNonPrimitiveTypeIDTerminalRuleCall_1_4_2_1_3_1_0_1() { return cUseObjNonPrimitiveTypeIDTerminalRuleCall_1_4_2_1_3_1_0_1; }
+		
+		//useType=PrimitiveType
+		public Assignment getUseTypeAssignment_1_4_2_1_4() { return cUseTypeAssignment_1_4_2_1_4; }
+		
+		//PrimitiveType
+		public RuleCall getUseTypePrimitiveTypeParserRuleCall_1_4_2_1_4_0() { return cUseTypePrimitiveTypeParserRuleCall_1_4_2_1_4_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_1_4_2_2() { return cGreaterThanSignKeyword_1_4_2_2; }
 		
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -4766,35 +4772,32 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cObjAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
 		private final CrossReference cObjNonPrimitiveTypeCrossReference_3_1_0_0 = (CrossReference)cObjAssignment_3_1_0.eContents().get(0);
 		private final RuleCall cObjNonPrimitiveTypeIDTerminalRuleCall_3_1_0_0_1 = (RuleCall)cObjNonPrimitiveTypeCrossReference_3_1_0_0.eContents().get(1);
-		private final Alternatives cAlternatives_3_1_1 = (Alternatives)cGroup_3_1.eContents().get(1);
-		private final Group cGroup_3_1_1_0 = (Group)cAlternatives_3_1_1.eContents().get(0);
-		private final Keyword cColonKeyword_3_1_1_0_0 = (Keyword)cGroup_3_1_1_0.eContents().get(0);
-		private final Assignment cUseObjAssignment_3_1_1_0_1 = (Assignment)cGroup_3_1_1_0.eContents().get(1);
-		private final CrossReference cUseObjNonPrimitiveTypeCrossReference_3_1_1_0_1_0 = (CrossReference)cUseObjAssignment_3_1_1_0_1.eContents().get(0);
-		private final RuleCall cUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_0_1_0_1 = (RuleCall)cUseObjNonPrimitiveTypeCrossReference_3_1_1_0_1_0.eContents().get(1);
-		private final Group cGroup_3_1_1_1 = (Group)cAlternatives_3_1_1.eContents().get(1);
-		private final Keyword cColonKeyword_3_1_1_1_0 = (Keyword)cGroup_3_1_1_1.eContents().get(0);
-		private final Assignment cUseTypeAssignment_3_1_1_1_1 = (Assignment)cGroup_3_1_1_1.eContents().get(1);
-		private final RuleCall cUseTypePrimitiveTypeParserRuleCall_3_1_1_1_1_0 = (RuleCall)cUseTypeAssignment_3_1_1_1_1.eContents().get(0);
-		private final Group cGroup_3_1_1_2 = (Group)cAlternatives_3_1_1.eContents().get(2);
-		private final Keyword cLessThanSignKeyword_3_1_1_2_0 = (Keyword)cGroup_3_1_1_2.eContents().get(0);
-		private final Alternatives cAlternatives_3_1_1_2_1 = (Alternatives)cGroup_3_1_1_2.eContents().get(1);
-		private final Group cGroup_3_1_1_2_1_0 = (Group)cAlternatives_3_1_1_2_1.eContents().get(0);
-		private final Keyword cGrpKeyword_3_1_1_2_1_0_0 = (Keyword)cGroup_3_1_1_2_1_0.eContents().get(0);
-		private final Assignment cUseGroupAssignment_3_1_1_2_1_0_1 = (Assignment)cGroup_3_1_1_2_1_0.eContents().get(1);
-		private final CrossReference cUseGroupGroupCrossReference_3_1_1_2_1_0_1_0 = (CrossReference)cUseGroupAssignment_3_1_1_2_1_0_1.eContents().get(0);
-		private final RuleCall cUseGroupGroupIDTerminalRuleCall_3_1_1_2_1_0_1_0_1 = (RuleCall)cUseGroupGroupCrossReference_3_1_1_2_1_0_1_0.eContents().get(1);
-		private final Group cGroup_3_1_1_2_1_1 = (Group)cAlternatives_3_1_1_2_1.eContents().get(1);
-		private final Keyword cAgtKeyword_3_1_1_2_1_1_0 = (Keyword)cGroup_3_1_1_2_1_1.eContents().get(0);
-		private final Assignment cUseAgentAssignment_3_1_1_2_1_1_1 = (Assignment)cGroup_3_1_1_2_1_1.eContents().get(1);
-		private final CrossReference cUseAgentAgentCrossReference_3_1_1_2_1_1_1_0 = (CrossReference)cUseAgentAssignment_3_1_1_2_1_1_1.eContents().get(0);
-		private final RuleCall cUseAgentAgentIDTerminalRuleCall_3_1_1_2_1_1_1_0_1 = (RuleCall)cUseAgentAgentCrossReference_3_1_1_2_1_1_1_0.eContents().get(1);
-		private final Group cGroup_3_1_1_2_1_2 = (Group)cAlternatives_3_1_1_2_1.eContents().get(2);
-		private final Keyword cEnvKeyword_3_1_1_2_1_2_0 = (Keyword)cGroup_3_1_1_2_1_2.eContents().get(0);
-		private final Assignment cUseEnvAssignment_3_1_1_2_1_2_1 = (Assignment)cGroup_3_1_1_2_1_2.eContents().get(1);
-		private final CrossReference cUseEnvEnvironmentCrossReference_3_1_1_2_1_2_1_0 = (CrossReference)cUseEnvAssignment_3_1_1_2_1_2_1.eContents().get(0);
-		private final RuleCall cUseEnvEnvironmentIDTerminalRuleCall_3_1_1_2_1_2_1_0_1 = (RuleCall)cUseEnvEnvironmentCrossReference_3_1_1_2_1_2_1_0.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_3_1_1_2_2 = (Keyword)cGroup_3_1_1_2.eContents().get(2);
+		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
+		private final Alternatives cAlternatives_3_1_1_1 = (Alternatives)cGroup_3_1_1.eContents().get(1);
+		private final Group cGroup_3_1_1_1_0 = (Group)cAlternatives_3_1_1_1.eContents().get(0);
+		private final Keyword cGrpKeyword_3_1_1_1_0_0 = (Keyword)cGroup_3_1_1_1_0.eContents().get(0);
+		private final Assignment cUseGroupAssignment_3_1_1_1_0_1 = (Assignment)cGroup_3_1_1_1_0.eContents().get(1);
+		private final CrossReference cUseGroupGroupCrossReference_3_1_1_1_0_1_0 = (CrossReference)cUseGroupAssignment_3_1_1_1_0_1.eContents().get(0);
+		private final RuleCall cUseGroupGroupIDTerminalRuleCall_3_1_1_1_0_1_0_1 = (RuleCall)cUseGroupGroupCrossReference_3_1_1_1_0_1_0.eContents().get(1);
+		private final Group cGroup_3_1_1_1_1 = (Group)cAlternatives_3_1_1_1.eContents().get(1);
+		private final Keyword cAgtKeyword_3_1_1_1_1_0 = (Keyword)cGroup_3_1_1_1_1.eContents().get(0);
+		private final Assignment cUseAgentAssignment_3_1_1_1_1_1 = (Assignment)cGroup_3_1_1_1_1.eContents().get(1);
+		private final CrossReference cUseAgentAgentCrossReference_3_1_1_1_1_1_0 = (CrossReference)cUseAgentAssignment_3_1_1_1_1_1.eContents().get(0);
+		private final RuleCall cUseAgentAgentIDTerminalRuleCall_3_1_1_1_1_1_0_1 = (RuleCall)cUseAgentAgentCrossReference_3_1_1_1_1_1_0.eContents().get(1);
+		private final Group cGroup_3_1_1_1_2 = (Group)cAlternatives_3_1_1_1.eContents().get(2);
+		private final Keyword cEnvKeyword_3_1_1_1_2_0 = (Keyword)cGroup_3_1_1_1_2.eContents().get(0);
+		private final Assignment cUseEnvAssignment_3_1_1_1_2_1 = (Assignment)cGroup_3_1_1_1_2.eContents().get(1);
+		private final CrossReference cUseEnvEnvironmentCrossReference_3_1_1_1_2_1_0 = (CrossReference)cUseEnvAssignment_3_1_1_1_2_1.eContents().get(0);
+		private final RuleCall cUseEnvEnvironmentIDTerminalRuleCall_3_1_1_1_2_1_0_1 = (RuleCall)cUseEnvEnvironmentCrossReference_3_1_1_1_2_1_0.eContents().get(1);
+		private final Group cGroup_3_1_1_1_3 = (Group)cAlternatives_3_1_1_1.eContents().get(3);
+		private final Keyword cObjKeyword_3_1_1_1_3_0 = (Keyword)cGroup_3_1_1_1_3.eContents().get(0);
+		private final Assignment cUseObjAssignment_3_1_1_1_3_1 = (Assignment)cGroup_3_1_1_1_3.eContents().get(1);
+		private final CrossReference cUseObjNonPrimitiveTypeCrossReference_3_1_1_1_3_1_0 = (CrossReference)cUseObjAssignment_3_1_1_1_3_1.eContents().get(0);
+		private final RuleCall cUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_1_3_1_0_1 = (RuleCall)cUseObjNonPrimitiveTypeCrossReference_3_1_1_1_3_1_0.eContents().get(1);
+		private final Assignment cUseTypeAssignment_3_1_1_1_3_2 = (Assignment)cGroup_3_1_1_1_3.eContents().get(2);
+		private final RuleCall cUseTypePrimitiveTypeParserRuleCall_3_1_1_1_3_2_0 = (RuleCall)cUseTypeAssignment_3_1_1_1_3_2.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_3_1_1_2 = (Keyword)cGroup_3_1_1.eContents().get(2);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cNameIDTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
@@ -4804,17 +4807,19 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExprExpressionParserRuleCall_6_1_0 = (RuleCall)cExprAssignment_6_1.eContents().get(0);
 		
 		//DataTypeDeclaration Symbol:
-		//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (':'
-		//	useObj=[NonPrimitiveType] |
-		//	':' useType=PrimitiveType |
+		//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (
+		//	//		':'useObj=[NonPrimitiveType] 				|  
+		//	//		':' useType = PrimitiveType 										|
 		//	'<' ('grp.' useGroup=[Group] |
 		//	'agt.' useAgent=[Agent] |
-		//	'env.' useEnv=[Environment]) '>')?) ':' name=ID ('=' expr=Expression)?;
+		//	'env.' useEnv=[Environment] |
+		//	'obj.' useObj=[NonPrimitiveType] useType=PrimitiveType) '>')?) ':' name=ID ('=' expr=Expression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType]
-		//| ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment])
-		//'>')?) ':' name=ID ('=' expr=Expression)?
+		//{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 				|  
+		////		':' useType = PrimitiveType 										|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//useType=PrimitiveType) '>')?) ':' name=ID ('=' expr=Expression)?
 		public Group getGroup() { return cGroup; }
 		
 		//{DataTypeDeclaration}
@@ -4829,8 +4834,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"*"
 		public Keyword getInitIncludeAsteriskKeyword_2_0() { return cInitIncludeAsteriskKeyword_2_0; }
 		
-		//type=PrimitiveType | obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.'
-		//useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')?
+		//type=PrimitiveType | obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 				|  
+		////		':' useType = PrimitiveType 										|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//useType=PrimitiveType) '>')?
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//type=PrimitiveType
@@ -4839,8 +4846,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//PrimitiveType
 		public RuleCall getTypePrimitiveTypeParserRuleCall_3_0_0() { return cTypePrimitiveTypeParserRuleCall_3_0_0; }
 		
-		//obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] |
-		//'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>')?
+		//obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 				|  
+		////		':' useType = PrimitiveType 										|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//useType=PrimitiveType) '>')?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//obj=[NonPrimitiveType]
@@ -4852,93 +4861,89 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getObjNonPrimitiveTypeIDTerminalRuleCall_3_1_0_0_1() { return cObjNonPrimitiveTypeIDTerminalRuleCall_3_1_0_0_1; }
 		
-		//(':' useObj=[NonPrimitiveType] | ':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] |
-		//'env.' useEnv=[Environment]) '>')?
-		public Alternatives getAlternatives_3_1_1() { return cAlternatives_3_1_1; }
+		//( //		':'useObj=[NonPrimitiveType] 				|  
+		////		':' useType = PrimitiveType 										|
+		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//useType=PrimitiveType) '>')?
+		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
 		
-		//':' useObj=[NonPrimitiveType]
-		public Group getGroup_3_1_1_0() { return cGroup_3_1_1_0; }
-		
-		//':'
-		public Keyword getColonKeyword_3_1_1_0_0() { return cColonKeyword_3_1_1_0_0; }
-		
-		//useObj=[NonPrimitiveType]
-		public Assignment getUseObjAssignment_3_1_1_0_1() { return cUseObjAssignment_3_1_1_0_1; }
-		
-		//[NonPrimitiveType]
-		public CrossReference getUseObjNonPrimitiveTypeCrossReference_3_1_1_0_1_0() { return cUseObjNonPrimitiveTypeCrossReference_3_1_1_0_1_0; }
-		
-		//ID
-		public RuleCall getUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_0_1_0_1() { return cUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_0_1_0_1; }
-		
-		//':' useType=PrimitiveType
-		public Group getGroup_3_1_1_1() { return cGroup_3_1_1_1; }
-		
-		//':'
-		public Keyword getColonKeyword_3_1_1_1_0() { return cColonKeyword_3_1_1_1_0; }
-		
-		//useType=PrimitiveType
-		public Assignment getUseTypeAssignment_3_1_1_1_1() { return cUseTypeAssignment_3_1_1_1_1; }
-		
-		//PrimitiveType
-		public RuleCall getUseTypePrimitiveTypeParserRuleCall_3_1_1_1_1_0() { return cUseTypePrimitiveTypeParserRuleCall_3_1_1_1_1_0; }
-		
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]) '>'
-		public Group getGroup_3_1_1_2() { return cGroup_3_1_1_2; }
-		
+		////		':'useObj=[NonPrimitiveType] 				|  
+		////		':' useType = PrimitiveType 										|
 		//'<'
-		public Keyword getLessThanSignKeyword_3_1_1_2_0() { return cLessThanSignKeyword_3_1_1_2_0; }
+		public Keyword getLessThanSignKeyword_3_1_1_0() { return cLessThanSignKeyword_3_1_1_0; }
 		
-		//'grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment]
-		public Alternatives getAlternatives_3_1_1_2_1() { return cAlternatives_3_1_1_2_1; }
+		//'grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//useType=PrimitiveType
+		public Alternatives getAlternatives_3_1_1_1() { return cAlternatives_3_1_1_1; }
 		
 		//'grp.' useGroup=[Group]
-		public Group getGroup_3_1_1_2_1_0() { return cGroup_3_1_1_2_1_0; }
+		public Group getGroup_3_1_1_1_0() { return cGroup_3_1_1_1_0; }
 		
 		//'grp.'
-		public Keyword getGrpKeyword_3_1_1_2_1_0_0() { return cGrpKeyword_3_1_1_2_1_0_0; }
+		public Keyword getGrpKeyword_3_1_1_1_0_0() { return cGrpKeyword_3_1_1_1_0_0; }
 		
 		//useGroup=[Group]
-		public Assignment getUseGroupAssignment_3_1_1_2_1_0_1() { return cUseGroupAssignment_3_1_1_2_1_0_1; }
+		public Assignment getUseGroupAssignment_3_1_1_1_0_1() { return cUseGroupAssignment_3_1_1_1_0_1; }
 		
 		//[Group]
-		public CrossReference getUseGroupGroupCrossReference_3_1_1_2_1_0_1_0() { return cUseGroupGroupCrossReference_3_1_1_2_1_0_1_0; }
+		public CrossReference getUseGroupGroupCrossReference_3_1_1_1_0_1_0() { return cUseGroupGroupCrossReference_3_1_1_1_0_1_0; }
 		
 		//ID
-		public RuleCall getUseGroupGroupIDTerminalRuleCall_3_1_1_2_1_0_1_0_1() { return cUseGroupGroupIDTerminalRuleCall_3_1_1_2_1_0_1_0_1; }
+		public RuleCall getUseGroupGroupIDTerminalRuleCall_3_1_1_1_0_1_0_1() { return cUseGroupGroupIDTerminalRuleCall_3_1_1_1_0_1_0_1; }
 		
 		//'agt.' useAgent=[Agent]
-		public Group getGroup_3_1_1_2_1_1() { return cGroup_3_1_1_2_1_1; }
+		public Group getGroup_3_1_1_1_1() { return cGroup_3_1_1_1_1; }
 		
 		//'agt.'
-		public Keyword getAgtKeyword_3_1_1_2_1_1_0() { return cAgtKeyword_3_1_1_2_1_1_0; }
+		public Keyword getAgtKeyword_3_1_1_1_1_0() { return cAgtKeyword_3_1_1_1_1_0; }
 		
 		//useAgent=[Agent]
-		public Assignment getUseAgentAssignment_3_1_1_2_1_1_1() { return cUseAgentAssignment_3_1_1_2_1_1_1; }
+		public Assignment getUseAgentAssignment_3_1_1_1_1_1() { return cUseAgentAssignment_3_1_1_1_1_1; }
 		
 		//[Agent]
-		public CrossReference getUseAgentAgentCrossReference_3_1_1_2_1_1_1_0() { return cUseAgentAgentCrossReference_3_1_1_2_1_1_1_0; }
+		public CrossReference getUseAgentAgentCrossReference_3_1_1_1_1_1_0() { return cUseAgentAgentCrossReference_3_1_1_1_1_1_0; }
 		
 		//ID
-		public RuleCall getUseAgentAgentIDTerminalRuleCall_3_1_1_2_1_1_1_0_1() { return cUseAgentAgentIDTerminalRuleCall_3_1_1_2_1_1_1_0_1; }
+		public RuleCall getUseAgentAgentIDTerminalRuleCall_3_1_1_1_1_1_0_1() { return cUseAgentAgentIDTerminalRuleCall_3_1_1_1_1_1_0_1; }
 		
 		//'env.' useEnv=[Environment]
-		public Group getGroup_3_1_1_2_1_2() { return cGroup_3_1_1_2_1_2; }
+		public Group getGroup_3_1_1_1_2() { return cGroup_3_1_1_1_2; }
 		
 		//'env.'
-		public Keyword getEnvKeyword_3_1_1_2_1_2_0() { return cEnvKeyword_3_1_1_2_1_2_0; }
+		public Keyword getEnvKeyword_3_1_1_1_2_0() { return cEnvKeyword_3_1_1_1_2_0; }
 		
 		//useEnv=[Environment]
-		public Assignment getUseEnvAssignment_3_1_1_2_1_2_1() { return cUseEnvAssignment_3_1_1_2_1_2_1; }
+		public Assignment getUseEnvAssignment_3_1_1_1_2_1() { return cUseEnvAssignment_3_1_1_1_2_1; }
 		
 		//[Environment]
-		public CrossReference getUseEnvEnvironmentCrossReference_3_1_1_2_1_2_1_0() { return cUseEnvEnvironmentCrossReference_3_1_1_2_1_2_1_0; }
+		public CrossReference getUseEnvEnvironmentCrossReference_3_1_1_1_2_1_0() { return cUseEnvEnvironmentCrossReference_3_1_1_1_2_1_0; }
 		
 		//ID
-		public RuleCall getUseEnvEnvironmentIDTerminalRuleCall_3_1_1_2_1_2_1_0_1() { return cUseEnvEnvironmentIDTerminalRuleCall_3_1_1_2_1_2_1_0_1; }
+		public RuleCall getUseEnvEnvironmentIDTerminalRuleCall_3_1_1_1_2_1_0_1() { return cUseEnvEnvironmentIDTerminalRuleCall_3_1_1_1_2_1_0_1; }
+		
+		//'obj.' useObj=[NonPrimitiveType] useType=PrimitiveType
+		public Group getGroup_3_1_1_1_3() { return cGroup_3_1_1_1_3; }
+		
+		//'obj.'
+		public Keyword getObjKeyword_3_1_1_1_3_0() { return cObjKeyword_3_1_1_1_3_0; }
+		
+		//useObj=[NonPrimitiveType]
+		public Assignment getUseObjAssignment_3_1_1_1_3_1() { return cUseObjAssignment_3_1_1_1_3_1; }
+		
+		//[NonPrimitiveType]
+		public CrossReference getUseObjNonPrimitiveTypeCrossReference_3_1_1_1_3_1_0() { return cUseObjNonPrimitiveTypeCrossReference_3_1_1_1_3_1_0; }
+		
+		//ID
+		public RuleCall getUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_1_3_1_0_1() { return cUseObjNonPrimitiveTypeIDTerminalRuleCall_3_1_1_1_3_1_0_1; }
+		
+		//useType=PrimitiveType
+		public Assignment getUseTypeAssignment_3_1_1_1_3_2() { return cUseTypeAssignment_3_1_1_1_3_2; }
+		
+		//PrimitiveType
+		public RuleCall getUseTypePrimitiveTypeParserRuleCall_3_1_1_1_3_2_0() { return cUseTypePrimitiveTypeParserRuleCall_3_1_1_1_3_2_0; }
 		
 		//'>'
-		public Keyword getGreaterThanSignKeyword_3_1_1_2_2() { return cGreaterThanSignKeyword_3_1_1_2_2; }
+		public Keyword getGreaterThanSignKeyword_3_1_1_2() { return cGreaterThanSignKeyword_3_1_1_2; }
 		
 		//':'
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
@@ -7440,13 +7445,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTODOKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cStrAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cStrSTRINGTerminalRuleCall_1_0 = (RuleCall)cStrAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//CASL_Macro_TODO:
-		//	"TODO:" str=STRING ';';
+		//	"TODO:" str=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"TODO:" str=STRING ';'
+		//"TODO:" str=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"TODO:"
@@ -7457,9 +7461,6 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING
 		public RuleCall getStrSTRINGTerminalRuleCall_1_0() { return cStrSTRINGTerminalRuleCall_1_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 	public class CASL_Macro_GET_IDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_GET_ID");
@@ -7469,16 +7470,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_GET_ID:
 		//	{CASL_Macro_GET_ID}
-		//	"GET_ID();";
+		//	"GET_ID()";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{CASL_Macro_GET_ID} "GET_ID();"
+		//{CASL_Macro_GET_ID} "GET_ID()"
 		public Group getGroup() { return cGroup; }
 		
 		//{CASL_Macro_GET_ID}
 		public Action getCASL_Macro_GET_IDAction_0() { return cCASL_Macro_GET_IDAction_0; }
 		
-		//"GET_ID();"
+		//"GET_ID()"
 		public Keyword getGET_IDKeyword_1() { return cGET_IDKeyword_1; }
 	}
 	public class CASL_Macro_PopulateElements extends AbstractParserRuleElementFinder {
@@ -9627,10 +9628,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FunctionParameter Symbol:
-	//	{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'var'
-	//	obj=[NonPrimitiveType] (':' useObj=[NonPrimitiveType] |
-	//	':' useType=PrimitiveType | '<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment])
-	//	'>')? | 'grp' grp=[Group])
+	//	{FunctionParameter} ('var' type=PrimitiveType |
+	//	'agt' agent=[Agent] |
+	//	'env' env=[Environment] |
+	//	'grp' grp=[Group] |
+	//	'var' obj=[NonPrimitiveType] (
+	//	//		':'useObj=[NonPrimitiveType] 	|  
+	//	//		':' useType = PrimitiveType  	|
+	//	'<' ('grp.' useGroup=[Group] |
+	//	'agt.' useAgent=[Agent] |
+	//	'env.' useEnv=[Environment] |
+	//	'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?)
 	//	':' name=ID;
 	public FunctionParameterElements getFunctionParameterAccess() {
 		return pFunctionParameter;
@@ -10165,12 +10173,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DataTypeDeclaration Symbol:
-	//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (':'
-	//	useObj=[NonPrimitiveType] |
-	//	':' useType=PrimitiveType |
+	//	{DataTypeDeclaration} 'var' initInclude="*"? (type=PrimitiveType | obj=[NonPrimitiveType] (
+	//	//		':'useObj=[NonPrimitiveType] 				|  
+	//	//		':' useType = PrimitiveType 										|
 	//	'<' ('grp.' useGroup=[Group] |
 	//	'agt.' useAgent=[Agent] |
-	//	'env.' useEnv=[Environment]) '>')?) ':' name=ID ('=' expr=Expression)?;
+	//	'env.' useEnv=[Environment] |
+	//	'obj.' useObj=[NonPrimitiveType] useType=PrimitiveType) '>')?) ':' name=ID ('=' expr=Expression)?;
 	public DataTypeDeclarationElements getDataTypeDeclarationAccess() {
 		return pDataTypeDeclaration;
 	}
@@ -10600,7 +10609,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CASL_Macro_TODO:
-	//	"TODO:" str=STRING ';';
+	//	"TODO:" str=STRING;
 	public CASL_Macro_TODOElements getCASL_Macro_TODOAccess() {
 		return pCASL_Macro_TODO;
 	}
@@ -10611,7 +10620,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CASL_Macro_GET_ID:
 	//	{CASL_Macro_GET_ID}
-	//	"GET_ID();";
+	//	"GET_ID()";
 	public CASL_Macro_GET_IDElements getCASL_Macro_GET_IDAccess() {
 		return pCASL_Macro_GET_ID;
 	}

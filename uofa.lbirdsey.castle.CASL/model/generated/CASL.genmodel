@@ -531,13 +531,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/agent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/env"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/grp"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/obj"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useObj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useGroup"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useAgent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useEnv"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/grp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useObj"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//FunctionParameter/useType"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//AgentInteraction"/>
     <genClasses ecoreClass="CASL.ecore#//EnvironmentInteraction"/>
@@ -548,11 +548,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//DataTypeDeclaration/initInclude"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/obj"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useObj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useGroup"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useAgent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useEnv"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useObj"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/useType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//DataTypeDeclaration/expr"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//BooleanExpression">

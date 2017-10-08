@@ -30,13 +30,13 @@ import uofa.lbirdsey.castle.casl.PrimitiveType;
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getAgent <em>Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getEnv <em>Env</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getGrp <em>Grp</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getObj <em>Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseObj <em>Use Obj</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseType <em>Use Type</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseGroup <em>Use Group</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseAgent <em>Use Agent</em>}</li>
  *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseEnv <em>Use Env</em>}</li>
- *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getGrp <em>Grp</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseObj <em>Use Obj</em>}</li>
+ *   <li>{@link uofa.lbirdsey.castle.casl.impl.FunctionParameterImpl#getUseType <em>Use Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +74,16 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
   protected Environment env;
 
   /**
+   * The cached value of the '{@link #getGrp() <em>Grp</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGrp()
+   * @generated
+   * @ordered
+   */
+  protected Group grp;
+
+  /**
    * The cached value of the '{@link #getObj() <em>Obj</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -82,26 +92,6 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * @ordered
    */
   protected NonPrimitiveType obj;
-
-  /**
-   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUseObj()
-   * @generated
-   * @ordered
-   */
-  protected NonPrimitiveType useObj;
-
-  /**
-   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUseType()
-   * @generated
-   * @ordered
-   */
-  protected PrimitiveType useType;
 
   /**
    * The cached value of the '{@link #getUseGroup() <em>Use Group</em>}' reference.
@@ -134,14 +124,24 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
   protected Environment useEnv;
 
   /**
-   * The cached value of the '{@link #getGrp() <em>Grp</em>}' reference.
+   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGrp()
+   * @see #getUseObj()
    * @generated
    * @ordered
    */
-  protected Group grp;
+  protected NonPrimitiveType useObj;
+
+  /**
+   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseType()
+   * @generated
+   * @ordered
+   */
+  protected PrimitiveType useType;
 
   /**
    * <!-- begin-user-doc -->
@@ -303,6 +303,49 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
+  public Group getGrp()
+  {
+    if (grp != null && grp.eIsProxy())
+    {
+      InternalEObject oldGrp = (InternalEObject)grp;
+      grp = (Group)eResolveProxy(oldGrp);
+      if (grp != oldGrp)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__GRP, oldGrp, grp));
+      }
+    }
+    return grp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Group basicGetGrp()
+  {
+    return grp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setGrp(Group newGrp)
+  {
+    Group oldGrp = grp;
+    grp = newGrp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__GRP, oldGrp, grp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NonPrimitiveType getObj()
   {
     if (obj != null && obj.eIsProxy())
@@ -339,97 +382,6 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
     obj = newObj;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__OBJ, oldObj, obj));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NonPrimitiveType getUseObj()
-  {
-    if (useObj != null && useObj.eIsProxy())
-    {
-      InternalEObject oldUseObj = (InternalEObject)useObj;
-      useObj = (NonPrimitiveType)eResolveProxy(oldUseObj);
-      if (useObj != oldUseObj)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
-      }
-    }
-    return useObj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NonPrimitiveType basicGetUseObj()
-  {
-    return useObj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseObj(NonPrimitiveType newUseObj)
-  {
-    NonPrimitiveType oldUseObj = useObj;
-    useObj = newUseObj;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PrimitiveType getUseType()
-  {
-    return useType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetUseType(PrimitiveType newUseType, NotificationChain msgs)
-  {
-    PrimitiveType oldUseType = useType;
-    useType = newUseType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, oldUseType, newUseType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseType(PrimitiveType newUseType)
-  {
-    if (newUseType != useType)
-    {
-      NotificationChain msgs = null;
-      if (useType != null)
-        msgs = ((InternalEObject)useType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
-      if (newUseType != null)
-        msgs = ((InternalEObject)newUseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
-      msgs = basicSetUseType(newUseType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, newUseType, newUseType));
   }
 
   /**
@@ -566,19 +518,19 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group getGrp()
+  public NonPrimitiveType getUseObj()
   {
-    if (grp != null && grp.eIsProxy())
+    if (useObj != null && useObj.eIsProxy())
     {
-      InternalEObject oldGrp = (InternalEObject)grp;
-      grp = (Group)eResolveProxy(oldGrp);
-      if (grp != oldGrp)
+      InternalEObject oldUseObj = (InternalEObject)useObj;
+      useObj = (NonPrimitiveType)eResolveProxy(oldUseObj);
+      if (useObj != oldUseObj)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__GRP, oldGrp, grp));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
       }
     }
-    return grp;
+    return useObj;
   }
 
   /**
@@ -586,9 +538,9 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group basicGetGrp()
+  public NonPrimitiveType basicGetUseObj()
   {
-    return grp;
+    return useObj;
   }
 
   /**
@@ -596,12 +548,60 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGrp(Group newGrp)
+  public void setUseObj(NonPrimitiveType newUseObj)
   {
-    Group oldGrp = grp;
-    grp = newGrp;
+    NonPrimitiveType oldUseObj = useObj;
+    useObj = newUseObj;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__GRP, oldGrp, grp));
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrimitiveType getUseType()
+  {
+    return useType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetUseType(PrimitiveType newUseType, NotificationChain msgs)
+  {
+    PrimitiveType oldUseType = useType;
+    useType = newUseType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, oldUseType, newUseType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUseType(PrimitiveType newUseType)
+  {
+    if (newUseType != useType)
+    {
+      NotificationChain msgs = null;
+      if (useType != null)
+        msgs = ((InternalEObject)useType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
+      if (newUseType != null)
+        msgs = ((InternalEObject)newUseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
+      msgs = basicSetUseType(newUseType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, newUseType, newUseType));
   }
 
   /**
@@ -640,14 +640,12 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__ENV:
         if (resolve) return getEnv();
         return basicGetEnv();
+      case CaslPackage.FUNCTION_PARAMETER__GRP:
+        if (resolve) return getGrp();
+        return basicGetGrp();
       case CaslPackage.FUNCTION_PARAMETER__OBJ:
         if (resolve) return getObj();
         return basicGetObj();
-      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        if (resolve) return getUseObj();
-        return basicGetUseObj();
-      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        return getUseType();
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
         if (resolve) return getUseGroup();
         return basicGetUseGroup();
@@ -657,9 +655,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
         if (resolve) return getUseEnv();
         return basicGetUseEnv();
-      case CaslPackage.FUNCTION_PARAMETER__GRP:
-        if (resolve) return getGrp();
-        return basicGetGrp();
+      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
+        if (resolve) return getUseObj();
+        return basicGetUseObj();
+      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
+        return getUseType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -683,14 +683,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__ENV:
         setEnv((Environment)newValue);
         return;
+      case CaslPackage.FUNCTION_PARAMETER__GRP:
+        setGrp((Group)newValue);
+        return;
       case CaslPackage.FUNCTION_PARAMETER__OBJ:
         setObj((NonPrimitiveType)newValue);
-        return;
-      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        setUseObj((NonPrimitiveType)newValue);
-        return;
-      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        setUseType((PrimitiveType)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
         setUseGroup((Group)newValue);
@@ -701,8 +698,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
         setUseEnv((Environment)newValue);
         return;
-      case CaslPackage.FUNCTION_PARAMETER__GRP:
-        setGrp((Group)newValue);
+      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
+        setUseObj((NonPrimitiveType)newValue);
+        return;
+      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
+        setUseType((PrimitiveType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -727,14 +727,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__ENV:
         setEnv((Environment)null);
         return;
+      case CaslPackage.FUNCTION_PARAMETER__GRP:
+        setGrp((Group)null);
+        return;
       case CaslPackage.FUNCTION_PARAMETER__OBJ:
         setObj((NonPrimitiveType)null);
-        return;
-      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        setUseObj((NonPrimitiveType)null);
-        return;
-      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        setUseType((PrimitiveType)null);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
         setUseGroup((Group)null);
@@ -745,8 +742,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
         setUseEnv((Environment)null);
         return;
-      case CaslPackage.FUNCTION_PARAMETER__GRP:
-        setGrp((Group)null);
+      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
+        setUseObj((NonPrimitiveType)null);
+        return;
+      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
+        setUseType((PrimitiveType)null);
         return;
     }
     super.eUnset(featureID);
@@ -768,20 +768,20 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
         return agent != null;
       case CaslPackage.FUNCTION_PARAMETER__ENV:
         return env != null;
+      case CaslPackage.FUNCTION_PARAMETER__GRP:
+        return grp != null;
       case CaslPackage.FUNCTION_PARAMETER__OBJ:
         return obj != null;
-      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        return useObj != null;
-      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        return useType != null;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
         return useGroup != null;
       case CaslPackage.FUNCTION_PARAMETER__USE_AGENT:
         return useAgent != null;
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
         return useEnv != null;
-      case CaslPackage.FUNCTION_PARAMETER__GRP:
-        return grp != null;
+      case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
+        return useObj != null;
+      case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
+        return useType != null;
     }
     return super.eIsSet(featureID);
   }
