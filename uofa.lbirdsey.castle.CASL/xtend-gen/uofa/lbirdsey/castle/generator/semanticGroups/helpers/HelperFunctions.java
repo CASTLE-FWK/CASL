@@ -6,6 +6,7 @@ import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -982,32 +983,35 @@ public class HelperFunctions {
                 String _output_3 = output;
                 String _name_4 = fdt.getObj().getName();
                 String _plus_5 = (_name_4 + "<");
+                String _plus_6 = (_plus_5 + "groups.");
                 String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseGroup().getName());
-                String _plus_6 = (_plus_5 + _firstUpper);
-                String _plus_7 = (_plus_6 + ">");
-                output = (_output_3 + _plus_7);
+                String _plus_7 = (_plus_6 + _firstUpper);
+                String _plus_8 = (_plus_7 + ">");
+                output = (_output_3 + _plus_8);
               } else {
                 Agent _useAgent = fdt.getUseAgent();
                 boolean _tripleNotEquals_7 = (_useAgent != null);
                 if (_tripleNotEquals_7) {
                   String _output_4 = output;
                   String _name_5 = fdt.getObj().getName();
-                  String _plus_8 = (_name_5 + "<");
+                  String _plus_9 = (_name_5 + "<");
+                  String _plus_10 = (_plus_9 + "agents.");
                   String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseAgent().getName());
-                  String _plus_9 = (_plus_8 + _firstUpper_1);
-                  String _plus_10 = (_plus_9 + ">");
-                  output = (_output_4 + _plus_10);
+                  String _plus_11 = (_plus_10 + _firstUpper_1);
+                  String _plus_12 = (_plus_11 + ">");
+                  output = (_output_4 + _plus_12);
                 } else {
                   Environment _useEnv = fdt.getUseEnv();
                   boolean _tripleNotEquals_8 = (_useEnv != null);
                   if (_tripleNotEquals_8) {
                     String _output_5 = output;
                     String _name_6 = fdt.getObj().getName();
-                    String _plus_11 = (_name_6 + "<");
+                    String _plus_13 = (_name_6 + "<");
+                    String _plus_14 = (_plus_13 + "environments.");
                     String _firstUpper_2 = StringExtensions.toFirstUpper(fdt.getUseEnv().getName());
-                    String _plus_12 = (_plus_11 + _firstUpper_2);
-                    String _plus_13 = (_plus_12 + ">");
-                    output = (_output_5 + _plus_13);
+                    String _plus_15 = (_plus_14 + _firstUpper_2);
+                    String _plus_16 = (_plus_15 + ">");
+                    output = (_output_5 + _plus_16);
                   } else {
                     String _output_6 = output;
                     String _name_7 = fdt.getObj().getName();
@@ -1034,8 +1038,8 @@ public class HelperFunctions {
         Symbol _agentFieldRef_1 = f.getAgentFieldRef();
         final AgentFieldReference afr = ((AgentFieldReference) _agentFieldRef_1);
         String _firstUpper_3 = StringExtensions.toFirstUpper(afr.getAgent().getName());
-        String _plus_14 = ("agents." + _firstUpper_3);
-        output = _plus_14;
+        String _plus_17 = ("agents." + _firstUpper_3);
+        output = _plus_17;
       } else {
         Symbol _envFieldRef = f.getEnvFieldRef();
         boolean _tripleNotEquals_11 = (_envFieldRef != null);
@@ -1043,8 +1047,8 @@ public class HelperFunctions {
           Symbol _envFieldRef_1 = f.getEnvFieldRef();
           final EnvironmentFieldReference efr = ((EnvironmentFieldReference) _envFieldRef_1);
           String _firstUpper_4 = StringExtensions.toFirstUpper(efr.getEnv().getName());
-          String _plus_15 = ("environments." + _firstUpper_4);
-          output = _plus_15;
+          String _plus_18 = ("environments." + _firstUpper_4);
+          output = _plus_18;
         } else {
           Symbol _grpFieldRef = f.getGrpFieldRef();
           boolean _tripleNotEquals_12 = (_grpFieldRef != null);
@@ -1052,8 +1056,8 @@ public class HelperFunctions {
             Symbol _grpFieldRef_1 = f.getGrpFieldRef();
             final GroupFieldReference gfr = ((GroupFieldReference) _grpFieldRef_1);
             String _firstUpper_5 = StringExtensions.toFirstUpper(gfr.getGrp().getName());
-            String _plus_16 = ("groups." + _firstUpper_5);
-            output = _plus_16;
+            String _plus_19 = ("groups." + _firstUpper_5);
+            output = _plus_19;
           }
         }
       }
@@ -1457,15 +1461,15 @@ public class HelperFunctions {
         }
       }
     }
-    return ("TYPE NOT FOUND: " + candidate);
+    return candidate;
   }
   
   public static String parseTypesAsString(final String iC, final String systemRoot) {
     String output = "";
+    InputOutput.<String>println(iC);
     boolean _contains = iC.contains("List");
     if (_contains) {
-      output = "import java.util.List;";
-      return output;
+      output = "import java.util.List;\n";
     }
     boolean _contains_1 = iC.contains("string");
     if (_contains_1) {

@@ -514,11 +514,11 @@ class HelperFunctions {
 					if (fdt.useObj !== null) {
 						output += fdt.obj.name + "<" + fdt.useObj.name + ">"
 					} else if (fdt.useGroup !== null) {
-						output += fdt.obj.name + "<" + fdt.useGroup.name.toFirstUpper + ">"
+						output += fdt.obj.name + "<" + "groups."+fdt.useGroup.name.toFirstUpper + ">"
 					} else if (fdt.useAgent !== null) {
-						output += fdt.obj.name + "<" + fdt.useAgent.name.toFirstUpper + ">"
+						output += fdt.obj.name + "<" + "agents."+fdt.useAgent.name.toFirstUpper + ">"
 					} else if (fdt.useEnv !== null) {
-						output += fdt.obj.name + "<" + fdt.useEnv.name.toFirstUpper + ">"
+						output += fdt.obj.name + "<" + "environments."+fdt.useEnv.name.toFirstUpper + ">"
 					} else {
 						output += fdt.obj.name
 					}
@@ -686,18 +686,22 @@ class HelperFunctions {
 				}
 			}
 		}
-		return "TYPE NOT FOUND: " + candidate;
+		//If all else, send it back again
+		return candidate;
 	}
 
 	// Order of precedence is super important here...
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
-//		println(iC);
+		println(iC);
+		
+		
+		
 		// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
 		if (iC.contains("List")) {
 			// Ignore
-			output = "import java.util.List;"
-			return output;
+			output = "import java.util.List;\n"
+//			return output;
 		} 
 		if (iC.contains("string")){
 			return output;
