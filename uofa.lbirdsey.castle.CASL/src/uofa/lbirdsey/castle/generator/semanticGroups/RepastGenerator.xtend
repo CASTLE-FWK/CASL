@@ -104,17 +104,21 @@ class RepastGenerator implements IGenerator2 {
 		for (ae : resource.allContents.toIterable.filter(AbstractElement)) {
 			if (ae instanceof Object) {
 				var pkgs = ae as Object
-//	 			HelperFunctions.addToTypesArray(pkgs as Object);
-				fsa.generateFile(dirName + "/objects/" + pkgs.name + ".java",
-					pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
-						replaceAll("(;)+", ";"))
+				if (pkgs.custom !== null){
+	//	 			HelperFunctions.addToTypesArray(pkgs as Object);
+					fsa.generateFile(dirName + "/objects/" + pkgs.name + ".java",
+						pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
+							replaceAll("(;)+", ";"))
+				}
 			} else if (ae instanceof Enum) {
 				var pkgs = ae as Enum
 // 				HelperFunctions.addToTypesArray(pkgs as Enum);
 				// Generate all ENUMS then place into a single file
+				if (pkgs.custom !== null){
 				fsa.generateFile(dirName + "/objects/" + pkgs.name + "_ENUM.java",
 					pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
+				}
 			}
 		}
 		// Process the AGENTs
