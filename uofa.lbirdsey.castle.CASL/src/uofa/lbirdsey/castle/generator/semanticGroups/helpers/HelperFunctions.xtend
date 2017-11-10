@@ -507,8 +507,10 @@ class HelperFunctions {
 						output += "Enums." + fdt.obj.name;
 					}
 				} else if (fdt.obj instanceof Object) {
+					
 					if ((fdt.obj as Object).custom !== null) {
 						output = "CUSTOM:";
+//						println(getFieldName(f));
 					}
 										
 					if (fdt.useObj !== null) {
@@ -693,7 +695,7 @@ class HelperFunctions {
 	// Order of precedence is super important here...
 	static def String parseTypesAsString(String iC, String systemRoot) {
 		var output = "";
-		println(iC);
+//		println(iC);
 		
 		
 		

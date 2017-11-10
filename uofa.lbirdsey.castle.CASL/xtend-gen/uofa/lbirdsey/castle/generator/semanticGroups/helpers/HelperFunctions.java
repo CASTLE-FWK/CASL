@@ -6,7 +6,6 @@ import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -1466,7 +1465,6 @@ public class HelperFunctions {
   
   public static String parseTypesAsString(final String iC, final String systemRoot) {
     String output = "";
-    InputOutput.<String>println(iC);
     boolean _contains = iC.contains("List");
     if (_contains) {
       output = "import java.util.List;\n";
