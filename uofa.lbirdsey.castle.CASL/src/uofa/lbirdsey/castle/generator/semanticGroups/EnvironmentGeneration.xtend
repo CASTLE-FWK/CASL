@@ -248,9 +248,13 @@ class EnvironmentGeneration {
 		for (interaction : env.env_interactions.interactions) {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
-					if (!(interFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(interFP as Field))
-					}
+					println(interFP.name)
+					libImports.add(HelperFunctions.inferFunctionParameterType(interFP as FunctionParameter))
+//					if (!(interFP instanceof FunctionParameter)){
+//						libImports.add(HelperFunctions.getFieldType(interFP as Field))
+//					} else {
+//						libImports.add(HelperFunctions.getSymbolType(interFP))
+//					}
 				}
 			}
 			output += "public ";

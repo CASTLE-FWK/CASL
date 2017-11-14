@@ -337,8 +337,6 @@ FunctionParameter returns Symbol:
 	'env' env = [Environment] 	|
 	'grp' grp = [Group] 		|
 	'var' obj = [NonPrimitiveType](
-//		':'useObj=[NonPrimitiveType] 	|  
-//		':' useType = PrimitiveType  	|
 		'<' (
 			'grp.'useGroup = [Group] 		|
 			'agt.'useAgent = [Agent] 		|
