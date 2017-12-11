@@ -96,9 +96,9 @@ class CustomObjectGeneration {
 			} else if (typ instanceof Enum){
 				//TODO: How do we handle Enums?
 				var obj = typ as Enum
-				output += "public class "+obj.name +"_ENUM {\n"
-				output += "\tpublic " + obj.name+"_ENUM() {\n"
-				output += "\t}\n"
+//				output += "public class "+obj.name +"{\n"
+//				output += "\tpublic " + obj.name+"() {\n"
+//				output += "\t}\n"
 				output += "\tpublic enum "+obj.name +"{\n"
 				output += "\t\t"
 				for (fi : obj.enum_fields) {
@@ -107,7 +107,7 @@ class CustomObjectGeneration {
 				
 				output = output.substring(0,output.length-1)
 				output += "\n\t}"
-				output += "\n}"
+//				output += "\n}"
 			}
 		} else if (theAbstractElement instanceof Import){
 			
