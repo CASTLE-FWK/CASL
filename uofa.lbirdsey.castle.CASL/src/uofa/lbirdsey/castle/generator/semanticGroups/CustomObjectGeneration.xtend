@@ -49,8 +49,7 @@ class CustomObjectGeneration {
 			imports += iC+"\n";
 		}
 		if (isEnum) {
-			fileContents = "package "+objsPkg+".Enums;\n\n";
-			println("IS AN ENUM YO")
+			fileContents = "package "+objsPkg+".enums;\n\n";
 		} else {
 			fileContents = "package "+objsPkg+";\n\n";	
 		}

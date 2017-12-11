@@ -86,7 +86,7 @@ class RepastGenerator implements IGenerator2 {
 			agentsPkg = mainPkg + ".agents";
 			envsPkg = mainPkg + ".environments";
 			grpsPkg = mainPkg + ".groups";
-			objsPkg = mainPkg + ".objects";
+			objsPkg = mainPkg + ".objects"
 			groupsActive = (sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE);
 			fsa.generateFile(dirName + "/" + sys.fullyQualifiedName.toString("/").replaceAll(" ", "") + ".java",
 				sys.compileSystem.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
@@ -115,8 +115,8 @@ class RepastGenerator implements IGenerator2 {
 // 				HelperFunctions.addToTypesArray(pkgs as Enum);
 				// Generate all ENUMS then place into a single file
 				if (pkgs.custom !== null){
-				fsa.generateFile(dirName + "/objects/" + pkgs.name + "_ENUM.java",
-					pkgs.createPackages(true).toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
+					fsa.generateFile(dirName + "/objects/enums/" + pkgs.name + ".java",
+					createPackages(pkgs,true).toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
 				}
 			}
