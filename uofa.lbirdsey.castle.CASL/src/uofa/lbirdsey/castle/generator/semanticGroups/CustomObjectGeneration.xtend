@@ -72,11 +72,11 @@ class CustomObjectGeneration {
 				output += "\t}\n"
 				for (field : obj.fields){
 					if (field instanceof Field){
-						output += "\tpublic "+Printers.printFieldDeclarations(field)+";\n"
-						output += "\t"+HelperFunctions.generateGettersSetters(field) +"\n"
+						output += "\t"+Printers.printFieldDeclarations(field)+";\n"
+						output += "\t\t"+HelperFunctions.generateGettersSetters(field) +"\n"
 					} else if (field instanceof Function){ 
 						val func = field as Function
-						output  += "\t"
+						output  += "\tpublic "
 						if (func.returnType != null) {
 							output += HelperFunctions.inferFunctionParameterType((func.returnType as FunctionParameter))
 						} else {

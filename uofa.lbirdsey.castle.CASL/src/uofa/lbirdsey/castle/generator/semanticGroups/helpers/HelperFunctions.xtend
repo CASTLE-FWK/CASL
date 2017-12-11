@@ -501,11 +501,11 @@ class HelperFunctions {
 					if ((fdt.obj as Enum).custom !== null) {
 						output = "CUSTOM:";
 					}
-					//TODO (11/12/2017): This isn't how CASL Enums are meant to be generated. Is this the only spot?
+					//TODO (11/12/2017): This isn't how CASL enums are meant to be generated. Is this the only spot?
 					if (fdt.useObj !== null) {
-						output += "Enums." + fdt.obj.name;
+						output += "enums." + fdt.obj.name;
 					} else {
-						output += "Enums." + fdt.obj.name;
+						output += "enums." + fdt.obj.name;
 					}
 				} else if (fdt.obj instanceof Object) {
 					
@@ -552,8 +552,8 @@ class HelperFunctions {
 				if (fp.obj instanceof Object) {
 					return fp.obj.name
 				} else if (fp.obj instanceof Enum) {
-					//TODO (11/12/2017): This isn't how CASL Enums are generated.
-					return "Enums." + fp.obj.name
+					//TODO (11/12/2017): This isn't how CASL enums are generated.
+					return "enums." + fp.obj.name
 				}
 			} else if (fp.agent !== null) {
 				return fp.agent.name;
@@ -720,8 +720,8 @@ class HelperFunctions {
 			output += "import " + systemRoot + "." + iC + ";";
 		} else if (iC.startsWith("CUSTOM:")) {
 			var object = iC.split(":").get(1);
-			if (object.startsWith("Enums")) {
-				output += "import " + systemRoot + "." + object + ";";
+			if (object.startsWith("enums")) {
+				output += "import " + systemRoot + ".objects." + object + ";";
 			} else {
 				output += "import " + systemRoot + ".objects." + object + ";";
 			}
@@ -735,7 +735,7 @@ class HelperFunctions {
 			output +=
 				HelperFunctions.parseTypesAsString(locateType(iC.substring(typeBegin + 1, typeEnd)),
 					systemRoot);
-		} else if (iC.startsWith("Enums.")) {
+		} else if (iC.startsWith("enums.")) {
 			output += "import castleComponents." + iC + ";"
 		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))) {
 			output = "";

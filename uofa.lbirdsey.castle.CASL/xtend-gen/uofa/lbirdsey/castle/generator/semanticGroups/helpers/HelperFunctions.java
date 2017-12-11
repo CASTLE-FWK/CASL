@@ -948,12 +948,12 @@ public class HelperFunctions {
           if (_tripleNotEquals_3) {
             String _output = output;
             String _name = fdt.getObj().getName();
-            String _plus = ("Enums." + _name);
+            String _plus = ("enums." + _name);
             output = (_output + _plus);
           } else {
             String _output_1 = output;
             String _name_1 = fdt.getObj().getName();
-            String _plus_1 = ("Enums." + _name_1);
+            String _plus_1 = ("enums." + _name_1);
             output = (_output_1 + _plus_1);
           }
         } else {
@@ -1079,7 +1079,7 @@ public class HelperFunctions {
           NonPrimitiveType _obj_2 = fp.getObj();
           if ((_obj_2 instanceof uofa.lbirdsey.castle.casl.Enum)) {
             String _name = fp.getObj().getName();
-            return ("Enums." + _name);
+            return ("enums." + _name);
           }
         }
       } else {
@@ -1488,10 +1488,10 @@ public class HelperFunctions {
       boolean _startsWith = iC.startsWith("CUSTOM:");
       if (_startsWith) {
         String object = iC.split(":")[1];
-        boolean _startsWith_1 = object.startsWith("Enums");
+        boolean _startsWith_1 = object.startsWith("enums");
         if (_startsWith_1) {
           String _output_1 = output;
-          output = (_output_1 + (((("import " + systemRoot) + ".") + object) + ";"));
+          output = (_output_1 + (((("import " + systemRoot) + ".objects.") + object) + ";"));
         } else {
           String _output_2 = output;
           output = (_output_2 + (((("import " + systemRoot) + ".objects.") + object) + ";"));
@@ -1515,7 +1515,7 @@ public class HelperFunctions {
           String _parseTypesAsString = HelperFunctions.parseTypesAsString(HelperFunctions.locateType(iC.substring((typeBegin + 1), typeEnd)), systemRoot);
           output = (_output_4 + _parseTypesAsString);
         } else {
-          boolean _startsWith_2 = iC.startsWith("Enums.");
+          boolean _startsWith_2 = iC.startsWith("enums.");
           if (_startsWith_2) {
             String _output_5 = output;
             output = (_output_5 + (("import castleComponents." + iC) + ";"));
