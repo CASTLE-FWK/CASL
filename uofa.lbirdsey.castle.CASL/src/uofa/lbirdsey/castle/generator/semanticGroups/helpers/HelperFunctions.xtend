@@ -576,9 +576,9 @@ class HelperFunctions {
 			var fiedecl = field.declaration as DataTypeDeclaration;
 			if (fiedecl.initInclude !== null || makeStatic) {
 				isStatic = true;
-				output += "public static void set" + fiedecl.name.toFirstUpper + "("
+				output += "public static void set" + fiedecl.name.toFirstUpper + "_("
 			} else {
-				output += "public void set" + fiedecl.name.toFirstUpper + "("
+				output += "public void set" + fiedecl.name.toFirstUpper + "_("
 			}
 			if (fiedecl.type !== null) {
 				output += fiedecl.type.name
@@ -634,26 +634,26 @@ class HelperFunctions {
 				}
 			}
 			if (fiedecl.initInclude !== null || makeStatic) {
-				output += " get" + fiedecl.name.toFirstUpper + "() {\n\treturn " + fiedecl.name + ";\n}\n"
+				output += " get" + fiedecl.name.toFirstUpper + "_() {\n\treturn " + fiedecl.name + ";\n}\n"
 			} else {
-				output += " get" + fiedecl.name.toFirstUpper + "() {\n\treturn this." + fiedecl.name + ";\n}\n"
+				output += " get" + fiedecl.name.toFirstUpper + "_() {\n\treturn this." + fiedecl.name + ";\n}\n"
 			}
 
 		} else if (field.agentFieldRef !== null) {
 			var fieagent = field.agentFieldRef as AgentFieldReference
 			output +=
-				"public void set" + fieagent.name.toFirstUpper + "(" + fieagent.agent.name + " " + fieagent.name + ")"
+				"public void set" + fieagent.name.toFirstUpper + "_(" + fieagent.agent.name + " " + fieagent.name + ")"
 			output += "{\n\t\tthis." + fieagent.name + " = " + fieagent.name + ";\n}\n"
 			output +=
-				"public " + fieagent.agent.name + " get" + fieagent.name.toFirstUpper + "() {\n\treturn this." +
+				"public " + fieagent.agent.name + " get" + fieagent.name.toFirstUpper + "_() {\n\treturn this." +
 					fieagent.name + ";\n}\n"
 		} else if (field.envFieldRef !== null) {
 			var fieenv = field.envFieldRef as EnvironmentFieldReference
 			output +=
-				"public void set" + fieenv.name.toFirstUpper + "(" + fieenv.env.name + " " + fieenv.name +
+				"public void set" + fieenv.name.toFirstUpper + "_(" + fieenv.env.name + " " + fieenv.name +
 					") {\n\t\tthis." + fieenv.name + " = " + fieenv.name + ";\n}\n"
 			output +=
-				"public " + fieenv.env.name + " get" + fieenv.name.toFirstUpper + "() {\n\treturn this." + fieenv.name +
+				"public " + fieenv.env.name + " get" + fieenv.name.toFirstUpper + "_() {\n\treturn this." + fieenv.name +
 					";\n}\n"	
 		}
 					return output;

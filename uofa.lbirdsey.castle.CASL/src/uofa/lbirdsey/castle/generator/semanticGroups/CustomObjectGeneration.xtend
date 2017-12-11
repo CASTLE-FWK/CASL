@@ -63,7 +63,7 @@ class CustomObjectGeneration {
 		} else if (theAbstractElement instanceof Type){
 			var typ = theAbstractElement as Type
 			if (typ instanceof PrimitiveType){
-				
+				//ignore
 			} else if (typ instanceof Object) {
 				var obj = typ as Object
 				output += "import stdSimLib.CASObject;\n\npublic class "+obj.name +" extends CASObject {\n"
@@ -74,7 +74,7 @@ class CustomObjectGeneration {
 					if (field instanceof Field){
 						output += "\tpublic "+Printers.printFieldDeclarations(field)+";\n"
 						output += "\t"+HelperFunctions.generateGettersSetters(field) +"\n"
-					} else if (field instanceof Function){
+					} else if (field instanceof Function){ 
 						val func = field as Function
 						output  += "\t"
 						if (func.returnType != null) {
@@ -83,11 +83,15 @@ class CustomObjectGeneration {
 							output += "void"
 						}
 						output += " "+func.name+"("+HelperFunctions.printFunctionParameters(func.functionParameters)+") {\n"
+						if (func.returnType != null){
+							output += "\t\t"+HelperFunctions.printFunctionParameter(func.returnType as FunctionParameter)+";\n"
+							
+						}
 						for (statement : func.body){
 							output += "\t\t"+HelperFunctions.parseBodyElement(statement, func)+"\n"
 						}
 						if (func.returnType != null) {
-							output += "\treturn " + func.returnType.name + "\n"
+							output += "\t\treturn " + func.returnType.name + ";\n"
 						} 
 						output += "\t}\n"
 					}

@@ -1122,13 +1122,13 @@ public class HelperFunctions {
         String _output = output;
         String _firstUpper = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus = ("public static void set" + _firstUpper);
-        String _plus_1 = (_plus + "(");
+        String _plus_1 = (_plus + "_(");
         output = (_output + _plus_1);
       } else {
         String _output_1 = output;
         String _firstUpper_1 = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus_2 = ("public void set" + _firstUpper_1);
-        String _plus_3 = (_plus_2 + "(");
+        String _plus_3 = (_plus_2 + "_(");
         output = (_output_1 + _plus_3);
       }
       PrimitiveType _type = fiedecl.getType();
@@ -1316,7 +1316,7 @@ public class HelperFunctions {
         String _output_22 = output;
         String _firstUpper_2 = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus_36 = (" get" + _firstUpper_2);
-        String _plus_37 = (_plus_36 + "() {\n\treturn ");
+        String _plus_37 = (_plus_36 + "_() {\n\treturn ");
         String _name_22 = fiedecl.getName();
         String _plus_38 = (_plus_37 + _name_22);
         String _plus_39 = (_plus_38 + ";\n}\n");
@@ -1325,7 +1325,7 @@ public class HelperFunctions {
         String _output_23 = output;
         String _firstUpper_3 = StringExtensions.toFirstUpper(fiedecl.getName());
         String _plus_40 = (" get" + _firstUpper_3);
-        String _plus_41 = (_plus_40 + "() {\n\treturn this.");
+        String _plus_41 = (_plus_40 + "_() {\n\treturn this.");
         String _name_23 = fiedecl.getName();
         String _plus_42 = (_plus_41 + _name_23);
         String _plus_43 = (_plus_42 + ";\n}\n");
@@ -1340,7 +1340,7 @@ public class HelperFunctions {
         String _output_24 = output;
         String _firstUpper_4 = StringExtensions.toFirstUpper(fieagent.getName());
         String _plus_44 = ("public void set" + _firstUpper_4);
-        String _plus_45 = (_plus_44 + "(");
+        String _plus_45 = (_plus_44 + "_(");
         String _name_24 = fieagent.getAgent().getName();
         String _plus_46 = (_plus_45 + _name_24);
         String _plus_47 = (_plus_46 + " ");
@@ -1362,7 +1362,7 @@ public class HelperFunctions {
         String _plus_55 = (_plus_54 + " get");
         String _firstUpper_5 = StringExtensions.toFirstUpper(fieagent.getName());
         String _plus_56 = (_plus_55 + _firstUpper_5);
-        String _plus_57 = (_plus_56 + "() {\n\treturn this.");
+        String _plus_57 = (_plus_56 + "_() {\n\treturn this.");
         String _name_29 = fieagent.getName();
         String _plus_58 = (_plus_57 + _name_29);
         String _plus_59 = (_plus_58 + ";\n}\n");
@@ -1376,7 +1376,7 @@ public class HelperFunctions {
           String _output_27 = output;
           String _firstUpper_6 = StringExtensions.toFirstUpper(fieenv.getName());
           String _plus_60 = ("public void set" + _firstUpper_6);
-          String _plus_61 = (_plus_60 + "(");
+          String _plus_61 = (_plus_60 + "_(");
           String _name_30 = fieenv.getEnv().getName();
           String _plus_62 = (_plus_61 + _name_30);
           String _plus_63 = (_plus_62 + " ");
@@ -1397,7 +1397,7 @@ public class HelperFunctions {
           String _plus_71 = (_plus_70 + " get");
           String _firstUpper_7 = StringExtensions.toFirstUpper(fieenv.getName());
           String _plus_72 = (_plus_71 + _firstUpper_7);
-          String _plus_73 = (_plus_72 + "() {\n\treturn this.");
+          String _plus_73 = (_plus_72 + "_() {\n\treturn this.");
           String _name_35 = fieenv.getName();
           String _plus_74 = (_plus_73 + _name_35);
           String _plus_75 = (_plus_74 + 
