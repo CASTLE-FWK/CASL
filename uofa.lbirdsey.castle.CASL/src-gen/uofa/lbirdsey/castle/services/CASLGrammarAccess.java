@@ -2166,10 +2166,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	'agt' agent=[Agent] |
 		//	'env' env=[Environment] |
 		//	'grp' grp=[Group] |
-		//	'var' obj=[NonPrimitiveType] (
-		//	//		':'useObj=[NonPrimitiveType] 	|  
-		//	//		':' useType = PrimitiveType  	|
-		//	'<' ('grp.' useGroup=[Group] |
+		//	'var' obj=[NonPrimitiveType] ('<' ('grp.' useGroup=[Group] |
 		//	'agt.' useAgent=[Agent] |
 		//	'env.' useEnv=[Environment] |
 		//	'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?)
@@ -2177,20 +2174,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{FunctionParameter} ('var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'grp' grp=[Group] |
-		//'var' obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
-		////		':' useType = PrimitiveType  	|
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
-		//| useType=PrimitiveType) '>')?) ':' name=ID
+		//'var' obj=[NonPrimitiveType] ('<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] |
+		//'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?) ':' name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//{FunctionParameter}
 		public Action getFunctionParameterAction_0() { return cFunctionParameterAction_0; }
 		
 		//'var' type=PrimitiveType | 'agt' agent=[Agent] | 'env' env=[Environment] | 'grp' grp=[Group] | 'var'
-		//obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
-		////		':' useType = PrimitiveType  	|
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
-		//| useType=PrimitiveType) '>')?
+		//obj=[NonPrimitiveType] ('<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.'
+		//useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'var' type=PrimitiveType
@@ -2250,10 +2243,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getGrpGroupIDTerminalRuleCall_1_3_1_0_1() { return cGrpGroupIDTerminalRuleCall_1_3_1_0_1; }
 		
-		//'var' obj=[NonPrimitiveType] ( //		':'useObj=[NonPrimitiveType] 	|  
-		////		':' useType = PrimitiveType  	|
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
-		//| useType=PrimitiveType) '>')?
+		//'var' obj=[NonPrimitiveType] ('<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] |
+		//'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?
 		public Group getGroup_1_4() { return cGroup_1_4; }
 		
 		//'var'
@@ -2268,14 +2259,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getObjNonPrimitiveTypeIDTerminalRuleCall_1_4_1_0_1() { return cObjNonPrimitiveTypeIDTerminalRuleCall_1_4_1_0_1; }
 		
-		//( //		':'useObj=[NonPrimitiveType] 	|  
-		////		':' useType = PrimitiveType  	|
-		//'<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
+		//('<' ('grp.' useGroup=[Group] | 'agt.' useAgent=[Agent] | 'env.' useEnv=[Environment] | 'obj.' useObj=[NonPrimitiveType]
 		//| useType=PrimitiveType) '>')?
 		public Group getGroup_1_4_2() { return cGroup_1_4_2; }
 		
-		////		':'useObj=[NonPrimitiveType] 	|  
-		////		':' useType = PrimitiveType  	|
 		//'<'
 		public Keyword getLessThanSignKeyword_1_4_2_0() { return cLessThanSignKeyword_1_4_2_0; }
 		
@@ -9632,10 +9619,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'agt' agent=[Agent] |
 	//	'env' env=[Environment] |
 	//	'grp' grp=[Group] |
-	//	'var' obj=[NonPrimitiveType] (
-	//	//		':'useObj=[NonPrimitiveType] 	|  
-	//	//		':' useType = PrimitiveType  	|
-	//	'<' ('grp.' useGroup=[Group] |
+	//	'var' obj=[NonPrimitiveType] ('<' ('grp.' useGroup=[Group] |
 	//	'agt.' useAgent=[Agent] |
 	//	'env.' useEnv=[Environment] |
 	//	'obj.' useObj=[NonPrimitiveType] | useType=PrimitiveType) '>')?)

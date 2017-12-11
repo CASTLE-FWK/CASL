@@ -86,7 +86,7 @@ class RepastGenerator implements IGenerator2 {
 			agentsPkg = mainPkg + ".agents";
 			envsPkg = mainPkg + ".environments";
 			grpsPkg = mainPkg + ".groups";
-			objsPkg = mainPkg + ".objects"
+			objsPkg = mainPkg + ".objects";
 			groupsActive = (sys.cas_rules.semanticgroups == CAS_Semantic_Group_Switch.ENABLE);
 			fsa.generateFile(dirName + "/" + sys.fullyQualifiedName.toString("/").replaceAll(" ", "") + ".java",
 				sys.compileSystem.toString.replaceAll("string", "String").replaceAll("bool", "boolean").
@@ -107,7 +107,7 @@ class RepastGenerator implements IGenerator2 {
 				if (pkgs.custom !== null){
 	//	 			HelperFunctions.addToTypesArray(pkgs as Object);
 					fsa.generateFile(dirName + "/objects/" + pkgs.name + ".java",
-						pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
+						pkgs.createPackages(false).toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 							replaceAll("(;)+", ";"))
 				}
 			} else if (ae instanceof Enum) {
@@ -116,7 +116,7 @@ class RepastGenerator implements IGenerator2 {
 				// Generate all ENUMS then place into a single file
 				if (pkgs.custom !== null){
 				fsa.generateFile(dirName + "/objects/" + pkgs.name + "_ENUM.java",
-					pkgs.createPackages.toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
+					pkgs.createPackages(true).toString.replaceAll("string\\s+", "String ").replaceAll("bool\\s+", "boolean ").
 						replaceAll("(;)+", ";"))
 				}
 			}
@@ -190,9 +190,9 @@ class RepastGenerator implements IGenerator2 {
 	}
 
 	// TODO: Handle the automated importing of packages
-	def String createPackages(AbstractElement e) {
+	def String createPackages(AbstractElement e, boolean isEnum) {
 		var ae = new CustomObjectGeneration(e, mainPkg, objsPkg);
-		ae.setup();
+		ae.setup(isEnum);
 		// return HelperFunctions.copyrightPrint(e.name) + ae.print(); 
 		return ae.print();
 	}

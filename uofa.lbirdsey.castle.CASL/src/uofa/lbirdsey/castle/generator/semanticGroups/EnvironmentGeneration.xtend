@@ -249,6 +249,7 @@ class EnvironmentGeneration {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
 					println(interFP.name)
+					//TODO: THIS BUG IS ANNOYING (14/11/17)
 					libImports.add(HelperFunctions.inferFunctionParameterType(interFP as FunctionParameter))
 //					if (!(interFP instanceof FunctionParameter)){
 //						libImports.add(HelperFunctions.getFieldType(interFP as Field))

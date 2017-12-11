@@ -48,7 +48,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall
 
 class Printers {
 
-	// Copyright printing
+	// Copyright printingE
 	static def String copyrightPrint(String fname) {
 		var copyrightNote = "";
 		var fileName = fname.replaceAll(" ", "").trim();

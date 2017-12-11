@@ -31,7 +31,7 @@ class CustomObjectGeneration {
 		importsToPrint = new HashSet<String>();
 	}
 	
-	def setup(){
+	def setup(boolean isEnum){
 		var imports = "//Automated Custom Object Import Generation"
 		for (String iC : libImports){
 			if (iC !== null){
@@ -48,7 +48,12 @@ class CustomObjectGeneration {
 		for (String iC : importsToPrint){
 			imports += iC+"\n";
 		}
-		fileContents = "package "+objsPkg+";\n\n";
+		if (isEnum) {
+			fileContents = "package "+objsPkg+".Enums;\n\n";
+			println("IS AN ENUM YO")
+		} else {
+			fileContents = "package "+objsPkg+";\n\n";	
+		}
 		fileContents += imports +"\n\n"
 		fileContents += printLocal() as String;
 	}

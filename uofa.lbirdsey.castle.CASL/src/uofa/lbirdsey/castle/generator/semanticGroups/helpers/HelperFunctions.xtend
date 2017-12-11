@@ -501,6 +501,7 @@ class HelperFunctions {
 					if ((fdt.obj as Enum).custom !== null) {
 						output = "CUSTOM:";
 					}
+					//TODO (11/12/2017): This isn't how CASL Enums are meant to be generated. Is this the only spot?
 					if (fdt.useObj !== null) {
 						output += "Enums." + fdt.obj.name;
 					} else {
@@ -551,6 +552,7 @@ class HelperFunctions {
 				if (fp.obj instanceof Object) {
 					return fp.obj.name
 				} else if (fp.obj instanceof Enum) {
+					//TODO (11/12/2017): This isn't how CASL Enums are generated.
 					return "Enums." + fp.obj.name
 				}
 			} else if (fp.agent !== null) {
