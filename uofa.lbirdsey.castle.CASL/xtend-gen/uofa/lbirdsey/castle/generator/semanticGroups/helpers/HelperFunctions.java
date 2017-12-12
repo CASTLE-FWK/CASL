@@ -6,6 +6,7 @@ import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -46,6 +47,7 @@ import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.Function;
 import uofa.lbirdsey.castle.casl.FunctionCall;
+import uofa.lbirdsey.castle.casl.FunctionCallExpr;
 import uofa.lbirdsey.castle.casl.FunctionParameter;
 import uofa.lbirdsey.castle.casl.Group;
 import uofa.lbirdsey.castle.casl.GroupExternalInteraction;
@@ -330,7 +332,13 @@ public class HelperFunctions {
                                       if ((expr instanceof MacroCall)) {
                                         output = MacroGenerator.macroCallReturnType(((MacroCall) expr));
                                       } else {
-                                        output = "void";
+                                        if ((expr instanceof uofa.lbirdsey.castle.casl.Object)) {
+                                          String _string = expr.toString();
+                                          String _plus = ("AN OBJECT: " + _string);
+                                          InputOutput.<String>print(_plus);
+                                        } else {
+                                          output = "void";
+                                        }
                                       }
                                     }
                                   }
@@ -353,7 +361,7 @@ public class HelperFunctions {
   }
   
   public static String inferGeneralType(final EObject eobj) {
-    String output = "";
+    String output = "_NOTYPE_";
     if ((eobj instanceof Field)) {
       final Field ftf = ((Field) eobj);
       Symbol _declaration = ftf.getDeclaration();
@@ -433,28 +441,43 @@ public class HelperFunctions {
             }
           }
         } else {
-          if ((eobj instanceof FunctionCall)) {
-            Symbol _returnType = ((FunctionCall) eobj).getFunc().getReturnType();
+          if ((eobj instanceof FunctionCallExpr)) {
+            HelperFunctions.inferGeneralType(((FunctionCallExpr) eobj).getFuncCall());
+            final FunctionCall fc = ((FunctionCallExpr) eobj).getFuncCall();
+            Symbol _returnType = fc.getFunc().getReturnType();
             boolean _tripleNotEquals_3 = (_returnType != null);
             if (_tripleNotEquals_3) {
-              output = HelperFunctions.inferSymbolType(((FunctionCall) eobj).getFunc().getReturnType());
+              output = HelperFunctions.inferSymbolType(fc.getFunc().getReturnType());
+              return output;
             } else {
               output = "void";
             }
           } else {
-            if ((eobj instanceof FeatureCallExp)) {
-              output = FeatureCallGenerator.inferFeatureCallType(((FeatureCallExp) eobj));
-            } else {
-              if ((eobj instanceof Expression)) {
-                output = HelperFunctions.inferExpressionType(((Expression) eobj));
+            if ((eobj instanceof FunctionCall)) {
+              Symbol _returnType_1 = ((FunctionCall) eobj).getFunc().getReturnType();
+              boolean _tripleNotEquals_4 = (_returnType_1 != null);
+              if (_tripleNotEquals_4) {
+                output = HelperFunctions.inferSymbolType(((FunctionCall) eobj).getFunc().getReturnType());
+                InputOutput.<String>println(("the out:" + output));
+                return output;
               } else {
-                if ((eobj instanceof uofa.lbirdsey.castle.casl.Enum)) {
-                  output = ((uofa.lbirdsey.castle.casl.Enum) eobj).getName();
+                output = "void";
+              }
+            } else {
+              if ((eobj instanceof FeatureCallExp)) {
+                output = FeatureCallGenerator.inferFeatureCallType(((FeatureCallExp) eobj));
+              } else {
+                if ((eobj instanceof Expression)) {
+                  output = HelperFunctions.inferExpressionType(((Expression) eobj));
                 } else {
-                  if ((eobj instanceof SelfCall)) {
-                    output = "selfcall";
+                  if ((eobj instanceof uofa.lbirdsey.castle.casl.Enum)) {
+                    output = ((uofa.lbirdsey.castle.casl.Enum) eobj).getName();
                   } else {
-                    output = "void";
+                    if ((eobj instanceof SelfCall)) {
+                      output = "selfcall";
+                    } else {
+                      output = "void";
+                    }
                   }
                 }
               }
@@ -877,19 +900,32 @@ public class HelperFunctions {
   
   public static String inferSymbolType(final Symbol sym) {
     String output = "";
+    String _name = sym.getName();
+    String _plus = ("symname: " + _name);
+    InputOutput.<String>println(_plus);
     if ((sym instanceof AgentFieldReference)) {
-      output = "sym=afr";
+      AgentFieldReference a = ((AgentFieldReference) sym);
+      output = a.getAgent().getName();
     } else {
       if ((sym instanceof EnvironmentFieldReference)) {
-        output = "sym=efr";
+        EnvironmentFieldReference e = ((EnvironmentFieldReference) sym);
+        output = e.getEnv().getName();
       } else {
-        if ((sym instanceof FunctionParameter)) {
-          FunctionParameter fp = ((FunctionParameter) sym);
-          output = HelperFunctions.inferFunctionParameterType(fp);
+        if ((sym instanceof GroupFieldReference)) {
+          GroupFieldReference g = ((GroupFieldReference) sym);
+          output = g.getGrp().getName();
         } else {
-          if ((sym instanceof DataTypeDeclaration)) {
-            DataTypeDeclaration dtd = ((DataTypeDeclaration) sym);
-            output = HelperFunctions.inferTypeFromDeclaration(dtd);
+          if ((sym instanceof FunctionParameter)) {
+            String _name_1 = ((FunctionParameter)sym).getName();
+            String _plus_1 = ("happen? symname: " + _name_1);
+            InputOutput.<String>println(_plus_1);
+            FunctionParameter fp = ((FunctionParameter) sym);
+            output = HelperFunctions.inferFunctionParameterType(fp);
+          } else {
+            if ((sym instanceof DataTypeDeclaration)) {
+              DataTypeDeclaration dtd = ((DataTypeDeclaration) sym);
+              output = HelperFunctions.inferTypeFromDeclaration(dtd);
+            }
           }
         }
       }

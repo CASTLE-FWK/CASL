@@ -291,6 +291,7 @@ class GroupGeneration {
 					}
 				}
 			}
+			println("****** "+grp.name +" : "+internal.name)
 			output += "public ";
 			output += HelperFunctions.inferMethodType(internal.body)+" " +internal.name+ "(" + HelperFunctions.printFunctionParameters(internal.functionParameters) +")"
 			output += " {\n"

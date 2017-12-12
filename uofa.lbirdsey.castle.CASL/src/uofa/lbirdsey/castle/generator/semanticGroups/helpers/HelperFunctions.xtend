@@ -69,6 +69,7 @@ import uofa.lbirdsey.castle.casl.Group_Call
 import uofa.lbirdsey.castle.casl.Agent_Call
 import uofa.lbirdsey.castle.casl.Environment_Call
 import uofa.lbirdsey.castle.casl.EnvironmentInteractionFeatureCall
+import uofa.lbirdsey.castle.casl.FunctionCallExpr
 
 class HelperFunctions {
 
@@ -188,6 +189,10 @@ class HelperFunctions {
 				output = "arithmeticsigned"
 			else if (expr instanceof MacroCall)
 				output = MacroGenerator.macroCallReturnType(expr as MacroCall)
+			else if (expr instanceof Object){
+				print("AN OBJECT: "+expr.toString)
+			}
+			
 			else
 				output = "void"
 		}
@@ -195,7 +200,7 @@ class HelperFunctions {
 	}
 
 	static def String inferGeneralType(EObject eobj) {
-		var output = "";
+		var output = "_NOTYPE_";
 		if (eobj instanceof Field) {
 			val ftf = eobj as Field
 			if (ftf.declaration !== null) {
@@ -219,7 +224,7 @@ class HelperFunctions {
 				output = inferFunctionParameterType(fp);
 			}
 		} else if (eobj instanceof SelfAssignedFormula) {
-			val ftf = eobj as SelfAssignedFormula
+			val ftf = eobj as SelfAssignedFormula;
 			if (ftf.ref instanceof AgentFieldReference) {
 				output = (ftf.ref as AgentFieldReference).agent.name;
 			} else if (ftf.ref instanceof EnvironmentFieldReference) {
@@ -231,22 +236,36 @@ class HelperFunctions {
 				var fp = ftf.ref as FunctionParameter
 				output = inferFunctionParameterType(fp);
 			}
+		} else if (eobj instanceof FunctionCallExpr){
+			inferGeneralType((eobj as FunctionCallExpr).funcCall);
+			val fc = (eobj as FunctionCallExpr).funcCall;
+			if (fc.func.returnType !== null) {
+				//Is the symbol type returning empty things?
+				output = inferSymbolType(fc.func.returnType);
+				return output;
+			} else {
+				output = "void";
+			}
+			
 		} else if (eobj instanceof FunctionCall) {
 			if ((eobj as FunctionCall).func.returnType !== null) {
-				output = inferSymbolType((eobj as FunctionCall).func.returnType)
+				//Is the symbol type returning empty things?
+				output = inferSymbolType((eobj as FunctionCall).func.returnType);
+				println("the out:"+output);
+				return output;
 			} else {
-				output = "void"
+				output = "void";
 			}
 		} else if (eobj instanceof FeatureCallExp) {
 			output = FeatureCallGenerator.inferFeatureCallType(eobj as FeatureCallExp);
 		} else if (eobj instanceof Expression) {
-			output = inferExpressionType(eobj as Expression)
+			output = inferExpressionType(eobj as Expression);
 		} else if (eobj instanceof Enum) {
-			output = (eobj as Enum).name
-		} else if (eobj instanceof SelfCall) {			
-			output = "selfcall"
+			output = (eobj as Enum).name;
+		} else if (eobj instanceof SelfCall) {
+			output = "selfcall";
 		} else {
-			output = "void"
+			output = "void";
 		}
 		return output;
 	}
@@ -463,17 +482,24 @@ class HelperFunctions {
 	// TODO: 23/06/16: I think the dynamic import problem lies in here
 	static def String inferSymbolType(Symbol sym) {
 		var output = "";
+		println("symname: "+sym.name)
 		if (sym instanceof AgentFieldReference) {
-			output = "sym=afr"
+			var a = sym as AgentFieldReference;
+			output = a.agent.name;
 		} else if (sym instanceof EnvironmentFieldReference) {
-			output = "sym=efr"
+			var e = sym as EnvironmentFieldReference;
+			output = e.env.name
+		} else if (sym instanceof GroupFieldReference){
+			var g = sym as GroupFieldReference;
+			output = g.grp.name;
 		} else if (sym instanceof FunctionParameter) {
+			println("happen? symname: "+sym.name)
 			var fp = sym as FunctionParameter;
 			output = inferFunctionParameterType(fp);
 		} else if (sym instanceof DataTypeDeclaration) {
 			var dtd = sym as DataTypeDeclaration;
 			output = inferTypeFromDeclaration(dtd);
-		}
+		} 
 		return output;
 	}
 
