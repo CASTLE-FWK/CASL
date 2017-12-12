@@ -281,17 +281,22 @@ class GroupGeneration {
 		return output;
 	}
 	
+	
 	def generateInternalInteractions(Group grp){
 		var output = "";
+//		println("****** "+grp.name +" : "+internal.name)
 		for (internal : grp.group_internal_interactions.internal_interactions){
 			for (internalFP : internal.functionParameters){
 				if (internalFP !== null){
-					if (!(internalFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(internalFP as Field))
+					if (internalFP instanceof FunctionParameter){
+//						println("DOES THIS HIT?!?!: "+HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						println("OUT: "+HelperFunctions.inferFunctionParameterTypeForImport(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(internalFP as FunctionParameter));
 					}
 				}
 			}
-			println("****** "+grp.name +" : "+internal.name)
+
 			output += "public ";
 			output += HelperFunctions.inferMethodType(internal.body)+" " +internal.name+ "(" + HelperFunctions.printFunctionParameters(internal.functionParameters) +")"
 			output += " {\n"

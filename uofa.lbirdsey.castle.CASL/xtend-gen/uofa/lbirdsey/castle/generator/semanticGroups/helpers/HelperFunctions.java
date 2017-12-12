@@ -253,6 +253,120 @@ public class HelperFunctions {
     return output;
   }
   
+  public static String inferFunctionParameterTypeForImport(final FunctionParameter fp) {
+    String output = "";
+    PrimitiveType _type = fp.getType();
+    boolean _tripleNotEquals = (_type != null);
+    if (_tripleNotEquals) {
+      output = fp.getType().getName();
+    } else {
+      NonPrimitiveType _obj = fp.getObj();
+      boolean _tripleNotEquals_1 = (_obj != null);
+      if (_tripleNotEquals_1) {
+        NonPrimitiveType _obj_1 = fp.getObj();
+        if ((_obj_1 instanceof uofa.lbirdsey.castle.casl.Object)) {
+          NonPrimitiveType _obj_2 = fp.getObj();
+          String _custom = ((uofa.lbirdsey.castle.casl.Object) _obj_2).getCustom();
+          boolean _tripleNotEquals_2 = (_custom != null);
+          if (_tripleNotEquals_2) {
+            output = "CUSTOM:";
+          }
+          String _output = output;
+          NonPrimitiveType _obj_3 = fp.getObj();
+          String _name = ((uofa.lbirdsey.castle.casl.Object) _obj_3).getName();
+          output = (_output + _name);
+        } else {
+          NonPrimitiveType _obj_4 = fp.getObj();
+          String _custom_1 = ((uofa.lbirdsey.castle.casl.Enum) _obj_4).getCustom();
+          boolean _tripleNotEquals_3 = (_custom_1 != null);
+          if (_tripleNotEquals_3) {
+            output = "CUSTOM:";
+          }
+          String _output_1 = output;
+          NonPrimitiveType _obj_5 = fp.getObj();
+          String _name_1 = ((uofa.lbirdsey.castle.casl.Enum) _obj_5).getName();
+          String _plus = ("enums." + _name_1);
+          output = (_output_1 + _plus);
+        }
+        NonPrimitiveType _useObj = fp.getUseObj();
+        boolean _tripleNotEquals_4 = (_useObj != null);
+        if (_tripleNotEquals_4) {
+          String _output_2 = output;
+          NonPrimitiveType _obj_6 = fp.getObj();
+          String _plus_1 = (_obj_6 + "<");
+          String _name_2 = fp.getUseObj().getName();
+          String _plus_2 = (_plus_1 + _name_2);
+          String _plus_3 = (_plus_2 + ">");
+          output = (_output_2 + _plus_3);
+        } else {
+          PrimitiveType _useType = fp.getUseType();
+          boolean _tripleNotEquals_5 = (_useType != null);
+          if (_tripleNotEquals_5) {
+            String _output_3 = output;
+            output = (_output_3 + "<");
+            String _name_3 = fp.getUseType().getName();
+            /* (_name_3 + ">"); */
+          } else {
+            Group _useGroup = fp.getUseGroup();
+            boolean _tripleNotEquals_6 = (_useGroup != null);
+            if (_tripleNotEquals_6) {
+              String _output_4 = output;
+              String _name_4 = fp.getUseGroup().getName();
+              String _plus_4 = (("<" + "groups.") + _name_4);
+              String _plus_5 = (_plus_4 + ">");
+              output = (_output_4 + _plus_5);
+            } else {
+              Agent _useAgent = fp.getUseAgent();
+              boolean _tripleNotEquals_7 = (_useAgent != null);
+              if (_tripleNotEquals_7) {
+                String _output_5 = output;
+                String _name_5 = fp.getUseAgent().getName();
+                String _plus_6 = (("<" + "agents.") + _name_5);
+                String _plus_7 = (_plus_6 + ">");
+                output = (_output_5 + _plus_7);
+              } else {
+                Environment _useEnv = fp.getUseEnv();
+                boolean _tripleNotEquals_8 = (_useEnv != null);
+                if (_tripleNotEquals_8) {
+                  String _output_6 = output;
+                  String _name_6 = fp.getUseEnv().getName();
+                  String _plus_8 = (("<" + "environments.") + _name_6);
+                  String _plus_9 = (_plus_8 + ">");
+                  output = (_output_6 + _plus_9);
+                }
+              }
+            }
+          }
+        }
+      } else {
+        Agent _agent = fp.getAgent();
+        boolean _tripleNotEquals_9 = (_agent != null);
+        if (_tripleNotEquals_9) {
+          String _firstUpper = StringExtensions.toFirstUpper(fp.getAgent().getName());
+          String _plus_10 = ("agents." + _firstUpper);
+          output = _plus_10;
+        } else {
+          Environment _env = fp.getEnv();
+          boolean _tripleNotEquals_10 = (_env != null);
+          if (_tripleNotEquals_10) {
+            String _firstUpper_1 = StringExtensions.toFirstUpper(fp.getEnv().getName());
+            String _plus_11 = ("environments." + _firstUpper_1);
+            output = _plus_11;
+          } else {
+            Group _grp = fp.getGrp();
+            boolean _tripleNotEquals_11 = (_grp != null);
+            if (_tripleNotEquals_11) {
+              String _firstUpper_2 = StringExtensions.toFirstUpper(fp.getGrp().getName());
+              String _plus_12 = ("groups." + _firstUpper_2);
+              output = _plus_12;
+            }
+          }
+        }
+      }
+    }
+    return output;
+  }
+  
   public static String inferExpressionType(final Expression expr) {
     String output = "";
     if ((expr instanceof Expression)) {
@@ -458,7 +572,6 @@ public class HelperFunctions {
               boolean _tripleNotEquals_4 = (_returnType_1 != null);
               if (_tripleNotEquals_4) {
                 output = HelperFunctions.inferSymbolType(((FunctionCall) eobj).getFunc().getReturnType());
-                InputOutput.<String>println(("the out:" + output));
                 return output;
               } else {
                 output = "void";
@@ -900,9 +1013,6 @@ public class HelperFunctions {
   
   public static String inferSymbolType(final Symbol sym) {
     String output = "";
-    String _name = sym.getName();
-    String _plus = ("symname: " + _name);
-    InputOutput.<String>println(_plus);
     if ((sym instanceof AgentFieldReference)) {
       AgentFieldReference a = ((AgentFieldReference) sym);
       output = a.getAgent().getName();
@@ -916,9 +1026,6 @@ public class HelperFunctions {
           output = g.getGrp().getName();
         } else {
           if ((sym instanceof FunctionParameter)) {
-            String _name_1 = ((FunctionParameter)sym).getName();
-            String _plus_1 = ("happen? symname: " + _name_1);
-            InputOutput.<String>println(_plus_1);
             FunctionParameter fp = ((FunctionParameter) sym);
             output = HelperFunctions.inferFunctionParameterType(fp);
           } else {

@@ -137,6 +137,46 @@ class HelperFunctions {
 		}
 		return output;
 	}
+	
+	static def String inferFunctionParameterTypeForImport(FunctionParameter fp) {
+		var String output = "";
+		if (fp.type !== null) {
+			output = fp.type.name
+		} else if (fp.obj !== null) {
+			if (fp.obj instanceof Object) {
+				if ((fp.obj as Object).custom !== null){
+					output = "CUSTOM:"
+				}
+				output += (fp.obj as Object).name;
+				
+			} else {
+				if ((fp.obj as Enum).custom !== null){
+					output = "CUSTOM:";
+				}
+				
+				output += "enums."+(fp.obj as Enum).name;
+			}
+
+			if (fp.useObj !== null) {
+				output += fp.obj + "<" + fp.useObj.name + ">";
+			} else if (fp.useType !== null) {
+				output += "<" fp.useType.name + ">";
+			} else if (fp.useGroup !== null) {
+				output += "<" + "groups." +fp.useGroup.name + ">";
+			} else if (fp.useAgent !== null) {
+				output += "<" + "agents." + fp.useAgent.name + ">";
+			} else if (fp.useEnv !== null) {
+				output += "<" + "environments." + fp.useEnv.name + ">";
+			}
+		} else if (fp.agent !== null) {
+			output = "agents."+fp.agent.name.toFirstUpper
+		} else if (fp.env !== null) {
+			output = "environments."+fp.env.name.toFirstUpper
+		} else if (fp.grp !== null) {
+			output = "groups."+fp.grp.name.toFirstUpper
+		}
+		return output;
+	}
 
 	static def String inferExpressionType(Expression expr) {
 		var output = ""
@@ -251,7 +291,6 @@ class HelperFunctions {
 			if ((eobj as FunctionCall).func.returnType !== null) {
 				//Is the symbol type returning empty things?
 				output = inferSymbolType((eobj as FunctionCall).func.returnType);
-				println("the out:"+output);
 				return output;
 			} else {
 				output = "void";
@@ -482,7 +521,6 @@ class HelperFunctions {
 	// TODO: 23/06/16: I think the dynamic import problem lies in here
 	static def String inferSymbolType(Symbol sym) {
 		var output = "";
-		println("symname: "+sym.name)
 		if (sym instanceof AgentFieldReference) {
 			var a = sym as AgentFieldReference;
 			output = a.agent.name;
@@ -493,7 +531,6 @@ class HelperFunctions {
 			var g = sym as GroupFieldReference;
 			output = g.grp.name;
 		} else if (sym instanceof FunctionParameter) {
-			println("happen? symname: "+sym.name)
 			var fp = sym as FunctionParameter;
 			output = inferFunctionParameterType(fp);
 		} else if (sym instanceof DataTypeDeclaration) {
@@ -537,7 +574,6 @@ class HelperFunctions {
 					
 					if ((fdt.obj as Object).custom !== null) {
 						output = "CUSTOM:";
-//						println(getFieldName(f));
 					}
 										
 					if (fdt.useObj !== null) {
