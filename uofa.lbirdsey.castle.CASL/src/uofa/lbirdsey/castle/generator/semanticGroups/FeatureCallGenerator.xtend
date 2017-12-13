@@ -35,7 +35,6 @@ class FeatureCallGenerator {
 		else if (fc instanceof AgentInteractionFeatureCall)
 			return HelperFunctions.inferMethodType((fc as AgentInteractionFeatureCall).process.body)
 		else if (fc instanceof EnvironmentInteractionFeatureCall){
-			println("eif: "+HelperFunctions.inferMethodType((fc as EnvironmentInteractionFeatureCall).process.body))
 			return HelperFunctions.inferMethodType((fc as EnvironmentInteractionFeatureCall).process.body)
 		} else if (fc instanceof InteractionFeatureCall) {
 			var ifc = (fc as InteractionFeatureCall).process;
@@ -61,7 +60,6 @@ class FeatureCallGenerator {
 		} else if (fc instanceof GroupExternalInteractionFeatureCall) {
 			return HelperFunctions.inferMethodType((fc as GroupExternalInteractionFeatureCall).process.body)
 		} else if (fc instanceof ExternalInteractionFeatureCall) {
-			println("gex: "+HelperFunctions.inferMethodType((fc as ExternalInteractionFeatureCall).process.body))
 			return HelperFunctions.inferMethodType((fc as ExternalInteractionFeatureCall).process.body)
 		} else{
 			Constants.throwCASLError("Cannot infer Feature Call type", "inferFeatureCallType", "FeatureCallGenerator");
