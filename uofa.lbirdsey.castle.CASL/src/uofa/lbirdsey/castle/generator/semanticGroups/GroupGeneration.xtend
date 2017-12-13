@@ -248,7 +248,6 @@ class GroupGeneration {
 					}
 				}
 			}
-			println("****** "+grp.name +" : "+transmission.name)
 			output += "public ";
 			output += HelperFunctions.inferMethodType(transmission.body)+" " +transmission.name+ "(" + HelperFunctions.printFunctionParameters(transmission.functionParameters) +")"
 			output += " {\n"
