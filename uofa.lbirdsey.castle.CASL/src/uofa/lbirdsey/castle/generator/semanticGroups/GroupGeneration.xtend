@@ -193,9 +193,9 @@ class GroupGeneration {
 		for (behavior : grp.group_behaviors.behaviors){
 			for (behaviorFP : behavior.functionParameters){
 				if (behaviorFP !== null){
-					if (!(behaviorFP instanceof FunctionParameter)){
-//						libImports.add("INTHD"+HelperFunctions.inferSymbolType(interFP as Symbol));
-						libImports.add(HelperFunctions.getFieldType(behaviorFP as Field))
+					if (behaviorFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(behaviorFP as FunctionParameter));
 					}
 				}
 			}
@@ -242,11 +242,13 @@ class GroupGeneration {
 		for (transmission : grp.group_external_interactions.external_interactions){
 			for (transFP : transmission.functionParameters){
 				if (transFP !== null){
-					if (!(transFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(transFP as Field))
+					if (transFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(transFP as FunctionParameter));
 					}
 				}
 			}
+			println("****** "+grp.name +" : "+transmission.name)
 			output += "public ";
 			output += HelperFunctions.inferMethodType(transmission.body)+" " +transmission.name+ "(" + HelperFunctions.printFunctionParameters(transmission.functionParameters) +")"
 			output += " {\n"
@@ -284,14 +286,12 @@ class GroupGeneration {
 	
 	def generateInternalInteractions(Group grp){
 		var output = "";
-//		println("****** "+grp.name +" : "+internal.name)
+//		
 		for (internal : grp.group_internal_interactions.internal_interactions){
 			for (internalFP : internal.functionParameters){
 				if (internalFP !== null){
 					if (internalFP instanceof FunctionParameter){
-//						println("DOES THIS HIT?!?!: "+HelperFunctions.getSymbolType(internalFP as FunctionParameter))
 //						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
-						println("OUT: "+HelperFunctions.inferFunctionParameterTypeForImport(internalFP as FunctionParameter))
 						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(internalFP as FunctionParameter));
 					}
 				}

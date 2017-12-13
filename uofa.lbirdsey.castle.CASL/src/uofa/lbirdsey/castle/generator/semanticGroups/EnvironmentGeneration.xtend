@@ -200,8 +200,9 @@ class EnvironmentGeneration {
 		for (behavior : env.env_behaviors.behaviors){
 			for (behaviorFP : behavior.functionParameters){
 				if (behaviorFP !== null){
-					if (!(behaviorFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(behaviorFP as Field))
+					if (behaviorFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(behaviorFP as FunctionParameter));
 					}
 				}
 			}
@@ -248,14 +249,10 @@ class EnvironmentGeneration {
 		for (interaction : env.env_interactions.interactions) {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
-					println(interFP.name)
-					//TODO: THIS BUG IS ANNOYING (14/11/17)
-					libImports.add(HelperFunctions.inferFunctionParameterType(interFP as FunctionParameter))
-//					if (!(interFP instanceof FunctionParameter)){
-//						libImports.add(HelperFunctions.getFieldType(interFP as Field))
-//					} else {
-//						libImports.add(HelperFunctions.getSymbolType(interFP))
-//					}
+					if (interFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(interFP as FunctionParameter));
+					}
 				}
 			}
 			output += "public ";
@@ -273,8 +270,9 @@ class EnvironmentGeneration {
 		for (adaptation : env.env_adaptation.adaptation) {
 			for (adaptFP : adaptation.functionParameters){
 				if (adaptFP !== null){
-					if (!(adaptFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(adaptFP as Field))
+					if (adaptFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(adaptFP as FunctionParameter));
 					}
 				}
 			}
@@ -293,8 +291,9 @@ class EnvironmentGeneration {
 		for (subsystem : env.env_subSystems.subSystems) {
 			for (subsFP : subsystem.functionParameters){
 				if (subsFP !== null){
-					if (!(subsFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(subsFP as Field))
+					if (subsFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(subsFP as FunctionParameter));
 					}
 				}
 			}
@@ -313,8 +312,9 @@ class EnvironmentGeneration {
 		for (interaction : env.env_groupinteractions.interactions) {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
-					if (!(interFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(interFP as Field))
+					if (interFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(interFP as FunctionParameter));
 					}
 				}
 			}

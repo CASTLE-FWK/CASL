@@ -229,8 +229,9 @@ class AgentGeneration {
 		for (interaction : a.agent_interactions.interactions) {
 			for (interFP : interaction.functionParameters){
 				if (interFP !== null){
-					if (!(interFP instanceof FunctionParameter)){ 
-						libImports.add(HelperFunctions.getFieldType(interFP as Field))
+					if (interFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(interFP as FunctionParameter));
 					}
 				}
 			}
@@ -249,8 +250,9 @@ class AgentGeneration {
 		for (adaptation : a.agent_adaptation.adaptation) {
 			for (adaptFP : adaptation.functionParameters){
 				if (adaptFP !== null){
-					if (!(adaptFP instanceof FunctionParameter)){
-						libImports.add(HelperFunctions.getFieldType(adaptFP as Field))
+					if (adaptFP instanceof FunctionParameter){
+//						libImports.add(HelperFunctions.getSymbolType(internalFP as FunctionParameter))
+						libImports.add(HelperFunctions.inferFunctionParameterTypeForImport(adaptFP as FunctionParameter));
 					}
 				}
 			}
