@@ -986,9 +986,9 @@ class HelperFunctions {
 	static def String initialiseFunctionParameterReturn(FunctionParameter fp) {
 		if (fp.type !== null) {
 			if (fp.type instanceof IntType) {
-				return "-0";
+				return "0";
 			} else if (fp.type instanceof FloatType) {
-				return "-0.0";
+				return "0.0f";
 			} else if (fp.type instanceof BooleanType) {
 				return "false";
 			} else if (fp.type instanceof StringType) {

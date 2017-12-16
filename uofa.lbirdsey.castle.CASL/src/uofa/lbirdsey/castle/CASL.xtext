@@ -345,12 +345,11 @@ FunctionParameter returns Symbol:
 			'obj.'useObj += [NonPrimitiveType]	|
 			useType += PrimitiveType
 		)
-		(','
-			'grp.'useGroup += [Group] 		|
-			'agt.'useAgent += [Agent] 		|
-			'env.'useEnv += [Environment]	|
-			'obj.'useObj += [NonPrimitiveType]	|
-			useType += PrimitiveType
+		(',' 'grp.'useGroup += [Group] 		|
+		','	'agt.'useAgent += [Agent] 		|
+		','	'env.'useEnv += [Environment]	|
+		','	'obj.'useObj += [NonPrimitiveType]	|
+		','	useType += PrimitiveType
 		)*
 		'>')? )
 	':' name = ID
@@ -621,19 +620,18 @@ DataTypeDeclaration returns Symbol:
 		obj = [NonPrimitiveType]
 			('<' 
 				(
-					'grp.'useGroup += [Group] 											|
-					'agt.'useAgent += [Agent] 											|
-					'env.'useEnv += [Environment]										| 
-					'obj.'useObj += [NonPrimitiveType]
+					'grp.'useGroup += [Group] 						|
+					'agt.'useAgent += [Agent] 						|
+					'env.'useEnv += [Environment]					| 
+					'obj.'useObj += [NonPrimitiveType]				|
 					useType += PrimitiveType		
 				)
-				(','(
-					'grp.'useGroup += [Group] 											|
-					'agt.'useAgent += [Agent] 											|
-					'env.'useEnv += [Environment]										| 
-					'obj.'useObj += [NonPrimitiveType]
-					useType += PrimitiveType
-					)
+				(',' 'grp.'useGroup += [Group] 					|
+				',' 'agt.'useAgent += [Agent] 					|
+				',''env.'useEnv += [Environment]				| 
+				',''obj.'useObj += [NonPrimitiveType]			|
+				','useType += PrimitiveType					
+					
 				)*
 			'>')? 
 		) ':' name=ID ('=' expr = Expression)?

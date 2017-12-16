@@ -1979,11 +1979,11 @@ public class HelperFunctions {
     if (_tripleNotEquals) {
       PrimitiveType _type_1 = fp.getType();
       if ((_type_1 instanceof IntType)) {
-        return "-0";
+        return "0";
       } else {
         PrimitiveType _type_2 = fp.getType();
         if ((_type_2 instanceof FloatType)) {
-          return "-0.0";
+          return "0.0f";
         } else {
           PrimitiveType _type_3 = fp.getType();
           if ((_type_3 instanceof BooleanType)) {

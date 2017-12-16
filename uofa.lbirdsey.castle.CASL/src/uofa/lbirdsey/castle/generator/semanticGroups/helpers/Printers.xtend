@@ -45,7 +45,6 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import java.text.SimpleDateFormat
 import java.util.Date
 import uofa.lbirdsey.castle.casl.FeatureCall
-import uofa.lbirdsey.castle.casl.NonPrimitiveType
 
 class Printers {
 
