@@ -337,13 +337,22 @@ FunctionParameter returns Symbol:
 	'env' env = [Environment] 	|
 	'grp' grp = [Group] 		|
 	'var' obj = [NonPrimitiveType](
-		'<' (
-			'grp.'useGroup = [Group] 		|
-			'agt.'useAgent = [Agent] 		|
-			'env.'useEnv = [Environment]	|
-			'obj.'useObj=[NonPrimitiveType]	|
-			useType = PrimitiveType
-		)'>')? )
+		'<' 
+		(
+			'grp.'useGroup += [Group] 		|
+			'agt.'useAgent += [Agent] 		|
+			'env.'useEnv += [Environment]	|
+			'obj.'useObj += [NonPrimitiveType]	|
+			useType += PrimitiveType
+		)
+		(','
+			'grp.'useGroup += [Group] 		|
+			'agt.'useAgent += [Agent] 		|
+			'env.'useEnv += [Environment]	|
+			'obj.'useObj += [NonPrimitiveType]	|
+			useType += PrimitiveType
+		)*
+		'>')? )
 	':' name = ID
 ;
 
@@ -608,16 +617,26 @@ BooleanValue returns ecore::EBoolean:
 
 DataTypeDeclaration returns Symbol:
 	{DataTypeDeclaration} 'var' (initInclude = "*")? (
-		type = PrimitiveType 	|
-		obj = [NonPrimitiveType](
-	//		':'useObj=[NonPrimitiveType] 				|  
-	//		':' useType = PrimitiveType 										|
-			'<' ('grp.'useGroup = [Group] 										|
-			'agt.'useAgent = [Agent] 											|
-			'env.'useEnv = [Environment]										| 
-			'obj.'useObj = [NonPrimitiveType]
-			useType = PrimitiveType		
-		)'>')? ) ':' name=ID ('=' expr = Expression)?
+		type = PrimitiveType 		|
+		obj = [NonPrimitiveType]
+			('<' 
+				(
+					'grp.'useGroup += [Group] 											|
+					'agt.'useAgent += [Agent] 											|
+					'env.'useEnv += [Environment]										| 
+					'obj.'useObj += [NonPrimitiveType]
+					useType += PrimitiveType		
+				)
+				(','(
+					'grp.'useGroup += [Group] 											|
+					'agt.'useAgent += [Agent] 											|
+					'env.'useEnv += [Environment]										| 
+					'obj.'useObj += [NonPrimitiveType]
+					useType += PrimitiveType
+					)
+				)*
+			'>')? 
+		) ':' name=ID ('=' expr = Expression)?
 ;
 
 /**
@@ -759,7 +778,7 @@ Entity_Call:
 
 Object:
 	{Object}
-	(custom = 'custom')?'obj' name = ID ('<'useType = [Object]'>')?':' '{'
+	(custom = 'custom')?'obj' name = ID ('<'useType += [Object](','useType += [Object])*'>')?':' '{'
 		(fields += Field ';'| fields += Function)*
 	'};'
 ;

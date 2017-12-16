@@ -91,16 +91,42 @@ class HelperFunctions {
 			} else {
 				output = (dtd.obj as Enum).name;
 			}
-			if (dtd.useObj !== null) {
-				output += "<" + dtd.useObj.name + ">";
-			} else if (dtd.useType !== null) {
-				output += "<" + dtd.useType.name + ">";
-			} else if (dtd.useGroup !== null) {
-				output += "<" + dtd.useGroup.name + ">";
-			} else if (dtd.useAgent !== null) {
-				output += "<" + dtd.useAgent.name + ">";
-			} else if (dtd.useEnv !== null) {
-				output += "<" + dtd.useEnv.name + ">";
+			if (dtd.useObj !== null && dtd.useObj.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < dtd.useObj.size() - 1; i++){
+					output += dtd.useObj.get(i).name + ", ";
+				}
+				output += dtd.useObj.get(dtd.useObj.size()-1).name
+				output += ">";
+				
+			} else if (dtd.useType !== null && dtd.useType.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < dtd.useType.size() - 1; i++){
+					output += dtd.useType.get(i).name + ", ";
+				}
+				output += dtd.useType.get(dtd.useType.size()-1).name
+				output += ">";
+			} else if (dtd.useGroup !== null && dtd.useGroup.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < dtd.useGroup.size() - 1; i++){
+					output += dtd.useGroup.get(i).name + ", ";
+				}
+				output += dtd.useGroup.get(dtd.useGroup.size()-1).name
+				output += ">";
+			} else if (dtd.useAgent !== null && dtd.useAgent.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < dtd.useAgent.size() - 1; i++){
+					output += dtd.useAgent.get(i).name + ", ";
+				}
+				output += dtd.useAgent.get(dtd.useAgent.size()-1).name
+				output += ">";
+			} else if (dtd.useEnv !== null && dtd.useEnv.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < dtd.useEnv.size() - 1; i++){
+					output += dtd.useEnv.get(i).name + ", ";
+				}
+				output += dtd.useEnv.get(dtd.useEnv.size()-1).name
+				output += ">";
 			}
 		}
 		return output;
@@ -117,16 +143,41 @@ class HelperFunctions {
 				output = (fp.obj as Enum).name;
 			}
 
-			if (fp.useObj !== null) {
-				output += "<" + fp.useObj.name + ">";
-			} else if (fp.useType !== null) {
-				output += "<" + fp.useType.name + ">";
-			} else if (fp.useGroup !== null) {
-				output += "<" + fp.useGroup.name + ">";
-			} else if (fp.useAgent !== null) {
-				output += "<" + fp.useAgent.name + ">";
-			} else if (fp.useEnv !== null) {
-				output += "<" + fp.useEnv.name + ">";
+			if (fp.useObj !== null && fp.useObj.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < fp.useObj.size() - 1; i++){
+					output += fp.useObj.get(i).name + ", ";
+				}
+				output += fp.useObj.get(fp.useObj.size()-1).name
+				output += ">";
+			} else if (fp.useType !== null && fp.useType.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < fp.useType.size() - 1; i++){
+					output += fp.useType.get(i).name + ", ";
+				}
+				output += fp.useType.get(fp.useType.size()-1).name
+				output += ">";
+			} else if (fp.useGroup !== null && fp.useGroup.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < fp.useGroup.size() - 1; i++){
+					output += fp.useGroup.get(i).name + ", ";
+				}
+				output += fp.useGroup.get(fp.useGroup.size()-1).name
+				output += ">";
+			} else if (fp.useAgent !== null && fp.useAgent.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < fp.useAgent.size() - 1; i++){
+					output += fp.useAgent.get(i).name + ", ";
+				}
+				output += fp.useAgent.get(fp.useAgent.size()-1).name
+				output += ">";
+			} else if (fp.useEnv !== null && fp.useEnv.size() > 0) {
+				output += "<"  
+				for (var i = 0; i < fp.useEnv.size() - 1; i++){
+					output += fp.useEnv.get(i).name + ", ";
+				}
+				output += fp.useEnv.get(fp.useEnv.size()-1).name
+				output += ">";
 			}
 		} else if (fp.agent !== null) {
 			output = fp.agent.name
@@ -157,16 +208,41 @@ class HelperFunctions {
 				output += "enums."+(fp.obj as Enum).name;
 			}
 
-			if (fp.useObj !== null) {
-				output += fp.obj + "<" + fp.useObj.name + ">";
-			} else if (fp.useType !== null) {
-				output += "<" fp.useType.name + ">";
-			} else if (fp.useGroup !== null) {
-				output += "<" + "groups." +fp.useGroup.name + ">";
-			} else if (fp.useAgent !== null) {
-				output += "<" + "agents." + fp.useAgent.name + ">";
-			} else if (fp.useEnv !== null) {
-				output += "<" + "environments." + fp.useEnv.name + ">";
+			if (fp.useObj !== null && fp.useObj.size() > 0) {
+				output += fp.obj + "<"
+				for (var i = 0; i < fp.useObj.size() - 1; i++){
+					output += fp.useObj.get(i).name + ", ";
+				}
+				output += fp.useObj.get(fp.useObj.size()-1).name
+				output += ">";
+			} else if (fp.useType !== null && fp.useType.size() > 0) {
+				output += "<" 
+				for (var i = 0; i < fp.useType.size() - 1; i++){
+					output += fp.useType.get(i).name + ", ";
+				}
+				output += fp.useType.get(fp.useType.size()-1).name
+				output += ">";
+			} else if (fp.useGroup !== null && fp.useGroup.size() > 0) {
+				output += "<"
+				for (var i = 0; i < fp.useGroup.size() - 1; i++){
+					output += "groups."+fp.useGroup.get(i).name + ", ";
+				}
+				output += "groups."+fp.useGroup.get(fp.useGroup.size()-1).name
+				output += ">";
+			} else if (fp.useAgent !== null && fp.useAgent.size() > 0) {
+				output += "<"
+				for (var i = 0; i < fp.useAgent.size() - 1; i++){
+					output += "agents."+fp.useAgent.get(i).name + ", ";
+				}
+				output += "agents."+fp.useAgent.get(fp.useAgent.size()-1).name
+				output += ">";
+			} else if (fp.useEnv !== null && fp.useEnv.size() > 0) {
+				output += "<"
+				for (var i = 0; i < fp.useEnv.size() - 1; i++){
+					output += "environments." + fp.useEnv.get(i).name + ", ";
+				}
+				output += "environments." + fp.useEnv.get(fp.useEnv.size()-1).name
+				output += ">"; 
 			}
 		} else if (fp.agent !== null) {
 			output = "agents."+fp.agent.name.toFirstUpper
@@ -576,14 +652,38 @@ class HelperFunctions {
 						output = "CUSTOM:";
 					}
 										
-					if (fdt.useObj !== null) {
-						output += fdt.obj.name + "<" + fdt.useObj.name + ">"
-					} else if (fdt.useGroup !== null) {
-						output += fdt.obj.name + "<" + "groups."+fdt.useGroup.name.toFirstUpper + ">"
-					} else if (fdt.useAgent !== null) {
-						output += fdt.obj.name + "<" + "agents."+fdt.useAgent.name.toFirstUpper + ">"
-					} else if (fdt.useEnv !== null) {
-						output += fdt.obj.name + "<" + "environments."+fdt.useEnv.name.toFirstUpper + ">"
+					if (fdt.useObj !== null && fdt.useObj.size() > 0) {
+						output += fdt.obj.name
+						output += "<"
+						for (var i = 0; i < fdt.useObj.size() - 1; i++){
+							output += fdt.useObj.get(i).name + ", ";
+						}
+						output += fdt.useObj.get(fdt.useObj.size()-1).name
+						output += ">"; 
+					} else if (fdt.useGroup !== null && fdt.useGroup.size() > 0) {
+						output += fdt.obj.name
+						output += "<"
+						for (var i = 0; i < fdt.useGroup.size() - 1; i++){
+							output += "groups." + fdt.useGroup.get(i).name.toFirstUpper + ", ";
+						}
+						output += "groups." + fdt.useGroup.get(fdt.useGroup.size()-1).name.toFirstUpper
+						output += ">"; 
+					} else if (fdt.useAgent !== null && fdt.useAgent.size() > 0) {
+						output += fdt.obj.name
+						output += "<"
+						for (var i = 0; i < fdt.useAgent.size() - 1; i++){
+							output += "agents." + fdt.useAgent.get(i).name.toFirstUpper + ", ";
+						}
+						output += "agents." + fdt.useAgent.get(fdt.useAgent.size()-1).name.toFirstUpper
+						output += ">"; 
+					} else if (fdt.useEnv !== null && fdt.useEnv.size() > 0) {
+						output += fdt.obj.name
+						output += "<"
+						for (var i = 0; i < fdt.useEnv.size() - 1; i++){
+							output += "environments." + fdt.useEnv.get(i).name + ", ";
+						}
+						output += "environments." + fdt.useEnv.get(fdt.useEnv.size()-1).name
+						output += ">"; 
 					} else {
 						output += fdt.obj.name
 					}
@@ -648,16 +748,41 @@ class HelperFunctions {
 				if (fiedecl.obj instanceof Object) {
 					var npt = fiedecl.obj as Object
 					output += npt.name
-					if (fiedecl.useObj !== null) {
-						output += "<" + fiedecl.useObj.name + ">"
-					} else if (fiedecl.useType !== null) {
-						output += "<" + fiedecl.useType.name + ">"
-					} else if (fiedecl.useGroup !== null) {
-						output += "<" + fiedecl.useGroup.name + ">"
-					} else if (fiedecl.useAgent !== null) {
-						output += "<" + fiedecl.useAgent.name + ">"
-					} else if (fiedecl.useEnv !== null) {
-						output += "<" + fiedecl.useEnv.name + ">"
+					if (fiedecl.useObj !== null && fiedecl.useObj.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useObj.size() - 1; i++){
+							output += fiedecl.useObj.get(i).name + ", ";
+						}
+						output += fiedecl.useObj.get(fiedecl.useObj.size()-1).name
+						output += ">";
+					} else if (fiedecl.useType !== null && fiedecl.useType.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useType.size() - 1; i++){
+							output += fiedecl.useType.get(i).name + ", ";
+						}
+						output += fiedecl.useType.get(fiedecl.useType.size()-1).name
+						output += ">";
+					} else if (fiedecl.useGroup !== null && fiedecl.useGroup.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useGroup.size() - 1; i++){
+							output += fiedecl.useGroup.get(i).name + ", ";
+						}
+						output += fiedecl.useGroup.get(fiedecl.useGroup.size()-1).name
+						output += ">";
+					} else if (fiedecl.useAgent !== null && fiedecl.useAgent.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useAgent.size() - 1; i++){
+							output += fiedecl.useAgent.get(i).name + ", ";
+						}
+						output += fiedecl.useAgent.get(fiedecl.useAgent.size()-1).name
+						output += ">";
+					} else if (fiedecl.useEnv !== null && fiedecl.useEnv.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useEnv.size() - 1; i++){
+							output += fiedecl.useEnv.get(i).name + ", ";
+						}
+						output += fiedecl.useEnv.get(fiedecl.useEnv.size()-1).name
+						output += ">";
 					}
 
 				} else if (fiedecl.obj instanceof Enum) {
@@ -680,16 +805,41 @@ class HelperFunctions {
 				if (fiedecl.obj instanceof Object) {
 					var npt = fiedecl.obj as Object
 					output += npt.name
-					if (fiedecl.useObj !== null) {
-						output += "<" + fiedecl.useObj.name + ">"
-					} else if (fiedecl.useType !== null) {
-						output += "<" + fiedecl.useType.name + ">"
-					} else if (fiedecl.useGroup !== null) {
-						output += "<" + fiedecl.useGroup.name + ">"
-					} else if (fiedecl.useAgent !== null) {
-						output += "<" + fiedecl.useAgent.name + ">"
-					} else if (fiedecl.useEnv !== null) {
-						output += "<" + fiedecl.useEnv.name + ">"
+					if (fiedecl.useObj !== null && fiedecl.useObj.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useObj.size() - 1; i++){
+							output += fiedecl.useObj.get(i).name + ", ";
+						}
+						output += fiedecl.useObj.get(fiedecl.useObj.size()-1).name
+						output += ">";
+					} else if (fiedecl.useType !== null && fiedecl.useType.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useType.size() - 1; i++){
+							output += fiedecl.useType.get(i).name + ", ";
+						}
+						output += fiedecl.useType.get(fiedecl.useType.size()-1).name
+						output += ">";
+					} else if (fiedecl.useGroup !== null && fiedecl.useGroup.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useGroup.size() - 1; i++){
+							output += fiedecl.useGroup.get(i).name + ", ";
+						}
+						output += fiedecl.useGroup.get(fiedecl.useGroup.size()-1).name
+						output += ">";
+					} else if (fiedecl.useAgent !== null && fiedecl.useAgent.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useAgent.size() - 1; i++){
+							output += fiedecl.useAgent.get(i).name + ", ";
+						}
+						output += fiedecl.useAgent.get(fiedecl.useAgent.size()-1).name
+						output += ">";
+					} else if (fiedecl.useEnv !== null && fiedecl.useEnv.size() > 0) {
+						output += "<"  
+						for (var i = 0; i < fiedecl.useEnv.size() - 1; i++){
+							output += fiedecl.useEnv.get(i).name + ", ";
+						}
+						output += fiedecl.useEnv.get(fiedecl.useEnv.size()-1).name
+						output += ">";
 					}
 				} else if (fiedecl.obj instanceof Enum) {
 					output += fiedecl.obj.name

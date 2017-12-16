@@ -5,7 +5,6 @@ package uofa.lbirdsey.castle.casl.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,9 +12,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -38,14 +36,14 @@ import uofa.lbirdsey.castle.casl.Entity_Feature;
 public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.castle.casl.Object
 {
   /**
-   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' reference.
+   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseType()
    * @generated
    * @ordered
    */
-  protected uofa.lbirdsey.castle.casl.Object useType;
+  protected EList<uofa.lbirdsey.castle.casl.Object> useType;
 
   /**
    * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
@@ -83,42 +81,13 @@ public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.ca
    * <!-- end-user-doc -->
    * @generated
    */
-  public uofa.lbirdsey.castle.casl.Object getUseType()
+  public EList<uofa.lbirdsey.castle.casl.Object> getUseType()
   {
-    if (useType != null && useType.eIsProxy())
+    if (useType == null)
     {
-      InternalEObject oldUseType = (InternalEObject)useType;
-      useType = (uofa.lbirdsey.castle.casl.Object)eResolveProxy(oldUseType);
-      if (useType != oldUseType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.OBJECT__USE_TYPE, oldUseType, useType));
-      }
+      useType = new EObjectResolvingEList<uofa.lbirdsey.castle.casl.Object>(uofa.lbirdsey.castle.casl.Object.class, this, CaslPackage.OBJECT__USE_TYPE);
     }
     return useType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public uofa.lbirdsey.castle.casl.Object basicGetUseType()
-  {
-    return useType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseType(uofa.lbirdsey.castle.casl.Object newUseType)
-  {
-    uofa.lbirdsey.castle.casl.Object oldUseType = useType;
-    useType = newUseType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.OBJECT__USE_TYPE, oldUseType, useType));
   }
 
   /**
@@ -162,8 +131,7 @@ public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.ca
     switch (featureID)
     {
       case CaslPackage.OBJECT__USE_TYPE:
-        if (resolve) return getUseType();
-        return basicGetUseType();
+        return getUseType();
       case CaslPackage.OBJECT__FIELDS:
         return getFields();
     }
@@ -182,7 +150,8 @@ public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.ca
     switch (featureID)
     {
       case CaslPackage.OBJECT__USE_TYPE:
-        setUseType((uofa.lbirdsey.castle.casl.Object)newValue);
+        getUseType().clear();
+        getUseType().addAll((Collection<? extends uofa.lbirdsey.castle.casl.Object>)newValue);
         return;
       case CaslPackage.OBJECT__FIELDS:
         getFields().clear();
@@ -203,7 +172,7 @@ public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.ca
     switch (featureID)
     {
       case CaslPackage.OBJECT__USE_TYPE:
-        setUseType((uofa.lbirdsey.castle.casl.Object)null);
+        getUseType().clear();
         return;
       case CaslPackage.OBJECT__FIELDS:
         getFields().clear();
@@ -223,7 +192,7 @@ public class ObjectImpl extends NonPrimitiveTypeImpl implements uofa.lbirdsey.ca
     switch (featureID)
     {
       case CaslPackage.OBJECT__USE_TYPE:
-        return useType != null;
+        return useType != null && !useType.isEmpty();
       case CaslPackage.OBJECT__FIELDS:
         return fields != null && !fields.isEmpty();
     }

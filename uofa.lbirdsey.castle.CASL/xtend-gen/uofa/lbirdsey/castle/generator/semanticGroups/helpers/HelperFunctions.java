@@ -109,50 +109,95 @@ public class HelperFunctions {
           NonPrimitiveType _obj_3 = dtd.getObj();
           output = ((uofa.lbirdsey.castle.casl.Enum) _obj_3).getName();
         }
-        NonPrimitiveType _useObj = dtd.getUseObj();
-        boolean _tripleNotEquals_2 = (_useObj != null);
-        if (_tripleNotEquals_2) {
+        if (((dtd.getUseObj() != null) && (dtd.getUseObj().size() > 0))) {
           String _output = output;
-          String _name = dtd.getUseObj().getName();
-          String _plus = ("<" + _name);
-          String _plus_1 = (_plus + ">");
-          output = (_output + _plus_1);
-        } else {
-          PrimitiveType _useType = dtd.getUseType();
-          boolean _tripleNotEquals_3 = (_useType != null);
-          if (_tripleNotEquals_3) {
+          output = (_output + "<");
+          for (int i = 0; (i < (dtd.getUseObj().size() - 1)); i++) {
             String _output_1 = output;
-            String _name_1 = dtd.getUseType().getName();
-            String _plus_2 = ("<" + _name_1);
-            String _plus_3 = (_plus_2 + ">");
-            output = (_output_1 + _plus_3);
+            String _name = dtd.getUseObj().get(i).getName();
+            String _plus = (_name + ", ");
+            output = (_output_1 + _plus);
+          }
+          String _output_1 = output;
+          EList<NonPrimitiveType> _useObj = dtd.getUseObj();
+          int _size = dtd.getUseObj().size();
+          int _minus = (_size - 1);
+          String _name = _useObj.get(_minus).getName();
+          output = (_output_1 + _name);
+          String _output_2 = output;
+          output = (_output_2 + ">");
+        } else {
+          if (((dtd.getUseType() != null) && (dtd.getUseType().size() > 0))) {
+            String _output_3 = output;
+            output = (_output_3 + "<");
+            for (int i = 0; (i < (dtd.getUseType().size() - 1)); i++) {
+              String _output_4 = output;
+              String _name_1 = dtd.getUseType().get(i).getName();
+              String _plus = (_name_1 + ", ");
+              output = (_output_4 + _plus);
+            }
+            String _output_4 = output;
+            EList<PrimitiveType> _useType = dtd.getUseType();
+            int _size_1 = dtd.getUseType().size();
+            int _minus_1 = (_size_1 - 1);
+            String _name_1 = _useType.get(_minus_1).getName();
+            output = (_output_4 + _name_1);
+            String _output_5 = output;
+            output = (_output_5 + ">");
           } else {
-            Group _useGroup = dtd.getUseGroup();
-            boolean _tripleNotEquals_4 = (_useGroup != null);
-            if (_tripleNotEquals_4) {
-              String _output_2 = output;
-              String _name_2 = dtd.getUseGroup().getName();
-              String _plus_4 = ("<" + _name_2);
-              String _plus_5 = (_plus_4 + ">");
-              output = (_output_2 + _plus_5);
+            if (((dtd.getUseGroup() != null) && (dtd.getUseGroup().size() > 0))) {
+              String _output_6 = output;
+              output = (_output_6 + "<");
+              for (int i = 0; (i < (dtd.getUseGroup().size() - 1)); i++) {
+                String _output_7 = output;
+                String _name_2 = dtd.getUseGroup().get(i).getName();
+                String _plus = (_name_2 + ", ");
+                output = (_output_7 + _plus);
+              }
+              String _output_7 = output;
+              EList<Group> _useGroup = dtd.getUseGroup();
+              int _size_2 = dtd.getUseGroup().size();
+              int _minus_2 = (_size_2 - 1);
+              String _name_2 = _useGroup.get(_minus_2).getName();
+              output = (_output_7 + _name_2);
+              String _output_8 = output;
+              output = (_output_8 + ">");
             } else {
-              Agent _useAgent = dtd.getUseAgent();
-              boolean _tripleNotEquals_5 = (_useAgent != null);
-              if (_tripleNotEquals_5) {
-                String _output_3 = output;
-                String _name_3 = dtd.getUseAgent().getName();
-                String _plus_6 = ("<" + _name_3);
-                String _plus_7 = (_plus_6 + ">");
-                output = (_output_3 + _plus_7);
+              if (((dtd.getUseAgent() != null) && (dtd.getUseAgent().size() > 0))) {
+                String _output_9 = output;
+                output = (_output_9 + "<");
+                for (int i = 0; (i < (dtd.getUseAgent().size() - 1)); i++) {
+                  String _output_10 = output;
+                  String _name_3 = dtd.getUseAgent().get(i).getName();
+                  String _plus = (_name_3 + ", ");
+                  output = (_output_10 + _plus);
+                }
+                String _output_10 = output;
+                EList<Agent> _useAgent = dtd.getUseAgent();
+                int _size_3 = dtd.getUseAgent().size();
+                int _minus_3 = (_size_3 - 1);
+                String _name_3 = _useAgent.get(_minus_3).getName();
+                output = (_output_10 + _name_3);
+                String _output_11 = output;
+                output = (_output_11 + ">");
               } else {
-                Environment _useEnv = dtd.getUseEnv();
-                boolean _tripleNotEquals_6 = (_useEnv != null);
-                if (_tripleNotEquals_6) {
-                  String _output_4 = output;
-                  String _name_4 = dtd.getUseEnv().getName();
-                  String _plus_8 = ("<" + _name_4);
-                  String _plus_9 = (_plus_8 + ">");
-                  output = (_output_4 + _plus_9);
+                if (((dtd.getUseEnv() != null) && (dtd.getUseEnv().size() > 0))) {
+                  String _output_12 = output;
+                  output = (_output_12 + "<");
+                  for (int i = 0; (i < (dtd.getUseEnv().size() - 1)); i++) {
+                    String _output_13 = output;
+                    String _name_4 = dtd.getUseEnv().get(i).getName();
+                    String _plus = (_name_4 + ", ");
+                    output = (_output_13 + _plus);
+                  }
+                  String _output_13 = output;
+                  EList<Environment> _useEnv = dtd.getUseEnv();
+                  int _size_4 = dtd.getUseEnv().size();
+                  int _minus_4 = (_size_4 - 1);
+                  String _name_4 = _useEnv.get(_minus_4).getName();
+                  output = (_output_13 + _name_4);
+                  String _output_14 = output;
+                  output = (_output_14 + ">");
                 }
               }
             }
@@ -181,50 +226,95 @@ public class HelperFunctions {
           NonPrimitiveType _obj_3 = fp.getObj();
           output = ((uofa.lbirdsey.castle.casl.Enum) _obj_3).getName();
         }
-        NonPrimitiveType _useObj = fp.getUseObj();
-        boolean _tripleNotEquals_2 = (_useObj != null);
-        if (_tripleNotEquals_2) {
+        if (((fp.getUseObj() != null) && (fp.getUseObj().size() > 0))) {
           String _output = output;
-          String _name = fp.getUseObj().getName();
-          String _plus = ("<" + _name);
-          String _plus_1 = (_plus + ">");
-          output = (_output + _plus_1);
-        } else {
-          PrimitiveType _useType = fp.getUseType();
-          boolean _tripleNotEquals_3 = (_useType != null);
-          if (_tripleNotEquals_3) {
+          output = (_output + "<");
+          for (int i = 0; (i < (fp.getUseObj().size() - 1)); i++) {
             String _output_1 = output;
-            String _name_1 = fp.getUseType().getName();
-            String _plus_2 = ("<" + _name_1);
-            String _plus_3 = (_plus_2 + ">");
-            output = (_output_1 + _plus_3);
+            String _name = fp.getUseObj().get(i).getName();
+            String _plus = (_name + ", ");
+            output = (_output_1 + _plus);
+          }
+          String _output_1 = output;
+          EList<NonPrimitiveType> _useObj = fp.getUseObj();
+          int _size = fp.getUseObj().size();
+          int _minus = (_size - 1);
+          String _name = _useObj.get(_minus).getName();
+          output = (_output_1 + _name);
+          String _output_2 = output;
+          output = (_output_2 + ">");
+        } else {
+          if (((fp.getUseType() != null) && (fp.getUseType().size() > 0))) {
+            String _output_3 = output;
+            output = (_output_3 + "<");
+            for (int i = 0; (i < (fp.getUseType().size() - 1)); i++) {
+              String _output_4 = output;
+              String _name_1 = fp.getUseType().get(i).getName();
+              String _plus = (_name_1 + ", ");
+              output = (_output_4 + _plus);
+            }
+            String _output_4 = output;
+            EList<PrimitiveType> _useType = fp.getUseType();
+            int _size_1 = fp.getUseType().size();
+            int _minus_1 = (_size_1 - 1);
+            String _name_1 = _useType.get(_minus_1).getName();
+            output = (_output_4 + _name_1);
+            String _output_5 = output;
+            output = (_output_5 + ">");
           } else {
-            Group _useGroup = fp.getUseGroup();
-            boolean _tripleNotEquals_4 = (_useGroup != null);
-            if (_tripleNotEquals_4) {
-              String _output_2 = output;
-              String _name_2 = fp.getUseGroup().getName();
-              String _plus_4 = ("<" + _name_2);
-              String _plus_5 = (_plus_4 + ">");
-              output = (_output_2 + _plus_5);
+            if (((fp.getUseGroup() != null) && (fp.getUseGroup().size() > 0))) {
+              String _output_6 = output;
+              output = (_output_6 + "<");
+              for (int i = 0; (i < (fp.getUseGroup().size() - 1)); i++) {
+                String _output_7 = output;
+                String _name_2 = fp.getUseGroup().get(i).getName();
+                String _plus = (_name_2 + ", ");
+                output = (_output_7 + _plus);
+              }
+              String _output_7 = output;
+              EList<Group> _useGroup = fp.getUseGroup();
+              int _size_2 = fp.getUseGroup().size();
+              int _minus_2 = (_size_2 - 1);
+              String _name_2 = _useGroup.get(_minus_2).getName();
+              output = (_output_7 + _name_2);
+              String _output_8 = output;
+              output = (_output_8 + ">");
             } else {
-              Agent _useAgent = fp.getUseAgent();
-              boolean _tripleNotEquals_5 = (_useAgent != null);
-              if (_tripleNotEquals_5) {
-                String _output_3 = output;
-                String _name_3 = fp.getUseAgent().getName();
-                String _plus_6 = ("<" + _name_3);
-                String _plus_7 = (_plus_6 + ">");
-                output = (_output_3 + _plus_7);
+              if (((fp.getUseAgent() != null) && (fp.getUseAgent().size() > 0))) {
+                String _output_9 = output;
+                output = (_output_9 + "<");
+                for (int i = 0; (i < (fp.getUseAgent().size() - 1)); i++) {
+                  String _output_10 = output;
+                  String _name_3 = fp.getUseAgent().get(i).getName();
+                  String _plus = (_name_3 + ", ");
+                  output = (_output_10 + _plus);
+                }
+                String _output_10 = output;
+                EList<Agent> _useAgent = fp.getUseAgent();
+                int _size_3 = fp.getUseAgent().size();
+                int _minus_3 = (_size_3 - 1);
+                String _name_3 = _useAgent.get(_minus_3).getName();
+                output = (_output_10 + _name_3);
+                String _output_11 = output;
+                output = (_output_11 + ">");
               } else {
-                Environment _useEnv = fp.getUseEnv();
-                boolean _tripleNotEquals_6 = (_useEnv != null);
-                if (_tripleNotEquals_6) {
-                  String _output_4 = output;
-                  String _name_4 = fp.getUseEnv().getName();
-                  String _plus_8 = ("<" + _name_4);
-                  String _plus_9 = (_plus_8 + ">");
-                  output = (_output_4 + _plus_9);
+                if (((fp.getUseEnv() != null) && (fp.getUseEnv().size() > 0))) {
+                  String _output_12 = output;
+                  output = (_output_12 + "<");
+                  for (int i = 0; (i < (fp.getUseEnv().size() - 1)); i++) {
+                    String _output_13 = output;
+                    String _name_4 = fp.getUseEnv().get(i).getName();
+                    String _plus = (_name_4 + ", ");
+                    output = (_output_13 + _plus);
+                  }
+                  String _output_13 = output;
+                  EList<Environment> _useEnv = fp.getUseEnv();
+                  int _size_4 = fp.getUseEnv().size();
+                  int _minus_4 = (_size_4 - 1);
+                  String _name_4 = _useEnv.get(_minus_4).getName();
+                  output = (_output_13 + _name_4);
+                  String _output_14 = output;
+                  output = (_output_14 + ">");
                 }
               }
             }
@@ -232,18 +322,18 @@ public class HelperFunctions {
         }
       } else {
         Agent _agent = fp.getAgent();
-        boolean _tripleNotEquals_7 = (_agent != null);
-        if (_tripleNotEquals_7) {
+        boolean _tripleNotEquals_2 = (_agent != null);
+        if (_tripleNotEquals_2) {
           output = fp.getAgent().getName();
         } else {
           Environment _env = fp.getEnv();
-          boolean _tripleNotEquals_8 = (_env != null);
-          if (_tripleNotEquals_8) {
+          boolean _tripleNotEquals_3 = (_env != null);
+          if (_tripleNotEquals_3) {
             output = fp.getEnv().getName();
           } else {
             Group _grp = fp.getGrp();
-            boolean _tripleNotEquals_9 = (_grp != null);
-            if (_tripleNotEquals_9) {
+            boolean _tripleNotEquals_4 = (_grp != null);
+            if (_tripleNotEquals_4) {
               output = fp.getGrp().getName();
             }
           }
@@ -288,51 +378,103 @@ public class HelperFunctions {
           String _plus = ("enums." + _name_1);
           output = (_output_1 + _plus);
         }
-        NonPrimitiveType _useObj = fp.getUseObj();
-        boolean _tripleNotEquals_4 = (_useObj != null);
-        if (_tripleNotEquals_4) {
+        if (((fp.getUseObj() != null) && (fp.getUseObj().size() > 0))) {
           String _output_2 = output;
           NonPrimitiveType _obj_6 = fp.getObj();
           String _plus_1 = (_obj_6 + "<");
-          String _name_2 = fp.getUseObj().getName();
-          String _plus_2 = (_plus_1 + _name_2);
-          String _plus_3 = (_plus_2 + ">");
-          output = (_output_2 + _plus_3);
-        } else {
-          PrimitiveType _useType = fp.getUseType();
-          boolean _tripleNotEquals_5 = (_useType != null);
-          if (_tripleNotEquals_5) {
+          output = (_output_2 + _plus_1);
+          for (int i = 0; (i < (fp.getUseObj().size() - 1)); i++) {
             String _output_3 = output;
-            output = (_output_3 + "<");
-            String _name_3 = fp.getUseType().getName();
-            /* (_name_3 + ">"); */
+            String _name_2 = fp.getUseObj().get(i).getName();
+            String _plus_2 = (_name_2 + ", ");
+            output = (_output_3 + _plus_2);
+          }
+          String _output_3 = output;
+          EList<NonPrimitiveType> _useObj = fp.getUseObj();
+          int _size = fp.getUseObj().size();
+          int _minus = (_size - 1);
+          String _name_2 = _useObj.get(_minus).getName();
+          output = (_output_3 + _name_2);
+          String _output_4 = output;
+          output = (_output_4 + ">");
+        } else {
+          if (((fp.getUseType() != null) && (fp.getUseType().size() > 0))) {
+            String _output_5 = output;
+            output = (_output_5 + "<");
+            for (int i = 0; (i < (fp.getUseType().size() - 1)); i++) {
+              String _output_6 = output;
+              String _name_3 = fp.getUseType().get(i).getName();
+              String _plus_2 = (_name_3 + ", ");
+              output = (_output_6 + _plus_2);
+            }
+            String _output_6 = output;
+            EList<PrimitiveType> _useType = fp.getUseType();
+            int _size_1 = fp.getUseType().size();
+            int _minus_1 = (_size_1 - 1);
+            String _name_3 = _useType.get(_minus_1).getName();
+            output = (_output_6 + _name_3);
+            String _output_7 = output;
+            output = (_output_7 + ">");
           } else {
-            Group _useGroup = fp.getUseGroup();
-            boolean _tripleNotEquals_6 = (_useGroup != null);
-            if (_tripleNotEquals_6) {
-              String _output_4 = output;
-              String _name_4 = fp.getUseGroup().getName();
-              String _plus_4 = (("<" + "groups.") + _name_4);
-              String _plus_5 = (_plus_4 + ">");
-              output = (_output_4 + _plus_5);
+            if (((fp.getUseGroup() != null) && (fp.getUseGroup().size() > 0))) {
+              String _output_8 = output;
+              output = (_output_8 + "<");
+              for (int i = 0; (i < (fp.getUseGroup().size() - 1)); i++) {
+                String _output_9 = output;
+                String _name_4 = fp.getUseGroup().get(i).getName();
+                String _plus_2 = ("groups." + _name_4);
+                String _plus_3 = (_plus_2 + ", ");
+                output = (_output_9 + _plus_3);
+              }
+              String _output_9 = output;
+              EList<Group> _useGroup = fp.getUseGroup();
+              int _size_2 = fp.getUseGroup().size();
+              int _minus_2 = (_size_2 - 1);
+              String _name_4 = _useGroup.get(_minus_2).getName();
+              String _plus_2 = ("groups." + _name_4);
+              output = (_output_9 + _plus_2);
+              String _output_10 = output;
+              output = (_output_10 + ">");
             } else {
-              Agent _useAgent = fp.getUseAgent();
-              boolean _tripleNotEquals_7 = (_useAgent != null);
-              if (_tripleNotEquals_7) {
-                String _output_5 = output;
-                String _name_5 = fp.getUseAgent().getName();
-                String _plus_6 = (("<" + "agents.") + _name_5);
-                String _plus_7 = (_plus_6 + ">");
-                output = (_output_5 + _plus_7);
+              if (((fp.getUseAgent() != null) && (fp.getUseAgent().size() > 0))) {
+                String _output_11 = output;
+                output = (_output_11 + "<");
+                for (int i = 0; (i < (fp.getUseAgent().size() - 1)); i++) {
+                  String _output_12 = output;
+                  String _name_5 = fp.getUseAgent().get(i).getName();
+                  String _plus_3 = ("agents." + _name_5);
+                  String _plus_4 = (_plus_3 + ", ");
+                  output = (_output_12 + _plus_4);
+                }
+                String _output_12 = output;
+                EList<Agent> _useAgent = fp.getUseAgent();
+                int _size_3 = fp.getUseAgent().size();
+                int _minus_3 = (_size_3 - 1);
+                String _name_5 = _useAgent.get(_minus_3).getName();
+                String _plus_3 = ("agents." + _name_5);
+                output = (_output_12 + _plus_3);
+                String _output_13 = output;
+                output = (_output_13 + ">");
               } else {
-                Environment _useEnv = fp.getUseEnv();
-                boolean _tripleNotEquals_8 = (_useEnv != null);
-                if (_tripleNotEquals_8) {
-                  String _output_6 = output;
-                  String _name_6 = fp.getUseEnv().getName();
-                  String _plus_8 = (("<" + "environments.") + _name_6);
-                  String _plus_9 = (_plus_8 + ">");
-                  output = (_output_6 + _plus_9);
+                if (((fp.getUseEnv() != null) && (fp.getUseEnv().size() > 0))) {
+                  String _output_14 = output;
+                  output = (_output_14 + "<");
+                  for (int i = 0; (i < (fp.getUseEnv().size() - 1)); i++) {
+                    String _output_15 = output;
+                    String _name_6 = fp.getUseEnv().get(i).getName();
+                    String _plus_4 = ("environments." + _name_6);
+                    String _plus_5 = (_plus_4 + ", ");
+                    output = (_output_15 + _plus_5);
+                  }
+                  String _output_15 = output;
+                  EList<Environment> _useEnv = fp.getUseEnv();
+                  int _size_4 = fp.getUseEnv().size();
+                  int _minus_4 = (_size_4 - 1);
+                  String _name_6 = _useEnv.get(_minus_4).getName();
+                  String _plus_4 = ("environments." + _name_6);
+                  output = (_output_15 + _plus_4);
+                  String _output_16 = output;
+                  output = (_output_16 + ">");
                 }
               }
             }
@@ -340,25 +482,25 @@ public class HelperFunctions {
         }
       } else {
         Agent _agent = fp.getAgent();
-        boolean _tripleNotEquals_9 = (_agent != null);
-        if (_tripleNotEquals_9) {
+        boolean _tripleNotEquals_4 = (_agent != null);
+        if (_tripleNotEquals_4) {
           String _firstUpper = StringExtensions.toFirstUpper(fp.getAgent().getName());
-          String _plus_10 = ("agents." + _firstUpper);
-          output = _plus_10;
+          String _plus_5 = ("agents." + _firstUpper);
+          output = _plus_5;
         } else {
           Environment _env = fp.getEnv();
-          boolean _tripleNotEquals_10 = (_env != null);
-          if (_tripleNotEquals_10) {
+          boolean _tripleNotEquals_5 = (_env != null);
+          if (_tripleNotEquals_5) {
             String _firstUpper_1 = StringExtensions.toFirstUpper(fp.getEnv().getName());
-            String _plus_11 = ("environments." + _firstUpper_1);
-            output = _plus_11;
+            String _plus_6 = ("environments." + _firstUpper_1);
+            output = _plus_6;
           } else {
             Group _grp = fp.getGrp();
-            boolean _tripleNotEquals_11 = (_grp != null);
-            if (_tripleNotEquals_11) {
+            boolean _tripleNotEquals_6 = (_grp != null);
+            if (_tripleNotEquals_6) {
               String _firstUpper_2 = StringExtensions.toFirstUpper(fp.getGrp().getName());
-              String _plus_12 = ("groups." + _firstUpper_2);
-              output = _plus_12;
+              String _plus_7 = ("groups." + _firstUpper_2);
+              output = _plus_7;
             }
           }
         }
@@ -1086,7 +1228,7 @@ public class HelperFunctions {
           if (_tripleNotEquals_2) {
             output = "CUSTOM:";
           }
-          NonPrimitiveType _useObj = fdt.getUseObj();
+          EList<NonPrimitiveType> _useObj = fdt.getUseObj();
           boolean _tripleNotEquals_3 = (_useObj != null);
           if (_tripleNotEquals_3) {
             String _output = output;
@@ -1108,56 +1250,99 @@ public class HelperFunctions {
             if (_tripleNotEquals_4) {
               output = "CUSTOM:";
             }
-            NonPrimitiveType _useObj_1 = fdt.getUseObj();
-            boolean _tripleNotEquals_5 = (_useObj_1 != null);
-            if (_tripleNotEquals_5) {
+            if (((fdt.getUseObj() != null) && (fdt.getUseObj().size() > 0))) {
               String _output_2 = output;
               String _name_2 = fdt.getObj().getName();
-              String _plus_2 = (_name_2 + "<");
-              String _name_3 = fdt.getUseObj().getName();
-              String _plus_3 = (_plus_2 + _name_3);
-              String _plus_4 = (_plus_3 + ">");
-              output = (_output_2 + _plus_4);
+              output = (_output_2 + _name_2);
+              String _output_3 = output;
+              output = (_output_3 + "<");
+              for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                String _output_4 = output;
+                String _name_3 = fdt.getUseObj().get(i).getName();
+                String _plus_2 = (_name_3 + ", ");
+                output = (_output_4 + _plus_2);
+              }
+              String _output_4 = output;
+              EList<NonPrimitiveType> _useObj_1 = fdt.getUseObj();
+              int _size = fdt.getUseObj().size();
+              int _minus = (_size - 1);
+              String _name_3 = _useObj_1.get(_minus).getName();
+              output = (_output_4 + _name_3);
+              String _output_5 = output;
+              output = (_output_5 + ">");
             } else {
-              Group _useGroup = fdt.getUseGroup();
-              boolean _tripleNotEquals_6 = (_useGroup != null);
-              if (_tripleNotEquals_6) {
-                String _output_3 = output;
+              if (((fdt.getUseGroup() != null) && (fdt.getUseGroup().size() > 0))) {
+                String _output_6 = output;
                 String _name_4 = fdt.getObj().getName();
-                String _plus_5 = (_name_4 + "<");
-                String _plus_6 = (_plus_5 + "groups.");
-                String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseGroup().getName());
-                String _plus_7 = (_plus_6 + _firstUpper);
-                String _plus_8 = (_plus_7 + ">");
-                output = (_output_3 + _plus_8);
+                output = (_output_6 + _name_4);
+                String _output_7 = output;
+                output = (_output_7 + "<");
+                for (int i = 0; (i < (fdt.getUseGroup().size() - 1)); i++) {
+                  String _output_8 = output;
+                  String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseGroup().get(i).getName());
+                  String _plus_2 = ("groups." + _firstUpper);
+                  String _plus_3 = (_plus_2 + ", ");
+                  output = (_output_8 + _plus_3);
+                }
+                String _output_8 = output;
+                EList<Group> _useGroup = fdt.getUseGroup();
+                int _size_1 = fdt.getUseGroup().size();
+                int _minus_1 = (_size_1 - 1);
+                String _firstUpper = StringExtensions.toFirstUpper(_useGroup.get(_minus_1).getName());
+                String _plus_2 = ("groups." + _firstUpper);
+                output = (_output_8 + _plus_2);
+                String _output_9 = output;
+                output = (_output_9 + ">");
               } else {
-                Agent _useAgent = fdt.getUseAgent();
-                boolean _tripleNotEquals_7 = (_useAgent != null);
-                if (_tripleNotEquals_7) {
-                  String _output_4 = output;
+                if (((fdt.getUseAgent() != null) && (fdt.getUseAgent().size() > 0))) {
+                  String _output_10 = output;
                   String _name_5 = fdt.getObj().getName();
-                  String _plus_9 = (_name_5 + "<");
-                  String _plus_10 = (_plus_9 + "agents.");
-                  String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseAgent().getName());
-                  String _plus_11 = (_plus_10 + _firstUpper_1);
-                  String _plus_12 = (_plus_11 + ">");
-                  output = (_output_4 + _plus_12);
+                  output = (_output_10 + _name_5);
+                  String _output_11 = output;
+                  output = (_output_11 + "<");
+                  for (int i = 0; (i < (fdt.getUseAgent().size() - 1)); i++) {
+                    String _output_12 = output;
+                    String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseAgent().get(i).getName());
+                    String _plus_3 = ("agents." + _firstUpper_1);
+                    String _plus_4 = (_plus_3 + ", ");
+                    output = (_output_12 + _plus_4);
+                  }
+                  String _output_12 = output;
+                  EList<Agent> _useAgent = fdt.getUseAgent();
+                  int _size_2 = fdt.getUseAgent().size();
+                  int _minus_2 = (_size_2 - 1);
+                  String _firstUpper_1 = StringExtensions.toFirstUpper(_useAgent.get(_minus_2).getName());
+                  String _plus_3 = ("agents." + _firstUpper_1);
+                  output = (_output_12 + _plus_3);
+                  String _output_13 = output;
+                  output = (_output_13 + ">");
                 } else {
-                  Environment _useEnv = fdt.getUseEnv();
-                  boolean _tripleNotEquals_8 = (_useEnv != null);
-                  if (_tripleNotEquals_8) {
-                    String _output_5 = output;
+                  if (((fdt.getUseEnv() != null) && (fdt.getUseEnv().size() > 0))) {
+                    String _output_14 = output;
                     String _name_6 = fdt.getObj().getName();
-                    String _plus_13 = (_name_6 + "<");
-                    String _plus_14 = (_plus_13 + "environments.");
-                    String _firstUpper_2 = StringExtensions.toFirstUpper(fdt.getUseEnv().getName());
-                    String _plus_15 = (_plus_14 + _firstUpper_2);
-                    String _plus_16 = (_plus_15 + ">");
-                    output = (_output_5 + _plus_16);
+                    output = (_output_14 + _name_6);
+                    String _output_15 = output;
+                    output = (_output_15 + "<");
+                    for (int i = 0; (i < (fdt.getUseEnv().size() - 1)); i++) {
+                      String _output_16 = output;
+                      String _name_7 = fdt.getUseEnv().get(i).getName();
+                      String _plus_4 = ("environments." + _name_7);
+                      String _plus_5 = (_plus_4 + ", ");
+                      output = (_output_16 + _plus_5);
+                    }
+                    String _output_16 = output;
+                    EList<Environment> _useEnv = fdt.getUseEnv();
+                    int _size_3 = fdt.getUseEnv().size();
+                    int _minus_3 = (_size_3 - 1);
+                    String _name_7 = _useEnv.get(_minus_3).getName();
+                    String _plus_4 = ("environments." + _name_7);
+                    output = (_output_16 + _plus_4);
+                    String _output_17 = output;
+                    output = (_output_17 + ">");
                   } else {
-                    String _output_6 = output;
-                    String _name_7 = fdt.getObj().getName();
-                    output = (_output_6 + _name_7);
+                    String _output_18 = output;
+                    String _name_8 = fdt.getObj().getName();
+                    output = (_output_18 + _name_8);
                   }
                 }
               }
@@ -1166,40 +1351,40 @@ public class HelperFunctions {
         }
       } else {
         PrimitiveType _type = fdt.getType();
-        boolean _tripleNotEquals_9 = (_type != null);
-        if (_tripleNotEquals_9) {
-          String _output_7 = output;
-          String _name_8 = fdt.getType().getName();
-          output = (_output_7 + _name_8);
+        boolean _tripleNotEquals_5 = (_type != null);
+        if (_tripleNotEquals_5) {
+          String _output_19 = output;
+          String _name_9 = fdt.getType().getName();
+          output = (_output_19 + _name_9);
         }
       }
     } else {
       Symbol _agentFieldRef = f.getAgentFieldRef();
-      boolean _tripleNotEquals_10 = (_agentFieldRef != null);
-      if (_tripleNotEquals_10) {
+      boolean _tripleNotEquals_6 = (_agentFieldRef != null);
+      if (_tripleNotEquals_6) {
         Symbol _agentFieldRef_1 = f.getAgentFieldRef();
         final AgentFieldReference afr = ((AgentFieldReference) _agentFieldRef_1);
-        String _firstUpper_3 = StringExtensions.toFirstUpper(afr.getAgent().getName());
-        String _plus_17 = ("agents." + _firstUpper_3);
-        output = _plus_17;
+        String _firstUpper_2 = StringExtensions.toFirstUpper(afr.getAgent().getName());
+        String _plus_5 = ("agents." + _firstUpper_2);
+        output = _plus_5;
       } else {
         Symbol _envFieldRef = f.getEnvFieldRef();
-        boolean _tripleNotEquals_11 = (_envFieldRef != null);
-        if (_tripleNotEquals_11) {
+        boolean _tripleNotEquals_7 = (_envFieldRef != null);
+        if (_tripleNotEquals_7) {
           Symbol _envFieldRef_1 = f.getEnvFieldRef();
           final EnvironmentFieldReference efr = ((EnvironmentFieldReference) _envFieldRef_1);
-          String _firstUpper_4 = StringExtensions.toFirstUpper(efr.getEnv().getName());
-          String _plus_18 = ("environments." + _firstUpper_4);
-          output = _plus_18;
+          String _firstUpper_3 = StringExtensions.toFirstUpper(efr.getEnv().getName());
+          String _plus_6 = ("environments." + _firstUpper_3);
+          output = _plus_6;
         } else {
           Symbol _grpFieldRef = f.getGrpFieldRef();
-          boolean _tripleNotEquals_12 = (_grpFieldRef != null);
-          if (_tripleNotEquals_12) {
+          boolean _tripleNotEquals_8 = (_grpFieldRef != null);
+          if (_tripleNotEquals_8) {
             Symbol _grpFieldRef_1 = f.getGrpFieldRef();
             final GroupFieldReference gfr = ((GroupFieldReference) _grpFieldRef_1);
-            String _firstUpper_5 = StringExtensions.toFirstUpper(gfr.getGrp().getName());
-            String _plus_19 = ("groups." + _firstUpper_5);
-            output = _plus_19;
+            String _firstUpper_4 = StringExtensions.toFirstUpper(gfr.getGrp().getName());
+            String _plus_7 = ("groups." + _firstUpper_4);
+            output = _plus_7;
           }
         }
       }
@@ -1291,50 +1476,95 @@ public class HelperFunctions {
             String _output_3 = output;
             String _name_1 = npt.getName();
             output = (_output_3 + _name_1);
-            NonPrimitiveType _useObj = fiedecl.getUseObj();
-            boolean _tripleNotEquals_3 = (_useObj != null);
-            if (_tripleNotEquals_3) {
+            if (((fiedecl.getUseObj() != null) && (fiedecl.getUseObj().size() > 0))) {
               String _output_4 = output;
-              String _name_2 = fiedecl.getUseObj().getName();
-              String _plus_4 = ("<" + _name_2);
-              String _plus_5 = (_plus_4 + ">");
-              output = (_output_4 + _plus_5);
-            } else {
-              PrimitiveType _useType = fiedecl.getUseType();
-              boolean _tripleNotEquals_4 = (_useType != null);
-              if (_tripleNotEquals_4) {
+              output = (_output_4 + "<");
+              for (int i = 0; (i < (fiedecl.getUseObj().size() - 1)); i++) {
                 String _output_5 = output;
-                String _name_3 = fiedecl.getUseType().getName();
-                String _plus_6 = ("<" + _name_3);
-                String _plus_7 = (_plus_6 + ">");
-                output = (_output_5 + _plus_7);
+                String _name_2 = fiedecl.getUseObj().get(i).getName();
+                String _plus_4 = (_name_2 + ", ");
+                output = (_output_5 + _plus_4);
+              }
+              String _output_5 = output;
+              EList<NonPrimitiveType> _useObj = fiedecl.getUseObj();
+              int _size = fiedecl.getUseObj().size();
+              int _minus = (_size - 1);
+              String _name_2 = _useObj.get(_minus).getName();
+              output = (_output_5 + _name_2);
+              String _output_6 = output;
+              output = (_output_6 + ">");
+            } else {
+              if (((fiedecl.getUseType() != null) && (fiedecl.getUseType().size() > 0))) {
+                String _output_7 = output;
+                output = (_output_7 + "<");
+                for (int i = 0; (i < (fiedecl.getUseType().size() - 1)); i++) {
+                  String _output_8 = output;
+                  String _name_3 = fiedecl.getUseType().get(i).getName();
+                  String _plus_4 = (_name_3 + ", ");
+                  output = (_output_8 + _plus_4);
+                }
+                String _output_8 = output;
+                EList<PrimitiveType> _useType = fiedecl.getUseType();
+                int _size_1 = fiedecl.getUseType().size();
+                int _minus_1 = (_size_1 - 1);
+                String _name_3 = _useType.get(_minus_1).getName();
+                output = (_output_8 + _name_3);
+                String _output_9 = output;
+                output = (_output_9 + ">");
               } else {
-                Group _useGroup = fiedecl.getUseGroup();
-                boolean _tripleNotEquals_5 = (_useGroup != null);
-                if (_tripleNotEquals_5) {
-                  String _output_6 = output;
-                  String _name_4 = fiedecl.getUseGroup().getName();
-                  String _plus_8 = ("<" + _name_4);
-                  String _plus_9 = (_plus_8 + ">");
-                  output = (_output_6 + _plus_9);
+                if (((fiedecl.getUseGroup() != null) && (fiedecl.getUseGroup().size() > 0))) {
+                  String _output_10 = output;
+                  output = (_output_10 + "<");
+                  for (int i = 0; (i < (fiedecl.getUseGroup().size() - 1)); i++) {
+                    String _output_11 = output;
+                    String _name_4 = fiedecl.getUseGroup().get(i).getName();
+                    String _plus_4 = (_name_4 + ", ");
+                    output = (_output_11 + _plus_4);
+                  }
+                  String _output_11 = output;
+                  EList<Group> _useGroup = fiedecl.getUseGroup();
+                  int _size_2 = fiedecl.getUseGroup().size();
+                  int _minus_2 = (_size_2 - 1);
+                  String _name_4 = _useGroup.get(_minus_2).getName();
+                  output = (_output_11 + _name_4);
+                  String _output_12 = output;
+                  output = (_output_12 + ">");
                 } else {
-                  Agent _useAgent = fiedecl.getUseAgent();
-                  boolean _tripleNotEquals_6 = (_useAgent != null);
-                  if (_tripleNotEquals_6) {
-                    String _output_7 = output;
-                    String _name_5 = fiedecl.getUseAgent().getName();
-                    String _plus_10 = ("<" + _name_5);
-                    String _plus_11 = (_plus_10 + ">");
-                    output = (_output_7 + _plus_11);
+                  if (((fiedecl.getUseAgent() != null) && (fiedecl.getUseAgent().size() > 0))) {
+                    String _output_13 = output;
+                    output = (_output_13 + "<");
+                    for (int i = 0; (i < (fiedecl.getUseAgent().size() - 1)); i++) {
+                      String _output_14 = output;
+                      String _name_5 = fiedecl.getUseAgent().get(i).getName();
+                      String _plus_4 = (_name_5 + ", ");
+                      output = (_output_14 + _plus_4);
+                    }
+                    String _output_14 = output;
+                    EList<Agent> _useAgent = fiedecl.getUseAgent();
+                    int _size_3 = fiedecl.getUseAgent().size();
+                    int _minus_3 = (_size_3 - 1);
+                    String _name_5 = _useAgent.get(_minus_3).getName();
+                    output = (_output_14 + _name_5);
+                    String _output_15 = output;
+                    output = (_output_15 + ">");
                   } else {
-                    Environment _useEnv = fiedecl.getUseEnv();
-                    boolean _tripleNotEquals_7 = (_useEnv != null);
-                    if (_tripleNotEquals_7) {
-                      String _output_8 = output;
-                      String _name_6 = fiedecl.getUseEnv().getName();
-                      String _plus_12 = ("<" + _name_6);
-                      String _plus_13 = (_plus_12 + ">");
-                      output = (_output_8 + _plus_13);
+                    if (((fiedecl.getUseEnv() != null) && (fiedecl.getUseEnv().size() > 0))) {
+                      String _output_16 = output;
+                      output = (_output_16 + "<");
+                      for (int i = 0; (i < (fiedecl.getUseEnv().size() - 1)); i++) {
+                        String _output_17 = output;
+                        String _name_6 = fiedecl.getUseEnv().get(i).getName();
+                        String _plus_4 = (_name_6 + ", ");
+                        output = (_output_17 + _plus_4);
+                      }
+                      String _output_17 = output;
+                      EList<Environment> _useEnv = fiedecl.getUseEnv();
+                      int _size_4 = fiedecl.getUseEnv().size();
+                      int _minus_4 = (_size_4 - 1);
+                      String _name_6 = _useEnv.get(_minus_4).getName();
+                      output = (_output_17 + _name_6);
+                      String _output_18 = output;
+                      output = (_output_18 + ">");
                     }
                   }
                 }
@@ -1343,103 +1573,148 @@ public class HelperFunctions {
           } else {
             NonPrimitiveType _obj_3 = fiedecl.getObj();
             if ((_obj_3 instanceof uofa.lbirdsey.castle.casl.Enum)) {
-              String _output_9 = output;
+              String _output_19 = output;
               String _name_7 = fiedecl.getObj().getName();
-              output = (_output_9 + _name_7);
+              output = (_output_19 + _name_7);
             }
           }
         }
       }
       if (((fiedecl.getInitInclude() != null) || makeStatic)) {
-        String _output_10 = output;
+        String _output_20 = output;
         String _name_8 = fiedecl.getName();
-        String _plus_14 = (" " + _name_8);
-        String _plus_15 = (_plus_14 + "_) {\n\t");
+        String _plus_4 = (" " + _name_8);
+        String _plus_5 = (_plus_4 + "_) {\n\t");
         String _name_9 = fiedecl.getName();
-        String _plus_16 = (_plus_15 + _name_9);
-        String _plus_17 = (_plus_16 + " = ");
+        String _plus_6 = (_plus_5 + _name_9);
+        String _plus_7 = (_plus_6 + " = ");
         String _name_10 = fiedecl.getName();
-        String _plus_18 = (_plus_17 + _name_10);
-        String _plus_19 = (_plus_18 + "_;\n}\n");
-        output = (_output_10 + _plus_19);
-        String _output_11 = output;
-        output = (_output_11 + "public static ");
+        String _plus_8 = (_plus_7 + _name_10);
+        String _plus_9 = (_plus_8 + "_;\n}\n");
+        output = (_output_20 + _plus_9);
+        String _output_21 = output;
+        output = (_output_21 + "public static ");
       } else {
-        String _output_12 = output;
+        String _output_22 = output;
         String _name_11 = fiedecl.getName();
-        String _plus_20 = (" " + _name_11);
-        String _plus_21 = (_plus_20 + "_) {\n\tthis.");
+        String _plus_10 = (" " + _name_11);
+        String _plus_11 = (_plus_10 + "_) {\n\tthis.");
         String _name_12 = fiedecl.getName();
-        String _plus_22 = (_plus_21 + _name_12);
-        String _plus_23 = (_plus_22 + " = ");
+        String _plus_12 = (_plus_11 + _name_12);
+        String _plus_13 = (_plus_12 + " = ");
         String _name_13 = fiedecl.getName();
-        String _plus_24 = (_plus_23 + _name_13);
-        String _plus_25 = (_plus_24 + "_;\n}\n");
-        output = (_output_12 + _plus_25);
-        String _output_13 = output;
-        output = (_output_13 + "public ");
+        String _plus_14 = (_plus_13 + _name_13);
+        String _plus_15 = (_plus_14 + "_;\n}\n");
+        output = (_output_22 + _plus_15);
+        String _output_23 = output;
+        output = (_output_23 + "public ");
       }
       PrimitiveType _type_1 = fiedecl.getType();
-      boolean _tripleNotEquals_8 = (_type_1 != null);
-      if (_tripleNotEquals_8) {
-        String _output_14 = output;
+      boolean _tripleNotEquals_3 = (_type_1 != null);
+      if (_tripleNotEquals_3) {
+        String _output_24 = output;
         String _name_14 = fiedecl.getType().getName();
-        output = (_output_14 + _name_14);
+        output = (_output_24 + _name_14);
       } else {
         NonPrimitiveType _obj_4 = fiedecl.getObj();
-        boolean _tripleNotEquals_9 = (_obj_4 != null);
-        if (_tripleNotEquals_9) {
+        boolean _tripleNotEquals_4 = (_obj_4 != null);
+        if (_tripleNotEquals_4) {
           NonPrimitiveType _obj_5 = fiedecl.getObj();
           if ((_obj_5 instanceof uofa.lbirdsey.castle.casl.Object)) {
             NonPrimitiveType _obj_6 = fiedecl.getObj();
             uofa.lbirdsey.castle.casl.Object npt_1 = ((uofa.lbirdsey.castle.casl.Object) _obj_6);
-            String _output_15 = output;
+            String _output_25 = output;
             String _name_15 = npt_1.getName();
-            output = (_output_15 + _name_15);
-            NonPrimitiveType _useObj_1 = fiedecl.getUseObj();
-            boolean _tripleNotEquals_10 = (_useObj_1 != null);
-            if (_tripleNotEquals_10) {
-              String _output_16 = output;
-              String _name_16 = fiedecl.getUseObj().getName();
-              String _plus_26 = ("<" + _name_16);
-              String _plus_27 = (_plus_26 + ">");
-              output = (_output_16 + _plus_27);
+            output = (_output_25 + _name_15);
+            if (((fiedecl.getUseObj() != null) && (fiedecl.getUseObj().size() > 0))) {
+              String _output_26 = output;
+              output = (_output_26 + "<");
+              for (int i = 0; (i < (fiedecl.getUseObj().size() - 1)); i++) {
+                String _output_27 = output;
+                String _name_16 = fiedecl.getUseObj().get(i).getName();
+                String _plus_16 = (_name_16 + ", ");
+                output = (_output_27 + _plus_16);
+              }
+              String _output_27 = output;
+              EList<NonPrimitiveType> _useObj_1 = fiedecl.getUseObj();
+              int _size_5 = fiedecl.getUseObj().size();
+              int _minus_5 = (_size_5 - 1);
+              String _name_16 = _useObj_1.get(_minus_5).getName();
+              output = (_output_27 + _name_16);
+              String _output_28 = output;
+              output = (_output_28 + ">");
             } else {
-              PrimitiveType _useType_1 = fiedecl.getUseType();
-              boolean _tripleNotEquals_11 = (_useType_1 != null);
-              if (_tripleNotEquals_11) {
-                String _output_17 = output;
-                String _name_17 = fiedecl.getUseType().getName();
-                String _plus_28 = ("<" + _name_17);
-                String _plus_29 = (_plus_28 + ">");
-                output = (_output_17 + _plus_29);
+              if (((fiedecl.getUseType() != null) && (fiedecl.getUseType().size() > 0))) {
+                String _output_29 = output;
+                output = (_output_29 + "<");
+                for (int i = 0; (i < (fiedecl.getUseType().size() - 1)); i++) {
+                  String _output_30 = output;
+                  String _name_17 = fiedecl.getUseType().get(i).getName();
+                  String _plus_16 = (_name_17 + ", ");
+                  output = (_output_30 + _plus_16);
+                }
+                String _output_30 = output;
+                EList<PrimitiveType> _useType_1 = fiedecl.getUseType();
+                int _size_6 = fiedecl.getUseType().size();
+                int _minus_6 = (_size_6 - 1);
+                String _name_17 = _useType_1.get(_minus_6).getName();
+                output = (_output_30 + _name_17);
+                String _output_31 = output;
+                output = (_output_31 + ">");
               } else {
-                Group _useGroup_1 = fiedecl.getUseGroup();
-                boolean _tripleNotEquals_12 = (_useGroup_1 != null);
-                if (_tripleNotEquals_12) {
-                  String _output_18 = output;
-                  String _name_18 = fiedecl.getUseGroup().getName();
-                  String _plus_30 = ("<" + _name_18);
-                  String _plus_31 = (_plus_30 + ">");
-                  output = (_output_18 + _plus_31);
+                if (((fiedecl.getUseGroup() != null) && (fiedecl.getUseGroup().size() > 0))) {
+                  String _output_32 = output;
+                  output = (_output_32 + "<");
+                  for (int i = 0; (i < (fiedecl.getUseGroup().size() - 1)); i++) {
+                    String _output_33 = output;
+                    String _name_18 = fiedecl.getUseGroup().get(i).getName();
+                    String _plus_16 = (_name_18 + ", ");
+                    output = (_output_33 + _plus_16);
+                  }
+                  String _output_33 = output;
+                  EList<Group> _useGroup_1 = fiedecl.getUseGroup();
+                  int _size_7 = fiedecl.getUseGroup().size();
+                  int _minus_7 = (_size_7 - 1);
+                  String _name_18 = _useGroup_1.get(_minus_7).getName();
+                  output = (_output_33 + _name_18);
+                  String _output_34 = output;
+                  output = (_output_34 + ">");
                 } else {
-                  Agent _useAgent_1 = fiedecl.getUseAgent();
-                  boolean _tripleNotEquals_13 = (_useAgent_1 != null);
-                  if (_tripleNotEquals_13) {
-                    String _output_19 = output;
-                    String _name_19 = fiedecl.getUseAgent().getName();
-                    String _plus_32 = ("<" + _name_19);
-                    String _plus_33 = (_plus_32 + ">");
-                    output = (_output_19 + _plus_33);
+                  if (((fiedecl.getUseAgent() != null) && (fiedecl.getUseAgent().size() > 0))) {
+                    String _output_35 = output;
+                    output = (_output_35 + "<");
+                    for (int i = 0; (i < (fiedecl.getUseAgent().size() - 1)); i++) {
+                      String _output_36 = output;
+                      String _name_19 = fiedecl.getUseAgent().get(i).getName();
+                      String _plus_16 = (_name_19 + ", ");
+                      output = (_output_36 + _plus_16);
+                    }
+                    String _output_36 = output;
+                    EList<Agent> _useAgent_1 = fiedecl.getUseAgent();
+                    int _size_8 = fiedecl.getUseAgent().size();
+                    int _minus_8 = (_size_8 - 1);
+                    String _name_19 = _useAgent_1.get(_minus_8).getName();
+                    output = (_output_36 + _name_19);
+                    String _output_37 = output;
+                    output = (_output_37 + ">");
                   } else {
-                    Environment _useEnv_1 = fiedecl.getUseEnv();
-                    boolean _tripleNotEquals_14 = (_useEnv_1 != null);
-                    if (_tripleNotEquals_14) {
-                      String _output_20 = output;
-                      String _name_20 = fiedecl.getUseEnv().getName();
-                      String _plus_34 = ("<" + _name_20);
-                      String _plus_35 = (_plus_34 + ">");
-                      output = (_output_20 + _plus_35);
+                    if (((fiedecl.getUseEnv() != null) && (fiedecl.getUseEnv().size() > 0))) {
+                      String _output_38 = output;
+                      output = (_output_38 + "<");
+                      for (int i = 0; (i < (fiedecl.getUseEnv().size() - 1)); i++) {
+                        String _output_39 = output;
+                        String _name_20 = fiedecl.getUseEnv().get(i).getName();
+                        String _plus_16 = (_name_20 + ", ");
+                        output = (_output_39 + _plus_16);
+                      }
+                      String _output_39 = output;
+                      EList<Environment> _useEnv_1 = fiedecl.getUseEnv();
+                      int _size_9 = fiedecl.getUseEnv().size();
+                      int _minus_9 = (_size_9 - 1);
+                      String _name_20 = _useEnv_1.get(_minus_9).getName();
+                      output = (_output_39 + _name_20);
+                      String _output_40 = output;
+                      output = (_output_40 + ">");
                     }
                   }
                 }
@@ -1448,104 +1723,104 @@ public class HelperFunctions {
           } else {
             NonPrimitiveType _obj_7 = fiedecl.getObj();
             if ((_obj_7 instanceof uofa.lbirdsey.castle.casl.Enum)) {
-              String _output_21 = output;
+              String _output_41 = output;
               String _name_21 = fiedecl.getObj().getName();
-              output = (_output_21 + _name_21);
+              output = (_output_41 + _name_21);
             }
           }
         }
       }
       if (((fiedecl.getInitInclude() != null) || makeStatic)) {
-        String _output_22 = output;
+        String _output_42 = output;
         String _firstUpper_2 = StringExtensions.toFirstUpper(fiedecl.getName());
-        String _plus_36 = (" get" + _firstUpper_2);
-        String _plus_37 = (_plus_36 + "_() {\n\treturn ");
+        String _plus_16 = (" get" + _firstUpper_2);
+        String _plus_17 = (_plus_16 + "_() {\n\treturn ");
         String _name_22 = fiedecl.getName();
-        String _plus_38 = (_plus_37 + _name_22);
-        String _plus_39 = (_plus_38 + ";\n}\n");
-        output = (_output_22 + _plus_39);
+        String _plus_18 = (_plus_17 + _name_22);
+        String _plus_19 = (_plus_18 + ";\n}\n");
+        output = (_output_42 + _plus_19);
       } else {
-        String _output_23 = output;
+        String _output_43 = output;
         String _firstUpper_3 = StringExtensions.toFirstUpper(fiedecl.getName());
-        String _plus_40 = (" get" + _firstUpper_3);
-        String _plus_41 = (_plus_40 + "_() {\n\treturn this.");
+        String _plus_20 = (" get" + _firstUpper_3);
+        String _plus_21 = (_plus_20 + "_() {\n\treturn this.");
         String _name_23 = fiedecl.getName();
-        String _plus_42 = (_plus_41 + _name_23);
-        String _plus_43 = (_plus_42 + ";\n}\n");
-        output = (_output_23 + _plus_43);
+        String _plus_22 = (_plus_21 + _name_23);
+        String _plus_23 = (_plus_22 + ";\n}\n");
+        output = (_output_43 + _plus_23);
       }
     } else {
       Symbol _agentFieldRef = field.getAgentFieldRef();
-      boolean _tripleNotEquals_15 = (_agentFieldRef != null);
-      if (_tripleNotEquals_15) {
+      boolean _tripleNotEquals_5 = (_agentFieldRef != null);
+      if (_tripleNotEquals_5) {
         Symbol _agentFieldRef_1 = field.getAgentFieldRef();
         AgentFieldReference fieagent = ((AgentFieldReference) _agentFieldRef_1);
-        String _output_24 = output;
+        String _output_44 = output;
         String _firstUpper_4 = StringExtensions.toFirstUpper(fieagent.getName());
-        String _plus_44 = ("public void set" + _firstUpper_4);
-        String _plus_45 = (_plus_44 + "_(");
+        String _plus_24 = ("public void set" + _firstUpper_4);
+        String _plus_25 = (_plus_24 + "_(");
         String _name_24 = fieagent.getAgent().getName();
-        String _plus_46 = (_plus_45 + _name_24);
-        String _plus_47 = (_plus_46 + " ");
+        String _plus_26 = (_plus_25 + _name_24);
+        String _plus_27 = (_plus_26 + " ");
         String _name_25 = fieagent.getName();
-        String _plus_48 = (_plus_47 + _name_25);
-        String _plus_49 = (_plus_48 + ")");
-        output = (_output_24 + _plus_49);
-        String _output_25 = output;
+        String _plus_28 = (_plus_27 + _name_25);
+        String _plus_29 = (_plus_28 + ")");
+        output = (_output_44 + _plus_29);
+        String _output_45 = output;
         String _name_26 = fieagent.getName();
-        String _plus_50 = ("{\n\t\tthis." + _name_26);
-        String _plus_51 = (_plus_50 + " = ");
+        String _plus_30 = ("{\n\t\tthis." + _name_26);
+        String _plus_31 = (_plus_30 + " = ");
         String _name_27 = fieagent.getName();
-        String _plus_52 = (_plus_51 + _name_27);
-        String _plus_53 = (_plus_52 + ";\n}\n");
-        output = (_output_25 + _plus_53);
-        String _output_26 = output;
+        String _plus_32 = (_plus_31 + _name_27);
+        String _plus_33 = (_plus_32 + ";\n}\n");
+        output = (_output_45 + _plus_33);
+        String _output_46 = output;
         String _name_28 = fieagent.getAgent().getName();
-        String _plus_54 = ("public " + _name_28);
-        String _plus_55 = (_plus_54 + " get");
+        String _plus_34 = ("public " + _name_28);
+        String _plus_35 = (_plus_34 + " get");
         String _firstUpper_5 = StringExtensions.toFirstUpper(fieagent.getName());
-        String _plus_56 = (_plus_55 + _firstUpper_5);
-        String _plus_57 = (_plus_56 + "_() {\n\treturn this.");
+        String _plus_36 = (_plus_35 + _firstUpper_5);
+        String _plus_37 = (_plus_36 + "_() {\n\treturn this.");
         String _name_29 = fieagent.getName();
-        String _plus_58 = (_plus_57 + _name_29);
-        String _plus_59 = (_plus_58 + ";\n}\n");
-        output = (_output_26 + _plus_59);
+        String _plus_38 = (_plus_37 + _name_29);
+        String _plus_39 = (_plus_38 + ";\n}\n");
+        output = (_output_46 + _plus_39);
       } else {
         Symbol _envFieldRef = field.getEnvFieldRef();
-        boolean _tripleNotEquals_16 = (_envFieldRef != null);
-        if (_tripleNotEquals_16) {
+        boolean _tripleNotEquals_6 = (_envFieldRef != null);
+        if (_tripleNotEquals_6) {
           Symbol _envFieldRef_1 = field.getEnvFieldRef();
           EnvironmentFieldReference fieenv = ((EnvironmentFieldReference) _envFieldRef_1);
-          String _output_27 = output;
+          String _output_47 = output;
           String _firstUpper_6 = StringExtensions.toFirstUpper(fieenv.getName());
-          String _plus_60 = ("public void set" + _firstUpper_6);
-          String _plus_61 = (_plus_60 + "_(");
+          String _plus_40 = ("public void set" + _firstUpper_6);
+          String _plus_41 = (_plus_40 + "_(");
           String _name_30 = fieenv.getEnv().getName();
-          String _plus_62 = (_plus_61 + _name_30);
-          String _plus_63 = (_plus_62 + " ");
+          String _plus_42 = (_plus_41 + _name_30);
+          String _plus_43 = (_plus_42 + " ");
           String _name_31 = fieenv.getName();
-          String _plus_64 = (_plus_63 + _name_31);
-          String _plus_65 = (_plus_64 + 
+          String _plus_44 = (_plus_43 + _name_31);
+          String _plus_45 = (_plus_44 + 
             ") {\n\t\tthis.");
           String _name_32 = fieenv.getName();
-          String _plus_66 = (_plus_65 + _name_32);
-          String _plus_67 = (_plus_66 + " = ");
+          String _plus_46 = (_plus_45 + _name_32);
+          String _plus_47 = (_plus_46 + " = ");
           String _name_33 = fieenv.getName();
-          String _plus_68 = (_plus_67 + _name_33);
-          String _plus_69 = (_plus_68 + ";\n}\n");
-          output = (_output_27 + _plus_69);
-          String _output_28 = output;
+          String _plus_48 = (_plus_47 + _name_33);
+          String _plus_49 = (_plus_48 + ";\n}\n");
+          output = (_output_47 + _plus_49);
+          String _output_48 = output;
           String _name_34 = fieenv.getEnv().getName();
-          String _plus_70 = ("public " + _name_34);
-          String _plus_71 = (_plus_70 + " get");
+          String _plus_50 = ("public " + _name_34);
+          String _plus_51 = (_plus_50 + " get");
           String _firstUpper_7 = StringExtensions.toFirstUpper(fieenv.getName());
-          String _plus_72 = (_plus_71 + _firstUpper_7);
-          String _plus_73 = (_plus_72 + "_() {\n\treturn this.");
+          String _plus_52 = (_plus_51 + _firstUpper_7);
+          String _plus_53 = (_plus_52 + "_() {\n\treturn this.");
           String _name_35 = fieenv.getName();
-          String _plus_74 = (_plus_73 + _name_35);
-          String _plus_75 = (_plus_74 + 
+          String _plus_54 = (_plus_53 + _name_35);
+          String _plus_55 = (_plus_54 + 
             ";\n}\n");
-          output = (_output_28 + _plus_75);
+          output = (_output_48 + _plus_55);
         }
       }
     }

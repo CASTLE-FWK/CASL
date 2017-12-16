@@ -45,6 +45,7 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import java.text.SimpleDateFormat
 import java.util.Date
 import uofa.lbirdsey.castle.casl.FeatureCall
+import uofa.lbirdsey.castle.casl.NonPrimitiveType
 
 class Printers {
 
@@ -92,10 +93,20 @@ class Printers {
 					if (fdt.expr !== null) {
 						output += fdt.obj.name + " " + fdt.name + " = " + printExpression(fdt.expr, fdt.name)
 					} else {
-						if (fdt.useObj !== null) {
-							output +=
-								fdt.obj.name + "<" + fdt.useObj.name + "> " + fdt.name + " = new " + fdt.obj.name +
-									"<" + fdt.useObj.name + ">()"
+						if (fdt.useObj !== null && fdt.useObj.size() > 0) {
+							println(fdt.obj.name+"   "+fdt.name)
+							output += fdt.obj.name + "<" 
+								for (var i = 0; i < fdt.useObj.size() - 1; i++){
+									output += fdt.useObj.get(i).name + ", ";
+								}
+								output += fdt.useObj.get(fdt.useObj.size()-1).name
+								output += "> " + fdt.name + " = new " + fdt.obj.name + "<"
+								
+								for (var i = 0; i < fdt.useObj.size() - 1; i++){
+									output += fdt.useObj.get(i).name + ", ";
+								}
+								output += fdt.useObj.get(fdt.useObj.size()-1).name
+								output += ">()"
 						} else {
 							output += fdt.obj.name + " " + fdt.name
 						}
@@ -103,38 +114,88 @@ class Printers {
 				} else if (fdt.obj instanceof Object) {
 														
 					if (fdt.expr !== null) {
-						if (fdt.useObj !== null) {
-							output += fdt.obj.name + "<" + fdt.useObj.name + "> " + fdt.name + " = " +
-								printExpression(fdt.expr, fdt.name)
-						} else if (fdt.useGroup !== null) {
-							output += fdt.obj.name + "<" + fdt.useGroup.name.toFirstUpper + "> " + fdt.name + " = " +
-								printExpression(fdt.expr, fdt.name)
-						} else if (fdt.useAgent !== null) {
-							output += fdt.obj.name + "<" + fdt.useAgent.name.toFirstUpper + "> " + fdt.name + " = " +
-								printExpression(fdt.expr, fdt.name)
-						} else if (fdt.useEnv !== null) {
-							output += fdt.obj.name + "<" + fdt.useEnv.name.toFirstUpper + "> " + fdt.name + " = " +
-								printExpression(fdt.expr, fdt.name)
+						if (fdt.useObj !== null && fdt.useObj.size() > 0) { 
+							output += fdt.obj.name + "<"
+							for (var i = 0; i < fdt.useObj.size() - 1; i++){
+								output += fdt.useObj.get(i).name + ", ";
+							}
+							output += fdt.useObj.get(fdt.useObj.size()-1).name + "> "+fdt.name
+						} else if (fdt.useGroup !== null && fdt.useGroup.size() > 0) {
+							output += fdt.obj.name + "<"
+							for (var i = 0; i < fdt.useGroup.size() - 1; i++){
+								output += fdt.useGroup.get(i).name + ", ";
+							}
+							output += fdt.useGroup.get(fdt.useGroup.size()-1).name + "> "+fdt.name
+						} else if (fdt.useAgent !== null && fdt.useAgent.size() > 0) {
+							output += fdt.obj.name + "<"
+							for (var i = 0; i < fdt.useAgent.size() - 1; i++){
+								output += fdt.useAgent.get(i).name + ", ";
+							}
+							output += fdt.useAgent.get(fdt.useAgent.size()-1).name + "> "+fdt.name
+						} else if (fdt.useEnv !== null && fdt.useEnv.size() > 0) {
+							output += fdt.obj.name + "<"
+							for (var i = 0; i < fdt.useEnv.size() - 1; i++){
+								output += fdt.useEnv.get(i).name + ", ";
+							}
+							output += fdt.useEnv.get(fdt.useEnv.size()-1).name + "> "+fdt.name
 						} else {
-							output += fdt.obj.name + " " + fdt.name + " = " + printExpression(fdt.expr, fdt.name)
+							output += fdt.obj.name + " " + fdt.name
 						}
+						output += " = " + printExpression(fdt.expr, fdt.name)
 					} else {
-						if (fdt.useObj !== null) {
-							output +=
-								fdt.obj.name + "<" + fdt.useObj.name + "> " + fdt.name + " = new " + fdt.obj.name +
-									"<" + fdt.useObj.name + ">()"
-						} else if (fdt.useGroup !== null) {
-							output +=
-								fdt.obj.name + "<" + fdt.useGroup.name.toFirstUpper + "> " + fdt.name + " = new " +
-									fdt.obj.name + "<" + fdt.useGroup.name.toFirstUpper + ">()"
-						} else if (fdt.useAgent !== null) {
-							output +=
-								fdt.obj.name + "<" + fdt.useAgent.name.toFirstUpper + "> " + fdt.name + " = new " +
-									fdt.obj.name + "<" + fdt.useAgent.name.toFirstUpper + ">()"
-						} else if (fdt.useEnv !== null) {
-							output +=
-								fdt.obj.name + "<" + fdt.useEnv.name.toFirstUpper + "> " + fdt.name + " = new " +
-									fdt.obj.name + "<" + fdt.useEnv.name.toFirstUpper + ">()"
+						if (fdt.useObj !== null && fdt.useObj.size() > 0) {
+							output += fdt.obj.name + "<" 
+								for (var i = 0; i < fdt.useObj.size() - 1; i++){
+									output += fdt.useObj.get(i).name + ", ";
+								}
+								output += fdt.useObj.get(fdt.useObj.size()-1).name
+								output += "> " + fdt.name + " = new " + fdt.obj.name + "<"
+								
+								for (var i = 0; i < fdt.useObj.size() - 1; i++){
+									output += fdt.useObj.get(i).name + ", ";
+								}
+								output += fdt.useObj.get(fdt.useObj.size()-1).name
+								output += ">()"
+								
+						} else if (fdt.useGroup !== null && fdt.useGroup.size() > 0) {
+							output += fdt.obj.name + "<" 
+								for (var i = 0; i < fdt.useGroup.size() - 1; i++){
+									output += fdt.useGroup.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useGroup.get(fdt.useGroup.size()-1).name.toFirstUpper
+								output += "> " + fdt.name + " = new " + fdt.obj.name + "<"
+								
+								for (var i = 0; i < fdt.useGroup.size() - 1; i++){
+									output += fdt.useGroup.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useGroup.get(fdt.useGroup.size()-1).name.toFirstUpper
+								output += ">()"
+						} else if (fdt.useAgent !== null && fdt.useAgent.size() > 0) {
+							output += fdt.obj.name + "<" 
+								for (var i = 0; i < fdt.useAgent.size() - 1; i++){
+									output += fdt.useAgent.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useAgent.get(fdt.useAgent.size()-1).name.toFirstUpper
+								output += "> " + fdt.name + " = new " + fdt.obj.name + "<"
+								
+								for (var i = 0; i < fdt.useAgent.size() - 1; i++){
+									output += fdt.useAgent.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useAgent.get(fdt.useAgent.size()-1).name.toFirstUpper
+								output += ">()"
+						} else if (fdt.useEnv !== null && fdt.useEnv.size() > 0) {
+							output += fdt.obj.name + "<" 
+								for (var i = 0; i < fdt.useEnv.size() - 1; i++){
+									output += fdt.useEnv.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useEnv.get(fdt.useEnv.size()-1).name.toFirstUpper
+								output += "> " + fdt.name + " = new " + fdt.obj.name + "<"
+								
+								for (var i = 0; i < fdt.useEnv.size() - 1; i++){
+									output += fdt.useEnv.get(i).name.toFirstUpper + ", ";
+								}
+								output += fdt.useEnv.get(fdt.useEnv.size()-1).name.toFirstUpper
+								output += ">()"
 						} else {
 							output += fdt.obj.name + " " + fdt.name + " = new " + fdt.obj.name + "()"
 						}

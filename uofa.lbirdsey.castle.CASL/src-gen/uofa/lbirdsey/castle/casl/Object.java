@@ -25,30 +25,20 @@ import org.eclipse.emf.common.util.EList;
 public interface Object extends NonPrimitiveType
 {
   /**
-   * Returns the value of the '<em><b>Use Type</b></em>' reference.
+   * Returns the value of the '<em><b>Use Type</b></em>' reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Object}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Type</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Type</em>' reference.
-   * @see #setUseType(Object)
+   * @return the value of the '<em>Use Type</em>' reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getObject_UseType()
    * @model
    * @generated
    */
-  Object getUseType();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.Object#getUseType <em>Use Type</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Type</em>' reference.
-   * @see #getUseType()
-   * @generated
-   */
-  void setUseType(Object value);
+  EList<Object> getUseType();
 
   /**
    * Returns the value of the '<em><b>Fields</b></em>' containment reference list.

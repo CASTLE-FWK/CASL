@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import uofa.lbirdsey.castle.casl.Addition;
 import uofa.lbirdsey.castle.casl.Agent;
@@ -151,33 +152,61 @@ public class Printers {
                   _xifexpression_6 = output = (_output_3 + _plus_12);
                 } else {
                   String _xifexpression_7 = null;
-                  NonPrimitiveType _useObj = fdt.getUseObj();
-                  boolean _tripleNotEquals_5 = (_useObj != null);
-                  if (_tripleNotEquals_5) {
+                  if (((fdt.getUseObj() != null) && (fdt.getUseObj().size() > 0))) {
+                    String _xblockexpression_2 = null;
+                    {
+                      String _name_8 = fdt.getObj().getName();
+                      String _plus_13 = (_name_8 + "   ");
+                      String _name_9 = fdt.getName();
+                      String _plus_14 = (_plus_13 + _name_9);
+                      InputOutput.<String>println(_plus_14);
+                      String _output_4 = output;
+                      String _name_10 = fdt.getObj().getName();
+                      String _plus_15 = (_name_10 + "<");
+                      output = (_output_4 + _plus_15);
+                      for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                        String _output_5 = output;
+                        String _name_11 = fdt.getUseObj().get(i).getName();
+                        String _plus_16 = (_name_11 + ", ");
+                        output = (_output_5 + _plus_16);
+                      }
+                      String _output_5 = output;
+                      EList<NonPrimitiveType> _useObj = fdt.getUseObj();
+                      int _size = fdt.getUseObj().size();
+                      int _minus = (_size - 1);
+                      String _name_11 = _useObj.get(_minus).getName();
+                      output = (_output_5 + _name_11);
+                      String _output_6 = output;
+                      String _name_12 = fdt.getName();
+                      String _plus_16 = ("> " + _name_12);
+                      String _plus_17 = (_plus_16 + " = new ");
+                      String _name_13 = fdt.getObj().getName();
+                      String _plus_18 = (_plus_17 + _name_13);
+                      String _plus_19 = (_plus_18 + "<");
+                      output = (_output_6 + _plus_19);
+                      for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                        String _output_7 = output;
+                        String _name_14 = fdt.getUseObj().get(i).getName();
+                        String _plus_20 = (_name_14 + ", ");
+                        output = (_output_7 + _plus_20);
+                      }
+                      String _output_7 = output;
+                      EList<NonPrimitiveType> _useObj_1 = fdt.getUseObj();
+                      int _size_1 = fdt.getUseObj().size();
+                      int _minus_1 = (_size_1 - 1);
+                      String _name_14 = _useObj_1.get(_minus_1).getName();
+                      output = (_output_7 + _name_14);
+                      String _output_8 = output;
+                      _xblockexpression_2 = output = (_output_8 + ">()");
+                    }
+                    _xifexpression_7 = _xblockexpression_2;
+                  } else {
                     String _output_4 = output;
                     String _name_8 = fdt.getObj().getName();
-                    String _plus_13 = (_name_8 + "<");
-                    String _name_9 = fdt.getUseObj().getName();
+                    String _plus_13 = (_name_8 + " ");
+                    String _name_9 = fdt.getName();
                     String _plus_14 = (_plus_13 + _name_9);
-                    String _plus_15 = (_plus_14 + "> ");
-                    String _name_10 = fdt.getName();
-                    String _plus_16 = (_plus_15 + _name_10);
-                    String _plus_17 = (_plus_16 + " = new ");
-                    String _name_11 = fdt.getObj().getName();
-                    String _plus_18 = (_plus_17 + _name_11);
-                    String _plus_19 = (_plus_18 + 
-                      "<");
-                    String _name_12 = fdt.getUseObj().getName();
-                    String _plus_20 = (_plus_19 + _name_12);
-                    String _plus_21 = (_plus_20 + ">()");
-                    _xifexpression_7 = output = (_output_4 + _plus_21);
-                  } else {
-                    String _output_5 = output;
-                    String _name_13 = fdt.getObj().getName();
-                    String _plus_22 = (_name_13 + " ");
-                    String _name_14 = fdt.getName();
-                    String _plus_23 = (_plus_22 + _name_14);
-                    _xifexpression_7 = output = (_output_5 + _plus_23);
+                    _xifexpression_7 = output = (_output_4 + _plus_14);
                   }
                   _xifexpression_6 = _xifexpression_7;
                 }
@@ -188,85 +217,301 @@ public class Printers {
                 if ((_obj_2 instanceof uofa.lbirdsey.castle.casl.Object)) {
                   String _xifexpression_9 = null;
                   Expression _expr_2 = fdt.getExpr();
-                  boolean _tripleNotEquals_6 = (_expr_2 != null);
-                  if (_tripleNotEquals_6) {
-                    String _xifexpression_10 = null;
-                    NonPrimitiveType _useObj_1 = fdt.getUseObj();
-                    boolean _tripleNotEquals_7 = (_useObj_1 != null);
-                    if (_tripleNotEquals_7) {
-                      String _output_6 = output;
-                      String _name_15 = fdt.getObj().getName();
-                      String _plus_24 = (_name_15 + "<");
-                      String _name_16 = fdt.getUseObj().getName();
-                      String _plus_25 = (_plus_24 + _name_16);
-                      String _plus_26 = (_plus_25 + "> ");
-                      String _name_17 = fdt.getName();
-                      String _plus_27 = (_plus_26 + _name_17);
-                      String _plus_28 = (_plus_27 + " = ");
+                  boolean _tripleNotEquals_5 = (_expr_2 != null);
+                  if (_tripleNotEquals_5) {
+                    String _xblockexpression_3 = null;
+                    {
+                      if (((fdt.getUseObj() != null) && (fdt.getUseObj().size() > 0))) {
+                        String _output_5 = output;
+                        String _name_10 = fdt.getObj().getName();
+                        String _plus_15 = (_name_10 + "<");
+                        output = (_output_5 + _plus_15);
+                        for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                          String _output_6 = output;
+                          String _name_11 = fdt.getUseObj().get(i).getName();
+                          String _plus_16 = (_name_11 + ", ");
+                          output = (_output_6 + _plus_16);
+                        }
+                        String _output_6 = output;
+                        EList<NonPrimitiveType> _useObj = fdt.getUseObj();
+                        int _size = fdt.getUseObj().size();
+                        int _minus = (_size - 1);
+                        String _name_11 = _useObj.get(_minus).getName();
+                        String _plus_16 = (_name_11 + "> ");
+                        String _name_12 = fdt.getName();
+                        String _plus_17 = (_plus_16 + _name_12);
+                        output = (_output_6 + _plus_17);
+                      } else {
+                        if (((fdt.getUseGroup() != null) && (fdt.getUseGroup().size() > 0))) {
+                          String _output_7 = output;
+                          String _name_13 = fdt.getObj().getName();
+                          String _plus_18 = (_name_13 + "<");
+                          output = (_output_7 + _plus_18);
+                          for (int i = 0; (i < (fdt.getUseGroup().size() - 1)); i++) {
+                            String _output_8 = output;
+                            String _name_14 = fdt.getUseGroup().get(i).getName();
+                            String _plus_19 = (_name_14 + ", ");
+                            output = (_output_8 + _plus_19);
+                          }
+                          String _output_8 = output;
+                          EList<Group> _useGroup = fdt.getUseGroup();
+                          int _size_1 = fdt.getUseGroup().size();
+                          int _minus_1 = (_size_1 - 1);
+                          String _name_14 = _useGroup.get(_minus_1).getName();
+                          String _plus_19 = (_name_14 + "> ");
+                          String _name_15 = fdt.getName();
+                          String _plus_20 = (_plus_19 + _name_15);
+                          output = (_output_8 + _plus_20);
+                        } else {
+                          if (((fdt.getUseAgent() != null) && (fdt.getUseAgent().size() > 0))) {
+                            String _output_9 = output;
+                            String _name_16 = fdt.getObj().getName();
+                            String _plus_21 = (_name_16 + "<");
+                            output = (_output_9 + _plus_21);
+                            for (int i = 0; (i < (fdt.getUseAgent().size() - 1)); i++) {
+                              String _output_10 = output;
+                              String _name_17 = fdt.getUseAgent().get(i).getName();
+                              String _plus_22 = (_name_17 + ", ");
+                              output = (_output_10 + _plus_22);
+                            }
+                            String _output_10 = output;
+                            EList<Agent> _useAgent = fdt.getUseAgent();
+                            int _size_2 = fdt.getUseAgent().size();
+                            int _minus_2 = (_size_2 - 1);
+                            String _name_17 = _useAgent.get(_minus_2).getName();
+                            String _plus_22 = (_name_17 + "> ");
+                            String _name_18 = fdt.getName();
+                            String _plus_23 = (_plus_22 + _name_18);
+                            output = (_output_10 + _plus_23);
+                          } else {
+                            if (((fdt.getUseEnv() != null) && (fdt.getUseEnv().size() > 0))) {
+                              String _output_11 = output;
+                              String _name_19 = fdt.getObj().getName();
+                              String _plus_24 = (_name_19 + "<");
+                              output = (_output_11 + _plus_24);
+                              for (int i = 0; (i < (fdt.getUseEnv().size() - 1)); i++) {
+                                String _output_12 = output;
+                                String _name_20 = fdt.getUseEnv().get(i).getName();
+                                String _plus_25 = (_name_20 + ", ");
+                                output = (_output_12 + _plus_25);
+                              }
+                              String _output_12 = output;
+                              EList<Environment> _useEnv = fdt.getUseEnv();
+                              int _size_3 = fdt.getUseEnv().size();
+                              int _minus_3 = (_size_3 - 1);
+                              String _name_20 = _useEnv.get(_minus_3).getName();
+                              String _plus_25 = (_name_20 + "> ");
+                              String _name_21 = fdt.getName();
+                              String _plus_26 = (_plus_25 + _name_21);
+                              output = (_output_12 + _plus_26);
+                            } else {
+                              String _output_13 = output;
+                              String _name_22 = fdt.getObj().getName();
+                              String _plus_27 = (_name_22 + " ");
+                              String _name_23 = fdt.getName();
+                              String _plus_28 = (_plus_27 + _name_23);
+                              output = (_output_13 + _plus_28);
+                            }
+                          }
+                        }
+                      }
+                      String _output_14 = output;
                       Object _printExpression_2 = Printers.printExpression(fdt.getExpr(), fdt.getName());
-                      String _plus_29 = (_plus_28 + _printExpression_2);
-                      _xifexpression_10 = output = (_output_6 + _plus_29);
+                      String _plus_29 = (" = " + _printExpression_2);
+                      _xblockexpression_3 = output = (_output_14 + _plus_29);
+                    }
+                    _xifexpression_9 = _xblockexpression_3;
+                  } else {
+                    String _xifexpression_10 = null;
+                    if (((fdt.getUseObj() != null) && (fdt.getUseObj().size() > 0))) {
+                      String _xblockexpression_4 = null;
+                      {
+                        String _output_5 = output;
+                        String _name_10 = fdt.getObj().getName();
+                        String _plus_15 = (_name_10 + "<");
+                        output = (_output_5 + _plus_15);
+                        for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                          String _output_6 = output;
+                          String _name_11 = fdt.getUseObj().get(i).getName();
+                          String _plus_16 = (_name_11 + ", ");
+                          output = (_output_6 + _plus_16);
+                        }
+                        String _output_6 = output;
+                        EList<NonPrimitiveType> _useObj = fdt.getUseObj();
+                        int _size = fdt.getUseObj().size();
+                        int _minus = (_size - 1);
+                        String _name_11 = _useObj.get(_minus).getName();
+                        output = (_output_6 + _name_11);
+                        String _output_7 = output;
+                        String _name_12 = fdt.getName();
+                        String _plus_16 = ("> " + _name_12);
+                        String _plus_17 = (_plus_16 + " = new ");
+                        String _name_13 = fdt.getObj().getName();
+                        String _plus_18 = (_plus_17 + _name_13);
+                        String _plus_19 = (_plus_18 + "<");
+                        output = (_output_7 + _plus_19);
+                        for (int i = 0; (i < (fdt.getUseObj().size() - 1)); i++) {
+                          String _output_8 = output;
+                          String _name_14 = fdt.getUseObj().get(i).getName();
+                          String _plus_20 = (_name_14 + ", ");
+                          output = (_output_8 + _plus_20);
+                        }
+                        String _output_8 = output;
+                        EList<NonPrimitiveType> _useObj_1 = fdt.getUseObj();
+                        int _size_1 = fdt.getUseObj().size();
+                        int _minus_1 = (_size_1 - 1);
+                        String _name_14 = _useObj_1.get(_minus_1).getName();
+                        output = (_output_8 + _name_14);
+                        String _output_9 = output;
+                        _xblockexpression_4 = output = (_output_9 + ">()");
+                      }
+                      _xifexpression_10 = _xblockexpression_4;
                     } else {
                       String _xifexpression_11 = null;
-                      Group _useGroup = fdt.getUseGroup();
-                      boolean _tripleNotEquals_8 = (_useGroup != null);
-                      if (_tripleNotEquals_8) {
-                        String _output_7 = output;
-                        String _name_18 = fdt.getObj().getName();
-                        String _plus_30 = (_name_18 + "<");
-                        String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseGroup().getName());
-                        String _plus_31 = (_plus_30 + _firstUpper);
-                        String _plus_32 = (_plus_31 + "> ");
-                        String _name_19 = fdt.getName();
-                        String _plus_33 = (_plus_32 + _name_19);
-                        String _plus_34 = (_plus_33 + " = ");
-                        Object _printExpression_3 = Printers.printExpression(fdt.getExpr(), fdt.getName());
-                        String _plus_35 = (_plus_34 + _printExpression_3);
-                        _xifexpression_11 = output = (_output_7 + _plus_35);
+                      if (((fdt.getUseGroup() != null) && (fdt.getUseGroup().size() > 0))) {
+                        String _xblockexpression_5 = null;
+                        {
+                          String _output_5 = output;
+                          String _name_10 = fdt.getObj().getName();
+                          String _plus_15 = (_name_10 + "<");
+                          output = (_output_5 + _plus_15);
+                          for (int i = 0; (i < (fdt.getUseGroup().size() - 1)); i++) {
+                            String _output_6 = output;
+                            String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseGroup().get(i).getName());
+                            String _plus_16 = (_firstUpper + ", ");
+                            output = (_output_6 + _plus_16);
+                          }
+                          String _output_6 = output;
+                          EList<Group> _useGroup = fdt.getUseGroup();
+                          int _size = fdt.getUseGroup().size();
+                          int _minus = (_size - 1);
+                          String _firstUpper = StringExtensions.toFirstUpper(_useGroup.get(_minus).getName());
+                          output = (_output_6 + _firstUpper);
+                          String _output_7 = output;
+                          String _name_11 = fdt.getName();
+                          String _plus_16 = ("> " + _name_11);
+                          String _plus_17 = (_plus_16 + " = new ");
+                          String _name_12 = fdt.getObj().getName();
+                          String _plus_18 = (_plus_17 + _name_12);
+                          String _plus_19 = (_plus_18 + "<");
+                          output = (_output_7 + _plus_19);
+                          for (int i = 0; (i < (fdt.getUseGroup().size() - 1)); i++) {
+                            String _output_8 = output;
+                            String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseGroup().get(i).getName());
+                            String _plus_20 = (_firstUpper_1 + ", ");
+                            output = (_output_8 + _plus_20);
+                          }
+                          String _output_8 = output;
+                          EList<Group> _useGroup_1 = fdt.getUseGroup();
+                          int _size_1 = fdt.getUseGroup().size();
+                          int _minus_1 = (_size_1 - 1);
+                          String _firstUpper_1 = StringExtensions.toFirstUpper(_useGroup_1.get(_minus_1).getName());
+                          output = (_output_8 + _firstUpper_1);
+                          String _output_9 = output;
+                          _xblockexpression_5 = output = (_output_9 + ">()");
+                        }
+                        _xifexpression_11 = _xblockexpression_5;
                       } else {
                         String _xifexpression_12 = null;
-                        Agent _useAgent = fdt.getUseAgent();
-                        boolean _tripleNotEquals_9 = (_useAgent != null);
-                        if (_tripleNotEquals_9) {
-                          String _output_8 = output;
-                          String _name_20 = fdt.getObj().getName();
-                          String _plus_36 = (_name_20 + "<");
-                          String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseAgent().getName());
-                          String _plus_37 = (_plus_36 + _firstUpper_1);
-                          String _plus_38 = (_plus_37 + "> ");
-                          String _name_21 = fdt.getName();
-                          String _plus_39 = (_plus_38 + _name_21);
-                          String _plus_40 = (_plus_39 + " = ");
-                          Object _printExpression_4 = Printers.printExpression(fdt.getExpr(), fdt.getName());
-                          String _plus_41 = (_plus_40 + _printExpression_4);
-                          _xifexpression_12 = output = (_output_8 + _plus_41);
+                        if (((fdt.getUseAgent() != null) && (fdt.getUseAgent().size() > 0))) {
+                          String _xblockexpression_6 = null;
+                          {
+                            String _output_5 = output;
+                            String _name_10 = fdt.getObj().getName();
+                            String _plus_15 = (_name_10 + "<");
+                            output = (_output_5 + _plus_15);
+                            for (int i = 0; (i < (fdt.getUseAgent().size() - 1)); i++) {
+                              String _output_6 = output;
+                              String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseAgent().get(i).getName());
+                              String _plus_16 = (_firstUpper + ", ");
+                              output = (_output_6 + _plus_16);
+                            }
+                            String _output_6 = output;
+                            EList<Agent> _useAgent = fdt.getUseAgent();
+                            int _size = fdt.getUseAgent().size();
+                            int _minus = (_size - 1);
+                            String _firstUpper = StringExtensions.toFirstUpper(_useAgent.get(_minus).getName());
+                            output = (_output_6 + _firstUpper);
+                            String _output_7 = output;
+                            String _name_11 = fdt.getName();
+                            String _plus_16 = ("> " + _name_11);
+                            String _plus_17 = (_plus_16 + " = new ");
+                            String _name_12 = fdt.getObj().getName();
+                            String _plus_18 = (_plus_17 + _name_12);
+                            String _plus_19 = (_plus_18 + "<");
+                            output = (_output_7 + _plus_19);
+                            for (int i = 0; (i < (fdt.getUseAgent().size() - 1)); i++) {
+                              String _output_8 = output;
+                              String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseAgent().get(i).getName());
+                              String _plus_20 = (_firstUpper_1 + ", ");
+                              output = (_output_8 + _plus_20);
+                            }
+                            String _output_8 = output;
+                            EList<Agent> _useAgent_1 = fdt.getUseAgent();
+                            int _size_1 = fdt.getUseAgent().size();
+                            int _minus_1 = (_size_1 - 1);
+                            String _firstUpper_1 = StringExtensions.toFirstUpper(_useAgent_1.get(_minus_1).getName());
+                            output = (_output_8 + _firstUpper_1);
+                            String _output_9 = output;
+                            _xblockexpression_6 = output = (_output_9 + ">()");
+                          }
+                          _xifexpression_12 = _xblockexpression_6;
                         } else {
                           String _xifexpression_13 = null;
-                          Environment _useEnv = fdt.getUseEnv();
-                          boolean _tripleNotEquals_10 = (_useEnv != null);
-                          if (_tripleNotEquals_10) {
-                            String _output_9 = output;
-                            String _name_22 = fdt.getObj().getName();
-                            String _plus_42 = (_name_22 + "<");
-                            String _firstUpper_2 = StringExtensions.toFirstUpper(fdt.getUseEnv().getName());
-                            String _plus_43 = (_plus_42 + _firstUpper_2);
-                            String _plus_44 = (_plus_43 + "> ");
-                            String _name_23 = fdt.getName();
-                            String _plus_45 = (_plus_44 + _name_23);
-                            String _plus_46 = (_plus_45 + " = ");
-                            Object _printExpression_5 = Printers.printExpression(fdt.getExpr(), fdt.getName());
-                            String _plus_47 = (_plus_46 + _printExpression_5);
-                            _xifexpression_13 = output = (_output_9 + _plus_47);
+                          if (((fdt.getUseEnv() != null) && (fdt.getUseEnv().size() > 0))) {
+                            String _xblockexpression_7 = null;
+                            {
+                              String _output_5 = output;
+                              String _name_10 = fdt.getObj().getName();
+                              String _plus_15 = (_name_10 + "<");
+                              output = (_output_5 + _plus_15);
+                              for (int i = 0; (i < (fdt.getUseEnv().size() - 1)); i++) {
+                                String _output_6 = output;
+                                String _firstUpper = StringExtensions.toFirstUpper(fdt.getUseEnv().get(i).getName());
+                                String _plus_16 = (_firstUpper + ", ");
+                                output = (_output_6 + _plus_16);
+                              }
+                              String _output_6 = output;
+                              EList<Environment> _useEnv = fdt.getUseEnv();
+                              int _size = fdt.getUseEnv().size();
+                              int _minus = (_size - 1);
+                              String _firstUpper = StringExtensions.toFirstUpper(_useEnv.get(_minus).getName());
+                              output = (_output_6 + _firstUpper);
+                              String _output_7 = output;
+                              String _name_11 = fdt.getName();
+                              String _plus_16 = ("> " + _name_11);
+                              String _plus_17 = (_plus_16 + " = new ");
+                              String _name_12 = fdt.getObj().getName();
+                              String _plus_18 = (_plus_17 + _name_12);
+                              String _plus_19 = (_plus_18 + "<");
+                              output = (_output_7 + _plus_19);
+                              for (int i = 0; (i < (fdt.getUseEnv().size() - 1)); i++) {
+                                String _output_8 = output;
+                                String _firstUpper_1 = StringExtensions.toFirstUpper(fdt.getUseEnv().get(i).getName());
+                                String _plus_20 = (_firstUpper_1 + ", ");
+                                output = (_output_8 + _plus_20);
+                              }
+                              String _output_8 = output;
+                              EList<Environment> _useEnv_1 = fdt.getUseEnv();
+                              int _size_1 = fdt.getUseEnv().size();
+                              int _minus_1 = (_size_1 - 1);
+                              String _firstUpper_1 = StringExtensions.toFirstUpper(_useEnv_1.get(_minus_1).getName());
+                              output = (_output_8 + _firstUpper_1);
+                              String _output_9 = output;
+                              _xblockexpression_7 = output = (_output_9 + ">()");
+                            }
+                            _xifexpression_13 = _xblockexpression_7;
                           } else {
-                            String _output_10 = output;
-                            String _name_24 = fdt.getObj().getName();
-                            String _plus_48 = (_name_24 + " ");
-                            String _name_25 = fdt.getName();
-                            String _plus_49 = (_plus_48 + _name_25);
-                            String _plus_50 = (_plus_49 + " = ");
-                            Object _printExpression_6 = Printers.printExpression(fdt.getExpr(), fdt.getName());
-                            String _plus_51 = (_plus_50 + _printExpression_6);
-                            _xifexpression_13 = output = (_output_10 + _plus_51);
+                            String _output_5 = output;
+                            String _name_10 = fdt.getObj().getName();
+                            String _plus_15 = (_name_10 + " ");
+                            String _name_11 = fdt.getName();
+                            String _plus_16 = (_plus_15 + _name_11);
+                            String _plus_17 = (_plus_16 + " = new ");
+                            String _name_12 = fdt.getObj().getName();
+                            String _plus_18 = (_plus_17 + _name_12);
+                            String _plus_19 = (_plus_18 + "()");
+                            _xifexpression_13 = output = (_output_5 + _plus_19);
                           }
                           _xifexpression_12 = _xifexpression_13;
                         }
@@ -275,110 +520,6 @@ public class Printers {
                       _xifexpression_10 = _xifexpression_11;
                     }
                     _xifexpression_9 = _xifexpression_10;
-                  } else {
-                    String _xifexpression_14 = null;
-                    NonPrimitiveType _useObj_2 = fdt.getUseObj();
-                    boolean _tripleNotEquals_11 = (_useObj_2 != null);
-                    if (_tripleNotEquals_11) {
-                      String _output_11 = output;
-                      String _name_26 = fdt.getObj().getName();
-                      String _plus_52 = (_name_26 + "<");
-                      String _name_27 = fdt.getUseObj().getName();
-                      String _plus_53 = (_plus_52 + _name_27);
-                      String _plus_54 = (_plus_53 + "> ");
-                      String _name_28 = fdt.getName();
-                      String _plus_55 = (_plus_54 + _name_28);
-                      String _plus_56 = (_plus_55 + " = new ");
-                      String _name_29 = fdt.getObj().getName();
-                      String _plus_57 = (_plus_56 + _name_29);
-                      String _plus_58 = (_plus_57 + 
-                        "<");
-                      String _name_30 = fdt.getUseObj().getName();
-                      String _plus_59 = (_plus_58 + _name_30);
-                      String _plus_60 = (_plus_59 + ">()");
-                      _xifexpression_14 = output = (_output_11 + _plus_60);
-                    } else {
-                      String _xifexpression_15 = null;
-                      Group _useGroup_1 = fdt.getUseGroup();
-                      boolean _tripleNotEquals_12 = (_useGroup_1 != null);
-                      if (_tripleNotEquals_12) {
-                        String _output_12 = output;
-                        String _name_31 = fdt.getObj().getName();
-                        String _plus_61 = (_name_31 + "<");
-                        String _firstUpper_3 = StringExtensions.toFirstUpper(fdt.getUseGroup().getName());
-                        String _plus_62 = (_plus_61 + _firstUpper_3);
-                        String _plus_63 = (_plus_62 + "> ");
-                        String _name_32 = fdt.getName();
-                        String _plus_64 = (_plus_63 + _name_32);
-                        String _plus_65 = (_plus_64 + " = new ");
-                        String _name_33 = fdt.getObj().getName();
-                        String _plus_66 = (_plus_65 + _name_33);
-                        String _plus_67 = (_plus_66 + "<");
-                        String _firstUpper_4 = StringExtensions.toFirstUpper(fdt.getUseGroup().getName());
-                        String _plus_68 = (_plus_67 + _firstUpper_4);
-                        String _plus_69 = (_plus_68 + ">()");
-                        _xifexpression_15 = output = (_output_12 + _plus_69);
-                      } else {
-                        String _xifexpression_16 = null;
-                        Agent _useAgent_1 = fdt.getUseAgent();
-                        boolean _tripleNotEquals_13 = (_useAgent_1 != null);
-                        if (_tripleNotEquals_13) {
-                          String _output_13 = output;
-                          String _name_34 = fdt.getObj().getName();
-                          String _plus_70 = (_name_34 + "<");
-                          String _firstUpper_5 = StringExtensions.toFirstUpper(fdt.getUseAgent().getName());
-                          String _plus_71 = (_plus_70 + _firstUpper_5);
-                          String _plus_72 = (_plus_71 + "> ");
-                          String _name_35 = fdt.getName();
-                          String _plus_73 = (_plus_72 + _name_35);
-                          String _plus_74 = (_plus_73 + " = new ");
-                          String _name_36 = fdt.getObj().getName();
-                          String _plus_75 = (_plus_74 + _name_36);
-                          String _plus_76 = (_plus_75 + "<");
-                          String _firstUpper_6 = StringExtensions.toFirstUpper(fdt.getUseAgent().getName());
-                          String _plus_77 = (_plus_76 + _firstUpper_6);
-                          String _plus_78 = (_plus_77 + ">()");
-                          _xifexpression_16 = output = (_output_13 + _plus_78);
-                        } else {
-                          String _xifexpression_17 = null;
-                          Environment _useEnv_1 = fdt.getUseEnv();
-                          boolean _tripleNotEquals_14 = (_useEnv_1 != null);
-                          if (_tripleNotEquals_14) {
-                            String _output_14 = output;
-                            String _name_37 = fdt.getObj().getName();
-                            String _plus_79 = (_name_37 + "<");
-                            String _firstUpper_7 = StringExtensions.toFirstUpper(fdt.getUseEnv().getName());
-                            String _plus_80 = (_plus_79 + _firstUpper_7);
-                            String _plus_81 = (_plus_80 + "> ");
-                            String _name_38 = fdt.getName();
-                            String _plus_82 = (_plus_81 + _name_38);
-                            String _plus_83 = (_plus_82 + " = new ");
-                            String _name_39 = fdt.getObj().getName();
-                            String _plus_84 = (_plus_83 + _name_39);
-                            String _plus_85 = (_plus_84 + "<");
-                            String _firstUpper_8 = StringExtensions.toFirstUpper(fdt.getUseEnv().getName());
-                            String _plus_86 = (_plus_85 + _firstUpper_8);
-                            String _plus_87 = (_plus_86 + ">()");
-                            _xifexpression_17 = output = (_output_14 + _plus_87);
-                          } else {
-                            String _output_15 = output;
-                            String _name_40 = fdt.getObj().getName();
-                            String _plus_88 = (_name_40 + " ");
-                            String _name_41 = fdt.getName();
-                            String _plus_89 = (_plus_88 + _name_41);
-                            String _plus_90 = (_plus_89 + " = new ");
-                            String _name_42 = fdt.getObj().getName();
-                            String _plus_91 = (_plus_90 + _name_42);
-                            String _plus_92 = (_plus_91 + "()");
-                            _xifexpression_17 = output = (_output_15 + _plus_92);
-                          }
-                          _xifexpression_16 = _xifexpression_17;
-                        }
-                        _xifexpression_15 = _xifexpression_16;
-                      }
-                      _xifexpression_14 = _xifexpression_15;
-                    }
-                    _xifexpression_9 = _xifexpression_14;
                   }
                   _xifexpression_8 = _xifexpression_9;
                 }

@@ -1736,8 +1736,11 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             type=PrimitiveType | 
 	 *             (
 	 *                 obj=[NonPrimitiveType|ID] 
-	 *                 (useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID] | (useObj=[NonPrimitiveType|ID] useType=PrimitiveType))?
-	 *             )
+	 *                 (useGroup+=[Group|ID] | useAgent+=[Agent|ID] | useEnv+=[Environment|ID] | (useObj+=[NonPrimitiveType|ID] useType+=PrimitiveType)) 
+	 *                 useGroup+=[Group|ID]? 
+	 *                 ((useAgent+=[Agent|ID] | useEnv+=[Environment|ID] | (useObj+=[NonPrimitiveType|ID] useType+=PrimitiveType))? useGroup+=[Group|ID]?)*
+	 *             ) | 
+	 *             obj=[NonPrimitiveType|ID]
 	 *         ) 
 	 *         name=ID 
 	 *         expr=Expression?
@@ -2294,8 +2297,11 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             grp=[Group|ID] | 
 	 *             (
 	 *                 obj=[NonPrimitiveType|ID] 
-	 *                 (useGroup=[Group|ID] | useAgent=[Agent|ID] | useEnv=[Environment|ID] | useObj=[NonPrimitiveType|ID] | useType=PrimitiveType)?
-	 *             )
+	 *                 (useGroup+=[Group|ID] | useAgent+=[Agent|ID] | useEnv+=[Environment|ID] | useObj+=[NonPrimitiveType|ID] | useType+=PrimitiveType) 
+	 *                 useGroup+=[Group|ID]? 
+	 *                 ((useAgent+=[Agent|ID] | useEnv+=[Environment|ID] | useObj+=[NonPrimitiveType|ID] | useType+=PrimitiveType)? useGroup+=[Group|ID]?)*
+	 *             ) | 
+	 *             obj=[NonPrimitiveType|ID]
 	 *         ) 
 	 *         name=ID
 	 *     )
@@ -2797,7 +2803,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     AbstractElement returns Object
 	 *
 	 * Constraint:
-	 *     (custom='custom'? name=ID useType=[Object|ID]? (fields+=Field | fields+=Function)*)
+	 *     (custom='custom'? name=ID (useType+=[Object|ID] useType+=[Object|ID]*)? (fields+=Field | fields+=Function)*)
 	 */
 	protected void sequence_Object(ISerializationContext context, uofa.lbirdsey.castle.casl.Object semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

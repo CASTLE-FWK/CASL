@@ -525,7 +525,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity_Call"/>
   <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//NonPrimitiveType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" unique="false"
+        upperBound="-1" eType="#//Object"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//Entity_Feature" containment="true"/>
   </eClassifiers>
@@ -664,12 +665,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="env" eType="#//Environment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="grp" eType="#//Group"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="#//NonPrimitiveType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useGroup" eType="#//Group"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useAgent" eType="#//Agent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useEnv" eType="#//Environment"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useObj" eType="#//NonPrimitiveType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" eType="#//PrimitiveType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useGroup" unique="false"
+        upperBound="-1" eType="#//Group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useAgent" unique="false"
+        upperBound="-1" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useEnv" unique="false"
+        upperBound="-1" eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useObj" unique="false"
+        upperBound="-1" eType="#//NonPrimitiveType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" upperBound="-1"
+        eType="#//PrimitiveType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgentInteraction" eSuperTypes="#//Interaction"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentInteraction" eSuperTypes="#//Interaction"/>
@@ -681,12 +686,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//PrimitiveType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="#//NonPrimitiveType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useGroup" eType="#//Group"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useAgent" eType="#//Agent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useEnv" eType="#//Environment"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useObj" eType="#//NonPrimitiveType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" eType="#//PrimitiveType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useGroup" unique="false"
+        upperBound="-1" eType="#//Group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useAgent" unique="false"
+        upperBound="-1" eType="#//Agent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useEnv" unique="false"
+        upperBound="-1" eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useObj" unique="false"
+        upperBound="-1" eType="#//NonPrimitiveType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useType" upperBound="-1"
+        eType="#//PrimitiveType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expression"
         containment="true"/>
   </eClassifiers>

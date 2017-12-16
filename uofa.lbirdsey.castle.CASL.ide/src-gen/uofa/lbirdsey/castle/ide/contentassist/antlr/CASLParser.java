@@ -41,6 +41,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionAccess().getAlternatives_10_0(), "rule__Function__Alternatives_10_0");
 					put(grammarAccess.getFunctionParameterAccess().getAlternatives_1(), "rule__FunctionParameter__Alternatives_1");
 					put(grammarAccess.getFunctionParameterAccess().getAlternatives_1_4_2_1(), "rule__FunctionParameter__Alternatives_1_4_2_1");
+					put(grammarAccess.getFunctionParameterAccess().getAlternatives_1_4_2_2(), "rule__FunctionParameter__Alternatives_1_4_2_2");
 					put(grammarAccess.getBehaviorAccess().getAlternatives_11_0(), "rule__Behavior__Alternatives_11_0");
 					put(grammarAccess.getAgentInteractionAccess().getAlternatives_13_0(), "rule__AgentInteraction__Alternatives_13_0");
 					put(grammarAccess.getInteractionAccess().getAlternatives_13_0(), "rule__Interaction__Alternatives_13_0");
@@ -56,6 +57,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanValueAccess().getAlternatives(), "rule__BooleanValue__Alternatives");
 					put(grammarAccess.getDataTypeDeclarationAccess().getAlternatives_3(), "rule__DataTypeDeclaration__Alternatives_3");
 					put(grammarAccess.getDataTypeDeclarationAccess().getAlternatives_3_1_1_1(), "rule__DataTypeDeclaration__Alternatives_3_1_1_1");
+					put(grammarAccess.getDataTypeDeclarationAccess().getAlternatives_3_1_1_2(), "rule__DataTypeDeclaration__Alternatives_3_1_1_2");
 					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getForLoopAccess().getInitAlternatives_2_0_0(), "rule__ForLoop__InitAlternatives_2_0_0");
 					put(grammarAccess.getForLoopAccess().getShifterAlternatives_2_4_0(), "rule__ForLoop__ShifterAlternatives_2_4_0");
@@ -150,6 +152,10 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_1_1(), "rule__FunctionParameter__Group_1_4_2_1_1__0");
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_1_2(), "rule__FunctionParameter__Group_1_4_2_1_2__0");
 					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_1_3(), "rule__FunctionParameter__Group_1_4_2_1_3__0");
+					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_2_0(), "rule__FunctionParameter__Group_1_4_2_2_0__0");
+					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_2_1(), "rule__FunctionParameter__Group_1_4_2_2_1__0");
+					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_2_2(), "rule__FunctionParameter__Group_1_4_2_2_2__0");
+					put(grammarAccess.getFunctionParameterAccess().getGroup_1_4_2_2_3(), "rule__FunctionParameter__Group_1_4_2_2_3__0");
 					put(grammarAccess.getConcernAccess().getGroup(), "rule__Concern__Group__0");
 					put(grammarAccess.getConcernAccess().getGroup_8(), "rule__Concern__Group_8__0");
 					put(grammarAccess.getBehaviorAccess().getGroup(), "rule__Behavior__Group__0");
@@ -216,6 +222,10 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_1_1(), "rule__DataTypeDeclaration__Group_3_1_1_1_1__0");
 					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_1_2(), "rule__DataTypeDeclaration__Group_3_1_1_1_2__0");
 					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_1_3(), "rule__DataTypeDeclaration__Group_3_1_1_1_3__0");
+					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_2_0(), "rule__DataTypeDeclaration__Group_3_1_1_2_0__0");
+					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_2_1(), "rule__DataTypeDeclaration__Group_3_1_1_2_1__0");
+					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_2_2(), "rule__DataTypeDeclaration__Group_3_1_1_2_2__0");
+					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_3_1_1_2_3(), "rule__DataTypeDeclaration__Group_3_1_1_2_3__0");
 					put(grammarAccess.getDataTypeDeclarationAccess().getGroup_6(), "rule__DataTypeDeclaration__Group_6__0");
 					put(grammarAccess.getFormulaAccess().getGroup(), "rule__Formula__Group__0");
 					put(grammarAccess.getFormulaAccess().getGroup_1(), "rule__Formula__Group_1__0");
@@ -287,6 +297,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGroup_CallAccess().getGroup_3(), "rule__Group_Call__Group_3__0");
 					put(grammarAccess.getObjectAccess().getGroup(), "rule__Object__Group__0");
 					put(grammarAccess.getObjectAccess().getGroup_4(), "rule__Object__Group_4__0");
+					put(grammarAccess.getObjectAccess().getGroup_4_2(), "rule__Object__Group_4_2__0");
 					put(grammarAccess.getObjectAccess().getGroup_7_0(), "rule__Object__Group_7_0__0");
 					put(grammarAccess.getEnumAccess().getGroup(), "rule__Enum__Group__0");
 					put(grammarAccess.getEnumAccess().getGroup_7(), "rule__Enum__Group_7__0");
@@ -443,6 +454,11 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionParameterAccess().getUseEnvAssignment_1_4_2_1_2_1(), "rule__FunctionParameter__UseEnvAssignment_1_4_2_1_2_1");
 					put(grammarAccess.getFunctionParameterAccess().getUseObjAssignment_1_4_2_1_3_1(), "rule__FunctionParameter__UseObjAssignment_1_4_2_1_3_1");
 					put(grammarAccess.getFunctionParameterAccess().getUseTypeAssignment_1_4_2_1_4(), "rule__FunctionParameter__UseTypeAssignment_1_4_2_1_4");
+					put(grammarAccess.getFunctionParameterAccess().getUseGroupAssignment_1_4_2_2_0_2(), "rule__FunctionParameter__UseGroupAssignment_1_4_2_2_0_2");
+					put(grammarAccess.getFunctionParameterAccess().getUseAgentAssignment_1_4_2_2_1_1(), "rule__FunctionParameter__UseAgentAssignment_1_4_2_2_1_1");
+					put(grammarAccess.getFunctionParameterAccess().getUseEnvAssignment_1_4_2_2_2_1(), "rule__FunctionParameter__UseEnvAssignment_1_4_2_2_2_1");
+					put(grammarAccess.getFunctionParameterAccess().getUseObjAssignment_1_4_2_2_3_1(), "rule__FunctionParameter__UseObjAssignment_1_4_2_2_3_1");
+					put(grammarAccess.getFunctionParameterAccess().getUseTypeAssignment_1_4_2_2_4(), "rule__FunctionParameter__UseTypeAssignment_1_4_2_2_4");
 					put(grammarAccess.getFunctionParameterAccess().getNameAssignment_3(), "rule__FunctionParameter__NameAssignment_3");
 					put(grammarAccess.getConcernAccess().getNameAssignment_1(), "rule__Concern__NameAssignment_1");
 					put(grammarAccess.getConcernAccess().getDescAssignment_5(), "rule__Concern__DescAssignment_5");
@@ -572,6 +588,11 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeDeclarationAccess().getUseEnvAssignment_3_1_1_1_2_1(), "rule__DataTypeDeclaration__UseEnvAssignment_3_1_1_1_2_1");
 					put(grammarAccess.getDataTypeDeclarationAccess().getUseObjAssignment_3_1_1_1_3_1(), "rule__DataTypeDeclaration__UseObjAssignment_3_1_1_1_3_1");
 					put(grammarAccess.getDataTypeDeclarationAccess().getUseTypeAssignment_3_1_1_1_3_2(), "rule__DataTypeDeclaration__UseTypeAssignment_3_1_1_1_3_2");
+					put(grammarAccess.getDataTypeDeclarationAccess().getUseGroupAssignment_3_1_1_2_0_2(), "rule__DataTypeDeclaration__UseGroupAssignment_3_1_1_2_0_2");
+					put(grammarAccess.getDataTypeDeclarationAccess().getUseAgentAssignment_3_1_1_2_1_1(), "rule__DataTypeDeclaration__UseAgentAssignment_3_1_1_2_1_1");
+					put(grammarAccess.getDataTypeDeclarationAccess().getUseEnvAssignment_3_1_1_2_2_1(), "rule__DataTypeDeclaration__UseEnvAssignment_3_1_1_2_2_1");
+					put(grammarAccess.getDataTypeDeclarationAccess().getUseObjAssignment_3_1_1_2_3_1(), "rule__DataTypeDeclaration__UseObjAssignment_3_1_1_2_3_1");
+					put(grammarAccess.getDataTypeDeclarationAccess().getUseTypeAssignment_3_1_1_2_3_2(), "rule__DataTypeDeclaration__UseTypeAssignment_3_1_1_2_3_2");
 					put(grammarAccess.getDataTypeDeclarationAccess().getNameAssignment_5(), "rule__DataTypeDeclaration__NameAssignment_5");
 					put(grammarAccess.getDataTypeDeclarationAccess().getExprAssignment_6_1(), "rule__DataTypeDeclaration__ExprAssignment_6_1");
 					put(grammarAccess.getFormulaAccess().getSymAssignment_0(), "rule__Formula__SymAssignment_0");
@@ -659,6 +680,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getObjectAccess().getCustomAssignment_1(), "rule__Object__CustomAssignment_1");
 					put(grammarAccess.getObjectAccess().getNameAssignment_3(), "rule__Object__NameAssignment_3");
 					put(grammarAccess.getObjectAccess().getUseTypeAssignment_4_1(), "rule__Object__UseTypeAssignment_4_1");
+					put(grammarAccess.getObjectAccess().getUseTypeAssignment_4_2_1(), "rule__Object__UseTypeAssignment_4_2_1");
 					put(grammarAccess.getObjectAccess().getFieldsAssignment_7_0_0(), "rule__Object__FieldsAssignment_7_0_0");
 					put(grammarAccess.getObjectAccess().getFieldsAssignment_7_1(), "rule__Object__FieldsAssignment_7_1");
 					put(grammarAccess.getEnumAccess().getCustomAssignment_1(), "rule__Enum__CustomAssignment_1");

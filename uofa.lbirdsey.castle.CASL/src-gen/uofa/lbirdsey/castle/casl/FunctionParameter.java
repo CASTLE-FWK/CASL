@@ -3,6 +3,7 @@
  */
 package uofa.lbirdsey.castle.casl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,133 +163,83 @@ public interface FunctionParameter extends Symbol
   void setObj(NonPrimitiveType value);
 
   /**
-   * Returns the value of the '<em><b>Use Group</b></em>' reference.
+   * Returns the value of the '<em><b>Use Group</b></em>' reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Group}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Group</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Group</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Group</em>' reference.
-   * @see #setUseGroup(Group)
+   * @return the value of the '<em>Use Group</em>' reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseGroup()
    * @model
    * @generated
    */
-  Group getUseGroup();
+  EList<Group> getUseGroup();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseGroup <em>Use Group</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Group</em>' reference.
-   * @see #getUseGroup()
-   * @generated
-   */
-  void setUseGroup(Group value);
-
-  /**
-   * Returns the value of the '<em><b>Use Agent</b></em>' reference.
+   * Returns the value of the '<em><b>Use Agent</b></em>' reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Agent}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Agent</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Agent</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Agent</em>' reference.
-   * @see #setUseAgent(Agent)
+   * @return the value of the '<em>Use Agent</em>' reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseAgent()
    * @model
    * @generated
    */
-  Agent getUseAgent();
+  EList<Agent> getUseAgent();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseAgent <em>Use Agent</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Agent</em>' reference.
-   * @see #getUseAgent()
-   * @generated
-   */
-  void setUseAgent(Agent value);
-
-  /**
-   * Returns the value of the '<em><b>Use Env</b></em>' reference.
+   * Returns the value of the '<em><b>Use Env</b></em>' reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.Environment}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Env</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Env</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Env</em>' reference.
-   * @see #setUseEnv(Environment)
+   * @return the value of the '<em>Use Env</em>' reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseEnv()
    * @model
    * @generated
    */
-  Environment getUseEnv();
+  EList<Environment> getUseEnv();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseEnv <em>Use Env</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Env</em>' reference.
-   * @see #getUseEnv()
-   * @generated
-   */
-  void setUseEnv(Environment value);
-
-  /**
-   * Returns the value of the '<em><b>Use Obj</b></em>' reference.
+   * Returns the value of the '<em><b>Use Obj</b></em>' reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.NonPrimitiveType}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Obj</em>' reference isn't clear,
+   * If the meaning of the '<em>Use Obj</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Obj</em>' reference.
-   * @see #setUseObj(NonPrimitiveType)
+   * @return the value of the '<em>Use Obj</em>' reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseObj()
    * @model
    * @generated
    */
-  NonPrimitiveType getUseObj();
+  EList<NonPrimitiveType> getUseObj();
 
   /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseObj <em>Use Obj</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Obj</em>' reference.
-   * @see #getUseObj()
-   * @generated
-   */
-  void setUseObj(NonPrimitiveType value);
-
-  /**
-   * Returns the value of the '<em><b>Use Type</b></em>' containment reference.
+   * Returns the value of the '<em><b>Use Type</b></em>' containment reference list.
+   * The list contents are of type {@link uofa.lbirdsey.castle.casl.PrimitiveType}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Type</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Use Type</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Type</em>' containment reference.
-   * @see #setUseType(PrimitiveType)
+   * @return the value of the '<em>Use Type</em>' containment reference list.
    * @see uofa.lbirdsey.castle.casl.CaslPackage#getFunctionParameter_UseType()
    * @model containment="true"
    * @generated
    */
-  PrimitiveType getUseType();
-
-  /**
-   * Sets the value of the '{@link uofa.lbirdsey.castle.casl.FunctionParameter#getUseType <em>Use Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Use Type</em>' containment reference.
-   * @see #getUseType()
-   * @generated
-   */
-  void setUseType(PrimitiveType value);
+  EList<PrimitiveType> getUseType();
 
 } // FunctionParameter

@@ -3,13 +3,21 @@
  */
 package uofa.lbirdsey.castle.casl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uofa.lbirdsey.castle.casl.Agent;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -94,54 +102,54 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
   protected NonPrimitiveType obj;
 
   /**
-   * The cached value of the '{@link #getUseGroup() <em>Use Group</em>}' reference.
+   * The cached value of the '{@link #getUseGroup() <em>Use Group</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseGroup()
    * @generated
    * @ordered
    */
-  protected Group useGroup;
+  protected EList<Group> useGroup;
 
   /**
-   * The cached value of the '{@link #getUseAgent() <em>Use Agent</em>}' reference.
+   * The cached value of the '{@link #getUseAgent() <em>Use Agent</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseAgent()
    * @generated
    * @ordered
    */
-  protected Agent useAgent;
+  protected EList<Agent> useAgent;
 
   /**
-   * The cached value of the '{@link #getUseEnv() <em>Use Env</em>}' reference.
+   * The cached value of the '{@link #getUseEnv() <em>Use Env</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseEnv()
    * @generated
    * @ordered
    */
-  protected Environment useEnv;
+  protected EList<Environment> useEnv;
 
   /**
-   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference.
+   * The cached value of the '{@link #getUseObj() <em>Use Obj</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseObj()
    * @generated
    * @ordered
    */
-  protected NonPrimitiveType useObj;
+  protected EList<NonPrimitiveType> useObj;
 
   /**
-   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference.
+   * The cached value of the '{@link #getUseType() <em>Use Type</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getUseType()
    * @generated
    * @ordered
    */
-  protected PrimitiveType useType;
+  protected EList<PrimitiveType> useType;
 
   /**
    * <!-- begin-user-doc -->
@@ -389,17 +397,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group getUseGroup()
+  public EList<Group> getUseGroup()
   {
-    if (useGroup != null && useGroup.eIsProxy())
+    if (useGroup == null)
     {
-      InternalEObject oldUseGroup = (InternalEObject)useGroup;
-      useGroup = (Group)eResolveProxy(oldUseGroup);
-      if (useGroup != oldUseGroup)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_GROUP, oldUseGroup, useGroup));
-      }
+      useGroup = new EObjectResolvingEList<Group>(Group.class, this, CaslPackage.FUNCTION_PARAMETER__USE_GROUP);
     }
     return useGroup;
   }
@@ -409,40 +411,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Group basicGetUseGroup()
+  public EList<Agent> getUseAgent()
   {
-    return useGroup;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseGroup(Group newUseGroup)
-  {
-    Group oldUseGroup = useGroup;
-    useGroup = newUseGroup;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_GROUP, oldUseGroup, useGroup));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Agent getUseAgent()
-  {
-    if (useAgent != null && useAgent.eIsProxy())
+    if (useAgent == null)
     {
-      InternalEObject oldUseAgent = (InternalEObject)useAgent;
-      useAgent = (Agent)eResolveProxy(oldUseAgent);
-      if (useAgent != oldUseAgent)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_AGENT, oldUseAgent, useAgent));
-      }
+      useAgent = new EObjectResolvingEList<Agent>(Agent.class, this, CaslPackage.FUNCTION_PARAMETER__USE_AGENT);
     }
     return useAgent;
   }
@@ -452,40 +425,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Agent basicGetUseAgent()
+  public EList<Environment> getUseEnv()
   {
-    return useAgent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseAgent(Agent newUseAgent)
-  {
-    Agent oldUseAgent = useAgent;
-    useAgent = newUseAgent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_AGENT, oldUseAgent, useAgent));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Environment getUseEnv()
-  {
-    if (useEnv != null && useEnv.eIsProxy())
+    if (useEnv == null)
     {
-      InternalEObject oldUseEnv = (InternalEObject)useEnv;
-      useEnv = (Environment)eResolveProxy(oldUseEnv);
-      if (useEnv != oldUseEnv)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_ENV, oldUseEnv, useEnv));
-      }
+      useEnv = new EObjectResolvingEList<Environment>(Environment.class, this, CaslPackage.FUNCTION_PARAMETER__USE_ENV);
     }
     return useEnv;
   }
@@ -495,40 +439,11 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public Environment basicGetUseEnv()
+  public EList<NonPrimitiveType> getUseObj()
   {
-    return useEnv;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseEnv(Environment newUseEnv)
-  {
-    Environment oldUseEnv = useEnv;
-    useEnv = newUseEnv;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_ENV, oldUseEnv, useEnv));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NonPrimitiveType getUseObj()
-  {
-    if (useObj != null && useObj.eIsProxy())
+    if (useObj == null)
     {
-      InternalEObject oldUseObj = (InternalEObject)useObj;
-      useObj = (NonPrimitiveType)eResolveProxy(oldUseObj);
-      if (useObj != oldUseObj)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
-      }
+      useObj = new EObjectResolvingEList<NonPrimitiveType>(NonPrimitiveType.class, this, CaslPackage.FUNCTION_PARAMETER__USE_OBJ);
     }
     return useObj;
   }
@@ -538,70 +453,13 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
-  public NonPrimitiveType basicGetUseObj()
+  public EList<PrimitiveType> getUseType()
   {
-    return useObj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseObj(NonPrimitiveType newUseObj)
-  {
-    NonPrimitiveType oldUseObj = useObj;
-    useObj = newUseObj;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_OBJ, oldUseObj, useObj));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PrimitiveType getUseType()
-  {
+    if (useType == null)
+    {
+      useType = new EObjectContainmentEList<PrimitiveType>(PrimitiveType.class, this, CaslPackage.FUNCTION_PARAMETER__USE_TYPE);
+    }
     return useType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetUseType(PrimitiveType newUseType, NotificationChain msgs)
-  {
-    PrimitiveType oldUseType = useType;
-    useType = newUseType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, oldUseType, newUseType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUseType(PrimitiveType newUseType)
-  {
-    if (newUseType != useType)
-    {
-      NotificationChain msgs = null;
-      if (useType != null)
-        msgs = ((InternalEObject)useType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
-      if (newUseType != null)
-        msgs = ((InternalEObject)newUseType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CaslPackage.FUNCTION_PARAMETER__USE_TYPE, null, msgs);
-      msgs = basicSetUseType(newUseType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaslPackage.FUNCTION_PARAMETER__USE_TYPE, newUseType, newUseType));
   }
 
   /**
@@ -617,7 +475,7 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__TYPE:
         return basicSetType(null, msgs);
       case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        return basicSetUseType(null, msgs);
+        return ((InternalEList<?>)getUseType()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -647,17 +505,13 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
         if (resolve) return getObj();
         return basicGetObj();
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
-        if (resolve) return getUseGroup();
-        return basicGetUseGroup();
+        return getUseGroup();
       case CaslPackage.FUNCTION_PARAMETER__USE_AGENT:
-        if (resolve) return getUseAgent();
-        return basicGetUseAgent();
+        return getUseAgent();
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
-        if (resolve) return getUseEnv();
-        return basicGetUseEnv();
+        return getUseEnv();
       case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        if (resolve) return getUseObj();
-        return basicGetUseObj();
+        return getUseObj();
       case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
         return getUseType();
     }
@@ -669,6 +523,7 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -690,19 +545,24 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
         setObj((NonPrimitiveType)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
-        setUseGroup((Group)newValue);
+        getUseGroup().clear();
+        getUseGroup().addAll((Collection<? extends Group>)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_AGENT:
-        setUseAgent((Agent)newValue);
+        getUseAgent().clear();
+        getUseAgent().addAll((Collection<? extends Agent>)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
-        setUseEnv((Environment)newValue);
+        getUseEnv().clear();
+        getUseEnv().addAll((Collection<? extends Environment>)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        setUseObj((NonPrimitiveType)newValue);
+        getUseObj().clear();
+        getUseObj().addAll((Collection<? extends NonPrimitiveType>)newValue);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        setUseType((PrimitiveType)newValue);
+        getUseType().clear();
+        getUseType().addAll((Collection<? extends PrimitiveType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -734,19 +594,19 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
         setObj((NonPrimitiveType)null);
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
-        setUseGroup((Group)null);
+        getUseGroup().clear();
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_AGENT:
-        setUseAgent((Agent)null);
+        getUseAgent().clear();
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
-        setUseEnv((Environment)null);
+        getUseEnv().clear();
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        setUseObj((NonPrimitiveType)null);
+        getUseObj().clear();
         return;
       case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        setUseType((PrimitiveType)null);
+        getUseType().clear();
         return;
     }
     super.eUnset(featureID);
@@ -773,15 +633,15 @@ public class FunctionParameterImpl extends SymbolImpl implements FunctionParamet
       case CaslPackage.FUNCTION_PARAMETER__OBJ:
         return obj != null;
       case CaslPackage.FUNCTION_PARAMETER__USE_GROUP:
-        return useGroup != null;
+        return useGroup != null && !useGroup.isEmpty();
       case CaslPackage.FUNCTION_PARAMETER__USE_AGENT:
-        return useAgent != null;
+        return useAgent != null && !useAgent.isEmpty();
       case CaslPackage.FUNCTION_PARAMETER__USE_ENV:
-        return useEnv != null;
+        return useEnv != null && !useEnv.isEmpty();
       case CaslPackage.FUNCTION_PARAMETER__USE_OBJ:
-        return useObj != null;
+        return useObj != null && !useObj.isEmpty();
       case CaslPackage.FUNCTION_PARAMETER__USE_TYPE:
-        return useType != null;
+        return useType != null && !useType.isEmpty();
     }
     return super.eIsSet(featureID);
   }
