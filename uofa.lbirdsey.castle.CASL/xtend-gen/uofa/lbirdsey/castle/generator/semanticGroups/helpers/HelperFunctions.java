@@ -660,10 +660,16 @@ public class HelperFunctions {
               output = HelperFunctions.inferTypeFromDeclaration(((DataTypeDeclaration) dtd));
             } else {
               Symbol _sym_6 = ftf_1.getSym();
-              if ((_sym_6 instanceof FunctionParameter)) {
+              if ((_sym_6 instanceof GroupFieldReference)) {
                 Symbol _sym_7 = ftf_1.getSym();
-                FunctionParameter fp = ((FunctionParameter) _sym_7);
-                output = HelperFunctions.inferFunctionParameterType(fp);
+                output = ((GroupFieldReference) _sym_7).getGrp().getName();
+              } else {
+                Symbol _sym_8 = ftf_1.getSym();
+                if ((_sym_8 instanceof FunctionParameter)) {
+                  Symbol _sym_9 = ftf_1.getSym();
+                  FunctionParameter fp = ((FunctionParameter) _sym_9);
+                  output = HelperFunctions.inferFunctionParameterType(fp);
+                }
               }
             }
           }
@@ -682,16 +688,22 @@ public class HelperFunctions {
               output = ((EnvironmentFieldReference) _ref_3).getEnv().getName();
             } else {
               Symbol _ref_4 = ftf_2.getRef();
-              if ((_ref_4 instanceof DataTypeDeclaration)) {
+              if ((_ref_4 instanceof GroupFieldReference)) {
                 Symbol _ref_5 = ftf_2.getRef();
-                DataTypeDeclaration dtd_1 = ((DataTypeDeclaration) _ref_5);
-                output = HelperFunctions.inferTypeFromDeclaration(((DataTypeDeclaration) dtd_1));
+                output = ((GroupFieldReference) _ref_5).getGrp().getName();
               } else {
                 Symbol _ref_6 = ftf_2.getRef();
-                if ((_ref_6 instanceof FunctionParameter)) {
+                if ((_ref_6 instanceof DataTypeDeclaration)) {
                   Symbol _ref_7 = ftf_2.getRef();
-                  FunctionParameter fp_1 = ((FunctionParameter) _ref_7);
-                  output = HelperFunctions.inferFunctionParameterType(fp_1);
+                  DataTypeDeclaration dtd_1 = ((DataTypeDeclaration) _ref_7);
+                  output = HelperFunctions.inferTypeFromDeclaration(((DataTypeDeclaration) dtd_1));
+                } else {
+                  Symbol _ref_8 = ftf_2.getRef();
+                  if ((_ref_8 instanceof FunctionParameter)) {
+                    Symbol _ref_9 = ftf_2.getRef();
+                    FunctionParameter fp_1 = ((FunctionParameter) _ref_9);
+                    output = HelperFunctions.inferFunctionParameterType(fp_1);
+                  }
                 }
               }
             }
@@ -740,6 +752,10 @@ public class HelperFunctions {
           }
         }
       }
+    }
+    boolean _equals = output.equals("_NOTYPE_");
+    if (_equals) {
+      InputOutput.<String>println(("still _NOTYPE_ error: " + eobj));
     }
     return output;
   }
@@ -1885,7 +1901,6 @@ public class HelperFunctions {
     String output = "";
     boolean _contains = iC.contains("List");
     if (_contains) {
-      output = "import java.util.List;\n";
     }
     boolean _contains_1 = iC.contains("string");
     if (_contains_1) {

@@ -335,6 +335,8 @@ class HelperFunctions {
 			} else if (ftf.sym instanceof DataTypeDeclaration) {
 				var dtd = ftf.sym as DataTypeDeclaration
 				output = inferTypeFromDeclaration(dtd as DataTypeDeclaration);
+			} else if (ftf.sym instanceof GroupFieldReference) {
+				output = (ftf.sym as GroupFieldReference).grp.name;
 			} else if (ftf.sym instanceof FunctionParameter) {
 				var fp = ftf.sym as FunctionParameter
 				output = inferFunctionParameterType(fp);
@@ -345,6 +347,8 @@ class HelperFunctions {
 				output = (ftf.ref as AgentFieldReference).agent.name;
 			} else if (ftf.ref instanceof EnvironmentFieldReference) {
 				output = (ftf.ref as EnvironmentFieldReference).env.name;
+			} else if (ftf.ref instanceof GroupFieldReference) {
+				output = (ftf.ref as GroupFieldReference).grp.name;
 			} else if (ftf.ref instanceof DataTypeDeclaration) {
 				var dtd = ftf.ref as DataTypeDeclaration
 				output = inferTypeFromDeclaration(dtd as DataTypeDeclaration);
@@ -381,6 +385,10 @@ class HelperFunctions {
 			output = "selfcall";
 		} else {
 			output = "void";
+		}
+		
+		if (output.equals("_NOTYPE_")){
+			println("still _NOTYPE_ error: "+eobj);
 		}
 		return output;
 	}
@@ -916,7 +924,7 @@ class HelperFunctions {
 		// We have to handle a lot of accidental importing here. Should re-work this. Will just do lazy things instead.
 		if (iC.contains("List")) {
 			// Ignore
-			output = "import java.util.List;\n"
+//			output = "import java.util.List;\n"
 //			return output;
 		} 
 		if (iC.contains("string")){
