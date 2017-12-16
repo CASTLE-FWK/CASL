@@ -1000,7 +1000,7 @@ class HelperFunctions {
 			} else if (fp.type instanceof BooleanType) {
 				return "false";
 			} else if (fp.type instanceof StringType) {
-				return "";
+				return "\"\"";
 			}
 		} else if (fp.obj !== null) {
 			return "null";

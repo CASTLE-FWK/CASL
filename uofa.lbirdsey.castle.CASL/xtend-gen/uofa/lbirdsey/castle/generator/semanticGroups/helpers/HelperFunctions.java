@@ -2006,7 +2006,7 @@ public class HelperFunctions {
           } else {
             PrimitiveType _type_4 = fp.getType();
             if ((_type_4 instanceof StringType)) {
-              return "";
+              return "\"\"";
             }
           }
         }
