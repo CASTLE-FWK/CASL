@@ -39,6 +39,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID;
+import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -265,6 +266,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_GET_ID:
 				sequence_CASL_Macro_GET_ID(context, (CASL_Macro_GET_ID) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_GET_TIME:
+				sequence_CASL_Macro_GET_TIME(context, (CASL_Macro_GET_TIME) semanticObject); 
 				return; 
 			case CaslPackage.CASL_MACRO_INIT_LOGGER:
 				sequence_CASL_Macro_InitLogger(context, (CASL_Macro_InitLogger) semanticObject); 
@@ -1493,6 +1497,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_GET_TIME
+	 *     CASL_Macro_GET_TIME returns CASL_Macro_GET_TIME
+	 *
+	 * Constraint:
+	 *     {CASL_Macro_GET_TIME}
+	 */
+	protected void sequence_CASL_Macro_GET_TIME(ISerializationContext context, CASL_Macro_GET_TIME semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CASL_Macro returns CASL_Macro_InitLogger
 	 *     CASL_Macro_InitLogger returns CASL_Macro_InitLogger
 	 *
@@ -2589,8 +2606,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=SelfAssignedFormula? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=Field)? elseexp+=SelfAssignedFormula?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {
@@ -2904,7 +2921,7 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Raw_Java_Block returns Raw_Java_Block
 	 *
 	 * Constraint:
-	 *     (name=ID rawStatements+=Raw_Java*)
+	 *     (name=ID rawStatements+=Raw_Java+)
 	 */
 	protected void sequence_Raw_Java_Block(ISerializationContext context, Raw_Java_Block semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

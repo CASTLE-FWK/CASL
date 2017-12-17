@@ -354,10 +354,12 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		var paramGetters = "";
 		for (field : sys.system_parameters.fields){
 			var ff = (field as Field)
-			var fdt = ff.declaration as DataTypeDeclaration
-			if (fdt.initInclude !== null){
-				paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"
-				paramGetters += "\tsimulationParameters.add(new Parameter<"+HelperFunctions.javafy(HelperFunctions.getFieldType(ff))+">("+fdt.name+", \""+fdt.name+"\"));\n"
+			if (ff instanceof DataTypeDeclaration) {
+				var fdt = ff.declaration as DataTypeDeclaration
+				if (fdt.initInclude !== null){
+					paramGetters += "\tset"+fdt.name.toFirstUpper+"(("+HelperFunctions.getFieldType(ff)+")params.getValue(\""+fdt.name+"\"));\n"
+					paramGetters += "\tsimulationParameters.add(new Parameter<"+HelperFunctions.javafy(HelperFunctions.getFieldType(ff))+">("+fdt.name+", \""+fdt.name+"\"));\n"
+				}
 			}
 		}
 		

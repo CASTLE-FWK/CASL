@@ -11096,6 +11096,15 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_GET_ID_13.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_TIMEParserRuleCall_14());
+		}
+		this_CASL_Macro_GET_TIME_14=ruleCASL_Macro_GET_TIME
+		{
+			$current = $this_CASL_Macro_GET_TIME_14.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11933,6 +11942,36 @@ ruleCASL_Macro_GET_ID returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCASL_Macro_GET_TIME
+entryRuleCASL_Macro_GET_TIME returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_GET_TIMERule()); }
+	iv_ruleCASL_Macro_GET_TIME=ruleCASL_Macro_GET_TIME
+	{ $current=$iv_ruleCASL_Macro_GET_TIME.current; }
+	EOF;
+
+// Rule CASL_Macro_GET_TIME
+ruleCASL_Macro_GET_TIME returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCASL_Macro_GET_TIMEAccess().getCASL_Macro_GET_TIMEAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='GET_TIME()'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_GET_TIMEAccess().getGET_TIMEKeyword_1());
+		}
+	)
+;
+
 // Entry rule entryRuleCASL_Macro_Populate
 entryRuleCASL_Macro_Populate returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCASL_Macro_PopulateRule()); }
@@ -12401,7 +12440,7 @@ ruleRaw_Java_Block returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)+
 		otherlv_6='}'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getRaw_Java_BlockAccess().getRightCurlyBracketKeyword_6());

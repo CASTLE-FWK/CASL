@@ -215,7 +215,7 @@ class EnvironmentGeneration {
 						//Create the trigger object here
 			var triggerString = "";
 			if (behavior.behavior_reaction_time == BehaviorReactionTime.STEP){
-				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
+				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue; //TODO: Why is it like this?
 				triggersToPrintInit.add(Printers.getNameForTrigger(behavior.name));
 				triggerString = Printers.getNameForTrigger(behavior.name) +" = new Trigger ("+steps+", \""+behavior.name+"\", new Function<Entity,Void>(){\n"
 				triggerString += "\tpublic Void apply(Entity o) {\n"
@@ -335,12 +335,22 @@ class EnvironmentGeneration {
 	}
 	//In this we create and initialise the groups into the environment
 	def createInitialiseFunction(Environment env){
-		var str = "public void initialise() {\n\tsuper.initialise();\n\t";
-		str += "\tsetupQueue = new ArrayList<Function<"+env.name+",Void>>();\n
+		var output = "";
+		output += "@Override\n";
+		output += "public void initialise() {\n\tsuper.initialise();\n\t";
+		output += "\tsetupQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tactionQueue = new ArrayList<Function<"+env.name+",Void>>();\n
 			\tcleanupQueue = new ArrayList<Function<"+env.name+",Void>>();\n"
-		str += "\t\t\n}"
-		return str;
+		for (item : triggersStringsToPrint){
+			output += "\t"+item+"\n";
+		}
+		for (item : initialList){
+			output += "\t"+item+";\n"; 
+		}
+
+
+		output += "}\n";
+		return output;
 	}
 	
 	
@@ -362,23 +372,29 @@ class EnvironmentGeneration {
 			str += "\t\tphase_Setup();\n"
 //			str += "\t\tArrayList<Entity> containedEntities = layoutParameters.getContainedEntities();\n"
 			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedGroups);\n"
-			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
-			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\tif (containedEntities.size() > 0) {\n"
+				str += "\t\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+				str += "\t\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+				str += "\t\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\t}\n"
 			str += "\t} else if (getCurrentPhase() == Phase.ACTION) { \n"
 			str += "\t\t broadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Action();\n"
 			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedGroups);\n"
-			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
-			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\tif (containedEntities.size() > 0) {\n"
+				str += "\t\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+				str += "\t\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+				str += "\t\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\t}\n"
 			str += "\t} else if (getCurrentPhase() == Phase.CLEANUP) {\n"
 			str += "\t\tbroadcast(MessageType.PHASE, getCurrentPhase());\n"
 			str += "\t\tphase_Cleanup();\n"
 			str += "\t\tArrayList<Entity> containedEntities = new ArrayList<Entity>(storedGroups);\n"
-			str += "\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
-			str += "\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
-			str += "\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\tif (containedEntities.size() > 0) {\n"
+				str += "\t\t\tgroupExecutor = Executors.newFixedThreadPool(containedEntities.size());\n"
+				str += "\t\t\tfor (Entity e : containedEntities){\n\t\t\t\tgroupExecutor.execute(e);\n\t\t}\n"
+				str += "\t\t\t groupExecutor.shutdown();\n\t\twhile (!groupExecutor.isTerminated()){};\n"
+			str += "\t\t}\n"
 			str += "\t}\n"			 
 			str += "}\n"
 		return str;

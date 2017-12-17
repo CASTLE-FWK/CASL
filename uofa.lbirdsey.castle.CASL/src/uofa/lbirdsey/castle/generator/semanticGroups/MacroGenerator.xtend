@@ -24,6 +24,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger
 import uofa.lbirdsey.castle.casl.LayoutType
 import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID
+import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -131,6 +132,8 @@ class MacroGenerator {
 			return VisualisationGenerator.generateDisplayer(macro as CASL_Macro_Display);
 		} else if (macro instanceof CASL_Macro_GET_ID){
 			return "getEntityID()"
+		} else if (macro instanceof CASL_Macro_GET_TIME){
+			return "getCurrentStep()"
 		}
 		return output;
 	}
@@ -199,7 +202,7 @@ class MacroGenerator {
 			output += TAB + TAB + tmpEntityName+".setPosition(new Vector2(0, 0))"+LINE_END
 			output += TAB + TAB + entityName.toLowerCase+"List.add("+tmpEntityName+")"+LINE_END 
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
-			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+", "+tmpEntityName+".getPosition())"+LINE_END
+			output += TAB + TAB + Printers.printExpression(layoutLocation)+".addEntity("+tmpEntityName+")"+LINE_END
 			
 			
 			

@@ -834,6 +834,15 @@ public interface CaslFactory extends EFactory
   CASL_Macro_GET_ID createCASL_Macro_GET_ID();
 
   /**
+   * Returns a new object of class '<em>CASL Macro GET TIME</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro GET TIME</em>'.
+   * @generated
+   */
+  CASL_Macro_GET_TIME createCASL_Macro_GET_TIME();
+
+  /**
    * Returns a new object of class '<em>CASL Macro Populate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

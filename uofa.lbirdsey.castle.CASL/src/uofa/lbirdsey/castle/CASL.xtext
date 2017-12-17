@@ -813,7 +813,8 @@ CASL_Macro:
 	CASL_Macro_Display				|
 	CASL_Macro_Log					|
 	CASL_Macro_InitLogger			|
-	CASL_Macro_GET_ID
+	CASL_Macro_GET_ID				|
+	CASL_Macro_GET_TIME
 ;
 
 CASL_Macro_Neighbours:
@@ -861,6 +862,11 @@ CASL_Macro_TODO:
 CASL_Macro_GET_ID:
 	{CASL_Macro_GET_ID}
 	"GET_ID()"
+;
+
+CASL_Macro_GET_TIME:
+	{CASL_Macro_GET_TIME}
+	"GET_TIME()"
 ;
 
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
@@ -919,10 +925,10 @@ enum RandomType:
 
 Raw_Java_Block:
 	{Raw_Java_Block}
-	"raw-java"name=ID':' '{'
-		(rawStatements += Raw_Java)*
+	'raw-java' name=ID ':' '{'
+		(rawStatements += Raw_Java)+
 //		rj = Raw_Java
-	"}"
+	'}'
 ;
 
 //Raw_Java: => text += (ID|ANY_OTHER)+;

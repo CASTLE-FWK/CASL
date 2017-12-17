@@ -35,6 +35,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
 import uofa.lbirdsey.castle.casl.CASL_Macro_FilterAndFunction;
 import uofa.lbirdsey.castle.casl.CASL_Macro_ForEach;
 import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID;
+import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
@@ -873,6 +874,14 @@ public class CaslSwitch<T> extends Switch<T>
         CASL_Macro_GET_ID casL_Macro_GET_ID = (CASL_Macro_GET_ID)theEObject;
         T result = caseCASL_Macro_GET_ID(casL_Macro_GET_ID);
         if (result == null) result = caseCASL_Macro(casL_Macro_GET_ID);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.CASL_MACRO_GET_TIME:
+      {
+        CASL_Macro_GET_TIME casL_Macro_GET_TIME = (CASL_Macro_GET_TIME)theEObject;
+        T result = caseCASL_Macro_GET_TIME(casL_Macro_GET_TIME);
+        if (result == null) result = caseCASL_Macro(casL_Macro_GET_TIME);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2596,6 +2605,22 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCASL_Macro_GET_ID(CASL_Macro_GET_ID object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>CASL Macro GET TIME</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>CASL Macro GET TIME</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCASL_Macro_GET_TIME(CASL_Macro_GET_TIME object)
   {
     return null;
   }

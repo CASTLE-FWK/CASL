@@ -593,6 +593,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_GET_ID" eSuperTypes="#//CASL_Macro"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_GET_TIME" eSuperTypes="#//CASL_Macro"/>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Populate" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layoutLocation" eType="#//Expression"
         containment="true"/>

@@ -2650,6 +2650,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleCASL_Macro_GET_TIME
+entryRuleCASL_Macro_GET_TIME
+:
+{ before(grammarAccess.getCASL_Macro_GET_TIMERule()); }
+	 ruleCASL_Macro_GET_TIME
+{ after(grammarAccess.getCASL_Macro_GET_TIMERule()); } 
+	 EOF 
+;
+
+// Rule CASL_Macro_GET_TIME
+ruleCASL_Macro_GET_TIME 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getCASL_Macro_GET_TIMEAccess().getGroup()); }
+		(rule__CASL_Macro_GET_TIME__Group__0)
+		{ after(grammarAccess.getCASL_Macro_GET_TIMEAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleCASL_Macro_Populate
 entryRuleCASL_Macro_Populate
 :
@@ -4708,6 +4733,12 @@ rule__CASL_Macro__Alternatives
 		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_IDParserRuleCall_13()); }
 		ruleCASL_Macro_GET_ID
 		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_IDParserRuleCall_13()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_TIMEParserRuleCall_14()); }
+		ruleCASL_Macro_GET_TIME
+		{ after(grammarAccess.getCASL_MacroAccess().getCASL_Macro_GET_TIMEParserRuleCall_14()); }
 	)
 ;
 finally {
@@ -29223,6 +29254,60 @@ finally {
 }
 
 
+rule__CASL_Macro_GET_TIME__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_GET_TIME__Group__0__Impl
+	rule__CASL_Macro_GET_TIME__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_GET_TIME__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_GET_TIMEAccess().getCASL_Macro_GET_TIMEAction_0()); }
+	()
+	{ after(grammarAccess.getCASL_Macro_GET_TIMEAccess().getCASL_Macro_GET_TIMEAction_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_GET_TIME__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__CASL_Macro_GET_TIME__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__CASL_Macro_GET_TIME__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCASL_Macro_GET_TIMEAccess().getGET_TIMEKeyword_1()); }
+	'GET_TIME()'
+	{ after(grammarAccess.getCASL_Macro_GET_TIMEAccess().getGET_TIMEKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__CASL_Macro_Populate__Group__0
 	@init {
 		int stackSize = keepStackSize();
@@ -30402,9 +30487,16 @@ rule__Raw_Java_Block__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
-	(rule__Raw_Java_Block__RawStatementsAssignment_5)*
-	{ after(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
+	(
+		{ before(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
+		(rule__Raw_Java_Block__RawStatementsAssignment_5)
+		{ after(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
+	)
+	(
+		{ before(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
+		(rule__Raw_Java_Block__RawStatementsAssignment_5)*
+		{ after(grammarAccess.getRaw_Java_BlockAccess().getRawStatementsAssignment_5()); }
+	)
 )
 ;
 finally {
