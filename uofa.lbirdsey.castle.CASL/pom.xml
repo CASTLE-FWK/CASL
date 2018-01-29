@@ -5,6 +5,7 @@
 		<groupId>uofa.lbirdsey.castle.CASL</groupId>
 		<artifactId>uofa.lbirdsey.castle.CASL.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>uofa.lbirdsey.castle.CASL</artifactId>
 	<packaging>eclipse-plugin</packaging>
