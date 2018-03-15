@@ -405,7 +405,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\tlogger = new Logger(output, simulationInfo);\n"
 		str += "\toutput.setLogger(logger);\n"
 		str += "\t//Export information to Logger and/or Database\n"
-		str += "\toutput.forceToConsole(writeSystemSpecs(name, description, simulationParameters));\n"
+		str += "\toutput.forceToConsole(systemSpecsToString(name, description, simulationParameters));\n"
 		
 		
 		//Set up the main System init stuff
@@ -414,7 +414,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
 		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo);\n"
 		str += "\toutput.setDatabaseOutput(dbOut);\n"
-		str += "\toutput.setUpDB(simulationInfo.getSystemName(), simulationInfo.getExecutionID(), \"simulations\");\n"
+		str += "\toutput.setupDB(simulationInfo.getSystemName(), simulationInfo.getExecutionID(), \"simulations\");\n"
 		
 		
 		//What we want to have here is context adding of environments and subcontext adding of groups (if an SG model)
