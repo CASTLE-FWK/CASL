@@ -37,6 +37,8 @@ import uofa.lbirdsey.castle.casl.BooleanExpression;
 import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR;
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR_FLAG;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
@@ -53,6 +55,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Viz;
 import uofa.lbirdsey.castle.casl.CAS_Inspection_Level;
 import uofa.lbirdsey.castle.casl.CAS_Rule_Exception;
 import uofa.lbirdsey.castle.casl.CAS_Rule_Types;
@@ -302,6 +305,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_GET_TIME: return createCASL_Macro_GET_TIME();
       case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
       case CaslPackage.CASL_MACRO_VISUALIZE: return createCASL_Macro_Visualize();
+      case CaslPackage.CASL_MACRO_VIZ: return createCASL_Macro_Viz();
+      case CaslPackage.CASL_MACRO_COLOR: return createCASL_Macro_COLOR();
       case CaslPackage.CASL_MACRO_DISPLAY: return createCASL_Macro_Display();
       case CaslPackage.RAW_JAVA_BLOCK: return createRaw_Java_Block();
       case CaslPackage.FEATURE: return createFeature();
@@ -386,6 +391,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return createAdaptationDelayFromString(eDataType, initialValue);
       case CaslPackage.SUB_SYSTEM_TYPE:
         return createSubSystemTypeFromString(eDataType, initialValue);
+      case CaslPackage.CASL_MACRO_COLOR_FLAG:
+        return createCASL_Macro_COLOR_FLAGFromString(eDataType, initialValue);
       case CaslPackage.RANDOM_TYPE:
         return createRandomTypeFromString(eDataType, initialValue);
       default:
@@ -439,6 +446,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return convertAdaptationDelayToString(eDataType, instanceValue);
       case CaslPackage.SUB_SYSTEM_TYPE:
         return convertSubSystemTypeToString(eDataType, instanceValue);
+      case CaslPackage.CASL_MACRO_COLOR_FLAG:
+        return convertCASL_Macro_COLOR_FLAGToString(eDataType, instanceValue);
       case CaslPackage.RANDOM_TYPE:
         return convertRandomTypeToString(eDataType, instanceValue);
       default:
@@ -1474,6 +1483,28 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public CASL_Macro_Viz createCASL_Macro_Viz()
+  {
+    CASL_Macro_VizImpl casL_Macro_Viz = new CASL_Macro_VizImpl();
+    return casL_Macro_Viz;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_COLOR createCASL_Macro_COLOR()
+  {
+    CASL_Macro_COLORImpl casL_Macro_COLOR = new CASL_Macro_COLORImpl();
+    return casL_Macro_COLOR;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public CASL_Macro_Display createCASL_Macro_Display()
   {
     CASL_Macro_DisplayImpl casL_Macro_Display = new CASL_Macro_DisplayImpl();
@@ -2224,6 +2255,28 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * @generated
    */
   public String convertSubSystemTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_COLOR_FLAG createCASL_Macro_COLOR_FLAGFromString(EDataType eDataType, String initialValue)
+  {
+    CASL_Macro_COLOR_FLAG result = CASL_Macro_COLOR_FLAG.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCASL_Macro_COLOR_FLAGToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

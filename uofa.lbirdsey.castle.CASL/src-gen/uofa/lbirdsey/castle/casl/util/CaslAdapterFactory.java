@@ -31,6 +31,7 @@ import uofa.lbirdsey.castle.casl.BooleanExpression;
 import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.CASL_Macro;
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
@@ -47,6 +48,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Viz;
 import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -662,6 +664,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCASL_Macro_Visualize(CASL_Macro_Visualize object)
       {
         return createCASL_Macro_VisualizeAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_Viz(CASL_Macro_Viz object)
+      {
+        return createCASL_Macro_VizAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_COLOR(CASL_Macro_COLOR object)
+      {
+        return createCASL_Macro_COLORAdapter();
       }
       @Override
       public Adapter caseCASL_Macro_Display(CASL_Macro_Display object)
@@ -2241,6 +2253,36 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCASL_Macro_VisualizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_Viz <em>CASL Macro Viz</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_Viz
+   * @generated
+   */
+  public Adapter createCASL_Macro_VizAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_COLOR <em>CASL Macro COLOR</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_COLOR
+   * @generated
+   */
+  public Adapter createCASL_Macro_COLORAdapter()
   {
     return null;
   }

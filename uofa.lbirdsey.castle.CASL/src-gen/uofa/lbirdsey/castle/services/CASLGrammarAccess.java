@@ -7168,6 +7168,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_InitLoggerParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		private final RuleCall cCASL_Macro_GET_IDParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cCASL_Macro_GET_TIMEParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
+		private final RuleCall cCASL_Macro_COLORParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
+		private final RuleCall cCASL_Macro_VizParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
@@ -7175,13 +7177,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 		//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-		//	CASL_Macro_GET_TIME;
+		//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 		//CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-		//CASL_Macro_GET_TIME
+		//CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -7228,6 +7230,12 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_GET_TIME
 		public RuleCall getCASL_Macro_GET_TIMEParserRuleCall_14() { return cCASL_Macro_GET_TIMEParserRuleCall_14; }
+		
+		//CASL_Macro_COLOR
+		public RuleCall getCASL_Macro_COLORParserRuleCall_15() { return cCASL_Macro_COLORParserRuleCall_15; }
+		
+		//CASL_Macro_Viz
+		public RuleCall getCASL_Macro_VizParserRuleCall_16() { return cCASL_Macro_VizParserRuleCall_16; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -7956,6 +7964,112 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
+	}
+	public class CASL_Macro_VizElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Viz");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVIZKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSwAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSwBooleanValueParserRuleCall_1_0 = (RuleCall)cSwAssignment_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		////Activate the visualizer
+		//CASL_Macro_Viz:
+		//	"VIZ[" sw=BooleanValue "]";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"VIZ[" sw=BooleanValue "]"
+		public Group getGroup() { return cGroup; }
+		
+		//"VIZ["
+		public Keyword getVIZKeyword_0() { return cVIZKeyword_0; }
+		
+		//sw=BooleanValue
+		public Assignment getSwAssignment_1() { return cSwAssignment_1; }
+		
+		//BooleanValue
+		public RuleCall getSwBooleanValueParserRuleCall_1_0() { return cSwBooleanValueParserRuleCall_1_0; }
+		
+		//"]"
+		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+	}
+	public class CASL_Macro_COLORElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_COLOR");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCASL_Macro_COLORAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCOLORKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFlagAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFlagCASL_Macro_COLOR_FLAGEnumRuleCall_2_0 = (RuleCall)cFlagAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTargetExpressionParserRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
+		private final Keyword cRightSquareBracketLeftParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cParamsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cParamsExpressionParserRuleCall_6_0_0 = (RuleCall)cParamsAssignment_6_0.eContents().get(0);
+		private final Group cGroup_6_1 = (Group)cGroup_6.eContents().get(1);
+		private final Keyword cCommaKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cParamsAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cParamsExpressionParserRuleCall_6_1_1_0 = (RuleCall)cParamsAssignment_6_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		////Set the colour for the agent depending the state they are in
+		//CASL_Macro_COLOR:
+		//	{CASL_Macro_COLOR}
+		//	"COLOR[" flag=CASL_Macro_COLOR_FLAG "][" target=Expression "](" (params+=Expression (',' params+=Expression)*)? ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CASL_Macro_COLOR} "COLOR[" flag=CASL_Macro_COLOR_FLAG "][" target=Expression "](" (params+=Expression (','
+		//params+=Expression)*)? ")"
+		public Group getGroup() { return cGroup; }
+		
+		//{CASL_Macro_COLOR}
+		public Action getCASL_Macro_COLORAction_0() { return cCASL_Macro_COLORAction_0; }
+		
+		//"COLOR["
+		public Keyword getCOLORKeyword_1() { return cCOLORKeyword_1; }
+		
+		//flag=CASL_Macro_COLOR_FLAG
+		public Assignment getFlagAssignment_2() { return cFlagAssignment_2; }
+		
+		//CASL_Macro_COLOR_FLAG
+		public RuleCall getFlagCASL_Macro_COLOR_FLAGEnumRuleCall_2_0() { return cFlagCASL_Macro_COLOR_FLAGEnumRuleCall_2_0; }
+		
+		//"]["
+		public Keyword getRightSquareBracketLeftSquareBracketKeyword_3() { return cRightSquareBracketLeftSquareBracketKeyword_3; }
+		
+		//target=Expression
+		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+		
+		//Expression
+		public RuleCall getTargetExpressionParserRuleCall_4_0() { return cTargetExpressionParserRuleCall_4_0; }
+		
+		//"]("
+		public Keyword getRightSquareBracketLeftParenthesisKeyword_5() { return cRightSquareBracketLeftParenthesisKeyword_5; }
+		
+		//(params+=Expression (',' params+=Expression)*)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//params+=Expression
+		public Assignment getParamsAssignment_6_0() { return cParamsAssignment_6_0; }
+		
+		//Expression
+		public RuleCall getParamsExpressionParserRuleCall_6_0_0() { return cParamsExpressionParserRuleCall_6_0_0; }
+		
+		//(',' params+=Expression)*
+		public Group getGroup_6_1() { return cGroup_6_1; }
+		
+		//','
+		public Keyword getCommaKeyword_6_1_0() { return cCommaKeyword_6_1_0; }
+		
+		//params+=Expression
+		public Assignment getParamsAssignment_6_1_1() { return cParamsAssignment_6_1_1; }
+		
+		//Expression
+		public RuleCall getParamsExpressionParserRuleCall_6_1_1_0() { return cParamsExpressionParserRuleCall_6_1_1_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class CASL_Macro_DisplayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Display");
@@ -9008,6 +9122,41 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"SYSTEM"
 		public Keyword getSYSTEMSYSTEMKeyword_1_0() { return cSYSTEMSYSTEMKeyword_1_0; }
 	}
+	public class CASL_Macro_COLOR_FLAGElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_COLOR_FLAG");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSETEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSETSETKeyword_0_0 = (Keyword)cSETEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cBOOLEANEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cBOOLEANBOOLEANKeyword_1_0 = (Keyword)cBOOLEANEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cRANGEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cRANGERANGEKeyword_2_0 = (Keyword)cRANGEEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum CASL_Macro_COLOR_FLAG:
+		//	SET | BOOLEAN | RANGE;
+		public EnumRule getRule() { return rule; }
+		
+		//SET | BOOLEAN | RANGE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SET
+		public EnumLiteralDeclaration getSETEnumLiteralDeclaration_0() { return cSETEnumLiteralDeclaration_0; }
+		
+		//"SET"
+		public Keyword getSETSETKeyword_0_0() { return cSETSETKeyword_0_0; }
+		
+		//BOOLEAN
+		public EnumLiteralDeclaration getBOOLEANEnumLiteralDeclaration_1() { return cBOOLEANEnumLiteralDeclaration_1; }
+		
+		//"BOOLEAN"
+		public Keyword getBOOLEANBOOLEANKeyword_1_0() { return cBOOLEANBOOLEANKeyword_1_0; }
+		
+		//RANGE
+		public EnumLiteralDeclaration getRANGEEnumLiteralDeclaration_2() { return cRANGEEnumLiteralDeclaration_2; }
+		
+		//"RANGE"
+		public Keyword getRANGERANGEKeyword_2_0() { return cRANGERANGEKeyword_2_0; }
+	}
 	public class RandomTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.RandomType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -9181,6 +9330,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_GET_TIMEElements pCASL_Macro_GET_TIME;
 	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_VisualizeElements pCASL_Macro_Visualize;
+	private final CASL_Macro_VizElements pCASL_Macro_Viz;
+	private final CASL_Macro_COLORElements pCASL_Macro_COLOR;
+	private final CASL_Macro_COLOR_FLAGElements eCASL_Macro_COLOR_FLAG;
 	private final CASL_Macro_DisplayElements pCASL_Macro_Display;
 	private final RandomTypeElements eRandomType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
@@ -9334,6 +9486,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_GET_TIME = new CASL_Macro_GET_TIMEElements();
 		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_Visualize = new CASL_Macro_VisualizeElements();
+		this.pCASL_Macro_Viz = new CASL_Macro_VizElements();
+		this.pCASL_Macro_COLOR = new CASL_Macro_COLORElements();
+		this.eCASL_Macro_COLOR_FLAG = new CASL_Macro_COLOR_FLAGElements();
 		this.pCASL_Macro_Display = new CASL_Macro_DisplayElements();
 		this.eRandomType = new RandomTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
@@ -10796,7 +10951,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 	//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-	//	CASL_Macro_GET_TIME;
+	//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -10966,6 +11121,39 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCASL_Macro_VisualizeRule() {
 		return getCASL_Macro_VisualizeAccess().getRule();
+	}
+	
+	////Activate the visualizer
+	//CASL_Macro_Viz:
+	//	"VIZ[" sw=BooleanValue "]";
+	public CASL_Macro_VizElements getCASL_Macro_VizAccess() {
+		return pCASL_Macro_Viz;
+	}
+	
+	public ParserRule getCASL_Macro_VizRule() {
+		return getCASL_Macro_VizAccess().getRule();
+	}
+	
+	////Set the colour for the agent depending the state they are in
+	//CASL_Macro_COLOR:
+	//	{CASL_Macro_COLOR}
+	//	"COLOR[" flag=CASL_Macro_COLOR_FLAG "][" target=Expression "](" (params+=Expression (',' params+=Expression)*)? ")";
+	public CASL_Macro_COLORElements getCASL_Macro_COLORAccess() {
+		return pCASL_Macro_COLOR;
+	}
+	
+	public ParserRule getCASL_Macro_COLORRule() {
+		return getCASL_Macro_COLORAccess().getRule();
+	}
+	
+	//enum CASL_Macro_COLOR_FLAG:
+	//	SET | BOOLEAN | RANGE;
+	public CASL_Macro_COLOR_FLAGElements getCASL_Macro_COLOR_FLAGAccess() {
+		return eCASL_Macro_COLOR_FLAG;
+	}
+	
+	public EnumRule getCASL_Macro_COLOR_FLAGRule() {
+		return getCASL_Macro_COLOR_FLAGAccess().getRule();
 	}
 	
 	////So this doesn't quite work.

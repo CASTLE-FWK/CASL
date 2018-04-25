@@ -861,6 +861,24 @@ public interface CaslFactory extends EFactory
   CASL_Macro_Visualize createCASL_Macro_Visualize();
 
   /**
+   * Returns a new object of class '<em>CASL Macro Viz</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro Viz</em>'.
+   * @generated
+   */
+  CASL_Macro_Viz createCASL_Macro_Viz();
+
+  /**
+   * Returns a new object of class '<em>CASL Macro COLOR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>CASL Macro COLOR</em>'.
+   * @generated
+   */
+  CASL_Macro_COLOR createCASL_Macro_COLOR();
+
+  /**
    * Returns a new object of class '<em>CASL Macro Display</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

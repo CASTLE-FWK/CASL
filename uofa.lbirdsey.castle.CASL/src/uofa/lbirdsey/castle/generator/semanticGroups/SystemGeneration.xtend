@@ -427,6 +427,22 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		
 		//TODO: Move this later
 		str += "public double getCurrentTickCount(){\n\treturn RunEnvironment.getInstance().getCurrentSchedule().getTickCount();\n}";
+		
+		str += '''//Visualisation stuff
+			static LiveSimulator vis;
+			
+			public static void drawEntities(ArrayList<castleComponents.Agent> ents) {
+				//get the clock
+				int time = clock; //TODO
+				ArrayList<VEntity> ves = new ArrayList<VEntity>();
+				//We must convert the agents to VEntity at runtime :/
+				for (castleComponents.Agent a : ents) {
+					ves.add(new VEntity(a));
+				}
+				
+				vis.newStep(time, ves);
+			}'''
+		
 		return str
 	}
 }

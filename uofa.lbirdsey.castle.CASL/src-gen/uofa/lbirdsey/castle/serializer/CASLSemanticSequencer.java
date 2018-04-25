@@ -33,6 +33,7 @@ import uofa.lbirdsey.castle.casl.Behaviors;
 import uofa.lbirdsey.castle.casl.BooleanExpression;
 import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Call;
 import uofa.lbirdsey.castle.casl.CASL_Macro_CountConditions;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Display;
@@ -49,6 +50,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Random;
 import uofa.lbirdsey.castle.casl.CASL_Macro_TODO;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Visualize;
+import uofa.lbirdsey.castle.casl.CASL_Macro_Viz;
 import uofa.lbirdsey.castle.casl.CAS_Rules;
 import uofa.lbirdsey.castle.casl.Casl;
 import uofa.lbirdsey.castle.casl.CaslPackage;
@@ -249,6 +251,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case CaslPackage.CASL_MACRO_COLOR:
+				sequence_CASL_Macro_COLOR(context, (CASL_Macro_COLOR) semanticObject); 
+				return; 
 			case CaslPackage.CASL_MACRO_CALL:
 				sequence_CASL_Macro_Call(context, (CASL_Macro_Call) semanticObject); 
 				return; 
@@ -296,6 +301,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_VISUALIZE:
 				sequence_CASL_Macro_Visualize(context, (CASL_Macro_Visualize) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_VIZ:
+				sequence_CASL_Macro_Viz(context, (CASL_Macro_Viz) semanticObject); 
 				return; 
 			case CaslPackage.CAS_RULES:
 				sequence_CAS_Rules(context, (CAS_Rules) semanticObject); 
@@ -1384,6 +1392,19 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_COLOR
+	 *     CASL_Macro_COLOR returns CASL_Macro_COLOR
+	 *
+	 * Constraint:
+	 *     (flag=CASL_Macro_COLOR_FLAG target=Expression (params+=Expression params+=Expression*)?)
+	 */
+	protected void sequence_CASL_Macro_COLOR(ISerializationContext context, CASL_Macro_COLOR semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CASL_Macro_Call returns CASL_Macro_Call
 	 *
 	 * Constraint:
@@ -1673,6 +1694,25 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionPositionExpressionParserRuleCall_2_0(), semanticObject.getProjectionPosition());
 		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionColourUpdaterExpressionParserRuleCall_5_0(), semanticObject.getProjectionColourUpdater());
 		feeder.accept(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionShapeSTRINGTerminalRuleCall_8_0(), semanticObject.getProjectionShape());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_Viz
+	 *     CASL_Macro_Viz returns CASL_Macro_Viz
+	 *
+	 * Constraint:
+	 *     sw=BooleanValue
+	 */
+	protected void sequence_CASL_Macro_Viz(ISerializationContext context, CASL_Macro_Viz semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Viz_Sw()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_Viz_Sw()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCASL_Macro_VizAccess().getSwBooleanValueParserRuleCall_1_0(), semanticObject.isSw());
 		feeder.finish();
 	}
 	

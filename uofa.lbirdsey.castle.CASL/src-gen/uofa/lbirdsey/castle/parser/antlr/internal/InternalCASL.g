@@ -11105,6 +11105,24 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_GET_TIME_14.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_COLORParserRuleCall_15());
+		}
+		this_CASL_Macro_COLOR_15=ruleCASL_Macro_COLOR
+		{
+			$current = $this_CASL_Macro_COLOR_15.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_VizParserRuleCall_16());
+		}
+		this_CASL_Macro_Viz_16=ruleCASL_Macro_Viz
+		{
+			$current = $this_CASL_Macro_Viz_16.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -12263,6 +12281,178 @@ ruleCASL_Macro_Visualize returns [EObject current=null]
 		otherlv_9=']'
 		{
 			newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_VisualizeAccess().getRightSquareBracketKeyword_9());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_Viz
+entryRuleCASL_Macro_Viz returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_VizRule()); }
+	iv_ruleCASL_Macro_Viz=ruleCASL_Macro_Viz
+	{ $current=$iv_ruleCASL_Macro_Viz.current; }
+	EOF;
+
+// Rule CASL_Macro_Viz
+ruleCASL_Macro_Viz returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='VIZ['
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCASL_Macro_VizAccess().getVIZKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_VizAccess().getSwBooleanValueParserRuleCall_1_0());
+				}
+				lv_sw_1_0=ruleBooleanValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_VizRule());
+					}
+					set(
+						$current,
+						"sw",
+						lv_sw_1_0,
+						"uofa.lbirdsey.castle.CASL.BooleanValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=']'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCASL_Macro_VizAccess().getRightSquareBracketKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_COLOR
+entryRuleCASL_Macro_COLOR returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_COLORRule()); }
+	iv_ruleCASL_Macro_COLOR=ruleCASL_Macro_COLOR
+	{ $current=$iv_ruleCASL_Macro_COLOR.current; }
+	EOF;
+
+// Rule CASL_Macro_COLOR
+ruleCASL_Macro_COLOR returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCASL_Macro_COLORAccess().getCASL_Macro_COLORAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='COLOR['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_COLORAccess().getCOLORKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_COLORAccess().getFlagCASL_Macro_COLOR_FLAGEnumRuleCall_2_0());
+				}
+				lv_flag_2_0=ruleCASL_Macro_COLOR_FLAG
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_COLORRule());
+					}
+					set(
+						$current,
+						"flag",
+						lv_flag_2_0,
+						"uofa.lbirdsey.castle.CASL.CASL_Macro_COLOR_FLAG");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=']['
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_COLORAccess().getRightSquareBracketLeftSquareBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_COLORAccess().getTargetExpressionParserRuleCall_4_0());
+				}
+				lv_target_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_COLORRule());
+					}
+					set(
+						$current,
+						"target",
+						lv_target_4_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=']('
+		{
+			newLeafNode(otherlv_5, grammarAccess.getCASL_Macro_COLORAccess().getRightSquareBracketLeftParenthesisKeyword_5());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCASL_Macro_COLORAccess().getParamsExpressionParserRuleCall_6_0_0());
+					}
+					lv_params_6_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCASL_Macro_COLORRule());
+						}
+						add(
+							$current,
+							"params",
+							lv_params_6_0,
+							"uofa.lbirdsey.castle.CASL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getCASL_Macro_COLORAccess().getCommaKeyword_6_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCASL_Macro_COLORAccess().getParamsExpressionParserRuleCall_6_1_1_0());
+						}
+						lv_params_8_0=ruleExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCASL_Macro_COLORRule());
+							}
+							add(
+								$current,
+								"params",
+								lv_params_8_0,
+								"uofa.lbirdsey.castle.CASL.Expression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+		)?
+		otherlv_9=')'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getCASL_Macro_COLORAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;
@@ -13431,6 +13621,41 @@ ruleSubSystemType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getSubSystemTypeAccess().getSYSTEMEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
+// Rule CASL_Macro_COLOR_FLAG
+ruleCASL_Macro_COLOR_FLAG returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='SET'
+			{
+				$current = grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getSETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getSETEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='BOOLEAN'
+			{
+				$current = grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getBOOLEANEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getBOOLEANEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='RANGE'
+			{
+				$current = grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getRANGEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getRANGEEnumLiteralDeclaration_2());
 			}
 		)
 	)

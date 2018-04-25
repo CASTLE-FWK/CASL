@@ -613,6 +613,21 @@
         eType="#//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectionShape" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Viz" eSuperTypes="#//CASL_Macro">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sw" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_COLOR" eSuperTypes="#//CASL_Macro">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flag" eType="#//CASL_Macro_COLOR_FLAG"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CASL_Macro_COLOR_FLAG">
+    <eLiterals name="SET" literal="SET"/>
+    <eLiterals name="BOOLEAN" value="1" literal="BOOLEAN"/>
+    <eLiterals name="RANGE" value="2" literal="RANGE"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Display" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="representationType" eType="#//LayoutType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toProject" upperBound="-1"

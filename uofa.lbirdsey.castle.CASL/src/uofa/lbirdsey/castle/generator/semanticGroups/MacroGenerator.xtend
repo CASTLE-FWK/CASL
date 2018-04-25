@@ -25,6 +25,9 @@ import uofa.lbirdsey.castle.casl.LayoutType
 import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.CASL_Macro_GET_ID
 import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR
+import uofa.lbirdsey.castle.casl.CASL_Macro_Viz
+import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR_FLAG
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {		
@@ -134,6 +137,18 @@ class MacroGenerator {
 			return "getEntityID()"
 		} else if (macro instanceof CASL_Macro_GET_TIME){
 			return "getCurrentStep()"
+		} else if (macro instanceof CASL_Macro_COLOR){
+			//TODO
+			val col = macro as CASL_Macro_COLOR;
+		} else if (macro instanceof CASL_Macro_Viz){
+			//TODO
+			val active = (macro as CASL_Macro_Viz).sw;
+			if (active == true){
+				
+			} else {
+				
+			}
+			
 		}
 		return output;
 	}
@@ -274,6 +289,46 @@ class MacroGenerator {
 		var output = "gms " 
 		output += name;
 		return output;
+		
+	}
+	
+	static def String generateEntityColor(CASL_Macro_COLOR cmc){
+		//TODO
+		val flag = cmc.flag;
+		val target = cmc.target;
+		val params = cmc.params;
+		var String out = "EntityColor entityColor = new EntityColor("
+		out += target.toString + "," + flag.toString+");\n"
+		
+		if (flag == CASL_Macro_COLOR_FLAG.BOOLEAN){
+			//Should be 2 params
+			if (params.size != 2){
+				//Warn
+			}
+			val trueParam = params.get(0);
+			val falseParam = params.get(1);
+			
+			out += "entityColor.addSet(\"true\",\""+trueParam+"\");\n"
+			out += "entityColor.addSet(\"true\",\""+falseParam+"\");\n"			
+			
+		} else if (flag == CASL_Macro_COLOR_FLAG.SET){
+			//Should be an even number
+			if (params.size % 2 != 0){
+				//Warn
+			}
+			for (var i = 0; i < params.size(); i += 2){
+				val value = params.get(i);
+				val col = params.get(i+1);
+				out += "entityColor.addSet(\""+value+"\",\""+col+"\");\n"
+			}
+			
+		} else if (flag == CASL_Macro_COLOR_FLAG.RANGE){
+			
+			
+			
+		}
+		return out;
+		
 		
 	}
 	

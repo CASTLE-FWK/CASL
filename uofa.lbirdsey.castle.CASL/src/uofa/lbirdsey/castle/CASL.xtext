@@ -814,7 +814,9 @@ CASL_Macro:
 	CASL_Macro_Log					|
 	CASL_Macro_InitLogger			|
 	CASL_Macro_GET_ID				|
-	CASL_Macro_GET_TIME
+	CASL_Macro_GET_TIME				|
+	CASL_Macro_COLOR				|
+	CASL_Macro_Viz
 ;
 
 CASL_Macro_Neighbours:
@@ -869,6 +871,7 @@ CASL_Macro_GET_TIME:
 	"GET_TIME()"
 ;
 
+
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
 //First 2 terms should be the other way around
 //What the call should look like
@@ -896,6 +899,37 @@ CASL_Macro_Populate:
  */
 CASL_Macro_Visualize:
 	"VISUALIZE" '['projectionPosition = Expression']''['projectionColourUpdater = Expression']''['projectionShape = STRING']'	
+;
+
+//Activate the visualizer
+CASL_Macro_Viz:
+	"VIZ[" sw = BooleanValue "]"
+;
+
+//Set the colour for the agent depending the state they are in
+CASL_Macro_COLOR:
+	{CASL_Macro_COLOR}
+	"COLOR["flag = CASL_Macro_COLOR_FLAG"]["target = Expression"](" (params += Expression (','(params += Expression))*)? ")"
+;
+
+enum CASL_Macro_COLOR_FLAG:
+	SET | BOOLEAN | RANGE 
+;
+
+enum AvailableColors:
+	BLACK | 
+	LIGHTGRAY | 
+	BLUE | 
+	MAGENTA | 
+	CYAN | 
+	ORANGE | 
+	DARKGRAY | 
+	PINK | 
+	GRAY | 
+	RED | 
+	GREEN | 
+	WHITE | 
+	YELLOW
 ;
 
 //So this doesn't quite work.

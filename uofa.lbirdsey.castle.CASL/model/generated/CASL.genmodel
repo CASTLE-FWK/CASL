@@ -96,6 +96,11 @@
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//SubSystemType/SELF"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//SubSystemType/SYSTEM"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//CASL_Macro_COLOR_FLAG">
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//CASL_Macro_COLOR_FLAG/SET"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//CASL_Macro_COLOR_FLAG/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//CASL_Macro_COLOR_FLAG/RANGE"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>
@@ -494,6 +499,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Visualize/projectionPosition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Visualize/projectionColourUpdater"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Visualize/projectionShape"/>
+    </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Viz">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Viz/sw"/>
+    </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_COLOR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_COLOR/flag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_COLOR/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_COLOR/params"/>
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Display">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_Display/representationType"/>
