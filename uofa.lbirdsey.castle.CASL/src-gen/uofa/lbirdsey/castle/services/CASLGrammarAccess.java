@@ -9157,6 +9157,133 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"RANGE"
 		public Keyword getRANGERANGEKeyword_2_0() { return cRANGERANGEKeyword_2_0; }
 	}
+	public class AvailableColorsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.AvailableColors");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cBLACKEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cBLACKBLACKKeyword_0_0 = (Keyword)cBLACKEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cLIGHTGRAYEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cLIGHTGRAYLIGHTGRAYKeyword_1_0 = (Keyword)cLIGHTGRAYEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cBLUEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cBLUEBLUEKeyword_2_0 = (Keyword)cBLUEEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cMAGENTAEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cMAGENTAMAGENTAKeyword_3_0 = (Keyword)cMAGENTAEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cCYANEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cCYANCYANKeyword_4_0 = (Keyword)cCYANEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cORANGEEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cORANGEORANGEKeyword_5_0 = (Keyword)cORANGEEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cDARKGRAYEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cDARKGRAYDARKGRAYKeyword_6_0 = (Keyword)cDARKGRAYEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cPINKEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cPINKPINKKeyword_7_0 = (Keyword)cPINKEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cGRAYEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cGRAYGRAYKeyword_8_0 = (Keyword)cGRAYEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cREDEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cREDREDKeyword_9_0 = (Keyword)cREDEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cGREENEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cGREENGREENKeyword_10_0 = (Keyword)cGREENEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cWHITEEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cWHITEWHITEKeyword_11_0 = (Keyword)cWHITEEnumLiteralDeclaration_11.eContents().get(0);
+		private final EnumLiteralDeclaration cYELLOWEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
+		private final Keyword cYELLOWYELLOWKeyword_12_0 = (Keyword)cYELLOWEnumLiteralDeclaration_12.eContents().get(0);
+		
+		//enum AvailableColors:
+		//	BLACK |
+		//	LIGHTGRAY |
+		//	BLUE |
+		//	MAGENTA |
+		//	CYAN |
+		//	ORANGE |
+		//	DARKGRAY |
+		//	PINK |
+		//	GRAY |
+		//	RED |
+		//	GREEN |
+		//	WHITE |
+		//	YELLOW;
+		public EnumRule getRule() { return rule; }
+		
+		//BLACK | LIGHTGRAY | BLUE | MAGENTA | CYAN | ORANGE | DARKGRAY | PINK | GRAY | RED | GREEN | WHITE | YELLOW
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//BLACK
+		public EnumLiteralDeclaration getBLACKEnumLiteralDeclaration_0() { return cBLACKEnumLiteralDeclaration_0; }
+		
+		//"BLACK"
+		public Keyword getBLACKBLACKKeyword_0_0() { return cBLACKBLACKKeyword_0_0; }
+		
+		//LIGHTGRAY
+		public EnumLiteralDeclaration getLIGHTGRAYEnumLiteralDeclaration_1() { return cLIGHTGRAYEnumLiteralDeclaration_1; }
+		
+		//"LIGHTGRAY"
+		public Keyword getLIGHTGRAYLIGHTGRAYKeyword_1_0() { return cLIGHTGRAYLIGHTGRAYKeyword_1_0; }
+		
+		//BLUE
+		public EnumLiteralDeclaration getBLUEEnumLiteralDeclaration_2() { return cBLUEEnumLiteralDeclaration_2; }
+		
+		//"BLUE"
+		public Keyword getBLUEBLUEKeyword_2_0() { return cBLUEBLUEKeyword_2_0; }
+		
+		//MAGENTA
+		public EnumLiteralDeclaration getMAGENTAEnumLiteralDeclaration_3() { return cMAGENTAEnumLiteralDeclaration_3; }
+		
+		//"MAGENTA"
+		public Keyword getMAGENTAMAGENTAKeyword_3_0() { return cMAGENTAMAGENTAKeyword_3_0; }
+		
+		//CYAN
+		public EnumLiteralDeclaration getCYANEnumLiteralDeclaration_4() { return cCYANEnumLiteralDeclaration_4; }
+		
+		//"CYAN"
+		public Keyword getCYANCYANKeyword_4_0() { return cCYANCYANKeyword_4_0; }
+		
+		//ORANGE
+		public EnumLiteralDeclaration getORANGEEnumLiteralDeclaration_5() { return cORANGEEnumLiteralDeclaration_5; }
+		
+		//"ORANGE"
+		public Keyword getORANGEORANGEKeyword_5_0() { return cORANGEORANGEKeyword_5_0; }
+		
+		//DARKGRAY
+		public EnumLiteralDeclaration getDARKGRAYEnumLiteralDeclaration_6() { return cDARKGRAYEnumLiteralDeclaration_6; }
+		
+		//"DARKGRAY"
+		public Keyword getDARKGRAYDARKGRAYKeyword_6_0() { return cDARKGRAYDARKGRAYKeyword_6_0; }
+		
+		//PINK
+		public EnumLiteralDeclaration getPINKEnumLiteralDeclaration_7() { return cPINKEnumLiteralDeclaration_7; }
+		
+		//"PINK"
+		public Keyword getPINKPINKKeyword_7_0() { return cPINKPINKKeyword_7_0; }
+		
+		//GRAY
+		public EnumLiteralDeclaration getGRAYEnumLiteralDeclaration_8() { return cGRAYEnumLiteralDeclaration_8; }
+		
+		//"GRAY"
+		public Keyword getGRAYGRAYKeyword_8_0() { return cGRAYGRAYKeyword_8_0; }
+		
+		//RED
+		public EnumLiteralDeclaration getREDEnumLiteralDeclaration_9() { return cREDEnumLiteralDeclaration_9; }
+		
+		//"RED"
+		public Keyword getREDREDKeyword_9_0() { return cREDREDKeyword_9_0; }
+		
+		//GREEN
+		public EnumLiteralDeclaration getGREENEnumLiteralDeclaration_10() { return cGREENEnumLiteralDeclaration_10; }
+		
+		//"GREEN"
+		public Keyword getGREENGREENKeyword_10_0() { return cGREENGREENKeyword_10_0; }
+		
+		//WHITE
+		public EnumLiteralDeclaration getWHITEEnumLiteralDeclaration_11() { return cWHITEEnumLiteralDeclaration_11; }
+		
+		//"WHITE"
+		public Keyword getWHITEWHITEKeyword_11_0() { return cWHITEWHITEKeyword_11_0; }
+		
+		//YELLOW
+		public EnumLiteralDeclaration getYELLOWEnumLiteralDeclaration_12() { return cYELLOWEnumLiteralDeclaration_12; }
+		
+		//"YELLOW"
+		public Keyword getYELLOWYELLOWKeyword_12_0() { return cYELLOWYELLOWKeyword_12_0; }
+	}
 	public class RandomTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.RandomType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -9333,6 +9460,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_VizElements pCASL_Macro_Viz;
 	private final CASL_Macro_COLORElements pCASL_Macro_COLOR;
 	private final CASL_Macro_COLOR_FLAGElements eCASL_Macro_COLOR_FLAG;
+	private final AvailableColorsElements eAvailableColors;
 	private final CASL_Macro_DisplayElements pCASL_Macro_Display;
 	private final RandomTypeElements eRandomType;
 	private final Raw_Java_BlockElements pRaw_Java_Block;
@@ -9489,6 +9617,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_Viz = new CASL_Macro_VizElements();
 		this.pCASL_Macro_COLOR = new CASL_Macro_COLORElements();
 		this.eCASL_Macro_COLOR_FLAG = new CASL_Macro_COLOR_FLAGElements();
+		this.eAvailableColors = new AvailableColorsElements();
 		this.pCASL_Macro_Display = new CASL_Macro_DisplayElements();
 		this.eRandomType = new RandomTypeElements();
 		this.pRaw_Java_Block = new Raw_Java_BlockElements();
@@ -11154,6 +11283,28 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getCASL_Macro_COLOR_FLAGRule() {
 		return getCASL_Macro_COLOR_FLAGAccess().getRule();
+	}
+	
+	//enum AvailableColors:
+	//	BLACK |
+	//	LIGHTGRAY |
+	//	BLUE |
+	//	MAGENTA |
+	//	CYAN |
+	//	ORANGE |
+	//	DARKGRAY |
+	//	PINK |
+	//	GRAY |
+	//	RED |
+	//	GREEN |
+	//	WHITE |
+	//	YELLOW;
+	public AvailableColorsElements getAvailableColorsAccess() {
+		return eAvailableColors;
+	}
+	
+	public EnumRule getAvailableColorsRule() {
+		return getAvailableColorsAccess().getRule();
 	}
 	
 	////So this doesn't quite work.

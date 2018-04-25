@@ -138,11 +138,14 @@ class MacroGenerator {
 		} else if (macro instanceof CASL_Macro_COLOR) {
 			// TODO
 			val col = macro as CASL_Macro_COLOR;
+			return generateEntityColor(col);
 		} else if (macro instanceof CASL_Macro_Viz) {
 			// TODO
 			val active = (macro as CASL_Macro_Viz).sw;
 			if (active == true) {
-			} else {
+	
+				} else {
+	
 			}
 
 		}
@@ -295,21 +298,21 @@ class MacroGenerator {
 	static def String generateEntityColor(CASL_Macro_COLOR cmc) {
 		// TODO
 		val flag = cmc.flag;
-		val target = cmc.target;
+		val target = Printers.printExpression(cmc.target);
 		val params = cmc.params;
 		var String out = "EntityColor entityColor = new EntityColor("
-		out += target.toString + "," + flag.toString + ");\n"
+		out += target + "," + flag + ");\n"
 
 		if (flag == CASL_Macro_COLOR_FLAG.BOOLEAN) {
 			// Should be 2 params
 			if (params.size != 2) {
 				// Warn
 			}
-			val trueParam = params.get(0);
-			val falseParam = params.get(1);
+			val trueParam = Printers.printExpression(params.get(0));
+			val falseParam = Printers.printExpression(params.get(1));
 
-			out += "entityColor.addSet(\"true\",\"" + trueParam + "\");\n"
-			out += "entityColor.addSet(\"true\",\"" + falseParam + "\");\n"
+			out += "entityColor.addSet(\"true\"," + trueParam + ");\n"
+			out += "entityColor.addSet(\"false\"," + falseParam + ");\n"
 
 		} else if (flag == CASL_Macro_COLOR_FLAG.SET) {
 			// Should be an even number
@@ -317,9 +320,9 @@ class MacroGenerator {
 				// Warn
 			}
 			for (var i = 0; i < params.size(); i += 2) {
-				val value = params.get(i);
-				val col = params.get(i + 1);
-				out += "entityColor.addSet(\"" + value + "\",\"" + col + "\");\n"
+				val value = Printers.printExpression(params.get(i));
+				val col = Printers.printExpression(params.get(i + 1));
+				out += "entityColor.addSet(\"" + value + "\"," + col + ");\n"
 			}
 
 		} else if (flag == CASL_Macro_COLOR_FLAG.RANGE) {
@@ -327,11 +330,11 @@ class MacroGenerator {
 			if (params.size != 4) {
 				// Warn
 			}
-			val min = params.get(0);
-			val max = params.get(1);
-			val minC = params.get(2);
-			val maxC = params.get(3);
-			out += "entityColor.setRange(\"" + min + "\",\"" + max + "\",\"" + minC + "\",\"" + maxC + "\");\n"
+			val min = Printers.printExpression(params.get(0));
+			val max = Printers.printExpression(params.get(1));
+			val minC = Printers.printExpression(params.get(2));
+			val maxC = Printers.printExpression(params.get(3));
+			out += "entityColor.setRange(\"" + min + "\",\"" + max + "\"," + minC + "," + maxC + ");\n"
 
 		}
 		return out;

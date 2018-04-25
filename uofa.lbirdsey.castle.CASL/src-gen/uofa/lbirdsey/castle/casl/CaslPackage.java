@@ -5660,6 +5660,16 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_COLOR_FLAG = 146;
 
   /**
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.AvailableColors <em>Available Colors</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uofa.lbirdsey.castle.casl.AvailableColors
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getAvailableColors()
+   * @generated
+   */
+  int AVAILABLE_COLORS = 147;
+
+  /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5667,7 +5677,7 @@ public interface CaslPackage extends EPackage
    * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getRandomType()
    * @generated
    */
-  int RANDOM_TYPE = 147;
+  int RANDOM_TYPE = 148;
 
 
   /**
@@ -10340,6 +10350,16 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EEnum getCASL_Macro_COLOR_FLAG();
+
+  /**
+   * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.AvailableColors <em>Available Colors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Available Colors</em>'.
+   * @see uofa.lbirdsey.castle.casl.AvailableColors
+   * @generated
+   */
+  EEnum getAvailableColors();
 
   /**
    * Returns the meta object for enum '{@link uofa.lbirdsey.castle.casl.RandomType <em>Random Type</em>}'.

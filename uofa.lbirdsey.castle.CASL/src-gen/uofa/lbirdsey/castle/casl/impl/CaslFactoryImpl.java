@@ -28,6 +28,7 @@ import uofa.lbirdsey.castle.casl.Agent_Call;
 import uofa.lbirdsey.castle.casl.Agent_Type_Name;
 import uofa.lbirdsey.castle.casl.Agent_Types;
 import uofa.lbirdsey.castle.casl.ArithmeticSigned;
+import uofa.lbirdsey.castle.casl.AvailableColors;
 import uofa.lbirdsey.castle.casl.Behavior;
 import uofa.lbirdsey.castle.casl.BehaviorFeatureCall;
 import uofa.lbirdsey.castle.casl.BehaviorReactionTime;
@@ -393,6 +394,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return createSubSystemTypeFromString(eDataType, initialValue);
       case CaslPackage.CASL_MACRO_COLOR_FLAG:
         return createCASL_Macro_COLOR_FLAGFromString(eDataType, initialValue);
+      case CaslPackage.AVAILABLE_COLORS:
+        return createAvailableColorsFromString(eDataType, initialValue);
       case CaslPackage.RANDOM_TYPE:
         return createRandomTypeFromString(eDataType, initialValue);
       default:
@@ -448,6 +451,8 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
         return convertSubSystemTypeToString(eDataType, instanceValue);
       case CaslPackage.CASL_MACRO_COLOR_FLAG:
         return convertCASL_Macro_COLOR_FLAGToString(eDataType, instanceValue);
+      case CaslPackage.AVAILABLE_COLORS:
+        return convertAvailableColorsToString(eDataType, instanceValue);
       case CaslPackage.RANDOM_TYPE:
         return convertRandomTypeToString(eDataType, instanceValue);
       default:
@@ -2277,6 +2282,28 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * @generated
    */
   public String convertCASL_Macro_COLOR_FLAGToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AvailableColors createAvailableColorsFromString(EDataType eDataType, String initialValue)
+  {
+    AvailableColors result = AvailableColors.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertAvailableColorsToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

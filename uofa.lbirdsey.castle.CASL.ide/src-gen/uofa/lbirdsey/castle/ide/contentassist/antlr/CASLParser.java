@@ -99,6 +99,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdaptationDelayAccess().getAlternatives(), "rule__AdaptationDelay__Alternatives");
 					put(grammarAccess.getSubSystemTypeAccess().getAlternatives(), "rule__SubSystemType__Alternatives");
 					put(grammarAccess.getCASL_Macro_COLOR_FLAGAccess().getAlternatives(), "rule__CASL_Macro_COLOR_FLAG__Alternatives");
+					put(grammarAccess.getAvailableColorsAccess().getAlternatives(), "rule__AvailableColors__Alternatives");
 					put(grammarAccess.getRandomTypeAccess().getAlternatives(), "rule__RandomType__Alternatives");
 					put(grammarAccess.getCaslAccess().getGroup(), "rule__Casl__Group__0");
 					put(grammarAccess.getSystemAccess().getGroup(), "rule__System__Group__0");

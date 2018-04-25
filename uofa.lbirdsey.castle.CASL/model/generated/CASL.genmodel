@@ -101,6 +101,21 @@
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//CASL_Macro_COLOR_FLAG/BOOLEAN"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//CASL_Macro_COLOR_FLAG/RANGE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//AvailableColors">
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/BLACK"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/LIGHTGRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/BLUE"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/MAGENTA"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/CYAN"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/ORANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/DARKGRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/PINK"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/GRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/RED"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/GREEN"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/WHITE"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//AvailableColors/YELLOW"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>

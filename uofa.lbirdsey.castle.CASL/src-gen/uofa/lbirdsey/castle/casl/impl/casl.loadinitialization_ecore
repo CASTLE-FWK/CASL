@@ -628,6 +628,21 @@
     <eLiterals name="BOOLEAN" value="1" literal="BOOLEAN"/>
     <eLiterals name="RANGE" value="2" literal="RANGE"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AvailableColors">
+    <eLiterals name="BLACK" literal="BLACK"/>
+    <eLiterals name="LIGHTGRAY" value="1" literal="LIGHTGRAY"/>
+    <eLiterals name="BLUE" value="2" literal="BLUE"/>
+    <eLiterals name="MAGENTA" value="3" literal="MAGENTA"/>
+    <eLiterals name="CYAN" value="4" literal="CYAN"/>
+    <eLiterals name="ORANGE" value="5" literal="ORANGE"/>
+    <eLiterals name="DARKGRAY" value="6" literal="DARKGRAY"/>
+    <eLiterals name="PINK" value="7" literal="PINK"/>
+    <eLiterals name="GRAY" value="8" literal="GRAY"/>
+    <eLiterals name="RED" value="9" literal="RED"/>
+    <eLiterals name="GREEN" value="10" literal="GREEN"/>
+    <eLiterals name="WHITE" value="11" literal="WHITE"/>
+    <eLiterals name="YELLOW" value="12" literal="YELLOW"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CASL_Macro_Display" eSuperTypes="#//CASL_Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="representationType" eType="#//LayoutType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toProject" upperBound="-1"
