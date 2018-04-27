@@ -144,6 +144,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		output += "//Tier Below\nArrayList<Environment> storedEnvironments;\nArrayList<SemanticGroup> storedGroups;\n"
 		output += "MessageQueue messageQueue;\nPhase currentPhase;\nint tier1Entities = 0;\n"
 		output += "//Repast Specific\nContext<Entity> repastContext;\n"
+		output += "static boolean visualizing = false;\n"
 		
 		
 		output += "\n//Getters & Setters\n"
@@ -432,15 +433,17 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 			static LiveSimulator vis;
 			
 			public static void drawEntities(ArrayList<castleComponents.Agent> ents) {
-				//get the clock
-				int time = clock; //TODO
-				ArrayList<VEntity> ves = new ArrayList<VEntity>();
-				//We must convert the agents to VEntity at runtime :/
-				for (castleComponents.Agent a : ents) {
-					ves.add(new VEntity(a));
+				if (visualizing){
+					//get the clock
+					int time = clock; //TODO
+					ArrayList<VEntity> ves = new ArrayList<VEntity>();
+					//We must convert the agents to VEntity at runtime :/
+					for (castleComponents.Agent a : ents) {
+						ves.add(new VEntity(a));
+					}
+					
+					vis.newStep(time, ves);
 				}
-				
-				vis.newStep(time, ves);
 			}'''
 		
 		return str

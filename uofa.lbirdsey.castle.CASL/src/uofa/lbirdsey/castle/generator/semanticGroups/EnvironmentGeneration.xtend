@@ -228,6 +228,7 @@ class EnvironmentGeneration {
 				triggerString += "\tpublic Void apply(Entity o) {\n"
 				triggerString += "\t\t(("+env.name.toFirstUpper+") o)."+behavior.name+"((("+env.name.toFirstUpper+") o));\n"
 				triggerString += "\t\treturn null;\n}}, false, this);\n\n"
+				initialList.add("cleanupTriggers.add("+Printers.getNameForTrigger(behavior.name)+")");
 				triggersStringsToPrint.add(triggerString);
 			} else if (behavior.behavior_reaction_time == BehaviorReactionTime.REPEAT){
 				val steps = (Printers.printExpression(behavior.reaction_time_parm) as BigDecimal).toBigInteger.intValue;
@@ -432,7 +433,16 @@ class EnvironmentGeneration {
 			str += "\t\tfor (Entity e : containedEntities){e.phase_Cleanup();}\n"
 			
 			str += "\t}\n"			 
+			
+			str += "\t//The draw call\n"
+			//TODO
+			str += "\t"+systemRoot+".drawEntities(storedAgents);\n"
+			
+			
 			str += "}\n"
+			
+			
+			
 		return str;
 	}
 	
