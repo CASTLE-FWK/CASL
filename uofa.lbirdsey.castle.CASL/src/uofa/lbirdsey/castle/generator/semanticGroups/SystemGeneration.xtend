@@ -53,6 +53,8 @@ class SystemGeneration {
 		
 		imports += "import castleComponents.Enums.*;\n" //TODO: This is very lazy
 		imports += "import castleComponents.representations.*;\n" //TODO: This is lazy
+		imports += "import visualisation.LiveSimulator;\n" //TODO: This is lazy
+		imports += "import observationTool.VEntity;\n" //TODO: This is lazy
 		
 		//Prepend import statements
 		fileContents = imports +"\n" + fileContents;
@@ -144,7 +146,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		output += "//Tier Below\nArrayList<Environment> storedEnvironments;\nArrayList<SemanticGroup> storedGroups;\n"
 		output += "MessageQueue messageQueue;\nPhase currentPhase;\nint tier1Entities = 0;\n"
 		output += "//Repast Specific\nContext<Entity> repastContext;\n"
-		output += "static boolean visualizing = false;\n"
+		output += "static bool visualizing = false;\n"
 		
 		
 		output += "\n//Getters & Setters\n"
