@@ -704,6 +704,8 @@ Addition returns Expression:
 	Multiplication ({Addition.left=current} op=('+') right=Multiplication)*
 ;
 
+//Add in Division separate
+
 Multiplication returns Expression:
 	Prefixed ( ({Multiplication.left=current} op=('*') | {Div.left=current} op=('/')) right=Prefixed)*
 ;

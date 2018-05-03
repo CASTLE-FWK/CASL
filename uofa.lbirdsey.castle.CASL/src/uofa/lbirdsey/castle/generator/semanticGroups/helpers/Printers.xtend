@@ -45,6 +45,7 @@ import static uofa.lbirdsey.castle.generator.semanticGroups.helpers.Constants.*;
 import java.text.SimpleDateFormat
 import java.util.Date
 import uofa.lbirdsey.castle.casl.FeatureCall
+import uofa.lbirdsey.castle.casl.Div
 
 class Printers {
 
@@ -286,6 +287,8 @@ class Printers {
 				'''«printExpression((expr as Subtraction).left)» «(expr as Subtraction).op» «printExpression((expr as Subtraction).right)»'''
 			else if (expr instanceof Multiplication)
 				'''«printExpression((expr as Multiplication).left)» «(expr as Multiplication).op» «printExpression((expr as Multiplication).right)»'''
+			else if (expr instanceof Div)
+				'''«printExpression((expr as Div).left)» «(expr as Div).op» «printExpression((expr as Div).right)»'''
 			else if (expr instanceof BooleanNegation)
 				'''!«printExpression((expr as BooleanNegation).expression)»'''
 			else if (expr instanceof ArithmeticSigned)

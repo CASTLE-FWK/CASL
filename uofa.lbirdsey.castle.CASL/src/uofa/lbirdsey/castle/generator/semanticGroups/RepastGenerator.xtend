@@ -82,7 +82,7 @@ class RepastGenerator implements IGenerator2 {
 		// Process the SYSTEM
 		for (sys : resource.allContents.toIterable.filter(System)) {
 			dirName = sys.name.replaceAll(" ", "");
-			mainPkg = sys.name.replaceAll(" ", "").toFirstLower;
+			mainPkg = sys.name.replaceAll(" ", "").toFirstUpper;
 			agentsPkg = mainPkg + ".agents";
 			envsPkg = mainPkg + ".environments";
 			grpsPkg = mainPkg + ".groups";

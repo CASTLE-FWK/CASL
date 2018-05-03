@@ -18,6 +18,7 @@ import uofa.lbirdsey.castle.casl.BooleanNegation;
 import uofa.lbirdsey.castle.casl.BooleanType;
 import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
+import uofa.lbirdsey.castle.casl.Div;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
 import uofa.lbirdsey.castle.casl.EnumCallExpr;
 import uofa.lbirdsey.castle.casl.Environment;
@@ -792,69 +793,84 @@ public class Printers {
                                     _xifexpression_15 = _builder_5;
                                   } else {
                                     CharSequence _xifexpression_16 = null;
-                                    if ((expr instanceof BooleanNegation)) {
+                                    if ((expr instanceof Div)) {
                                       StringConcatenation _builder_6 = new StringConcatenation();
-                                      _builder_6.append("!");
-                                      Object _printExpression_12 = Printers.printExpression(((BooleanNegation) expr).getExpression());
+                                      Object _printExpression_12 = Printers.printExpression(((Div) expr).getLeft());
                                       _builder_6.append(_printExpression_12);
+                                      _builder_6.append(" ");
+                                      String _op_5 = ((Div) expr).getOp();
+                                      _builder_6.append(_op_5);
+                                      _builder_6.append(" ");
+                                      Object _printExpression_13 = Printers.printExpression(((Div) expr).getRight());
+                                      _builder_6.append(_printExpression_13);
                                       _xifexpression_16 = _builder_6;
                                     } else {
                                       CharSequence _xifexpression_17 = null;
-                                      if ((expr instanceof ArithmeticSigned)) {
+                                      if ((expr instanceof BooleanNegation)) {
                                         StringConcatenation _builder_7 = new StringConcatenation();
-                                        _builder_7.append("-");
-                                        Object _printExpression_13 = Printers.printExpression(((ArithmeticSigned) expr).getExpression());
-                                        _builder_7.append(_printExpression_13);
+                                        _builder_7.append("!");
+                                        Object _printExpression_14 = Printers.printExpression(((BooleanNegation) expr).getExpression());
+                                        _builder_7.append(_printExpression_14);
                                         _xifexpression_17 = _builder_7;
                                       } else {
                                         CharSequence _xifexpression_18 = null;
-                                        if ((expr instanceof MacroCall)) {
-                                          return MacroGenerator.parseMacro(((MacroCall) expr), null);
+                                        if ((expr instanceof ArithmeticSigned)) {
+                                          StringConcatenation _builder_8 = new StringConcatenation();
+                                          _builder_8.append("-");
+                                          Object _printExpression_15 = Printers.printExpression(((ArithmeticSigned) expr).getExpression());
+                                          _builder_8.append(_printExpression_15);
+                                          _xifexpression_18 = _builder_8;
                                         } else {
                                           CharSequence _xifexpression_19 = null;
-                                          if ((expr instanceof NullTypeLiteral)) {
-                                            return "null";
+                                          if ((expr instanceof MacroCall)) {
+                                            return MacroGenerator.parseMacro(((MacroCall) expr), null);
                                           } else {
                                             CharSequence _xifexpression_20 = null;
-                                            if ((expr instanceof FunctionCallExpr)) {
-                                              return HelperFunctions.printFunctionCall(((FunctionCallExpr) expr).getFuncCall());
+                                            if ((expr instanceof NullTypeLiteral)) {
+                                              return "null";
                                             } else {
                                               CharSequence _xifexpression_21 = null;
-                                              if ((expr instanceof EnumCallExpr)) {
-                                                StringConcatenation _builder_8 = new StringConcatenation();
-                                                String _name = ((EnumCallExpr) expr).getEnumCall().getEn().getName();
-                                                _builder_8.append(_name);
-                                                _builder_8.append(".");
-                                                String _name_1 = ((EnumCallExpr) expr).getEnumCall().getEntype().getName();
-                                                _builder_8.append(_name_1);
-                                                _xifexpression_21 = _builder_8;
+                                              if ((expr instanceof FunctionCallExpr)) {
+                                                return HelperFunctions.printFunctionCall(((FunctionCallExpr) expr).getFuncCall());
                                               } else {
                                                 CharSequence _xifexpression_22 = null;
-                                                if ((expr instanceof Agent_Call)) {
-                                                  String _name_2 = ((Agent_Call) expr).getAgentCall().getAgent().getName();
-                                                  return (_name_2 + ".class");
+                                                if ((expr instanceof EnumCallExpr)) {
+                                                  StringConcatenation _builder_9 = new StringConcatenation();
+                                                  String _name = ((EnumCallExpr) expr).getEnumCall().getEn().getName();
+                                                  _builder_9.append(_name);
+                                                  _builder_9.append(".");
+                                                  String _name_1 = ((EnumCallExpr) expr).getEnumCall().getEntype().getName();
+                                                  _builder_9.append(_name_1);
+                                                  _xifexpression_22 = _builder_9;
                                                 } else {
                                                   CharSequence _xifexpression_23 = null;
-                                                  if ((expr instanceof Environment_Call)) {
-                                                    String _name_3 = ((Environment_Call) expr).getEnvironmentCall().getEnv().getName();
-                                                    return (_name_3 + ".class");
+                                                  if ((expr instanceof Agent_Call)) {
+                                                    String _name_2 = ((Agent_Call) expr).getAgentCall().getAgent().getName();
+                                                    return (_name_2 + ".class");
                                                   } else {
                                                     CharSequence _xifexpression_24 = null;
-                                                    if ((expr instanceof Group_Call)) {
-                                                      String _name_4 = ((Group_Call) expr).getGroupCall().getGrp().getName();
-                                                      return (_name_4 + ".class");
+                                                    if ((expr instanceof Environment_Call)) {
+                                                      String _name_3 = ((Environment_Call) expr).getEnvironmentCall().getEnv().getName();
+                                                      return (_name_3 + ".class");
                                                     } else {
                                                       CharSequence _xifexpression_25 = null;
-                                                      if ((expr instanceof ForLoop)) {
-                                                        return Printers.printForLoop(((ForLoop) expr));
+                                                      if ((expr instanceof Group_Call)) {
+                                                        String _name_4 = ((Group_Call) expr).getGroupCall().getGrp().getName();
+                                                        return (_name_4 + ".class");
                                                       } else {
                                                         CharSequence _xifexpression_26 = null;
-                                                        if ((expr instanceof ForEachLoop)) {
-                                                          return Printers.printForEachLoop(((ForEachLoop) expr));
+                                                        if ((expr instanceof ForLoop)) {
+                                                          return Printers.printForLoop(((ForLoop) expr));
                                                         } else {
-                                                          StringConcatenation _builder_9 = new StringConcatenation();
-                                                          _builder_9.append("ERROR: Unknown expression");
-                                                          _xifexpression_26 = _builder_9;
+                                                          CharSequence _xifexpression_27 = null;
+                                                          if ((expr instanceof ForEachLoop)) {
+                                                            return Printers.printForEachLoop(((ForEachLoop) expr));
+                                                          } else {
+                                                            StringConcatenation _builder_10 = new StringConcatenation();
+                                                            _builder_10.append("ERROR: Unknown expression");
+                                                            _xifexpression_27 = _builder_10;
+                                                          }
+                                                          _xifexpression_26 = _xifexpression_27;
                                                         }
                                                         _xifexpression_25 = _xifexpression_26;
                                                       }
