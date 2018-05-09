@@ -54,6 +54,7 @@ import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
+import uofa.lbirdsey.castle.casl.DoubleType;
 import uofa.lbirdsey.castle.casl.EGInteraction;
 import uofa.lbirdsey.castle.casl.EGInteractions;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
@@ -80,7 +81,6 @@ import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
-import uofa.lbirdsey.castle.casl.FloatType;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
@@ -616,12 +616,12 @@ public class CaslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CaslPackage.FLOAT_TYPE:
+      case CaslPackage.DOUBLE_TYPE:
       {
-        FloatType floatType = (FloatType)theEObject;
-        T result = caseFloatType(floatType);
-        if (result == null) result = casePrimitiveType(floatType);
-        if (result == null) result = caseType(floatType);
+        DoubleType doubleType = (DoubleType)theEObject;
+        T result = caseDoubleType(doubleType);
+        if (result == null) result = casePrimitiveType(doubleType);
+        if (result == null) result = caseType(doubleType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2100,17 +2100,17 @@ public class CaslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Float Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Double Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Float Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Double Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFloatType(FloatType object)
+  public T caseDoubleType(DoubleType object)
   {
     return null;
   }

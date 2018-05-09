@@ -31,14 +31,14 @@ public enum RandomType implements Enumerator
   INT(0, "INT", "INT"),
 
   /**
-   * The '<em><b>FLOAT</b></em>' literal object.
+   * The '<em><b>DOUBLE</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #FLOAT_VALUE
+   * @see #DOUBLE_VALUE
    * @generated
    * @ordered
    */
-  FLOAT(1, "FLOAT", "FLOAT"),
+  DOUBLE(1, "DOUBLE", "DOUBLE"),
 
   /**
    * The '<em><b>BOOL</b></em>' literal object.
@@ -76,19 +76,19 @@ public enum RandomType implements Enumerator
   public static final int INT_VALUE = 0;
 
   /**
-   * The '<em><b>FLOAT</b></em>' literal value.
+   * The '<em><b>DOUBLE</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>FLOAT</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>DOUBLE</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #FLOAT
+   * @see #DOUBLE
    * @model
    * @generated
    * @ordered
    */
-  public static final int FLOAT_VALUE = 1;
+  public static final int DOUBLE_VALUE = 1;
 
   /**
    * The '<em><b>BOOL</b></em>' literal value.
@@ -130,7 +130,7 @@ public enum RandomType implements Enumerator
     new RandomType[]
     {
       INT,
-      FLOAT,
+      DOUBLE,
       BOOL,
       VECTOR2,
     };
@@ -198,7 +198,7 @@ public enum RandomType implements Enumerator
     switch (value)
     {
       case INT_VALUE: return INT;
-      case FLOAT_VALUE: return FLOAT;
+      case DOUBLE_VALUE: return DOUBLE;
       case BOOL_VALUE: return BOOL;
       case VECTOR2_VALUE: return VECTOR2;
     }

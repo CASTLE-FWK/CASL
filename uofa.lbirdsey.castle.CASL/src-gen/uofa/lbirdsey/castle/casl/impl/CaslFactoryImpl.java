@@ -69,6 +69,7 @@ import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
+import uofa.lbirdsey.castle.casl.DoubleType;
 import uofa.lbirdsey.castle.casl.EGInteraction;
 import uofa.lbirdsey.castle.casl.EGInteractions;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
@@ -98,7 +99,6 @@ import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
-import uofa.lbirdsey.castle.casl.FloatType;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
@@ -270,7 +270,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.PRIMITIVE_TYPE: return createPrimitiveType();
       case CaslPackage.INT_TYPE: return createIntType();
       case CaslPackage.BOOLEAN_TYPE: return createBooleanType();
-      case CaslPackage.FLOAT_TYPE: return createFloatType();
+      case CaslPackage.DOUBLE_TYPE: return createDoubleType();
       case CaslPackage.STRING_TYPE: return createStringType();
       case CaslPackage.NULL_TYPE: return createNullType();
       case CaslPackage.FORMULA: return createFormula();
@@ -1092,10 +1092,10 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FloatType createFloatType()
+  public DoubleType createDoubleType()
   {
-    FloatTypeImpl floatType = new FloatTypeImpl();
-    return floatType;
+    DoubleTypeImpl doubleType = new DoubleTypeImpl();
+    return doubleType;
   }
 
   /**

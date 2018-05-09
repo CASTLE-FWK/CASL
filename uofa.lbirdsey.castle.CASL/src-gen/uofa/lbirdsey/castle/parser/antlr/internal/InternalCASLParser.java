@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalCASLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_NUMBER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SYSTEM:'", "'{'", "'name:'", "';'", "'description:'", "'ruleset:'", "'};'", "'agent_types:'", "','", "'environment_types:'", "'environment_rules:'", "'type:'", "'attributes:'", "'layout_type:'", "'group_types:'", "'end_conditions:'", "'condition'", "'inspection_level:'", "'lenient_exceptions:'", "'semantic_groups:'", "'AGENT'", "':'", "'ENVIRONMENT'", "'GROUP'", "'group_rules:'", "'external_interactions:'", "'['", "']['", "'('", "')'", "']('", "'):'", "'internal_interactions:'", "'parameters:'", "'agt'", "'='", "'env'", "'grp'", "'def'", "')('", "'functions:'", "'var'", "'<'", "'grp.'", "'agt.'", "'env.'", "'obj.'", "'>'", "'behavior_state'", "'behaviors:'", "'interactions:'", "'group_interactions:'", "'adaptation:'", "'ADAPTATION.'", "'INTERACTION.'", "'.AGT_INTERACTION.'", "'.GRP_EXT_INTERACTION.'", "'EXT_INTERACTION.'", "'.GRP_INT_INTERACTION.'", "'.ENV_INTERACTION.'", "'INT_INTERACTION.'", "'FUNCTION.'", "'BEHAVIOR.'", "']'", "'subsystems:'", "'int'", "'bool'", "'float'", "'string'", "'null'", "'true'", "'false'", "'*'", "'.'", "'self.'", "'for'", "'do'", "'endfor'", "'foreach'", "'if'", "'then'", "'elseif'", "'else'", "'endif'", "'||'", "'&&'", "'=='", "'!='", "'<='", "'>='", "'-'", "'+'", "'/'", "'!'", "'self'", "'ENUM.'", "'SYSTEM.'", "'AGENT.'", "'ENVIRONMENT.'", "'GROUP.'", "'custom'", "'obj'", "'enum'", "'CASL.'", "'.GetNeighbours['", "'FILTER['", "'COUNT['", "'RANDOM'", "'FOREACH['", "'PRINT('", "'LOGGER('", "'LOG('", "'METRIC['", "'TODO:'", "'GET_ID()'", "'GET_TIME()'", "'POPULATE'", "')['", "'VISUALIZE'", "'VIZ['", "'COLOR['", "'DISPLAY'", "'raw-java'", "'}'", "'package'", "'.()'", "'->'", "'import'", "'.*'", "'virtual'", "'physical'", "'implicit'", "'explicit'", "'STEPS'", "'PARAMETER'", "'STATE'", "'strict'", "'lenient'", "'modularity'", "'diversity'", "'none'", "'adaptation'", "'strong'", "'weak'", "'enable'", "'disable'", "'SETUP'", "'ACTION'", "'CLEANUP'", "'REPEAT'", "'SINGLE'", "'CALLED'", "'SELF'", "'AFFECT'", "'INSTANT'", "'DELAYED'", "'STEP'", "'GRID'", "'TORUS'", "'BOUND'", "'GRAPH'", "'NETWORK'", "'GIS'", "'MESH3D'", "'CONTINUOUS'", "'QUERY'", "'INDIRECT'", "'COMMUNICATION'", "'INPUT'", "'IMPLICIT'", "'EVOLUTIONARY'", "'COGNITIVE'", "'NONE'", "'POST'", "'SYSTEM'", "'SET'", "'BOOLEAN'", "'RANGE'", "'INT'", "'FLOAT'", "'BOOL'", "'VECTOR2'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_NUMBER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SYSTEM:'", "'{'", "'name:'", "';'", "'description:'", "'ruleset:'", "'};'", "'agent_types:'", "','", "'environment_types:'", "'environment_rules:'", "'type:'", "'attributes:'", "'layout_type:'", "'group_types:'", "'end_conditions:'", "'condition'", "'inspection_level:'", "'lenient_exceptions:'", "'semantic_groups:'", "'AGENT'", "':'", "'ENVIRONMENT'", "'GROUP'", "'group_rules:'", "'external_interactions:'", "'['", "']['", "'('", "')'", "']('", "'):'", "'internal_interactions:'", "'parameters:'", "'agt'", "'='", "'env'", "'grp'", "'def'", "')('", "'functions:'", "'var'", "'<'", "'grp.'", "'agt.'", "'env.'", "'obj.'", "'>'", "'behavior_state'", "'behaviors:'", "'interactions:'", "'group_interactions:'", "'adaptation:'", "'ADAPTATION.'", "'INTERACTION.'", "'.AGT_INTERACTION.'", "'.GRP_EXT_INTERACTION.'", "'EXT_INTERACTION.'", "'.GRP_INT_INTERACTION.'", "'.ENV_INTERACTION.'", "'INT_INTERACTION.'", "'FUNCTION.'", "'BEHAVIOR.'", "']'", "'subsystems:'", "'int'", "'bool'", "'double'", "'string'", "'null'", "'true'", "'false'", "'*'", "'.'", "'self.'", "'for'", "'do'", "'endfor'", "'foreach'", "'if'", "'then'", "'elseif'", "'else'", "'endif'", "'||'", "'&&'", "'=='", "'!='", "'<='", "'>='", "'-'", "'+'", "'/'", "'!'", "'self'", "'ENUM.'", "'SYSTEM.'", "'AGENT.'", "'ENVIRONMENT.'", "'GROUP.'", "'custom'", "'obj'", "'enum'", "'CASL.'", "'.GetNeighbours['", "'FILTER['", "'COUNT['", "'RANDOM'", "'FOREACH['", "'PRINT('", "'LOGGER('", "'LOG('", "'METRIC['", "'TODO:'", "'GET_ID()'", "'GET_TIME()'", "'POPULATE'", "')['", "'VISUALIZE'", "'VIZ['", "'COLOR['", "'DISPLAY'", "'raw-java'", "'}'", "'package'", "'.()'", "'->'", "'import'", "'.*'", "'virtual'", "'physical'", "'implicit'", "'explicit'", "'STEPS'", "'PARAMETER'", "'STATE'", "'strict'", "'lenient'", "'modularity'", "'diversity'", "'none'", "'adaptation'", "'strong'", "'weak'", "'enable'", "'disable'", "'SETUP'", "'ACTION'", "'CLEANUP'", "'REPEAT'", "'SINGLE'", "'CALLED'", "'SELF'", "'AFFECT'", "'INSTANT'", "'DELAYED'", "'STEP'", "'GRID'", "'TORUS'", "'BOUND'", "'GRAPH'", "'NETWORK'", "'GIS'", "'MESH3D'", "'CONTINUOUS'", "'QUERY'", "'INDIRECT'", "'COMMUNICATION'", "'INPUT'", "'IMPLICIT'", "'EVOLUTIONARY'", "'COGNITIVE'", "'NONE'", "'POST'", "'SYSTEM'", "'SET'", "'BOOLEAN'", "'RANGE'", "'INT'", "'DOUBLE'", "'BOOL'", "'VECTOR2'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -18152,7 +18152,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimitiveType"
-    // InternalCASL.g:7172:1: rulePrimitiveType returns [EObject current=null] : (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_FloatType_2= ruleFloatType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType ) ;
+    // InternalCASL.g:7172:1: rulePrimitiveType returns [EObject current=null] : (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_DoubleType_2= ruleDoubleType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType ) ;
     public final EObject rulePrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -18160,7 +18160,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
         EObject this_BooleanType_1 = null;
 
-        EObject this_FloatType_2 = null;
+        EObject this_DoubleType_2 = null;
 
         EObject this_NullType_3 = null;
 
@@ -18171,10 +18171,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:7178:2: ( (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_FloatType_2= ruleFloatType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType ) )
-            // InternalCASL.g:7179:2: (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_FloatType_2= ruleFloatType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType )
+            // InternalCASL.g:7178:2: ( (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_DoubleType_2= ruleDoubleType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType ) )
+            // InternalCASL.g:7179:2: (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_DoubleType_2= ruleDoubleType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType )
             {
-            // InternalCASL.g:7179:2: (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_FloatType_2= ruleFloatType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType )
+            // InternalCASL.g:7179:2: (this_IntType_0= ruleIntType | this_BooleanType_1= ruleBooleanType | this_DoubleType_2= ruleDoubleType | this_NullType_3= ruleNullType | this_StringType_4= ruleStringType )
             int alt99=5;
             switch ( input.LA(1) ) {
             case 76:
@@ -18256,21 +18256,21 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:7198:3: this_FloatType_2= ruleFloatType
+                    // InternalCASL.g:7198:3: this_DoubleType_2= ruleDoubleType
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_FloatType_2=ruleFloatType();
+                    this_DoubleType_2=ruleDoubleType();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_FloatType_2;
+                      			current = this_DoubleType_2;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -18585,28 +18585,28 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleBooleanType"
 
 
-    // $ANTLR start "entryRuleFloatType"
-    // InternalCASL.g:7308:1: entryRuleFloatType returns [EObject current=null] : iv_ruleFloatType= ruleFloatType EOF ;
-    public final EObject entryRuleFloatType() throws RecognitionException {
+    // $ANTLR start "entryRuleDoubleType"
+    // InternalCASL.g:7308:1: entryRuleDoubleType returns [EObject current=null] : iv_ruleDoubleType= ruleDoubleType EOF ;
+    public final EObject entryRuleDoubleType() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleFloatType = null;
+        EObject iv_ruleDoubleType = null;
 
 
         try {
-            // InternalCASL.g:7308:50: (iv_ruleFloatType= ruleFloatType EOF )
-            // InternalCASL.g:7309:2: iv_ruleFloatType= ruleFloatType EOF
+            // InternalCASL.g:7308:51: (iv_ruleDoubleType= ruleDoubleType EOF )
+            // InternalCASL.g:7309:2: iv_ruleDoubleType= ruleDoubleType EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getFloatTypeRule()); 
+               newCompositeNode(grammarAccess.getDoubleTypeRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleFloatType=ruleFloatType();
+            iv_ruleDoubleType=ruleDoubleType();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleFloatType; 
+               current =iv_ruleDoubleType; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -18622,12 +18622,12 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleFloatType"
+    // $ANTLR end "entryRuleDoubleType"
 
 
-    // $ANTLR start "ruleFloatType"
-    // InternalCASL.g:7315:1: ruleFloatType returns [EObject current=null] : ( () ( (lv_name_1_0= 'float' ) ) ) ;
-    public final EObject ruleFloatType() throws RecognitionException {
+    // $ANTLR start "ruleDoubleType"
+    // InternalCASL.g:7315:1: ruleDoubleType returns [EObject current=null] : ( () ( (lv_name_1_0= 'double' ) ) ) ;
+    public final EObject ruleDoubleType() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_1_0=null;
@@ -18636,11 +18636,11 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:7321:2: ( ( () ( (lv_name_1_0= 'float' ) ) ) )
-            // InternalCASL.g:7322:2: ( () ( (lv_name_1_0= 'float' ) ) )
+            // InternalCASL.g:7321:2: ( ( () ( (lv_name_1_0= 'double' ) ) ) )
+            // InternalCASL.g:7322:2: ( () ( (lv_name_1_0= 'double' ) ) )
             {
-            // InternalCASL.g:7322:2: ( () ( (lv_name_1_0= 'float' ) ) )
-            // InternalCASL.g:7323:3: () ( (lv_name_1_0= 'float' ) )
+            // InternalCASL.g:7322:2: ( () ( (lv_name_1_0= 'double' ) ) )
+            // InternalCASL.g:7323:3: () ( (lv_name_1_0= 'double' ) )
             {
             // InternalCASL.g:7323:3: ()
             // InternalCASL.g:7324:4: 
@@ -18648,31 +18648,31 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               				current = forceCreateModelElement(
-              					grammarAccess.getFloatTypeAccess().getFloatTypeAction_0(),
+              					grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0(),
               					current);
               			
             }
 
             }
 
-            // InternalCASL.g:7330:3: ( (lv_name_1_0= 'float' ) )
-            // InternalCASL.g:7331:4: (lv_name_1_0= 'float' )
+            // InternalCASL.g:7330:3: ( (lv_name_1_0= 'double' ) )
+            // InternalCASL.g:7331:4: (lv_name_1_0= 'double' )
             {
-            // InternalCASL.g:7331:4: (lv_name_1_0= 'float' )
-            // InternalCASL.g:7332:5: lv_name_1_0= 'float'
+            // InternalCASL.g:7331:4: (lv_name_1_0= 'double' )
+            // InternalCASL.g:7332:5: lv_name_1_0= 'double'
             {
             lv_name_1_0=(Token)match(input,78,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(lv_name_1_0, grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0());
+              					newLeafNode(lv_name_1_0, grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0());
               				
             }
             if ( state.backtracking==0 ) {
 
               					if (current==null) {
-              						current = createModelElement(grammarAccess.getFloatTypeRule());
+              						current = createModelElement(grammarAccess.getDoubleTypeRule());
               					}
-              					setWithLastConsumed(current, "name", lv_name_1_0, "float");
+              					setWithLastConsumed(current, "name", lv_name_1_0, "double");
               				
             }
 
@@ -18702,7 +18702,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFloatType"
+    // $ANTLR end "ruleDoubleType"
 
 
     // $ANTLR start "entryRuleStringType"
@@ -36408,7 +36408,7 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRandomType"
-    // InternalCASL.g:13665:1: ruleRandomType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) ;
+    // InternalCASL.g:13665:1: ruleRandomType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'DOUBLE' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) ;
     public final Enumerator ruleRandomType() throws RecognitionException {
         Enumerator current = null;
 
@@ -36421,10 +36421,10 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCASL.g:13671:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) )
-            // InternalCASL.g:13672:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
+            // InternalCASL.g:13671:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'DOUBLE' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) ) )
+            // InternalCASL.g:13672:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'DOUBLE' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
             {
-            // InternalCASL.g:13672:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'FLOAT' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
+            // InternalCASL.g:13672:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'DOUBLE' ) | (enumLiteral_2= 'BOOL' ) | (enumLiteral_3= 'VECTOR2' ) )
             int alt189=4;
             switch ( input.LA(1) ) {
             case 189:
@@ -36476,16 +36476,16 @@ public class InternalCASLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:13681:3: (enumLiteral_1= 'FLOAT' )
+                    // InternalCASL.g:13681:3: (enumLiteral_1= 'DOUBLE' )
                     {
-                    // InternalCASL.g:13681:3: (enumLiteral_1= 'FLOAT' )
-                    // InternalCASL.g:13682:4: enumLiteral_1= 'FLOAT'
+                    // InternalCASL.g:13681:3: (enumLiteral_1= 'DOUBLE' )
+                    // InternalCASL.g:13682:4: enumLiteral_1= 'DOUBLE'
                     {
                     enumLiteral_1=(Token)match(input,190,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				current = grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                      				newLeafNode(enumLiteral_1, grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1());
+                      				current = grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1());
                       			
                     }
 

@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalCASLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_NUMBER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'||'", "'&&'", "'=='", "'!='", "'<'", "'>'", "'<='", "'>='", "'.()'", "'->'", "'virtual'", "'physical'", "'implicit'", "'explicit'", "'STEPS'", "'PARAMETER'", "'STATE'", "'strict'", "'lenient'", "'modularity'", "'diversity'", "'none'", "'adaptation'", "'strong'", "'weak'", "'enable'", "'disable'", "'SETUP'", "'ACTION'", "'CLEANUP'", "'AGENT'", "'REPEAT'", "'SINGLE'", "'CALLED'", "'SELF'", "'AFFECT'", "'INSTANT'", "'DELAYED'", "'STEP'", "'GRID'", "'TORUS'", "'BOUND'", "'GRAPH'", "'NETWORK'", "'GIS'", "'MESH3D'", "'CONTINUOUS'", "'QUERY'", "'INDIRECT'", "'COMMUNICATION'", "'INPUT'", "'IMPLICIT'", "'EVOLUTIONARY'", "'COGNITIVE'", "'NONE'", "'POST'", "'SYSTEM'", "'SET'", "'BOOLEAN'", "'RANGE'", "'INT'", "'FLOAT'", "'BOOL'", "'VECTOR2'", "'SYSTEM:'", "'{'", "'name:'", "';'", "'description:'", "'ruleset:'", "'};'", "'agent_types:'", "','", "'environment_types:'", "'environment_rules:'", "'type:'", "'attributes:'", "'layout_type:'", "'group_types:'", "'end_conditions:'", "'condition'", "'inspection_level:'", "'lenient_exceptions:'", "'semantic_groups:'", "':'", "'ENVIRONMENT'", "'GROUP'", "'group_rules:'", "'external_interactions:'", "'['", "']['", "']('", "'):'", "'('", "')'", "'internal_interactions:'", "'parameters:'", "'agt'", "'='", "'env'", "'grp'", "'def'", "')('", "'functions:'", "'var'", "'grp.'", "'agt.'", "'env.'", "'obj.'", "'behavior_state'", "'behaviors:'", "'interactions:'", "'group_interactions:'", "'adaptation:'", "'ADAPTATION.'", "'INTERACTION.'", "'.AGT_INTERACTION.'", "'.GRP_EXT_INTERACTION.'", "'EXT_INTERACTION.'", "'.GRP_INT_INTERACTION.'", "'.ENV_INTERACTION.'", "'INT_INTERACTION.'", "'FUNCTION.'", "'BEHAVIOR.'", "']'", "'subsystems:'", "'.'", "'self.'", "'for'", "'do'", "'endfor'", "'foreach'", "'if'", "'then'", "'endif'", "'elseif'", "'else'", "'!'", "'-'", "'self'", "'ENUM.'", "'SYSTEM.'", "'AGENT.'", "'ENVIRONMENT.'", "'GROUP.'", "'obj'", "'enum'", "'CASL.'", "'.GetNeighbours['", "'FILTER['", "'COUNT['", "'RANDOM'", "'FOREACH['", "'PRINT('", "'LOGGER('", "'LOG('", "'METRIC['", "'TODO:'", "'GET_ID()'", "'GET_TIME()'", "'POPULATE'", "')['", "'VISUALIZE'", "'VIZ['", "'COLOR['", "'DISPLAY'", "'raw-java'", "'}'", "'package'", "'import'", "'.*'", "'int'", "'bool'", "'float'", "'string'", "'null'", "'*'", "'+'", "'/'", "'custom'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_NUMBER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'||'", "'&&'", "'=='", "'!='", "'<'", "'>'", "'<='", "'>='", "'.()'", "'->'", "'virtual'", "'physical'", "'implicit'", "'explicit'", "'STEPS'", "'PARAMETER'", "'STATE'", "'strict'", "'lenient'", "'modularity'", "'diversity'", "'none'", "'adaptation'", "'strong'", "'weak'", "'enable'", "'disable'", "'SETUP'", "'ACTION'", "'CLEANUP'", "'AGENT'", "'REPEAT'", "'SINGLE'", "'CALLED'", "'SELF'", "'AFFECT'", "'INSTANT'", "'DELAYED'", "'STEP'", "'GRID'", "'TORUS'", "'BOUND'", "'GRAPH'", "'NETWORK'", "'GIS'", "'MESH3D'", "'CONTINUOUS'", "'QUERY'", "'INDIRECT'", "'COMMUNICATION'", "'INPUT'", "'IMPLICIT'", "'EVOLUTIONARY'", "'COGNITIVE'", "'NONE'", "'POST'", "'SYSTEM'", "'SET'", "'BOOLEAN'", "'RANGE'", "'INT'", "'DOUBLE'", "'BOOL'", "'VECTOR2'", "'SYSTEM:'", "'{'", "'name:'", "';'", "'description:'", "'ruleset:'", "'};'", "'agent_types:'", "','", "'environment_types:'", "'environment_rules:'", "'type:'", "'attributes:'", "'layout_type:'", "'group_types:'", "'end_conditions:'", "'condition'", "'inspection_level:'", "'lenient_exceptions:'", "'semantic_groups:'", "':'", "'ENVIRONMENT'", "'GROUP'", "'group_rules:'", "'external_interactions:'", "'['", "']['", "']('", "'):'", "'('", "')'", "'internal_interactions:'", "'parameters:'", "'agt'", "'='", "'env'", "'grp'", "'def'", "')('", "'functions:'", "'var'", "'grp.'", "'agt.'", "'env.'", "'obj.'", "'behavior_state'", "'behaviors:'", "'interactions:'", "'group_interactions:'", "'adaptation:'", "'ADAPTATION.'", "'INTERACTION.'", "'.AGT_INTERACTION.'", "'.GRP_EXT_INTERACTION.'", "'EXT_INTERACTION.'", "'.GRP_INT_INTERACTION.'", "'.ENV_INTERACTION.'", "'INT_INTERACTION.'", "'FUNCTION.'", "'BEHAVIOR.'", "']'", "'subsystems:'", "'.'", "'self.'", "'for'", "'do'", "'endfor'", "'foreach'", "'if'", "'then'", "'endif'", "'elseif'", "'else'", "'!'", "'-'", "'self'", "'ENUM.'", "'SYSTEM.'", "'AGENT.'", "'ENVIRONMENT.'", "'GROUP.'", "'obj'", "'enum'", "'CASL.'", "'.GetNeighbours['", "'FILTER['", "'COUNT['", "'RANDOM'", "'FOREACH['", "'PRINT('", "'LOGGER('", "'LOG('", "'METRIC['", "'TODO:'", "'GET_ID()'", "'GET_TIME()'", "'POPULATE'", "')['", "'VISUALIZE'", "'VIZ['", "'COLOR['", "'DISPLAY'", "'raw-java'", "'}'", "'package'", "'import'", "'.*'", "'int'", "'bool'", "'double'", "'string'", "'null'", "'*'", "'+'", "'/'", "'custom'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -5266,23 +5266,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleBooleanType"
 
 
-    // $ANTLR start "entryRuleFloatType"
-    // InternalCASL.g:1529:1: entryRuleFloatType : ruleFloatType EOF ;
-    public final void entryRuleFloatType() throws RecognitionException {
+    // $ANTLR start "entryRuleDoubleType"
+    // InternalCASL.g:1529:1: entryRuleDoubleType : ruleDoubleType EOF ;
+    public final void entryRuleDoubleType() throws RecognitionException {
         try {
-            // InternalCASL.g:1530:1: ( ruleFloatType EOF )
-            // InternalCASL.g:1531:1: ruleFloatType EOF
+            // InternalCASL.g:1530:1: ( ruleDoubleType EOF )
+            // InternalCASL.g:1531:1: ruleDoubleType EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeRule()); 
+               before(grammarAccess.getDoubleTypeRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleFloatType();
+            ruleDoubleType();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeRule()); 
+               after(grammarAccess.getDoubleTypeRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -5297,30 +5297,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleFloatType"
+    // $ANTLR end "entryRuleDoubleType"
 
 
-    // $ANTLR start "ruleFloatType"
-    // InternalCASL.g:1538:1: ruleFloatType : ( ( rule__FloatType__Group__0 ) ) ;
-    public final void ruleFloatType() throws RecognitionException {
+    // $ANTLR start "ruleDoubleType"
+    // InternalCASL.g:1538:1: ruleDoubleType : ( ( rule__DoubleType__Group__0 ) ) ;
+    public final void ruleDoubleType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:1542:2: ( ( ( rule__FloatType__Group__0 ) ) )
-            // InternalCASL.g:1543:2: ( ( rule__FloatType__Group__0 ) )
+            // InternalCASL.g:1542:2: ( ( ( rule__DoubleType__Group__0 ) ) )
+            // InternalCASL.g:1543:2: ( ( rule__DoubleType__Group__0 ) )
             {
-            // InternalCASL.g:1543:2: ( ( rule__FloatType__Group__0 ) )
-            // InternalCASL.g:1544:3: ( rule__FloatType__Group__0 )
+            // InternalCASL.g:1543:2: ( ( rule__DoubleType__Group__0 ) )
+            // InternalCASL.g:1544:3: ( rule__DoubleType__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeAccess().getGroup()); 
+               before(grammarAccess.getDoubleTypeAccess().getGroup()); 
             }
-            // InternalCASL.g:1545:3: ( rule__FloatType__Group__0 )
-            // InternalCASL.g:1545:4: rule__FloatType__Group__0
+            // InternalCASL.g:1545:3: ( rule__DoubleType__Group__0 )
+            // InternalCASL.g:1545:4: rule__DoubleType__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__FloatType__Group__0();
+            rule__DoubleType__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -5328,7 +5328,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeAccess().getGroup()); 
+               after(grammarAccess.getDoubleTypeAccess().getGroup()); 
             }
 
             }
@@ -5348,7 +5348,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleFloatType"
+    // $ANTLR end "ruleDoubleType"
 
 
     // $ANTLR start "entryRuleStringType"
@@ -14286,13 +14286,13 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimitiveType__Alternatives"
-    // InternalCASL.g:3968:1: rule__PrimitiveType__Alternatives : ( ( ruleIntType ) | ( ruleBooleanType ) | ( ruleFloatType ) | ( ruleNullType ) | ( ruleStringType ) );
+    // InternalCASL.g:3968:1: rule__PrimitiveType__Alternatives : ( ( ruleIntType ) | ( ruleBooleanType ) | ( ruleDoubleType ) | ( ruleNullType ) | ( ruleStringType ) );
     public final void rule__PrimitiveType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:3972:1: ( ( ruleIntType ) | ( ruleBooleanType ) | ( ruleFloatType ) | ( ruleNullType ) | ( ruleStringType ) )
+            // InternalCASL.g:3972:1: ( ( ruleIntType ) | ( ruleBooleanType ) | ( ruleDoubleType ) | ( ruleNullType ) | ( ruleStringType ) )
             int alt20=5;
             switch ( input.LA(1) ) {
             case 184:
@@ -14376,21 +14376,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalCASL.g:3985:2: ( ruleFloatType )
+                    // InternalCASL.g:3985:2: ( ruleDoubleType )
                     {
-                    // InternalCASL.g:3985:2: ( ruleFloatType )
-                    // InternalCASL.g:3986:3: ruleFloatType
+                    // InternalCASL.g:3985:2: ( ruleDoubleType )
+                    // InternalCASL.g:3986:3: ruleDoubleType
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2()); 
+                       before(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleFloatType();
+                    ruleDoubleType();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2()); 
+                       after(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2()); 
                     }
 
                     }
@@ -20993,13 +20993,13 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RandomType__Alternatives"
-    // InternalCASL.g:5399:1: rule__RandomType__Alternatives : ( ( ( 'INT' ) ) | ( ( 'FLOAT' ) ) | ( ( 'BOOL' ) ) | ( ( 'VECTOR2' ) ) );
+    // InternalCASL.g:5399:1: rule__RandomType__Alternatives : ( ( ( 'INT' ) ) | ( ( 'DOUBLE' ) ) | ( ( 'BOOL' ) ) | ( ( 'VECTOR2' ) ) );
     public final void rule__RandomType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:5403:1: ( ( ( 'INT' ) ) | ( ( 'FLOAT' ) ) | ( ( 'BOOL' ) ) | ( ( 'VECTOR2' ) ) )
+            // InternalCASL.g:5403:1: ( ( ( 'INT' ) ) | ( ( 'DOUBLE' ) ) | ( ( 'BOOL' ) ) | ( ( 'VECTOR2' ) ) )
             int alt65=4;
             switch ( input.LA(1) ) {
             case 73:
@@ -21057,23 +21057,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalCASL.g:5410:2: ( ( 'FLOAT' ) )
+                    // InternalCASL.g:5410:2: ( ( 'DOUBLE' ) )
                     {
-                    // InternalCASL.g:5410:2: ( ( 'FLOAT' ) )
-                    // InternalCASL.g:5411:3: ( 'FLOAT' )
+                    // InternalCASL.g:5410:2: ( ( 'DOUBLE' ) )
+                    // InternalCASL.g:5411:3: ( 'DOUBLE' )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1()); 
+                       before(grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1()); 
                     }
-                    // InternalCASL.g:5412:3: ( 'FLOAT' )
-                    // InternalCASL.g:5412:4: 'FLOAT'
+                    // InternalCASL.g:5412:3: ( 'DOUBLE' )
+                    // InternalCASL.g:5412:4: 'DOUBLE'
                     {
                     match(input,74,FOLLOW_2); if (state.failed) return ;
 
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1()); 
+                       after(grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1()); 
                     }
 
                     }
@@ -68406,23 +68406,23 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BooleanType__Group__1__Impl"
 
 
-    // $ANTLR start "rule__FloatType__Group__0"
-    // InternalCASL.g:20505:1: rule__FloatType__Group__0 : rule__FloatType__Group__0__Impl rule__FloatType__Group__1 ;
-    public final void rule__FloatType__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__DoubleType__Group__0"
+    // InternalCASL.g:20505:1: rule__DoubleType__Group__0 : rule__DoubleType__Group__0__Impl rule__DoubleType__Group__1 ;
+    public final void rule__DoubleType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:20509:1: ( rule__FloatType__Group__0__Impl rule__FloatType__Group__1 )
-            // InternalCASL.g:20510:2: rule__FloatType__Group__0__Impl rule__FloatType__Group__1
+            // InternalCASL.g:20509:1: ( rule__DoubleType__Group__0__Impl rule__DoubleType__Group__1 )
+            // InternalCASL.g:20510:2: rule__DoubleType__Group__0__Impl rule__DoubleType__Group__1
             {
             pushFollow(FOLLOW_112);
-            rule__FloatType__Group__0__Impl();
+            rule__DoubleType__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__FloatType__Group__1();
+            rule__DoubleType__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -68441,12 +68441,12 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatType__Group__0"
+    // $ANTLR end "rule__DoubleType__Group__0"
 
 
-    // $ANTLR start "rule__FloatType__Group__0__Impl"
-    // InternalCASL.g:20517:1: rule__FloatType__Group__0__Impl : ( () ) ;
-    public final void rule__FloatType__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__DoubleType__Group__0__Impl"
+    // InternalCASL.g:20517:1: rule__DoubleType__Group__0__Impl : ( () ) ;
+    public final void rule__DoubleType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -68458,7 +68458,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             // InternalCASL.g:20523:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeAccess().getFloatTypeAction_0()); 
+               before(grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0()); 
             }
             // InternalCASL.g:20524:2: ()
             // InternalCASL.g:20524:3: 
@@ -68466,7 +68466,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeAccess().getFloatTypeAction_0()); 
+               after(grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0()); 
             }
 
             }
@@ -68482,21 +68482,21 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatType__Group__0__Impl"
+    // $ANTLR end "rule__DoubleType__Group__0__Impl"
 
 
-    // $ANTLR start "rule__FloatType__Group__1"
-    // InternalCASL.g:20532:1: rule__FloatType__Group__1 : rule__FloatType__Group__1__Impl ;
-    public final void rule__FloatType__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__DoubleType__Group__1"
+    // InternalCASL.g:20532:1: rule__DoubleType__Group__1 : rule__DoubleType__Group__1__Impl ;
+    public final void rule__DoubleType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:20536:1: ( rule__FloatType__Group__1__Impl )
-            // InternalCASL.g:20537:2: rule__FloatType__Group__1__Impl
+            // InternalCASL.g:20536:1: ( rule__DoubleType__Group__1__Impl )
+            // InternalCASL.g:20537:2: rule__DoubleType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__FloatType__Group__1__Impl();
+            rule__DoubleType__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -68515,30 +68515,30 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatType__Group__1"
+    // $ANTLR end "rule__DoubleType__Group__1"
 
 
-    // $ANTLR start "rule__FloatType__Group__1__Impl"
-    // InternalCASL.g:20543:1: rule__FloatType__Group__1__Impl : ( ( rule__FloatType__NameAssignment_1 ) ) ;
-    public final void rule__FloatType__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__DoubleType__Group__1__Impl"
+    // InternalCASL.g:20543:1: rule__DoubleType__Group__1__Impl : ( ( rule__DoubleType__NameAssignment_1 ) ) ;
+    public final void rule__DoubleType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:20547:1: ( ( ( rule__FloatType__NameAssignment_1 ) ) )
-            // InternalCASL.g:20548:1: ( ( rule__FloatType__NameAssignment_1 ) )
+            // InternalCASL.g:20547:1: ( ( ( rule__DoubleType__NameAssignment_1 ) ) )
+            // InternalCASL.g:20548:1: ( ( rule__DoubleType__NameAssignment_1 ) )
             {
-            // InternalCASL.g:20548:1: ( ( rule__FloatType__NameAssignment_1 ) )
-            // InternalCASL.g:20549:2: ( rule__FloatType__NameAssignment_1 )
+            // InternalCASL.g:20548:1: ( ( rule__DoubleType__NameAssignment_1 ) )
+            // InternalCASL.g:20549:2: ( rule__DoubleType__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeAccess().getNameAssignment_1()); 
+               before(grammarAccess.getDoubleTypeAccess().getNameAssignment_1()); 
             }
-            // InternalCASL.g:20550:2: ( rule__FloatType__NameAssignment_1 )
-            // InternalCASL.g:20550:3: rule__FloatType__NameAssignment_1
+            // InternalCASL.g:20550:2: ( rule__DoubleType__NameAssignment_1 )
+            // InternalCASL.g:20550:3: rule__DoubleType__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__FloatType__NameAssignment_1();
+            rule__DoubleType__NameAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -68546,7 +68546,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeAccess().getNameAssignment_1()); 
+               after(grammarAccess.getDoubleTypeAccess().getNameAssignment_1()); 
             }
 
             }
@@ -68566,7 +68566,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatType__Group__1__Impl"
+    // $ANTLR end "rule__DoubleType__Group__1__Impl"
 
 
     // $ANTLR start "rule__StringType__Group__0"
@@ -114271,37 +114271,37 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BooleanType__NameAssignment_1"
 
 
-    // $ANTLR start "rule__FloatType__NameAssignment_1"
-    // InternalCASL.g:35446:1: rule__FloatType__NameAssignment_1 : ( ( 'float' ) ) ;
-    public final void rule__FloatType__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__DoubleType__NameAssignment_1"
+    // InternalCASL.g:35446:1: rule__DoubleType__NameAssignment_1 : ( ( 'double' ) ) ;
+    public final void rule__DoubleType__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCASL.g:35450:1: ( ( ( 'float' ) ) )
-            // InternalCASL.g:35451:2: ( ( 'float' ) )
+            // InternalCASL.g:35450:1: ( ( ( 'double' ) ) )
+            // InternalCASL.g:35451:2: ( ( 'double' ) )
             {
-            // InternalCASL.g:35451:2: ( ( 'float' ) )
-            // InternalCASL.g:35452:3: ( 'float' )
+            // InternalCASL.g:35451:2: ( ( 'double' ) )
+            // InternalCASL.g:35452:3: ( 'double' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); 
+               before(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); 
             }
-            // InternalCASL.g:35453:3: ( 'float' )
-            // InternalCASL.g:35454:4: 'float'
+            // InternalCASL.g:35453:3: ( 'double' )
+            // InternalCASL.g:35454:4: 'double'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); 
+               before(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); 
             }
             match(input,186,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); 
+               after(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); 
+               after(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); 
             }
 
             }
@@ -114321,7 +114321,7 @@ public class InternalCASLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatType__NameAssignment_1"
+    // $ANTLR end "rule__DoubleType__NameAssignment_1"
 
 
     // $ANTLR start "rule__StringType__NameAssignment_1"

@@ -215,7 +215,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSubSystemsAccess().getGroup(), "rule__SubSystems__Group__0");
 					put(grammarAccess.getIntTypeAccess().getGroup(), "rule__IntType__Group__0");
 					put(grammarAccess.getBooleanTypeAccess().getGroup(), "rule__BooleanType__Group__0");
-					put(grammarAccess.getFloatTypeAccess().getGroup(), "rule__FloatType__Group__0");
+					put(grammarAccess.getDoubleTypeAccess().getGroup(), "rule__DoubleType__Group__0");
 					put(grammarAccess.getStringTypeAccess().getGroup(), "rule__StringType__Group__0");
 					put(grammarAccess.getNullTypeAccess().getGroup(), "rule__NullType__Group__0");
 					put(grammarAccess.getDataTypeDeclarationAccess().getGroup(), "rule__DataTypeDeclaration__Group__0");
@@ -586,7 +586,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSubSystemsAccess().getSubEnvsAssignment_4_1(), "rule__SubSystems__SubEnvsAssignment_4_1");
 					put(grammarAccess.getIntTypeAccess().getNameAssignment_1(), "rule__IntType__NameAssignment_1");
 					put(grammarAccess.getBooleanTypeAccess().getNameAssignment_1(), "rule__BooleanType__NameAssignment_1");
-					put(grammarAccess.getFloatTypeAccess().getNameAssignment_1(), "rule__FloatType__NameAssignment_1");
+					put(grammarAccess.getDoubleTypeAccess().getNameAssignment_1(), "rule__DoubleType__NameAssignment_1");
 					put(grammarAccess.getStringTypeAccess().getNameAssignment_1(), "rule__StringType__NameAssignment_1");
 					put(grammarAccess.getNullTypeAccess().getNameAssignment_1(), "rule__NullType__NameAssignment_1");
 					put(grammarAccess.getDataTypeDeclarationAccess().getInitIncludeAssignment_2(), "rule__DataTypeDeclaration__InitIncludeAssignment_2");

@@ -4714,15 +4714,15 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIntTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBooleanTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cFloatTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDoubleTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cNullTypeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cStringTypeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//PrimitiveType:
-		//	IntType | BooleanType | FloatType | NullType | StringType;
+		//	IntType | BooleanType | DoubleType | NullType | StringType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//IntType | BooleanType | FloatType | NullType | StringType
+		//IntType | BooleanType | DoubleType | NullType | StringType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//IntType
@@ -4731,8 +4731,8 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//BooleanType
 		public RuleCall getBooleanTypeParserRuleCall_1() { return cBooleanTypeParserRuleCall_1; }
 		
-		//FloatType
-		public RuleCall getFloatTypeParserRuleCall_2() { return cFloatTypeParserRuleCall_2; }
+		//DoubleType
+		public RuleCall getDoubleTypeParserRuleCall_2() { return cDoubleTypeParserRuleCall_2; }
 		
 		//NullType
 		public RuleCall getNullTypeParserRuleCall_3() { return cNullTypeParserRuleCall_3; }
@@ -4786,28 +4786,28 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'bool'
 		public Keyword getNameBoolKeyword_1_0() { return cNameBoolKeyword_1_0; }
 	}
-	public class FloatTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.FloatType");
+	public class DoubleTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.DoubleType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cFloatTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cDoubleTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cNameFloatKeyword_1_0 = (Keyword)cNameAssignment_1.eContents().get(0);
+		private final Keyword cNameDoubleKeyword_1_0 = (Keyword)cNameAssignment_1.eContents().get(0);
 		
-		//FloatType:
-		//	{FloatType} name='float';
+		//DoubleType:
+		//	{DoubleType} name='double';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FloatType} name='float'
+		//{DoubleType} name='double'
 		public Group getGroup() { return cGroup; }
 		
-		//{FloatType}
-		public Action getFloatTypeAction_0() { return cFloatTypeAction_0; }
+		//{DoubleType}
+		public Action getDoubleTypeAction_0() { return cDoubleTypeAction_0; }
 		
-		//name='float'
+		//name='double'
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//'float'
-		public Keyword getNameFloatKeyword_1_0() { return cNameFloatKeyword_1_0; }
+		//'double'
+		public Keyword getNameDoubleKeyword_1_0() { return cNameDoubleKeyword_1_0; }
 	}
 	public class StringTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.StringType");
@@ -6105,6 +6105,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightPrefixedParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
+		////Add in Division separate
 		//Multiplication Expression:
 		//	Prefixed (({Multiplication.left=current} op='*' | {Div.left=current} op='/') right=Prefixed)*;
 		@Override public ParserRule getRule() { return rule; }
@@ -9289,18 +9290,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cINTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cINTINTKeyword_0_0 = (Keyword)cINTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cFLOATEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cFLOATFLOATKeyword_1_0 = (Keyword)cFLOATEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDOUBLEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDOUBLEDOUBLEKeyword_1_0 = (Keyword)cDOUBLEEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cBOOLEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cBOOLBOOLKeyword_2_0 = (Keyword)cBOOLEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cVECTOR2EnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
 		private final Keyword cVECTOR2VECTOR2Keyword_3_0 = (Keyword)cVECTOR2EnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum RandomType:
-		//	INT | FLOAT | BOOL | VECTOR2;
+		//	INT | DOUBLE | BOOL | VECTOR2;
 		public EnumRule getRule() { return rule; }
 		
-		//INT | FLOAT | BOOL | VECTOR2
+		//INT | DOUBLE | BOOL | VECTOR2
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//INT
@@ -9309,11 +9310,11 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//"INT"
 		public Keyword getINTINTKeyword_0_0() { return cINTINTKeyword_0_0; }
 		
-		//FLOAT
-		public EnumLiteralDeclaration getFLOATEnumLiteralDeclaration_1() { return cFLOATEnumLiteralDeclaration_1; }
+		//DOUBLE
+		public EnumLiteralDeclaration getDOUBLEEnumLiteralDeclaration_1() { return cDOUBLEEnumLiteralDeclaration_1; }
 		
-		//"FLOAT"
-		public Keyword getFLOATFLOATKeyword_1_0() { return cFLOATFLOATKeyword_1_0; }
+		//"DOUBLE"
+		public Keyword getDOUBLEDOUBLEKeyword_1_0() { return cDOUBLEDOUBLEKeyword_1_0; }
 		
 		//BOOL
 		public EnumLiteralDeclaration getBOOLEnumLiteralDeclaration_2() { return cBOOLEnumLiteralDeclaration_2; }
@@ -9409,7 +9410,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final PrimitiveTypeElements pPrimitiveType;
 	private final IntTypeElements pIntType;
 	private final BooleanTypeElements pBooleanType;
-	private final FloatTypeElements pFloatType;
+	private final DoubleTypeElements pDoubleType;
 	private final StringTypeElements pStringType;
 	private final NullTypeElements pNullType;
 	private final BooleanValueElements pBooleanValue;
@@ -9566,7 +9567,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPrimitiveType = new PrimitiveTypeElements();
 		this.pIntType = new IntTypeElements();
 		this.pBooleanType = new BooleanTypeElements();
-		this.pFloatType = new FloatTypeElements();
+		this.pDoubleType = new DoubleTypeElements();
 		this.pStringType = new StringTypeElements();
 		this.pNullType = new NullTypeElements();
 		this.pBooleanValue = new BooleanValueElements();
@@ -10671,7 +10672,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PrimitiveType:
-	//	IntType | BooleanType | FloatType | NullType | StringType;
+	//	IntType | BooleanType | DoubleType | NullType | StringType;
 	public PrimitiveTypeElements getPrimitiveTypeAccess() {
 		return pPrimitiveType;
 	}
@@ -10700,14 +10701,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getBooleanTypeAccess().getRule();
 	}
 	
-	//FloatType:
-	//	{FloatType} name='float';
-	public FloatTypeElements getFloatTypeAccess() {
-		return pFloatType;
+	//DoubleType:
+	//	{DoubleType} name='double';
+	public DoubleTypeElements getDoubleTypeAccess() {
+		return pDoubleType;
 	}
 	
-	public ParserRule getFloatTypeRule() {
-		return getFloatTypeAccess().getRule();
+	public ParserRule getDoubleTypeRule() {
+		return getDoubleTypeAccess().getRule();
 	}
 	
 	//StringType:
@@ -10902,6 +10903,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAdditionAccess().getRule();
 	}
 	
+	////Add in Division separate
 	//Multiplication Expression:
 	//	Prefixed (({Multiplication.left=current} op='*' | {Div.left=current} op='/') right=Prefixed)*;
 	public MultiplicationElements getMultiplicationAccess() {
@@ -11327,7 +11329,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//enum RandomType:
-	//	INT | FLOAT | BOOL | VECTOR2;
+	//	INT | DOUBLE | BOOL | VECTOR2;
 	public RandomTypeElements getRandomTypeAccess() {
 		return eRandomType;
 	}

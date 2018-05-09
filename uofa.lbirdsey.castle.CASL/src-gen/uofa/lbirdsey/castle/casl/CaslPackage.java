@@ -2510,14 +2510,14 @@ public interface CaslPackage extends EPackage
   int BOOLEAN_TYPE_FEATURE_COUNT = PRIMITIVE_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.FloatTypeImpl <em>Float Type</em>}' class.
+   * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.DoubleTypeImpl <em>Double Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uofa.lbirdsey.castle.casl.impl.FloatTypeImpl
-   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getFloatType()
+   * @see uofa.lbirdsey.castle.casl.impl.DoubleTypeImpl
+   * @see uofa.lbirdsey.castle.casl.impl.CaslPackageImpl#getDoubleType()
    * @generated
    */
-  int FLOAT_TYPE = 57;
+  int DOUBLE_TYPE = 57;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2526,16 +2526,16 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOAT_TYPE__NAME = PRIMITIVE_TYPE__NAME;
+  int DOUBLE_TYPE__NAME = PRIMITIVE_TYPE__NAME;
 
   /**
-   * The number of structural features of the '<em>Float Type</em>' class.
+   * The number of structural features of the '<em>Double Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOAT_TYPE_FEATURE_COUNT = PRIMITIVE_TYPE_FEATURE_COUNT + 0;
+  int DOUBLE_TYPE_FEATURE_COUNT = PRIMITIVE_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.StringTypeImpl <em>String Type</em>}' class.
@@ -7813,14 +7813,14 @@ public interface CaslPackage extends EPackage
   EAttribute getBooleanType_Bool();
 
   /**
-   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.FloatType <em>Float Type</em>}'.
+   * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.DoubleType <em>Double Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Float Type</em>'.
-   * @see uofa.lbirdsey.castle.casl.FloatType
+   * @return the meta object for class '<em>Double Type</em>'.
+   * @see uofa.lbirdsey.castle.casl.DoubleType
    * @generated
    */
-  EClass getFloatType();
+  EClass getDoubleType();
 
   /**
    * Returns the meta object for class '{@link uofa.lbirdsey.castle.casl.StringType <em>String Type</em>}'.

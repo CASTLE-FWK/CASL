@@ -26,7 +26,7 @@ import uofa.lbirdsey.castle.casl.Expression
 import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.FeatureCallExp
 import uofa.lbirdsey.castle.casl.Field
-import uofa.lbirdsey.castle.casl.FloatType
+import uofa.lbirdsey.castle.casl.DoubleType
 import uofa.lbirdsey.castle.casl.ForEachLoop
 import uofa.lbirdsey.castle.casl.ForLoop
 import uofa.lbirdsey.castle.casl.Formula
@@ -957,7 +957,7 @@ class HelperFunctions {
 					systemRoot);
 		} else if (iC.startsWith("enums.")) {
 			output += "import castleComponents." + iC + ";"
-		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("float")))) {
+		} else if (iC.startsWith("int") || (iC.startsWith("bool") || (iC.startsWith("double")))) {
 			output = "";
 		} else if (iC.length() > 0) {
 			if (!checkForReservedLayoutWords(iC)) {
@@ -995,7 +995,7 @@ class HelperFunctions {
 		if (fp.type !== null) {
 			if (fp.type instanceof IntType) {
 				return "0";
-			} else if (fp.type instanceof FloatType) {
+			} else if (fp.type instanceof DoubleType) {
 				return "0.0f";
 			} else if (fp.type instanceof BooleanType) {
 				return "false";

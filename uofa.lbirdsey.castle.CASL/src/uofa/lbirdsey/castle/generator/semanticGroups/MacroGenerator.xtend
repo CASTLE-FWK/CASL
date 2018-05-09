@@ -64,7 +64,7 @@ class MacroGenerator {
 							Printers.printExpression(mac.high) + ")"
 				}
 
-			} else if (mac.type == RandomType.FLOAT) {
+			} else if (mac.type == RandomType.DOUBLE) {
 				if (mac.high === null) {
 					output += "RandomGen.generateRandomRangeDouble(0," + Printers.printExpression(mac.low) + ");"
 				} else {

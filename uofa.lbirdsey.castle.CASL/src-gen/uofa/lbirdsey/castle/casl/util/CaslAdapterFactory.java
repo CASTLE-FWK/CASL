@@ -56,6 +56,7 @@ import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
+import uofa.lbirdsey.castle.casl.DoubleType;
 import uofa.lbirdsey.castle.casl.EGInteraction;
 import uofa.lbirdsey.castle.casl.EGInteractions;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
@@ -82,7 +83,6 @@ import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
-import uofa.lbirdsey.castle.casl.FloatType;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
@@ -486,9 +486,9 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
         return createBooleanTypeAdapter();
       }
       @Override
-      public Adapter caseFloatType(FloatType object)
+      public Adapter caseDoubleType(DoubleType object)
       {
-        return createFloatTypeAdapter();
+        return createDoubleTypeAdapter();
       }
       @Override
       public Adapter caseStringType(StringType object)
@@ -1718,16 +1718,16 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.FloatType <em>Float Type</em>}'.
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.DoubleType <em>Double Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uofa.lbirdsey.castle.casl.FloatType
+   * @see uofa.lbirdsey.castle.casl.DoubleType
    * @generated
    */
-  public Adapter createFloatTypeAdapter()
+  public Adapter createDoubleTypeAdapter()
   {
     return null;
   }

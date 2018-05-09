@@ -7196,11 +7196,11 @@ rulePrimitiveType returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2());
+			newCompositeNode(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2());
 		}
-		this_FloatType_2=ruleFloatType
+		this_DoubleType_2=ruleDoubleType
 		{
-			$current = $this_FloatType_2.current;
+			$current = $this_DoubleType_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -7304,15 +7304,15 @@ ruleBooleanType returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleFloatType
-entryRuleFloatType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFloatTypeRule()); }
-	iv_ruleFloatType=ruleFloatType
-	{ $current=$iv_ruleFloatType.current; }
+// Entry rule entryRuleDoubleType
+entryRuleDoubleType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDoubleTypeRule()); }
+	iv_ruleDoubleType=ruleDoubleType
+	{ $current=$iv_ruleDoubleType.current; }
 	EOF;
 
-// Rule FloatType
-ruleFloatType returns [EObject current=null]
+// Rule DoubleType
+ruleDoubleType returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -7323,21 +7323,21 @@ ruleFloatType returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getFloatTypeAccess().getFloatTypeAction_0(),
+					grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0(),
 					$current);
 			}
 		)
 		(
 			(
-				lv_name_1_0='float'
+				lv_name_1_0='double'
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFloatTypeRule());
+						$current = createModelElement(grammarAccess.getDoubleTypeRule());
 					}
-					setWithLastConsumed($current, "name", lv_name_1_0, "float");
+					setWithLastConsumed($current, "name", lv_name_1_0, "double");
 				}
 			)
 		)
@@ -13679,10 +13679,10 @@ ruleRandomType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='FLOAT'
+			enumLiteral_1='DOUBLE'
 			{
-				$current = grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1());
+				$current = grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1());
 			}
 		)
 		    |

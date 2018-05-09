@@ -537,13 +537,13 @@ public interface CaslFactory extends EFactory
   BooleanType createBooleanType();
 
   /**
-   * Returns a new object of class '<em>Float Type</em>'.
+   * Returns a new object of class '<em>Double Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Float Type</em>'.
+   * @return a new object of class '<em>Double Type</em>'.
    * @generated
    */
-  FloatType createFloatType();
+  DoubleType createDoubleType();
 
   /**
    * Returns a new object of class '<em>String Type</em>'.

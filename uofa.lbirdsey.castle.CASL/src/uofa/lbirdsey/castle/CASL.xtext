@@ -587,7 +587,7 @@ NonPrimitiveType:
 ;
 
 PrimitiveType:
-	IntType | BooleanType | FloatType | NullType | StringType
+	IntType | BooleanType | DoubleType | NullType | StringType
 ;
 
 IntType:
@@ -598,8 +598,8 @@ BooleanType:
 	{BooleanType} name='bool'
 ;
 
-FloatType:
-	{FloatType} name='float'
+DoubleType:
+	{DoubleType} name='double'
 ;
 
 StringType:
@@ -950,7 +950,7 @@ CASL_Macro_Display:
 ;
 
 enum RandomType:
-	INT | FLOAT | BOOL | VECTOR2
+	INT | DOUBLE | BOOL | VECTOR2
 ;
 
 /*****Java 8-isms *****/

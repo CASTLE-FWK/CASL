@@ -1525,25 +1525,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleFloatType
-entryRuleFloatType
+// Entry rule entryRuleDoubleType
+entryRuleDoubleType
 :
-{ before(grammarAccess.getFloatTypeRule()); }
-	 ruleFloatType
-{ after(grammarAccess.getFloatTypeRule()); } 
+{ before(grammarAccess.getDoubleTypeRule()); }
+	 ruleDoubleType
+{ after(grammarAccess.getDoubleTypeRule()); } 
 	 EOF 
 ;
 
-// Rule FloatType
-ruleFloatType 
+// Rule DoubleType
+ruleDoubleType 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getFloatTypeAccess().getGroup()); }
-		(rule__FloatType__Group__0)
-		{ after(grammarAccess.getFloatTypeAccess().getGroup()); }
+		{ before(grammarAccess.getDoubleTypeAccess().getGroup()); }
+		(rule__DoubleType__Group__0)
+		{ after(grammarAccess.getDoubleTypeAccess().getGroup()); }
 	)
 ;
 finally {
@@ -3983,9 +3983,9 @@ rule__PrimitiveType__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2()); }
-		ruleFloatType
-		{ after(grammarAccess.getPrimitiveTypeAccess().getFloatTypeParserRuleCall_2()); }
+		{ before(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2()); }
+		ruleDoubleType
+		{ after(grammarAccess.getPrimitiveTypeAccess().getDoubleTypeParserRuleCall_2()); }
 	)
 	|
 	(
@@ -5408,9 +5408,9 @@ rule__RandomType__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1()); }
-		('FLOAT')
-		{ after(grammarAccess.getRandomTypeAccess().getFLOATEnumLiteralDeclaration_1()); }
+		{ before(grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1()); }
+		('DOUBLE')
+		{ after(grammarAccess.getRandomTypeAccess().getDOUBLEEnumLiteralDeclaration_1()); }
 	)
 	|
 	(
@@ -20502,53 +20502,53 @@ finally {
 }
 
 
-rule__FloatType__Group__0
+rule__DoubleType__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FloatType__Group__0__Impl
-	rule__FloatType__Group__1
+	rule__DoubleType__Group__0__Impl
+	rule__DoubleType__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FloatType__Group__0__Impl
+rule__DoubleType__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFloatTypeAccess().getFloatTypeAction_0()); }
+	{ before(grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0()); }
 	()
-	{ after(grammarAccess.getFloatTypeAccess().getFloatTypeAction_0()); }
+	{ after(grammarAccess.getDoubleTypeAccess().getDoubleTypeAction_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FloatType__Group__1
+rule__DoubleType__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FloatType__Group__1__Impl
+	rule__DoubleType__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FloatType__Group__1__Impl
+rule__DoubleType__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFloatTypeAccess().getNameAssignment_1()); }
-	(rule__FloatType__NameAssignment_1)
-	{ after(grammarAccess.getFloatTypeAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getDoubleTypeAccess().getNameAssignment_1()); }
+	(rule__DoubleType__NameAssignment_1)
+	{ after(grammarAccess.getDoubleTypeAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -35443,19 +35443,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FloatType__NameAssignment_1
+rule__DoubleType__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); }
+		{ before(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); }
 		(
-			{ before(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); }
-			'float'
-			{ after(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); }
+			{ before(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); }
+			'double'
+			{ after(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); }
 		)
-		{ after(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0()); }
+		{ after(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0()); }
 	)
 ;
 finally {

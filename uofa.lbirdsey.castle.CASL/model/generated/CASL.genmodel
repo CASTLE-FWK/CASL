@@ -118,7 +118,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CASL.ecore#//RandomType">
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/INT"/>
-      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/DOUBLE"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/BOOL"/>
       <genEnumLiterals ecoreEnumLiteral="CASL.ecore#//RandomType/VECTOR2"/>
     </genEnums>
@@ -375,7 +375,7 @@
     <genClasses ecoreClass="CASL.ecore#//BooleanType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//BooleanType/bool"/>
     </genClasses>
-    <genClasses ecoreClass="CASL.ecore#//FloatType"/>
+    <genClasses ecoreClass="CASL.ecore#//DoubleType"/>
     <genClasses ecoreClass="CASL.ecore#//StringType"/>
     <genClasses ecoreClass="CASL.ecore#//NullType"/>
     <genClasses ecoreClass="CASL.ecore#//Formula">

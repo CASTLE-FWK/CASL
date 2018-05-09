@@ -432,7 +432,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//PrimitiveType #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FloatType" eSuperTypes="#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleType" eSuperTypes="#//PrimitiveType"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//PrimitiveType"/>
   <eClassifiers xsi:type="ecore:EClass" name="NullType" eSuperTypes="#//PrimitiveType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Formula">
@@ -650,7 +650,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RandomType">
     <eLiterals name="INT" literal="INT"/>
-    <eLiterals name="FLOAT" value="1" literal="FLOAT"/>
+    <eLiterals name="DOUBLE" value="1" literal="DOUBLE"/>
     <eLiterals name="BOOL" value="2" literal="BOOL"/>
     <eLiterals name="VECTOR2" value="3" literal="VECTOR2"/>
   </eClassifiers>

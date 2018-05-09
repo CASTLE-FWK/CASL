@@ -58,6 +58,7 @@ import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.Concern;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
 import uofa.lbirdsey.castle.casl.Div;
+import uofa.lbirdsey.castle.casl.DoubleType;
 import uofa.lbirdsey.castle.casl.EGInteraction;
 import uofa.lbirdsey.castle.casl.EGInteractions;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
@@ -80,7 +81,6 @@ import uofa.lbirdsey.castle.casl.Feature;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
-import uofa.lbirdsey.castle.casl.FloatType;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
@@ -323,6 +323,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.DIV:
 				sequence_Multiplication(context, (Div) semanticObject); 
 				return; 
+			case CaslPackage.DOUBLE_TYPE:
+				sequence_DoubleType(context, (DoubleType) semanticObject); 
+				return; 
 			case CaslPackage.EG_INTERACTION:
 				sequence_EGInteraction(context, (EGInteraction) semanticObject); 
 				return; 
@@ -414,9 +417,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.FIELD:
 				sequence_Field(context, (Field) semanticObject); 
-				return; 
-			case CaslPackage.FLOAT_TYPE:
-				sequence_FloatType(context, (FloatType) semanticObject); 
 				return; 
 			case CaslPackage.FOR_EACH_LOOP:
 				sequence_ForEachLoop(context, (ForEachLoop) semanticObject); 
@@ -1810,6 +1810,26 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Type returns DoubleType
+	 *     PrimitiveType returns DoubleType
+	 *     DoubleType returns DoubleType
+	 *
+	 * Constraint:
+	 *     name='double'
+	 */
+	protected void sequence_DoubleType(ISerializationContext context, DoubleType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getType_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getType_Name()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDoubleTypeAccess().getNameDoubleKeyword_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EGInteraction returns EGInteraction
 	 *
 	 * Constraint:
@@ -2200,26 +2220,6 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Field(ISerializationContext context, Field semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Type returns FloatType
-	 *     PrimitiveType returns FloatType
-	 *     FloatType returns FloatType
-	 *
-	 * Constraint:
-	 *     name='float'
-	 */
-	protected void sequence_FloatType(ISerializationContext context, FloatType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getType_Name()) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getType_Name()));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFloatTypeAccess().getNameFloatKeyword_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

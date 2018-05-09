@@ -445,7 +445,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass floatTypeEClass = null;
+  private EClass doubleTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3368,13 +3368,13 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFloatType()
+  public EClass getDoubleType()
   {
-    if (floatTypeEClass == null)
+    if (doubleTypeEClass == null)
     {
-      floatTypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(75);
+      doubleTypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(CaslPackage.eNS_URI).getEClassifiers().get(75);
     }
-    return floatTypeEClass;
+    return doubleTypeEClass;
   }
 
   /**

@@ -29,6 +29,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
 import uofa.lbirdsey.castle.casl.CAS_Rule_Exception;
 import uofa.lbirdsey.castle.casl.Comparison;
 import uofa.lbirdsey.castle.casl.DataTypeDeclaration;
+import uofa.lbirdsey.castle.casl.DoubleType;
 import uofa.lbirdsey.castle.casl.ElseIfExpr;
 import uofa.lbirdsey.castle.casl.Entity_Feature;
 import uofa.lbirdsey.castle.casl.Environment;
@@ -41,7 +42,6 @@ import uofa.lbirdsey.castle.casl.Expression;
 import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
-import uofa.lbirdsey.castle.casl.FloatType;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
@@ -1953,7 +1953,7 @@ public class HelperFunctions {
             String _output_5 = output;
             output = (_output_5 + (("import castleComponents." + iC) + ";"));
           } else {
-            if ((iC.startsWith("int") || (iC.startsWith("bool") || iC.startsWith("float")))) {
+            if ((iC.startsWith("int") || (iC.startsWith("bool") || iC.startsWith("double")))) {
               output = "";
             } else {
               int _length = iC.length();
@@ -1997,7 +1997,7 @@ public class HelperFunctions {
         return "0";
       } else {
         PrimitiveType _type_2 = fp.getType();
-        if ((_type_2 instanceof FloatType)) {
+        if ((_type_2 instanceof DoubleType)) {
           return "0.0f";
         } else {
           PrimitiveType _type_3 = fp.getType();

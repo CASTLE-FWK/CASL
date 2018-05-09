@@ -47,13 +47,13 @@
 'COUNT['=163
 'DELAYED'=50
 'DISPLAY'=178
+'DOUBLE'=74
 'ENUM.'=153
 'ENVIRONMENT'=98
 'ENVIRONMENT.'=156
 'EVOLUTIONARY'=65
 'EXT_INTERACTION.'=131
 'FILTER['=162
-'FLOAT'=74
 'FOREACH['=165
 'FUNCTION.'=135
 'GET_ID()'=171
@@ -119,6 +119,7 @@
 'disable'=39
 'diversity'=33
 'do'=142
+'double'=186
 'else'=149
 'elseif'=148
 'enable'=38
@@ -133,7 +134,6 @@
 'explicit'=26
 'external_interactions:'=101
 'false'=12
-'float'=186
 'for'=141
 'foreach'=144
 'functions:'=116
