@@ -441,7 +441,9 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 					ArrayList<VEntity> ves = new ArrayList<VEntity>();
 					//We must convert the agents to VEntity at runtime :/
 					for (castleComponents.Agent a : ents) {
-						ves.add(new VEntity(a));
+						if (a.getParameters().size() > 0){
+							ves.add(new VEntity(a));
+						}
 					}
 					
 					vis.newStep(time, ves);
