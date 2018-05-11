@@ -47,7 +47,7 @@ class AgentGeneration {
 		imports += "import castleComponents.objects.*;\n"
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
-		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
+		imports += "import "+systemRoot.toFirstUpper+"."+systemRoot.toFirstUpper+";\n"
 
 		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
 		if (allImports !== null){
