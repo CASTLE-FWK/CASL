@@ -142,7 +142,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 			} else if (field instanceof Concern){}			
 		}
 		
-		output += "//For all Systems\nint clock = 0;\nint numberOfSteps;\nEntityID sysID;\n";
+		output += "//For all Systems\nstatic int clock = 0;\nint numberOfSteps;\nEntityID sysID;\n";
 		output += "//Tier Below\nArrayList<Environment> storedEnvironments;\nArrayList<SemanticGroup> storedGroups;\n"
 		output += "MessageQueue messageQueue;\nPhase currentPhase;\nint tier1Entities = 0;\n"
 		output += "//Repast Specific\nContext<Entity> repastContext;\n"

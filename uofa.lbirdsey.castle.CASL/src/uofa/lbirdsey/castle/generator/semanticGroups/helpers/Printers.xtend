@@ -262,7 +262,7 @@ class Printers {
 				return (expr as BooleanType).bool
 			else if (expr instanceof SystemCallObj)
 				return Helpers.getSystemName().replaceAll(" ", "") + ".get" +
-					((expr as SystemCallObj).sysCall.call.toFirstUpper) + "()"
+					((expr as SystemCallObj).sysCall.call.toFirstUpper) + "_()"
 			else if (expr instanceof StringLiteral)
 				return "\"" + (expr as StringLiteral).value + "\""
 			else if (expr instanceof TypeRef)

@@ -693,7 +693,7 @@ public class Printers {
               String _plus = (_replaceAll + ".get");
               String _firstUpper = StringExtensions.toFirstUpper(((SystemCallObj) expr).getSysCall().getCall());
               String _plus_1 = (_plus + _firstUpper);
-              return (_plus_1 + "()");
+              return (_plus_1 + "_()");
             } else {
               CharSequence _xifexpression_5 = null;
               if ((expr instanceof StringLiteral)) {
