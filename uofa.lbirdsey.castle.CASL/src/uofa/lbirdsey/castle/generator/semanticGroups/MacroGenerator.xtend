@@ -144,15 +144,14 @@ class MacroGenerator {
 			// TODO
 			val active = (macro as CASL_Macro_Viz).sw;
 			if (active == true) {
-	
-				} else {
-	
+			} else {
+		
 			}
 
-		} else if (macro instanceof CASL_Macro_NEW){
+		} else if (macro instanceof CASL_Macro_NEW) {
 			val exp = (macro as CASL_Macro_NEW).exp;
 			val type = HelperFunctions.inferExpressionType(exp)
-			return "new "+type+"()"
+			return "new " + type + "()"
 		}
 		return output;
 	}
@@ -305,8 +304,15 @@ class MacroGenerator {
 		val flag = cmc.flag;
 		val target = Printers.printExpression(cmc.target);
 		val params = cmc.params;
-		var String out = "EntityColor entityColor = new EntityColor("
-		out += target + "," + flag + ");\n"
+		val pos = cmc.pos;
+		var String out = "entityColor = new EntityColor(\""
+		out += target + "\",\"" + flag + "\");\n"
+		
+		//Add all parameters to the Parameters thing
+		
+		out += "addParameter("+pos+",\"+pos\");\n"
+		
+		out += "entityColor.setPositionParam("+pos+");\n"
 
 		if (flag == CASL_Macro_COLOR_FLAG.BOOLEAN) {
 			// Should be 2 params
@@ -315,8 +321,9 @@ class MacroGenerator {
 			}
 			val trueParam = Printers.printExpression(params.get(0));
 			val falseParam = Printers.printExpression(params.get(1));
-
+			
 			out += "entityColor.addSet(\"true\"," + trueParam + ");\n"
+			out += "addParameter("+target+",\"" + target + "\");\n"
 			out += "entityColor.addSet(\"false\"," + falseParam + ");\n"
 
 		} else if (flag == CASL_Macro_COLOR_FLAG.SET) {
@@ -328,6 +335,7 @@ class MacroGenerator {
 				val value = Printers.printExpression(params.get(i));
 				val col = Printers.printExpression(params.get(i + 1));
 				out += "entityColor.addSet(\"" + value + "\"," + col + ");\n"
+				out += "parameters.addParameter("+value+",\"" + value + "\");\n"
 			}
 
 		} else if (flag == CASL_Macro_COLOR_FLAG.RANGE) {

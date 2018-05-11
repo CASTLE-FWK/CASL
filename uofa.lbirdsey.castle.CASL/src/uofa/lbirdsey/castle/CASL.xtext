@@ -918,7 +918,7 @@ CASL_Macro_Viz:
 //Set the colour for the agent depending the state they are in
 CASL_Macro_COLOR:
 	{CASL_Macro_COLOR}
-	"COLOR["flag = CASL_Macro_COLOR_FLAG"]["target = Expression"](" (params += Expression (','(params += Expression))*)? ")"
+	"COLOR["flag = CASL_Macro_COLOR_FLAG"]["pos=Expression"]["target = Expression"](" (params += Expression (','(params += Expression))*)? ")"
 ;
 
 enum CASL_Macro_COLOR_FLAG:

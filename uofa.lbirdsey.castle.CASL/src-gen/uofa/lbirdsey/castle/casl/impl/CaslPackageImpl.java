@@ -4711,7 +4711,7 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_COLOR_Target()
+  public EReference getCASL_Macro_COLOR_Pos()
   {
         return (EReference)getCASL_Macro_COLOR().getEStructuralFeatures().get(1);
   }
@@ -4721,9 +4721,19 @@ public class CaslPackageImpl extends EPackageImpl implements CaslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCASL_Macro_COLOR_Params()
+  public EReference getCASL_Macro_COLOR_Target()
   {
         return (EReference)getCASL_Macro_COLOR().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCASL_Macro_COLOR_Params()
+  {
+        return (EReference)getCASL_Macro_COLOR().getEStructuralFeatures().get(3);
   }
 
   /**

@@ -523,6 +523,7 @@
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_COLOR">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//CASL_Macro_COLOR/flag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_COLOR/pos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_COLOR/target"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_COLOR/params"/>
     </genClasses>

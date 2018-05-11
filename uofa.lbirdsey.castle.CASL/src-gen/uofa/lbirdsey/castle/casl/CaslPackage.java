@@ -4016,13 +4016,22 @@ public interface CaslPackage extends EPackage
   int CASL_MACRO_COLOR__FLAG = CASL_MACRO_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Pos</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASL_MACRO_COLOR__POS = CASL_MACRO_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASL_MACRO_COLOR__TARGET = CASL_MACRO_FEATURE_COUNT + 1;
+  int CASL_MACRO_COLOR__TARGET = CASL_MACRO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -4031,7 +4040,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_COLOR__PARAMS = CASL_MACRO_FEATURE_COUNT + 2;
+  int CASL_MACRO_COLOR__PARAMS = CASL_MACRO_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>CASL Macro COLOR</em>' class.
@@ -4040,7 +4049,7 @@ public interface CaslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASL_MACRO_COLOR_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 3;
+  int CASL_MACRO_COLOR_FEATURE_COUNT = CASL_MACRO_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uofa.lbirdsey.castle.casl.impl.CASL_Macro_DisplayImpl <em>CASL Macro Display</em>}' class.
@@ -9098,6 +9107,17 @@ public interface CaslPackage extends EPackage
    * @generated
    */
   EAttribute getCASL_Macro_COLOR_Flag();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_COLOR#getPos <em>Pos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pos</em>'.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_COLOR#getPos()
+   * @see #getCASL_Macro_COLOR()
+   * @generated
+   */
+  EReference getCASL_Macro_COLOR_Pos();
 
   /**
    * Returns the meta object for the containment reference '{@link uofa.lbirdsey.castle.casl.CASL_Macro_COLOR#getTarget <em>Target</em>}'.

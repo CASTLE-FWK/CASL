@@ -329,8 +329,8 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_VisualizeAccess().getGroup(), "rule__CASL_Macro_Visualize__Group__0");
 					put(grammarAccess.getCASL_Macro_VizAccess().getGroup(), "rule__CASL_Macro_Viz__Group__0");
 					put(grammarAccess.getCASL_Macro_COLORAccess().getGroup(), "rule__CASL_Macro_COLOR__Group__0");
-					put(grammarAccess.getCASL_Macro_COLORAccess().getGroup_6(), "rule__CASL_Macro_COLOR__Group_6__0");
-					put(grammarAccess.getCASL_Macro_COLORAccess().getGroup_6_1(), "rule__CASL_Macro_COLOR__Group_6_1__0");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getGroup_8(), "rule__CASL_Macro_COLOR__Group_8__0");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getGroup_8_1(), "rule__CASL_Macro_COLOR__Group_8_1__0");
 					put(grammarAccess.getCASL_Macro_DisplayAccess().getGroup(), "rule__CASL_Macro_Display__Group__0");
 					put(grammarAccess.getCASL_Macro_DisplayAccess().getGroup_6(), "rule__CASL_Macro_Display__Group_6__0");
 					put(grammarAccess.getRaw_Java_BlockAccess().getGroup(), "rule__Raw_Java_Block__Group__0");
@@ -738,9 +738,10 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_VisualizeAccess().getProjectionShapeAssignment_8(), "rule__CASL_Macro_Visualize__ProjectionShapeAssignment_8");
 					put(grammarAccess.getCASL_Macro_VizAccess().getSwAssignment_1(), "rule__CASL_Macro_Viz__SwAssignment_1");
 					put(grammarAccess.getCASL_Macro_COLORAccess().getFlagAssignment_2(), "rule__CASL_Macro_COLOR__FlagAssignment_2");
-					put(grammarAccess.getCASL_Macro_COLORAccess().getTargetAssignment_4(), "rule__CASL_Macro_COLOR__TargetAssignment_4");
-					put(grammarAccess.getCASL_Macro_COLORAccess().getParamsAssignment_6_0(), "rule__CASL_Macro_COLOR__ParamsAssignment_6_0");
-					put(grammarAccess.getCASL_Macro_COLORAccess().getParamsAssignment_6_1_1(), "rule__CASL_Macro_COLOR__ParamsAssignment_6_1_1");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getPosAssignment_4(), "rule__CASL_Macro_COLOR__PosAssignment_4");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getTargetAssignment_6(), "rule__CASL_Macro_COLOR__TargetAssignment_6");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getParamsAssignment_8_0(), "rule__CASL_Macro_COLOR__ParamsAssignment_8_0");
+					put(grammarAccess.getCASL_Macro_COLORAccess().getParamsAssignment_8_1_1(), "rule__CASL_Macro_COLOR__ParamsAssignment_8_1_1");
 					put(grammarAccess.getCASL_Macro_DisplayAccess().getRepresentationTypeAssignment_2(), "rule__CASL_Macro_Display__RepresentationTypeAssignment_2");
 					put(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectAssignment_5(), "rule__CASL_Macro_Display__ToProjectAssignment_5");
 					put(grammarAccess.getCASL_Macro_DisplayAccess().getToProjectAssignment_6_1(), "rule__CASL_Macro_Display__ToProjectAssignment_6_1");
