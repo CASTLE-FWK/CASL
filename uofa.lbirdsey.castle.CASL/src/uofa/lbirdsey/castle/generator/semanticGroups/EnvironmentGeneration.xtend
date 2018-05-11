@@ -60,6 +60,7 @@ class EnvironmentGeneration {
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import castleComponents.Entity;\n import castleComponents.objects.Vector2;\n"
+		imports += "import castleComponents.visualisation.EntityDisplay;\n"
 		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
 		imports += "import java.util.concurrent.Executors;\n import java.util.Collections;\n"
 		

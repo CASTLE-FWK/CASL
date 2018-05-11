@@ -39,6 +39,7 @@ class SystemGeneration {
 		imports += "import castleComponents.CASSystem;\n"
 		imports += "import castleComponents.Output;\n"
 		imports += "import castleComponents.SimulationInfo;\n"
+		imports += "import castleComponents.visualisation.EntityDisplay;\n"
 		imports += "import dataGenerator.OutputToJSON_Mongo;\n"
 		
 		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
