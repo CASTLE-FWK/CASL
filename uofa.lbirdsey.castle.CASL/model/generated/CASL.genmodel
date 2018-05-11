@@ -503,6 +503,9 @@
     </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_GET_ID"/>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_GET_TIME"/>
+    <genClasses ecoreClass="CASL.ecore#//CASL_Macro_NEW">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_NEW/exp"/>
+    </genClasses>
     <genClasses ecoreClass="CASL.ecore#//CASL_Macro_Populate">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/layoutLocation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//CASL_Macro_Populate/layoutInitParams"/>

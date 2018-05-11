@@ -11123,6 +11123,15 @@ ruleCASL_Macro returns [EObject current=null]
 			$current = $this_CASL_Macro_Viz_16.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCASL_MacroAccess().getCASL_Macro_NEWParserRuleCall_17());
+		}
+		this_CASL_Macro_NEW_17=ruleCASL_Macro_NEW
+		{
+			$current = $this_CASL_Macro_NEW_17.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -11986,6 +11995,59 @@ ruleCASL_Macro_GET_TIME returns [EObject current=null]
 		otherlv_1='GET_TIME()'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_GET_TIMEAccess().getGET_TIMEKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleCASL_Macro_NEW
+entryRuleCASL_Macro_NEW returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCASL_Macro_NEWRule()); }
+	iv_ruleCASL_Macro_NEW=ruleCASL_Macro_NEW
+	{ $current=$iv_ruleCASL_Macro_NEW.current; }
+	EOF;
+
+// Rule CASL_Macro_NEW
+ruleCASL_Macro_NEW returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getCASL_Macro_NEWAccess().getCASL_Macro_NEWAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='NEW('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCASL_Macro_NEWAccess().getNEWKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCASL_Macro_NEWAccess().getExpExpressionParserRuleCall_2_0());
+				}
+				lv_exp_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCASL_Macro_NEWRule());
+					}
+					set(
+						$current,
+						"exp",
+						lv_exp_2_0,
+						"uofa.lbirdsey.castle.CASL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCASL_Macro_NEWAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;

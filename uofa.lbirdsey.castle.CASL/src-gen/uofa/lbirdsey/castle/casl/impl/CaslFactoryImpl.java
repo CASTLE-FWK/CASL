@@ -50,6 +50,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
+import uofa.lbirdsey.castle.casl.CASL_Macro_NEW;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
@@ -304,6 +305,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.CASL_MACRO_TODO: return createCASL_Macro_TODO();
       case CaslPackage.CASL_MACRO_GET_ID: return createCASL_Macro_GET_ID();
       case CaslPackage.CASL_MACRO_GET_TIME: return createCASL_Macro_GET_TIME();
+      case CaslPackage.CASL_MACRO_NEW: return createCASL_Macro_NEW();
       case CaslPackage.CASL_MACRO_POPULATE: return createCASL_Macro_Populate();
       case CaslPackage.CASL_MACRO_VISUALIZE: return createCASL_Macro_Visualize();
       case CaslPackage.CASL_MACRO_VIZ: return createCASL_Macro_Viz();
@@ -1459,6 +1461,17 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
   {
     CASL_Macro_GET_TIMEImpl casL_Macro_GET_TIME = new CASL_Macro_GET_TIMEImpl();
     return casL_Macro_GET_TIME;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CASL_Macro_NEW createCASL_Macro_NEW()
+  {
+    CASL_Macro_NEWImpl casL_Macro_NEW = new CASL_Macro_NEWImpl();
+    return casL_Macro_NEW;
   }
 
   /**

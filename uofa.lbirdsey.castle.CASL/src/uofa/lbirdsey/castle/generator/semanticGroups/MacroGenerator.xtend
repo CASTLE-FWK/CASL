@@ -28,6 +28,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME
 import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR
 import uofa.lbirdsey.castle.casl.CASL_Macro_Viz
 import uofa.lbirdsey.castle.casl.CASL_Macro_COLOR_FLAG
+import uofa.lbirdsey.castle.casl.CASL_Macro_NEW
 
 class MacroGenerator {
 	static def parseMacro(MacroCall mc, String name) {
@@ -148,6 +149,10 @@ class MacroGenerator {
 	
 			}
 
+		} else if (macro instanceof CASL_Macro_NEW){
+			val exp = (macro as CASL_Macro_NEW).exp;
+			val type = HelperFunctions.inferExpressionType(exp)
+			return "new "+type+"()"
 		}
 		return output;
 	}

@@ -322,6 +322,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_TODOAccess().getGroup(), "rule__CASL_Macro_TODO__Group__0");
 					put(grammarAccess.getCASL_Macro_GET_IDAccess().getGroup(), "rule__CASL_Macro_GET_ID__Group__0");
 					put(grammarAccess.getCASL_Macro_GET_TIMEAccess().getGroup(), "rule__CASL_Macro_GET_TIME__Group__0");
+					put(grammarAccess.getCASL_Macro_NEWAccess().getGroup(), "rule__CASL_Macro_NEW__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup(), "rule__CASL_Macro_Populate__Group__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_5(), "rule__CASL_Macro_Populate__Group_5__0");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getGroup_12(), "rule__CASL_Macro_Populate__Group_12__0");
@@ -724,6 +725,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getSwAssignment_1(), "rule__CASL_Macro_MetricSwitch__SwAssignment_1");
 					put(grammarAccess.getCASL_Macro_MetricSwitchAccess().getManualUpdatesAssignment_3_1(), "rule__CASL_Macro_MetricSwitch__ManualUpdatesAssignment_3_1");
 					put(grammarAccess.getCASL_Macro_TODOAccess().getStrAssignment_1(), "rule__CASL_Macro_TODO__StrAssignment_1");
+					put(grammarAccess.getCASL_Macro_NEWAccess().getExpAssignment_2(), "rule__CASL_Macro_NEW__ExpAssignment_2");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutLocationAssignment_2(), "rule__CASL_Macro_Populate__LayoutLocationAssignment_2");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutInitParamsAssignment_4(), "rule__CASL_Macro_Populate__LayoutInitParamsAssignment_4");
 					put(grammarAccess.getCASL_Macro_PopulateAccess().getLayoutInitParamsAssignment_5_1(), "rule__CASL_Macro_Populate__LayoutInitParamsAssignment_5_1");

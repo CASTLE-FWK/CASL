@@ -7171,6 +7171,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCASL_Macro_GET_TIMEParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cCASL_Macro_COLORParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
 		private final RuleCall cCASL_Macro_VizParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cCASL_Macro_NEWParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
 		
 		////CASL_MACRO should become it's own DSL (or own library function)
 		////Because it will probably be massive (and it also has to line up with stdlib)
@@ -7178,13 +7179,13 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 		//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-		//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz;
+		//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz | CASL_Macro_NEW;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 		//CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 		//CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-		//CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz
+		//CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz | CASL_Macro_NEW
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//CASL_Macro_Neighbours
@@ -7237,6 +7238,9 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CASL_Macro_Viz
 		public RuleCall getCASL_Macro_VizParserRuleCall_16() { return cCASL_Macro_VizParserRuleCall_16; }
+		
+		//CASL_Macro_NEW
+		public RuleCall getCASL_Macro_NEWParserRuleCall_17() { return cCASL_Macro_NEWParserRuleCall_17; }
 	}
 	public class CASL_Macro_NeighboursElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Neighbours");
@@ -7770,6 +7774,38 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"GET_TIME()"
 		public Keyword getGET_TIMEKeyword_1() { return cGET_TIMEKeyword_1; }
+	}
+	public class CASL_Macro_NEWElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_NEW");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCASL_Macro_NEWAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNEWKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpExpressionParserRuleCall_2_0 = (RuleCall)cExpAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//CASL_Macro_NEW:
+		//	{CASL_Macro_NEW}
+		//	"NEW(" exp=Expression ")";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CASL_Macro_NEW} "NEW(" exp=Expression ")"
+		public Group getGroup() { return cGroup; }
+		
+		//{CASL_Macro_NEW}
+		public Action getCASL_Macro_NEWAction_0() { return cCASL_Macro_NEWAction_0; }
+		
+		//"NEW("
+		public Keyword getNEWKeyword_1() { return cNEWKeyword_1; }
+		
+		//exp=Expression
+		public Assignment getExpAssignment_2() { return cExpAssignment_2; }
+		
+		//Expression
+		public RuleCall getExpExpressionParserRuleCall_2_0() { return cExpExpressionParserRuleCall_2_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class CASL_Macro_PopulateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.CASL_Macro_Populate");
@@ -9456,6 +9492,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final CASL_Macro_TODOElements pCASL_Macro_TODO;
 	private final CASL_Macro_GET_IDElements pCASL_Macro_GET_ID;
 	private final CASL_Macro_GET_TIMEElements pCASL_Macro_GET_TIME;
+	private final CASL_Macro_NEWElements pCASL_Macro_NEW;
 	private final CASL_Macro_PopulateElements pCASL_Macro_Populate;
 	private final CASL_Macro_VisualizeElements pCASL_Macro_Visualize;
 	private final CASL_Macro_VizElements pCASL_Macro_Viz;
@@ -9613,6 +9650,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCASL_Macro_TODO = new CASL_Macro_TODOElements();
 		this.pCASL_Macro_GET_ID = new CASL_Macro_GET_IDElements();
 		this.pCASL_Macro_GET_TIME = new CASL_Macro_GET_TIMEElements();
+		this.pCASL_Macro_NEW = new CASL_Macro_NEWElements();
 		this.pCASL_Macro_Populate = new CASL_Macro_PopulateElements();
 		this.pCASL_Macro_Visualize = new CASL_Macro_VisualizeElements();
 		this.pCASL_Macro_Viz = new CASL_Macro_VizElements();
@@ -11082,7 +11120,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	CASL_Macro_Neighbours | CASL_Macro_FilterAndFunction | CASL_Macro_CountConditions | CASL_Macro_Random |
 	//	CASL_Macro_ForEach | CASL_Macro_Print | CASL_Macro_MetricSwitch | CASL_Macro_Populate | CASL_Macro_TODO |
 	//	CASL_Macro_Visualize | CASL_Macro_Display | CASL_Macro_Log | CASL_Macro_InitLogger | CASL_Macro_GET_ID |
-	//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz;
+	//	CASL_Macro_GET_TIME | CASL_Macro_COLOR | CASL_Macro_Viz | CASL_Macro_NEW;
 	public CASL_MacroElements getCASL_MacroAccess() {
 		return pCASL_Macro;
 	}
@@ -11213,6 +11251,17 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCASL_Macro_GET_TIMERule() {
 		return getCASL_Macro_GET_TIMEAccess().getRule();
+	}
+	
+	//CASL_Macro_NEW:
+	//	{CASL_Macro_NEW}
+	//	"NEW(" exp=Expression ")";
+	public CASL_Macro_NEWElements getCASL_Macro_NEWAccess() {
+		return pCASL_Macro_NEW;
+	}
+	
+	public ParserRule getCASL_Macro_NEWRule() {
+		return getCASL_Macro_NEWAccess().getRule();
 	}
 	
 	////Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?

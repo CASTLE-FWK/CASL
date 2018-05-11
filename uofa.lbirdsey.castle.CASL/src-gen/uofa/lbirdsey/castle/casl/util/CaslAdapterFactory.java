@@ -42,6 +42,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
+import uofa.lbirdsey.castle.casl.CASL_Macro_NEW;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
@@ -654,6 +655,11 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCASL_Macro_GET_TIME(CASL_Macro_GET_TIME object)
       {
         return createCASL_Macro_GET_TIMEAdapter();
+      }
+      @Override
+      public Adapter caseCASL_Macro_NEW(CASL_Macro_NEW object)
+      {
+        return createCASL_Macro_NEWAdapter();
       }
       @Override
       public Adapter caseCASL_Macro_Populate(CASL_Macro_Populate object)
@@ -2223,6 +2229,21 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCASL_Macro_GET_TIMEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.CASL_Macro_NEW <em>CASL Macro NEW</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.CASL_Macro_NEW
+   * @generated
+   */
+  public Adapter createCASL_Macro_NEWAdapter()
   {
     return null;
   }

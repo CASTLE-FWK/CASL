@@ -44,6 +44,7 @@ import uofa.lbirdsey.castle.casl.CASL_Macro_GET_TIME;
 import uofa.lbirdsey.castle.casl.CASL_Macro_InitLogger;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Log;
 import uofa.lbirdsey.castle.casl.CASL_Macro_MetricSwitch;
+import uofa.lbirdsey.castle.casl.CASL_Macro_NEW;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Neighbours;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Populate;
 import uofa.lbirdsey.castle.casl.CASL_Macro_Print;
@@ -283,6 +284,9 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CaslPackage.CASL_MACRO_METRIC_SWITCH:
 				sequence_CASL_Macro_MetricSwitch(context, (CASL_Macro_MetricSwitch) semanticObject); 
+				return; 
+			case CaslPackage.CASL_MACRO_NEW:
+				sequence_CASL_Macro_NEW(context, (CASL_Macro_NEW) semanticObject); 
 				return; 
 			case CaslPackage.CASL_MACRO_NEIGHBOURS:
 				sequence_CASL_Macro_Neighbours(context, (CASL_Macro_Neighbours) semanticObject); 
@@ -1578,6 +1582,25 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CASL_Macro returns CASL_Macro_NEW
+	 *     CASL_Macro_NEW returns CASL_Macro_NEW
+	 *
+	 * Constraint:
+	 *     exp=Expression
+	 */
+	protected void sequence_CASL_Macro_NEW(ISerializationContext context, CASL_Macro_NEW semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_NEW_Exp()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getCASL_Macro_NEW_Exp()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCASL_Macro_NEWAccess().getExpExpressionParserRuleCall_2_0(), semanticObject.getExp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     CASL_Macro returns CASL_Macro_Neighbours
 	 *     CASL_Macro_Neighbours returns CASL_Macro_Neighbours
 	 *
@@ -2646,8 +2669,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Formula? 
-	 *         ((elseexp+=Expression | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Formula?)*
+	 *         elseexp+=Field? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=SelfAssignedFormula)? elseexp+=Field?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

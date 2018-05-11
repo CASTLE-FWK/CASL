@@ -818,7 +818,8 @@ CASL_Macro:
 	CASL_Macro_GET_ID				|
 	CASL_Macro_GET_TIME				|
 	CASL_Macro_COLOR				|
-	CASL_Macro_Viz
+	CASL_Macro_Viz					|
+	CASL_Macro_NEW
 ;
 
 CASL_Macro_Neighbours:
@@ -872,6 +873,12 @@ CASL_Macro_GET_TIME:
 	{CASL_Macro_GET_TIME}
 	"GET_TIME()"
 ;
+
+CASL_Macro_NEW:
+	{CASL_Macro_NEW}
+	"NEW("exp = Expression")"
+;	
+
 
 
 //Expression quite the way to do this, maybe it needs to be a heavily scoped function body with some extras?
