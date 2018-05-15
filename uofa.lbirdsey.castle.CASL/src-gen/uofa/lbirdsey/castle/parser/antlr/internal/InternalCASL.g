@@ -8512,6 +8512,59 @@ ruleForEachLoop returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleForKeywords
+entryRuleForKeywords returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getForKeywordsRule()); }
+	iv_ruleForKeywords=ruleForKeywords
+	{ $current=$iv_ruleForKeywords.current; }
+	EOF;
+
+// Rule ForKeywords
+ruleForKeywords returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getForKeywordsAccess().getForKeywordsAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				(
+					lv_k_1_1='continue'
+					{
+						newLeafNode(lv_k_1_1, grammarAccess.getForKeywordsAccess().getKContinueKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getForKeywordsRule());
+						}
+						setWithLastConsumed($current, "k", lv_k_1_1, null);
+					}
+					    |
+					lv_k_1_2='break'
+					{
+						newLeafNode(lv_k_1_2, grammarAccess.getForKeywordsAccess().getKBreakKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getForKeywordsRule());
+						}
+						setWithLastConsumed($current, "k", lv_k_1_2, null);
+					}
+				)
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleForEachAccess
 entryRuleForEachAccess returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getForEachAccessRule()); }
@@ -9983,6 +10036,35 @@ ruleAtomic returns [EObject current=null]
 							"environmentCall",
 							lv_environmentCall_27_0,
 							"uofa.lbirdsey.castle.CASL.Environment_Call");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicAccess().getForKeywordsAction_14_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAtomicAccess().getForWordsForKeywordsParserRuleCall_14_1_0());
+					}
+					lv_forWords_29_0=ruleForKeywords
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAtomicRule());
+						}
+						set(
+							$current,
+							"forWords",
+							lv_forWords_29_0,
+							"uofa.lbirdsey.castle.CASL.ForKeywords");
 						afterParserOrEnumRuleCall();
 					}
 				)

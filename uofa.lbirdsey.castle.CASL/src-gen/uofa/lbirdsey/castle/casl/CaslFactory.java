@@ -609,6 +609,15 @@ public interface CaslFactory extends EFactory
   ForEachLoop createForEachLoop();
 
   /**
+   * Returns a new object of class '<em>For Keywords</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Keywords</em>'.
+   * @generated
+   */
+  ForKeywords createForKeywords();
+
+  /**
    * Returns a new object of class '<em>If Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

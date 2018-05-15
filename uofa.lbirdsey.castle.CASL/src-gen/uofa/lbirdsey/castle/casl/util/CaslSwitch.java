@@ -83,6 +83,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
+import uofa.lbirdsey.castle.casl.ForKeywords;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.Function;
@@ -678,6 +679,14 @@ public class CaslSwitch<T> extends Switch<T>
         ForEachLoop forEachLoop = (ForEachLoop)theEObject;
         T result = caseForEachLoop(forEachLoop);
         if (result == null) result = caseExpression(forEachLoop);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaslPackage.FOR_KEYWORDS:
+      {
+        ForKeywords forKeywords = (ForKeywords)theEObject;
+        T result = caseForKeywords(forKeywords);
+        if (result == null) result = caseExpression(forKeywords);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2232,6 +2241,22 @@ public class CaslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseForEachLoop(ForEachLoop object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Keywords</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Keywords</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForKeywords(ForKeywords object)
   {
     return null;
   }

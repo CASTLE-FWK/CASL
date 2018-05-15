@@ -63,6 +63,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForLoopAccess().getShifterAlternatives_2_4_0(), "rule__ForLoop__ShifterAlternatives_2_4_0");
 					put(grammarAccess.getForLoopAccess().getAlternatives_5_0(), "rule__ForLoop__Alternatives_5_0");
 					put(grammarAccess.getForEachLoopAccess().getAlternatives_5_0(), "rule__ForEachLoop__Alternatives_5_0");
+					put(grammarAccess.getForKeywordsAccess().getKAlternatives_1_0(), "rule__ForKeywords__KAlternatives_1_0");
 					put(grammarAccess.getIfStatementAccess().getAlternatives_5_0(), "rule__IfStatement__Alternatives_5_0");
 					put(grammarAccess.getIfStatementAccess().getAlternatives_7_1_0(), "rule__IfStatement__Alternatives_7_1_0");
 					put(grammarAccess.getElseIfExprAccess().getElseifthenAlternatives_5_0_0(), "rule__ElseIfExpr__ElseifthenAlternatives_5_0_0");
@@ -241,6 +242,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForEachLoopAccess().getGroup(), "rule__ForEachLoop__Group__0");
 					put(grammarAccess.getForEachLoopAccess().getGroup_2(), "rule__ForEachLoop__Group_2__0");
 					put(grammarAccess.getForEachLoopAccess().getGroup_5(), "rule__ForEachLoop__Group_5__0");
+					put(grammarAccess.getForKeywordsAccess().getGroup(), "rule__ForKeywords__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_6(), "rule__IfStatement__Group_6__0");
@@ -282,6 +284,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroup_11(), "rule__Atomic__Group_11__0");
 					put(grammarAccess.getAtomicAccess().getGroup_12(), "rule__Atomic__Group_12__0");
 					put(grammarAccess.getAtomicAccess().getGroup_13(), "rule__Atomic__Group_13__0");
+					put(grammarAccess.getAtomicAccess().getGroup_14(), "rule__Atomic__Group_14__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_0(), "rule__SelfCall__Group_0__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_1(), "rule__SelfCall__Group_1__0");
 					put(grammarAccess.getSelfCallAccess().getGroup_2(), "rule__SelfCall__Group_2__0");
@@ -627,6 +630,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_2(), "rule__ForEachLoop__BodyAssignment_5_0_2");
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_3(), "rule__ForEachLoop__BodyAssignment_5_0_3");
 					put(grammarAccess.getForEachLoopAccess().getBodyAssignment_5_0_4(), "rule__ForEachLoop__BodyAssignment_5_0_4");
+					put(grammarAccess.getForKeywordsAccess().getKAssignment_1(), "rule__ForKeywords__KAssignment_1");
 					put(grammarAccess.getForEachAccessAccess().getNameAssignment(), "rule__ForEachAccess__NameAssignment");
 					put(grammarAccess.getIfStatementAccess().getConditionAssignment_2(), "rule__IfStatement__ConditionAssignment_2");
 					put(grammarAccess.getIfStatementAccess().getThenAssignment_5_0_0(), "rule__IfStatement__ThenAssignment_5_0_0");
@@ -669,6 +673,7 @@ public class CASLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroupCallAssignment_11_1(), "rule__Atomic__GroupCallAssignment_11_1");
 					put(grammarAccess.getAtomicAccess().getAgentCallAssignment_12_1(), "rule__Atomic__AgentCallAssignment_12_1");
 					put(grammarAccess.getAtomicAccess().getEnvironmentCallAssignment_13_1(), "rule__Atomic__EnvironmentCallAssignment_13_1");
+					put(grammarAccess.getAtomicAccess().getForWordsAssignment_14_1(), "rule__Atomic__ForWordsAssignment_14_1");
 					put(grammarAccess.getSelfCallAccess().getRefAssignment_1_1(), "rule__SelfCall__RefAssignment_1_1");
 					put(grammarAccess.getSelfCallAccess().getFcAssignment_2_1(), "rule__SelfCall__FcAssignment_2_1");
 					put(grammarAccess.getSelfCallAccess().getFecAssignment_3_1(), "rule__SelfCall__FecAssignment_3_1");

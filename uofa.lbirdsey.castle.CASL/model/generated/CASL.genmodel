@@ -401,6 +401,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForEachLoop/list"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForEachLoop/body"/>
     </genClasses>
+    <genClasses ecoreClass="CASL.ecore#//ForKeywords">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASL.ecore#//ForKeywords/k"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//ForKeywords/forWords"/>
+    </genClasses>
     <genClasses ecoreClass="CASL.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//IfStatement/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASL.ecore#//IfStatement/then"/>

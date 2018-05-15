@@ -46,6 +46,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import uofa.lbirdsey.castle.casl.FeatureCall
 import uofa.lbirdsey.castle.casl.Div
+import uofa.lbirdsey.castle.casl.ForKeywords
 
 class Printers {
 
@@ -311,6 +312,8 @@ class Printers {
 				return printForLoop((expr as ForLoop))
 			else if (expr instanceof ForEachLoop)
 				return printForEachLoop((expr as ForEachLoop))
+			else if (expr instanceof ForKeywords)
+				'''«(expr.forWords as ForKeywords).k»'''
 			else
 				'''ERROR: Unknown expression'''
 		}

@@ -5607,6 +5607,37 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//'endfor'
 		public Keyword getEndforKeyword_6() { return cEndforKeyword_6; }
 	}
+	public class ForKeywordsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.ForKeywords");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cForKeywordsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cKAlternatives_1_0 = (Alternatives)cKAssignment_1.eContents().get(0);
+		private final Keyword cKContinueKeyword_1_0_0 = (Keyword)cKAlternatives_1_0.eContents().get(0);
+		private final Keyword cKBreakKeyword_1_0_1 = (Keyword)cKAlternatives_1_0.eContents().get(1);
+		
+		//ForKeywords:
+		//	{ForKeywords} k=("continue" | "break");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ForKeywords} k=("continue" | "break")
+		public Group getGroup() { return cGroup; }
+		
+		//{ForKeywords}
+		public Action getForKeywordsAction_0() { return cForKeywordsAction_0; }
+		
+		//k=("continue" | "break")
+		public Assignment getKAssignment_1() { return cKAssignment_1; }
+		
+		//("continue" | "break")
+		public Alternatives getKAlternatives_1_0() { return cKAlternatives_1_0; }
+		
+		//"continue"
+		public Keyword getKContinueKeyword_1_0_0() { return cKContinueKeyword_1_0_0; }
+		
+		//"break"
+		public Keyword getKBreakKeyword_1_0_1() { return cKBreakKeyword_1_0_1; }
+	}
 	public class ForEachAccessElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.ForEachAccess");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
@@ -6286,6 +6317,10 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cEnvironment_CallAction_13_0 = (Action)cGroup_13.eContents().get(0);
 		private final Assignment cEnvironmentCallAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
 		private final RuleCall cEnvironmentCallEnvironment_CallParserRuleCall_13_1_0 = (RuleCall)cEnvironmentCallAssignment_13_1.eContents().get(0);
+		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
+		private final Action cForKeywordsAction_14_0 = (Action)cGroup_14.eContents().get(0);
+		private final Assignment cForWordsAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cForWordsForKeywordsParserRuleCall_14_1_0 = (RuleCall)cForWordsAssignment_14_1.eContents().get(0);
 		
 		////TODO: Most of these aren't atomics
 		//Atomic Expression:
@@ -6293,14 +6328,14 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		//	bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 		//	{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
 		//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
-		//	{Environment_Call} environmentCall=Environment_Call;
+		//	{Environment_Call} environmentCall=Environment_Call | {ForKeywords} forWords=ForKeywords;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NumberLiteral} value=NUMBER | {StringLiteral} value=STRING | {NullTypeLiteral} nulltype=NullType | {BooleanType}
 		//bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 		//{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
 		//{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
-		//{Environment_Call} environmentCall=Environment_Call
+		//{Environment_Call} environmentCall=Environment_Call | {ForKeywords} forWords=ForKeywords
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{NumberLiteral} value=NUMBER
@@ -6473,6 +6508,18 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Environment_Call
 		public RuleCall getEnvironmentCallEnvironment_CallParserRuleCall_13_1_0() { return cEnvironmentCallEnvironment_CallParserRuleCall_13_1_0; }
+		
+		//{ForKeywords} forWords=ForKeywords
+		public Group getGroup_14() { return cGroup_14; }
+		
+		//{ForKeywords}
+		public Action getForKeywordsAction_14_0() { return cForKeywordsAction_14_0; }
+		
+		//forWords=ForKeywords
+		public Assignment getForWordsAssignment_14_1() { return cForWordsAssignment_14_1; }
+		
+		//ForKeywords
+		public RuleCall getForWordsForKeywordsParserRuleCall_14_1_0() { return cForWordsForKeywordsParserRuleCall_14_1_0; }
 	}
 	public class SelfCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uofa.lbirdsey.castle.CASL.SelfCall");
@@ -9469,6 +9516,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExpressionElements pExpression;
 	private final ForLoopElements pForLoop;
 	private final ForEachLoopElements pForEachLoop;
+	private final ForKeywordsElements pForKeywords;
 	private final ForEachAccessElements pForEachAccess;
 	private final IfStatementElements pIfStatement;
 	private final ElseIfExprElements pElseIfExpr;
@@ -9627,6 +9675,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExpression = new ExpressionElements();
 		this.pForLoop = new ForLoopElements();
 		this.pForEachLoop = new ForEachLoopElements();
+		this.pForKeywords = new ForKeywordsElements();
 		this.pForEachAccess = new ForEachAccessElements();
 		this.pIfStatement = new IfStatementElements();
 		this.pElseIfExpr = new ElseIfExprElements();
@@ -10868,6 +10917,16 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 		return getForEachLoopAccess().getRule();
 	}
 	
+	//ForKeywords:
+	//	{ForKeywords} k=("continue" | "break");
+	public ForKeywordsElements getForKeywordsAccess() {
+		return pForKeywords;
+	}
+	
+	public ParserRule getForKeywordsRule() {
+		return getForKeywordsAccess().getRule();
+	}
+	
 	////TODO: Need scoping for this
 	//ForEachAccess Symbol:
 	//	name=ID;
@@ -10983,7 +11042,7 @@ public class CASLGrammarAccess extends AbstractGrammarElementFinder {
 	//	bool=BooleanValue | {TypeRef} type=[Symbol] | {SystemCallObj} sysCall=SystemCall | {FeatureCallExp} func=FeatureCall |
 	//	{SelfCallExpr} selfCall=SelfCall | {MacroCall} macroCall=CASL_Macro_Call | {FunctionCallExpr} funcCall=FunctionCall |
 	//	{EnumCallExpr} enumCall=EnumCall | {Group_Call} groupCall=Group_Call | {Agent_Call} agentCall=Agent_Call |
-	//	{Environment_Call} environmentCall=Environment_Call;
+	//	{Environment_Call} environmentCall=Environment_Call | {ForKeywords} forWords=ForKeywords;
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;
 	}

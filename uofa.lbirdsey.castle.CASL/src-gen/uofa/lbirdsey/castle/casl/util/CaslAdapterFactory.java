@@ -85,6 +85,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
+import uofa.lbirdsey.castle.casl.ForKeywords;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.Function;
@@ -525,6 +526,11 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseForEachLoop(ForEachLoop object)
       {
         return createForEachLoopAdapter();
+      }
+      @Override
+      public Adapter caseForKeywords(ForKeywords object)
+      {
+        return createForKeywordsAdapter();
       }
       @Override
       public Adapter caseIfStatement(IfStatement object)
@@ -1839,6 +1845,21 @@ public class CaslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createForEachLoopAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uofa.lbirdsey.castle.casl.ForKeywords <em>For Keywords</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uofa.lbirdsey.castle.casl.ForKeywords
+   * @generated
+   */
+  public Adapter createForKeywordsAdapter()
   {
     return null;
   }

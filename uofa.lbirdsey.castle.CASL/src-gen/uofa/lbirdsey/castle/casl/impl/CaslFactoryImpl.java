@@ -101,6 +101,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
+import uofa.lbirdsey.castle.casl.ForKeywords;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.Function;
@@ -279,6 +280,7 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
       case CaslPackage.EXPRESSION: return createExpression();
       case CaslPackage.FOR_LOOP: return createForLoop();
       case CaslPackage.FOR_EACH_LOOP: return createForEachLoop();
+      case CaslPackage.FOR_KEYWORDS: return createForKeywords();
       case CaslPackage.IF_STATEMENT: return createIfStatement();
       case CaslPackage.ELSE_IF_EXPR: return createElseIfExpr();
       case CaslPackage.SELF_CALL: return createSelfCall();
@@ -1175,6 +1177,17 @@ public class CaslFactoryImpl extends EFactoryImpl implements CaslFactory
   {
     ForEachLoopImpl forEachLoop = new ForEachLoopImpl();
     return forEachLoop;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForKeywords createForKeywords()
+  {
+    ForKeywordsImpl forKeywords = new ForKeywordsImpl();
+    return forKeywords;
   }
 
   /**

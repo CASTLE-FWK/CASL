@@ -666,6 +666,11 @@ ForEachLoop:
 	'endfor'
 ;
 
+ForKeywords:
+	{ForKeywords}
+	k=("continue" | "break")	
+;
+
 //TODO: Need scoping for this
 ForEachAccess returns Symbol:
 	name = ID
@@ -732,7 +737,8 @@ Atomic returns Expression:
   	{EnumCallExpr}enumCall = EnumCall							|
   	{Group_Call}groupCall = Group_Call							|
   	{Agent_Call}agentCall = Agent_Call							|
-  	{Environment_Call}environmentCall = Environment_Call
+  	{Environment_Call}environmentCall = Environment_Call		|
+  	{ForKeywords}forWords = ForKeywords
 ;
 
 //We have to add Agent

@@ -83,6 +83,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
+import uofa.lbirdsey.castle.casl.ForKeywords;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.Function;
@@ -425,6 +426,31 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CaslPackage.FOR_EACH_LOOP:
 				sequence_ForEachLoop(context, (ForEachLoop) semanticObject); 
 				return; 
+			case CaslPackage.FOR_KEYWORDS:
+				if (rule == grammarAccess.getExpressionRule()
+						|| rule == grammarAccess.getBooleanExpressionRule()
+						|| action == grammarAccess.getBooleanExpressionAccess().getBooleanExpressionLeftAction_1_0_0()
+						|| rule == grammarAccess.getEqualsRule()
+						|| action == grammarAccess.getEqualsAccess().getEqualsLeftAction_1_0_0()
+						|| rule == grammarAccess.getComparisonRule()
+						|| action == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0_0()
+						|| rule == grammarAccess.getSubtractionRule()
+						|| action == grammarAccess.getSubtractionAccess().getSubtractionLeftAction_1_0()
+						|| rule == grammarAccess.getAdditionRule()
+						|| action == grammarAccess.getAdditionAccess().getAdditionLeftAction_1_0()
+						|| rule == grammarAccess.getMultiplicationRule()
+						|| action == grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0_0_0()
+						|| action == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0()
+						|| rule == grammarAccess.getPrefixedRule()
+						|| rule == grammarAccess.getAtomicRule()) {
+					sequence_Atomic(context, (ForKeywords) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getForKeywordsRule()) {
+					sequence_ForKeywords(context, (ForKeywords) semanticObject); 
+					return; 
+				}
+				else break;
 			case CaslPackage.FOR_LOOP:
 				sequence_ForLoop(context, (ForLoop) semanticObject); 
 				return; 
@@ -1002,6 +1028,39 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtomicAccess().getFuncFeatureCallParserRuleCall_6_1_0(), semanticObject.getFunc());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns ForKeywords
+	 *     BooleanExpression returns ForKeywords
+	 *     BooleanExpression.BooleanExpression_1_0_0 returns ForKeywords
+	 *     Equals returns ForKeywords
+	 *     Equals.Equals_1_0_0 returns ForKeywords
+	 *     Comparison returns ForKeywords
+	 *     Comparison.Comparison_1_0_0 returns ForKeywords
+	 *     Subtraction returns ForKeywords
+	 *     Subtraction.Subtraction_1_0 returns ForKeywords
+	 *     Addition returns ForKeywords
+	 *     Addition.Addition_1_0 returns ForKeywords
+	 *     Multiplication returns ForKeywords
+	 *     Multiplication.Multiplication_1_0_0_0 returns ForKeywords
+	 *     Multiplication.Div_1_0_1_0 returns ForKeywords
+	 *     Prefixed returns ForKeywords
+	 *     Atomic returns ForKeywords
+	 *
+	 * Constraint:
+	 *     forWords=ForKeywords
+	 */
+	protected void sequence_Atomic(ISerializationContext context, ForKeywords semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CaslPackage.eINSTANCE.getForKeywords_ForWords()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CaslPackage.eINSTANCE.getForKeywords_ForWords()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getForWordsForKeywordsParserRuleCall_14_1_0(), semanticObject.getForWords());
 		feeder.finish();
 	}
 	
@@ -2298,6 +2357,18 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     ForKeywords returns ForKeywords
+	 *
+	 * Constraint:
+	 *     (k='continue' | k='break')
+	 */
+	protected void sequence_ForKeywords(ISerializationContext context, ForKeywords semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Expression returns ForLoop
 	 *     ForLoop returns ForLoop
 	 *     BooleanExpression returns ForLoop
@@ -2669,8 +2740,8 @@ public class CASLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         condition=Expression 
 	 *         (then+=Expression | then+=SelfAssignedFormula | then+=Formula | then+=Field)+ 
 	 *         elseifexpr+=ElseIfExpr* 
-	 *         elseexp+=Expression? 
-	 *         ((elseexp+=Formula | elseexp+=SelfAssignedFormula | elseexp+=Field)? elseexp+=Expression?)*
+	 *         elseexp+=SelfAssignedFormula? 
+	 *         ((elseexp+=Expression | elseexp+=Formula | elseexp+=Field)? elseexp+=SelfAssignedFormula?)*
 	 *     )
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {

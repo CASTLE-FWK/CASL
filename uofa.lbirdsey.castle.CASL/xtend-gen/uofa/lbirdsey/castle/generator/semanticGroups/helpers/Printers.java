@@ -30,6 +30,7 @@ import uofa.lbirdsey.castle.casl.FeatureCall;
 import uofa.lbirdsey.castle.casl.FeatureCallExp;
 import uofa.lbirdsey.castle.casl.Field;
 import uofa.lbirdsey.castle.casl.ForEachLoop;
+import uofa.lbirdsey.castle.casl.ForKeywords;
 import uofa.lbirdsey.castle.casl.ForLoop;
 import uofa.lbirdsey.castle.casl.Formula;
 import uofa.lbirdsey.castle.casl.FunctionCallExpr;
@@ -869,9 +870,19 @@ public class Printers {
                                                           if ((expr instanceof ForEachLoop)) {
                                                             return Printers.printForEachLoop(((ForEachLoop) expr));
                                                           } else {
-                                                            StringConcatenation _builder_10 = new StringConcatenation();
-                                                            _builder_10.append("ERROR: Unknown expression");
-                                                            _xifexpression_27 = _builder_10;
+                                                            CharSequence _xifexpression_28 = null;
+                                                            if ((expr instanceof ForKeywords)) {
+                                                              StringConcatenation _builder_10 = new StringConcatenation();
+                                                              ForKeywords _forWords = ((ForKeywords)expr).getForWords();
+                                                              String _k = ((ForKeywords) _forWords).getK();
+                                                              _builder_10.append(_k);
+                                                              _xifexpression_28 = _builder_10;
+                                                            } else {
+                                                              StringConcatenation _builder_11 = new StringConcatenation();
+                                                              _builder_11.append("ERROR: Unknown expression");
+                                                              _xifexpression_28 = _builder_11;
+                                                            }
+                                                            _xifexpression_27 = _xifexpression_28;
                                                           }
                                                           _xifexpression_26 = _xifexpression_27;
                                                         }
