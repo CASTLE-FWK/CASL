@@ -280,7 +280,7 @@ class Printers {
 			else if (expr instanceof Comparison)
 				'''«printExpression((expr as Comparison).left)» «(expr as Comparison).op» «printExpression((expr as Comparison).right)»'''
 			else if (expr instanceof Equals)
-				'''«printExpression((expr as Equals).left)» == «printExpression((expr as Equals).right)»'''
+				'''«printExpression((expr as Equals).left)» «(expr as Equals).op» «printExpression((expr as Equals).right)»'''
 			else if (expr instanceof Addition)
 				'''«printExpression((expr as Addition).left)» «(expr as Addition).op» «printExpression((expr as Addition).right)»'''
 			else if (expr instanceof Subtraction)

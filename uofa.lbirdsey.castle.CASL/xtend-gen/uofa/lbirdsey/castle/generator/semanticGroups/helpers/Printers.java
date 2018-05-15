@@ -748,7 +748,10 @@ public class Printers {
                               StringConcatenation _builder_2 = new StringConcatenation();
                               Object _printExpression_4 = Printers.printExpression(((Equals) expr).getLeft());
                               _builder_2.append(_printExpression_4);
-                              _builder_2.append(" == ");
+                              _builder_2.append(" ");
+                              String _op_2 = ((Equals) expr).getOp();
+                              _builder_2.append(_op_2);
+                              _builder_2.append(" ");
                               Object _printExpression_5 = Printers.printExpression(((Equals) expr).getRight());
                               _builder_2.append(_printExpression_5);
                               _xifexpression_12 = _builder_2;
@@ -759,8 +762,8 @@ public class Printers {
                                 Object _printExpression_6 = Printers.printExpression(((Addition) expr).getLeft());
                                 _builder_3.append(_printExpression_6);
                                 _builder_3.append(" ");
-                                String _op_2 = ((Addition) expr).getOp();
-                                _builder_3.append(_op_2);
+                                String _op_3 = ((Addition) expr).getOp();
+                                _builder_3.append(_op_3);
                                 _builder_3.append(" ");
                                 Object _printExpression_7 = Printers.printExpression(((Addition) expr).getRight());
                                 _builder_3.append(_printExpression_7);
@@ -772,8 +775,8 @@ public class Printers {
                                   Object _printExpression_8 = Printers.printExpression(((Subtraction) expr).getLeft());
                                   _builder_4.append(_printExpression_8);
                                   _builder_4.append(" ");
-                                  String _op_3 = ((Subtraction) expr).getOp();
-                                  _builder_4.append(_op_3);
+                                  String _op_4 = ((Subtraction) expr).getOp();
+                                  _builder_4.append(_op_4);
                                   _builder_4.append(" ");
                                   Object _printExpression_9 = Printers.printExpression(((Subtraction) expr).getRight());
                                   _builder_4.append(_printExpression_9);
@@ -785,8 +788,8 @@ public class Printers {
                                     Object _printExpression_10 = Printers.printExpression(((Multiplication) expr).getLeft());
                                     _builder_5.append(_printExpression_10);
                                     _builder_5.append(" ");
-                                    String _op_4 = ((Multiplication) expr).getOp();
-                                    _builder_5.append(_op_4);
+                                    String _op_5 = ((Multiplication) expr).getOp();
+                                    _builder_5.append(_op_5);
                                     _builder_5.append(" ");
                                     Object _printExpression_11 = Printers.printExpression(((Multiplication) expr).getRight());
                                     _builder_5.append(_printExpression_11);
@@ -798,8 +801,8 @@ public class Printers {
                                       Object _printExpression_12 = Printers.printExpression(((Div) expr).getLeft());
                                       _builder_6.append(_printExpression_12);
                                       _builder_6.append(" ");
-                                      String _op_5 = ((Div) expr).getOp();
-                                      _builder_6.append(_op_5);
+                                      String _op_6 = ((Div) expr).getOp();
+                                      _builder_6.append(_op_6);
                                       _builder_6.append(" ");
                                       Object _printExpression_13 = Printers.printExpression(((Div) expr).getRight());
                                       _builder_6.append(_printExpression_13);
