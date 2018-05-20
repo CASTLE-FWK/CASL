@@ -53,7 +53,7 @@ class GroupGeneration {
 		imports += "import stdSimLib.utilities.*;\n"
 		imports += "import castleComponents.Interaction.InteractionType;\n"
 		imports += "import repast.simphony.context.Context;\n"
-		imports += "import "+systemRoot.toFirstLower+"."+systemRoot.toFirstUpper+";\n"
+		imports += "import "+systemRoot+"."+systemRoot.toFirstUpper+";\n"
 
 		var allImports = HelperFunctions.parseImportsForGeneration(libImports, systemRoot);
 		if (allImports !== null){

@@ -1224,7 +1224,9 @@ class HelperFunctions {
 			case "string":
 				return "String"
 			case "float":
-				return "Float"
+				return "Double"
+			case "double":
+				return "Double"
 			default:
 				return in
 		}
