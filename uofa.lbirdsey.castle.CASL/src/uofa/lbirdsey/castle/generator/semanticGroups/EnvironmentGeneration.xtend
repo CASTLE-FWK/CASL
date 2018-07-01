@@ -432,12 +432,11 @@ class EnvironmentGeneration {
 			//Shuffle
 			str += "\t\tCollections.shuffle(containedEntities);\n"
 			str += "\t\tfor (Entity e : containedEntities){e.phase_Cleanup();}\n"
-			
+			str += "\t"+systemRoot+".drawEntities(storedAgents);\n"
 			str += "\t}\n"			 
 			
 			str += "\t//The draw call\n"
 			//TODO
-			str += "\t"+systemRoot+".drawEntities(storedAgents);\n"
 			
 			
 			str += "}\n"

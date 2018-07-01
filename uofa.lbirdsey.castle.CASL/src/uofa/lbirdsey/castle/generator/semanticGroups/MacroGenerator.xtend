@@ -203,12 +203,12 @@ class MacroGenerator {
 				TAB + TAB + tmpEntityName + ".initialize(" + printInitializeParams(entityInitParams) + ")" + LINE_END
 			output += TAB + TAB + tmpEntityName + ".initialise()" + LINE_END
 
-			output += TAB + TAB + tmpEntityName + ".setPosition(new Vector2(i,j))" + LINE_END
+			output += TAB + TAB + tmpEntityName + ".setEntityPosition(new Vector2(i,j))" + LINE_END
 			output += TAB + TAB + entityName.toLowerCase + "List.add(" + tmpEntityName + ")" + LINE_END
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
 			output +=
 				TAB + TAB + Printers.printExpression(layoutLocation) + ".addEntity(" + tmpEntityName + ", " +
-					tmpEntityName + ".getPosition())" + LINE_END
+					tmpEntityName + ".getEntityPosition())" + LINE_END
 
 			output += TAB + "}\n}\n"
 		} else if (Helpers.isANumber(counterAsString)) {
@@ -225,7 +225,7 @@ class MacroGenerator {
 				TAB + TAB + tmpEntityName + ".initialize(" + printInitializeParams(entityInitParams) + ")" + LINE_END
 			output += TAB + TAB + tmpEntityName + ".initialise()" + LINE_END
 
-			output += TAB + TAB + tmpEntityName + ".setPosition(new Vector2(0, 0))" + LINE_END
+			output += TAB + TAB + tmpEntityName + ".setEntityPosition(new Vector2(0, 0))" + LINE_END
 			output += TAB + TAB + entityName.toLowerCase + "List.add(" + tmpEntityName + ")" + LINE_END
 			output += TAB + TAB + printContainerAdd(entityType, tmpEntityName) + LINE_END
 			output +=

@@ -337,9 +337,14 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 		str += "\tlastCall = tmpCall;\n"
 		str += "\t//		System.out.println(\"time: \" + time);\n"
 		str += "}\n"
-		str += "public void printTimer(){\n"
-		str += "\tSystem.out.print(time+\",\");\n"
-		str += "}\n"
+		str += '''
+		public void printTimer() {
+				System.out.print("runtime="+time + ",name="+name+",");
+			}'''
+		str += "\n"
+//		str += "public void printTimer(){\n"
+//		str += "\tSystem.out.print(time+\",\");\n"
+//		str += "}\n"
 
 		str += "/****Results Exporting*****/\n"
 
@@ -428,6 +433,7 @@ public class «theSystem.name.replaceAll(" ","")» extends CASSystem implements 
 
 		// Set up the main System init stuff
 		str += "\n\tinitialize();\n"
+		str += "\tif (visualizing) {\n\t\tvis = new LiveSimulator(dims);\n}\n"
 
 		str += "\t//Are we writing to a database? If so, initialise the DB stuff\n"
 		str += "\tdbOut = new OutputToJSON_Mongo(output, simulationInfo);\n"
