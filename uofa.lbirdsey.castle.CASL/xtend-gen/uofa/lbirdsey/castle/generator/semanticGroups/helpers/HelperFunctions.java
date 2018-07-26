@@ -66,6 +66,7 @@ import uofa.lbirdsey.castle.casl.Multiplication;
 import uofa.lbirdsey.castle.casl.NonPrimitiveType;
 import uofa.lbirdsey.castle.casl.NumberLiteral;
 import uofa.lbirdsey.castle.casl.PrimitiveType;
+import uofa.lbirdsey.castle.casl.Raw_Java_Block;
 import uofa.lbirdsey.castle.casl.SelfAssignedFormula;
 import uofa.lbirdsey.castle.casl.SelfCall;
 import uofa.lbirdsey.castle.casl.SelfCallExpr;
@@ -851,9 +852,17 @@ public class HelperFunctions {
                 String _plus_6 = (_printSelfAssignedFormula + Constants.SC);
                 strOut = (_strOut_6 + _plus_6);
               } else {
-                Constants.throwCASLError("error with body element", "parseBodyElement", "HelperFunctions");
-                String _strOut_7 = strOut;
-                strOut = (_strOut_7 + "ERROR WITH BODY ELEMENT");
+                if ((statement instanceof Raw_Java_Block)) {
+                  EList<String> rjb = ((Raw_Java_Block) statement).getRawStatements();
+                  for (final String rj : rjb) {
+                    String _strOut_7 = strOut;
+                    strOut = (_strOut_7 + rj);
+                  }
+                } else {
+                  Constants.throwCASLError("error with body element", "parseBodyElement", "HelperFunctions");
+                  String _strOut_8 = strOut;
+                  strOut = (_strOut_8 + "ERROR WITH BODY ELEMENT");
+                }
               }
             }
           }

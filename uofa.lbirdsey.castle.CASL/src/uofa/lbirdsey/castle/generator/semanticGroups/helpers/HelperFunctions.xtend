@@ -446,12 +446,20 @@ class HelperFunctions {
 			strOut += HelperFunctions.printFormula((statement as Formula)) + SC
 		} else if (statement instanceof SelfAssignedFormula) {
 			strOut += HelperFunctions.printSelfAssignedFormula((statement as SelfAssignedFormula)) + SC
+		} else if (statement instanceof Raw_Java_Block) {
+			var rjb = (statement as Raw_Java_Block).rawStatements;
+			for (rj : rjb){
+				strOut += rj
+			}
+			
 		} else {
 			throwCASLError("error with body element","parseBodyElement","HelperFunctions");
 			strOut += "ERROR WITH BODY ELEMENT"
 		}
 		return strOut;
 	}
+	
+
 	
 	static def EObject getInteractionFromStatement(EObject statement){
 		var strOut = "";		
